@@ -89,8 +89,8 @@ class KlipperScreenConfig:
             printers.append("Printer Printer")
         self.printers = [
             {printer[8:]: {
-                "moonraker_host": self.config.get(printer, "moonraker_host", fallback="127.0.0.1"),
-                "moonraker_port": self.config.get(printer, "moonraker_port", fallback="7125"),
+                "moonraker_host": self.config.get(printer, "moonraker_host", fallback="pd01.local"),
+                "moonraker_port": self.config.get(printer, "moonraker_port", fallback="80"),
                 "moonraker_api_key": self.config.get(printer, "moonraker_api_key", fallback="").replace('"', '')
             }} for printer in printers
         ]
@@ -223,8 +223,8 @@ class KlipperScreenConfig:
                     {"name": _("System") + " " + _("(default)"), "value": "system_lang"}]}},
             {"theme": {
                 "section": "main", "name": _("Icon Theme"), "type": "dropdown",
-                "value": "z-bolt", "callback": screen.restart_ks, "options": [
-                    {"name": "Z-bolt" + " " + _("(default)"), "value": "z-bolt"}]}},
+                "value": "material-dark", "callback": screen.restart_ks, "options": [
+                    {"name": "material-dark" + " " + _("(default)"), "value": "material-dark"}]}},
             {"print_estimate_method": {
                 "section": "main", "name": _("Estimated Time Method"), "type": "dropdown",
                 "value": "auto", "options": [
@@ -282,7 +282,7 @@ class KlipperScreenConfig:
             lang_opt.append({"name": lang, "value": lang})
 
         t_path = os.path.join(klipperscreendir, 'styles')
-        themes = [d for d in os.listdir(t_path) if (not os.path.isfile(os.path.join(t_path, d)) and d != "z-bolt")]
+        themes = [d for d in os.listdir(t_path) if (not os.path.isfile(os.path.join(t_path, d)) and d != "material-dark")]
         themes.sort()
         theme_opt = self.configurable_options[1]['theme']['options']
 

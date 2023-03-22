@@ -100,12 +100,6 @@ class MacroPanel(ScreenPanel):
                     entry.set_text(default)
                     self.macros[macro]["params"].update({result["param"]: entry})
 
-        for param in self.macros[macro]["params"]:
-            labels.add(Gtk.Label(param))
-            self.macros[macro]["params"][param].connect("focus-in-event", self._screen.show_keyboard)
-            self.macros[macro]["params"][param].connect("focus-out-event", self._screen.remove_keyboard)
-            labels.add(self.macros[macro]["params"][param])
-
     def run_gcode_macro(self, widget, macro):
         params = ""
         for param in self.macros[macro]["params"]:
