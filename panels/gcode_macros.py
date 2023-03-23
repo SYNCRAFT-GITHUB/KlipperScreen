@@ -57,18 +57,20 @@ class MacroPanel(ScreenPanel):
             return
 
         name = Gtk.Label()
-        name.set_markup(f"<big><b>{macro}</b></big>")
-        name.set_hexpand(True)
-        name.set_vexpand(True)
-        name.set_halign(Gtk.Align.START)
-        name.set_valign(Gtk.Align.CENTER)
-        name.set_line_wrap(True)
-        name.set_line_wrap_mode(Pango.WrapMode.CHAR)
+        # The commented lines refer to the macro name on the left side of the "Resume" button.
+        #name.set_markup(f"<big><b>{macro}</b></big>")
+        #name.set_hexpand(True)
+        #name.set_vexpand(True)
+        #name.set_halign(Gtk.Align.START)
+        #name.set_valign(Gtk.Align.CENTER)
+        #name.set_line_wrap(True)
+        #name.set_line_wrap_mode(Pango.WrapMode.CHAR)
 
-        btn = self._gtk.Button("resume", style="color3")
+        btn = self._gtk.Button("", _(f"{macro}"), "color4", self.bts, Gtk.PositionType.LEFT, 1)
         btn.connect("clicked", self.run_gcode_macro, macro)
         btn.set_hexpand(False)
-        btn.set_halign(Gtk.Align.END)
+        btn.set_hexpand(True)
+        btn.set_vexpand(True)
 
         labels = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         labels.add(name)
