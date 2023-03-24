@@ -40,15 +40,15 @@ class ExtrudePanel(ScreenPanel):
         self.distance = int(self.distances[1])
         self.speed = int(self.speeds[1])
         self.buttons = {
-            'extrude': self._gtk.Button("extrude", _("Extrude"), "color4"),
             'load': self._gtk.Button("arrow-down", _("Load"), "color3"),
             'unload': self._gtk.Button("arrow-up", _("Unload"), "color2"),
+            'extrude': self._gtk.Button("extrude", _("Extrude"), "color4"),
             'retract': self._gtk.Button("retract", _("Retract"), "color1"),
             'temperature': self._gtk.Button("heat-up", _("Temperature"), "color4"),
         }
-        self.buttons['extrude'].connect("clicked", self.extrude, "+")
         self.buttons['load'].connect("clicked", self.load_unload, "+")
         self.buttons['unload'].connect("clicked", self.load_unload, "-")
+        self.buttons['extrude'].connect("clicked", self.extrude, "+")
         self.buttons['retract'].connect("clicked", self.extrude, "-")
         self.buttons['temperature'].connect("clicked", self.menu_item_clicked, "temperature", {
             "name": "Temperature",
@@ -60,7 +60,7 @@ class ExtrudePanel(ScreenPanel):
         i = 0
         for extruder in self._printer.get_tools():
             if self._printer.extrudercount > 1:
-                self.labels[extruder] = self._gtk.Button(f"extruder-{i}", f"T{self._printer.get_tool_number(extruder)}")
+                self.labels[extruder] = self._gtk.Button(f"extruder-{i+1}", f"T{self._printer.get_tool_number(extruder)+1}")
             else:
                 self.labels[extruder] = self._gtk.Button("extruder", "")
             self.labels[extruder].connect("clicked", self.change_extruder, extruder)
@@ -148,17 +148,17 @@ class ExtrudePanel(ScreenPanel):
         grid.attach(extgrid, 0, 0, 4, 1)
 
         if self._screen.vertical_mode:
-            grid.attach(self.buttons['extrude'], 0, 1, 2, 1)
+            grid.attach(self.buttons['load'], 0, 1, 2, 1)
+            grid.attach(self.buttons['unload'], 0, 2, 2, 1)
+            grid.attach(self.buttons['extrude'], 2, 2, 2, 1)
             grid.attach(self.buttons['retract'], 2, 1, 2, 1)
-            grid.attach(self.buttons['load'], 0, 2, 2, 1)
-            grid.attach(self.buttons['unload'], 2, 2, 2, 1)
             grid.attach(distbox, 0, 3, 4, 1)
             grid.attach(speedbox, 0, 4, 4, 1)
             grid.attach(sensors, 0, 5, 4, 1)
         else:
-            grid.attach(self.buttons['extrude'], 0, 2, 1, 1)
-            grid.attach(self.buttons['load'], 1, 2, 1, 1)
-            grid.attach(self.buttons['unload'], 2, 2, 1, 1)
+            grid.attach(self.buttons['load'], 0, 2, 1, 1)
+            grid.attach(self.buttons['unload'], 1, 2, 1, 1)
+            grid.attach(self.buttons['extrude'], 2, 2, 1, 1)
             grid.attach(self.buttons['retract'], 3, 2, 1, 1)
             grid.attach(distbox, 0, 3, 2, 1)
             grid.attach(speedbox, 2, 3, 2, 1)

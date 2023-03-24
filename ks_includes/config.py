@@ -223,8 +223,8 @@ class KlipperScreenConfig:
                     {"name": _("System") + " " + _("(default)"), "value": "system_lang"}]}},
             {"theme": {
                 "section": "main", "name": _("Icon Theme"), "type": "dropdown",
-                "value": "material-dark", "callback": screen.restart_ks, "options": [
-                    {"name": "material-dark" + " " + _("(default)"), "value": "material-dark"}]}},
+                "value": "material-darker", "callback": screen.restart_ks, "options": [
+                    {"name": "material-darker" + " " + _("(default)"), "value": "material-darker"}]}},
             {"print_estimate_method": {
                 "section": "main", "name": _("Estimated Time Method"), "type": "dropdown",
                 "value": "auto", "options": [
@@ -250,7 +250,7 @@ class KlipperScreenConfig:
                     {"name": _("Extra Large"), "value": "extralarge"},
                     {"name": _("Maximum"), "value": "max"}]}},
             {"confirm_estop": {"section": "main", "name": _("Confirm Emergency Stop"), "type": "binary",
-                               "value": "False"}},
+                               "value": "True"}},
             {"only_heaters": {"section": "main", "name": _("Hide sensors in Temp."), "type": "binary",
                               "value": "False", "callback": screen.reload_panels}},
             {"use_dpms": {"section": "main", "name": _("Screen DPMS"), "type": "binary",
@@ -282,7 +282,7 @@ class KlipperScreenConfig:
             lang_opt.append({"name": lang, "value": lang})
 
         t_path = os.path.join(klipperscreendir, 'styles')
-        themes = [d for d in os.listdir(t_path) if (not os.path.isfile(os.path.join(t_path, d)) and d != "material-dark")]
+        themes = [d for d in os.listdir(t_path) if (not os.path.isfile(os.path.join(t_path, d)) and d != "material-darker")]
         themes.sort()
         theme_opt = self.configurable_options[1]['theme']['options']
 

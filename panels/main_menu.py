@@ -200,7 +200,7 @@ class MainPanel(MenuPanel):
             self._screen.show_popup_message(_("Unknown Heater") + " " + self.active_heater)
         self._printer.set_dev_stat(self.active_heater, "target", temp)
 
-    def create_left_panel(self):
+    def  create_left_panel(self):
 
         self.labels['devices'] = Gtk.Grid()
         self.labels['devices'].get_style_context().add_class('heater-grid')
