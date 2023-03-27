@@ -66,7 +66,19 @@ class MacroPanel(ScreenPanel):
         #name.set_line_wrap(True)
         #name.set_line_wrap_mode(Pango.WrapMode.CHAR)
 
-        btn = self._gtk.Button("", _(f"{macro}"), "color4", self.bts, Gtk.PositionType.LEFT, 1)
+        # Basically replaces the Macro's name with something more visually pleasing
+        def goodLookingName(macro_name: str) -> str:
+            
+            macro_dict = {
+                'bad_looking_name': 'good_looking_name'
+            }
+
+            if macro_name in macro_dict:
+                return macro_dict[f'{macro_name}']
+            if macro_name not in macro_dict:
+                return macro_name
+
+        btn = self._gtk.Button("", _(f"{goodLookingName(macro)}"), "color4", self.bts, Gtk.PositionType.LEFT, 1)
         btn.connect("clicked", self.run_gcode_macro, macro)
         btn.set_hexpand(False)
         btn.set_hexpand(True)
