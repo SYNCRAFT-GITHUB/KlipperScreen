@@ -44,7 +44,7 @@ class MainPanel(MenuPanel):
             grid.attach(self.labels['menu'], 0, 1, 1, 1)
         else:
             self.labels['menu'] = self.arrangeMenuItems(items, 2, True)
-            grid.attach(self.labels['menu'], 1, 0, 1, 1)
+            grid.attach(self.labels['menu'], 1, 0, 1, 1) # This
         self.grid = grid
         self.content.add(self.grid)
 
@@ -102,7 +102,7 @@ class MainPanel(MenuPanel):
 
         if device.startswith("extruder"):
             i = sum(d.startswith('extruder') for d in self.devices)
-            image = f"extruder-{i}" if self._printer.extrudercount > 1 else "extruder"
+            image = f"extruder-{i+1}" if self._printer.extrudercount > 1 else "extruder"
             class_name = f"graph_label_{device}"
             dev_type = "extruder"
         elif device == "heater_bed":

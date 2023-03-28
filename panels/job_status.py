@@ -162,7 +162,7 @@ class JobStatusPanel(ScreenPanel):
         if self._printer.get_tools():
             for i, extruder in enumerate(self._printer.get_tools()):
                 self.labels[extruder] = Gtk.Label("-")
-                self.buttons['extruder'][extruder] = self._gtk.Button(f"extruder-{i}", "", None, self.bts,
+                self.buttons['extruder'][extruder] = self._gtk.Button(f"extruder-{i+1}", "", None, self.bts,
                                                                       Gtk.PositionType.LEFT, 1)
                 self.buttons['extruder'][extruder].set_label(self.labels[extruder].get_text())
                 self.buttons['extruder'][extruder].connect("clicked", self.menu_item_clicked, "temperature",

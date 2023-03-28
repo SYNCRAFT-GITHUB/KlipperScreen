@@ -57,28 +57,42 @@ class MacroPanel(ScreenPanel):
             return
 
         name = Gtk.Label()
-        # The commented lines refer to the macro name on the left side of the "Resume" button.
-        #name.set_markup(f"<big><b>{macro}</b></big>")
-        #name.set_hexpand(True)
-        #name.set_vexpand(True)
-        #name.set_halign(Gtk.Align.START)
-        #name.set_valign(Gtk.Align.CENTER)
-        #name.set_line_wrap(True)
-        #name.set_line_wrap_mode(Pango.WrapMode.CHAR)
 
-        # Basically replaces the Macro's name with something more visually pleasing
+        # Basically replaces the Macro's name with a more visually pleasing version
         def goodLookingName(macro_name: str) -> str:
             
             macro_dict = {
-                'bad_looking_name': 'good_looking_name'
+                'AUTO_FILAMENT_CHANGE':'Automatic Filament Change',
+                'CALIBRATE_NOZZLE_HEIGHT':'Calibrate the Nozzle Height',
+                'CALIBRATE_Z_ENDSTOP':'Calibrate the Z Endstop',
+                'CANCEL_GCODE':'Cancel GCode',
+                'CANCEL_PRINT':'Cancel Print',
+                'oct0':'Use Extruder \'T1\'',
+                'oct1':'Use Extruder \'T2\'',
+                'M500':'Save',
+                'LOAD_FILAMENT':'Load Available Filament',
+                'status_printing':'Current Print Status',
+                'update_leds':'Update Printer LED Lights',
+                'PURGE_NOZZLE':'Clean the Inside of the Nozzle',
+                'UNLOAD_FILAMENT':'Unload Loaded Filament',
+                'SET_PAUSE_AT_LAYER':'Set Pause on Current Layer',
+                'SET_PAUSE_NEXT_LAYER':'Set Pause on Next Layer',
+                'check_temp':'Check Current Temperature',
+                'prntstats':'Status of the Current Print',
+                'RESUME': 'Resume Printing',
+                'status_cooling':'Cooling Status',
+                'status_heating':'Heating Status',
+                'T0':'T1',
+                'T1':'T2'
             }
 
             if macro_name in macro_dict:
                 return macro_dict[f'{macro_name}']
             if macro_name not in macro_dict:
-                return macro_name
+                decent_name: str = (macro_name.replace("_", " ")).title()
+                return decent_name
 
-        btn = self._gtk.Button("", _(f"{goodLookingName(macro)}"), "color4", self.bts, Gtk.PositionType.LEFT, 1)
+        btn = self._gtk.Button("", _(f" {goodLookingName(macro)} "), "color4", self.bts, Gtk.PositionType.LEFT, 1)
         btn.connect("clicked", self.run_gcode_macro, macro)
         btn.set_hexpand(False)
         btn.set_hexpand(True)
