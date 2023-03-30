@@ -9,5 +9,10 @@ KlipperScreen is a touchscreen GUI that interfaces with [Klipper](https://github
 
 [Click here to access the documentation.](https://klipperscreen.readthedocs.io/en/latest/)
 
-### Connection
-If you intend to download it to compile or modify, check if the correct Printer IP and Port are set in "config.py".
+## Demonstration Images
+
+### Main Menu
+![pic-01-main-menu](https://user-images.githubusercontent.com/110249038/228939829-c90b2cd4-4a9f-4d9e-b8b2-55ef0f088f64.png)
+
+### Filament Tab
+![pic-02-filament](https://user-images.githubusercontent.com/110249038/228939936-dcc34e33-4cb0-4c59-a8ad-fdd35f926911.png)
