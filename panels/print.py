@@ -175,7 +175,7 @@ class PrintPanel(ScreenPanel):
         rename.set_hexpand(False)
 
         if filename:
-            action = self._gtk.Button("print", style="color3")
+            action = self._gtk.Button("resume", style="color3")
             action.connect("clicked", self.confirm_print, fullpath)
             info.set_markup(self.get_file_info_str(fullpath))
             icon = Gtk.Button()
