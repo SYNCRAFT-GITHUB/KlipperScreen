@@ -181,7 +181,7 @@ class ExtrudePanel(ScreenPanel):
         for x in self._printer.get_tools():
             self.update_temp(
                 x,
-                self._printer.get_dev_stat(x, "temperature"),
+                self._printer.get_dev_stat(x, "nothing"), # It should be "temperature"
                 self._printer.get_dev_stat(x, "target"),
                 self._printer.get_dev_stat(x, "power"),
                 lines=2,
