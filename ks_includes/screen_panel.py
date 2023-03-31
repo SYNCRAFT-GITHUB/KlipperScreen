@@ -18,7 +18,7 @@ class ScreenPanel:
         self.menu = None
         ScreenPanel._screen = screen
         ScreenPanel._config = screen._config
-        ScreenPanel._files = screen.filself._printer.get_dev_stat(x, "temperature"),es
+        ScreenPanel._files = screen.files
         ScreenPanel._printer = screen.printer
         ScreenPanel._gtk = screen.gtk
         self.labels = {}
