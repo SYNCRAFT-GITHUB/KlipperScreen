@@ -67,23 +67,22 @@ class MacroPanel(ScreenPanel):
                 'CALIBRATE_Z_ENDSTOP':'Calibrate the Z Endstop',
                 'CANCEL_GCODE':'Cancel GCode',
                 'CANCEL_PRINT':'Cancel Print',
-                'oct0':'Use Extruder \'T1\'',
-                'oct1':'Use Extruder \'T2\'',
+                'oct0':'Switch Active Feeder to F. 1',
+                'oct1':'Switch Active Feeder to F. 2',
                 'M500':'Save',
                 'LOAD_FILAMENT':'Load Available Filament',
                 'status_printing':'Current Print Status',
                 'update_leds':'Update Printer LED Lights',
-                'PURGE_NOZZLE':'Clean the Inside of the Nozzle',
-                'UNLOAD_FILAMENT':'Unload Loaded Filament',
+                'PURGE_NOZZLE':'Clean Inside the Nozzle',
                 'SET_PAUSE_AT_LAYER':'Set Pause on Current Layer',
                 'SET_PAUSE_NEXT_LAYER':'Set Pause on Next Layer',
                 'check_temp':'Check Current Temperature',
-                'prntstats':'Status of the Current Print',
+                'prntstats':'Current Print Status',
                 'RESUME': 'Resume Printing',
                 'status_cooling':'Cooling Status',
                 'status_heating':'Heating Status',
-                'T0':'T1',
-                'T1':'T2'
+                'T0':'Use Feeder 1',
+                'T1':'Use Feeder 2'
             }
 
             if macro_name in macro_dict:
