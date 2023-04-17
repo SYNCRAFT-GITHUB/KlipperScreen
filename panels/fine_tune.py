@@ -66,8 +66,8 @@ class FineTunePanel(ScreenPanel):
         grid = self._gtk.HomogeneousGrid()
         grid.set_row_homogeneous(False)
 
-        self.labels['z+'] = self._gtk.Button("z-farther", "Z+", "color1")
-        self.labels['z-'] = self._gtk.Button("z-closer", "Z-", "color1")
+        self.labels['z+'] = self._gtk.Button("exttable-far", "Z+", "color1")
+        self.labels['z-'] = self._gtk.Button("exttable-close", "Z-", "color1")
         self.labels['zoffset'] = self._gtk.Button("refresh", '  0.00' + _("mm"),
                                                   "color1", self.bts, Gtk.PositionType.LEFT, 1)
         self.labels['speed+'] = self._gtk.Button("speed+", _("Speed +"), "color3")
