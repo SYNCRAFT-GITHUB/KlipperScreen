@@ -194,7 +194,7 @@ class PrintPanel(ScreenPanel):
             action.connect("clicked", self.change_dir, fullpath)
             icon = self._gtk.Button("usb")
             icon.connect("clicked", self.change_dir, fullpath)
-        else:
+        if not filename and not is_usb(fullpath):
             action = self._gtk.Button("load", style="color3")
             action.connect("clicked", self.change_dir, fullpath)
             icon = self._gtk.Button("folder")
