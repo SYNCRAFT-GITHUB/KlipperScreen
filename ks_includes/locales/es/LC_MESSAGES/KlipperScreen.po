@@ -236,6 +236,9 @@ msgstr "Filamento usado:"
 msgid "Filament:"
 msgstr "Filamento:"
 
+msgid "Filament"
+msgstr "Filamento"
+
 msgid "File"
 msgstr "Archivo"
 

@@ -781,7 +781,7 @@ class JobStatusPanel(ScreenPanel):
         logging.debug(self.filename)
         if pixbuf is None:
             logging.debug("no pixbuf")
-            pixbuf = self._gtk.PixbufFromIcon("file", width / 2, height / 2)
+            pixbuf = self._gtk.PixbufFromIcon("3dcube", width / 2, height / 2)
         self.labels['thumbnail'].set_from_pixbuf(pixbuf)
 
     def update_filename(self):

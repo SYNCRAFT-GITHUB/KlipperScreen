@@ -237,6 +237,9 @@ msgstr "Zastosowane włókno:"
 msgid "Filament:"
 msgstr "Włókno:"
 
+msgid "Filament"
+msgstr "Włókno"
+
 msgid "File"
 msgstr "Plik"
 

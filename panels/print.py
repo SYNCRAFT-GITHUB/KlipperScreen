@@ -174,6 +174,12 @@ class PrintPanel(ScreenPanel):
         rename = self._gtk.Button("files", style="color2", scale=self.bts)
         rename.set_hexpand(False)
 
+        def is_usb(string):
+            if string[-3:] == "USB":
+                return True
+            else:
+                return False
+
         if filename:
             action = self._gtk.Button("resume", style="color3")
             action.connect("clicked", self.confirm_print, fullpath)
@@ -183,6 +189,11 @@ class PrintPanel(ScreenPanel):
             delete.connect("clicked", self.confirm_delete_file, f"gcodes/{fullpath}")
             rename.connect("clicked", self.show_rename, f"gcodes/{fullpath}")
             GLib.idle_add(self.image_load, fullpath)
+        if is_usb(fullpath):
+            action = self._gtk.Button("load", style="color3")
+            action.connect("clicked", self.change_dir, fullpath)
+            icon = self._gtk.Button("usb")
+            icon.connect("clicked", self.change_dir, fullpath)
         else:
             action = self._gtk.Button("load", style="color3")
             action.connect("clicked", self.change_dir, fullpath)
@@ -194,17 +205,18 @@ class PrintPanel(ScreenPanel):
         action.set_hexpand(False)
         action.set_halign(Gtk.Align.END)
 
-        delete.connect("clicked", self.confirm_delete_file, f"gcodes/{fullpath}")
-
         row = Gtk.Grid()
         row.get_style_context().add_class("frame-item")
         row.set_hexpand(True)
         row.set_vexpand(False)
         row.attach(icon, 0, 0, 1, 2)
-        row.attach(name, 1, 0, 3, 1)
-        row.attach(info, 1, 1, 1, 1)
-        row.attach(rename, 2, 1, 1, 1)
-        row.attach(delete, 3, 1, 1, 1)
+        if is_usb(fullpath):
+            row.attach(name, 1, 0, 3, 3)
+        if not is_usb(fullpath):
+            row.attach(name, 1, 0, 3, 1) 
+            row.attach(info, 1, 1, 1, 1)
+            row.attach(rename, 2, 1, 1, 1)
+            row.attach(delete, 3, 1, 1, 1)
 
         if not filename or (filename and os.path.splitext(filename)[1] in [".gcode", ".g", ".gco"]):
             row.attach(action, 4, 0, 1, 2)

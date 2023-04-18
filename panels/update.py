@@ -38,7 +38,7 @@ class SystemPanel(ScreenPanel):
         update_all = self._gtk.Button('arrow-up', _('Full Update'), 'color1')
         update_all.connect("clicked", self.show_update_info, "full")
         update_all.set_vexpand(False)
-        self.refresh = self._gtk.Button('refresh', _('Refresh'), 'color2')
+        self.refresh = self._gtk.Button('web-refresh', _('Refresh'), 'color2')
         self.refresh.connect("clicked", self.refresh_updates)
         self.refresh.set_vexpand(False)
 
