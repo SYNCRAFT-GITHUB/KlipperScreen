@@ -35,7 +35,7 @@ msgid "ADXL Not Configured"
 msgstr "ADXL não configurado"
 
 msgid "Abort"
-msgstr "Abortar"
+msgstr "Cancelar"
 
 msgid "Acceleration:"
 msgstr "Aceleração:"
@@ -249,10 +249,10 @@ msgid "Finding ADXL"
 msgstr "Encontrar ADXL"
 
 msgid "Fine Tuning"
-msgstr "Correção Fina"
+msgstr "Ajuste Fino"
 
 msgid "Finish"
-msgstr "Terminar"
+msgstr "Finalizar"
 
 msgid "Firmware Restart"
 msgstr "Reiniciar Firmware"
@@ -381,7 +381,7 @@ msgid "Load"
 msgstr "Carregar"
 
 msgid "Lower Nozzle"
-msgstr "Descer Bocal"
+msgstr "Descer o Bico"
 
 msgid "Macro shortcut on sidebar"
 msgstr "Macro na barra lateral"
@@ -393,7 +393,7 @@ msgid "Main Menu"
 msgstr "Menu principal"
 
 msgid "Max"
-msgstr "Máx"
+msgstr "Max"
 
 msgid "Max Acceleration"
 msgstr "Aceleração Máxima"
@@ -529,13 +529,13 @@ msgid "Profile Name:"
 msgstr "Nome do Perfil:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr ""
+msgstr "Forneça um Log do KlipperScreen ao pedir ajuda.\n"
 
 msgid "Quad Gantry Level"
 msgstr "Nível do pórtico quádruplo"
 
 msgid "Raise Nozzle"
-msgstr "Elevar o Bocal"
+msgstr "Elevar o Bico"
 
 msgid "Recover"
 msgstr "Recuperar"
@@ -550,7 +550,7 @@ msgid "Reference"
 msgstr "Referência"
 
 msgid "Refresh"
-msgstr "Atualizar"
+msgstr "Recarregar"
 
 msgid "Restart"
 msgstr "Reiniciar"
@@ -723,7 +723,7 @@ msgid "XY Speed (mm/s)"
 msgstr "Velocidade XY (mm/s)"
 
 msgid "Z Calibrate"
-msgstr "Calibrar Z"
+msgstr "Calibração Z"
 
 msgid "Z Move Speed (mm/s)"
 msgstr "Velocidade de Movimento Z (mm/s)"
