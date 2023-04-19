@@ -12,7 +12,16 @@ KlipperScreen is a touchscreen GUI that interfaces with [Klipper](https://github
 ## Demonstration Images
 
 ### Main Menu
-![pic-01-main-menu](https://user-images.githubusercontent.com/110249038/228939829-c90b2cd4-4a9f-4d9e-b8b2-55ef0f088f64.png)
+![pic-1-menu](https://user-images.githubusercontent.com/110249038/233156259-7c629342-cd49-4247-b94d-b288e3d3ac6b.png)
 
 ### Filament Tab
-![pic-02-filament](https://user-images.githubusercontent.com/110249038/228939936-dcc34e33-4cb0-4c59-a8ad-fdd35f926911.png)
+![pic-2-filament](https://user-images.githubusercontent.com/110249038/233156293-235da0f0-4e36-40b9-942c-5c4caa6efcc6.png)
+
+### Actions Tab
+![pic-3-actions](https://user-images.githubusercontent.com/110249038/233156359-2be2eb29-f940-4876-b4e4-37896bfc2b4c.png)
+
+### Print Tab
+![pic-4-printmenu](https://user-images.githubusercontent.com/110249038/233156419-5195d2eb-4a6d-4ea0-801b-d460c0ef33ce.png)
+
+### Job Status
+![pic-5-printing](https://user-images.githubusercontent.com/110249038/233156481-970c815e-dd82-435d-ae2a-20c6508dee17.png)
