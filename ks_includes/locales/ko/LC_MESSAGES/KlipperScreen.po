@@ -231,6 +231,12 @@ msgstr "사용된 필라멘트:"
 msgid "Filament:"
 msgstr "필라멘트:"
 
+msgid "Filament"
+msgstr "필라멘트"
+
+msgid "Feeder"
+msgstr "공급기"
+
 msgid "File"
 msgstr "파일"
 

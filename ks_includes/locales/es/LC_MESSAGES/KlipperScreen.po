@@ -239,6 +239,9 @@ msgstr "Filamento:"
 msgid "Filament"
 msgstr "Filamento"
 
+msgid "Feeder"
+msgstr "Alimentador"
+
 msgid "File"
 msgstr "Archivo"
 

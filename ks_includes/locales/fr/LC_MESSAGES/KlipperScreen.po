@@ -236,6 +236,12 @@ msgstr "Filament utilisé:"
 msgid "Filament:"
 msgstr "Filament:"
 
+msgid "Filament"
+msgstr "Filament"
+
+msgid "Feeder"
+msgstr "Mangeoire"
+
 msgid "File"
 msgstr "Fichier"
 

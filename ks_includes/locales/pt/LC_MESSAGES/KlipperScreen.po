@@ -26,10 +26,10 @@ msgid "(default)"
 msgstr "(padrão)"
 
 msgid "24 Hour Time"
-msgstr "24 Horas"
+msgstr "Relógio de 24 Horas"
 
 msgid "A FIRMWARE_RESTART may fix the issue."
-msgstr "Reinicie para corrigir."
+msgstr "Reiniciar pode corrigir o Problema."
 
 msgid "ADXL Not Configured"
 msgstr "ADXL não configurado"
@@ -112,7 +112,7 @@ msgid "Calibrating"
 msgstr "Calibrando"
 
 msgid "Can't set above the maximum:"
-msgstr "Não é possível definir o máximo:"
+msgstr "Não é possível definir o Máximo:"
 
 msgid "Cancel"
 msgstr "Cancelar"
@@ -151,7 +151,7 @@ msgid "Configuration"
 msgstr "Configuração"
 
 msgid "Confirm Emergency Stop"
-msgstr "Confirmar Parada de Emergência"
+msgstr "Etapa extra ao Parar com Emergência"
 
 msgid "Connected"
 msgstr "Conectado"
@@ -238,6 +238,9 @@ msgstr "Filamento:"
 
 msgid "Filament"
 msgstr "Filamento"
+
+msgid "Feeder"
+msgstr "Alimentador"
 
 msgid "File"
 msgstr "Arquivo"
@@ -484,7 +487,7 @@ msgid "Paused"
 msgstr "Pausado"
 
 msgid "Perform a full upgrade?"
-msgstr "Realizar uma atualização completa?"
+msgstr "Realizar uma Atualização Completa?"
 
 msgid "Pins"
 msgstr "Pinos"
@@ -657,7 +660,7 @@ msgid "Speed:"
 msgstr "Velocidade:"
 
 msgid "Square Corner Velocity"
-msgstr "Velocidade de canto quadrado"
+msgstr "Velocidade do Canto Reto"
 
 msgid "Start"
 msgstr "Iniciar"
@@ -702,7 +705,7 @@ msgid "Unretract Extra Length"
 msgstr ""
 
 msgid "Unretract Speed"
-msgstr ""
+msgstr "Velocidade Inversa de Retração"
 
 msgid "Up To Date"
 msgstr "Atualizado"

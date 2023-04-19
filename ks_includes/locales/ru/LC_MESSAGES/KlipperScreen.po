@@ -243,6 +243,9 @@ msgstr "Филамент:"
 msgid "Filament"
 msgstr "Филамент"
 
+msgid "Feeder"
+msgstr "Фидер"
+
 msgid "File"
 msgstr "Файл"
 

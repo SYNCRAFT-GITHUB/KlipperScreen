@@ -231,6 +231,12 @@ msgstr "フィラメント 使用済:"
 msgid "Filament:"
 msgstr "フィラメント:"
 
+msgid "Filament"
+msgstr "フィラメント"
+
+msgid "Feeder"
+msgstr "フィーダ"
+
 msgid "File"
 msgstr "ファイル"
 

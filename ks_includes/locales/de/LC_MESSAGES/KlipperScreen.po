@@ -236,6 +236,12 @@ msgstr "Filamentverbrauch:"
 msgid "Filament:"
 msgstr "Filament:"
 
+msgid "Filament"
+msgstr "Filament"
+
+msgid "Feeder"
+msgstr "Zubringer"
+
 msgid "File"
 msgstr "Datei"
 

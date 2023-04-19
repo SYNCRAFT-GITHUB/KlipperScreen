@@ -29,8 +29,8 @@ class MacroPanel(ScreenPanel):
 
         sbox = Gtk.Box()
         sbox.set_vexpand(False)
-        sbox.pack_start(self.sort_btn, True, True, 5)
-        sbox.pack_start(adjust, True, True, 5)
+        sbox.pack_start(self.sort_btn, True, True, 3)
+        # sbox.pack_start(adjust, True, True, 5)
 
         self.labels['macros_list'] = self._gtk.ScrolledWindow()
         self.labels['macros'] = Gtk.Grid()
