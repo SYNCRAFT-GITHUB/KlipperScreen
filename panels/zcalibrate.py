@@ -132,11 +132,8 @@ class ZCalibratePanel(ScreenPanel):
 
     def start_calibration(self, widget, method):
         self.labels['popover'].popdown()
-        if self._printer.get_stat("toolhead", "homed_axes") != "xyz":
-            self._screen._ws.klippy.gcode_script(KlippyGcodes.HOME)
 
         if method == "probe":
-            self._move_to_position()
             self._screen._ws.klippy.gcode_script(KlippyGcodes.PROBE_CALIBRATE)
         elif method == "mesh":
             self._screen._ws.klippy.gcode_script("BED_MESH_CALIBRATE")
