@@ -42,13 +42,6 @@ class SystemPanel(ScreenPanel):
         self.refresh.connect("clicked", self.refresh_updates)
         self.refresh.set_vexpand(False)
 
-        reboot = self._gtk.Button('refresh', _('Restart'), 'color3')
-        reboot.connect("clicked", self.reboot_poweroff, "reboot")
-        reboot.set_vexpand(False)
-        shutdown = self._gtk.Button('shutdown', _('Shutdown'), 'color4')
-        shutdown.connect("clicked", self.reboot_poweroff, "poweroff")
-        shutdown.set_vexpand(False)
-
         scroll = self._gtk.ScrolledWindow()
         scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
 
@@ -88,10 +81,8 @@ class SystemPanel(ScreenPanel):
         scroll.add(infogrid)
 
         grid.attach(scroll, 0, 0, 4, 2)
-        grid.attach(update_all, 0, 2, 1, 1)
-        grid.attach(self.refresh, 1, 2, 1, 1)
-        grid.attach(reboot, 2, 2, 1, 1)
-        grid.attach(shutdown, 3, 2, 1, 1)
+        grid.attach(update_all, 0, 2, 2, 1)
+        grid.attach(self.refresh, 2, 2, 2, 1)
         self.content.add(grid)
 
     def activate(self):

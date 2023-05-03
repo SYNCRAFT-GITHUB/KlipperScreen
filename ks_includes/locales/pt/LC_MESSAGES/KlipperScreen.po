@@ -94,7 +94,7 @@ msgid "Bed Level"
 msgstr "Nível da Mesa"
 
 msgid "Bed Mesh"
-msgstr "Nivelamento da Mesa"
+msgstr "Malha da Mesa"
 
 msgid "Bed screw configuration:"
 msgstr "Configuração da Porca de Mesa:"
@@ -678,10 +678,10 @@ msgid "System"
 msgstr "Sistema"
 
 msgid "System Restart"
-msgstr "Reinicialização do sistema"
+msgstr "Reiniciar Sistema"
 
 msgid "System Shutdown"
-msgstr "Desligamento do sistema"
+msgstr "Desligar Sistema"
 
 msgid "Temp (°C)"
 msgstr "Temp (°C)"

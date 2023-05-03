@@ -39,9 +39,14 @@ class OutputPinPanel(ScreenPanel):
 
     def add_pin(self, pin):
 
+        # Replaces the Pin's name with a more visually pleasing version
+        def goodLookingName(pin_name: str) -> str:
+
+            return (pin_name.replace("_", " ")).title()
+
         logging.info(f"Adding pin: {pin}")
         name = Gtk.Label()
-        name.set_markup(f'\n<big><b>{" ".join(pin.split(" ")[1:])}</b></big>\n')
+        name.set_markup(f'\n<big><b>{goodLookingName(" ".join(pin.split(" ")[1:]))}</b></big>\n') 
         name.set_hexpand(True)
         name.set_vexpand(True)
         name.set_halign(Gtk.Align.START)
@@ -57,7 +62,7 @@ class OutputPinPanel(ScreenPanel):
         scale.get_style_context().add_class("fan_slider")
         scale.connect("button-release-event", self.set_output_pin, pin)
 
-        min_btn = self._gtk.Button("cancel", None, "color1", 1)
+        min_btn = self._gtk.Button("back", None, "color1", 1)
         min_btn.set_hexpand(False)
         min_btn.connect("clicked", self.update_pin_value, pin, 0)
 
