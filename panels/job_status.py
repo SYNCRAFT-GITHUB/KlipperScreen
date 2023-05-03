@@ -480,6 +480,7 @@ class JobStatusPanel(ScreenPanel):
             logging.debug("Closing job_status panel")
             self._screen.printer_ready()
             self._printer.change_state("ready")
+            self._screen._ws.klippy.gcode_script("progress_bar_idle")
 
     def enable_button(self, *args):
         for arg in args:
