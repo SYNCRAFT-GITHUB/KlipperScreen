@@ -19,11 +19,11 @@ class SystemPanel(ScreenPanel):
         super().__init__(screen, title)
         image = self._gtk.Image("shutdown", self._gtk.content_width * .5, self._gtk.content_height * .5)
 
-        self.labels['restart'] = self._gtk.Button("console", _("Klipper Restart"), "color1")
+        self.labels['restart'] = self._gtk.Button("refresh", _("Klipper Restart"), "color1")
         self.labels['restart'].connect("clicked", self.restart)
-        self.labels['firmware_restart'] = self._gtk.Button("refresh", _("Firmware Restart"), "color2")
+        self.labels['firmware_restart'] = self._gtk.Button("console", _("Firmware Restart"), "color2")
         self.labels['firmware_restart'].connect("clicked", self.firmware_restart)
-        self.labels['restart_system'] = self._gtk.Button("refresh", _("System Restart"), "color1")
+        self.labels['restart_system'] = self._gtk.Button("print", _("System Restart"), "color1")
         self.labels['restart_system'].connect("clicked", self.restart_system)
 
         self.labels['actions'] = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
@@ -57,7 +57,7 @@ class SystemPanel(ScreenPanel):
                 logging.info(f"Associated power devices: {power_devices}")
                 self.add_power_button(power_devices)
 
-        self.labels['actions'].add(self.labels['restart'])
+        # self.labels['actions'].add(self.labels['restart'])
         self.labels['actions'].add(self.labels['firmware_restart'])
         self.labels['actions'].add(self.labels['restart_system'])
         self.labels['actions'].show_all()
