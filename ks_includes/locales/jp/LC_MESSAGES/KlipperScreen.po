@@ -732,6 +732,27 @@ msgstr ""
 msgid "Z offset:"
 msgstr ""
 
+msgid "Start Screw Adjust"
+msgstr "スタートスクリュー調整"
+
+msgid "Abort Screw Adjust"
+msgstr "ネジ調整を中止する"
+
+msgid "This screw is now Adjusted"
+msgstr "このネジは調整されました"
+
+msgid "This screw is already Adjusted"
+msgstr "このネジはすでに調整されています"
+
+msgid "Extras"
+msgstr "追加機能"
+
+msgid "Generic"
+msgstr "ジェネリック"
+
+msgid "Other"
+msgstr "他の"
+
 msgid "commit"
 msgid_plural "commits"
 msgstr[0] ""

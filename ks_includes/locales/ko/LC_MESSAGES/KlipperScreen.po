@@ -732,6 +732,27 @@ msgstr "Z 기울기"
 msgid "Z offset:"
 msgstr "Z 옵셋:"
 
+msgid "Start Screw Adjust"
+msgstr "나사 조정 시작"
+
+msgid "Abort Screw Adjust"
+msgstr "나사 조정 중단"
+
+msgid "This screw is now Adjusted"
+msgstr "이 나사는 이제 조정됨"
+
+msgid "This screw is already Adjusted"
+msgstr "이 나사는 이미 조정되었습니다."
+
+msgid "Extras"
+msgstr "추가 기능"
+
+msgid "Generic"
+msgstr "일반적인"
+
+msgid "Other"
+msgstr "다른"
+
 msgid "commit"
 msgid_plural "commits"
 msgstr[0] "커밋"

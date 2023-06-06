@@ -70,7 +70,7 @@ class ChMaterialPanel(ScreenPanel):
             '316L': self._gtk.Button(None, "316 L", "color1"),
             '174PH': self._gtk.Button(None, "17-4PH", "color1"),
             'ASA': self._gtk.Button(None, "ASA", "color1"),
-            'OTHER': self._gtk.Button(None, _("Auto"), "color3"),
+            'OTHER': self._gtk.Button(None, _("Generic"), "color3"),
             'PAGESWAP': self._gtk.Button("shuffle", None, "color4"),
         }
         self.buttons['PLA'].connect("clicked", self.materialgcodescript, "PLA")

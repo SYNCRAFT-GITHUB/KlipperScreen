@@ -59,7 +59,10 @@ class BedLevelPanel(ScreenPanel):
 
         if "screws_tilt_adjust" in self._printer.get_config_section_list():
             self.buttons['screws'] = self._gtk.Button("screw-adjust", _("Screws Adjust"), "color4")
-            self.buttons['screws'].connect("clicked", self.screws_tilt_calculate)
+            self.buttons['screws'].connect("clicked", self.menu_item_clicked, "screws_adjust", {
+            "name": _("Screws Adjust"),
+            "panel": "screws_adjust"
+        })
             grid.attach(self.buttons['screws'], 0, 1, 1, 1)
 
             self.screws = self._get_screws("screws_tilt_adjust")

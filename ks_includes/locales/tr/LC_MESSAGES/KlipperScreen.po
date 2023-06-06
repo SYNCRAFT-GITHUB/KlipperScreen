@@ -734,6 +734,27 @@ msgstr "Z Eğim"
 msgid "Z offset:"
 msgstr "Z ofset:"
 
+msgid "Start Screw Adjust"
+msgstr "Vida Ayarını Başlat"
+
+msgid "Abort Screw Adjust"
+msgstr "Vida Ayarını İptal Et"
+
+msgid "This screw is now Adjusted"
+msgstr "Bu vida şimdi Ayarlandı"
+
+msgid "This screw is already Adjusted"
+msgstr "Bu vida zaten Ayarlanmış"
+
+msgid "Extras"
+msgstr "Ek Fonksyonlar"
+
+msgid "Generic"
+msgstr "Genel"
+
+msgid "Other"
+msgstr "Diğer"
+
 msgid "commit"
 msgid_plural "commits"
 msgstr[0] "commit"

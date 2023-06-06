@@ -23,6 +23,7 @@ class KlippyGcodes:
     TESTZ = "TESTZ Z="
     ABORT = "ABORT"
     ACCEPT = "ACCEPT"
+    ADJUSTED = "ADJUSTED"
 
     @staticmethod
     def set_bed_temp(temp):

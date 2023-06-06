@@ -731,6 +731,27 @@ msgstr "Z 傾斜"
 msgid "Z offset:"
 msgstr ""
 
+msgid "Start Screw Adjust"
+msgstr "啟動螺絲調整"
+
+msgid "Abort Screw Adjust"
+msgstr "中止螺絲調整"
+
+msgid "This screw is now Adjusted"
+msgstr "該螺絲現已調整"
+
+msgid "This screw is already Adjusted"
+msgstr "這個螺絲已經調整好了"
+
+msgid "Extras"
+msgstr "附加功能"
+
+msgid "Generic"
+msgstr "通用的"
+
+msgid "Other"
+msgstr "其他"
+
 msgid "commit"
 msgid_plural "commits"
 msgstr[0] "改變"

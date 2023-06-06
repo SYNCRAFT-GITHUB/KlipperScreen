@@ -742,6 +742,27 @@ msgstr "Przechył Z"
 msgid "Z offset:"
 msgstr ""
 
+msgid "Start Screw Adjust"
+msgstr "Rozpocznij regulację śruby"
+
+msgid "Abort Screw Adjust"
+msgstr "Przerwij regulację śruby"
+
+msgid "This screw is now Adjusted"
+msgstr "Ta śruba jest teraz wyregulowana"
+
+msgid "This screw is already Adjusted"
+msgstr "Ta śruba jest już wyregulowana"
+
+msgid "Extras"
+msgstr "Dodatkowe Funkcje"
+
+msgid "Generic"
+msgstr "Ogólny"
+
+msgid "Other"
+msgstr "Inny"
+
 msgid "commit"
 msgid_plural "commits"
 msgstr[0] "zmiana"

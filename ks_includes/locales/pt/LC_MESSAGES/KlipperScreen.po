@@ -496,7 +496,7 @@ msgid "Please recompile and flash the micro-controller."
 msgstr "Por favor, recompile e atualize o microcontrolador."
 
 msgid "Power"
-msgstr "Ligar"
+msgstr "Energia"
 
 msgid "Power On Printer"
 msgstr "Ligar a impressora"
@@ -739,6 +739,27 @@ msgstr "Inclinação Z"
 
 msgid "Z offset:"
 msgstr "Deslocamento Z:"
+
+msgid "Start Screw Adjust"
+msgstr "Iniciar Nivelamento Manual"
+
+msgid "Abort Screw Adjust"
+msgstr "Cancelar Nivelamento Manual"
+
+msgid "This screw is now Adjusted"
+msgstr "O Parafuso foi Ajustado"
+
+msgid "This screw is already Adjusted"
+msgstr "Este parafuso já está Ajustado"
+
+msgid "Extras"
+msgstr "Extras"
+
+msgid "Generic"
+msgstr "Genérico"
+
+msgid "Other"
+msgstr "Outro"
 
 msgid "commit"
 msgid_plural "commits"

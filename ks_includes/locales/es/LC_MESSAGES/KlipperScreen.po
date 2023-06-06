@@ -740,6 +740,27 @@ msgstr "Inclinación Z"
 msgid "Z offset:"
 msgstr "Desfase Z:"
 
+msgid "Start Screw Adjust"
+msgstr "Ajuste de tornillo de inicio"
+
+msgid "Abort Screw Adjust"
+msgstr "Ajuste del tornillo de cancelación"
+
+msgid "This screw is now Adjusted"
+msgstr "Este tornillo ahora está ajustado"
+
+msgid "This screw is already Adjusted"
+msgstr "Este tornillo ya está ajustado"
+
+msgid "Extras"
+msgstr "Funciones Adicionales"
+
+msgid "Generic"
+msgstr "Genérico"
+
+msgid "Other"
+msgstr "Otro"
+
 msgid "commit"
 msgid_plural "commits"
 msgstr[0] "cambio"

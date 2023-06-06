@@ -729,6 +729,27 @@ msgstr "Z Tilt"
 msgid "Z offset:"
 msgstr "Spostamento Z:"
 
+msgid "Start Screw Adjust"
+msgstr "Avviare la regolazione della vite"
+
+msgid "Abort Screw Adjust"
+msgstr "Interrompi regolazione vite"
+
+msgid "This screw is now Adjusted"
+msgstr "Questa vite è ora regolata"
+
+msgid "This screw is already Adjusted"
+msgstr "Questa vite è già regolata"
+
+msgid "Extras"
+msgstr "Funzioni Aggiuntive"
+
+msgid "Generic"
+msgstr "Generico"
+
+msgid "Other"
+msgstr "Altro"
+
 msgid "commit"
 msgid_plural "commits"
 msgstr[0] "cambio"

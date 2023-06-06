@@ -735,6 +735,27 @@ msgstr "Z Tilt"
 msgid "Z offset:"
 msgstr "Z offset:"
 
+msgid "Start Screw Adjust"
+msgstr "Spusťte seřízení šroubu"
+
+msgid "Abort Screw Adjust"
+msgstr "Přerušit seřízení šroubu"
+
+msgid "This screw is now Adjusted"
+msgstr "Tento šroub je nyní seřízen"
+
+msgid "This screw is already Adjusted"
+msgstr "Tento šroub je již seřízen"
+
+msgid "Extras"
+msgstr "Další"
+
+msgid "Generic"
+msgstr "Obecný"
+
+msgid "Other"
+msgstr "jiný"
+
 msgid "commit"
 msgid_plural "commits"
 msgstr[0] ""

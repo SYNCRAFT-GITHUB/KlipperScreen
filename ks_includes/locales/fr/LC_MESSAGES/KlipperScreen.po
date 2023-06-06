@@ -740,6 +740,27 @@ msgstr "Z Tilt"
 msgid "Z offset:"
 msgstr "Décalage Z:"
 
+msgid "Start Screw Adjust"
+msgstr "Réglage de la vis de démarrage"
+
+msgid "Abort Screw Adjust"
+msgstr "Abandonner le réglage de la vis"
+
+msgid "This screw is now Adjusted"
+msgstr "Cette vis est maintenant ajustée"
+
+msgid "This screw is already Adjusted"
+msgstr "Cette vis est déjà ajustée"
+
+msgid "Extras"
+msgstr "Fonctions Supplémentaires"
+
+msgid "Generic"
+msgstr "Générique"
+
+msgid "Other"
+msgstr "Autre"
+
 msgid "commit"
 msgid_plural "commits"
 msgstr[0] "changement"

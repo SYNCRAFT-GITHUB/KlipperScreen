@@ -732,6 +732,27 @@ msgstr ""
 msgid "Z offset:"
 msgstr ""
 
+msgid "Start Screw Adjust"
+msgstr "Starta Skruvjustering"
+
+msgid "Abort Screw Adjust"
+msgstr "Avbryt skruvjustering"
+
+msgid "This screw is now Adjusted"
+msgstr "Denna skruv är nu justerad"
+
+msgid "This screw is already Adjusted"
+msgstr "Denna skruv är redan justerad"
+
+msgid "Extras"
+msgstr "Ytterligare Funktioner"
+
+msgid "Generic"
+msgstr "Generisk"
+
+msgid "Other"
+msgstr "Övrig"
+
 msgid "commit"
 msgid_plural "commits"
 msgstr[0] ""

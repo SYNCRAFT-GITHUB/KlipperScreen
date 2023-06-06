@@ -736,6 +736,27 @@ msgstr "הטיה Z"
 msgid "Z offset:"
 msgstr "Z אוף-סט"
 
+msgid "Start Screw Adjust"
+msgstr "התחל כוונון בורג"
+
+msgid "Abort Screw Adjust"
+msgstr "בטל את התאמת הבורג"
+
+msgid "This screw is now Adjusted"
+msgstr "בורג זה מותאם כעת"
+
+msgid "This screw is already Adjusted"
+msgstr "הבורג הזה כבר מותאם"
+
+msgid "Extras"
+msgstr "פונקציות נוספות"
+
+msgid "Generic"
+msgstr "גנרית"
+
+msgid "Other"
+msgstr "אַחֵר"
+
 msgid "commit"
 msgid_plural "commits"
 msgstr[0] "שינוי"

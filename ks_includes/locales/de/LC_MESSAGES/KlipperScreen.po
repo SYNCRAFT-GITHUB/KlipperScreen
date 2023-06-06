@@ -742,6 +742,27 @@ msgstr "Z-Achse ausrichten"
 msgid "Z offset:"
 msgstr "Z Offset:"
 
+msgid "Start Screw Adjust"
+msgstr "Beginnen Sie mit der Schraubeneinstellung"
+
+msgid "Abort Screw Adjust"
+msgstr "Schraubeneinstellung abbrechen"
+
+msgid "This screw is now Adjusted"
+msgstr "Diese Schraube ist nun angepasst"
+
+msgid "This screw is already Adjusted"
+msgstr "Diese Schraube ist bereits eingestellt"
+
+msgid "Extras"
+msgstr "Zusätzliche Funktionen"
+
+msgid "Generic"
+msgstr "Generisch"
+
+msgid "Other"
+msgstr "Andere"
+
 msgid "commit"
 msgid_plural "commits"
 msgstr[0] "Änderung"
