@@ -605,7 +605,7 @@ msgid "Screen Power Off Time"
 msgstr "Tempo de desligamento da tela"
 
 msgid "Screws Adjust"
-msgstr "Nivelamento Manual"
+msgstr "Niv. Manual"
 
 msgid "Select"
 msgstr "Selecionar"
