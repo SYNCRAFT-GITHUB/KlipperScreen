@@ -35,6 +35,7 @@ class KlipperScreenConfig:
     def __init__(self, configfile, screen=None):
         self.lang_list = None
         self.errors = []
+        self.fix_option: str = "NONE" # NONE, FILES, CAMERA, LIGHT, KLIPPER
         self.default_config_path = os.path.join(klipperscreendir, "ks_includes", "defaults.conf")
         self.config = configparser.ConfigParser()
         self.config_path = self.get_config_file_location(configfile)
@@ -371,6 +372,12 @@ class KlipperScreenConfig:
                 elif line.startswith(self.do_not_edit_prefix):
                     saved_def.append(line[(len(self.do_not_edit_prefix) + 1):])
         return ["\n".join(user_def), None if saved_def is None else "\n".join(saved_def)]
+
+    def get_fix_option (self) -> str:
+        return self.fix_option
+
+    def replace_fix_option (self, newvalue) -> str:
+        self.fix_option = newvalue
 
     def get_config_file_location(self, file):
         # Passed config (-c) by default is ~/KlipperScreen.conf

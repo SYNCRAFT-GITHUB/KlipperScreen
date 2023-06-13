@@ -73,6 +73,78 @@ msgstr "Biztos, hogy újra akarod indítani a rendszert?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Biztos, hogy le szeretnéd állítani a rendszert?"
 
+msgid "Update via Internet"
+msgstr "Frissítés interneten keresztül"
+
+msgid "Update via USB"
+msgstr "Frissítés USB-n keresztül"
+
+msgid "Update or fix system via USB"
+msgstr "Frissítse vagy javítsa a rendszert USB-n keresztül"
+
+msgid "Fix"
+msgstr "Fix"
+
+msgid "Quick System Fixes"
+msgstr "Gyors rendszerjavítások"
+
+msgid "Repair"
+msgstr "Javítás"
+
+msgid "Agree"
+msgstr "Egyetért"
+
+msgid "I agree, continue"
+msgstr "Egyetértek, folytasd"
+
+msgid "Fix Software Problems"
+msgstr "Szoftverproblémák javítása"
+
+msgid "Camera Driver"
+msgstr "Kamera illesztőprogram"
+
+msgid "LED Light Driver"
+msgstr "LED fény meghajtó"
+
+msgid "Essential Files"
+msgstr "Alapvető fájlok"
+
+msgid "Moonraker"
+msgstr "Moonraker"
+
+msgid "Mainsail"
+msgstr "Mainsail"
+
+msgid "Web Interface"
+msgstr "Webes felület"
+
+msgid "System Firmware"
+msgstr "Rendszer firmware"
+
+msgid "Syncraft Team is not responsible for the misuse of the machine, please follow the procedures correctly."
+msgstr "A Syncraft Team nem vállal felelősséget a gép nem rendeltetésszerű használatáért, kérjük, kövesse megfelelően az eljárást."
+
+msgid "Please follow the tutorial to ensure everything performs correctly."
+msgstr "Kérjük, kövesse az oktatóanyagot, hogy minden megfelelően működjön."
+
+msgid "Plug a USB into your computer, and make sure to format it in a universal file system, such as exFAT. Avoid Microsoft's NTFS, or Apple's APFS."
+msgstr "Csatlakoztasson USB-t a számítógéphez, és formázza meg univerzális fájlrendszerben, például exFAT-ban."
+
+msgid "Make sure the directory is in the root of the USB, with the name SYNCRAFT."
+msgstr "Győződjön meg arról, hogy a könyvtár az USB gyökerében van, SYNCRAFT néven."
+
+msgid "Do not turn off Syncraft during the procedure, and beware of power outages."
+msgstr "Az eljárás során ne kapcsolja ki a gépet, és ügyeljen az áramkimaradásokra."
+
+msgid "Do not turn off Syncraft during the procedure, and keep a stable internet connection."
+msgstr "Az eljárás során ne kapcsolja ki a gépet, és legyen stabil internetkapcsolat."
+
+msgid "Interrupting this procedure can result in problems for the internal system."
+msgstr "Az eljárás megszakítása problémákat okozhat a belső rendszerben."
+
+msgid "At the end, Syncraft will restart."
+msgstr "A végén a gép újraindul."
+
 msgid "Auto"
 msgstr "Auto"
 

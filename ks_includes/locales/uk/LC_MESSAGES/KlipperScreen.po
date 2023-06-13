@@ -79,6 +79,78 @@ msgstr "Ви впевнені, що хочете перезавантажити 
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Ви впевнені, що хочете вимкнути систему?"
 
+msgid "Update via Internet"
+msgstr "Оновлення через Інтернет"
+
+msgid "Update via USB"
+msgstr "Оновлення через USB"
+
+msgid "Update or fix system via USB"
+msgstr "Оновіть або виправте систему через USB"
+
+msgid "Fix"
+msgstr "Виправити"
+
+msgid "Quick System Fixes"
+msgstr "Швидкі виправлення системи"
+
+msgid "Repair"
+msgstr "Ремонт"
+
+msgid "Agree"
+msgstr "Погодьтеся"
+
+msgid "I agree, continue"
+msgstr "Згоден, продовжуй"
+
+msgid "Fix Software Problems"
+msgstr "Виправити проблеми з програмним забезпеченням"
+
+msgid "Camera Driver"
+msgstr "Драйвер камери"
+
+msgid "LED Light Driver"
+msgstr "Драйвер світлодіодного освітлення"
+
+msgid "Essential Files"
+msgstr "Основні файли"
+
+msgid "Moonraker"
+msgstr "Moonraker"
+
+msgid "Mainsail"
+msgstr "Mainsail"
+
+msgid "Web Interface"
+msgstr "Веб-інтерфейс"
+
+msgid "System Firmware"
+msgstr "Прошивка системи"
+
+msgid "Syncraft Team is not responsible for the misuse of the machine, please follow the procedures correctly."
+msgstr "Команда Syncraft не несе відповідальності за неправильне використання машини, будь ласка, правильно дотримуйтесь процедур."
+
+msgid "Please follow the tutorial to ensure everything performs correctly."
+msgstr "Дотримуйтеся посібника, щоб переконатися, що все працює правильно."
+
+msgid "Plug a USB into your computer, and make sure to format it in a universal file system, such as exFAT. Avoid Microsoft's NTFS, or Apple's APFS."
+msgstr "Підключіть USB-накопичувач до комп’ютера та обов’язково відформатуйте його в універсальній файловій системі, наприклад exFAT."
+
+msgid "Make sure the directory is in the root of the USB, with the name SYNCRAFT."
+msgstr "Переконайтеся, що каталог знаходиться в корені USB з назвою SYNCRAFT."
+
+msgid "Do not turn off Syncraft during the procedure, and beware of power outages."
+msgstr "Не вимикайте машину під час процедури та остерігайтеся відключень електроенергії."
+
+msgid "Do not turn off Syncraft during the procedure, and keep a stable internet connection."
+msgstr "Не вимикайте машину під час процедури та підтримуйте стабільне підключення до Інтернету."
+
+msgid "Interrupting this procedure can result in problems for the internal system."
+msgstr "Переривання цієї процедури може призвести до проблем із внутрішньою системою."
+
+msgid "At the end, Syncraft will restart."
+msgstr "Наприкінці машина перезапуститься."
+
 msgid "Auto"
 msgstr "Автоматично"
 

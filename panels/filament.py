@@ -46,7 +46,7 @@ class ExtrudePanel(ScreenPanel):
             'retract': self._gtk.Button("retract", _("Retract"), "color1"),
             'temperature': self._gtk.Button("heat-up", _("Temperature"), "color4"),
         }
-        self.buttons['load'].connect("clicked", self.menu_item_clicked, "material_", {
+        self.buttons['load'].connect("clicked", self.menu_item_clicked, "material", {
             "name": _("Filament Used"),
             "panel": "material"
         })

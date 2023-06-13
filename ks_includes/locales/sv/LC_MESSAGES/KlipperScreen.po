@@ -78,6 +78,78 @@ msgstr "Är du säker på att du vill starta om systemet?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Är du säker på att du vill stänga av systemet?"
 
+msgid "Update via Internet"
+msgstr "Uppdatera via Internet"
+
+msgid "Update via USB"
+msgstr "Uppdatera via USB"
+
+msgid "Update or fix system via USB"
+msgstr "Uppdatera eller fixa systemet via USB"
+
+msgid "Fix"
+msgstr "Fixera"
+
+msgid "Quick System Fixes"
+msgstr "Snabba systemfixar"
+
+msgid "Repair"
+msgstr "Reparera"
+
+msgid "Agree"
+msgstr "Hålla med"
+
+msgid "I agree, continue"
+msgstr "Jag håller med, fortsätt"
+
+msgid "Fix Software Problems"
+msgstr "Fixa programvaruproblem"
+
+msgid "Camera Driver"
+msgstr "Kamera drivrutin"
+
+msgid "LED Light Driver"
+msgstr "LED-ljusdrivrutin"
+
+msgid "Essential Files"
+msgstr "Viktiga filer"
+
+msgid "Moonraker"
+msgstr "Moonraker"
+
+msgid "Mainsail"
+msgstr "Mainsail"
+
+msgid "Web Interface"
+msgstr "Webbgränssnitt"
+
+msgid "System Firmware"
+msgstr "Systemets firmware"
+
+msgid "Syncraft Team is not responsible for the misuse of the machine, please follow the procedures correctly."
+msgstr "Syncraft Team ansvarar inte för felaktig användning av maskinen, följ procedurerna korrekt."
+
+msgid "Please follow the tutorial to ensure everything performs correctly."
+msgstr "Följ handledningen för att säkerställa att allt fungerar korrekt."
+
+msgid "Plug a USB into your computer, and make sure to format it in a universal file system, such as exFAT. Avoid Microsoft's NTFS, or Apple's APFS."
+msgstr "Anslut en USB till din dator och se till att formatera den i ett universellt filsystem, som exFAT."
+
+msgid "Make sure the directory is in the root of the USB, with the name SYNCRAFT."
+msgstr "Se till att katalogen finns i roten på USB-enheten, med namnet SYNCRAFT."
+
+msgid "Do not turn off Syncraft during the procedure, and beware of power outages."
+msgstr "Stäng inte av maskinen under proceduren och akta dig för strömavbrott."
+
+msgid "Do not turn off Syncraft during the procedure, and keep a stable internet connection."
+msgstr "Stäng inte av maskinen under proceduren och ha en stabil internetanslutning."
+
+msgid "Interrupting this procedure can result in problems for the internal system."
+msgstr "Att avbryta denna procedur kan resultera i problem för det interna systemet."
+
+msgid "At the end, Syncraft will restart."
+msgstr "I slutet kommer maskinen att starta om."
+
 msgid "Auto"
 msgstr "Automatisk"
 

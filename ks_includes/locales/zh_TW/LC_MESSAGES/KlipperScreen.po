@@ -78,6 +78,78 @@ msgstr "您確定要重新啟動系統嗎?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "您確定要關閉系統嗎?"
 
+msgid "Update via Internet"
+msgstr "通過互聯網更新"
+
+msgid "Update via USB"
+msgstr "通過 USB 更新"
+
+msgid "Update or fix system via USB"
+msgstr "通過 USB 更新或修復系統"
+
+msgid "Fix"
+msgstr "使固定"
+
+msgid "Quick System Fixes"
+msgstr "快速系統修復"
+
+msgid "Repair"
+msgstr "維修"
+
+msgid "Agree"
+msgstr "同意"
+
+msgid "I agree, continue"
+msgstr "同意，繼續"
+
+msgid "Fix Software Problems"
+msgstr "修復軟件問題"
+
+msgid "Camera Driver"
+msgstr "攝像頭驅動"
+
+msgid "LED Light Driver"
+msgstr "LED燈驅動器"
+
+msgid "Essential Files"
+msgstr "基本文件"
+
+msgid "Moonraker"
+msgstr "Moonraker"
+
+msgid "Mainsail"
+msgstr "Mainsail"
+
+msgid "Web Interface"
+msgstr "網絡界面"
+
+msgid "System Firmware"
+msgstr "系統固件"
+
+msgid "Syncraft Team is not responsible for the misuse of the machine, please follow the procedures correctly."
+msgstr "Syncraft Team 不對機器的誤用負責，請正確按照程序操作。"
+
+msgid "Please follow the tutorial to ensure everything performs correctly."
+msgstr "請按照教程進行操作，以確保一切正常執行。"
+
+msgid "Plug a USB into your computer, and make sure to format it in a universal file system, such as exFAT. Avoid Microsoft's NTFS, or Apple's APFS."
+msgstr "將 USB 插入您的計算機，並確保將其格式化為通用文件系統，例如 exFAT。"
+
+msgid "Make sure the directory is in the root of the USB, with the name SYNCRAFT."
+msgstr "確保該目錄位於 USB 的根目錄中，名稱為 SYNCRAFT。"
+
+msgid "Do not turn off Syncraft during the procedure, and beware of power outages."
+msgstr "過程中不要關閉機器，並註意停電。"
+
+msgid "Do not turn off Syncraft during the procedure, and keep a stable internet connection."
+msgstr "過程中不要關閉機器，並保持穩定的網絡連接。"
+
+msgid "Interrupting this procedure can result in problems for the internal system."
+msgstr "中斷此過程可能會導致內部系統出現問題。"
+
+msgid "At the end, Syncraft will restart."
+msgstr "最後，機器將重新啟動。"
+
 msgid "Auto"
 msgstr "汽車"
 

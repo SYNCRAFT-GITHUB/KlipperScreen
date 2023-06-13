@@ -78,6 +78,78 @@ msgstr "Sistemi yeniden başlatmak istediğinizden emin misiniz?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Sistemi kapatmak istediğinizden emin misiniz?"
 
+msgid "Update via Internet"
+msgstr "İnternet üzerinden güncelleme"
+
+msgid "Update via USB"
+msgstr "USB üzerinden güncelleme"
+
+msgid "Update or fix system via USB"
+msgstr "Sistemi USB aracılığıyla güncelleyin veya düzeltin"
+
+msgid "Fix"
+msgstr "Düzeltmek"
+
+msgid "Quick System Fixes"
+msgstr "Hızlı Sistem Düzeltmeleri"
+
+msgid "Repair"
+msgstr "Tamirat"
+
+msgid "Agree"
+msgstr "Kabul etmek"
+
+msgid "I agree, continue"
+msgstr "Kabul Ediyorum - Devam"
+
+msgid "Fix Software Problems"
+msgstr "Yazılım Sorunlarını Düzeltin"
+
+msgid "Camera Driver"
+msgstr "Kamera Sürücüsü"
+
+msgid "LED Light Driver"
+msgstr "LED Işık Sürücüsü"
+
+msgid "Essential Files"
+msgstr "Temel Dosyalar"
+
+msgid "Moonraker"
+msgstr "Moonraker"
+
+msgid "Mainsail"
+msgstr "Mainsail"
+
+msgid "Web Interface"
+msgstr "Web Arayüzü"
+
+msgid "System Firmware"
+msgstr "Sistem Bellenimi"
+
+msgid "Syncraft Team is not responsible for the misuse of the machine, please follow the procedures correctly."
+msgstr "Syncraft Team, makinenin yanlış kullanımından sorumlu değildir, lütfen prosedürleri doğru bir şekilde takip edin."
+
+msgid "Please follow the tutorial to ensure everything performs correctly."
+msgstr "Her şeyin doğru şekilde çalıştığından emin olmak için lütfen öğreticiyi takip edin."
+
+msgid "Plug a USB into your computer, and make sure to format it in a universal file system, such as exFAT. Avoid Microsoft's NTFS, or Apple's APFS."
+msgstr "Bilgisayarınıza bir USB takın ve onu exFAT gibi evrensel bir dosya sisteminde biçimlendirdiğinizden emin olun."
+
+msgid "Make sure the directory is in the root of the USB, with the name SYNCRAFT."
+msgstr "Dizinin USB'nin kök dizininde, SYNCRAFT adıyla olduğundan emin olun."
+
+msgid "Do not turn off Syncraft during the procedure, and beware of power outages."
+msgstr "İşlem sırasında makineyi kapatmayın ve elektrik kesintilerine dikkat edin."
+
+msgid "Do not turn off Syncraft during the procedure, and keep a stable internet connection."
+msgstr "İşlem sırasında makineyi kapatmayın ve sabit bir internet bağlantısı sağlayın."
+
+msgid "Interrupting this procedure can result in problems for the internal system."
+msgstr "Bu prosedürün kesintiye uğraması dahili sistemde sorunlara neden olabilir."
+
+msgid "At the end, Syncraft will restart."
+msgstr "Sonunda, makine yeniden başlatılacaktır."
+
 msgid "Auto"
 msgstr "Otomatik"
 

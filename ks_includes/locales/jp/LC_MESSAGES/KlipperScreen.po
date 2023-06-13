@@ -73,6 +73,78 @@ msgstr "システムを再起動しますか？"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "システムをシャットダウンしますか？"
 
+msgid "Update via Internet"
+msgstr "インターネット経由でアップデートする"
+
+msgid "Update via USB"
+msgstr "USB経由でアップデートする"
+
+msgid "Update or fix system via USB"
+msgstr "USB経由でシステムをアップデートまたは修正する"
+
+msgid "Fix"
+msgstr "修理"
+
+msgid "Quick System Fixes"
+msgstr "クイックシステム修正"
+
+msgid "Repair"
+msgstr "修理"
+
+msgid "Agree"
+msgstr "同意"
+
+msgid "I agree, continue"
+msgstr "同意します、続行します"
+
+msgid "Fix Software Problems"
+msgstr "ソフトウェアの問題を修正する"
+
+msgid "Camera Driver"
+msgstr "カメラドライバー"
+
+msgid "LED Light Driver"
+msgstr "LEDライトドライバー"
+
+msgid "Essential Files"
+msgstr "必須ファイル"
+
+msgid "Moonraker"
+msgstr "Moonraker"
+
+msgid "Mainsail"
+msgstr "Mainsail"
+
+msgid "Web Interface"
+msgstr "ウェブインターフェース"
+
+msgid "System Firmware"
+msgstr "システムファームウェア"
+
+msgid "Syncraft Team is not responsible for the misuse of the machine, please follow the procedures correctly."
+msgstr "Syncraft Team はマシンの誤用に対して責任を負いません。手順を正しく守ってください。"
+
+msgid "Please follow the tutorial to ensure everything performs correctly."
+msgstr "すべてが正しく実行されることを確認するには、チュートリアルに従ってください。"
+
+msgid "Plug a USB into your computer, and make sure to format it in a universal file system, such as exFAT. Avoid Microsoft's NTFS, or Apple's APFS."
+msgstr "USB をコンピュータに接続し、必ず exFAT などのユニバーサル ファイル システムでフォーマットしてください。"
+
+msgid "Make sure the directory is in the root of the USB, with the name SYNCRAFT."
+msgstr "ディレクトリが USB のルートにあり、SYNCRAFT という名前であることを確認します。"
+
+msgid "Do not turn off Syncraft during the procedure, and beware of power outages."
+msgstr "手順中はマシンの電源を切らず、停電に注意してください。"
+
+msgid "Do not turn off Syncraft during the procedure, and keep a stable internet connection."
+msgstr "手順中はマシンの電源を切らず、安定したインターネット接続を維持してください。"
+
+msgid "Interrupting this procedure can result in problems for the internal system."
+msgstr "この手順を中断すると、内部システムに問題が発生する可能性があります。"
+
+msgid "At the end, Syncraft will restart."
+msgstr "最後に、マシンが再起動されます。"
+
 msgid "Auto"
 msgstr "自動"
 

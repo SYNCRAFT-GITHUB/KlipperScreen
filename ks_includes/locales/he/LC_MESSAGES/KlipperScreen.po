@@ -80,6 +80,78 @@ msgstr "האם אתה בטוח שברצונך לאתחל את המערכת?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "האם אתה בטוח שברצונך לכבות את המערכת?"
 
+msgid "Update via Internet"
+msgstr "עדכון דרך האינטרנט"
+
+msgid "Update via USB"
+msgstr "עדכון באמצעות USB"
+
+msgid "Update or fix system via USB"
+msgstr "עדכן או תקן מערכת באמצעות USB"
+
+msgid "Fix"
+msgstr "לתקן"
+
+msgid "Quick System Fixes"
+msgstr "תיקוני מערכת מהירים"
+
+msgid "Repair"
+msgstr "לְתַקֵן"
+
+msgid "Agree"
+msgstr "לְהַסכִּים"
+
+msgid "I agree, continue"
+msgstr "אני מסכים תמשיך"
+
+msgid "Fix Software Problems"
+msgstr "תקן בעיות תוכנה"
+
+msgid "Camera Driver"
+msgstr "מנהל המצלמה"
+
+msgid "LED Light Driver"
+msgstr "נהג אור LED"
+
+msgid "Essential Files"
+msgstr "קבצים חיוניים"
+
+msgid "Moonraker"
+msgstr "Moonraker"
+
+msgid "Mainsail"
+msgstr "Mainsail"
+
+msgid "Web Interface"
+msgstr "ממשק אינטרנט"
+
+msgid "System Firmware"
+msgstr "קושחת מערכת"
+
+msgid "Syncraft Team is not responsible for the misuse of the machine, please follow the procedures correctly."
+msgstr "צוות סינקראפט אינו אחראי לשימוש לרעה במכונה."
+
+msgid "Please follow the tutorial to ensure everything performs correctly."
+msgstr "אנא עקוב אחר המדריך כדי לוודא שהכל פועל כהלכה."
+
+msgid "Plug a USB into your computer, and make sure to format it in a universal file system, such as exFAT. Avoid Microsoft's NTFS, or Apple's APFS."
+msgstr "חבר USB למחשב שלך, ופורמט אותו במערכת קבצים אוניברסלית."
+
+msgid "Make sure the directory is in the root of the USB, with the name SYNCRAFT."
+msgstr "המדריך חייב להיות נמצא בשורש ה-USB, עם השם SYNCRAFT."
+
+msgid "Do not turn off Syncraft during the procedure, and beware of power outages."
+msgstr "אל תכבה את המכונה במהלך ההליך, והיזהר מהפסקות חשמל."
+
+msgid "Do not turn off Syncraft during the procedure, and keep a stable internet connection."
+msgstr "אין לכבות את המכשיר במהלך ההליך, ולשמור על חיבור אינטרנט יציב."
+
+msgid "Interrupting this procedure can result in problems for the internal system."
+msgstr "הפסקת הליך זה עלולה לגרום לבעיות במערכת הפנימית."
+
+msgid "At the end, Syncraft will restart."
+msgstr "בסוף המכשיר יופעל מחדש."
+
 msgid "Auto"
 msgstr "אוטומטי"
 

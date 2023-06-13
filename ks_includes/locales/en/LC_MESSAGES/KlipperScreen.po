@@ -73,6 +73,78 @@ msgstr ""
 msgid "Are you sure you wish to shutdown the system?"
 msgstr ""
 
+msgid "Update via Internet"
+msgstr ""
+
+msgid "Update via USB"
+msgstr ""
+
+msgid "Update or fix system via USB"
+msgstr ""
+
+msgid "Fix"
+msgstr ""
+
+msgid "Quick System Fixes"
+msgstr ""
+
+msgid "Repair"
+msgstr ""
+
+msgid "Agree"
+msgstr ""
+
+msgid "I agree, continue"
+msgstr ""
+
+msgid "Fix Software Problems"
+msgstr ""
+
+msgid "Camera Driver"
+msgstr ""
+
+msgid "LED Light Driver"
+msgstr ""
+
+msgid "Essential Files"
+msgstr ""
+
+msgid "Moonraker"
+msgstr ""
+
+msgid "Mainsail"
+msgstr ""
+
+msgid "Web Interface"
+msgstr ""
+
+msgid "System Firmware"
+msgstr ""
+
+msgid "Syncraft Team is not responsible for the misuse of the machine, please follow the procedures correctly."
+msgstr ""
+
+msgid "Please follow the tutorial to ensure everything performs correctly."
+msgstr ""
+
+msgid "Plug a USB into your computer, and make sure to format it in a universal file system, such as exFAT. Avoid Microsoft's NTFS, or Apple's APFS."
+msgstr ""
+
+msgid "Make sure the directory is in the root of the USB, with the name SYNCRAFT."
+msgstr ""
+
+msgid "Do not turn off Syncraft during the procedure, and beware of power outages."
+msgstr ""
+
+msgid "Do not turn off Syncraft during the procedure, and keep a stable internet connection."
+msgstr ""
+
+msgid "Interrupting this procedure can result in problems for the internal system."
+msgstr ""
+
+msgid "At the end, Syncraft will restart."
+msgstr ""
+
 msgid "Auto"
 msgstr ""
 

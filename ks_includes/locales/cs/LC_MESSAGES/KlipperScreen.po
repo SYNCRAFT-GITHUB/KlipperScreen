@@ -78,6 +78,78 @@ msgstr "Opravdu chcete rebootovat systém?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Opravdu chcete vypnout systém?"
 
+msgid "Update via Internet"
+msgstr "Aktualizace přes internet"
+
+msgid "Update via USB"
+msgstr "Aktualizace přes USB"
+
+msgid "Update or fix system via USB"
+msgstr "Aktualizujte nebo opravte systém přes USB"
+
+msgid "Fix"
+msgstr "Opravit"
+
+msgid "Quick System Fixes"
+msgstr "Rychlé opravy systému"
+
+msgid "Repair"
+msgstr "Opravit"
+
+msgid "Agree"
+msgstr "Souhlasit"
+
+msgid "I agree, continue"
+msgstr "Souhlasím, pokračuj"
+
+msgid "Fix Software Problems"
+msgstr "Odstraňte problémy se softwarem"
+
+msgid "Camera Driver"
+msgstr "Ovladač fotoaparátu"
+
+msgid "LED Light Driver"
+msgstr "Ovladač LED světla"
+
+msgid "Essential Files"
+msgstr "Základní soubory"
+
+msgid "Moonraker"
+msgstr "Moonraker"
+
+msgid "Mainsail"
+msgstr "Mainsail"
+
+msgid "Web Interface"
+msgstr "webové rozhraní"
+
+msgid "System Firmware"
+msgstr "Systémový firmware"
+
+msgid "Syncraft Team is not responsible for the misuse of the machine, please follow the procedures correctly."
+msgstr "Syncraft Team nenese odpovědnost za zneužití stroje, postupujte prosím správně."
+
+msgid "Please follow the tutorial to ensure everything performs correctly."
+msgstr "Postupujte podle návodu, abyste se ujistili, že vše funguje správně."
+
+msgid "Plug a USB into your computer, and make sure to format it in a universal file system, such as exFAT. Avoid Microsoft's NTFS, or Apple's APFS."
+msgstr "Připojte USB k počítači a ujistěte se, že jej naformátujete v univerzálním souborovém systému, jako je exFAT. Vyhněte se NTFS společnosti Microsoft nebo APFS společnosti Apple."
+
+msgid "Make sure the directory is in the root of the USB, with the name SYNCRAFT."
+msgstr "Ujistěte se, že adresář je v kořenovém adresáři USB s názvem SYNCRAFT."
+
+msgid "Do not turn off Syncraft during the procedure, and beware of power outages."
+msgstr "Během procedury nevypínejte Syncraft a dejte si pozor na výpadky proudu."
+
+msgid "Do not turn off Syncraft during the procedure, and keep a stable internet connection."
+msgstr "Během procedury nevypínejte Syncraft a udržujte stabilní připojení k internetu."
+
+msgid "Interrupting this procedure can result in problems for the internal system."
+msgstr "Přerušení tohoto postupu může mít za následek problémy pro vnitřní systém."
+
+msgid "At the end, Syncraft will restart."
+msgstr "Na konci se Syncraft restartuje."
+
 msgid "Auto"
 msgstr "Auto"
 

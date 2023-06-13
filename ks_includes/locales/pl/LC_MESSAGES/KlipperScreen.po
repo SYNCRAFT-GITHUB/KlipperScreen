@@ -79,6 +79,78 @@ msgstr "Czy na pewno chcesz ponownie uruchomić system?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Czy na pewno chcesz wyłączyć system?"
 
+msgid "Update via Internet"
+msgstr "Aktualizuj przez Internet"
+
+msgid "Update via USB"
+msgstr "Aktualizuj przez USB"
+
+msgid "Update or fix system via USB"
+msgstr "Zaktualizuj lub napraw system przez USB"
+
+msgid "Fix"
+msgstr "Naprawić"
+
+msgid "Quick System Fixes"
+msgstr "Szybkie poprawki systemu"
+
+msgid "Repair"
+msgstr "Naprawa"
+
+msgid "Agree"
+msgstr "Zgadzać się"
+
+msgid "I agree, continue"
+msgstr "Zgadzam się, kontynuuj"
+
+msgid "Fix Software Problems"
+msgstr "Napraw problemy z oprogramowaniem"
+
+msgid "Camera Driver"
+msgstr "Sterownik aparatu"
+
+msgid "LED Light Driver"
+msgstr "Sterownik światła LED"
+
+msgid "Essential Files"
+msgstr "Niezbędne pliki"
+
+msgid "Moonraker"
+msgstr "Moonraker"
+
+msgid "Mainsail"
+msgstr "Mainsail"
+
+msgid "Web Interface"
+msgstr "Interfejs sieciowy"
+
+msgid "System Firmware"
+msgstr "Oprogramowanie systemowe"
+
+msgid "Syncraft Team is not responsible for the misuse of the machine, please follow the procedures correctly."
+msgstr "Zespół Syncraft nie ponosi odpowiedzialności za niewłaściwe użycie maszyny, prosimy o prawidłowe przestrzeganie procedur."
+
+msgid "Please follow the tutorial to ensure everything performs correctly."
+msgstr "Postępuj zgodnie z samouczkiem, aby upewnić się, że wszystko działa poprawnie."
+
+msgid "Plug a USB into your computer, and make sure to format it in a universal file system, such as exFAT. Avoid Microsoft's NTFS, or Apple's APFS."
+msgstr "Podłącz pamięć USB do komputera i sformatuj ją w uniwersalnym systemie plików, takim jak exFAT."
+
+msgid "Make sure the directory is in the root of the USB, with the name SYNCRAFT."
+msgstr "Upewnij się, że katalog znajduje się w katalogu głównym USB i ma nazwę SYNCRAFT."
+
+msgid "Do not turn off Syncraft during the procedure, and beware of power outages."
+msgstr "Nie wyłączaj urządzenia podczas zabiegu i uważaj na przerwy w dostawie prądu."
+
+msgid "Do not turn off Syncraft during the procedure, and keep a stable internet connection."
+msgstr "Nie wyłączaj urządzenia podczas zabiegu i utrzymuj stabilne połączenie internetowe."
+
+msgid "Interrupting this procedure can result in problems for the internal system."
+msgstr "Przerwanie tej procedury może spowodować problemy z systemem wewnętrznym."
+
+msgid "At the end, Syncraft will restart."
+msgstr "Na koniec maszyna uruchomi się ponownie."
+
 msgid "Auto"
 msgstr "Automatyczny"
 
