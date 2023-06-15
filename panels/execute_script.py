@@ -18,7 +18,7 @@ class ExecuteScript(ScreenPanel):
     def __init__(self, screen, title):
         
         self.fix_option: str = self._config.get_fix_option()
-        # NONE, FILES, CAMERA, LIGHT, KLIPPER
+        # NONE, FILES, CAMERA, LIGHT, KLIPPERSCREEN, KLIPPER
 
         super().__init__(screen, title)
         self.menu = ['execute_script_panel']
@@ -40,10 +40,13 @@ class ExecuteScript(ScreenPanel):
         self.labels['execute_script_panel'].attach(grid, 0, 0, 1, 2)
         self.content.add(self.labels['execute_script_panel'])
 
-    # NONE, FILES, CAMERA, LIGHT, KLIPPER
+    # NONE, FILES, CAMERA, LIGHT, KLIPPERSCREEN, KLIPPER
     def execute (self, button):
         if (self._config.get_fix_option() == "FILES"):
             script_path = '/home/pi/KlipperScreen/scripts/fix/files.sh'
+            subprocess.call(['bash', script_path])
+        if (self._config.get_fix_option() == "KLIPPERSCREEN"):
+            script_path = '/home/pi/KlipperScreen/scripts/fix/klipperscreen.sh'
             subprocess.call(['bash', script_path])
         if (self._config.get_fix_option() == "CAMERA"):
             script_path = '/home/pi/KlipperScreen/scripts/fix/camera.sh'

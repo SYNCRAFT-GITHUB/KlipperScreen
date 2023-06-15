@@ -127,7 +127,7 @@ msgid "System Firmware"
 msgstr "Firmware del sistema"
 
 msgid "Syncraft Team is not responsible for the misuse of the machine, please follow the procedures correctly."
-msgstr "Syncraft Team no se responsabiliza por el mal uso de la máquina, por favor siga los procedimientos correctamente."
+msgstr "El equipo de Syncraft no se hace responsable del mal uso de la máquina."
 
 msgid "Please follow the tutorial to ensure everything performs correctly."
 msgstr "Siga el tutorial para asegurarse de que todo funcione correctamente."

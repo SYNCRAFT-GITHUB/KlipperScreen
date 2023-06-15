@@ -122,7 +122,7 @@ msgid "System Firmware"
 msgstr "システムファームウェア"
 
 msgid "Syncraft Team is not responsible for the misuse of the machine, please follow the procedures correctly."
-msgstr "Syncraft Team はマシンの誤用に対して責任を負いません。手順を正しく守ってください。"
+msgstr "Syncraft チームはマシンの誤用に対して責任を負いません。"
 
 msgid "Please follow the tutorial to ensure everything performs correctly."
 msgstr "すべてが正しく実行されることを確認するには、チュートリアルに従ってください。"

@@ -26,16 +26,10 @@ class SplashScreenPanel(ScreenPanel):
 
         self.labels['menu'] = self._gtk.Button("settings", _("Menu"), "color4")
         self.labels['menu'].connect("clicked", self._screen._go_to_submenu, "")
-        self.labels['restart'] = self._gtk.Button("refresh", _("Klipper Restart"), "color1")
-        self.labels['restart'].connect("clicked", self.restart)
-        self.labels['firmware_restart'] = self._gtk.Button("refresh", _("Firmware Restart"), "color2")
-        self.labels['firmware_restart'].connect("clicked", self.firmware_restart)
-        self.labels['restart_system'] = self._gtk.Button("refresh", _("System Restart"), "color1")
-        self.labels['restart_system'].connect("clicked", self.restart_system)
-        self.labels['shutdown'] = self._gtk.Button("shutdown", _('System Shutdown'), "color2")
-        self.labels['shutdown'].connect("clicked", self.shutdown)
-        self.labels['retry'] = self._gtk.Button("load", _('Retry'), "color3")
-        self.labels['retry'].connect("clicked", self.retry)
+        self.labels['system_reboot'] = self._gtk.Button("print", _("System Restart"), "color2")
+        self.labels['system_reboot'].connect("clicked", self.system_reboot)
+        self.labels['retry'] = self._gtk.Button("extrude", _('Retry'), "color3")
+        self.labels['retry'].connect("clicked", self.firmware_restart)
 
         self.labels['actions'] = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         self.labels['actions'].set_hexpand(True)
@@ -79,11 +73,10 @@ class SplashScreenPanel(ScreenPanel):
                 self.add_power_button(power_devices)
 
         if self._screen.initialized:
-            self.labels['actions'].add(self.labels['restart'])
-            self.labels['actions'].add(self.labels['firmware_restart'])
+            self.labels['actions'].add(self.labels['retry'])
+            self.labels['actions'].add(self.labels['system_reboot'])
         else:
-            self.labels['actions'].add(self.labels['restart_system'])
-            self.labels['actions'].add(self.labels['shutdown'])
+            self.labels['actions'].add(self.labels['system_reboot'])
         self.labels['actions'].add(self.labels['menu'])
         if self._screen._ws and not self._screen._ws.connecting or self._screen.reinit_count > self._screen.max_retries:
             self.labels['actions'].add(self.labels['retry'])
@@ -114,6 +107,9 @@ class SplashScreenPanel(ScreenPanel):
 
     def firmware_restart(self, widget):
         self._screen._ws.klippy.restart_firmware()
+
+    def system_reboot(self, widget):
+        os.system("systemctl reboot")
 
     def restart(self, widget):
         self._screen._ws.klippy.restart()

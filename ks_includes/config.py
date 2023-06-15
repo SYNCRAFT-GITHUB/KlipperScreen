@@ -35,7 +35,7 @@ class KlipperScreenConfig:
     def __init__(self, configfile, screen=None):
         self.lang_list = None
         self.errors = []
-        self.fix_option: str = "NONE" # NONE, FILES, CAMERA, LIGHT, KLIPPER
+        self.fix_option: str = "NONE" # NONE, FILES, CAMERA, LIGHT, KLIPPERSCREEN, KLIPPER
         self.default_config_path = os.path.join(klipperscreendir, "ks_includes", "defaults.conf")
         self.config = configparser.ConfigParser()
         self.config_path = self.get_config_file_location(configfile)
