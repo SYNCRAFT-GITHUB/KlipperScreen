@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/pi/printer_data
+cd "/home/$USER/printer_data"
 
 rm -r config
 
@@ -8,17 +8,27 @@ git clone -b syncraftx1 https://github.com/SYNCRAFT-GITHUB/printerdataconfig.git
 
 mv printerdataconfig config
 
-cp /home/pi/printer_data/config/backups/backup-printer.cfg /home/pi/printer_data/config/printer.cfg
+local_pdc_path="/home/$USER/printer_data/config"
 
-cp /home/pi/printer_data/config/backups/backup-variables.cfg /home/pi/printer_data/config/variables.cfg
+cp "$local_pdc_path/backups/backup-printer.cfg" "$local_pdc_path/printer.cfg"
 
-cp /home/pi/printer_data/config/backups/backup-KlipperScreen.conf /home/pi/printer_data/config/KlipperScreen.conf
-chown pi /home/pi/printer_data/config/printer.cfg
+cp "$local_pdc_path/backups/backup-variables.cfg" "$local_pdc_path/variables.cfg"
 
-chown pi /home/pi/printer_data/config/variables.cfg
+cp "$local_pdc_path/backups/backup-KlipperScreen.conf" "$local_pdc_path/KlipperScreen.conf"
 
-chown pi /home/pi/printer_data/config/KlipperScreen.conf
+chown "$USER" "$local_pdc_path/printer.cfg"
 
-python3 /home/pi/printer_data/config/scripts/python/addsaveconfig.py
+chown "$USER" "$local_pdc_path/variables.cfg"
 
-reboot
+chown "$USER" "$local_pdc_path/KlipperScreen.conf"
+
+python3 "$local_pdc_path/scripts/python/addsaveconfig.py"
+
+if [ -d "/home/$USER/printer_data/gcodes/USB" ]; then
+  echo "USB ok."
+else
+  cd "/home/$USER/printer_data/gcodes"
+  mkdir "USB"
+fi
+
+sudo reboot

@@ -853,3 +853,60 @@ msgstr ""
 
 #~ msgid "Sort:"
 #~ msgstr "ソート順:"
+
+msgid "Switch Pages"
+msgstr "ページを切り替える"
+
+msgid "Incompatible Material"
+msgstr "互換性のないマテリアル"
+
+msgid "Inserted Material"
+msgstr "挿入されたマテリアル"
+
+msgid "Selected Material"
+msgstr "選択されたマテリアル"
+
+msgid "Material set as Generic"
+msgstr "マテリアルをジェネリックとして設定"
+
+msgid "Impossible to proceed"
+msgstr "続行できません"
+
+msgid "Change the material to print this file"
+msgstr "このファイルを印刷する素材を変更してください"
+
+msgid "Factory Reset"
+msgstr "出荷時設定にリセット"
+
+msgid "Software Reset"
+msgstr "ソフトウェアのリセット"
+
+msgid "This procedure can take a while"
+msgstr "この手順には時間がかかる場合があります"
+
+msgid "This procedure requires internet connection"
+msgstr "この手順にはインターネット接続が必要です"
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr "手順中にプリンターの電源を切ると問題が発生します。"
+
+msgid "Regular Update"
+msgstr "定期アップデート"
+
+msgid "Recover Backup"
+msgstr "バックアップを復元"
+
+msgid "Update File not found"
+msgstr "更新ファイルが見つかりません"
+
+msgid "Backup File not found"
+msgstr "バックアップ ファイルが見つかりません"
+
+msgid "USB not inserted into Printer"
+msgstr "USBがプリンターに挿入されていません"
+
+msgid "Unsupported Update File"
+msgstr "サポートされていないアップデート ファイル"
+
+msgid "Unsupported Backup File"
+msgstr "サポートされていないバックアップ ファイル"

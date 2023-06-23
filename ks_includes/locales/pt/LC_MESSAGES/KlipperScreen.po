@@ -866,3 +866,60 @@ msgstr ""
 
 #~ msgid "Calibrating..."
 #~ msgstr "Calibrando..."
+
+msgid "Switch Pages"
+msgstr "Mudar de Página"
+
+msgid "Incompatible Material"
+msgstr "Material Incompatível"
+
+msgid "Inserted Material"
+msgstr "Material Inserido"
+
+msgid "Selected Material"
+msgstr "Material Selecionado"
+
+msgid "Material set as Generic"
+msgstr "Material definido como Genérico"
+
+msgid "Impossible to proceed"
+msgstr "Impossível prosseguir"
+
+msgid "Change the material to print this file"
+msgstr "Mude o material para imprimir este arquivo"
+
+msgid "Factory Reset"
+msgstr "Reset de Fábrica"
+
+msgid "Software Reset"
+msgstr "Reset de Software"
+
+msgid "This procedure can take a while"
+msgstr "Este procedimento pode demorar um tempo"
+
+msgid "This procedure requires internet connection"
+msgstr "Este procedimento exige conexão com a internet"
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr "Desligar a impressora durante o procedimento causará problemas"
+
+msgid "Regular Update"
+msgstr "Atualização Padrão"
+
+msgid "Recover Backup"
+msgstr "Recuperar Backup"
+
+msgid "Update File not found"
+msgstr "Arquivo de Atualização não Encontrado"
+
+msgid "Backup File not found"
+msgstr "Arquivo de Backup não Encontrado"
+
+msgid "USB not inserted into Printer"
+msgstr "O USB não está inserido na impressora"
+
+msgid "Unsupported Update File"
+msgstr "Arquivo de Atualização não Suportado"
+
+msgid "Unsupported Backup File"
+msgstr "Arquivo de Backup não Suportado"

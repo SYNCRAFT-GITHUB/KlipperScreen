@@ -66,8 +66,8 @@ class FixSteps(ScreenPanel):
             self.labels['text'].set_label(f"{self.texts[self.page]}")
 
         if (self.page == 4 and not self.alreadyconnected):
-            self.buttons['OK'].connect("clicked", self.menu_item_clicked, "execute_script", {
+            self.buttons['OK'].connect("clicked", self.menu_item_clicked, "script", {
             "name": _("Fix"),
-            "panel": "execute_script"
+            "panel": "script"
             })
             self.alreadyconnected = True

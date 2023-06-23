@@ -1044,3 +1044,60 @@ msgstr "mm³/s"
 
 #~ msgid "Tool 1"
 #~ msgstr "Outil 1"
+
+msgid "Switch Pages"
+msgstr "Changer de page"
+
+msgid "Incompatible Material"
+msgstr "Matériel incompatible"
+
+msgid "Inserted Material"
+msgstr "Matériel inséré"
+
+msgid "Selected Material"
+msgstr "Matériel sélectionné"
+
+msgid "Material set as Generic"
+msgstr "Matériel défini comme générique"
+
+msgid "Impossible to proceed"
+msgstr "Impossible de continuer"
+
+msgid "Change the material to print this file"
+msgstr "Changer le matériau pour imprimer ce fichier"
+
+msgid "Factory Reset"
+msgstr "Réinitialisation d'usine"
+
+msgid "Software Reset"
+msgstr "Réinitialisation du logiciel"
+
+msgid "This procedure can take a while"
+msgstr "Cette procédure peut prendre un certain temps"
+
+msgid "This procedure requires internet connection"
+msgstr "Cette procédure nécessite une connexion Internet"
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr "Éteindre l'imprimante pendant la procédure causera des problèmes"
+
+msgid "Regular Update"
+msgstr "Mise à jour régulière"
+
+msgid "Recover Backup"
+msgstr "Récupérer la sauvegarde"
+
+msgid "Update File not found"
+msgstr "Fichier de mise à jour introuvable"
+
+msgid "Backup File not found"
+msgstr "Fichier de sauvegarde introuvable"
+
+msgid "USB not inserted into Printer"
+msgstr "USB non inséré dans l'imprimante"
+
+msgid "Unsupported Update File"
+msgstr "Fichier de mise à jour non pris en charge"
+
+msgid "Unsupported Backup File"
+msgstr "Fichier de sauvegarde non pris en charge"

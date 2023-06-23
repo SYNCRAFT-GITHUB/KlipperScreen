@@ -32,13 +32,16 @@ class SyncraftPanel(ScreenPanel):
             "name": _("Quick System Fixes"),
             "panel": "fix"
         })
-        self.buttons['UPDATE_USB'].connect("clicked", self.nothing)
+        self.buttons['UPDATE_USB'].connect("clicked", self.menu_item_clicked, "update_usb", {
+            "name": _("Update via USB"),
+            "panel": "update_usb"
+        })
 
         grid = self._gtk.HomogeneousGrid()
 
         grid.attach(self.buttons['UPDATE'], 0, 0, 1, 2)
         grid.attach(self.buttons['FIX'], 1, 0, 1, 2)
-        # grid.attach(self.buttons['UPDATE_USB'], 2, 0, 1, 2)
+        grid.attach(self.buttons['UPDATE_USB'], 2, 0, 1, 2)
 
         self.labels['syncraft_panel'] = self._gtk.HomogeneousGrid()
         self.labels['syncraft_panel'].attach(grid, 0, 0, 1, 2)

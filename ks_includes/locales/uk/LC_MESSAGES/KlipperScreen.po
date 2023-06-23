@@ -933,3 +933,60 @@ msgstr "мм/с³"
 #~ msgstr ""
 #~ "ПРИМІТКА. Відредагуйте файл printer.cfg, щоб зберегти зміни калібрування "
 #~ "вручну."
+
+msgid "Switch Pages"
+msgstr "Змінити сторінки"
+
+msgid "Incompatible Material"
+msgstr "Несумісний матеріал"
+
+msgid "Inserted Material"
+msgstr "Вставлений матеріал"
+
+msgid "Selected Material"
+msgstr "Вибраний матеріал"
+
+msgid "Material set as Generic"
+msgstr "Матеріал встановлено як загальний"
+
+msgid "Impossible to proceed"
+msgstr "Неможливо продовжити"
+
+msgid "Change the material to print this file"
+msgstr "Змініть матеріал для друку цього файлу"
+
+msgid "Factory Reset"
+msgstr "Скидання до заводських налаштувань"
+
+msgid "Software Reset"
+msgstr "Скидання програмного забезпечення"
+
+msgid "This procedure can take a while"
+msgstr "Ця процедура може зайняти деякий час"
+
+msgid "This procedure requires internet connection"
+msgstr "Для цієї процедури потрібне підключення до Інтернету"
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr "Вимикання принтера під час процедури спричинить проблеми"
+
+msgid "Regular Update"
+msgstr "Регулярне оновлення"
+
+msgid "Recover Backup"
+msgstr "Відновити резервну копію"
+
+msgid "Update File not found"
+msgstr "Файл оновлення не знайдено"
+
+msgid "Backup File not found"
+msgstr "Файл резервної копії не знайдено"
+
+msgid "USB not inserted into Printer"
+msgstr "USB не вставлено в принтер"
+
+msgid "Unsupported Update File"
+msgstr "Непідтримуваний файл оновлення"
+
+msgid "Unsupported Backup File"
+msgstr "Непідтримуваний резервний файл"

@@ -907,3 +907,60 @@ msgstr ""
 
 #~ msgid "Z Position"
 #~ msgstr "Z Position"
+
+msgid "Switch Pages"
+msgstr "Byt sida"
+
+msgid "Incompatible Material"
+msgstr "Inkompatibelt material"
+
+msgid "Inserted Material"
+msgstr "Infogat material"
+
+msgid "Selected Material"
+msgstr "Valgt material"
+
+msgid "Material set as Generic"
+msgstr "Material inställt som allmänt"
+
+msgid "Impossible to proceed"
+msgstr "Omöjligt att fortsätta"
+
+msgid "Change the material to print this file"
+msgstr "Ändra materialet för att skriva ut den här filen"
+
+msgid "Factory Reset"
+msgstr "Fabriksåterställning"
+
+msgid "Software Reset"
+msgstr "Återställ programvara"
+
+msgid "This procedure can take a while"
+msgstr "Denna procedur kan ta ett tag"
+
+msgid "This procedure requires internet connection"
+msgstr "Denna procedur kräver internetanslutning"
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr "Att stänga av skrivaren under proceduren kommer att orsaka problem"
+
+msgid "Regular Update"
+msgstr "Vanlig uppdatering"
+
+msgid "Recover Backup"
+msgstr "Återställ säkerhetskopia"
+
+msgid "Update File not found"
+msgstr "Uppdateringsfil hittades inte"
+
+msgid "Backup File not found"
+msgstr "Säkerhetskopieringsfil hittades inte"
+
+msgid "USB not inserted into Printer"
+msgstr "USB inte insatt i skrivaren"
+
+msgid "Unsupported Update File"
+msgstr "Uppdateringsfil som inte stöds"
+
+msgid "Unsupported Backup File"
+msgstr "Säkerhetskopieringsfil som inte stöds"

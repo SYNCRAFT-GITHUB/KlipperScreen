@@ -914,3 +914,60 @@ msgstr "mm³/s"
 
 #~ msgid "Probe found applied offset"
 #~ msgstr "A szonda alkalmazott eltolást talált"
+
+msgid "Switch Pages"
+msgstr "Oldalváltás"
+
+msgid "Incompatible Material"
+msgstr "Inkompatibilis anyag"
+
+msgid "Inserted Material"
+msgstr "Beszúrt anyag"
+
+msgid "Selected Material"
+msgstr "Kiválasztott anyag"
+
+msgid "Material set as Generic"
+msgstr "Az anyag általánosként beállítva"
+
+msgid "Impossible to proceed"
+msgstr "Lehetetlen folytatni"
+
+msgid "Change the material to print this file"
+msgstr "Módosítsa az anyagot a fájl nyomtatásához"
+
+msgid "Factory Reset"
+msgstr "Gyári beállítások visszaállítása"
+
+msgid "Software Reset"
+msgstr "Szoftver visszaállítása"
+
+msgid "This procedure can take a while"
+msgstr "Ez az eljárás eltarthat egy ideig"
+
+msgid "This procedure requires internet connection"
+msgstr "Ez az eljárás internetkapcsolatot igényel"
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr "A nyomtató kikapcsolása az eljárás során problémákat okozhat"
+
+msgid "Regular Update"
+msgstr "Rendszeres frissítés"
+
+msgid "Recover Backup"
+msgstr "Biztonsági másolat helyreállítása"
+
+msgid "Update File not found"
+msgstr "A frissítési fájl nem található"
+
+msgid "Backup File not found"
+msgstr "A biztonsági mentési fájl nem található"
+
+msgid "USB not inserted into Printer"
+msgstr "Az USB nincs behelyezve a nyomtatóba"
+
+msgid "Unsupported Update File"
+msgstr "Nem támogatott frissítési fájl"
+
+msgid "Unsupported Backup File"
+msgstr "Nem támogatott biztonsági mentési fájl"

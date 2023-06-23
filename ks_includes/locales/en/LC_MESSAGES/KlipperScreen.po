@@ -847,3 +847,60 @@ msgstr ""
 
 msgid "mm³/s"
 msgstr ""
+
+msgid "Switch Pages"
+msgstr ""
+
+msgid "Incompatible Material"
+msgstr ""
+
+msgid "Inserted Material"
+msgstr ""
+
+msgid "Selected Material"
+msgstr ""
+
+msgid "Material set as Generic"
+msgstr ""
+
+msgid "Impossible to proceed"
+msgstr ""
+
+msgid "Change the material to print this file"
+msgstr ""
+
+msgid "Factory Reset"
+msgstr ""
+
+msgid "Software Reset"
+msgstr ""
+
+msgid "This procedure can take a while"
+msgstr ""
+
+msgid "This procedure requires internet connection"
+msgstr ""
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr ""
+
+msgid "Regular Update"
+msgstr ""
+
+msgid "Recover Backup"
+msgstr ""
+
+msgid "Update File not found"
+msgstr ""
+
+msgid "Backup File not found"
+msgstr ""
+
+msgid "USB not inserted into Printer"
+msgstr ""
+
+msgid "Unsupported Update File"
+msgstr ""
+
+msgid "Unsupported Backup File"
+msgstr ""

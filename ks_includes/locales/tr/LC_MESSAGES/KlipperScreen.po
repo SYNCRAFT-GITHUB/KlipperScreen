@@ -928,3 +928,60 @@ msgstr "mm³/s"
 
 #~ msgid "Z Position"
 #~ msgstr "Z Pozisyonu"
+
+msgid "Switch Pages"
+msgstr "Sayfaları Değiştir"
+
+msgid "Incompatible Material"
+msgstr "Uyumsuz Malzeme"
+
+msgid "Inserted Material"
+msgstr "Malzeme Eklendi"
+
+msgid "Selected Material"
+msgstr "Seçilmiş Malzeme"
+
+msgid "Material set as Generic"
+msgstr "Malzeme Genel olarak ayarlandı"
+
+msgid "Impossible to proceed"
+msgstr "Devam etmek imkansız"
+
+msgid "Change the material to print this file"
+msgstr "Bu dosyayı yazdırmak için malzemeyi değiştirin"
+
+msgid "Factory Reset"
+msgstr "Fabrika Ayarlarına Dön"
+
+msgid "Software Reset"
+msgstr "Yazılım Sıfırlama"
+
+msgid "This procedure can take a while"
+msgstr "Bu prosedür biraz zaman alabilir"
+
+msgid "This procedure requires internet connection"
+msgstr "Bu prosedür internet bağlantısı gerektirir"
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr "Yordam sırasında yazıcıyı kapatmak sorunlara neden olur"
+
+msgid "Regular Update"
+msgstr "Düzenli Güncelleme"
+
+msgid "Recover Backup"
+msgstr "Yedeği Kurtar"
+
+msgid "Update File not found"
+msgstr "Güncelleme Dosyası bulunamadı"
+
+msgid "Backup File not found"
+msgstr "Yedekleme Dosyası bulunamadı"
+
+msgid "USB not inserted into Printer"
+msgstr "USB Yazıcıya takılı değil"
+
+msgid "Unsupported Update File"
+msgstr "Desteklenmeyen Güncelleme Dosyası"
+
+msgid "Unsupported Backup File"
+msgstr "Desteklenmeyen Yedekleme Dosyası"

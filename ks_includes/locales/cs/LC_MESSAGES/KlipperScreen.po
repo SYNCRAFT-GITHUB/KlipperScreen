@@ -867,3 +867,60 @@ msgstr "mm³/s"
 #, python-format
 #~ msgid "Sending Power ON signal to: %s"
 #~ msgstr "Odeslat ZAP do %s"
+
+msgid "Switch Pages"
+msgstr "Přepnout stránky"
+
+msgid "Incompatible Material"
+msgstr "Nekompatibilní materiál"
+
+msgid "Inserted Material"
+msgstr "Vložený materiál"
+
+msgid "Selected Material"
+msgstr "Vybraný materiál"
+
+msgid "Material set as Generic"
+msgstr "Materiál nastaven jako obecný"
+
+msgid "Impossible to proceed"
+msgstr "Není možné pokračovat"
+
+msgid "Change the material to print this file"
+msgstr "Změňte materiál pro tisk tohoto souboru"
+
+msgid "Factory Reset"
+msgstr "Obnovení továrního nastavení"
+
+msgid "Software Reset"
+msgstr "Obnovení softwaru"
+
+msgid "This procedure can take a while"
+msgstr "Tento postup může chvíli trvat"
+
+msgid "This procedure requires internet connection"
+msgstr "Tento postup vyžaduje připojení k internetu"
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr "Vypnutí tiskárny během postupu způsobí problémy"
+
+msgid "Regular Update"
+msgstr "Pravidelná aktualizace"
+
+msgid "Recover Backup"
+msgstr "Obnovit zálohu"
+
+msgid "Update File not found"
+msgstr "Aktualizační soubor nenalezen"
+
+msgid "Backup File not found"
+msgstr "Záložní soubor nenalezen"
+
+msgid "USB not inserted into Printer"
+msgstr "USB není vložen do tiskárny"
+
+msgid "Unsupported Update File"
+msgstr "Nepodporovaný aktualizační soubor"
+
+msgid "Unsupported Backup File"
+msgstr "Nepodporovaný záložní soubor"

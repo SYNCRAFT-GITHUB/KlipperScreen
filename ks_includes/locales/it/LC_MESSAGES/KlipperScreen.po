@@ -982,3 +982,60 @@ msgstr "mm³/s"
 
 #~ msgid "Change Printer"
 #~ msgstr "Cambia Stampante"
+
+msgid "Switch Pages"
+msgstr "Cambia pagina"
+
+msgid "Incompatible Material"
+msgstr "Materiale incompatibile"
+
+msgid "Inserted Material"
+msgstr "Materiale inserito"
+
+msgid "Selected Material"
+msgstr "Materiale selezionato"
+
+msgid "Material set as Generic"
+msgstr "Materiale impostato come generico"
+
+msgid "Impossible to proceed"
+msgstr "Impossibile procedere"
+
+msgid "Change the material to print this file"
+msgstr "Cambia il materiale per stampare questo file"
+
+msgid "Factory Reset"
+msgstr "Ripristino impostazioni di fabbrica"
+
+msgid "Software Reset"
+msgstr "Ripristino software"
+
+msgid "This procedure can take a while"
+msgstr "Questa procedura può richiedere del tempo"
+
+msgid "This procedure requires internet connection"
+msgstr "Questa procedura richiede una connessione a Internet"
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr "Lo spegnimento della stampante durante la procedura causerà problemi"
+
+msgid "Regular Update"
+msgstr "Aggiornamento regolare"
+
+msgid "Recover Backup"
+msgstr "Ripristina backup"
+
+msgid "Update File not found"
+msgstr "File di aggiornamento non trovato"
+
+msgid "Backup File not found"
+msgstr "File di backup non trovato"
+
+msgid "USB not inserted into Printer"
+msgstr "USB non inserito nella stampante"
+
+msgid "Unsupported Update File"
+msgstr "File di aggiornamento non supportato"
+
+msgid "Unsupported Backup File"
+msgstr "File di backup non supportato"

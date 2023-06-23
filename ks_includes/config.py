@@ -12,8 +12,11 @@ from io import StringIO
 
 SCREEN_BLANKING_OPTIONS = [
     300,  # 5 Minutes
+    480,  # 8 Minutes
+    600,  # 10 Minutes
     900,  # 15 Minutes
     1800,  # 30 Minutes
+    2700,  # 45 Minutes
     3600,  # 1 Hour
     7200,  # 2 Hours
     14400,  # 4 Hours
@@ -35,7 +38,7 @@ class KlipperScreenConfig:
     def __init__(self, configfile, screen=None):
         self.lang_list = None
         self.errors = []
-        self.fix_option: str = "NONE" # NONE, FILES, CAMERA, LIGHT, KLIPPERSCREEN, KLIPPER
+        self.fix_option: str = "NONE"
         self.default_config_path = os.path.join(klipperscreendir, "ks_includes", "defaults.conf")
         self.config = configparser.ConfigParser()
         self.config_path = self.get_config_file_location(configfile)

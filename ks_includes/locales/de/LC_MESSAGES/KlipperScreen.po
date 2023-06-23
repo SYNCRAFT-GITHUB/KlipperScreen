@@ -999,3 +999,60 @@ msgstr ""
 
 #~ msgid "Load Average"
 #~ msgstr "Durchschnittslast"
+
+msgid "Switch Pages"
+msgstr "Seiten wechseln"
+
+msgid "Incompatible Material"
+msgstr "Inkompatibles Material"
+
+msgid "Inserted Material"
+msgstr "Eingefügtes Material"
+
+msgid "Selected Material"
+msgstr "Ausgewähltes Material"
+
+msgid "Material set as Generic"
+msgstr "Material als generisch festgelegt"
+
+msgid "Impossible to proceed"
+msgstr "Fortfahren nicht möglich"
+
+msgid "Change the material to print this file"
+msgstr "Ändern Sie das Material, um diese Datei zu drucken"
+
+msgid "Factory Reset"
+msgstr "Zurücksetzen auf Werkseinstellungen"
+
+msgid "Software Reset"
+msgstr "Software-Reset"
+
+msgid "This procedure can take a while"
+msgstr "Dieser Vorgang kann eine Weile dauern"
+
+msgid "This procedure requires internet connection"
+msgstr "Dieser Vorgang erfordert eine Internetverbindung"
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr "Das Ausschalten des Druckers während des Vorgangs führt zu Problemen"
+
+msgid "Regular Update"
+msgstr "Regelmäßiges Update"
+
+msgid "Recover Backup"
+msgstr "Backup wiederherstellen"
+
+msgid "Update File not found"
+msgstr "Update-Datei nicht gefunden"
+
+msgid "Backup File not found"
+msgstr "Sicherungsdatei nicht gefunden"
+
+msgid "USB not inserted into Printer"
+msgstr "USB ist nicht in den Drucker eingesteckt"
+
+msgid "Unsupported Update File"
+msgstr "Nicht unterstützte Update-Datei"
+
+msgid "Unsupported Backup File"
+msgstr "Nicht unterstützte Sicherungsdatei"

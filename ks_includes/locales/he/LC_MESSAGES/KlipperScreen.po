@@ -1050,3 +1050,60 @@ msgstr ""
 
 #~ msgid "Tool 1"
 #~ msgstr "כלי 1"
+
+msgid "Switch Pages"
+msgstr "החלף דפים"
+
+msgid "Incompatible Material"
+msgstr "חומר לא תואם"
+
+msgid "Inserted Material"
+msgstr "חומר שהוכנס"
+
+msgid "Selected Material"
+msgstr "חומר נבחר"
+
+msgid "Material set as Generic"
+msgstr "החומר מוגדר כגנרי"
+
+msgid "Impossible to proceed"
+msgstr "אי אפשר להמשיך"
+
+msgid "Change the material to print this file"
+msgstr "שנה את החומר להדפסת קובץ זה"
+
+msgid "Factory Reset"
+msgstr "איפוס להגדרות היצרן"
+
+msgid "Software Reset"
+msgstr "איפוס תוכנה"
+
+msgid "This procedure can take a while"
+msgstr "הליך זה יכול לקחת זמן מה"
+
+msgid "This procedure requires internet connection"
+msgstr "הליך זה דורש חיבור לאינטרנט"
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr "כיבוי המדפסת במהלך ההליך יגרום לבעיות"
+
+msgid "Regular Update"
+msgstr "עדכון רגיל"
+
+msgid "Recover Backup"
+msgstr "שחזר גיבוי"
+
+msgid "Update File not found"
+msgstr "עדכון הקובץ לא נמצא"
+
+msgid "Backup File not found"
+msgstr "קובץ הגיבוי לא נמצא"
+
+msgid "USB not inserted into Printer"
+msgstr "USB לא הוכנס למדפסת"
+
+msgid "Unsupported Update File"
+msgstr "קובץ עדכון לא נתמך"
+
+msgid "Unsupported Backup File"
+msgstr "קובץ גיבוי לא נתמך"

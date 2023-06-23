@@ -973,3 +973,60 @@ msgstr ""
 
 #~ msgid "Temp"
 #~ msgstr "Temp"
+
+msgid "Switch Pages"
+msgstr "Przełącz strony"
+
+msgid "Incompatible Material"
+msgstr "Niezgodny materiał"
+
+msgid "Inserted Material"
+msgstr "Wstawiony materiał"
+
+msgid "Selected Material"
+msgstr "Wybrany materiał"
+
+msgid "Material set as Generic"
+msgstr "Materiał ustawiony jako ogólny"
+
+msgid "Impossible to proceed"
+msgstr "Nie można kontynuować"
+
+msgid "Change the material to print this file"
+msgstr "Zmień materiał, aby wydrukować ten plik"
+
+msgid "Factory Reset"
+msgstr "Przywracanie ustawień fabrycznych"
+
+msgid "Software Reset"
+msgstr "Reset oprogramowania"
+
+msgid "This procedure can take a while"
+msgstr "Ta procedura może trochę potrwać"
+
+msgid "This procedure requires internet connection"
+msgstr "Ta procedura wymaga połączenia z Internetem"
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr "Wyłączenie drukarki podczas procedury spowoduje problemy"
+
+msgid "Regular Update"
+msgstr "Regularna aktualizacja"
+
+msgid "Recover Backup"
+msgstr "Odzyskaj kopię zapasową"
+
+msgid "Update File not found"
+msgstr "Nie znaleziono pliku aktualizacji"
+
+msgid "Backup File not found"
+msgstr "Nie znaleziono pliku kopii zapasowej"
+
+msgid "USB not inserted into Printer"
+msgstr "USB nie jest włożone do drukarki"
+
+msgid "Unsupported Update File"
+msgstr "Nieobsługiwany plik aktualizacji"
+
+msgid "Unsupported Backup File"
+msgstr "Nieobsługiwany plik kopii zapasowej"

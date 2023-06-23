@@ -1033,3 +1033,60 @@ msgstr "мм/с³"
 
 #~ msgid "Load Average"
 #~ msgstr "Средняя нагрузка"
+
+msgid "Switch Pages"
+msgstr "Переключить страницы"
+
+msgid "Incompatible Material"
+msgstr "Несовместимый материал"
+
+msgid "Inserted Material"
+msgstr "Вставленный материал"
+
+msgid "Selected Material"
+msgstr "Выбранный материал"
+
+msgid "Material set as Generic"
+msgstr "Материал установлен как универсальный"
+
+msgid "Impossible to proceed"
+msgstr "Невозможно продолжить"
+
+msgid "Change the material to print this file"
+msgstr "Изменить материал для печати этого файла"
+
+msgid "Factory Reset"
+msgstr "Сброс к заводским настройкам"
+
+msgid "Software Reset"
+msgstr "Сброс программного обеспечения"
+
+msgid "This procedure can take a while"
+msgstr "Эта процедура может занять некоторое время"
+
+msgid "This procedure requires internet connection"
+msgstr "Для этой процедуры требуется подключение к Интернету"
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr "Выключение принтера во время процедуры вызовет проблемы"
+
+msgid "Regular Update"
+msgstr "Регулярное обновление"
+
+msgid "Recover Backup"
+msgstr "Восстановить резервную копию"
+
+msgid "Update File not found"
+msgstr "Файл обновления не найден"
+
+msgid "Backup File not found"
+msgstr "Файл резервной копии не найден"
+
+msgid "USB not inserted into Printer"
+msgstr "USB не вставлен в принтер"
+
+msgid "Unsupported Update File"
+msgstr "Неподдерживаемый файл обновления"
+
+msgid "Unsupported Backup File"
+msgstr "Неподдерживаемый файл резервной копии"

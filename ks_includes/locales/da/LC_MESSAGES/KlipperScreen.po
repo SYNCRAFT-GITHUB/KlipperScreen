@@ -959,3 +959,60 @@ msgstr ""
 
 #~ msgid "Temp"
 #~ msgstr "Temp"
+
+msgid "Switch Pages"
+msgstr "Skift Sider"
+
+msgid "Incompatible Material"
+msgstr "Inkompatibelt materiale"
+
+msgid "Inserted Material"
+msgstr "Indsat materiale"
+
+msgid "Selected Material"
+msgstr "Udvalgt materiale"
+
+msgid "Material set as Generic"
+msgstr "Materiale indstillet som generisk"
+
+msgid "Impossible to proceed"
+msgstr "Umuligt at fortsætte"
+
+msgid "Change the material to print this file"
+msgstr "Skift materialet for at udskrive denne fil"
+
+msgid "Factory Reset"
+msgstr "Gendan Fabriksindstillinger"
+
+msgid "Software Reset"
+msgstr "Nulstil software"
+
+msgid "This procedure can take a while"
+msgstr "Denne procedure kan tage et stykke tid"
+
+msgid "This procedure requires internet connection"
+msgstr "Denne procedure kræver internetforbindelse"
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr "Slukning af printeren under proceduren vil give problemer"
+
+msgid "Regular Update"
+msgstr "Almindelig opdatering"
+
+msgid "Recover Backup"
+msgstr "Gendan sikkerhedskopi"
+
+msgid "Update File not found"
+msgstr "Opdateringsfil blev ikke fundet"
+
+msgid "Backup File not found"
+msgstr "Sikkerhedskopieringsfil blev ikke fundet"
+
+msgid "USB not inserted into Printer"
+msgstr "USB ikke indsat i printeren"
+
+msgid "Unsupported Update File"
+msgstr "Ikke-understøttet opdateringsfil"
+
+msgid "Unsupported Backup File"
+msgstr "Ikke-understøttet backup-fil"

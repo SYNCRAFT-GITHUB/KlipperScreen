@@ -71,7 +71,7 @@ class ChMaterialPanel(ScreenPanel):
             '174PH': self._gtk.Button(None, "17-4PH", "color1"),
             'ASA': self._gtk.Button(None, "ASA", "color1"),
             'OTHER': self._gtk.Button(None, _("Generic"), "color3"),
-            'PAGESWAP': self._gtk.Button("shuffle", None, "color4"),
+            'PAGESWAP': self._gtk.Button("shuffle", _("Switch Pages"), "color4"),
         }
         self.buttons['PLA'].connect("clicked", self.materialgcodescript, "PLA")
         self.buttons['NYLON'].connect("clicked", self.materialgcodescript, "NYLON")
@@ -82,15 +82,15 @@ class ChMaterialPanel(ScreenPanel):
         self.buttons['CPEPLUS'].connect("clicked", self.materialgcodescript, "CPEPLUS")
         self.buttons['PETG'].connect("clicked", self.materialgcodescript, "PETG")
         self.buttons['PC'].connect("clicked", self.materialgcodescript, "PC")
-        self.buttons['TPU95A'].connect("clicked", self.materialgcodescript, "TPU_95A")
-        self.buttons['TPU64D'].connect("clicked", self.materialgcodescript, "TPU_64D")
+        self.buttons['TPU95A'].connect("clicked", self.materialgcodescript, "TPU_A95")
+        self.buttons['TPU64D'].connect("clicked", self.materialgcodescript, "TPU_D64")
         self.buttons['PET'].connect("clicked", self.materialgcodescript, "PET")
         self.buttons['PAHTCF15'].connect("clicked", self.materialgcodescript, "PAHT_CF15")
         self.buttons['PETCF15'].connect("clicked", self.materialgcodescript, "PET_CF15")
         self.buttons['PCGF30'].connect("clicked", self.materialgcodescript, "PC_GF30")
         self.buttons['PPGF30'].connect("clicked", self.materialgcodescript, "PP_GF30")
-        self.buttons['316L'].connect("clicked", self.materialgcodescript, "316L")
-        self.buttons['174PH'].connect("clicked", self.materialgcodescript, "17_4PH")
+        self.buttons['316L'].connect("clicked", self.materialgcodescript, "L316")
+        self.buttons['174PH'].connect("clicked", self.materialgcodescript, "PH_174")
         self.buttons['ASA'].connect("clicked", self.materialgcodescript, "ASA")
         self.buttons['OTHER'].connect("clicked", self.materialgcodescript, "GENERIC")
         self.buttons['PAGESWAP'].connect("clicked", self.changepage)
@@ -126,12 +126,12 @@ class ChMaterialPanel(ScreenPanel):
             gridvariable.attach(self.buttons['PAGESWAP'], 0, 0, 1, 5)
 
     def update_grid(self):
+
         self.content.remove(self.labels['material_menu'])
         self.labels['material_menu'] = self._gtk.HomogeneousGrid()
         self.createbuttons()
         self.gridattach(pagenumber=self.page, gridvariable=self.labels['material_menu'])
 
-        #self.labels['material_menu'].attach(self.storegrid, 0, 0, 1, 3) 
         self.content.add(self.labels['material_menu'])
         self.labels['material_menu'].show_all()
 

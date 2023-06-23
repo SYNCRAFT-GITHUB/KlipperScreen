@@ -1,4 +1,5 @@
 import logging
+import os
 
 import gi
 
@@ -9,92 +10,102 @@ from ks_includes.screen_panel import ScreenPanel
 
 
 def create_panel(*args):
-    return PowerPanel(*args)
+    return SystemPanel(*args)
 
 
-class PowerPanel(ScreenPanel):
+class SystemPanel(ScreenPanel):
+
     def __init__(self, screen, title):
         super().__init__(screen, title)
-        self.devices = {}
+        image = self._gtk.Image("shutdown", self._gtk.content_width * .5, self._gtk.content_height * .5)
 
-        # Create a grid for all devices
-        self.labels['devices'] = Gtk.Grid()
-        self.labels['devices'].set_valign(Gtk.Align.CENTER)
+        self.labels['restart'] = self._gtk.Button("refresh", _("Klipper Restart"), "color1")
+        self.labels['restart'].connect("clicked", self.restart)
+        self.labels['firmware_restart'] = self._gtk.Button("console", _("Firmware Restart"), "color2")
+        self.labels['firmware_restart'].connect("clicked", self.firmware_restart)
+        self.labels['restart_system'] = self._gtk.Button("print", _("System Restart"), "color1")
+        self.labels['restart_system'].connect("clicked", self.restart_system)
 
-        self.load_power_devices()
+        self.labels['actions'] = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        self.labels['actions'].set_hexpand(False)
+        self.labels['actions'].set_vexpand(True)
+        self.labels['actions'].set_halign(Gtk.Align.CENTER)
+        self.labels['actions'].set_size_request(self._gtk.content_width, -1)
 
-        # Create a scroll window for the power devices
-        scroll = self._gtk.ScrolledWindow()
-        scroll.add(self.labels['devices'])
+        info = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=0)
+        info.pack_start(image, True, True, 8)
 
-        self.content.add(scroll)
+        main = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
+        main.pack_start(info, True, True, 8)
+        main.pack_end(self.labels['actions'], False, True, 0)
+
+        self.show_restart_buttons()
+
+        self.content.add(main)
+
+
+    def clear_action_bar(self):
+        for child in self.labels['actions'].get_children():
+            self.labels['actions'].remove(child)
+
+    def show_restart_buttons(self):
+
+        self.clear_action_bar()
+        if self.ks_printer_cfg is not None and self._screen._ws.connected:
+            power_devices = self.ks_printer_cfg.get("power_devices", "")
+            if power_devices and self._printer.get_power_devices():
+                logging.info(f"Associated power devices: {power_devices}")
+                self.add_power_button(power_devices)
+
+        # self.labels['actions'].add(self.labels['restart'])
+        self.labels['actions'].add(self.labels['firmware_restart'])
+        self.labels['actions'].add(self.labels['restart_system'])
+        self.labels['actions'].show_all()
+
+    def add_power_button(self, powerdevs):
+        self.labels['power'] = self._gtk.Button("shutdown", _("Power On Printer"), "color3")
+        self.labels['power'].connect("clicked", self._screen.power_devices, powerdevs, True)
+        self.check_power_status()
+        self.labels['actions'].add(self.labels['power'])
 
     def activate(self):
-        devices = self._printer.get_power_devices()
-        for x in devices:
-            self.devices[x]['switch'].disconnect_by_func(self.on_switch)
-            self.devices[x]['switch'].set_active(self._printer.get_power_device_status(x) == "on")
+        self.check_power_status()
+        self._screen.base_panel.show_macro_shortcut(False)
+        self._screen.base_panel.show_heaters(False)
+        self._screen.base_panel.show_estop(False)
 
-            self.devices[x]['switch'].connect("notify::active", self.on_switch, x)
+    def check_power_status(self):
+        if 'power' in self.labels:
+            devices = self._printer.get_power_devices()
+            if devices is not None:
+                for device in devices:
+                    if self._printer.get_power_device_status(device) == "off":
+                        self.labels['power'].set_sensitive(True)
+                        break
+                    elif self._printer.get_power_device_status(device) == "on":
+                        self.labels['power'].set_sensitive(False)
 
-    def add_device(self, device):
-        name = Gtk.Label()
-        name.set_markup(f"<big><b>{device}</b></big>")
-        name.set_hexpand(True)
-        name.set_vexpand(True)
-        name.set_halign(Gtk.Align.START)
-        name.set_valign(Gtk.Align.CENTER)
-        name.set_line_wrap(True)
-        name.set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
+    def firmware_restart(self, widget):
+        self._screen._ws.klippy.restart_firmware()
 
-        switch = Gtk.Switch()
-        switch.set_hexpand(False)
-        switch.set_active(self._printer.get_power_device_status(device) == "on")
-        switch.connect("notify::active", self.on_switch, device)
-        switch.set_property("width-request", round(self._gtk.font_size * 7))
-        switch.set_property("height-request", round(self._gtk.font_size * 3.5))
+    def restart(self, widget):
+        self._screen._ws.klippy.restart()
 
-        labels = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        labels.add(name)
-
-        dev = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
-        dev.set_hexpand(True)
-        dev.set_vexpand(False)
-        dev.set_valign(Gtk.Align.CENTER)
-        dev.add(labels)
-        dev.add(switch)
-
-        self.devices[device] = {
-            "row": dev,
-            "switch": switch
-        }
-
-        devices = sorted(self.devices)
-        pos = devices.index(device)
-
-        self.labels['devices'].insert_row(pos)
-        self.labels['devices'].attach(self.devices[device]['row'], 0, pos, 1, 1)
-        self.labels['devices'].show_all()
-
-    def load_power_devices(self):
-        devices = self._printer.get_power_devices()
-        for x in devices:
-            self.add_device(x)
-
-    def on_switch(self, switch, gparam, device):
-        logging.debug(f"Power toggled {device}")
-        if switch.get_active():
-            self._screen._ws.klippy.power_device_on(device)
+    def shutdown(self, widget):
+        if self._screen._ws.connected:
+            self._screen._confirm_send_action(widget,
+                                              _("Are you sure you wish to shutdown the system?"),
+                                              "machine.shutdown")
         else:
-            self._screen._ws.klippy.power_device_off(device)
+            logging.info("OS Shutdown")
+            os.system("systemctl poweroff")
 
-    def process_update(self, action, data):
-        if action != "notify_power_changed":
-            return
+    def restart_system(self, widget):
 
-        if data['device'] not in self.devices:
-            return
-        device = data['device']
-        self.devices[device]['switch'].disconnect_by_func(self.on_switch)
-        self.devices[device]['switch'].set_active(data['status'] == "on")
-        self.devices[device]['switch'].connect("notify::active", self.on_switch, device)
+        if self._screen._ws.connected:
+            self._screen._confirm_send_action(widget,
+                                              _("Are you sure you wish to reboot the system?"),
+                                              "machine.reboot")
+        else:
+            logging.info("OS Reboot")
+            os.system("systemctl reboot")

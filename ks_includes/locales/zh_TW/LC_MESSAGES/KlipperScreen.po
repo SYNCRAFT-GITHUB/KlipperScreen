@@ -964,3 +964,60 @@ msgstr ""
 
 #~ msgid "Screen will show in less than one second"
 #~ msgstr "螢幕將在1秒內顯示"
+
+msgid "Switch Pages"
+msgstr "切換頁面"
+
+msgid "Incompatible Material"
+msgstr "不兼容的材料"
+
+msgid "Inserted Material"
+msgstr "插入的材料"
+
+msgid "Selected Material"
+msgstr "選定的材料"
+
+msgid "Material set as Generic"
+msgstr "材質設置為通用"
+
+msgid "Impossible to proceed"
+msgstr "無法繼續"
+
+msgid "Change the material to print this file"
+msgstr "更改打印此文件的材料"
+
+msgid "Factory Reset"
+msgstr "恢復出廠設置"
+
+msgid "Software Reset"
+msgstr "軟件重置"
+
+msgid "This procedure can take a while"
+msgstr "此過程可能需要一段時間"
+
+msgid "This procedure requires internet connection"
+msgstr "此過程需要互聯網連接"
+
+msgid "Turning off the printer during the procedure will cause problems"
+msgstr "在此過程中關閉打印機會導致問題"
+
+msgid "Regular Update"
+msgstr "定期更新"
+
+msgid "Recover Backup"
+msgstr "恢復備份"
+
+msgid "Update File not found"
+msgstr "未找到更新文件"
+
+msgid "Backup File not found"
+msgstr "找不到備份文件"
+
+msgid "USB not inserted into Printer"
+msgstr "USB 未插入打印機"
+
+msgid "Unsupported Update File"
+msgstr "不支持的更新文件"
+
+msgid "Unsupported Backup File"
+msgstr "不支持的備份文件"
