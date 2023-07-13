@@ -1090,3 +1090,51 @@ msgstr "Неподдерживаемый файл обновления"
 
 msgid "Unsupported Backup File"
 msgstr "Неподдерживаемый файл резервной копии"
+
+msgid "Access Files on USB"
+msgstr "Доступ к файлам на USB"
+
+msgid "Files saved from USB"
+msgstr "Файлы, сохраненные с USB"
+
+msgid "Clear GCodes Folder"
+msgstr "Очистить папку GCodes"
+
+msgid "Show files saved from USB"
+msgstr "Показать файлы, сохраненные с USB"
+
+msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
+msgstr "Хотите ввести четырехзначный пароль, чтобы предотвратить несанкционированный или нежелательный доступ?"
+
+msgid "Enter Password"
+msgstr "Введите пароль"
+
+msgid "Change Password"
+msgstr "Изменить пароль"
+
+msgid "Remove Password Protection"
+msgstr "Снять защиту паролем"
+
+msgid "Welcome to Syncraft"
+msgstr "Добро пожаловать в Syncraft"
+
+msgid "No, I don't agree."
+msgstr "Нет, я не согласен."
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Terms and Conditions"
+msgstr "Условия использования"
+
+msgid "Download App"
+msgstr "Загрузить приложение"
+
+msgid "Download for iPhone"
+msgstr "Загрузить для iPhone"
+
+msgid "Download for Android"
+msgstr "Скачать для Android"
+
+msgid "Do not show this again."
+msgstr "Больше не показывать это."

@@ -1021,3 +1021,51 @@ msgstr "不支持的更新文件"
 
 msgid "Unsupported Backup File"
 msgstr "不支持的備份文件"
+
+msgid "Access Files on USB"
+msgstr "訪問 USB 上的文件"
+
+msgid "Files saved from USB"
+msgstr "從 USB 保存的文件"
+
+msgid "Clear GCodes Folder"
+msgstr "清除 GCodes 文件夾"
+
+msgid "Show files saved from USB"
+msgstr "顯示從 USB 保存的文件"
+
+msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
+msgstr "想要輸入四位數密碼以防止未經授權或不需要的人嗎？"
+
+msgid "Enter Password"
+msgstr "輸入密碼"
+
+msgid "Change Password"
+msgstr "更改密碼"
+
+msgid "Remove Password Protection"
+msgstr "刪除密碼保護"
+
+msgid "Welcome to Syncraft"
+msgstr "歡迎來到 Syncraft"
+
+msgid "No, I don't agree."
+msgstr "不，我不同意。"
+
+msgid "Password"
+msgstr "密碼"
+
+msgid "Terms and Conditions"
+msgstr "條款和條件"
+
+msgid "Download App"
+msgstr "下載應用程序"
+
+msgid "Download for iPhone"
+msgstr "下載 iPhone 版"
+
+msgid "Download for Android"
+msgstr "下載 Android 版"
+
+msgid "Do not show this again."
+msgstr "不要再顯示此內容。"

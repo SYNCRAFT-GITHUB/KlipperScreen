@@ -971,3 +971,51 @@ msgstr "Nem támogatott frissítési fájl"
 
 msgid "Unsupported Backup File"
 msgstr "Nem támogatott biztonsági mentési fájl"
+
+msgid "Access Files on USB"
+msgstr "Fájlok elérése USB-n"
+
+msgid "Files saved from USB"
+msgstr "USB-ról mentett fájlok"
+
+msgid "Clear GCodes Folder"
+msgstr "GCodes mappa törlése"
+
+msgid "Show files saved from USB"
+msgstr "USB-ról mentett fájlok megjelenítése"
+
+msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
+msgstr "Négy számjegyű jelszót szeretne megadni, hogy megakadályozza a jogosulatlan vagy nem kívánt személyeket?"
+
+msgid "Enter Password"
+msgstr "Adja meg a jelszót"
+
+msgid "Change Password"
+msgstr "Jelszó módosítása"
+
+msgid "Remove Password Protection"
+msgstr "Jelszavas védelem eltávolítása"
+
+msgid "Welcome to Syncraft"
+msgstr "Üdvözöljük a Syncraftban"
+
+msgid "No, I don't agree."
+msgstr "Nem, nem értek egyet."
+
+msgid "Password"
+msgstr "Jelszó"
+
+msgid "Terms and Conditions"
+msgstr "Általános Szerződési Feltételek"
+
+msgid "Download App"
+msgstr "Alkalmazás letöltése"
+
+msgid "Download for iPhone"
+msgstr "Letöltés iPhone-ra"
+
+msgid "Download for Android"
+msgstr "Letöltés Androidra"
+
+msgid "Do not show this again."
+msgstr "Ne mutasd újra."

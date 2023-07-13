@@ -1030,3 +1030,51 @@ msgstr "Nieobsługiwany plik aktualizacji"
 
 msgid "Unsupported Backup File"
 msgstr "Nieobsługiwany plik kopii zapasowej"
+
+msgid "Access Files on USB"
+msgstr "Dostęp do plików na USB"
+
+msgid "Files saved from USB"
+msgstr "Pliki zapisane z USB"
+
+msgid "Clear GCodes Folder"
+msgstr "Wyczyść folder GCodes"
+
+msgid "Show files saved from USB"
+msgstr "Pokaż pliki zapisane z USB"
+
+msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
+msgstr "Chcesz wprowadzić czterocyfrowe hasło, aby uniemożliwić dostęp osobom nieupoważnionym lub niechcianym?"
+
+msgid "Enter Password"
+msgstr "Wprowadź hasło"
+
+msgid "Change Password"
+msgstr "Zmień hasło"
+
+msgid "Remove Password Protection"
+msgstr "Usuń ochronę hasłem"
+
+msgid "Welcome to Syncraft"
+msgstr "Witamy w Syncraft"
+
+msgid "No, I don't agree."
+msgstr "Nie, nie zgadzam się."
+
+msgid "Password"
+msgstr "Hasło"
+
+msgid "Terms and Conditions"
+msgstr "Warunki korzystania z usługi"
+
+msgid "Download App"
+msgstr "Pobierz aplikację"
+
+msgid "Download for iPhone"
+msgstr "Pobierz na iPhone'a"
+
+msgid "Download for Android"
+msgstr "Pobierz na Androida"
+
+msgid "Do not show this again."
+msgstr "Nie pokazuj tego więcej."

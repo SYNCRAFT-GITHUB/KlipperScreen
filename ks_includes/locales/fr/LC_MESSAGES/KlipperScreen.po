@@ -1101,3 +1101,51 @@ msgstr "Fichier de mise à jour non pris en charge"
 
 msgid "Unsupported Backup File"
 msgstr "Fichier de sauvegarde non pris en charge"
+
+msgid "Access Files on USB"
+msgstr "Accéder aux fichiers sur USB"
+
+msgid "Files saved from USB"
+msgstr "Fichiers enregistrés depuis USB"
+
+msgid "Clear GCodes Folder"
+msgstr "Effacer le dossier GCodes"
+
+msgid "Show files saved from USB"
+msgstr "Afficher les fichiers enregistrés depuis USB"
+
+msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
+msgstr "Voulez-vous entrer un mot de passe à quatre chiffres pour empêcher les personnes non autorisées ou indésirables ?"
+
+msgid "Enter Password"
+msgstr "Entrez le mot de passe"
+
+msgid "Change Password"
+msgstr "Modifier le mot de passe"
+
+msgid "Remove Password Protection"
+msgstr "Supprimer la protection par mot de passe"
+
+msgid "Welcome to Syncraft"
+msgstr "Bienvenue sur Syncraft"
+
+msgid "No, I don't agree."
+msgstr "Non, je ne suis pas d'accord."
+
+msgid "Password"
+msgstr "Mot de passe"
+
+msgid "Terms and Conditions"
+msgstr "Conditions d'utilisation"
+
+msgid "Download App"
+msgstr "Télécharger l'application"
+
+msgid "Download for iPhone"
+msgstr "Télécharger pour iPhone"
+
+msgid "Download for Android"
+msgstr "Télécharger pour Android"
+
+msgid "Do not show this again."
+msgstr "Ne plus afficher ceci."

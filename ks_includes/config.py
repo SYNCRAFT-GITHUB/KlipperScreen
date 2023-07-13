@@ -39,6 +39,7 @@ class KlipperScreenConfig:
         self.lang_list = None
         self.errors = []
         self.fix_option: str = "NONE"
+        self.show_saved_from_usb: bool = False
         self.default_config_path = os.path.join(klipperscreendir, "ks_includes", "defaults.conf")
         self.config = configparser.ConfigParser()
         self.config_path = self.get_config_file_location(configfile)
@@ -151,7 +152,7 @@ class KlipperScreenConfig:
             if section == 'main':
                 bools = (
                     'invert_x', 'invert_y', 'invert_z', '24htime', 'only_heaters', 'show_cursor', 'confirm_estop',
-                    'autoclose_popups', 'use_dpms', 'use_default_menu', 'side_macro_shortcut', 'use-matchbox-keyboard',
+                    'autoclose_popups', 'use_dpms', 'use_default_menu', 'show_saved_from_usb', 'side_macro_shortcut', 'use-matchbox-keyboard',
                     'show_heater_power'
                 )
                 strs = (
@@ -242,9 +243,12 @@ class KlipperScreenConfig:
                     {"name": _("Never"), "value": "off"}]
             }},
             {"24htime": {"section": "main", "name": _("24 Hour Time"), "type": "binary", "value": "True"}},
+            {"show_saved_from_usb": {
+                "section": "main", "name": _("Show files saved from USB"), "type": "binary",
+                "value": "False", "callback": self.toggle_show_saved_from_usb}},
             {"side_macro_shortcut": {
                 "section": "main", "name": _("Macro shortcut on sidebar"), "type": "binary",
-                "value": "True", "callback": screen.toggle_macro_shortcut}},
+                "value": "False", "callback": screen.toggle_macro_shortcut}},
             {"font_size": {
                 "section": "main", "name": _("Font Size"), "type": "dropdown",
                 "value": "medium", "callback": screen.restart_ks, "options": [
@@ -381,6 +385,9 @@ class KlipperScreenConfig:
 
     def replace_fix_option (self, newvalue) -> str:
         self.fix_option = newvalue
+
+    def toggle_show_saved_from_usb (self, value):
+        self.show_saved_from_usb = value
 
     def get_config_file_location(self, file):
         # Passed config (-c) by default is ~/KlipperScreen.conf

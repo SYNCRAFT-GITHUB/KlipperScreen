@@ -985,3 +985,51 @@ msgstr "Desteklenmeyen Güncelleme Dosyası"
 
 msgid "Unsupported Backup File"
 msgstr "Desteklenmeyen Yedekleme Dosyası"
+
+msgid "Access Files on USB"
+msgstr "USB'deki Dosyalara Erişin"
+
+msgid "Files saved from USB"
+msgstr "USB'den kaydedilen dosyalar"
+
+msgid "Clear GCodes Folder"
+msgstr "GCodes Klasörünü Temizle"
+
+msgid "Show files saved from USB"
+msgstr "USB'den kaydedilen dosyaları göster"
+
+msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
+msgstr "Yetkisiz veya istenmeyen kişileri engellemek için dört haneli bir şifre girmek ister misiniz?"
+
+msgid "Enter Password"
+msgstr "Parolayı Girin"
+
+msgid "Change Password"
+msgstr "Parolayı Değiştir"
+
+msgid "Remove Password Protection"
+msgstr "Şifre Korumasını Kaldır"
+
+msgid "Welcome to Syncraft"
+msgstr "Syncraft'a Hoş Geldiniz"
+
+msgid "No, I don't agree."
+msgstr "Hayır, katılmıyorum."
+
+msgid "Password"
+msgstr "Şifre"
+
+msgid "Terms and Conditions"
+msgstr "Şartlar ve Koşullar"
+
+msgid "Download App"
+msgstr "Uygulamayı İndir"
+
+msgid "Download for iPhone"
+msgstr "iPhone için İndir"
+
+msgid "Download for Android"
+msgstr "Android için indir"
+
+msgid "Do not show this again."
+msgstr "Bunu bir daha gösterme."

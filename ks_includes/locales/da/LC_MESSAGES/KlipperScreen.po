@@ -1016,3 +1016,51 @@ msgstr "Ikke-understøttet opdateringsfil"
 
 msgid "Unsupported Backup File"
 msgstr "Ikke-understøttet backup-fil"
+
+msgid "Access Files on USB"
+msgstr "Få adgang til filer på USB"
+
+msgid "Files saved from USB"
+msgstr "Filer gemt fra USB"
+
+msgid "Clear GCodes Folder"
+msgstr "Ryd GCodes-mappe"
+
+msgid "Show files saved from USB"
+msgstr "Vis filer gemt fra USB"
+
+msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
+msgstr "Vil du indtaste en firecifret adgangskode for at forhindre uautoriserede eller uønskede personer?"
+
+msgid "Enter Password"
+msgstr "Indtast adgangskode"
+
+msgid "Change Password"
+msgstr "Skift adgangskode"
+
+msgid "Remove Password Protection"
+msgstr "Fjern adgangskodebeskyttelse"
+
+msgid "Welcome to Syncraft"
+msgstr "Velkommen til Syncraft"
+
+msgid "No, I don't agree."
+msgstr "Nej, jeg er ikke enig."
+
+msgid "Password"
+msgstr "Adgangskode"
+
+msgid "Terms and Conditions"
+msgstr "Vilkår og betingelser"
+
+msgid "Download App"
+msgstr "Download app"
+
+msgid "Download for iPhone"
+msgstr "Download til iPhone"
+
+msgid "Download for Android"
+msgstr "Download til Android"
+
+msgid "Do not show this again."
+msgstr "Vis ikke dette igen."

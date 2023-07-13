@@ -1056,3 +1056,51 @@ msgstr "Nicht unterstützte Update-Datei"
 
 msgid "Unsupported Backup File"
 msgstr "Nicht unterstützte Sicherungsdatei"
+
+msgid "Access Files on USB"
+msgstr "Auf Dateien auf USB zugreifen"
+
+msgid "Files saved from USB"
+msgstr "Von USB gespeicherte Dateien"
+
+msgid "Clear GCodes Folder"
+msgstr "GCodes-Ordner löschen"
+
+msgid "Show files saved from USB"
+msgstr "Von USB gespeicherte Dateien anzeigen"
+
+msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
+msgstr "Möchten Sie ein vierstelliges Passwort eingeben, um Unbefugte oder unerwünschte Personen zu schützen?"
+
+msgid "Enter Password"
+msgstr "Passwort eingeben"
+
+msgid "Change Password"
+msgstr "Passwort ändern"
+
+msgid "Remove Password Protection"
+msgstr "Passwortschutz entfernen"
+
+msgid "Welcome to Syncraft"
+msgstr "Willkommen bei Syncraft"
+
+msgid "No, I don't agree."
+msgstr "Nein, ich stimme nicht zu."
+
+msgid "Password"
+msgstr "Passwort"
+
+msgid "Terms and Conditions"
+msgstr "Allgemeine Geschäftsbedingungen"
+
+msgid "Download App"
+msgstr "App herunterladen"
+
+msgid "Download for iPhone"
+msgstr "Für iPhone herunterladen"
+
+msgid "Download for Android"
+msgstr "Für Android herunterladen"
+
+msgid "Do not show this again."
+msgstr "Dies nicht mehr anzeigen."

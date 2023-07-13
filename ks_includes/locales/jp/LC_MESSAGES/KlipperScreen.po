@@ -910,3 +910,51 @@ msgstr "サポートされていないアップデート ファイル"
 
 msgid "Unsupported Backup File"
 msgstr "サポートされていないバックアップ ファイル"
+
+msgid "Access Files on USB"
+msgstr "USB 上のファイルにアクセス"
+
+msgid "Files saved from USB"
+msgstr "USBから保存されたファイル"
+
+msgid "Clear GCodes Folder"
+msgstr "GCodeフォルダーをクリア"
+
+msgid "Show files saved from USB"
+msgstr "USBから保存されたファイルを表示"
+
+msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
+msgstr "不正なユーザーや望ましくないユーザーのアクセスを防ぐために、4 桁のパスワードを入力しますか?"
+
+msgid "Enter Password"
+msgstr "パスワードを入力してください"
+
+msgid "Change Password"
+msgstr "パスワードの変更"
+
+msgid "Remove Password Protection"
+msgstr "パスワード保護を削除"
+
+msgid "Welcome to Syncraft"
+msgstr "Syncraftへようこそ"
+
+msgid "No, I don't agree."
+msgstr "いいえ、同意しません。"
+
+msgid "Password"
+msgstr "パスワード"
+
+msgid "Terms and Conditions"
+msgstr "利用規約"
+
+msgid "Download App"
+msgstr "アプリをダウンロード"
+
+msgid "Download for iPhone"
+msgstr "iPhone 用ダウンロード"
+
+msgid "Download for Android"
+msgstr "Android 用ダウンロード"
+
+msgid "Do not show this again."
+msgstr "これを今後表示しないでください。"

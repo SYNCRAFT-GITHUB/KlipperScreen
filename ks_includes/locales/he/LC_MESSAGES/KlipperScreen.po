@@ -1107,3 +1107,51 @@ msgstr "קובץ עדכון לא נתמך"
 
 msgid "Unsupported Backup File"
 msgstr "קובץ גיבוי לא נתמך"
+
+msgid "Access Files on USB"
+msgstr "גישה לקבצים ב-USB"
+
+msgid "Files saved from USB"
+msgstr "קבצים נשמרו מ-USB"
+
+msgid "Clear GCodes Folder"
+msgstr "נקה תיקיית GCodes"
+
+msgid "Show files saved from USB"
+msgstr "הצג קבצים שנשמרו מ-USB"
+
+msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
+msgstr "רוצה להזין סיסמה בת ארבע ספרות כדי למנוע אנשים לא מורשים או לא רצויים?"
+
+msgid "Enter Password"
+msgstr "הזן סיסמה"
+
+msgid "Change Password"
+msgstr "שנה סיסמה"
+
+msgid "Remove Password Protection"
+msgstr "הסר הגנת סיסמה"
+
+msgid "Welcome to Syncraft"
+msgstr "ברוכים הבאים ל-Syncraft"
+
+msgid "No, I don't agree."
+msgstr "לא, אני לא מסכים."
+
+msgid "Password"
+msgstr "סיסמה"
+
+msgid "Terms and Conditions"
+msgstr "תנאים והגבלות"
+
+msgid "Download App"
+msgstr "הורד אפליקציה"
+
+msgid "Download for iPhone"
+msgstr "הורד לאייפון"
+
+msgid "Download for Android"
+msgstr "הורד לאנדרואיד"
+
+msgid "Do not show this again."
+msgstr "אל תציג את זה שוב."

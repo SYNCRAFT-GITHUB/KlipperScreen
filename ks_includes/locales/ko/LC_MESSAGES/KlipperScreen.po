@@ -978,3 +978,51 @@ msgstr "지원되지 않는 업데이트 파일"
 
 msgid "Unsupported Backup File"
 msgstr "지원되지 않는 백업 파일"
+
+msgid "Access Files on USB"
+msgstr "USB 파일 액세스"
+
+msgid "Files saved from USB"
+msgstr "USB에서 파일 저장"
+
+msgid "Clear GCodes Folder"
+msgstr "GCodes 폴더 지우기"
+
+msgid "Show files saved from USB"
+msgstr "USB에서 저장된 파일 표시"
+
+msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
+msgstr "무단 또는 원치 않는 사람을 방지하기 위해 4자리 비밀번호를 입력하시겠습니까?"
+
+msgid "Enter Password"
+msgstr "암호 입력"
+
+msgid "Change Password"
+msgstr "비밀번호 변경"
+
+msgid "Remove Password Protection"
+msgstr "암호 보호 제거"
+
+msgid "Welcome to Syncraft"
+msgstr "Synccraft에 오신 것을 환영합니다"
+
+msgid "No, I don't agree."
+msgstr "아니요, 동의하지 않습니다."
+
+msgid "Password"
+msgstr "비밀번호"
+
+msgid "Terms and Conditions"
+msgstr "약관"
+
+msgid "Download App"
+msgstr "앱 다운로드"
+
+msgid "Download for iPhone"
+msgstr "iPhone용 다운로드"
+
+msgid "Download for Android"
+msgstr "Android용 다운로드"
+
+msgid "Do not show this again."
+msgstr "다시 표시하지 않음."

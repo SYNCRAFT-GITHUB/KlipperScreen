@@ -904,3 +904,51 @@ msgstr ""
 
 msgid "Unsupported Backup File"
 msgstr ""
+
+msgid "Access Files on USB"
+msgstr ""
+
+msgid "Files saved from USB"
+msgstr ""
+
+msgid "Clear GCodes Folder"
+msgstr ""
+
+msgid "Show files saved from USB"
+msgstr ""
+
+msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
+msgstr ""
+
+msgid "Enter Password"
+msgstr ""
+
+msgid "Change Password"
+msgstr ""
+
+msgid "Remove Password Protection"
+msgstr ""
+
+msgid "Welcome to Syncraft"
+msgstr ""
+
+msgid "No, I don't agree."
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Terms and Conditions"
+msgstr ""
+
+msgid "Download App"
+msgstr ""
+
+msgid "Download for iPhone"
+msgstr ""
+
+msgid "Download for Android"
+msgstr ""
+
+msgid "Do not show this again."
+msgstr ""

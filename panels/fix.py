@@ -21,11 +21,18 @@ class FixPanel(ScreenPanel):
 
         self.buttons = {
             'FIX_FILES': self._gtk.Button("file", _("Essential Files"), "color1"),
+            'CLEAN_GCODE': self._gtk.Button("clean", _("Clear GCodes Folder"), "color1"),
             'FIX_CAMERA': self._gtk.Button("camera", _("Camera Driver"), "color2"),
-            'FIX_KLIPPERSCREEN': self._gtk.Button("screen", _("Interface"), "color3"),
-            'FIX_MAINSAIL': self._gtk.Button("monitor", _("Web Interface"), "color3"),
+            'FIX_KLIPPERSCREEN': self._gtk.Button("screen", _("KlipperScreen"), "color3"),
+            'FIX_MAINSAIL': self._gtk.Button("monitor", _("Mainsail"), "color3"),
             'FIX_LED': self._gtk.Button("light", _("LED Light Driver"), "color4"),
         }
+
+        self.buttons['CLEAN_GCODE'].connect("clicked", self.set_fix_option_to, "CLEANGCODEFILES")
+        self.buttons['CLEAN_GCODE'].connect("clicked", self.menu_item_clicked, "script", {
+            "name": _("Clear GCodes Folder"),
+            "panel": "script"
+        })
 
         self.buttons['FIX_FILES'].connect("clicked", self.set_fix_option_to, "FILES")
         self.buttons['FIX_FILES'].connect("clicked", self.menu_item_clicked, "fix_steps", {
@@ -59,7 +66,8 @@ class FixPanel(ScreenPanel):
 
         grid = self._gtk.HomogeneousGrid()
 
-        grid.attach(self.buttons['FIX_FILES'], 0, 0, 2, 1)
+        grid.attach(self.buttons['FIX_FILES'], 0, 0, 1, 1)
+        grid.attach(self.buttons['CLEAN_GCODE'], 1, 0, 1, 1)
         grid.attach(self.buttons['FIX_CAMERA'], 0, 2, 1, 1)
         grid.attach(self.buttons['FIX_KLIPPERSCREEN'], 0, 1, 1, 1)
         grid.attach(self.buttons['FIX_MAINSAIL'], 1, 1, 1, 1)

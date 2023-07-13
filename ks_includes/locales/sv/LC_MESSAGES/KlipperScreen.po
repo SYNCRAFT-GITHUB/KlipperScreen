@@ -964,3 +964,51 @@ msgstr "Uppdateringsfil som inte stöds"
 
 msgid "Unsupported Backup File"
 msgstr "Säkerhetskopieringsfil som inte stöds"
+
+msgid "Access Files on USB"
+msgstr "Åtkomst till USB"
+
+msgid "Files saved from USB"
+msgstr "Filer sparade från USB"
+
+msgid "Clear GCodes Folder"
+msgstr "Rensa GCodes-mappen"
+
+msgid "Show files saved from USB"
+msgstr "Visa filer sparade från USB"
+
+msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
+msgstr "Vill du ange ett fyrsiffrigt lösenord för att förhindra obehöriga eller oönskade personer?"
+
+msgid "Enter Password"
+msgstr "Ange lösenord"
+
+msgid "Change Password"
+msgstr "Ändra lösenord"
+
+msgid "Remove Password Protection"
+msgstr "Ta bort lösenordsskydd"
+
+msgid "Welcome to Syncraft"
+msgstr "Välkommen till Syncraft"
+
+msgid "No, I don't agree."
+msgstr "Nej, jag håller inte med."
+
+msgid "Password"
+msgstr "Lösenord"
+
+msgid "Terms and Conditions"
+msgstr "Villkor och villkor"
+
+msgid "Download App"
+msgstr "Ladda ner appen"
+
+msgid "Download for iPhone"
+msgstr "Ladda ner för iPhone"
+
+msgid "Download for Android"
+msgstr "Ladda ner för Android"
+
+msgid "Do not show this again."
+msgstr "Visa inte detta igen."

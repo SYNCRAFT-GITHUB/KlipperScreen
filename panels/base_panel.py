@@ -261,7 +261,7 @@ class BasePanel(ScreenPanel):
         self.control['back'].set_sensitive(False)
         self.control['home'].set_sensitive(False)
 
-    def show_macro_shortcut(self, show=True):
+    def show_macro_shortcut(self, show=False):
         if show is True and self.buttons_showing['macros_shortcut'] is False:
             self.action_bar.add(self.control['macros_shortcut'])
             if self.buttons_showing['printer_select'] is False:

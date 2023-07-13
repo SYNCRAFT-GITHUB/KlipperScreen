@@ -990,3 +990,51 @@ msgstr "Непідтримуваний файл оновлення"
 
 msgid "Unsupported Backup File"
 msgstr "Непідтримуваний резервний файл"
+
+msgid "Access Files on USB"
+msgstr "Доступ до файлів на USB"
+
+msgid "Files saved from USB"
+msgstr "Файли, збережені з USB"
+
+msgid "Clear GCodes Folder"
+msgstr "Очистити теку GCodes"
+
+msgid "Show files saved from USB"
+msgstr "Показати файли, збережені з USB"
+
+msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
+msgstr "Бажаєте ввести чотиризначний пароль, щоб запобігти неавторизованим або небажаним людям?"
+
+msgid "Enter Password"
+msgstr "Введіть пароль"
+
+msgid "Change Password"
+msgstr "Змінити пароль"
+
+msgid "Remove Password Protection"
+msgstr "Зняти захист паролем"
+
+msgid "Welcome to Syncraft"
+msgstr "Ласкаво просимо до Syncraft"
+
+msgid "No, I don't agree."
+msgstr "Ні, я не згоден."
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Terms and Conditions"
+msgstr "Положення та умови"
+
+msgid "Download App"
+msgstr "Завантажити програму"
+
+msgid "Download for iPhone"
+msgstr "Завантажити для iPhone"
+
+msgid "Download for Android"
+msgstr "Завантажити для Android"
+
+msgid "Do not show this again."
+msgstr "Не показувати це знову."

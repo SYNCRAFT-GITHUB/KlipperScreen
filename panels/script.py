@@ -20,7 +20,7 @@ class ExecuteScript(ScreenPanel):
     def __init__(self, screen, title):
         
         self.fix_option: str = self._config.get_fix_option()
-        # NONE, FILES, CAMERA, LIGHT, KLIPPERSCREEN, MAINSAIL, KLIPPER, USB_DEFAULT, USB_RECOVER
+        # NONE, FILES, CAMERA, LIGHT, KLIPPERSCREEN, MAINSAIL, KLIPPER, USB_DEFAULT, USB_RECOVER, CLEANGCODEFILES
 
         super().__init__(screen, title)
         self.menu = ['execute_script_panel']
@@ -68,6 +68,10 @@ class ExecuteScript(ScreenPanel):
 
         if (self._config.get_fix_option() == "LIGHT"):
             script_path = '/home/pi/KlipperScreen/scripts/fix/light.sh'
+            subprocess.call(['bash', script_path])
+
+        if (self._config.get_fix_option() == "CLEANGCODEFILES"):
+            script_path = '/home/pi/KlipperScreen/scripts/fix/cleangcodefiles.sh'
             subprocess.call(['bash', script_path])
 
         if (self._config.get_fix_option() == "USB_DEFAULT"):

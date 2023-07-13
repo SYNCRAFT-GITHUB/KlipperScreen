@@ -924,3 +924,51 @@ msgstr "Nepodporovaný aktualizační soubor"
 
 msgid "Unsupported Backup File"
 msgstr "Nepodporovaný záložní soubor"
+
+msgid "Access Files on USB"
+msgstr "Přístup k souborům na USB"
+
+msgid "Files saved from USB"
+msgstr "Soubory uložené z USB"
+
+msgid "Clear GCodes Folder"
+msgstr "Vymazat složku GCodes"
+
+msgid "Show files saved from USB"
+msgstr "Zobrazit soubory uložené z USB"
+
+msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
+msgstr "Chcete zadat čtyřmístné heslo, abyste zabránili neoprávněným nebo nechtěným osobám?"
+
+msgid "Enter Password"
+msgstr "Zadejte heslo"
+
+msgid "Change Password"
+msgstr "Změnit heslo"
+
+msgid "Remove Password Protection"
+msgstr "Odstranit ochranu heslem"
+
+msgid "Welcome to Syncraft"
+msgstr "Vítejte v Syncraftu"
+
+msgid "No, I don't agree."
+msgstr "Ne, nesouhlasím."
+
+msgid "Password"
+msgstr "Heslo"
+
+msgid "Terms and Conditions"
+msgstr "Smluvní podmínky"
+
+msgid "Download App"
+msgstr "Stáhnout aplikaci"
+
+msgid "Download for iPhone"
+msgstr "Stáhnout pro iPhone"
+
+msgid "Download for Android"
+msgstr "Stáhnout pro Android"
+
+msgid "Do not show this again."
+msgstr "Toto znovu nezobrazovat."
