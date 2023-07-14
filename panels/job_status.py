@@ -784,9 +784,22 @@ class JobStatusPanel(ScreenPanel):
             pixbuf = self._gtk.PixbufFromIcon("3dcube", width / 2, height / 2)
         self.labels['thumbnail'].set_from_pixbuf(pixbuf)
 
+    def beauty(self, text):
+        prefixes = ["SX1", "SX2"]
+        for prefix in prefixes:
+            if text.startswith(prefix):
+                text = text.replace(prefix, "", 1)
+        if text.startswith("_") or text.startswith(" "):
+            text = text[1:]
+        if text.endswith("_") or text.endswith(" "):
+            text = text[:-1]
+        return text.replace("_", " ")
+
     def update_filename(self):
         self.filename = self._printer.get_stat('print_stats', 'filename')
-        self.labels["file"].set_label(os.path.splitext(self.filename)[0])
+        self.beauty_filename = self.beauty(self.filename)
+        self.filename_as_title = self.beauty(os.path.basename(os.path.splitext(self.filename)[0]))
+        self.labels["file"].set_label(self.filename_as_title)
         self.filename_label = {
             "complete": self.labels['file'].get_label(),
             "current": self.labels['file'].get_label(),
