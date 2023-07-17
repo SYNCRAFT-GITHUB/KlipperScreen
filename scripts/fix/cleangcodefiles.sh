@@ -12,4 +12,6 @@ mkdir USB
 
 mkdir USB_PRINTS
 
+mkdir .WORKSTATION
+
 sudo reboot

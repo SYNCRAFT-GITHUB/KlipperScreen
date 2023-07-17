@@ -2,6 +2,7 @@
 import logging
 import os
 import shutil
+import zipfile as zip
 
 import gi
 
@@ -241,7 +242,7 @@ class PrintPanel(ScreenPanel):
             row.attach(rename, 2, 1, 1, 1)
             row.attach(delete, 3, 1, 1, 1)
 
-        if not filename or (filename and os.path.splitext(filename)[1] in [".gcode", ".g", ".gco"]):
+        if not filename or (filename and os.path.splitext(filename)[1] in [".gcode", ".g", ".gco", ".ufp"]):
             row.attach(action, 4, 0, 1, 2)
 
         if filename is not None:
@@ -346,6 +347,16 @@ class PrintPanel(ScreenPanel):
             filetocopy = f"/home/pi/printer_data/gcodes/{filename}"
             shutil.copy2(filetocopy, destination)
             filename = filename.replace("USB/", "USB_PRINTS/")
+        elif ".ufp" in filename:
+            path: str = "/home/pi/printer_data/gcodes/.WORKSTATION"
+            if not os.path.exists(path):
+                os.makedirs(path)
+            destination = os.path.join(path, os.path.basename(filename))
+            filetocopy = f"/home/pi/printer_data/gcodes/{filename}"
+            shutil.copy2(filetocopy, destination)
+            filename = f".WORKSTATION/{os.path.basename(filename)}"
+
+        filename = filename.replace(".ufp", ".gcode")
 
         label = Gtk.Label()
         label.set_markup(f"<b>{filename}</b>\n")
