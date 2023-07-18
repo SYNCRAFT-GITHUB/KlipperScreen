@@ -45,36 +45,39 @@ class ExecuteScript(ScreenPanel):
     # NONE, FILES, CAMERA, LIGHT, KLIPPERSCREEN, KLIPPER
     def execute (self, button):
 
-        if not self.internet_connection():
+        fix_option = self._config.get_fix_option()
+        offline_scripts = ["USB_DEFAULT", "USB_RECOVER", "CLEANGCODEFILES"]
+
+        if not self.internet_connection() and fix_option not in offline_scripts:
             message: str = _("This procedure requires internet connection")
             self._screen._ws.klippy.gcode_script(f"M118 {message}")
             return None
 
-        if (self._config.get_fix_option() == "FILES"):
+        if (fix_option == "FILES"):
             script_path = '/home/pi/KlipperScreen/scripts/fix/files.sh'
             subprocess.call(['bash', script_path])
 
-        if (self._config.get_fix_option() == "KLIPPERSCREEN"):
+        if (fix_option == "KLIPPERSCREEN"):
             script_path = '/home/pi/KlipperScreen/scripts/fix/klipperscreen.sh'
             subprocess.call(['bash', script_path])
 
-        if (self._config.get_fix_option() == "MAINSAIL"):
+        if (fix_option == "MAINSAIL"):
             script_path = '/home/pi/KlipperScreen/scripts/fix/mainsail.sh'
             subprocess.call(['bash', script_path])
 
-        if (self._config.get_fix_option() == "CAMERA"):
+        if (fix_option == "CAMERA"):
             script_path = '/home/pi/KlipperScreen/scripts/fix/camera.sh'
             subprocess.call(['bash', script_path])
 
-        if (self._config.get_fix_option() == "LIGHT"):
+        if (fix_option == "LIGHT"):
             script_path = '/home/pi/KlipperScreen/scripts/fix/light.sh'
             subprocess.call(['bash', script_path])
 
-        if (self._config.get_fix_option() == "CLEANGCODEFILES"):
+        if (fix_option == "CLEANGCODEFILES"):
             script_path = '/home/pi/KlipperScreen/scripts/fix/cleangcodefiles.sh'
             subprocess.call(['bash', script_path])
 
-        if (self._config.get_fix_option() == "USB_DEFAULT"):
+        if (fix_option == "USB_DEFAULT"):
 
             path: str = '/home/pi/printer_data/gcodes/USB/SYNCRAFT/update.sh'
 
@@ -86,7 +89,7 @@ class ExecuteScript(ScreenPanel):
                 script_path = path
                 subprocess.call(['bash', script_path])
 
-        if (self._config.get_fix_option() == "USB_RECOVER"):
+        if (fix_option == "USB_RECOVER"):
 
             path: str = '/home/pi/printer_data/gcodes/USB/SYNCRAFT/RECOVER/update.sh'
 
