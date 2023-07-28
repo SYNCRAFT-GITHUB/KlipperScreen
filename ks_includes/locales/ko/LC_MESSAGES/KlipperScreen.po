@@ -1026,3 +1026,72 @@ msgstr "Android용 다운로드"
 
 msgid "Do not show this again."
 msgstr "다시 표시하지 않음."
+
+msgid "Extruder"
+msgstr "압출기"
+
+msgid "Extruders"
+msgstr "압출기"
+
+msgid "Extruders and Feeders"
+msgstr "압출기 및 피더"
+
+msgid "Primary Extruder"
+msgstr "주 압출기"
+
+msgid "Main Extruder"
+msgstr "메인 압출기"
+
+msgid "Default Extruder"
+msgstr "기본 압출기"
+
+msgid "Secondary Extruder"
+msgstr "보조 압출기"
+
+msgid "Default"
+msgstr "기본값"
+
+msgid "Screen Brightness"
+msgstr "화면 밝기"
+
+msgid "Change Screen Brightness"
+msgstr "화면 밝기 변경"
+
+msgid "Almost Off"
+msgstr "거의 꺼짐"
+
+msgid "Low"
+msgstr "낮음"
+
+msgid "Normal"
+msgstr "정상"
+
+msgid "High"
+msgstr "높음"
+
+msgid "User"
+msgstr "사용자"
+
+msgid "Users"
+msgstr "사용자"
+
+msgid "Switch User"
+msgstr "사용자 전환"
+
+msgid "Choose User"
+msgstr "사용자 선택"
+
+msgid "Create User"
+msgstr "사용자 생성"
+
+msgid "Delete User"
+msgstr "사용자 삭제"
+
+msgid "Edit User"
+msgstr "사용자 편집"
+
+msgid "Heater Bed"
+msgstr "가열 테이블"
+
+msgid "Chamber Fan"
+msgstr "바람 선풍기"

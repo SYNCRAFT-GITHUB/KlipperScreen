@@ -1138,3 +1138,72 @@ msgstr "Скачать для Android"
 
 msgid "Do not show this again."
 msgstr "Больше не показывать это."
+
+msgid "Extruder"
+msgstr "Экструдер"
+
+msgid "Extruders"
+msgstr "Экструдеры"
+
+msgid "Extruders and Feeders"
+msgstr "Экструдеры и питатели"
+
+msgid "Primary Extruder"
+msgstr "Основной экструдер"
+
+msgid "Main Extruder"
+msgstr "Главный экструдер"
+
+msgid "Default Extruder"
+msgstr "Экструдер по умолчанию"
+
+msgid "Secondary Extruder"
+msgstr "Вторичный экструдер"
+
+msgid "Default"
+msgstr "По умолчанию"
+
+msgid "Screen Brightness"
+msgstr "Яркость экрана"
+
+msgid "Change Screen Brightness"
+msgstr "Изменить яркость экрана"
+
+msgid "Almost Off"
+msgstr "Почти выключено"
+
+msgid "Low"
+msgstr "Низкий"
+
+msgid "Normal"
+msgstr "Обычный"
+
+msgid "High"
+msgstr "Высокий"
+
+msgid "User"
+msgstr "Пользователь"
+
+msgid "Users"
+msgstr "Пользователи"
+
+msgid "Switch User"
+msgstr "Сменить пользователя"
+
+msgid "Choose User"
+msgstr "Выбрать пользователя"
+
+msgid "Create User"
+msgstr "Создать пользователя"
+
+msgid "Delete User"
+msgstr "Удалить пользователя"
+
+msgid "Edit User"
+msgstr "Редактировать пользователя"
+
+msgid "Heater Bed"
+msgstr "Таблица печати"
+
+msgid "Chamber Fan"
+msgstr "Веер ветра"

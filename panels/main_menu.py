@@ -103,11 +103,12 @@ class MainPanel(MenuPanel):
         if device.startswith("extruder"):
             i = sum(d.startswith('extruder') for d in self.devices)
             image = f"extruder-{i+1}" if self._printer.extrudercount > 1 else "extruder"
+            devname = _("Extruder")
             class_name = f"graph_label_{device}"
             dev_type = "extruder"
         elif device == "heater_bed":
             image = "bed"
-            devname = "Heater Bed"
+            devname = _("Heater Bed")
             class_name = "graph_label_heater_bed"
             dev_type = "bed"
         elif device.startswith("heater_generic"):
@@ -117,6 +118,7 @@ class MainPanel(MenuPanel):
             dev_type = "sensor"
         elif device.startswith("temperature_fan"):
             f = 1 + sum("temperature_fan" in d for d in self.devices)
+            devname = _("Chamber Fan")
             image = "fan"
             class_name = f"graph_label_fan_{f}"
             dev_type = "fan"
@@ -135,7 +137,7 @@ class MainPanel(MenuPanel):
         if can_target:
             self.labels['da'].add_object(device, "targets", rgb, True, False)
 
-        name = self._gtk.Button(image, devname.title().replace("_", " "), None, self.bts, Gtk.PositionType.LEFT, 1)
+        name = self._gtk.Button(image, devname, None, self.bts, Gtk.PositionType.LEFT, 1)
         name.connect("clicked", self.toggle_visibility, device)
         name.set_alignment(0, .5)
         visible = self._config.get_config().getboolean(f"graph {self._screen.connected_printer}", device, fallback=True)

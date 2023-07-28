@@ -1093,3 +1093,72 @@ msgstr "下载 Android 版"
 
 msgid "Do not show this again."
 msgstr "不要再显示此内容。"
+
+msgid "Extruder"
+msgstr "挤出机"
+
+msgid "Extruders"
+msgstr "挤出机"
+
+msgid "Extruders and Feeders"
+msgstr "挤出机和喂料机"
+
+msgid "Primary Extruder"
+msgstr "主挤出机"
+
+msgid "Main Extruder"
+msgstr "主挤出机"
+
+msgid "Default Extruder"
+msgstr "默认挤出机"
+
+msgid "Secondary Extruder"
+msgstr "辅助挤出机"
+
+msgid "Default"
+msgstr "默认"
+
+msgid "Screen Brightness"
+msgstr "屏幕亮度"
+
+msgid "Change Screen Brightness"
+msgstr "更改屏幕亮度"
+
+msgid "Almost Off"
+msgstr "即将关闭"
+
+msgid "Low"
+msgstr "低"
+
+msgid "Normal"
+msgstr "正常"
+
+msgid "High"
+msgstr "高"
+
+msgid "User"
+msgstr "用户"
+
+msgid "Users"
+msgstr "用户"
+
+msgid "Switch User"
+msgstr "切换用户"
+
+msgid "Choose User"
+msgstr "选择用户"
+
+msgid "Create User"
+msgstr "创建用户"
+
+msgid "Delete User"
+msgstr "删除用户"
+
+msgid "Edit User"
+msgstr "编辑用户"
+
+msgid "Heater Bed"
+msgstr "加热桌"
+
+msgid "Chamber Fan"
+msgstr "风风扇"

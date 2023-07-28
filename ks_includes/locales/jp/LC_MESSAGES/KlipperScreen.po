@@ -958,3 +958,72 @@ msgstr "Android 用ダウンロード"
 
 msgid "Do not show this again."
 msgstr "これを今後表示しないでください。"
+
+msgid "Extruder"
+msgstr "エクストルーダー"
+
+msgid "Extruders"
+msgstr "エクストルーダー"
+
+msgid "Extruders and Feeders"
+msgstr "押出機とフィーダー"
+
+msgid "Primary Extruder"
+msgstr "プライマリエクストルーダー"
+
+msgid "Main Extruder"
+msgstr "メインエクストルーダー"
+
+msgid "Default Extruder"
+msgstr "デフォルトのエクストルーダー"
+
+msgid "Secondary Extruder"
+msgstr "二次押出機"
+
+msgid "Default"
+msgstr "デフォルト"
+
+msgid "Screen Brightness"
+msgstr "画面の明るさ"
+
+msgid "Change Screen Brightness"
+msgstr "画面の明るさを変更"
+
+msgid "Almost Off"
+msgstr "ほぼオフ"
+
+msgid "Low"
+msgstr "低"
+
+msgid "Normal"
+msgstr "通常"
+
+msgid "High"
+msgstr "高"
+
+msgid "User"
+msgstr "ユーザー"
+
+msgid "Users"
+msgstr "ユーザー"
+
+msgid "Switch User"
+msgstr "ユーザーの切り替え"
+
+msgid "Choose User"
+msgstr "ユーザーを選択"
+
+msgid "Create User"
+msgstr "ユーザーの作成"
+
+msgid "Delete User"
+msgstr "ユーザーを削除"
+
+msgid "Edit User"
+msgstr "ユーザーの編集"
+
+msgid "Heater Bed"
+msgstr "加熱テーブル"
+
+msgid "Chamber Fan"
+msgstr "ウィンドファン"

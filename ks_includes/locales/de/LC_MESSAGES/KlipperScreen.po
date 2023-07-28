@@ -1104,3 +1104,72 @@ msgstr "Für Android herunterladen"
 
 msgid "Do not show this again."
 msgstr "Dies nicht mehr anzeigen."
+
+msgid "Extruder"
+msgstr "Extruder"
+
+msgid "Extruders"
+msgstr "Extruder"
+
+msgid "Extruders and Feeders"
+msgstr "Extruder und Feeder"
+
+msgid "Primary Extruder"
+msgstr "Primärer Extruder"
+
+msgid "Main Extruder"
+msgstr "Hauptextruder"
+
+msgid "Default Extruder"
+msgstr "Standard-Extruder"
+
+msgid "Secondary Extruder"
+msgstr "Sekundärer Extruder"
+
+msgid "Default"
+msgstr "Standard"
+
+msgid "Screen Brightness"
+msgstr "Bildschirmhelligkeit"
+
+msgid "Change Screen Brightness"
+msgstr "Bildschirmhelligkeit ändern"
+
+msgid "Almost Off"
+msgstr "Fast aus"
+
+msgid "Low"
+msgstr "Niedrig"
+
+msgid "Normal"
+msgstr "Normal"
+
+msgid "High"
+msgstr "Hoch"
+
+msgid "User"
+msgstr "Benutzer"
+
+msgid "Users"
+msgstr "Benutzer"
+
+msgid "Switch User"
+msgstr "Benutzer wechseln"
+
+msgid "Choose User"
+msgstr "Benutzer auswählen"
+
+msgid "Create User"
+msgstr "Benutzer erstellen"
+
+msgid "Delete User"
+msgstr "Benutzer löschen"
+
+msgid "Edit User"
+msgstr "Benutzer bearbeiten"
+
+msgid "Heater Bed"
+msgstr "Beheizter Tisch"
+
+msgid "Chamber Fan"
+msgstr "Windfächer"

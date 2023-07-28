@@ -972,3 +972,72 @@ msgstr "Stáhnout pro Android"
 
 msgid "Do not show this again."
 msgstr "Toto znovu nezobrazovat."
+
+msgid "Extruder"
+msgstr "Extruder"
+
+msgid "Extruders"
+msgstr "Extrudery"
+
+msgid "Extruders and Feeders"
+msgstr "Extrudery a podavače"
+
+msgid "Primary Extruder"
+msgstr "Primární extrudér"
+
+msgid "Main Extruder"
+msgstr "Hlavní extrudér"
+
+msgid "Default Extruder"
+msgstr "Výchozí extrudér"
+
+msgid "Secondary Extruder"
+msgstr "Sekundární extrudér"
+
+msgid "Default"
+msgstr "Výchozí"
+
+msgid "Screen Brightness"
+msgstr "Jas obrazovky"
+
+msgid "Change Screen Brightness"
+msgstr "Změnit jas obrazovky"
+
+msgid "Almost Off"
+msgstr "Téměř vypnuto"
+
+msgid "Low"
+msgstr "Nízký"
+
+msgid "Normal"
+msgstr "Normální"
+
+msgid "High"
+msgstr "Vysoká"
+
+msgid "User"
+msgstr "Uživatel"
+
+msgid "Users"
+msgstr "Uživatelé"
+
+msgid "Switch User"
+msgstr "Přepnout uživatele"
+
+msgid "Choose User"
+msgstr "Vybrat uživatele"
+
+msgid "Create User"
+msgstr "Vytvořit uživatele"
+
+msgid "Delete User"
+msgstr "Smazat uživatele"
+
+msgid "Edit User"
+msgstr "Upravit uživatele"
+
+msgid "Heater Bed"
+msgstr "Tisková tabulka"
+
+msgid "Chamber Fan"
+msgstr "Větrák"

@@ -24,6 +24,7 @@ class BasePanel(ScreenPanel):
         self.titlebar_name_type = None
         self.buttons_showing = {
             'macros_shortcut': False,
+            'brightness_shortcut': False,
             'printer_select': len(self._config.get_printers()) > 1,
         }
         self.current_extruder = None
@@ -42,6 +43,12 @@ class BasePanel(ScreenPanel):
         self.control['macros_shortcut'].connect("clicked", self.menu_item_clicked, "gcode_macros", {
             "name": "Macros",
             "panel": "gcode_macros"
+        })
+
+        self.control['brightness_shortcut'] = self._gtk.Button('brightness-high', scale=abscale)
+        self.control['brightness_shortcut'].connect("clicked", self.menu_item_clicked, "brightness", {
+            "name": _("Screen Brightness"),
+            "panel": "brightness"
         })
 
         self.control['estop'] = self._gtk.Button('emergency', scale=abscale)
@@ -273,6 +280,19 @@ class BasePanel(ScreenPanel):
         elif show is False and self.buttons_showing['macros_shortcut'] is True:
             self.action_bar.remove(self.control['macros_shortcut'])
             self.buttons_showing['macros_shortcut'] = False
+
+    def show_screen_brightness(self, show=False):
+        if show is True and self.buttons_showing['brightness_shortcut'] is False:
+            self.action_bar.add(self.control['brightness_shortcut'])
+            if self.buttons_showing['printer_select'] is False:
+                self.action_bar.reorder_child(self.control['brightness_shortcut'], 2)
+            else:
+                self.action_bar.reorder_child(self.control['brightness_shortcut'], 3)
+            self.control['brightness_shortcut'].show()
+            self.buttons_showing['brightness_shortcut'] = True
+        elif show is False and self.buttons_showing['brightness_shortcut'] is True:
+            self.action_bar.remove(self.control['brightness_shortcut'])
+            self.buttons_showing['brightness_shortcut'] = False
 
     def show_printer_select(self, show=True):
         if show and self.buttons_showing['printer_select'] is False:
