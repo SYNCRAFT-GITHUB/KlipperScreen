@@ -152,8 +152,8 @@ class KlipperScreenConfig:
             if section == 'main':
                 bools = (
                     'invert_x', 'invert_y', 'invert_z', '24htime', 'only_heaters', 'show_cursor', 'confirm_estop',
-                    'autoclose_popups', 'use_dpms', 'use_default_menu', 'show_saved_from_usb', 'side_macro_shortcut', 'use-matchbox-keyboard',
-                    'show_heater_power'
+                    'autoclose_popups', 'use_dpms', 'use_default_menu', 'show_saved_from_usb', 'side_brightness_shortcut',
+                    'side_macro_shortcut', 'use-matchbox-keyboard', 'show_heater_power'
                 )
                 strs = (
                     'default_printer', 'language', 'print_sort_dir', 'theme', 'screen_blanking', 'font_size',
@@ -246,6 +246,9 @@ class KlipperScreenConfig:
             {"show_saved_from_usb": {
                 "section": "main", "name": _("Show files saved from USB"), "type": "binary",
                 "value": "False", "callback": self.toggle_show_saved_from_usb}},
+            {"side_brightness_shortcut": {
+                "section": "main", "name": _("Change Screen Brightness"), "type": "binary",
+                "value": "False", "callback": screen.toggle_brightness_shortcut}},
             {"side_macro_shortcut": {
                 "section": "main", "name": _("Macro shortcut on sidebar"), "type": "binary",
                 "value": "False", "callback": screen.toggle_macro_shortcut}},

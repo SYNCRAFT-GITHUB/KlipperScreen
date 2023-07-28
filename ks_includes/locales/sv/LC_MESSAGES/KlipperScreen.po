@@ -1012,3 +1012,72 @@ msgstr "Ladda ner för Android"
 
 msgid "Do not show this again."
 msgstr "Visa inte detta igen."
+
+msgid "Extruder"
+msgstr "Extruder"
+
+msgid "Extruders"
+msgstr "Extruders"
+
+msgid "Extruders and Feeders"
+msgstr "Extruders och matare"
+
+msgid "Primary Extruder"
+msgstr "Primär extruder"
+
+msgid "Main Extruder"
+msgstr "Huvudextruder"
+
+msgid "Default Extruder"
+msgstr "Default Extruder"
+
+msgid "Secondary Extruder"
+msgstr "Sekundär extruder"
+
+msgid "Default"
+msgstr "Standard"
+
+msgid "Screen Brightness"
+msgstr "Skärmens ljusstyrka"
+
+msgid "Change Screen Brightness"
+msgstr "Ändra skärmens ljusstyrka"
+
+msgid "Almost Off"
+msgstr "Nästan av"
+
+msgid "Low"
+msgstr "Låg"
+
+msgid "Normal"
+msgstr "Normal"
+
+msgid "High"
+msgstr "Hög"
+
+msgid "User"
+msgstr "Användare"
+
+msgid "Users"
+msgstr "Användare"
+
+msgid "Switch User"
+msgstr "Byt användare"
+
+msgid "Choose User"
+msgstr "Välj användare"
+
+msgid "Create User"
+msgstr "Skapa användare"
+
+msgid "Delete User"
+msgstr "Ta bort användare"
+
+msgid "Edit User"
+msgstr "Redigera användare"
+
+msgid "Heater Bed"
+msgstr "Skriv ut tabell"
+
+msgid "Chamber Fan"
+msgstr "Vindfläkt"

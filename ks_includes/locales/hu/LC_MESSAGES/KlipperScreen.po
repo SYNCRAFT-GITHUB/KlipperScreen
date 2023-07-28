@@ -1019,3 +1019,72 @@ msgstr "Letöltés Androidra"
 
 msgid "Do not show this again."
 msgstr "Ne mutasd újra."
+
+msgid "Extruder"
+msgstr "Extruder"
+
+msgid "Extruders"
+msgstr "Extruderek"
+
+msgid "Extruders and Feeders"
+msgstr "Extruderek és adagolók"
+
+msgid "Primary Extruder"
+msgstr "Elsődleges extruder"
+
+msgid "Main Extruder"
+msgstr "Fő extruder"
+
+msgid "Default Extruder"
+msgstr "Alapértelmezett extruder"
+
+msgid "Secondary Extruder"
+msgstr "Másodlagos extruder"
+
+msgid "Default"
+msgstr "Alapértelmezett"
+
+msgid "Screen Brightness"
+msgstr "Képernyő fényereje"
+
+msgid "Change Screen Brightness"
+msgstr "Képernyő fényerejének módosítása"
+
+msgid "Almost Off"
+msgstr "Majdnem kikapcsolva"
+
+msgid "Low"
+msgstr "Alacsony"
+
+msgid "Normal"
+msgstr "Normál"
+
+msgid "High"
+msgstr "Magas"
+
+msgid "User"
+msgstr "Felhasználó"
+
+msgid "Users"
+msgstr "Felhasználók"
+
+msgid "Switch User"
+msgstr "Felhasználó váltása"
+
+msgid "Choose User"
+msgstr "Felhasználó kiválasztása"
+
+msgid "Create User"
+msgstr "Felhasználó létrehozása"
+
+msgid "Delete User"
+msgstr "Felhasználó törlése"
+
+msgid "Edit User"
+msgstr "Felhasználó szerkesztése"
+
+msgid "Heater Bed"
+msgstr "Nyomtatási táblázat"
+
+msgid "Chamber Fan"
+msgstr "Szélventilátor"

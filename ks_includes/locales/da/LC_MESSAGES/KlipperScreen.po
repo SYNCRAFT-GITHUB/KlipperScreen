@@ -1064,3 +1064,72 @@ msgstr "Download til Android"
 
 msgid "Do not show this again."
 msgstr "Vis ikke dette igen."
+
+msgid "Extruder"
+msgstr "Ekstruder"
+
+msgid "Extruders"
+msgstr "Ekstrudere"
+
+msgid "Extruders and Feeders"
+msgstr "Ekstrudere og fødere"
+
+msgid "Primary Extruder"
+msgstr "Primær ekstruder"
+
+msgid "Main Extruder"
+msgstr "Hovedekstruder"
+
+msgid "Default Extruder"
+msgstr "Standard ekstruder"
+
+msgid "Secondary Extruder"
+msgstr "Sekundær ekstruder"
+
+msgid "Default"
+msgstr "Standard"
+
+msgid "Screen Brightness"
+msgstr "Skærmens lysstyrke"
+
+msgid "Change Screen Brightness"
+msgstr "Skift skærmens lysstyrke"
+
+msgid "Almost Off"
+msgstr "Næsten slukket"
+
+msgid "Low"
+msgstr "Lav"
+
+msgid "Normal"
+msgstr "Normal"
+
+msgid "High"
+msgstr "Høj"
+
+msgid "User"
+msgstr "Bruger"
+
+msgid "Users"
+msgstr "Brugere"
+
+msgid "Switch User"
+msgstr "Skift bruger"
+
+msgid "Choose User"
+msgstr "Vælg bruger"
+
+msgid "Create User"
+msgstr "Opret bruger"
+
+msgid "Delete User"
+msgstr "Slet bruger"
+
+msgid "Edit User"
+msgstr "Rediger bruger"
+
+msgid "Heater Bed"
+msgstr "Udskrivningstabel"
+
+msgid "Chamber Fan"
+msgstr "Vindventilator"

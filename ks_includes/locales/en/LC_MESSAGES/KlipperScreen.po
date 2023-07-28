@@ -952,3 +952,72 @@ msgstr ""
 
 msgid "Do not show this again."
 msgstr ""
+
+msgid "Extruder"
+msgstr ""
+
+msgid "Extruders"
+msgstr ""
+
+msgid "Extruders and Feeders"
+msgstr ""
+
+msgid "Primary Extruder"
+msgstr ""
+
+msgid "Main Extruder"
+msgstr ""
+
+msgid "Default Extruder"
+msgstr ""
+
+msgid "Secondary Extruder"
+msgstr ""
+
+msgid "Default"
+msgstr ""
+
+msgid "Screen Brightness"
+msgstr ""
+
+msgid "Change Screen Brightness"
+msgstr ""
+
+msgid "Almost Off"
+msgstr ""
+
+msgid "Low"
+msgstr ""
+
+msgid "Normal"
+msgstr ""
+
+msgid "High"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "Switch User"
+msgstr ""
+
+msgid "Choose User"
+msgstr ""
+
+msgid "Create User"
+msgstr ""
+
+msgid "Delete User"
+msgstr ""
+
+msgid "Edit User"
+msgstr ""
+
+msgid "Heater Bed"
+msgstr ""
+
+msgid "Chamber Fan"
+msgstr ""

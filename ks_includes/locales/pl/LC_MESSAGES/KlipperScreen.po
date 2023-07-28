@@ -1078,3 +1078,72 @@ msgstr "Pobierz na Androida"
 
 msgid "Do not show this again."
 msgstr "Nie pokazuj tego więcej."
+
+msgid "Extruder"
+msgstr "Wytłaczarka"
+
+msgid "Extruders"
+msgstr "Wytłaczarki"
+
+msgid "Extruders and Feeders"
+msgstr "Wytłaczarki i podajniki"
+
+msgid "Primary Extruder"
+msgstr "Pierwotny ekstruder"
+
+msgid "Main Extruder"
+msgstr "Główny ekstruder"
+
+msgid "Default Extruder"
+msgstr "Domyślny ekstruder"
+
+msgid "Secondary Extruder"
+msgstr "Dodatkowy ekstruder"
+
+msgid "Default"
+msgstr "Domyślny"
+
+msgid "Screen Brightness"
+msgstr "Jasność ekranu"
+
+msgid "Change Screen Brightness"
+msgstr "Zmień jasność ekranu"
+
+msgid "Almost Off"
+msgstr "Prawie wyłączone"
+
+msgid "Low"
+msgstr "Niski"
+
+msgid "Normal"
+msgstr "Normalny"
+
+msgid "High"
+msgstr "Wysoki"
+
+msgid "User"
+msgstr "Użytkownik"
+
+msgid "Users"
+msgstr "Użytkownicy"
+
+msgid "Switch User"
+msgstr "Przełącz użytkownika"
+
+msgid "Choose User"
+msgstr "Wybierz użytkownika"
+
+msgid "Create User"
+msgstr "Utwórz użytkownika"
+
+msgid "Delete User"
+msgstr "Usuń użytkownika"
+
+msgid "Edit User"
+msgstr "Edytuj użytkownika"
+
+msgid "Heater Bed"
+msgstr "Podgrzewany Stół"
+
+msgid "Chamber Fan"
+msgstr "Wachlarz wiatru"

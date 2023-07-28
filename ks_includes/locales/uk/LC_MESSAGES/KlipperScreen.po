@@ -1038,3 +1038,72 @@ msgstr "Завантажити для Android"
 
 msgid "Do not show this again."
 msgstr "Не показувати це знову."
+
+msgid "Extruder"
+msgstr "Екструдер"
+
+msgid "Extruders"
+msgstr "Екструдери"
+
+msgid "Extruders and Feeders"
+msgstr "Екструдери та живильники"
+
+msgid "Primary Extruder"
+msgstr "Основний екструдер"
+
+msgid "Main Extruder"
+msgstr "Головний екструдер"
+
+msgid "Default Extruder"
+msgstr "Екструдер за замовчуванням"
+
+msgid "Secondary Extruder"
+msgstr "Вторинний екструдер"
+
+msgid "Default"
+msgstr "За замовчуванням"
+
+msgid "Screen Brightness"
+msgstr "Яскравість екрана"
+
+msgid "Change Screen Brightness"
+msgstr "Змінити яскравість екрана"
+
+msgid "Almost Off"
+msgstr "Майже вимкнено"
+
+msgid "Low"
+msgstr "Низький"
+
+msgid "Normal"
+msgstr "Звичайний"
+
+msgid "High"
+msgstr "Високий"
+
+msgid "User"
+msgstr "Користувач"
+
+msgid "Users"
+msgstr "Користувачі"
+
+msgid "Switch User"
+msgstr "Змінити користувача"
+
+msgid "Choose User"
+msgstr "Виберіть користувача"
+
+msgid "Create User"
+msgstr "Створити користувача"
+
+msgid "Delete User"
+msgstr "Видалити користувача"
+
+msgid "Edit User"
+msgstr "Редагувати користувача"
+
+msgid "Heater Bed"
+msgstr "Таблиця друку"
+
+msgid "Chamber Fan"
+msgstr "Вентилятор"
