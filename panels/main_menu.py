@@ -103,7 +103,7 @@ class MainPanel(MenuPanel):
         if device.startswith("extruder"):
             i = sum(d.startswith('extruder') for d in self.devices)
             image = f"extruder-{i+1}" if self._printer.extrudercount > 1 else "extruder"
-            devname = _("Extruder")
+            devname = _("Secondary Extruder") if "1" in devname else _("Main Extruder")
             class_name = f"graph_label_{device}"
             dev_type = "extruder"
         elif device == "heater_bed":

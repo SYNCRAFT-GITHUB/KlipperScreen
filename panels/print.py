@@ -2,6 +2,7 @@
 import logging
 import os
 import shutil
+import re
 import zipfile as zip
 
 import gi
@@ -12,6 +13,7 @@ from datetime import datetime
 
 from ks_includes.screen_panel import ScreenPanel
 
+home = os.path.expanduser("~")
 
 def create_panel(*args):
     return PrintPanel(*args)
@@ -159,28 +161,27 @@ class PrintPanel(ScreenPanel):
         name.get_style_context().add_class("print-filename")
 
         def is_usb(string):
-            if string[-3:] == "USB":
+            if string.endswith("/USB"):
                 return True
             else:
                 return False
 
-        def is_usb_prints(string):
-            if string[-10:] == "USB_PRINTS":
+        def is_usb_device(string):
+            pattern = r'/'
+            occurrences = re.findall(pattern, string)
+            if string.startswith("gcodes/USB/") and len(occurrences) == 2:
                 return True
             else:
                 return False
 
-        if is_usb_prints(fullpath) and self._config.get_main_config().get('show_saved_from_usb') != "True":
-            return
-
-        if filename:
+        if filename: # Normal File
             name.set_markup(f'<big><b>{os.path.splitext(filename)[0].replace("_", " ")}</b></big>')
-        elif not is_usb(fullpath) and not is_usb_prints(fullpath):
+        elif not is_usb(fullpath) and not is_usb_device(fullpath): # Normal Folder
             name.set_markup(f'<big><b>{os.path.split(fullpath)[-1].replace("_", " ")}</b></big>')
-        elif is_usb(fullpath) and not is_usb_prints(fullpath):
+        elif is_usb(fullpath): # USB System Link
             name.set_markup(f'<big><b>{_("Access Files on USB")}</b></big>')
-        elif is_usb_prints(fullpath):
-            name.set_markup(f'<big><b>{_("Files saved from USB")}</b></big>')
+        elif is_usb_device(fullpath): # USB Device Inside System Link
+            name.set_markup(f'<big><b>{_("USB")}</b></big>')
         name.set_hexpand(True)
         name.set_halign(Gtk.Align.START)
         name.set_line_wrap(True)
@@ -205,18 +206,13 @@ class PrintPanel(ScreenPanel):
             delete.connect("clicked", self.confirm_delete_file, f"gcodes/{fullpath}")
             rename.connect("clicked", self.show_rename, f"gcodes/{fullpath}")
             GLib.idle_add(self.image_load, fullpath)
-        if is_usb(fullpath) and not is_usb_prints(fullpath):
+        if is_usb(fullpath) or is_usb_device(fullpath):
+            print (f"IS_USB_DEVICE: {is_usb_device(fullpath)}.")
             action = self._gtk.Button("load", style="color3")
             action.connect("clicked", self.change_dir, fullpath)
             icon = self._gtk.Button("usb")
             icon.connect("clicked", self.change_dir, fullpath)
-        if is_usb_prints(fullpath) and not is_usb(fullpath):
-            action = self._gtk.Button("load", style="color3")
-            action.connect("clicked", self.change_dir, fullpath)
-            icon = self._gtk.Button("usb-save")
-            icon.connect("clicked", self.change_dir, fullpath)
-            delete.connect("clicked", self.confirm_delete_directory, fullpath)
-        if not filename and not is_usb(fullpath) and not is_usb_prints(fullpath):
+        elif not filename:
             action = self._gtk.Button("load", style="color3")
             action.connect("clicked", self.change_dir, fullpath)
             icon = self._gtk.Button("folder")
@@ -232,11 +228,9 @@ class PrintPanel(ScreenPanel):
         row.set_hexpand(True)
         row.set_vexpand(False)
         row.attach(icon, 0, 0, 1, 2)
-        if is_usb(fullpath) and not is_usb_prints(fullpath):
+        if is_usb(fullpath) or is_usb_device(fullpath):
             row.attach(name, 1, 0, 3, 3)
-        if is_usb_prints(fullpath) and not is_usb(fullpath):
-            row.attach(name, 1, 0, 3, 3)
-        if not is_usb(fullpath) and not is_usb_prints(fullpath):
+        else:
             row.attach(name, 1, 0, 3, 1)
             row.attach(info, 1, 1, 1, 1)
             row.attach(rename, 2, 1, 1, 1)
@@ -333,33 +327,18 @@ class PrintPanel(ScreenPanel):
             {"name": _("Cancel"), "response": Gtk.ResponseType.CANCEL}
         ]
 
-        def is_usb(string):
-            if string.startswith("USB/"):
-                return True
-            else:
-                return False
-
-        if is_usb(filename):
-            path: str = "/home/pi/printer_data/gcodes/USB_PRINTS"
-            if not os.path.exists(path):
-                os.makedirs(path)
-            destination = os.path.join(path, filename[4:])
-            filetocopy = f"/home/pi/printer_data/gcodes/{filename}"
+        lab: str = f"{home}/printer_data/gcodes/LAB"
+        if not os.path.exists(lab):
+            os.makedirs(lab)
+        destination = os.path.join(lab, os.path.basename(filename))
+        filetocopy = os.path.join(f"{home}/printer_data/gcodes", filename)
+        if filetocopy != destination:
             shutil.copy2(filetocopy, destination)
-            filename = filename.replace("USB/", "USB_PRINTS/")
-        elif ".ufp" in filename:
-            path: str = "/home/pi/printer_data/gcodes/.WORKSTATION"
-            if not os.path.exists(path):
-                os.makedirs(path)
-            destination = os.path.join(path, os.path.basename(filename))
-            filetocopy = f"/home/pi/printer_data/gcodes/{filename}"
-            shutil.copy2(filetocopy, destination)
-            filename = f".WORKSTATION/{os.path.basename(filename)}"
-
+        filename = f"LAB/{os.path.basename(filename)}"
         filename = filename.replace(".ufp", ".gcode")
 
         label = Gtk.Label()
-        label.set_markup(f"<b>{filename}</b>\n")
+        label.set_markup(f"<b>{os.path.basename(filename)}</b>\n")
         label.set_hexpand(True)
         label.set_halign(Gtk.Align.CENTER)
         label.set_vexpand(True)
