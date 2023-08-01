@@ -21,6 +21,7 @@ class MovePanel(ScreenPanel):
         super().__init__(screen, title)
         self.settings = {}
         self.menu = ['move_menu']
+        self.current_extruder = self._printer.get_stat("toolhead", "extruder")
         self.buttons = {
             'x+': self._gtk.Button("arrow-right", "X+", "color1"),
             'x-': self._gtk.Button("arrow-left", "X-", "color1"),
@@ -48,6 +49,21 @@ class MovePanel(ScreenPanel):
         self.buttons['motors_off'].connect("clicked", self._screen._confirm_send_action,
                                            _("Are you sure you wish to disable motors?"),
                                            "printer.gcode.script", script)
+
+        extgrid = self._gtk.HomogeneousGrid()
+        limit = 5
+        i = 0
+        for extruder in self._printer.get_tools():
+            if self._printer.extrudercount > 1:
+                self.labels[extruder] = self._gtk.Button(f"extruder-{self._printer.get_tool_number(extruder)+1}", None)
+            else:
+                self.labels[extruder] = self._gtk.Button(f"extruder-{self._printer.get_tool_number(extruder)+1}", "")
+            self.labels[extruder].connect("clicked", self.change_extruder, extruder)
+            if extruder == self.current_extruder:
+                self.labels[extruder].get_style_context().add_class("button_active")
+            if i < limit:
+                extgrid.attach(self.labels[extruder], i, 0, 1, 1)
+                i += 1
 
         grid = self._gtk.HomogeneousGrid()
         if self._screen.vertical_mode:
@@ -77,6 +93,7 @@ class MovePanel(ScreenPanel):
             grid.attach(self.buttons['z-'], 3, 1, 1, 1)
 
         grid.attach(self.buttons['home'], 0, 0, 1, 1)
+        #grid.attach(extgrid, 0, 2, 1, 1)
 
         if self._printer.config_section_exists("z_tilt"):
             grid.attach(self.buttons['z_tilt'], 2, 0, 1, 1)
@@ -89,7 +106,7 @@ class MovePanel(ScreenPanel):
 
         distgrid = Gtk.Grid()
         for j, i in enumerate(self.distances):
-            self.labels[i] = self._gtk.Button(label=i)
+            self.labels[i] = self._gtk.Button(label=f'{i}{_("mm")}')
             self.labels[i].set_direction(Gtk.TextDirection.LTR)
             self.labels[i].connect("clicked", self.change_distance, i)
             ctx = self.labels[i].get_style_context()
@@ -112,11 +129,8 @@ class MovePanel(ScreenPanel):
 
         bottomgrid = self._gtk.HomogeneousGrid()
         bottomgrid.set_direction(Gtk.TextDirection.LTR)
-        bottomgrid.attach(self.labels['pos_x'], 0, 0, 1, 1)
-        bottomgrid.attach(self.labels['pos_y'], 1, 0, 1, 1)
-        bottomgrid.attach(self.labels['pos_z'], 2, 0, 1, 1)
-        bottomgrid.attach(self.labels['move_dist'], 0, 1, 3, 1)
         bottomgrid.attach(adjust, 3, 0, 1, 2)
+        bottomgrid.attach(extgrid, 2, 0, 1, 2)
 
         self.labels['move_menu'] = self._gtk.HomogeneousGrid()
         self.labels['move_menu'].attach(grid, 0, 0, 1, 3)
@@ -157,6 +171,14 @@ class MovePanel(ScreenPanel):
         for button in buttons:
             if button in self.buttons:
                 self.buttons[button].set_sensitive(not busy)
+
+    def change_extruder(self, widget, extruder):
+        logging.info(f"Changing extruder to {extruder}")
+        for tool in self._printer.get_tools():
+            self.labels[tool].get_style_context().remove_class("button_active")
+        self.labels[extruder].get_style_context().add_class("button_active")
+
+        self._screen._ws.klippy.gcode_script(f"T{self._printer.get_tool_number(extruder)}")
 
     def process_update(self, action, data):
         if action == "notify_busy":

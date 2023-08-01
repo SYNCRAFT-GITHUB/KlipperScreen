@@ -5,7 +5,7 @@ cd ~
 sudo rm -r ~/crowsnest
 echo "[FIX_CAMERA] removed crowsnest folder from ~."
 
-git clone -b legacy/v3 https://github.com/mainsail-crew/crowsnest.git
+git clone -b master https://github.com/mainsail-crew/crowsnest.git
 echo "[FIX_CAMERA] new crowsnest folder created from git clone."
 
 cd ~/crowsnest

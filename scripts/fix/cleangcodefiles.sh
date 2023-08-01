@@ -8,10 +8,10 @@ mkdir gcodes
 
 cd gcodes
 
-mkdir USB
+sudo ln -s /media/ /home/$USER/printer_data/gcodes/
 
-mkdir USB_PRINTS
+mv media USB
 
-mkdir .WORKSTATION
+mkdir .JOB
 
 sudo reboot

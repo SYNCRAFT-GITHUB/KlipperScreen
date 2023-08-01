@@ -327,14 +327,14 @@ class PrintPanel(ScreenPanel):
             {"name": _("Cancel"), "response": Gtk.ResponseType.CANCEL}
         ]
 
-        lab: str = f"{home}/printer_data/gcodes/.LAB"
-        if not os.path.exists(lab):
-            os.makedirs(lab)
-        destination = os.path.join(lab, os.path.basename(filename))
+        job_path: str = f"{home}/printer_data/gcodes/.JOB"
+        if not os.path.exists(job_path):
+            os.makedirs(job_path)
+        destination = os.path.join(job_path, os.path.basename(filename))
         filetocopy = os.path.join(f"{home}/printer_data/gcodes", filename)
         if filetocopy != destination:
             shutil.copy2(filetocopy, destination)
-        filename = f".LAB/{os.path.basename(filename)}"
+        filename = f".JOB/{os.path.basename(filename)}"
         filename = filename.replace(".ufp", ".gcode")
 
         label = Gtk.Label()
