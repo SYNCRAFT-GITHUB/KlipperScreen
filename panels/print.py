@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 import os
+import re
 import shutil
 import zipfile as zip
 
@@ -12,6 +13,7 @@ from datetime import datetime
 
 from ks_includes.screen_panel import ScreenPanel
 
+home = os.path.expanduser("~")
 
 def create_panel(*args):
     return PrintPanel(*args)
@@ -339,27 +341,21 @@ class PrintPanel(ScreenPanel):
             else:
                 return False
 
+        usb_prints: str = f"{home}/printer_data/gcodes/USB_PRINTS"
+        job_path: str = f"{home}/printer_data/gcodes/.JOB"
+        if not os.path.exists(job_path):
+            os.makedirs(job_path)
+        destination = os.path.join(job_path, os.path.basename(filename))
+        filetocopy = os.path.join(f"{home}/printer_data/gcodes", filename)
+        if filetocopy != destination:
+            shutil.copy2(filetocopy, destination)
         if is_usb(filename):
-            path: str = "/home/pi/printer_data/gcodes/USB_PRINTS"
-            if not os.path.exists(path):
-                os.makedirs(path)
-            destination = os.path.join(path, filename[4:])
-            filetocopy = f"/home/pi/printer_data/gcodes/{filename}"
-            shutil.copy2(filetocopy, destination)
-            filename = filename.replace("USB/", "USB_PRINTS/")
-        elif ".ufp" in filename:
-            path: str = "/home/pi/printer_data/gcodes/.WORKSTATION"
-            if not os.path.exists(path):
-                os.makedirs(path)
-            destination = os.path.join(path, os.path.basename(filename))
-            filetocopy = f"/home/pi/printer_data/gcodes/{filename}"
-            shutil.copy2(filetocopy, destination)
-            filename = f".WORKSTATION/{os.path.basename(filename)}"
-
+            shutil.copy2(filetocopy, usb_prints)
+        filename = f".JOB/{os.path.basename(filename)}"
         filename = filename.replace(".ufp", ".gcode")
 
         label = Gtk.Label()
-        label.set_markup(f"<b>{filename}</b>\n")
+        label.set_markup(f"<b>{os.path.basename(filename)}</b>\n")
         label.set_hexpand(True)
         label.set_halign(Gtk.Align.CENTER)
         label.set_vexpand(True)
