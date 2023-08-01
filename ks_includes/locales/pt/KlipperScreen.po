@@ -456,7 +456,7 @@ msgid "Load"
 msgstr "Carregar"
 
 msgid "Lower Nozzle"
-msgstr "Descer o Bico"
+msgstr "Aproximar Bico"
 
 msgid "Macro shortcut on sidebar"
 msgstr "Macro na barra lateral"
@@ -610,7 +610,7 @@ msgid "Quad Gantry Level"
 msgstr "Nível do pórtico quádruplo"
 
 msgid "Raise Nozzle"
-msgstr "Elevar o Bico"
+msgstr "Afastar Bico"
 
 msgid "Recover"
 msgstr "Recuperar"
