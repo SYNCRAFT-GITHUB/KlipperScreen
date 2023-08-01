@@ -100,15 +100,17 @@ class MainPanel(MenuPanel):
         if devname.startswith("_"):
             return False
 
+        empty_area: str = "  "
+
         if device.startswith("extruder"):
             i = sum(d.startswith('extruder') for d in self.devices)
             image = f"extruder-{i+1}" if self._printer.extrudercount > 1 else "extruder"
-            devname = _("Extruder")
+            devname = f' {_("Extruder")}'
             class_name = f"graph_label_{device}"
             dev_type = "extruder"
         elif device == "heater_bed":
             image = "bed"
-            devname = _("Heater Bed")
+            devname = f' {_("Heater Bed")}'
             class_name = "graph_label_heater_bed"
             dev_type = "bed"
         elif device.startswith("heater_generic"):
@@ -118,7 +120,7 @@ class MainPanel(MenuPanel):
             dev_type = "sensor"
         elif device.startswith("temperature_fan"):
             f = 1 + sum("temperature_fan" in d for d in self.devices)
-            devname = _("Chamber Fan")
+            devname = f' {_("Chamber Fan")}'
             image = "fan"
             class_name = f"graph_label_fan_{f}"
             dev_type = "fan"

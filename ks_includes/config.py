@@ -245,7 +245,7 @@ class KlipperScreenConfig:
             {"24htime": {"section": "main", "name": _("24 Hour Time"), "type": "binary", "value": "True"}},
             {"show_saved_from_usb": {
                 "section": "main", "name": _("Show files saved from USB"), "type": "binary",
-                "value": "False", "callback": self.toggle_show_saved_from_usb}},
+                "value": "False", "callback": screen.reload_panels}},
             {"side_brightness_shortcut": {
                 "section": "main", "name": _("Change Screen Brightness"), "type": "binary",
                 "value": "False", "callback": screen.toggle_brightness_shortcut}},
