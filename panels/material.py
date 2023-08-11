@@ -73,6 +73,7 @@ class ChMaterialPanel(ScreenPanel):
             'OTHER': self._gtk.Button(None, _("Generic"), "color3"),
             'PAGESWAP': self._gtk.Button("shuffle", _("Switch Pages"), "color4"),
         }
+        
         self.buttons['PLA'].connect("clicked", self.materialgcodescript, "PLA")
         self.buttons['NYLON'].connect("clicked", self.materialgcodescript, "NYLON")
         self.buttons['PLATOUGH'].connect("clicked", self.materialgcodescript, "TOUGH_PLA")

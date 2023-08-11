@@ -1147,3 +1147,54 @@ msgstr "Podgrzewany Stół"
 
 msgid "Chamber Fan"
 msgstr "Wachlarz wiatru"
+
+msgid "Select Syncraft ProExtruder"
+msgstr "Wybierz Syncraft ProExtruder"
+
+msgid "Select Extruder"
+msgstr "Wybierz dyszę"
+
+msgid "Incompatible Extruder"
+msgstr "Niekompatybilna dysza"
+
+msgid "Current Extruder"
+msgstr "Bieżąca dysza"
+
+msgid "Change your Extruder"
+msgstr "Zmień swoją dyszę"
+
+msgid "Select compatible Extruder"
+msgstr "Wybierz kompatybilną dyszę"
+
+msgid "The inserted Extruder is incompatible with this Material"
+msgstr "Wstawiona dysza jest niekompatybilna z tym materiałem"
+
+msgid "Material"
+msgstr "Materiał"
+
+msgid "Select the Material"
+msgstr "Wybierz materiał"
+
+msgid "The inserted Extruder is incompatible with this File"
+msgstr "Wstawiona dysza jest niekompatybilna z tym plikiem"
+
+msgid "You cannot print this file using the current Extruder"
+msgstr "Nie możesz wydrukować tego pliku przy użyciu bieżącej dyszy"
+
+msgid "Extruder modification detected"
+msgstr "Wykryto modyfikację dyszy"
+
+msgid "This material is considered experimental for the selected Extruder."
+msgstr "Ten materiał jest uważany za eksperymentalny dla wybranej dyszy."
+
+msgid "You are loading untested material, this may result in unexpected results."
+msgstr "Ładujesz nieprzetestowany materiał, może to spowodować nieoczekiwane wyniki."
+
+msgid "This action may result in unexpected results."
+msgstr "Ta czynność może spowodować nieoczekiwane rezultaty."
+
+msgid "Show experimental Materials"
+msgstr "Pokaż materiały eksperymentalne"
+
+msgid "Material incompatibility Alert"
+msgstr "Ostrzeżenie o niezgodności materiału"

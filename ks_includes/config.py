@@ -39,6 +39,7 @@ class KlipperScreenConfig:
         self.lang_list = None
         self.errors = []
         self.fix_option: str = "NONE"
+        self.nozzle: str = "NONE"
         self.show_saved_from_usb: bool = False
         self.default_config_path = os.path.join(klipperscreendir, "ks_includes", "defaults.conf")
         self.config = configparser.ConfigParser()
@@ -386,8 +387,14 @@ class KlipperScreenConfig:
     def get_fix_option (self) -> str:
         return self.fix_option
 
+    def get_nozzle (self) -> str:
+        return self.nozzle
+
     def replace_fix_option (self, newvalue) -> str:
         self.fix_option = newvalue
+
+    def replace_nozzle (self, newvalue) -> str:
+        self.nozzle = newvalue
 
     def toggle_show_saved_from_usb (self, value):
         self.show_saved_from_usb = value

@@ -1162,3 +1162,54 @@ msgstr "加热桌"
 
 msgid "Chamber Fan"
 msgstr "风风扇"
+
+msgid "Select Syncraft ProExtruder"
+msgstr "选择 Syncraft ProExtruder"
+
+msgid "Select Extruder"
+msgstr "选择喷嘴"
+
+msgid "Incompatible Extruder"
+msgstr "喷嘴不兼容"
+
+msgid "Current Extruder"
+msgstr "当前喷嘴"
+
+msgid "Change your Extruder"
+msgstr "更换喷嘴"
+
+msgid "Select compatible Extruder"
+msgstr "选择兼容的喷嘴"
+
+msgid "The inserted Extruder is incompatible with this Material"
+msgstr "插入的喷嘴与该材质不兼容"
+
+msgid "Material"
+msgstr "材质"
+
+msgid "Select the Material"
+msgstr "选择材质"
+
+msgid "The inserted Extruder is incompatible with this File"
+msgstr "插入的喷嘴与此文件不兼容"
+
+msgid "You cannot print this file using the current Extruder"
+msgstr "您无法使用当前的喷嘴打印此文件"
+
+msgid "Extruder modification detected"
+msgstr "检测到喷嘴修改"
+
+msgid "This material is considered experimental for the selected Extruder."
+msgstr "此材料被认为是所选喷嘴的实验材料。"
+
+msgid "You are loading untested material, this may result in unexpected results."
+msgstr "您正在加载未经测试的材料，这可能会导致意外的结果。"
+
+msgid "This action may result in unexpected results."
+msgstr "此操作可能会导致意外结果。"
+
+msgid "Show experimental Materials"
+msgstr "显示实验材料"
+
+msgid "Material incompatibility Alert"
+msgstr "材料不兼容警报"

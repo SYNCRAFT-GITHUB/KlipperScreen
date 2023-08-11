@@ -1040,3 +1040,54 @@ msgstr "Mesa"
 
 msgid "Chamber Fan"
 msgstr "Ventoinha"
+
+msgid "Select Syncraft ProExtruder"
+msgstr "Selecione o ProExtruder da Syncraft"
+
+msgid "Select Extruder"
+msgstr "Selecione o Extrusor"
+
+msgid "Incompatible Extruder"
+msgstr "Extrusor Incompatível"
+
+msgid "Current Extruder"
+msgstr "Extrusor Atual"
+
+msgid "Change your Extruder"
+msgstr "Mude seu Extrusor"
+
+msgid "Select compatible Extruder"
+msgstr "Selecione um extrusor compatível"
+
+msgid "The inserted Extruder is incompatible with this Material"
+msgstr "O extrusor inserido é incompatível com este material"
+
+msgid "Material"
+msgstr "Material"
+
+msgid "Select the Material"
+msgstr "Selecione o Material"
+
+msgid "The inserted Extruder is incompatible with this File"
+msgstr "O extrusor inserido é incompatível com este arquivo"
+
+msgid "You cannot print this file using the current Extruder"
+msgstr "Você não pode imprimir este arquivo usando o Extrusor atual"
+
+msgid "Extruder modification detected"
+msgstr "Modificação de Extrusor detectado"
+
+msgid "This material is considered experimental for the selected Extruder."
+msgstr "Este material é considerado experimental para o Extrusor selecionado."
+
+msgid "You are loading untested material, this may result in unexpected results."
+msgstr "Você está carregando material não testado, isso pode resultar em resultados inesperados."
+
+msgid "This action may result in unexpected results."
+msgstr "Esta ação pode resultar em resultados inesperados."
+
+msgid "Show experimental Materials"
+msgstr "Mostrar materiais experimentais"
+
+msgid "Material incompatibility Alert"
+msgstr "Alerta de incompatibilidade de material"

@@ -38,7 +38,6 @@ class ChNozzlePanel(ScreenPanel):
         self.create_image_button("nozzle-FIBER06", self.below, "FIBER06")
 
         self.content.add(self.above)
-        #self.content.add(self.spacer)
         self.content.add(self.below)
         
     def create_image_button(self, image_path, box, nozzle):
@@ -49,8 +48,13 @@ class ChNozzlePanel(ScreenPanel):
         box.pack_start(event_box, True, True, 8)
 
     def on_image_clicked(self, widget, event, nozzle):
+        if self._config.get_nozzle() != "NONE":
+            del self._screen.panels['material2']
         self.nozzlegcodescript(widget, nozzle)
 
     def nozzlegcodescript(self, widget, nozzle: str):
-        self._screen._ws.klippy.gcode_script(f"NOZZLE_SET NZ={nozzle}")
-        self._screen._menu_go_back()
+        self._config.replace_nozzle(newvalue=nozzle)
+        self.menu_item_clicked(widget=widget, panel="material2", item={
+            "name": _("Select the Material"),
+            "panel": "material2"
+        })

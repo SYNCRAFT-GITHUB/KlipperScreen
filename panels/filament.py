@@ -47,14 +47,14 @@ class ExtrudePanel(ScreenPanel):
             'temperature': self._gtk.Button("heat-up", _("Temperature"), "color4"),
         }
         self.buttons['load'].connect("clicked", self.menu_item_clicked, "nozzle", {
-            "name": _("Select Nozzle"),
+            "name": _("Select Extruder"),
             "panel": "nozzle"
         })
         self.buttons['unload'].connect("clicked", self.load_unload, "-")
         self.buttons['extrude'].connect("clicked", self.extrude, "+")
         self.buttons['retract'].connect("clicked", self.extrude, "-")
         self.buttons['temperature'].connect("clicked", self.menu_item_clicked, "temperature", {
-            "name": "Temperature",
+            "name": _("Temperature"),
             "panel": "temperature"
         })
 

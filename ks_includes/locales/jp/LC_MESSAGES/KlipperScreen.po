@@ -1027,3 +1027,54 @@ msgstr "加熱テーブル"
 
 msgid "Chamber Fan"
 msgstr "ウィンドファン"
+
+msgid "Select Syncraft ProExtruder"
+msgstr "Syncraft ProExtruderを選択"
+
+msgid "Select Extruder"
+msgstr "ノズルを選択"
+
+msgid "Incompatible Extruder"
+msgstr "互換性のないノズル"
+
+msgid "Current Extruder"
+msgstr "現在のノズル"
+
+msgid "Change your Extruder"
+msgstr "ノズルを変更してください"
+
+msgid "Select compatible Extruder"
+msgstr "互換性のあるノズルを選択"
+
+msgid "The inserted Extruder is incompatible with this Material"
+msgstr "挿入されたノズルはこのマテリアルと互換性がありません"
+
+msgid "Material"
+msgstr "マテリアル"
+
+msgid "Select the Material"
+msgstr "マテリアルを選択"
+
+msgid "The inserted Extruder is incompatible with this File"
+msgstr "挿入されたノズルはこのファイルと互換性がありません"
+
+msgid "You cannot print this file using the current Extruder"
+msgstr "現在のノズルを使用してこのファイルを印刷することはできません"
+
+msgid "Extruder modification detected"
+msgstr "ノズルの変更が検出されました"
+
+msgid "This material is considered experimental for the selected Extruder."
+msgstr "このマテリアルは、選択されたノズルの実験的なものとみなされます。"
+
+msgid "You are loading untested material, this may result in unexpected results."
+msgstr "テストされていない素材をロードしています。予期しない結果が生じる可能性があります。"
+
+msgid "This action may result in unexpected results."
+msgstr "この操作により予期しない結果が生じる可能性があります。"
+
+msgid "Show experimental Materials"
+msgstr "実験用マテリアルを表示"
+
+msgid "Material incompatibility Alert"
+msgstr "材質の不適合に関する警告"
