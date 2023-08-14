@@ -1078,10 +1078,10 @@ msgid "Extruder modification detected"
 msgstr "Modificação de Extrusor detectado"
 
 msgid "This material is considered experimental for the selected Extruder."
-msgstr "Este material é considerado experimental para o Extrusor selecionado."
+msgstr "Este material é considerado experimental para o extrusor selecionado."
 
 msgid "You are loading untested material, this may result in unexpected results."
-msgstr "Você está carregando material não testado, isso pode resultar em resultados inesperados."
+msgstr "Você está carregando um material não testado, e isso pode resultar em resultados inesperados."
 
 msgid "This action may result in unexpected results."
 msgstr "Esta ação pode resultar em resultados inesperados."

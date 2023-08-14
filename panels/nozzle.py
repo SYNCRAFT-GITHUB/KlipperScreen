@@ -48,8 +48,10 @@ class ChNozzlePanel(ScreenPanel):
         box.pack_start(event_box, True, True, 8)
 
     def on_image_clicked(self, widget, event, nozzle):
-        if self._config.get_nozzle() != "NONE":
+        try:
             del self._screen.panels['material2']
+        except:
+            pass
         self.nozzlegcodescript(widget, nozzle)
 
     def nozzlegcodescript(self, widget, nozzle: str):

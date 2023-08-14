@@ -166,16 +166,19 @@ class ChMaterialPanel(ScreenPanel):
 
         for material in self.materials:
 
-            if selected_nozzle in material.experimental:
+            show_experimental = self._config.get_main_config().getboolean('show_experimental_material', False)
+            allowed_for_experimental = ["ST025", "ST04", "ST08"]
+            
+            if selected_nozzle in material.experimental and self._config.get_nozzle() in allowed_for_experimental:
                 index_button = self._gtk.Button("circle-orange", material.name, "color1")
-                index_button.connect("clicked", self.materialgcodescript, material.code)
-                gridvariable.attach(index_button, i, repeat_three, 1, 1)
-                
-                if repeat_three == 2:
-                    repeat_three = 0
-                    i += 1
-                else:
-                    repeat_three += 1
+                index_button.connect("clicked", self.confirm_print_experimental, material.code)
+                if show_experimental:
+                    gridvariable.attach(index_button, i, repeat_three, 1, 1)
+                    if repeat_three == 2:
+                        repeat_three = 0
+                        i += 1
+                    else:
+                        repeat_three += 1
 
             if material.code == self.materials[-1].code:
                 size: int = 1
@@ -184,8 +187,24 @@ class ChMaterialPanel(ScreenPanel):
                     size += 1
                     index += 1
                 index_button = self._gtk.Button("circle-red", _("Generic"), "color4")
-                index_button.connect("clicked", self.materialgcodescript, "GENERIC")
+                index_button.connect("clicked", self.confirm_print_generic)
                 gridvariable.attach(index_button, i, repeat_three, 1, size)
 
+    def confirm_print_experimental(self, widget, code):
+        params = {"script": f"LOAD_FILAMENT_{code}"}
+        self._screen._confirm_send_action(
+            None,
+            _("This material is considered experimental for the selected Extruder.") +
+            "\n\n" + _("This action may result in unexpected results.") + "\n\n",
+            "printer.gcode.script",
+            params
+        )
 
-    
+    def confirm_print_generic(self, widget):
+        params = {"script": "LOAD_FILAMENT_GENERIC"}
+        self._screen._confirm_send_action(
+            None,
+            _("You are loading untested material, this may result in unexpected results.") + "\n\n",
+            "printer.gcode.script",
+            params
+        )
