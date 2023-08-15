@@ -2,17 +2,14 @@
 
 cd ~
 
-sudo rm -r ~/crowsnest
-echo "[FIX_CAMERA] removed crowsnest folder from ~."
-
+process='Install Crowsnest (Legacy/V3)'
+echo "[HELPER] START: $process."
+if [ -e "~/crowsnest" ]; then
+    sudo rm -r ~/crowsnest
+fi
 git clone -b legacy/v3 https://github.com/mainsail-crew/crowsnest.git
-echo "[FIX_CAMERA] new crowsnest folder created from git clone."
-
 cd ~/crowsnest
-echo "[FIX_CAMERA] cd ~/crowsnest"
-
 sudo make install
-echo "[FIX_CAMERA] installed crowsnest."
+echo "[HELPER] DONE: $process."
 
-echo "[FIX_CAMERA] now the system will reboot."
 sudo reboot

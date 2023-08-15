@@ -24,10 +24,8 @@ SCREEN_BLANKING_OPTIONS = [
 
 klipperscreendir = pathlib.Path(__file__).parent.resolve().parent
 
-
 class ConfigError(Exception):
     pass
-
 
 class KlipperScreenConfig:
     config = None

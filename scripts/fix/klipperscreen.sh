@@ -2,11 +2,10 @@
 
 cd ~
 
-sudo rm -r ~/KlipperScreen
-echo "[FIX_KLIPPERSCREEN] removed KlipperScreen folder from ~."
+process='Apply Syncraft X1 KlipperScreen'
+echo "[HELPER] START: $process."
+sudo rm -r KlipperScreen
+git clone --quiet -b syncraftx1 https://github.com/SYNCRAFT-GITHUB/KlipperScreen.git
+echo "[HELPER] DONE: $process."
 
-git clone -b syncraftx1 https://github.com/SYNCRAFT-GITHUB/KlipperScreen.git
-echo "[FIX_KLIPPERSCREEN] new KlipperScreen folder created from git clone."
-
-echo "[FIX_KLIPPERSCREEN] now the system will reboot."
 sudo reboot

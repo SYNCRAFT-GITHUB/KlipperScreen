@@ -38,7 +38,7 @@ class ChMaterialPanel(ScreenPanel):
                 compatible=["ST04", "ST08"],
                 experimental=["ST025", "FIBER06", "METAL04"]),
             PrinterMaterial(
-                name="TOUGH PLA",
+                name="TO. PLA",
                 code="TOUGH_PLA", 
                 compatible=["ST025", "ST04", "ST08"],
                 experimental=["FIBER06", "METAL04"]),
@@ -126,6 +126,12 @@ class ChMaterialPanel(ScreenPanel):
 
         self.buttons = {}
 
+        self.texts = [
+            _("This material is considered experimental for the selected Extruder."),
+            _("This action may result in unexpected results."),
+            _("You are loading untested material, this may result in unexpected results.")
+            ]
+
         grid = self._gtk.HomogeneousGrid()
 
         self.gridattach(gridvariable=grid)
@@ -194,17 +200,21 @@ class ChMaterialPanel(ScreenPanel):
         params = {"script": f"LOAD_FILAMENT_{code}"}
         self._screen._confirm_send_action(
             None,
-            _("This material is considered experimental for the selected Extruder.") +
-            "\n\n" + _("This action may result in unexpected results.") + "\n\n",
+            self.texts[0] + "\n\n" + self.texts[1] + "\n\n",
             "printer.gcode.script",
             params
         )
+        for _ in range(0,2):
+            self._screen._menu_go_back()
+        
 
     def confirm_print_generic(self, widget):
         params = {"script": "LOAD_FILAMENT_GENERIC"}
         self._screen._confirm_send_action(
             None,
-            _("You are loading untested material, this may result in unexpected results.") + "\n\n",
+            self.texts[2] + "\n\n",
             "printer.gcode.script",
             params
         )
+        for _ in range(0,2):
+                self._screen._menu_go_back()

@@ -10,9 +10,9 @@ from ks_includes.screen_panel import ScreenPanel
 
 
 def create_panel(*args):
-    return ChNozzlePanel(*args)
+    return ChNozzleLoadPanel(*args)
 
-class ChNozzlePanel(ScreenPanel):
+class ChNozzleLoadPanel(ScreenPanel):
 
     def __init__(self, screen, title):
 
@@ -48,8 +48,15 @@ class ChNozzlePanel(ScreenPanel):
         box.pack_start(event_box, True, True, 8)
 
     def on_image_clicked(self, widget, event, nozzle):
+        try:
+            del self._screen.panels['material_load']
+        except:
+            pass
         self.nozzlegcodescript(widget, nozzle)
-        self._screen._menu_go_back()
 
     def nozzlegcodescript(self, widget, nozzle: str):
         self._config.replace_nozzle(newvalue=nozzle)
+        self.menu_item_clicked(widget=widget, panel="material_load", item={
+            "name": _("Select the Material"),
+            "panel": "material_load"
+        })

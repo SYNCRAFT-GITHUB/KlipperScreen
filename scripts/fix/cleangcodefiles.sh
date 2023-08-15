@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd "/home/$USER/printer_data"
+cd "/home/pi/printer_data"
 
 sudo rm -r gcodes
 
