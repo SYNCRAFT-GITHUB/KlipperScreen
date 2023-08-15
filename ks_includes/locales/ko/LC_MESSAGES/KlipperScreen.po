@@ -1095,3 +1095,54 @@ msgstr "가열 테이블"
 
 msgid "Chamber Fan"
 msgstr "바람 선풍기"
+
+msgid "Select Syncraft ProExtruder"
+msgstr "Synccraft ProExtruder 선택"
+
+msgid "Select Extruder"
+msgstr "노즐 선택"
+
+msgid "Incompatible Extruder"
+msgstr "호환되지 않는 노즐"
+
+msgid "Current Extruder"
+msgstr "현재 노즐"
+
+msgid "Change your Extruder"
+msgstr "노즐 변경"
+
+msgid "Select compatible Extruder"
+msgstr "호환되는 노즐 선택"
+
+msgid "The inserted Extruder is incompatible with this Material"
+msgstr "삽입된 노즐은 이 재료와 호환되지 않습니다"
+
+msgid "Material"
+msgstr "재료"
+
+msgid "Select the Material"
+msgstr "재료 선택"
+
+msgid "The inserted Extruder is incompatible with this File"
+msgstr "삽입된 노즐은 이 파일과 호환되지 않습니다"
+
+msgid "You cannot print this file using the current Extruder"
+msgstr "현재 노즐을 사용하여 이 파일을 인쇄할 수 없습니다"
+
+msgid "Extruder modification detected"
+msgstr "노즐 수정 감지됨"
+
+msgid "This material is considered experimental for the selected Extruder."
+msgstr "이 재료는 선택한 노즐에 대해 실험적인 것으로 간주됩니다."
+
+msgid "You are loading untested material, this may result in unexpected results."
+msgstr "테스트되지 않은 자료를 로드하고 있습니다. 예기치 않은 결과가 발생할 수 있습니다."
+
+msgid "This action may result in unexpected results."
+msgstr "이 조치는 예상치 못한 결과를 초래할 수 있습니다."
+
+msgid "Show experimental Materials"
+msgstr "실험 자료 보기"
+
+msgid "Material incompatibility Alert"
+msgstr "재료 비호환성 경고"

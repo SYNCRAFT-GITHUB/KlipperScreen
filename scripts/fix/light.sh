@@ -1,11 +1,14 @@
 #!/bin/bash
 
+process='Install Klipper LED Effect'
 cd ~
-
-sudo rm -r klipper-led_effect
-
-git clone https://github.com/julianschill/klipper-led_effect.git
-
-bash install-led_effect.sh
+echo "[HELPER] START: $process."
+if [ -e "~/klipper-led_effect" ]; then
+    sudo rm -r klipper-led_effect
+fi
+git clone --quiet https://github.com/julianschill/klipper-led_effect.git
+bash ~/klipper-led_effect/install-led_effect.sh
+echo "[HELPER] install klipper-led_effect DONE."
+echo "[HELPER] DONE: $process."
 
 sudo reboot

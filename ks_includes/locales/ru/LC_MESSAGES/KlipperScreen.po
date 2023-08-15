@@ -1207,3 +1207,54 @@ msgstr "Таблица печати"
 
 msgid "Chamber Fan"
 msgstr "Веер ветра"
+
+msgid "Select Syncraft ProExtruder"
+msgstr "Выберите Syncraft ProExtruder"
+
+msgid "Select Extruder"
+msgstr "Выберите сопло"
+
+msgid "Incompatible Extruder"
+msgstr "Несовместимая насадка"
+
+msgid "Current Extruder"
+msgstr "Текущая форсунка"
+
+msgid "Change your Extruder"
+msgstr "Замените сопло"
+
+msgid "Select compatible Extruder"
+msgstr "Выберите совместимую форсунку"
+
+msgid "The inserted Extruder is incompatible with this Material"
+msgstr "Вставленное сопло несовместимо с этим материалом"
+
+msgid "Material"
+msgstr "Материал"
+
+msgid "Select the Material"
+msgstr "Выберите материал"
+
+msgid "The inserted Extruder is incompatible with this File"
+msgstr "Вставленная насадка несовместима с этим файлом"
+
+msgid "You cannot print this file using the current Extruder"
+msgstr "Вы не можете распечатать этот файл, используя текущую форсунку"
+
+msgid "Extruder modification detected"
+msgstr "Обнаружена модификация сопла"
+
+msgid "This material is considered experimental for the selected Extruder."
+msgstr "Этот материал считается экспериментальным для выбранной насадки."
+
+msgid "You are loading untested material, this may result in unexpected results."
+msgstr "Вы загружаете непроверенный материал, это может привести к неожиданным результатам."
+
+msgid "This action may result in unexpected results."
+msgstr "Это действие может привести к неожиданным результатам."
+
+msgid "Show experimental Materials"
+msgstr "Показать экспериментальные материалы"
+
+msgid "Material incompatibility Alert"
+msgstr "Предупреждение о несовместимости материалов"

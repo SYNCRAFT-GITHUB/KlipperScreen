@@ -45,16 +45,21 @@ class ExtrudePanel(ScreenPanel):
             'extrude': self._gtk.Button("extrude", _("Extrude"), "color4"),
             'retract': self._gtk.Button("retract", _("Retract"), "color1"),
             'temperature': self._gtk.Button("heat-up", _("Temperature"), "color4"),
+            'nozzle': self._gtk.Button("extruder", _("Extruder"), "color4"),
         }
-        self.buttons['load'].connect("clicked", self.menu_item_clicked, "material", {
-            "name": _("Filament Used"),
-            "panel": "material"
+        self.buttons['load'].connect("clicked", self.menu_item_clicked, "nozzle_load", {
+            "name": _("Select Extruder"),
+            "panel": "nozzle_load"
         })
         self.buttons['unload'].connect("clicked", self.load_unload, "-")
         self.buttons['extrude'].connect("clicked", self.extrude, "+")
         self.buttons['retract'].connect("clicked", self.extrude, "-")
+        self.buttons['nozzle'].connect("clicked", self.menu_item_clicked, "nozzle", {
+            "name": _("Change your Extruder"),
+            "panel": "nozzle"
+        })
         self.buttons['temperature'].connect("clicked", self.menu_item_clicked, "temperature", {
-            "name": "Temperature",
+            "name": _("Temperature"),
             "panel": "temperature"
         })
 
@@ -73,7 +78,8 @@ class ExtrudePanel(ScreenPanel):
                 extgrid.attach(self.labels[extruder], i, 0, 1, 1)
                 i += 1
         if i < (limit - 1):
-            extgrid.attach(self.buttons['temperature'], i + 1, 0, 1, 1)
+            extgrid.attach(self.buttons['nozzle'], i + 1, 0, 1, 1)
+            extgrid.attach(self.buttons['temperature'], i + 2, 0, 1, 1)
 
         distgrid = Gtk.Grid()
         for j, i in enumerate(self.distances):
