@@ -392,6 +392,8 @@ class KlipperScreenConfig:
         self.fix_option = newvalue
 
     def replace_nozzle (self, newvalue) -> str:
+        if newvalue in ["ST025", "ST04", "ST08", "FIBER06", "METAL04"]:
+            self._screen._ws.klippy.gcode_script(f"NOZZLE_SET NZ={newvalue}")
         self.nozzle = newvalue
 
     def get_config_file_location(self, file):
