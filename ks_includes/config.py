@@ -39,6 +39,7 @@ class KlipperScreenConfig:
         self.lang_list = None
         self.errors = []
         self.fix_option: str = "NONE"
+        self.nozzle: str = "NONE"
         self.default_config_path = os.path.join(klipperscreendir, "ks_includes", "defaults.conf")
         self.config = configparser.ConfigParser()
         self.config_path = self.get_config_file_location(configfile)
@@ -152,7 +153,7 @@ class KlipperScreenConfig:
                 bools = (
                     'invert_x', 'invert_y', 'invert_z', '24htime', 'only_heaters', 'show_cursor', 'confirm_estop',
                     'autoclose_popups', 'use_dpms', 'use_default_menu', 'side_brightness_shortcut',
-                    'side_macro_shortcut', 'use-matchbox-keyboard', 'show_heater_power'
+                    'side_macro_shortcut', 'use-matchbox-keyboard', 'show_heater_power', 'show_experimental_material'
                 )
                 strs = (
                     'default_printer', 'language', 'print_sort_dir', 'theme', 'screen_blanking', 'font_size',
@@ -269,6 +270,8 @@ class KlipperScreenConfig:
                                   "value": "True"}},
             {"show_heater_power": {"section": "main", "name": _("Show Heater Power"), "type": "binary",
                                    "value": "False", "callback": screen.reload_panels}},
+            {"show_experimental_material": {"section": "main", "name": _("Show experimental Materials"), "type": "binary",
+                                   "value": "True", "callback": screen.reload_panels}},
             # {"": {"section": "main", "name": _(""), "type": ""}}
         ]
 
@@ -382,8 +385,14 @@ class KlipperScreenConfig:
     def get_fix_option (self) -> str:
         return self.fix_option
 
+    def get_nozzle (self) -> str:
+        return self.nozzle
+
     def replace_fix_option (self, newvalue) -> str:
         self.fix_option = newvalue
+
+    def replace_nozzle (self, newvalue) -> str:
+        self.nozzle = newvalue
 
     def get_config_file_location(self, file):
         # Passed config (-c) by default is ~/KlipperScreen.conf

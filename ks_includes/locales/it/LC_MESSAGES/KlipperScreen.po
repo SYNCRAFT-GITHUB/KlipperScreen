@@ -1156,3 +1156,54 @@ msgstr "Tavolo Riscaldato"
 
 msgid "Chamber Fan"
 msgstr "Ventola"
+
+msgid "Select Syncraft ProExtruder"
+msgstr "Seleziona Syncraft ProExtruder"
+
+msgid "Select Extruder"
+msgstr "Seleziona estrusore"
+
+msgid "Incompatible Extruder"
+msgstr "Estrusore incompatibile"
+
+msgid "Current Extruder"
+msgstr "Estrusore attuale"
+
+msgid "Change your Extruder"
+msgstr "Cambia il tuo estrusore"
+
+msgid "Select compatible Extruder"
+msgstr "Seleziona estrusore compatibile"
+
+msgid "The inserted Extruder is incompatible with this Material"
+msgstr "L'estrusore inserito non è compatibile con questo materiale"
+
+msgid "Material"
+msgstr "Materiale"
+
+msgid "Select the Material"
+msgstr "Seleziona il materiale"
+
+msgid "The inserted Extruder is incompatible with this File"
+msgstr "L'estrusore inserito non è compatibile con questo file"
+
+msgid "You cannot print this file using the current Extruder"
+msgstr "Non puoi stampare questo file usando l'estrusore corrente"
+
+msgid "Extruder modification detected"
+msgstr "Rilevata modifica dell'estrusore"
+
+msgid "This material is considered experimental for the selected Extruder."
+msgstr "Questo materiale è considerato sperimentale per l'estrusore selezionato."
+
+msgid "You are loading untested material, this may result in unexpected results."
+msgstr "Stai caricando materiale non testato, questo potrebbe portare a risultati imprevisti."
+
+msgid "This action may result in unexpected results."
+msgstr "Questa azione può portare a risultati imprevisti."
+
+msgid "Show experimental Materials"
+msgstr "Mostra materiali sperimentali"
+
+msgid "Material incompatibility Alert"
+msgstr "Avviso di incompatibilità materiale"

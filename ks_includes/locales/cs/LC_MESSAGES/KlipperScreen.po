@@ -1041,3 +1041,54 @@ msgstr "Tisková tabulka"
 
 msgid "Chamber Fan"
 msgstr "Větrák"
+
+msgid "Select Syncraft ProExtruder"
+msgstr "Vyberte Syncraft ProExtruder"
+
+msgid "Select Extruder"
+msgstr "Vybrat trysku"
+
+msgid "Incompatible Extruder"
+msgstr "Nekompatibilní tryska"
+
+msgid "Current Extruder"
+msgstr "Aktuální tryska"
+
+msgid "Change your Extruder"
+msgstr "Vyměňte svou trysku"
+
+msgid "Select compatible Extruder"
+msgstr "Vyberte kompatibilní trysku"
+
+msgid "The inserted Extruder is incompatible with this Material"
+msgstr "Vložená tryska není kompatibilní s tímto materiálem"
+
+msgid "Material"
+msgstr "Materiál"
+
+msgid "Select the Material"
+msgstr "Vyberte materiál"
+
+msgid "The inserted Extruder is incompatible with this File"
+msgstr "Vložená tryska není kompatibilní s tímto souborem"
+
+msgid "You cannot print this file using the current Extruder"
+msgstr "Tento soubor nemůžete vytisknout pomocí aktuální trysky"
+
+msgid "Extruder modification detected"
+msgstr "Zjištěna úprava trysky"
+
+msgid "This material is considered experimental for the selected Extruder."
+msgstr "Tento materiál je považován za experimentální pro vybranou trysku."
+
+msgid "You are loading untested material, this may result in unexpected results."
+msgstr "Načítáte netestovaný materiál, může to vést k neočekávaným výsledkům."
+
+msgid "This action may result in unexpected results."
+msgstr "Tato akce může vést k neočekávaným výsledkům."
+
+msgid "Show experimental Materials"
+msgstr "Zobrazit experimentální materiály"
+
+msgid "Material incompatibility Alert"
+msgstr "Upozornění na nekompatibilitu materiálu"

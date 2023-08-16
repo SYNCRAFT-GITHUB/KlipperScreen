@@ -1218,3 +1218,54 @@ msgstr "Table Chauffée"
 
 msgid "Chamber Fan"
 msgstr "Ventilateur"
+
+msgid "Select Syncraft ProExtruder"
+msgstr "Sélectionner Syncraft ProExtruder"
+
+msgid "Select Extruder"
+msgstr "Sélectionner une buse"
+
+msgid "Incompatible Extruder"
+msgstr "Buse incompatible"
+
+msgid "Current Extruder"
+msgstr "Buse actuelle"
+
+msgid "Change your Extruder"
+msgstr "Changez votre buse"
+
+msgid "Select compatible Extruder"
+msgstr "Sélectionnez une buse compatible"
+
+msgid "The inserted Extruder is incompatible with this Material"
+msgstr "La buse insérée est incompatible avec ce matériau"
+
+msgid "Material"
+msgstr "Matériel"
+
+msgid "Select the Material"
+msgstr "Sélectionnez le matériau"
+
+msgid "The inserted Extruder is incompatible with this File"
+msgstr "Le Nozzle inséré est incompatible avec ce fichier"
+
+msgid "You cannot print this file using the current Extruder"
+msgstr "Vous ne pouvez pas imprimer ce fichier en utilisant la Nozzle actuelle"
+
+msgid "Extruder modification detected"
+msgstr "Modification de buse détectée"
+
+msgid "This material is considered experimental for the selected Extruder."
+msgstr "Ce matériau est considéré comme expérimental pour la buse sélectionnée."
+
+msgid "You are loading untested material, this may result in unexpected results."
+msgstr "Vous chargez du matériel non testé, cela peut entraîner des résultats inattendus."
+
+msgid "This action may result in unexpected results."
+msgstr "Cette action peut entraîner des résultats inattendus."
+
+msgid "Show experimental Materials"
+msgstr "Afficher les matériaux expérimentaux"
+
+msgid "Material incompatibility Alert"
+msgstr "Alerte d'incompatibilité matérielle"

@@ -1088,3 +1088,54 @@ msgstr "Nyomtatási táblázat"
 
 msgid "Chamber Fan"
 msgstr "Szélventilátor"
+
+msgid "Select Syncraft ProExtruder"
+msgstr "Syncraft ProExtruder kiválasztása"
+
+msgid "Select Extruder"
+msgstr "Válasszon fúvókát"
+
+msgid "Incompatible Extruder"
+msgstr "Inkompatibilis fúvóka"
+
+msgid "Current Extruder"
+msgstr "Aktuális fúvóka"
+
+msgid "Change your Extruder"
+msgstr "Cserélje ki a fúvókát"
+
+msgid "Select compatible Extruder"
+msgstr "Válasszon kompatibilis fúvókát"
+
+msgid "The inserted Extruder is incompatible with this Material"
+msgstr "A behelyezett fúvóka nem kompatibilis ezzel az anyaggal"
+
+msgid "Material"
+msgstr "Anyag"
+
+msgid "Select the Material"
+msgstr "Válassza ki az anyagot"
+
+msgid "The inserted Extruder is incompatible with this File"
+msgstr "A behelyezett fúvóka nem kompatibilis ezzel a fájllal"
+
+msgid "You cannot print this file using the current Extruder"
+msgstr "Nem nyomtathatja ki ezt a fájlt az aktuális fúvókával"
+
+msgid "Extruder modification detected"
+msgstr "Fúvókamódosítás észlelve"
+
+msgid "This material is considered experimental for the selected Extruder."
+msgstr "Ez az anyag kísérleti anyagnak minősül a kiválasztott fúvókához."
+
+msgid "You are loading untested material, this may result in unexpected results."
+msgstr "Nem tesztelt anyagot tölt be, ez váratlan eredményeket eredményezhet."
+
+msgid "This action may result in unexpected results."
+msgstr "Ez a művelet váratlan eredményeket eredményezhet."
+
+msgid "Show experimental Materials"
+msgstr "Kísérleti anyagok megjelenítése"
+
+msgid "Material incompatibility Alert"
+msgstr "Anyag inkompatibilitási riasztás"

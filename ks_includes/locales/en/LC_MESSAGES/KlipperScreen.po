@@ -1021,3 +1021,54 @@ msgstr ""
 
 msgid "Chamber Fan"
 msgstr ""
+
+msgid "Select Syncraft ProExtruder"
+msgstr ""
+
+msgid "Select Extruder"
+msgstr ""
+
+msgid "Incompatible Extruder"
+msgstr ""
+
+msgid "Current Extruder"
+msgstr ""
+
+msgid "Change your Extruder"
+msgstr ""
+
+msgid "Select compatible Extruder"
+msgstr ""
+
+msgid "The inserted Extruder is incompatible with this Material"
+msgstr ""
+
+msgid "Material"
+msgstr ""
+
+msgid "Select the Material"
+msgstr ""
+
+msgid "The inserted Extruder is incompatible with this File"
+msgstr ""
+
+msgid "You cannot print this file using the current Extruder"
+msgstr ""
+
+msgid "Extruder modification detected"
+msgstr ""
+
+msgid "This material is considered experimental for the selected Extruder."
+msgstr ""
+
+msgid "You are loading untested material, this may result in unexpected results."
+msgstr ""
+
+msgid "This action may result in unexpected results."
+msgstr ""
+
+msgid "Show experimental Materials"
+msgstr ""
+
+msgid "Material incompatibility Alert"
+msgstr ""
