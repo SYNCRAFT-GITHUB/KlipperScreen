@@ -30,97 +30,97 @@ class ChMaterialPanel(ScreenPanel):
             PrinterMaterial(
                 name="PLA", 
                 code="PLA", 
-                compatible=["ST025", "ST04", "ST08"], 
-                experimental=["FIBER06", "METAL04"]),
+                compatible=["Standard 0.25mm", "Standard 0.4mm", "Standard 0.8mm"], 
+                experimental=["Fiber 0.6mm", "Metal 0.4mm"]),
             PrinterMaterial(
                 name="NYLON",
                 code="NYLON", 
-                compatible=["ST04", "ST08"],
-                experimental=["ST025", "FIBER06", "METAL04"]),
+                compatible=["Standard 0.4mm", "Standard 0.8mm"],
+                experimental=["Standard 0.25mm", "Fiber 0.6mm", "Metal 0.4mm"]),
             PrinterMaterial(
                 name="TO. PLA",
-                code="TOUGH_PLA", 
-                compatible=["ST025", "ST04", "ST08"],
-                experimental=["FIBER06", "METAL04"]),
+                code="TOUGH PLA", 
+                compatible=["Standard 0.25mm", "Standard 0.4mm", "Standard 0.8mm"],
+                experimental=["Fiber 0.6mm", "Metal 0.4mm"]),
             PrinterMaterial(
                 name="CPE",
                 code="CPE",
-                compatible=["ST04", "ST08"], 
-                experimental=["ST025", "FIBER06", "METAL04"]),
+                compatible=["Standard 0.4mm", "Standard 0.8mm"], 
+                experimental=["Standard 0.25mm", "Fiber 0.6mm", "Metal 0.4mm"]),
             PrinterMaterial(
                 name="ABS", 
                 code="ABS", 
-                compatible=["ST025", "ST04", "ST08"], 
-                experimental=["FIBER06", "METAL04"]),
+                compatible=["Standard 0.25mm", "Standard 0.4mm", "Standard 0.8mm"], 
+                experimental=["Fiber 0.6mm", "Metal 0.4mm"]),
             PrinterMaterial(
                 name="PP", 
                 code="PP", 
-                compatible=["ST04"], 
-                experimental=["ST025", "ST08", "FIBER06", "METAL04"]),
+                compatible=["Standard 0.4mm"], 
+                experimental=["Standard 0.25mm", "Standard 0.8mm", "Fiber 0.6mm", "Metal 0.4mm"]),
             PrinterMaterial(
                 name="CPE +", 
-                code="CPEPLUS", 
-                compatible=["ST04"], 
-                experimental=["ST025", "ST08", "FIBER06", "METAL04"]),
+                code="CPE+", 
+                compatible=["Standard 0.4mm"], 
+                experimental=["Standard 0.25mm", "Standard 0.8mm", "Fiber 0.6mm", "Metal 0.4mm"]),
             PrinterMaterial(
                 name="PETG",
                 code="PETG", 
-                compatible=["ST04", "ST08"], 
-                experimental=["ST025", "FIBER06", "METAL04"]),
+                compatible=["Standard 0.4mm", "Standard 0.8mm"], 
+                experimental=["Standard 0.25mm", "Fiber 0.6mm", "Metal 0.4mm"]),
             PrinterMaterial(
                 name="PC", 
                 code="PC",
-                compatible=["ST04"], 
-                experimental=["ST025", "ST08", "FIBER06", "METAL04"]),
+                compatible=["Standard 0.4mm"], 
+                experimental=["Standard 0.25mm", "Standard 0.8mm", "Fiber 0.6mm", "Metal 0.4mm"]),
             PrinterMaterial(
                 name="TPU 95A",
-                code="TPU_A95", 
-                compatible=["ST04", "ST08"],
-                experimental=["ST025", "FIBER06", "METAL04"]),
+                code="TPU 95A", 
+                compatible=["Standard 0.4mm", "Standard 0.8mm"],
+                experimental=["Standard 0.25mm", "Fiber 0.6mm", "Metal 0.4mm"]),
             PrinterMaterial(
                 name="TPU D64", 
-                code="TPU_D64",
-                compatible=["ST04", "ST08"], 
-                experimental=["ST025", "FIBER06", "METAL04"]),
+                code="TPU D64",
+                compatible=["Standard 0.4mm", "Standard 0.8mm"], 
+                experimental=["Standard 0.25mm", "Fiber 0.6mm", "Metal 0.4mm"]),
             PrinterMaterial(
                 name="PET", 
                 code="PET", 
                 compatible=[],
-                experimental=["ST025", "ST04", "ST08", "FIBER06", "METAL04"]),
+                experimental=["Standard 0.25mm", "Standard 0.4mm", "Standard 0.8mm", "Fiber 0.6mm", "Metal 0.4mm"]),
             PrinterMaterial(
                 name="PAHT CF15", 
-                code="PAHT_CF15", 
-                compatible=["FIBER06"], 
+                code="PAHT CF15", 
+                compatible=["Fiber 0.6mm"], 
                 experimental=[]),
             PrinterMaterial(
                 name="PET CF15", 
-                code="PET_CF15",
-                compatible=["FIBER06"], 
+                code="PET CF15",
+                compatible=["Fiber 0.6mm"], 
                 experimental=[]),
             PrinterMaterial(
                 name="PC GF30", 
-                code="PC_GF30", 
-                compatible=["FIBER06"], 
+                code="PC GF30", 
+                compatible=["Fiber 0.6mm"], 
                 experimental=[]),
             PrinterMaterial(
                 name="PP GF30", 
-                code="PP_GF30", 
-                compatible=["FIBER06"],
+                code="PP GF30", 
+                compatible=["Fiber 0.6mm"],
                 experimental=[]),
             PrinterMaterial(
                 name="316 L", 
-                code="L316", 
-                compatible=["METAL04"],
+                code="316L", 
+                compatible=["Metal 0.4mm"],
                 experimental=[]),
             PrinterMaterial(
                 name="17-4PH",
-                code="PH_174", 
-                compatible=["METAL04"],
+                code="17-4PH", 
+                compatible=["Metal 0.4mm"],
                 experimental=[]),
             PrinterMaterial(
                 name="ASA",
                 code="ASA",
-                compatible=["ST04"], 
+                compatible=["Standard 0.4mm"], 
                 experimental=[]),
         ]
 
@@ -146,7 +146,7 @@ class ChMaterialPanel(ScreenPanel):
         
 
     def materialgcodescript(self, widget, material: str):
-        self._screen._ws.klippy.gcode_script(f"LOAD_FILAMENT_{material}")
+        self._screen._ws.klippy.gcode_script(f"LOAD_FILAMENT MAT='{material}'")
         for _ in range(0,2):
             self._screen._menu_go_back()
 
@@ -173,7 +173,7 @@ class ChMaterialPanel(ScreenPanel):
         for material in self.materials:
 
             show_experimental = self._config.get_main_config().getboolean('show_experimental_material', False)
-            allowed_for_experimental = ["ST025", "ST04", "ST08"]
+            allowed_for_experimental = ["Standard 0.25mm", "Standard 0.4mm", "Standard 0.8mm"]
             
             if selected_nozzle in material.experimental and self._config.get_nozzle() in allowed_for_experimental:
                 index_button = self._gtk.Button("circle-orange", material.name, "color1")
@@ -197,7 +197,7 @@ class ChMaterialPanel(ScreenPanel):
                 gridvariable.attach(index_button, i, repeat_three, 1, size)
 
     def confirm_print_experimental(self, widget, code):
-        params = {"script": f"LOAD_FILAMENT_{code}"}
+        params = {"script": f"LOAD_FILAMENT MAT='{code}'"}
         self._screen._confirm_send_action(
             None,
             self.texts[0] + "\n\n" + self.texts[1] + "\n\n",
@@ -209,7 +209,7 @@ class ChMaterialPanel(ScreenPanel):
         
 
     def confirm_print_generic(self, widget):
-        params = {"script": "LOAD_FILAMENT_GENERIC"}
+        params = {"script": "LOAD_FILAMENT"}
         self._screen._confirm_send_action(
             None,
             self.texts[2] + "\n\n",

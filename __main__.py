@@ -309,7 +309,7 @@ class KlipperScreen(Gtk.Window):
         self.close_screensaver()
         if self.popup_message is not None:
             self.close_popup_message()
-
+            
         msg = Gtk.Button(label=f"{message}")
         msg.set_hexpand(True)
         msg.set_vexpand(True)
@@ -318,16 +318,24 @@ class KlipperScreen(Gtk.Window):
         msg.get_child().set_max_width_chars(40)
         msg.connect("clicked", self.close_popup_message)
         msg.get_style_context().add_class("message_popup")
+        popup_screentime = 10
+        popup_width = (self.width * .9)
+        popup_length = (-1)
         if level == 1:
             msg.get_style_context().add_class("message_popup_echo")
         elif level == 2:
             msg.get_style_context().add_class("message_popup_warning")
-        else:
+        elif level == 3:
             msg.get_style_context().add_class("message_popup_error")
+        else:
+            msg.get_style_context().add_class("message_popup_alert")
+            popup_screentime = 500
+            popup_width = (self.width * .9)
+            popup_length = (popup_width * 0.3)
 
         popup = Gtk.Popover.new(self.base_panel.titlebar)
         popup.get_style_context().add_class("message_popup_popover")
-        popup.set_size_request(self.width * .9, -1)
+        popup.set_size_request(popup_width, popup_length)
         popup.set_halign(Gtk.Align.CENTER)
         popup.add(msg)
         popup.popup()
@@ -336,7 +344,7 @@ class KlipperScreen(Gtk.Window):
         self.popup_message.show_all()
 
         if self._config.get_main_config().getboolean('autoclose_popups', True):
-            GLib.timeout_add_seconds(10, self.close_popup_message)
+            GLib.timeout_add_seconds(popup_screentime, self.close_popup_message)
 
         return False
 
