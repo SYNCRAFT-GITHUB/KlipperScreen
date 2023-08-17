@@ -157,7 +157,7 @@ msgid "Auto-calibrate"
 msgstr "Calibrar automaticamente"
 
 msgid "Auto-close notifications"
-msgstr "Notificações de fechamento automático"
+msgstr "Fechar notificações automaticamente"
 
 msgid "Auto-scroll"
 msgstr "Auto-scroll"
