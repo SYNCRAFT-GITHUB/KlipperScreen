@@ -31,11 +31,11 @@ class ChNozzleLoadPanel(ScreenPanel):
         self.spacer.set_hexpand(False)
         self.spacer.set_halign(Gtk.Align.CENTER) 
 
-        self.create_image_button("nozzle-ST025", self.above, "Standard 0.25mm")
-        self.create_image_button("nozzle-ST04", self.above, "Standard 0.4mm")
-        self.create_image_button("nozzle-ST08", self.above, "Standard 0.8mm")
-        self.create_image_button("nozzle-METAL04", self.below, "Metal 0.4mm")
-        self.create_image_button("nozzle-FIBER06", self.below, "Fiber 0.6mm")
+        self.create_image_button("nozzle-ST025", self.above, "ST025")
+        self.create_image_button("nozzle-ST04", self.above, "ST04")
+        self.create_image_button("nozzle-ST08", self.above, "ST08")
+        self.create_image_button("nozzle-METAL04", self.below, "METAL04")
+        self.create_image_button("nozzle-FIBER06", self.below, "FIBER06")
 
         self.content.add(self.above)
         self.content.add(self.below)
@@ -55,7 +55,6 @@ class ChNozzleLoadPanel(ScreenPanel):
         self.nozzlegcodescript(widget, nozzle)
 
     def nozzlegcodescript(self, widget, nozzle: str):
-        self._screen._ws.klippy.gcode_script(f"NOZZLE_SET NZ='{nozzle}'")
         self._config.replace_nozzle(newvalue=nozzle)
         self.menu_item_clicked(widget=widget, panel="material_load", item={
             "name": _("Select the Material"),
