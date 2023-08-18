@@ -305,10 +305,20 @@ class KlipperScreen(Gtk.Window):
             self.panels[panel_name].activate()
         self.show_all()
 
-    def show_popup_message(self, message, level=3):
+        def show_popup_message(self, message, level=3):
         self.close_screensaver()
         if self.popup_message is not None:
             self.close_popup_message()
+
+        messages = {
+            '!PROEXTRUDER_DONT_MATCH_GCODE': f'{_("The inserted Extruder is incompatible with this File")}',
+            '!MATERIAL_DONT_MATCH_GCODE': f'{_("Material incompatibility Alert")}',
+            '!PRINTER_MODEL_MISMATCH': f'{_("Impossible to proceed")}'
+        }
+
+        if message.startswith("!"):
+            message = messages[message]
+            level = 4
             
         msg = Gtk.Button(label=f"{message}")
         msg.set_hexpand(True)
@@ -331,7 +341,7 @@ class KlipperScreen(Gtk.Window):
             msg.get_style_context().add_class("message_popup_alert")
             popup_screentime = 500
             popup_width = (self.width * .9)
-            popup_length = (popup_width * 0.3)
+            popup_length = (popup_width * 0.2)
 
         popup = Gtk.Popover.new(self.base_panel.titlebar)
         popup.get_style_context().add_class("message_popup_popover")
