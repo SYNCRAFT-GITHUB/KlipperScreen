@@ -50,7 +50,7 @@ class ExecuteScript(ScreenPanel):
 
         if not self.internet_connection() and fix_option not in offline_scripts:
             message: str = _("This procedure requires internet connection")
-            self._screen._ws.klippy.gcode_script(f"M118 {message}")
+            self._screen.show_popup_message(message, level=2)
             return None
 
         if (fix_option == "FILES"):
@@ -83,7 +83,7 @@ class ExecuteScript(ScreenPanel):
 
             if not os.path.exists(path):
                 message: str = _("Update File not found")
-                self._screen._ws.klippy.gcode_script(f"M118 {message}")
+                self._screen.show_popup_message(message, level=2)
 
             elif os.path.exists(path):
                 script_path = path
@@ -95,7 +95,7 @@ class ExecuteScript(ScreenPanel):
 
             if not os.path.exists(path):
                 message: str = _("Backup File not found")
-                self._screen._ws.klippy.gcode_script(f"M118 {message}")
+                self._screen.show_popup_message(message, level=2)
 
             elif os.path.exists(path):
                 script_path = path

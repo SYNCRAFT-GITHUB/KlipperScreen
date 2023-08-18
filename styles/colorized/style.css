@@ -191,6 +191,10 @@ textview .time {
     background-color: #dc322f; /*solarazed-red*/
 }
 
+.message_popup_alert, .message_popup_alert button {
+    background-color: #786060;
+}
+
 .numpad_tleft, .numpad_top, .numpad_tright, .numpad_left, .numpad_button, .numpad_right, .numpad_bleft, .numpad_bottom, .numpad_bright {
     border-color: #002b36; /*base03*/
     background-color: #073642; /*base02*/

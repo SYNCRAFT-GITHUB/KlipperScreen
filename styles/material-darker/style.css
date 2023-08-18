@@ -160,6 +160,10 @@ textview .time {
     background-color: #B71C1C;
 }
 
+.message_popup_alert, .message_popup_alert button {
+    background-color: #786060;
+}
+
 .numpad_tleft, .numpad_top, .numpad_tright, .numpad_left, .numpad_button, .numpad_right, .numpad_bleft, .numpad_bottom, .numpad_bright {
     border-color: #545454;
     background-color: #252525;
