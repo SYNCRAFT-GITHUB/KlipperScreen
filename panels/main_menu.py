@@ -100,8 +100,6 @@ class MainPanel(MenuPanel):
         if devname.startswith("_"):
             return False
 
-        empty_area: str = "  "
-
         if device.startswith("extruder"):
             i = sum(d.startswith('extruder') for d in self.devices)
             image = f"extruder-{i+1}" if self._printer.extrudercount > 1 else "extruder"
