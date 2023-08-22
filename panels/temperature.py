@@ -301,11 +301,12 @@ class TemperaturePanel(ScreenPanel):
         if device.startswith("extruder"):
             i = sum(d.startswith('extruder') for d in self.devices)
             image = f"extruder-{i+1}" if self._printer.extrudercount > 1 else "extruder"
+            devname = f'{_("Extruder")} 2' if "1" in devname else f'{_("Extruder")} 1'
             class_name = f"graph_label_{device}"
             dev_type = "extruder"
         elif device == "heater_bed":
             image = "bed"
-            devname = "Heater Bed"
+            devname = f'{_("Heater Bed")}'
             class_name = "graph_label_heater_bed"
             dev_type = "bed"
         elif device.startswith("heater_generic"):
@@ -315,6 +316,7 @@ class TemperaturePanel(ScreenPanel):
             dev_type = "sensor"
         elif device.startswith("temperature_fan"):
             f = 1 + sum("temperature_fan" in d for d in self.devices)
+            devname = f'{_("Chamber Fan")}'
             image = "fan"
             class_name = f"graph_label_fan_{f}"
             dev_type = "fan"
