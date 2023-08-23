@@ -274,6 +274,8 @@ class KlipperScreenConfig:
                                    "value": "False", "callback": screen.reload_panels}},
             {"show_experimental_material": {"section": "main", "name": _("Show experimental Materials"), "type": "binary",
                                    "value": "True", "callback": screen.reload_panels}},
+            {"change_timezone": {"section": "main", "name": "CHANGE TIMEZONE", "type": "panel",
+                                   "panel": "timezone_select"}},
             # {"": {"section": "main", "name": _(""), "type": ""}}
         ]
 
