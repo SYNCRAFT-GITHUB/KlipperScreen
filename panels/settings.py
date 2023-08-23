@@ -21,6 +21,11 @@ class SettingsPanel(ScreenPanel):
             "type": "menu",
             "menu": "printers"
         }})
+        options.append({"change_system_timezone": {
+            "name": "CHANGE SYSTEM TIMEZONE",
+            "type": "panel",
+            "panel": "timezone_select"
+        }})
 
         self.labels['settings_menu'] = self._gtk.ScrolledWindow()
         self.labels['settings'] = Gtk.Grid()
