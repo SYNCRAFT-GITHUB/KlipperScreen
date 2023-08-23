@@ -1,53 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   version="1.1"
-   width="24"
-   height="24"
-   viewBox="0 0 24 24"
-   id="svg4"
-   sodipodi:docname="bed-mesh.svg"
-   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)">
-  <metadata
-     id="metadata6">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs8" />
-  <sodipodi:namedview
-     id="namedview6"
-     pagecolor="#505050"
-     bordercolor="#ffffff"
-     borderopacity="1"
-     inkscape:pageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="1"
-     showgrid="false"
-     inkscape:zoom="26"
-     inkscape:cx="12"
-     inkscape:cy="8.9423077"
-     inkscape:window-width="1920"
-     inkscape:window-height="1018"
-     inkscape:window-x="-6"
-     inkscape:window-y="-6"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg4"
-     inkscape:document-rotation="0" />
-  <path
-     d="m 10.4,5.6000001 v 3.1999998 h 3.2 V 5.6000001 h -3.2 m 4.8,0 v 3.1999998 h 3.2 V 5.6000001 H 15.2 M 15.2,10.4 v 3.2 h 3.2 v -3.2 h -3.2 m 0,4.8 v 3.2 h 3.2 v -3.2 h -3.2 m -1.6,3.2 v -3.2 h -3.2 v 3.2 h 3.2 m -4.7999999,0 v -3.2 h -3.2 v 3.2 h 3.2 m 0,-4.8 v -3.2 h -3.2 v 3.2 h 3.2 m 0,-4.8000001 V 5.6000001 h -3.2 v 3.1999998 h 3.2 M 10.4,13.6 h 3.2 v -3.2 h -3.2 v 3.2 M 5.6000001,4.0000001 H 18.4 a 1.6,1.6 0 0 1 1.6,1.6 V 18.4 A 1.6,1.6 0 0 1 18.4,20 H 5.6000001 C 4.736,20 4,19.28 4,18.4 V 5.6000001 a 1.6,1.6 0 0 1 1.6000001,-1.6 z"
-     id="path2-8"
-     style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1" />
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="1080" viewBox="0 0 1080 1080" xml:space="preserve">
+<desc>Created with Fabric.js 5.2.4</desc>
+<defs>
+</defs>
+<g transform="matrix(1 0 0 1 540 540)" id="54e6f626-ff4d-4913-b48c-18e90b6389e0"  >
+</g>
+<g transform="matrix(1 0 0 1 540 540)" id="b6a20425-67b2-4379-931f-2947eadf90e7"  >
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-540" rx="0" ry="0" width="1080" height="1080" />
+</g>
+<g transform="matrix(54.55 0 0 54.55 540 540)" id="path2-8"  >
+<path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(226,226,226); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-12, -12)" d="M 10.4 5.6000001 L 10.4 8.7999999 L 13.600000000000001 8.7999999 L 13.600000000000001 5.6000001 L 10.400000000000002 5.6000001 M 15.200000000000003 5.6000001 L 15.200000000000003 8.7999999 L 18.400000000000002 8.7999999 L 18.400000000000002 5.6000001 L 15.2 5.6000001 M 15.2 10.4 L 15.2 13.600000000000001 L 18.4 13.600000000000001 L 18.4 10.400000000000002 L 15.2 10.400000000000002 M 15.2 15.200000000000003 L 15.2 18.400000000000002 L 18.4 18.400000000000002 L 18.4 15.200000000000003 L 15.2 15.200000000000003 M 13.6 18.400000000000002 L 13.6 15.200000000000003 L 10.399999999999999 15.200000000000003 L 10.399999999999999 18.400000000000002 L 13.599999999999998 18.400000000000002 M 8.800000099999998 18.400000000000002 L 8.800000099999998 15.200000000000003 L 5.600000099999998 15.200000000000003 L 5.600000099999998 18.400000000000002 L 8.800000099999998 18.400000000000002 M 8.800000099999998 13.600000000000001 L 8.800000099999998 10.400000000000002 L 5.600000099999998 10.400000000000002 L 5.600000099999998 13.600000000000001 L 8.800000099999998 13.600000000000001 M 8.800000099999998 8.799999900000001 L 8.800000099999998 5.6000001 L 5.600000099999998 5.6000001 L 5.600000099999998 8.7999999 L 8.800000099999998 8.7999999 M 10.4 13.6 L 13.600000000000001 13.6 L 13.600000000000001 10.399999999999999 L 10.400000000000002 10.399999999999999 L 10.400000000000002 13.599999999999998 M 5.6000001 4.0000001 L 18.4 4.0000001 C 18.82434638374327 4.000000099999999 19.231312644381617 4.1685710445846675 19.531370849898476 4.4686292501015235 C 19.83142905541533 4.7686874556183785 20 5.175653716256729 20 5.6000001 L 20 18.4 C 20 18.82434638374327 19.83142905541533 19.23131264438162 19.531370849898476 19.531370849898476 C 19.23131264438162 19.83142905541533 18.82434638374327 20 18.4 20 L 5.6000001 20 C 4.736 20 4 19.28 4 18.4 L 4 5.6000001 C 3.999999999999999 5.175653698930627 4.168570958311783 4.768687423137625 4.468629185456862 4.4686292147461835 C 4.76868741260194 4.1685710063547425 5.175653698930628 4.00000007347835 5.600000099999999 4.000000099999999 z" stroke-linecap="round" />
+</g>
+<g transform="matrix(NaN NaN NaN NaN 0 0)"  >
+<g style=""   >
+</g>
+</g>
 </svg>
