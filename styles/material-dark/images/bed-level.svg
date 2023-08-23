@@ -1,39 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   version="1.1"
-   width="24"
-   height="24"
-   viewBox="0 0 24 24"
-   id="svg4"
-   sodipodi:docname="bed-level.svg"
-   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs8" />
-  <sodipodi:namedview
-     id="namedview6"
-     pagecolor="#505050"
-     bordercolor="#ffffff"
-     borderopacity="1"
-     inkscape:pageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="1"
-     showgrid="false"
-     inkscape:zoom="26"
-     inkscape:cx="12"
-     inkscape:cy="8.9423077"
-     inkscape:window-width="1600"
-     inkscape:window-height="826"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg4" />
-  <path
-     d="M 21.66,13.619443 22.02,11.649444 2.33,8.1094439 1.98,10.079444 l 2.95,0.53 -0.35,1.969999 c -0.1,0.54 0.26,1.06 0.81,1.16 0.54,0.1 1.06,-0.26 1.16,-0.81 l 0.35,-1.959999 9.84,1.759999 -0.35,1.97 c -0.1,0.55 0.26,1.07 0.81,1.18 0.54,0.08 1.06,-0.28 1.16,-0.82 l 0.35,-1.97 2.95,0.53"
-     id="path2"
-     style="fill:#ffffff"
-     sodipodi:nodetypes="ccccccccccccccc" />
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="1080" viewBox="0 0 1080 1080" xml:space="preserve">
+<desc>Created with Fabric.js 5.2.4</desc>
+<defs>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="transparent"></rect>
+<g transform="matrix(1 0 0 1 540 540)" id="54e6f626-ff4d-4913-b48c-18e90b6389e0"  >
+</g>
+<g transform="matrix(1 0 0 1 540 540)" id="b6a20425-67b2-4379-931f-2947eadf90e7"  >
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-540" rx="0" ry="0" width="1080" height="1080" />
+</g>
+<g transform="matrix(NaN NaN NaN NaN 0 0)"  >
+<g style=""   >
+</g>
+</g>
+<g transform="matrix(43.43 0 0 43.43 540 566.86)" id="path2"  >
+<path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(226,226,226); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-12, -12)" d="M 21.66 13.619443 L 22.02 11.649444 L 2.33 8.1094439 L 1.98 10.079444 L 4.93 10.609444 L 4.58 12.579443 C 4.48 13.119443 4.84 13.639443 5.390000000000001 13.739443 C 5.930000000000001 13.839443 6.450000000000001 13.479443 6.550000000000001 12.929443 L 6.9 10.969444 L 16.740000000000002 12.729443 L 16.39 14.699443 C 16.29 15.249443000000001 16.650000000000002 15.769443 17.2 15.879443 C 17.74 15.959443 18.259999999999998 15.599443 18.36 15.059443 L 18.71 13.089443 L 21.66 13.619442999999999" stroke-linecap="round" />
+</g>
+<g transform="matrix(NaN NaN NaN NaN 0 0)"  >
+<g style=""   >
+</g>
+</g>
 </svg>
