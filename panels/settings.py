@@ -22,7 +22,7 @@ class SettingsPanel(ScreenPanel):
             "menu": "printers"
         }})
         options.append({"change_system_timezone": {
-            "name": "CHANGE SYSTEM TIMEZONE",
+            "name": _("Change Timezone"),
             "type": "panel",
             "panel": "timezone_select"
         }})

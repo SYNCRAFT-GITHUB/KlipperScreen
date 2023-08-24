@@ -311,9 +311,9 @@ class KlipperScreen(Gtk.Window):
                 self.close_popup_message()
 
             messages = {
-                '!PROEXTRUDER_DONT_MATCH_GCODE': f'{_("The inserted Extruder is incompatible with this File")}',
-                '!MATERIAL_DONT_MATCH_GCODE': f'{_("Material incompatibility Alert")}',
-                '!PRINTER_MODEL_MISMATCH': f'{_("Impossible to proceed")}'
+                '!PROEXTRUDER_DONT_MATCH_GCODE': _("The inserted Extruder is incompatible with this File"),
+            '!MATERIAL_DONT_MATCH_GCODE': _("The material you're using is not compatible with this file"),
+            '!PRINTER_MODEL_MISMATCH': _("The file you are trying to print is for a different printer model")
             }
 
             if message.startswith("!"):

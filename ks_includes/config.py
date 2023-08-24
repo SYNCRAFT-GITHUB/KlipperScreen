@@ -228,8 +228,8 @@ class KlipperScreenConfig:
                     {"name": _("System") + " " + _("(default)"), "value": "system_lang"}]}},
             {"theme": {
                 "section": "main", "name": _("Icon Theme"), "type": "dropdown",
-                "value": "material-darker", "callback": screen.restart_ks, "options": [
-                    {"name": "material-darker" + " " + _("(default)"), "value": "material-darker"}]}},
+                "value": "Industrial", "callback": screen.restart_ks, "options": [
+                    {"name": "Industrial" + " " + _("(default)"), "value": "Industrial"}]}},
             {"print_estimate_method": {
                 "section": "main", "name": _("Estimated Time Method"), "type": "dropdown",
                 "value": "auto", "options": [
@@ -292,7 +292,7 @@ class KlipperScreenConfig:
             lang_opt.append({"name": lang, "value": lang})
 
         t_path = os.path.join(klipperscreendir, 'styles')
-        themes = [d for d in os.listdir(t_path) if (not os.path.isfile(os.path.join(t_path, d)) and d != "material-darker")]
+        themes = [d for d in os.listdir(t_path) if (not os.path.isfile(os.path.join(t_path, d)) and d != "Industrial")]
         themes.sort()
         theme_opt = self.configurable_options[1]['theme']['options']
 
