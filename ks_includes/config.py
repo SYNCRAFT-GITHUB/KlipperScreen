@@ -46,6 +46,22 @@ class KlipperScreenConfig:
         self.defined_config = None
         self.lang = None
         self.langs = {}
+        self.lang_converter = {
+            'en': 'English',
+            'da': 'Dansk',
+            'de': 'Deutsch',
+            'es': 'Español',
+            'fr': 'Français',
+            'it': 'Italiano',
+            'pl': 'Polski',
+            'pt': 'Português',
+            'sv': 'Svenska',
+            'ru': 'Русский',
+            'ko': '한국어',
+            'jp': '日本語',
+            'zh_CN': '简体中文',
+            'zh_TW': '繁體中文',
+        }
 
         try:
             self.config.read(self.default_config_path)
@@ -122,6 +138,8 @@ class KlipperScreenConfig:
         self.install_language(lang)
 
     def install_language(self, lang):
+        if lang in self.lang_converter:
+            lang = self.lang_converter[lang]
         if lang is None or lang == "system_lang":
             for language in self.lang_list:
                 if locale.getdefaultlocale()[0].startswith(language):
@@ -138,6 +156,8 @@ class KlipperScreenConfig:
             logging.info(f"Available lang list {self.lang_list}")
             lang = "en"
         logging.info(f"Using lang {lang}")
+        if lang in self.lang_converter:
+            lang = self.lang_converter[lang]
         self.lang = self.langs[lang]
         self.lang.install(names=['gettext', 'ngettext'])
 
@@ -227,8 +247,8 @@ class KlipperScreenConfig:
                     {"name": _("System") + " " + _("(default)"), "value": "system_lang"}]}},
             {"theme": {
                 "section": "main", "name": _("Icon Theme"), "type": "dropdown",
-                "value": "material-darker", "callback": screen.restart_ks, "options": [
-                    {"name": "material-darker" + " " + _("(default)"), "value": "material-darker"}]}},
+                "value": "Industrial", "callback": screen.restart_ks, "options": [
+                    {"name": "Industrial" + " " + _("(default)"), "value": "Industrial"}]}},
             {"print_estimate_method": {
                 "section": "main", "name": _("Estimated Time Method"), "type": "dropdown",
                 "value": "auto", "options": [
@@ -294,7 +314,7 @@ class KlipperScreenConfig:
             lang_opt.append({"name": lang, "value": lang})
 
         t_path = os.path.join(klipperscreendir, 'styles')
-        themes = [d for d in os.listdir(t_path) if (not os.path.isfile(os.path.join(t_path, d)) and d != "material-darker")]
+        themes = [d for d in os.listdir(t_path) if (not os.path.isfile(os.path.join(t_path, d)) and d != "Industrial")]
         themes.sort()
         theme_opt = self.configurable_options[1]['theme']['options']
 

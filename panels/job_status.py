@@ -101,8 +101,8 @@ class JobStatusPanel(ScreenPanel):
         fi_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         fi_box.add(self.labels['file'])
         fi_box.add(self.labels['status'])
-        fi_box.add(self.labels['lcdmessage'])
-        self.grid.attach(fi_box, 1, 0, 3, 1)
+        #fi_box.add(self.labels['lcdmessage'])
+        self.grid.attach(fi_box, 0, 0, 3, 1)
 
         self.labels['darea'] = Gtk.DrawingArea()
         self.labels['darea'].connect("draw", self.on_draw)
@@ -117,11 +117,14 @@ class JobStatusPanel(ScreenPanel):
         overlay.set_hexpand(True)
         overlay.add(self.labels['darea'])
         overlay.add_overlay(box)
-        self.grid.attach(overlay, 0, 0, 1, 1)
-
-        self.labels['thumbnail'] = self._gtk.Image()
+        self.grid.attach(overlay, 3, 0, 1, 1)
+        
+        self.labels['thumbnail'] = Gtk.Image()
         self.labels['info_grid'] = Gtk.Grid()
-        self.labels['info_grid'].attach(self.labels['thumbnail'], 0, 0, 1, 1)
+        self.thumb_alignment = Gtk.Alignment.new(0.5, 0.5, 0, 0)
+        self.thumb_alignment.set_padding(0, 0, 0, 135)
+        self.thumb_alignment.add(self.labels['thumbnail'])
+        self.labels['info_grid'].attach(self.thumb_alignment, 2, 0, 1, 1)
         if self._printer.get_tools():
             self.current_extruder = self._printer.get_stat("toolhead", "extruder")
             diameter = float(self._printer.get_config_section(self.current_extruder)['filament_diameter'])
@@ -331,7 +334,7 @@ class JobStatusPanel(ScreenPanel):
             self.labels['info_grid'].attach(info, 0, 1, 1, 1)
         else:
             self.labels['info_grid'].remove_column(1)
-            self.labels['info_grid'].attach(info, 1, 0, 1, 1)
+            self.labels['info_grid'].attach(info, 0, 0, 1, 1)
         self.labels['info_grid'].show_all()
 
     def on_draw(self, da, ctx):
