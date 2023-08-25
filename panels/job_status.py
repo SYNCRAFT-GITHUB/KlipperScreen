@@ -101,8 +101,8 @@ class JobStatusPanel(ScreenPanel):
         fi_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         fi_box.add(self.labels['file'])
         fi_box.add(self.labels['status'])
-        fi_box.add(self.labels['lcdmessage'])
-        self.grid.attach(fi_box, 1, 0, 3, 1)
+        #fi_box.add(self.labels['lcdmessage'])
+        self.grid.attach(fi_box, 0, 0, 3, 1)
 
         self.labels['darea'] = Gtk.DrawingArea()
         self.labels['darea'].connect("draw", self.on_draw)
@@ -117,11 +117,14 @@ class JobStatusPanel(ScreenPanel):
         overlay.set_hexpand(True)
         overlay.add(self.labels['darea'])
         overlay.add_overlay(box)
-        self.grid.attach(overlay, 0, 0, 1, 1)
-
-        self.labels['thumbnail'] = self._gtk.Image()
+        self.grid.attach(overlay, 3, 0, 1, 1)
+        
+        self.labels['thumbnail'] = Gtk.Image()
         self.labels['info_grid'] = Gtk.Grid()
-        self.labels['info_grid'].attach(self.labels['thumbnail'], 0, 0, 1, 1)
+        self.thumb_alignment = Gtk.Alignment.new(0.5, 0.5, 0, 0)
+        self.thumb_alignment.set_padding(78, 0, 0, 120)
+        self.thumb_alignment.add(self.labels['thumbnail'])
+        self.labels['info_grid'].attach(self.thumb_alignment, 2, 0, 1, 1)
         if self._printer.get_tools():
             self.current_extruder = self._printer.get_stat("toolhead", "extruder")
             diameter = float(self._printer.get_config_section(self.current_extruder)['filament_diameter'])
@@ -234,7 +237,7 @@ class JobStatusPanel(ScreenPanel):
 
         info = Gtk.Grid()
         info.set_row_homogeneous(True)
-        info.get_style_context().add_class("printing-info")
+        # info.get_style_context().add_class("printing-info")
         info.attach(self.labels['temp_grid'], 0, 0, 1, 1)
         info.attach(szfe, 0, 1, 1, 2)
         info.attach(self.buttons['elapsed'], 0, 3, 1, 1)
@@ -242,7 +245,7 @@ class JobStatusPanel(ScreenPanel):
         self.status_grid = info
 
     def create_extrusion_grid(self, widget=None):
-        goback = self._gtk.Button("back", None, "color1", self.bts, Gtk.PositionType.TOP, False)
+        goback = self._gtk.Button("back-fill", None, "color1", self.bts, Gtk.PositionType.TOP, False)
         goback.connect("clicked", self.switch_info, self.status_grid)
         goback.set_hexpand(False)
         goback.get_style_context().add_class("printing-info")
@@ -267,7 +270,7 @@ class JobStatusPanel(ScreenPanel):
         self.buttons['extrusion'].connect("clicked", self.switch_info, self.extrusion_grid)
 
     def create_move_grid(self, widget=None):
-        goback = self._gtk.Button("back", None, "color2", self.bts, Gtk.PositionType.TOP, False)
+        goback = self._gtk.Button("back-fill", None, "color2", self.bts, Gtk.PositionType.TOP, False)
         goback.connect("clicked", self.switch_info, self.status_grid)
         goback.set_hexpand(False)
         goback.get_style_context().add_class("printing-info")
@@ -299,45 +302,47 @@ class JobStatusPanel(ScreenPanel):
         self.buttons['speed'].connect("clicked", self.switch_info, self.move_grid)
 
     def create_time_grid(self, widget=None):
-        goback = self._gtk.Button("back", None, "color3", self.bts, Gtk.PositionType.TOP, False)
+        goback = self._gtk.Button("back-fill", None, "color3", self.bts, Gtk.PositionType.TOP, False)
         goback.connect("clicked", self.switch_info, self.status_grid)
         goback.set_hexpand(False)
 
         info = Gtk.Grid()
         info.get_style_context().add_class("printing-info-secondary")
         info.attach(goback, 0, 0, 1, 6)
-        info.attach(self.labels['elapsed'], 1, 0, 1, 1)
-        info.attach(self.labels['duration'], 2, 0, 1, 1)
-        info.attach(self.labels['left'], 1, 1, 1, 1)
-        info.attach(self.labels['time_left'], 2, 1, 1, 1)
-        info.attach(self.labels['total'], 1, 2, 1, 1)
-        info.attach(self.labels['est_time'], 2, 2, 1, 1)
-        info.attach(self.labels['slicer'], 1, 3, 1, 1)
-        info.attach(self.labels['slicer_time'], 2, 3, 1, 1)
-        info.attach(self.labels['file_tlbl'], 1, 4, 1, 1)
-        info.attach(self.labels['file_time'], 2, 4, 1, 1)
-        info.attach(self.labels['fila_tlbl'], 1, 5, 1, 1)
-        info.attach(self.labels['filament_time'], 2, 5, 1, 1)
+        info.attach(self.labels['elapsed'], 2, 0, 1, 1)
+        info.attach(self.labels['duration'], 3, 0, 1, 1)
+        info.attach(self.labels['left'], 2, 1, 1, 1)
+        info.attach(self.labels['time_left'], 3, 1, 1, 1)
+        info.attach(self.labels['total'], 2, 2, 1, 1)
+        info.attach(self.labels['est_time'], 3, 2, 1, 1)
+        info.attach(self.labels['slicer'], 2, 3, 1, 1)
+        info.attach(self.labels['slicer_time'], 3, 3, 1, 1)
+        info.attach(self.labels['file_tlbl'], 2, 4, 1, 1)
+        info.attach(self.labels['file_time'], 3, 4, 1, 1)
+        info.attach(self.labels['fila_tlbl'], 2, 5, 1, 1)
+        info.attach(self.labels['filament_time'], 3, 5, 1, 1)
         self.time_grid = info
         self.buttons['elapsed'].connect("clicked", self.switch_info, self.time_grid)
         self.buttons['left'].connect("clicked", self.switch_info, self.time_grid)
 
     def switch_info(self, widget=None, info=None):
+        self.labels['info_grid'].remove(self.thumb_alignment)
         if not info:
             logging.debug("No info to attach")
             return
         if self._screen.vertical_mode:
-            self.labels['info_grid'].remove_row(1)
+            self.labels['info_grid'].remove_row(0)
             self.labels['info_grid'].attach(info, 0, 1, 1, 1)
         else:
-            self.labels['info_grid'].remove_column(1)
-            self.labels['info_grid'].attach(info, 1, 0, 1, 1)
+            self.labels['info_grid'].remove_column(0)
+            self.labels['info_grid'].attach(info, 0, 0, 1, 2)
         self.labels['info_grid'].show_all()
+        self.labels['info_grid'].attach(self.thumb_alignment, 2, 0, 1, 1)
 
     def on_draw(self, da, ctx):
         w = da.get_allocated_width()
         h = da.get_allocated_height()
-        r = min(w, h) * .42
+        r = min(w, h) * .37
 
         ctx.set_source_rgb(0.13, 0.13, 0.13)
         ctx.set_line_width(self._gtk.font_size * .75)
@@ -372,7 +377,7 @@ class JobStatusPanel(ScreenPanel):
             'menu': self._gtk.Button("complete", _("Main Menu"), "color4"),
             'pause': self._gtk.Button("pause", _("Pause"), "color1"),
             'restart': self._gtk.Button("refresh", _("Restart"), "color3"),
-            'resume': self._gtk.Button("resume", _("Resume"), "color1"),
+            'resume': self._gtk.Button("unpause", _("Resume"), "color1"),
             'save_offset_probe': self._gtk.Button("home-z", _("Save Z") + "\n" + "Probe", "color1"),
             'save_offset_endstop': self._gtk.Button("home-z", _("Save Z") + "\n" + "Endstop", "color2"),
         }
@@ -733,15 +738,15 @@ class JobStatusPanel(ScreenPanel):
         self.buttons['button_grid'].remove_row(0)
         self.buttons['button_grid'].insert_row(0)
         if self.state == "printing":
-            self.buttons['button_grid'].attach(self.buttons['pause'], 0, 0, 1, 1)
-            self.buttons['button_grid'].attach(self.buttons['cancel'], 1, 0, 1, 1)
+            self.buttons['button_grid'].attach(self.buttons['pause'], 1, 0, 1, 1)
+            self.buttons['button_grid'].attach(self.buttons['cancel'], 0, 0, 1, 1)
             self.buttons['button_grid'].attach(self.buttons['fine_tune'], 2, 0, 1, 1)
             self.buttons['button_grid'].attach(self.buttons['control'], 3, 0, 1, 1)
             self.enable_button("pause", "cancel")
             self.can_close = False
         elif self.state == "paused":
-            self.buttons['button_grid'].attach(self.buttons['resume'], 0, 0, 1, 1)
-            self.buttons['button_grid'].attach(self.buttons['cancel'], 1, 0, 1, 1)
+            self.buttons['button_grid'].attach(self.buttons['resume'], 1, 0, 1, 1)
+            self.buttons['button_grid'].attach(self.buttons['cancel'], 0, 0, 1, 1)
             self.buttons['button_grid'].attach(self.buttons['fine_tune'], 2, 0, 1, 1)
             self.buttons['button_grid'].attach(self.buttons['control'], 3, 0, 1, 1)
             self.enable_button("resume", "cancel")
