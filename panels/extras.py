@@ -62,7 +62,7 @@ class OutputPinPanel(ScreenPanel):
         scale.get_style_context().add_class("fan_slider")
         scale.connect("button-release-event", self.set_output_pin, pin)
 
-        min_btn = self._gtk.Button("back", None, "color1", 1)
+        min_btn = self._gtk.Button("back-fill", None, "color1", 1)
         min_btn.set_hexpand(False)
         min_btn.connect("clicked", self.update_pin_value, pin, 0)
 

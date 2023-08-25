@@ -154,7 +154,7 @@ class KlipperScreenConfig:
         if lang not in self.lang_list:
             logging.error(f"lang: {lang} not found")
             logging.info(f"Available lang list {self.lang_list}")
-            lang = "en"
+            lang = "English"
         logging.info(f"Using lang {lang}")
         if lang in self.lang_converter:
             lang = self.lang_converter[lang]
