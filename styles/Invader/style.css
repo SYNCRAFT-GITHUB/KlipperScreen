@@ -1,0 +1,207 @@
+/* Invader theme created by Rafael Neuwirth Swierczynski 2023 */
+
+* {
+    color: #3EB816;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+window {
+    background-color: #000000;
+}
+
+.active_device {
+    background-color: #1c1c1c;
+}
+
+button {
+    background-color: #000000;
+}
+
+button:active {
+    background-color: #212121;
+}
+
+.button_active {
+    border-color: #212121;
+    border-style: solid;
+    background-color: #212121;
+}
+
+button.color1, button.color2, button.color3, button.color4 {
+    background-color: #252525;
+    border-color: #252525;
+    border-radius: .12em;
+}
+
+button.color1:active, button.color2:active, button.color3:active, button.color4:active, button.update:active, button.invalid:active, .dialog button:active {
+    border-style: none;
+    background-color: #212121;
+}
+
+button.update {
+    color: #335877;
+    background-color: #000000;
+    border-color: #33516a;
+    border-radius: .2em;
+    border-width: .1em;
+}
+
+button.invalid {
+    color: #fb2100;
+    background-color: #000000;
+    border-color: #da3810;
+    border-radius: .2em;
+    border-width: .1em;
+}
+
+combobox box button {
+    background-color: #242c22;
+    border-color: #000000;
+    border-radius: .2em;
+}
+
+switch {
+    background-color: #1c1c1c;
+}
+
+switch:checked {
+    background-color: #264930;
+}
+
+label {
+    color: #3EB816;
+}
+
+menu {
+    background-color: #000000;
+    border-color: #5a5a5a;
+}
+
+menuitem {
+    background-color: #000000;
+    border-color: #282828;
+}
+
+trough {
+    background-color: #000000;
+    color: #3EB816;
+}
+
+trough highlight, trough progress {
+    background-color: #2b6d0c;
+    color: #3EB816;
+    border-radius: .1em;
+}
+
+scale-mark {
+    color: #528341;
+}
+
+scrollbar, scrollbar button, scrollbar trough {
+    background-color: #000000;
+}
+
+scrollbar slider {
+    background-color: #1c1c1c;
+}
+
+textview .time {
+    color: #9E9E9E;
+}
+
+.popup {
+    background-color: #026400;
+}
+
+.dialog {
+    border: 0;
+    background-color: #000000;
+}
+
+.dialog button {
+    background-color: #252525;
+    border-bottom-color: #252525;
+    border-radius: .12em;
+}
+
+.dialog button:nth-child(1) {
+    border-bottom-color: #564f2f;
+}
+
+.dialog button:nth-child(2) {
+    border-bottom-color: #B71C1C;
+}
+
+.tempbutton_top, .tempbutton, .tempbutton_bottom, .distbutton_top, .distbutton, .distbutton_bottom  {
+    border-color: #545454;
+    border-width: .1em;
+    background-color: #252525;
+}
+
+.distbutton_active {
+    background-color: #545454;
+}
+
+.fan_slider {
+    color: #079563;
+}
+
+.message_popup {
+    border-bottom-color: #626262;
+}
+
+.message_popup_echo, .message_popup_echo button {
+    background-color: #01410d;
+}
+
+.message_popup_warning, .message_popup_warning button {
+    background-color: #EF6C00;
+}
+
+.message_popup_error, .message_popup_error button {
+    background-color: #B71C1C;
+}
+
+.message_popup_alert, .message_popup_alert button {
+    background-color: #786060;
+}
+
+.numpad_tleft, .numpad_top, .numpad_tright, .numpad_left, .numpad_button, .numpad_right, .numpad_bleft, .numpad_bottom, .numpad_bright {
+    border-color: #545454;
+    background-color: #252525;
+}
+
+.printing-status {
+    color: #0e9d12;
+}
+
+.printing-progress-text {
+    color: #e2e2e2;
+}
+
+.printing-status-label {
+    color: #7d9e89;
+}
+
+.message {
+    border-color: #B71C1C;
+    color: #e2e2e2;
+    background-color: #B71C1C;
+}
+
+.message button {
+    background-color: #3EB816;
+    color: #000000;
+}
+
+.warning {
+    background-color: #c48f60;
+}
+
+.error {
+    background-color: #bd3c3c;
+}
+
+.keyboard_pad {
+    background-color: #635e5e;
+}

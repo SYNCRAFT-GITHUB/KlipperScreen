@@ -126,6 +126,11 @@ class KlipperScreen(Gtk.Window):
         self.vertical_mode = self.aspect_ratio < 1.0
         logging.info(f"Screen resolution: {self.width}x{self.height}")
         self.theme = self._config.get_main_config().get('theme')
+        self.theme_converter = {
+            'material_darker': 'Industrial', 'material_dark': 'Neon', 'colorized': 'Colorful'
+        }
+        if self.theme in self.theme_converter:
+            self.theme = self.theme_converter[self.theme]
         self.show_cursor = self._config.get_main_config().getboolean("show_cursor", fallback=False)
         self.gtk = KlippyGtk(self)
         self.init_style()
@@ -311,9 +316,9 @@ class KlipperScreen(Gtk.Window):
             self.close_popup_message()
 
         messages = {
-            '!PROEXTRUDER_DONT_MATCH_GCODE': f'{_("The inserted Extruder is incompatible with this File")}',
-            '!MATERIAL_DONT_MATCH_GCODE': f'{_("Material incompatibility Alert")}',
-            '!PRINTER_MODEL_MISMATCH': f'{_("Impossible to proceed")}'
+            '!PROEXTRUDER_DONT_MATCH_GCODE': _("The inserted Extruder is incompatible with this File"),
+            '!MATERIAL_DONT_MATCH_GCODE': _("The material you're using is not compatible with this file"),
+            '!PRINTER_MODEL_MISMATCH': _("The file you are trying to print is for a different printer model")
         }
 
         if message.startswith("!"):
