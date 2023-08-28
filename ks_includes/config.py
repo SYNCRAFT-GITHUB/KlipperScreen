@@ -47,20 +47,20 @@ class KlipperScreenConfig:
         self.lang = None
         self.langs = {}
         self.lang_converter = {
-            'en': 'English',
-            'da': 'Dansk',
-            'de': 'Deutsch',
-            'es': 'Español',
-            'fr': 'Français',
-            'it': 'Italiano',
-            'pl': 'Polski',
-            'pt': 'Português',
-            'sv': 'Svenska',
-            'ru': 'Русский',
-            'ko': '한국어',
-            'jp': '日本語',
-            'zh_CN': '简体中文',
-            'zh_TW': '繁體中文',
+            'en': 'English - EN',
+            'da': 'Dansk - DA',
+            'de': 'Deutsch - DE',
+            'es': 'Español - ES',
+            'fr': 'Français - FR',
+            'it': 'Italiano - IT',
+            'pl': 'Polski - PL',
+            'pt': 'Português - PT_BR',
+            'sv': 'Svenska - SV',
+            'ru': 'Русский - RU',
+            'ko': '한국어 - KO',
+            'jp': '日本語 - JA',
+            'zh_CN': '简体中文 - ZH_CN',
+            'zh_TW': '繁體中文 - ZH_TW',
         }
 
         try:
@@ -154,7 +154,7 @@ class KlipperScreenConfig:
         if lang not in self.lang_list:
             logging.error(f"lang: {lang} not found")
             logging.info(f"Available lang list {self.lang_list}")
-            lang = "English"
+            lang = "English - EN"
         logging.info(f"Using lang {lang}")
         if lang in self.lang_converter:
             lang = self.lang_converter[lang]
