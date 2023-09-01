@@ -23,7 +23,7 @@ class SyncraftPanel(ScreenPanel):
             'UPDATE': self._gtk.Button("syncraftupdate", _("Update via Internet"), "color1"),
             'FIX': self._gtk.Button("compass", _("Quick System Fixes"), "color1"),
             'UPDATE_USB': self._gtk.Button("usb", _("Update via USB"), "color1"),
-            'EXPORT_LOG': self._gtk.Button("usb-save", "Export Logs to USB", "color1"),
+            'EXPORT_LOG': self._gtk.Button("usb-save", _("Export Logs to USB"), "color1"),
         }
         self.buttons['UPDATE'].connect("clicked", self.menu_item_clicked, "update", {
             "name": _("Update"),
@@ -39,7 +39,7 @@ class SyncraftPanel(ScreenPanel):
         })
         self.buttons['EXPORT_LOG'].connect("clicked", self.set_fix_option_to, "EXPORTLOGSTOUSB")
         self.buttons['EXPORT_LOG'].connect("clicked", self.menu_item_clicked, "script", {
-            "name": "Export Logs to USB",
+            "name": _("Export Logs to USB"),
             "panel": "script"
         })
         
