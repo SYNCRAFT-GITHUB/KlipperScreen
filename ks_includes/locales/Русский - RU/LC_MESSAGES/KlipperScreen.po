@@ -1279,3 +1279,6 @@ msgstr "Пример"
 
 msgid "Insert Custom"
 msgstr "Обычай"
+
+msgid "Export Logs to USB"
+msgstr "Экспорт журналов на USB"

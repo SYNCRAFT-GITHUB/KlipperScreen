@@ -27,7 +27,7 @@ msgid "A FIRMWARE_RESTART may fix the issue."
 msgstr "En FIRMWARE_RESTART kan løse problemet."
 
 msgid "ADXL Not Configured"
-msgstr ""
+msgstr "ADXL ikke konfigureret"
 
 msgid "Abort"
 msgstr "Annuller"
@@ -42,10 +42,10 @@ msgid "Actions"
 msgstr "Muligheder"
 
 msgid "Add profile"
-msgstr ""
+msgstr "Tilføj profil"
 
 msgid "Apply"
-msgstr ""
+msgstr "ansøge"
 
 #, python-format
 msgid "Apply %.2f offset to Endstop?"
@@ -152,7 +152,7 @@ msgid "Auto-calibrate"
 msgstr "Automatisk kalibrering"
 
 msgid "Auto-close notifications"
-msgstr ""
+msgstr "Autoluk-meddelelser"
 
 msgid "Auto-scroll"
 msgstr "Auto-scroll"
@@ -164,7 +164,7 @@ msgid "Bed Mesh"
 msgstr "Bed-mesh"
 
 msgid "Bed screw configuration:"
-msgstr ""
+msgstr "Sengskruekonfiguration:"
 
 msgid "Calibrate"
 msgstr "Kalibrér"
@@ -200,13 +200,13 @@ msgid "Channel"
 msgstr "Kanal"
 
 msgid "Check ADXL Wiring"
-msgstr ""
+msgstr "Tjek ADXL-ledninger"
 
 msgid "Checking for updates, please wait..."
-msgstr ""
+msgstr "Søger efter opdateringer, vent venligst..."
 
 msgid "Clear"
-msgstr ""
+msgstr "Klar"
 
 msgid "Close"
 msgstr "Luk"
@@ -271,10 +271,10 @@ msgid "Estimated Time Method"
 msgstr "Metode til beregning af tid"
 
 msgid "Exclude Object"
-msgstr ""
+msgstr "Udelad objekt"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "Ekstra stor"
 
 msgid "Extrude"
 msgstr "Ekstrudér"
@@ -322,10 +322,10 @@ msgid "Firmware Restart"
 msgstr "Firmware Genstart"
 
 msgid "Flow:"
-msgstr ""
+msgstr "Flyde:"
 
 msgid "Flowrate:"
-msgstr ""
+msgstr "Strømningshastighed:"
 
 msgid "Font Size"
 msgstr "Skriftstørrelse"
@@ -337,7 +337,7 @@ msgid "Go Back"
 msgstr "Gå tilbage"
 
 msgid "Height:"
-msgstr ""
+msgstr "Højde:"
 
 msgid "Hidden"
 msgstr "Skjult"
@@ -349,7 +349,7 @@ msgid "Hide sensors in Temp."
 msgstr "Skjul sensorer i Temp."
 
 msgid "Hide temp."
-msgstr ""
+msgstr "Skjul temp."
 
 msgid "Home All"
 msgstr "Home alle"
@@ -370,7 +370,7 @@ msgid "Homing"
 msgstr "Homing"
 
 msgid "Host"
-msgstr ""
+msgstr "Vært"
 
 msgid "Hostname"
 msgstr "Værtsnavn"
@@ -385,7 +385,7 @@ msgid "Initializing printer..."
 msgstr "Initialiserer printer..."
 
 msgid "Input Shaper"
-msgstr ""
+msgstr "Input Shaper"
 
 msgid "Interface"
 msgstr "Interface"
@@ -394,7 +394,7 @@ msgid "Invalid"
 msgstr "Ugyldig"
 
 msgid "Invalid password"
-msgstr ""
+msgstr "Forkert kodeord"
 
 msgid "Invert X"
 msgstr "Invertér X"
@@ -433,7 +433,7 @@ msgid "Large"
 msgstr "Stor"
 
 msgid "Layer:"
-msgstr ""
+msgstr "Lag:"
 
 msgid "Left:"
 msgstr "Resterende:"
@@ -457,7 +457,7 @@ msgid "Main Menu"
 msgstr "Hovedmenu"
 
 msgid "Max"
-msgstr ""
+msgstr "Maks."
 
 msgid "Max Acceleration"
 msgstr "Maks. Acceleration"
@@ -469,16 +469,16 @@ msgid "Max Velocity"
 msgstr "Maks. hastighed"
 
 msgid "Maximum"
-msgstr ""
+msgstr "Maksimum"
 
 msgid "Measure Both"
-msgstr ""
+msgstr "Mål begge"
 
 msgid "Measure X"
-msgstr ""
+msgstr "Mål X"
 
 msgid "Measure Y"
-msgstr ""
+msgstr "Mål Y"
 
 msgid "Medium"
 msgstr "Mellem"
@@ -487,7 +487,7 @@ msgid "Menu"
 msgstr "Menu"
 
 msgid "Mesh calibrate"
-msgstr ""
+msgstr "Mesh-kalibrering"
 
 msgid "Modified"
 msgstr "Ændret"
@@ -508,7 +508,7 @@ msgid "Network"
 msgstr "Netværk"
 
 msgid "Never"
-msgstr ""
+msgstr "Aldrig"
 
 msgid "New"
 msgstr "Ny"
@@ -549,7 +549,7 @@ msgid "Perform a full upgrade?"
 msgstr "Vil du udføre en fuld opgradering?"
 
 msgid "Pins"
-msgstr ""
+msgstr "Pins"
 
 msgid "Please recompile and flash the micro-controller."
 msgstr "Genkompilér og flash mikrocontrolleren."
@@ -573,25 +573,25 @@ msgid "Print Time"
 msgstr "Printtid"
 
 msgid "Printer"
-msgstr ""
+msgstr "Printer"
 
 msgid "Printer Connections"
 msgstr "Printer forbindelser"
 
 msgid "Printer Select"
-msgstr ""
+msgstr "Printer Vælg"
 
 msgid "Printing"
 msgstr "Printer"
 
 msgid "Probe Offset"
-msgstr ""
+msgstr "Probe Offset"
 
 msgid "Profile Name:"
 msgstr "Profilnavn:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr ""
+msgstr "Angiv KlipperScreen.log, når du beder om hjælp.\n"
 
 msgid "Quad Gantry Level"
 msgstr "Justering af 4-søjlers konstruktion"
@@ -612,7 +612,7 @@ msgid "Reference"
 msgstr "Reference"
 
 msgid "Refresh"
-msgstr ""
+msgstr "Opdater"
 
 msgid "Restart"
 msgstr "Genstart"
@@ -624,19 +624,19 @@ msgid "Retract"
 msgstr "Retract"
 
 msgid "Retraction"
-msgstr ""
+msgstr "Tilbagetrækning"
 
 msgid "Retraction Length"
-msgstr ""
+msgstr "Tilbagetrækningslængde"
 
 msgid "Retraction Speed"
-msgstr ""
+msgstr "Tilbagetrækningshastighed"
 
 msgid "Retry"
-msgstr ""
+msgstr "Prøve igen"
 
 msgid "Retrying"
-msgstr ""
+msgstr "Prøver igen"
 
 msgid "Save"
 msgstr "Gem"
@@ -701,7 +701,7 @@ msgid "Slicer Time correction (%)"
 msgstr "Slicer Tidskorrektion (%)"
 
 msgid "Slicer:"
-msgstr ""
+msgstr "Skærer:"
 
 msgid "Small"
 msgstr "Lille"
@@ -761,10 +761,10 @@ msgid "Unload"
 msgstr "Tilbagetræk"
 
 msgid "Unretract Extra Length"
-msgstr ""
+msgstr "Fjern ekstra længde"
 
 msgid "Unretract Speed"
-msgstr ""
+msgstr "Fjern hastighed"
 
 msgid "Up To Date"
 msgstr "Up-to-Date"
@@ -797,7 +797,7 @@ msgid "Z Tilt"
 msgstr "Z-tilt"
 
 msgid "Z offset:"
-msgstr ""
+msgstr "Z offset:"
 
 msgid "Start Screw Adjust"
 msgstr "Start skruejustering"
@@ -846,7 +846,7 @@ msgid "mm/s²"
 msgstr "mm/s²"
 
 msgid "mm³/s"
-msgstr ""
+msgstr "mm³/s"
 
 #~ msgid "Sort:"
 #~ msgstr "Sortere: "
@@ -1205,3 +1205,6 @@ msgstr "Eksempel"
 
 msgid "Insert Custom"
 msgstr "Brugerdefinerede"
+
+msgid "Export Logs to USB"
+msgstr "Eksporter logfiler til USB"

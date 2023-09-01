@@ -1093,3 +1093,6 @@ msgstr ""
 
 msgid "Insert Custom"
 msgstr ""
+
+msgid "Export Logs to USB"
+msgstr ""

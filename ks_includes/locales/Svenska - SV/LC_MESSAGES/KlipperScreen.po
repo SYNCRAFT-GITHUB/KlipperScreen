@@ -1153,3 +1153,6 @@ msgstr "Exempel"
 
 msgid "Insert Custom"
 msgstr "Beställnings"
+
+msgid "Export Logs to USB"
+msgstr "Exportera loggar till USB"

@@ -211,7 +211,7 @@ msgid "Checking for updates, please wait..."
 msgstr "Suche nach Updates, bitte warten..."
 
 msgid "Clear"
-msgstr ""
+msgstr "Klar"
 
 msgid "Close"
 msgstr "Schließen"
@@ -604,7 +604,7 @@ msgid "Profile Name:"
 msgstr "Profilname:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr ""
+msgstr "Geben Sie KlipperScreen.log an, wenn Sie um Hilfe bitten.\n"
 
 msgid "Quad Gantry Level"
 msgstr "Quad Gantry Level"
@@ -861,7 +861,7 @@ msgid "mm/s²"
 msgstr "mm/s²"
 
 msgid "mm³/s"
-msgstr ""
+msgstr "mm³/s"
 
 #~ msgid "Sort:"
 #~ msgstr "Sortieren:"
@@ -1245,3 +1245,6 @@ msgstr "Beispiel"
 
 msgid "Insert Custom"
 msgstr "Benutzerdefinierten Wert einfügen"
+
+msgid "Export Logs to USB"
+msgstr "Protokolle auf USB exportieren"

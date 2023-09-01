@@ -29,16 +29,16 @@ msgid "24 Hour Time"
 msgstr "24 小時制"
 
 msgid "A FIRMWARE_RESTART may fix the issue."
-msgstr ""
+msgstr "固件重启可能会解决该问题。"
 
 msgid "ADXL Not Configured"
-msgstr ""
+msgstr "ADXL 未配置"
 
 msgid "Abort"
 msgstr "中止"
 
 msgid "Acceleration:"
-msgstr ""
+msgstr "加速度："
 
 msgid "Accept"
 msgstr "接受"
@@ -47,10 +47,10 @@ msgid "Actions"
 msgstr "動作"
 
 msgid "Add profile"
-msgstr ""
+msgstr "添加个人资料"
 
 msgid "Apply"
-msgstr ""
+msgstr "申请"
 
 #, python-format
 msgid "Apply %.2f offset to Endstop?"
@@ -61,7 +61,7 @@ msgid "Apply %s%.2f offset to Probe?"
 msgstr ""
 
 msgid "Are you sure do you want to exclude the object?"
-msgstr ""
+msgstr "您确定要排除该对象吗？"
 
 msgid "Are you sure you want to run Emergency Stop?"
 msgstr "您確定要運行緊急停止嗎？"
@@ -154,10 +154,10 @@ msgid "Auto"
 msgstr "汽車"
 
 msgid "Auto-calibrate"
-msgstr ""
+msgstr "自動校準"
 
 msgid "Auto-close notifications"
-msgstr ""
+msgstr "自動關閉通知"
 
 msgid "Auto-scroll"
 msgstr "自動滾屏"
@@ -175,13 +175,13 @@ msgid "Calibrate"
 msgstr "校正"
 
 msgid "Calibrated"
-msgstr ""
+msgstr "已校準"
 
 msgid "Calibrated, save configuration to make it permanent"
 msgstr "校準，保存配置以使其永久化"
 
 msgid "Calibrating"
-msgstr ""
+msgstr "校準"
 
 msgid "Can't set above the maximum:"
 msgstr "不能設置超過最大值："
@@ -208,10 +208,10 @@ msgid "Check ADXL Wiring"
 msgstr ""
 
 msgid "Checking for updates, please wait..."
-msgstr ""
+msgstr "正在檢查更新，請稍候..."
 
 msgid "Clear"
-msgstr ""
+msgstr "清除"
 
 msgid "Close"
 msgstr "關閉"
@@ -248,7 +248,7 @@ msgid "Decrease"
 msgstr "減少"
 
 msgid "Delete File?"
-msgstr ""
+msgstr "删除文件？"
 
 msgid "Deselect"
 msgstr "取消選擇"
@@ -276,10 +276,10 @@ msgid "Estimated Time Method"
 msgstr "預估時間方法"
 
 msgid "Exclude Object"
-msgstr ""
+msgstr "排除對象"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "特大號"
 
 msgid "Extrude"
 msgstr "擠出機"
@@ -300,22 +300,22 @@ msgid "Filament Used"
 msgstr "已消耗的耗材"
 
 msgid "Filament total:"
-msgstr ""
+msgstr "燈絲總數："
 
 msgid "Filament used:"
-msgstr ""
+msgstr "使用的燈絲："
 
 msgid "Filament:"
-msgstr ""
+msgstr "燈絲："
 
 msgid "File"
 msgstr "檔案"
 
 msgid "File:"
-msgstr ""
+msgstr "文件："
 
 msgid "Finding ADXL"
-msgstr ""
+msgstr "尋找ADXL"
 
 msgid "Fine Tuning"
 msgstr "微調"
@@ -327,10 +327,10 @@ msgid "Firmware Restart"
 msgstr "Firmware 重新啟動"
 
 msgid "Flow:"
-msgstr ""
+msgstr "流動："
 
 msgid "Flowrate:"
-msgstr ""
+msgstr "流量："
 
 msgid "Font Size"
 msgstr "字體大小"
@@ -342,7 +342,7 @@ msgid "Go Back"
 msgstr "返回"
 
 msgid "Height:"
-msgstr ""
+msgstr "高度："
 
 msgid "Hidden"
 msgstr "隱"
@@ -354,7 +354,7 @@ msgid "Hide sensors in Temp."
 msgstr "在溫度中隱藏傳感器。"
 
 msgid "Hide temp."
-msgstr ""
+msgstr "隱藏溫度"
 
 msgid "Home All"
 msgstr "歸零全部"
@@ -375,7 +375,7 @@ msgid "Homing"
 msgstr "歸零"
 
 msgid "Host"
-msgstr ""
+msgstr "主機地址"
 
 msgid "Hostname"
 msgstr "主機名稱"
@@ -390,7 +390,7 @@ msgid "Initializing printer..."
 msgstr "初始化列印機中.."
 
 msgid "Input Shaper"
-msgstr ""
+msgstr "輸入整形器"
 
 msgid "Interface"
 msgstr "介面"
@@ -399,7 +399,7 @@ msgid "Invalid"
 msgstr "無效的"
 
 msgid "Invalid password"
-msgstr ""
+msgstr "Invalid password"
 
 msgid "Invert X"
 msgstr "反轉 X"
@@ -438,7 +438,7 @@ msgid "Large"
 msgstr "大的"
 
 msgid "Layer:"
-msgstr ""
+msgstr "層："
 
 msgid "Left:"
 msgstr "剩下時間："
@@ -462,10 +462,10 @@ msgid "Main Menu"
 msgstr "主選單"
 
 msgid "Max"
-msgstr ""
+msgstr "最大值"
 
 msgid "Max Acceleration"
-msgstr ""
+msgstr "最大加速度"
 
 msgid "Max Acceleration to Deceleration"
 msgstr "最大加速到減速"
@@ -474,16 +474,16 @@ msgid "Max Velocity"
 msgstr "最大速度"
 
 msgid "Maximum"
-msgstr ""
+msgstr "最大限度"
 
 msgid "Measure Both"
-msgstr ""
+msgstr "測量兩者"
 
 msgid "Measure X"
-msgstr ""
+msgstr "測量 X"
 
 msgid "Measure Y"
-msgstr ""
+msgstr "測量 Y"
 
 msgid "Medium"
 msgstr "中"
@@ -492,7 +492,7 @@ msgid "Menu"
 msgstr "選單"
 
 msgid "Mesh calibrate"
-msgstr ""
+msgstr "網格校準"
 
 msgid "Modified"
 msgstr "修改"
@@ -513,10 +513,10 @@ msgid "Network"
 msgstr "網路"
 
 msgid "Never"
-msgstr ""
+msgstr "絕不"
 
 msgid "New"
-msgstr ""
+msgstr "新的"
 
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
@@ -538,7 +538,7 @@ msgid_plural "Packages will be updated"
 msgstr[0] "包將被更新"
 
 msgid "Part Fan"
-msgstr ""
+msgstr "扇子"
 
 msgid "Password saved"
 msgstr "密碼已保存"
@@ -553,7 +553,7 @@ msgid "Perform a full upgrade?"
 msgstr "執行全面升級？"
 
 msgid "Pins"
-msgstr ""
+msgstr "針腳"
 
 msgid "Please recompile and flash the micro-controller."
 msgstr "請重新編譯並刷寫微控制器。"
@@ -565,7 +565,7 @@ msgid "Power On Printer"
 msgstr "啟動列印機"
 
 msgid "Pressure Advance:"
-msgstr ""
+msgstr "壓力提前："
 
 msgid "Print"
 msgstr "列印"
@@ -577,25 +577,25 @@ msgid "Print Time"
 msgstr "列印時間"
 
 msgid "Printer"
-msgstr ""
+msgstr "打印机"
 
 msgid "Printer Connections"
 msgstr "連接列印機"
 
 msgid "Printer Select"
-msgstr ""
+msgstr "打印機選擇"
 
 msgid "Printing"
 msgstr "列印中"
 
 msgid "Probe Offset"
-msgstr ""
+msgstr "探頭偏移"
 
 msgid "Profile Name:"
 msgstr "配置檔案名稱:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr ""
+msgstr "尋求幫助時提供 KlipperScreen.log。\n"
 
 msgid "Quad Gantry Level"
 msgstr "龍門調平"
@@ -604,7 +604,7 @@ msgid "Raise Nozzle"
 msgstr "上升噴嘴"
 
 msgid "Recover"
-msgstr ""
+msgstr "恢復"
 
 msgid "Recover Hard"
 msgstr "恢復 Hard"
@@ -616,7 +616,7 @@ msgid "Reference"
 msgstr "參考"
 
 msgid "Refresh"
-msgstr ""
+msgstr "刷新"
 
 msgid "Restart"
 msgstr "重新啟動"
@@ -628,19 +628,19 @@ msgid "Retract"
 msgstr "回抽"
 
 msgid "Retraction"
-msgstr ""
+msgstr "撤回"
 
 msgid "Retraction Length"
-msgstr ""
+msgstr "回縮長度"
 
 msgid "Retraction Speed"
-msgstr ""
+msgstr "回縮速度"
 
 msgid "Retry"
-msgstr ""
+msgstr "重試"
 
 msgid "Retrying"
-msgstr ""
+msgstr "重試"
 
 msgid "Save"
 msgstr "儲存"
@@ -649,13 +649,13 @@ msgid "Save Config"
 msgstr "儲存設定"
 
 msgid "Save Z"
-msgstr ""
+msgstr "保存 Z"
 
 msgid "Save configuration?"
-msgstr ""
+msgstr "保存配置？"
 
 msgid "Saved"
-msgstr ""
+msgstr "已保存"
 
 #, python-format
 msgid "Saved offset: %s"
@@ -690,10 +690,10 @@ msgid "Show"
 msgstr "展示"
 
 msgid "Show Heater Power"
-msgstr ""
+msgstr "顯示加熱器功率"
 
 msgid "Shutdown"
-msgstr ""
+msgstr "關閉"
 
 msgid "Size"
 msgstr "大小"
@@ -705,7 +705,7 @@ msgid "Slicer Time correction (%)"
 msgstr "切片器時間校正 (%)"
 
 msgid "Slicer:"
-msgstr ""
+msgstr "切片機："
 
 msgid "Small"
 msgstr "小的"
@@ -720,7 +720,7 @@ msgid "Speed -"
 msgstr "速度 -"
 
 msgid "Speed:"
-msgstr ""
+msgstr "速度："
 
 msgid "Square Corner Velocity"
 msgstr "方角速度"
@@ -759,16 +759,16 @@ msgid "Unknown Heater"
 msgstr "未知加熱器"
 
 msgid "Unknown screw position"
-msgstr ""
+msgstr "螺絲位置未知"
 
 msgid "Unload"
 msgstr "卸載"
 
 msgid "Unretract Extra Length"
-msgstr ""
+msgstr "取消額外長度"
 
 msgid "Unretract Speed"
-msgstr ""
+msgstr "縮回速度"
 
 msgid "Up To Date"
 msgstr "最新"
@@ -786,7 +786,7 @@ msgid "XY Move Speed (mm/s)"
 msgstr "XY 移動速度 (mm/s)"
 
 msgid "XY Speed (mm/s)"
-msgstr ""
+msgstr "XY 速度（毫米/秒）"
 
 msgid "Z Calibrate"
 msgstr "Z 校準"
@@ -795,13 +795,13 @@ msgid "Z Move Speed (mm/s)"
 msgstr "Z 移動速度 (mm/s)"
 
 msgid "Z Speed (mm/s)"
-msgstr ""
+msgstr "Z軸速度（毫米/秒）"
 
 msgid "Z Tilt"
 msgstr "Z 傾斜"
 
 msgid "Z offset:"
-msgstr ""
+msgstr "Z 軸偏移："
 
 msgid "Start Screw Adjust"
 msgstr "啟動螺絲調整"
@@ -848,7 +848,7 @@ msgid "mm/s²"
 msgstr "mm/s²"
 
 msgid "mm³/s"
-msgstr ""
+msgstr "mm³/s"
 
 #~ msgid "Z+"
 #~ msgstr "Z+"
@@ -1210,3 +1210,6 @@ msgstr "例子"
 
 msgid "Insert Custom"
 msgstr "插入不同的值"
+
+msgid "Export Logs to USB"
+msgstr "將日誌導出到外部設備"

@@ -405,7 +405,7 @@ msgid "Invalid"
 msgstr "Invalide"
 
 msgid "Invalid password"
-msgstr ""
+msgstr "Mot de passe incorrect"
 
 msgid "Invert X"
 msgstr "Inverser l'axe X"
@@ -604,7 +604,7 @@ msgid "Profile Name:"
 msgstr "Nom du profil:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr ""
+msgstr "Fournissez KlipperScreen.log lorsque vous demandez de l'aide.\n"
 
 msgid "Quad Gantry Level"
 msgstr "Portique à quatre niveaux"
@@ -1290,3 +1290,6 @@ msgstr "Exemple"
 
 msgid "Insert Custom"
 msgstr "Entrez une valeur différente"
+
+msgid "Export Logs to USB"
+msgstr "Exporter les journaux vers USB"
