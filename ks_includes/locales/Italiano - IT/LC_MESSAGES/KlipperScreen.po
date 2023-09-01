@@ -206,7 +206,7 @@ msgid "Checking for updates, please wait..."
 msgstr "Controllo degli aggiornamenti in corso, attendere..."
 
 msgid "Clear"
-msgstr ""
+msgstr "Chiaro"
 
 msgid "Close"
 msgstr "Chiudi"
@@ -370,7 +370,7 @@ msgid "Homing"
 msgstr "Homing"
 
 msgid "Host"
-msgstr ""
+msgstr "Host"
 
 msgid "Hostname"
 msgstr "Hostname"
@@ -385,7 +385,7 @@ msgid "Initializing printer..."
 msgstr "Inizializzo stampante..."
 
 msgid "Input Shaper"
-msgstr ""
+msgstr "Modellatore di input"
 
 msgid "Interface"
 msgstr "Interfaccia"
@@ -394,7 +394,7 @@ msgid "Invalid"
 msgstr "Non valido"
 
 msgid "Invalid password"
-msgstr ""
+msgstr "Password non valida"
 
 msgid "Invert X"
 msgstr "Inverti X"
@@ -593,7 +593,7 @@ msgid "Profile Name:"
 msgstr "Nome Profilo:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr ""
+msgstr "Fornisci KlipperScreen.log quando chiedi aiuto.\n"
 
 msgid "Quad Gantry Level"
 msgstr "Quad Gantry Level"
@@ -1228,3 +1228,6 @@ msgstr "Esempio"
 
 msgid "Insert Custom"
 msgstr "Inserisci un valore diverso"
+
+msgid "Export Logs to USB"
+msgstr "Esporta i registri su USB"

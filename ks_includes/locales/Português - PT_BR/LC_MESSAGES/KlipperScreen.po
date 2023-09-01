@@ -396,7 +396,7 @@ msgid "Initializing printer..."
 msgstr "Inicializando Impressora..."
 
 msgid "Input Shaper"
-msgstr ""
+msgstr "Modelador de Entrada"
 
 msgid "Interface"
 msgstr "Interface"
@@ -774,7 +774,7 @@ msgid "Unload"
 msgstr "Descarregar"
 
 msgid "Unretract Extra Length"
-msgstr ""
+msgstr "Retrair Comprimento Extra"
 
 msgid "Unretract Speed"
 msgstr "Velocidade Inversa de Retração"
@@ -859,7 +859,7 @@ msgid "mm/s²"
 msgstr "mm/s²"
 
 msgid "mm³/s"
-msgstr ""
+msgstr "mm³/s"
 
 #~ msgid "Sort:"
 #~ msgstr "Ordenar:"
@@ -1112,3 +1112,6 @@ msgstr "Exemplo"
 
 msgid "Insert Custom"
 msgstr "Inserir customizado"
+
+msgid "Export Logs to USB"
+msgstr "Exportar Logs para USB"

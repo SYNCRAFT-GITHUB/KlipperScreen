@@ -1269,3 +1269,6 @@ msgstr "Ejemplo"
 
 msgid "Insert Custom"
 msgstr "Insertar Valor Personalizado"
+
+msgid "Export Logs to USB"
+msgstr "Exportar registros a USB"
