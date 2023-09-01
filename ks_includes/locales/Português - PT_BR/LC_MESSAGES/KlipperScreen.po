@@ -916,7 +916,7 @@ msgid "Backup File not found"
 msgstr "Arquivo de Backup não Encontrado"
 
 msgid "USB not inserted into Printer"
-msgstr "O USB não está inserido na impressora"
+msgstr "Dispositivo USB não inserido"
 
 msgid "Unsupported Update File"
 msgstr "Arquivo de Atualização não Suportado"

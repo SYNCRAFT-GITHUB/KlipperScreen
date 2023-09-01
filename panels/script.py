@@ -79,10 +79,16 @@ class ExecuteScript(ScreenPanel):
             subprocess.call(['bash', script_path])
 
         if (fix_option == "EXPORTLOGSTOUSB"):
-            
-            script_path = '/home/pi/KlipperScreen/scripts/fix/exportlogstousb.sh'
-            subprocess.call(['bash', script_path])
-            self._screen.restart_ks()
+
+            usb_path: str = "/home/pi/printer_data/gcodes/USB"
+            if os.path.exists(usb_path):
+                if len(os.listdir(usb_path)) == 0:
+                    message: str = _("USB not inserted into Printer")
+                    self._screen.show_popup_message(message, level=2)
+                else:
+                    script_path = '/home/pi/KlipperScreen/scripts/fix/exportlogstousb.sh'
+                    subprocess.call(['bash', script_path])
+                    self._screen.restart_ks()
 
         if (fix_option == "USB_DEFAULT"):
 
