@@ -825,7 +825,7 @@ msgid "This screw is already Adjusted"
 msgstr "Cette vis est déjà ajustée"
 
 msgid "Extras"
-msgstr "Fonctions Supplémentaires"
+msgstr "Supplémentaires"
 
 msgid "Generic"
 msgstr "Générique"

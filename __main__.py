@@ -316,14 +316,26 @@ class KlipperScreen(Gtk.Window):
             '!PRINTER_MODEL_MISMATCH': _("The file you are trying to print is for a different printer model")
         }
 
-        if message.startswith("!"):
-            message = messages[message]
-            level = 4
-
-        if (level == 3 or level == 4):
-            message += ("\n\n" + _("Tap the screen to confirm"))
-            
-        msg = Gtk.Button(label=f"{message}")
+        def msgProperty (property, level):
+            if (property == "message"):
+                if message.startswith("!"):
+                    return messages[message]
+                else:
+                    return message
+            if (property == "width"):
+                return (self.width * .9)
+            if (property == "length"):
+                if (level == 1 or level == 2):
+                    return (-1)
+                if (level == 3 or level == 4):
+                    return (msgProperty("width", None) * 0.2)
+            if (property == "screentime"):
+                if (level == 1 or level == 2):
+                    return 12
+                if (level == 3 or level == 4):
+                    return 25
+                
+        msg = Gtk.Button(label=msgProperty("message", None))
         msg.set_hexpand(True)
         msg.set_vexpand(True)
         msg.get_child().set_line_wrap(True)
@@ -331,23 +343,26 @@ class KlipperScreen(Gtk.Window):
         msg.get_child().set_max_width_chars(40)
         msg.connect("clicked", self.close_popup_message)
         msg.get_style_context().add_class("message_popup")
-        popup_screentime = 10
-        popup_width = (self.width * .9)
-        popup_length = (-1)
         if level == 1:
             msg.get_style_context().add_class("message_popup_echo")
+            popup_screentime = msgProperty("screentime", 1)
+            popup_length = msgProperty("length", 1)
+            popup_width = msgProperty("width", 1)
         elif level == 2:
             msg.get_style_context().add_class("message_popup_warning")
+            popup_screentime = msgProperty("screentime", 2)
+            popup_length = msgProperty("length", 2)
+            popup_width = msgProperty("width", 2)
         elif level == 3:
             msg.get_style_context().add_class("message_popup_error")
-            popup_screentime = 5000
-            popup_width = (self.width * .9)
-            popup_length = (popup_width * 0.2)
+            popup_screentime = msgProperty("screentime", 3)
+            popup_length = msgProperty("length", 3)
+            popup_width = msgProperty("width", 3)
         else:
             msg.get_style_context().add_class("message_popup_alert")
-            popup_screentime = 5000
-            popup_width = (self.width * .9)
-            popup_length = (popup_width * 0.2)
+            popup_screentime = msgProperty("screentime", 4)
+            popup_length = msgProperty("length", 4)
+            popup_width = msgProperty("width", 4)
 
         popup = Gtk.Popover.new(self.base_panel.titlebar)
         popup.get_style_context().add_class("message_popup_popover")
