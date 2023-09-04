@@ -324,6 +324,9 @@ class KlipperScreen(Gtk.Window):
         if message.startswith("!"):
             message = messages[message]
             level = 4
+
+        if (level == 3 or level == 4):
+            message += ("\n\n" + _("Tap the screen to confirm"))
             
         msg = Gtk.Button(label=f"{message}")
         msg.set_hexpand(True)
@@ -342,9 +345,12 @@ class KlipperScreen(Gtk.Window):
             msg.get_style_context().add_class("message_popup_warning")
         elif level == 3:
             msg.get_style_context().add_class("message_popup_error")
+            popup_screentime = 5000
+            popup_width = (self.width * .9)
+            popup_length = (popup_width * 0.2)
         else:
             msg.get_style_context().add_class("message_popup_alert")
-            popup_screentime = 500
+            popup_screentime = 5000
             popup_width = (self.width * .9)
             popup_length = (popup_width * 0.2)
 

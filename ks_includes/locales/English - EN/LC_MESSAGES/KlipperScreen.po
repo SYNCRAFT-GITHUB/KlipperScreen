@@ -1096,3 +1096,9 @@ msgstr ""
 
 msgid "Export Logs to USB"
 msgstr ""
+
+msgid "Export Logs to USB"
+msgstr ""
+
+msgid "Tap the screen to confirm"
+msgstr ""

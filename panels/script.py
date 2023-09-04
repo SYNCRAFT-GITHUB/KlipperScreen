@@ -89,6 +89,9 @@ class ExecuteScript(ScreenPanel):
                     script_path = '/home/pi/KlipperScreen/scripts/fix/exportlogstousb.sh'
                     subprocess.call(['bash', script_path])
                     self._screen.restart_ks()
+            else:
+                message: str = _("Error")
+                self._screen.show_popup_message(message, level=2)
 
         if (fix_option == "USB_DEFAULT"):
 

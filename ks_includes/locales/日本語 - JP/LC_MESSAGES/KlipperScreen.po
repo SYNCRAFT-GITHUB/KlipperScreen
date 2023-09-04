@@ -1102,3 +1102,6 @@ msgstr "カスタム"
 
 msgid "Export Logs to USB"
 msgstr "ログをUSBにエクスポート"
+
+msgid "Tap the screen to confirm"
+msgstr "画面をタップして確認します"

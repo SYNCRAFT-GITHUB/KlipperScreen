@@ -1156,3 +1156,6 @@ msgstr "Beställnings"
 
 msgid "Export Logs to USB"
 msgstr "Exportera loggar till USB"
+
+msgid "Tap the screen to confirm"
+msgstr "Tryck för att bekräfta"

@@ -1231,3 +1231,6 @@ msgstr "Inserisci un valore diverso"
 
 msgid "Export Logs to USB"
 msgstr "Esporta i registri su USB"
+
+msgid "Tap the screen to confirm"
+msgstr "Tocca per confermare"

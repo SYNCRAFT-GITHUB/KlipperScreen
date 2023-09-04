@@ -1248,3 +1248,6 @@ msgstr "Benutzerdefinierten Wert einfügen"
 
 msgid "Export Logs to USB"
 msgstr "Protokolle auf USB exportieren"
+
+msgid "Tap the screen to confirm"
+msgstr "Zum Bestätigen tippen"

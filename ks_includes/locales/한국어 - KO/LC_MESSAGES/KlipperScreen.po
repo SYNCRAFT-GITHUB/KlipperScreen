@@ -1170,3 +1170,6 @@ msgstr "관습"
 
 msgid "Export Logs to USB"
 msgstr "외부 장치로 로그 내보내기"
+
+msgid "Tap the screen to confirm"
+msgstr "확인하려면 탭하세요."
