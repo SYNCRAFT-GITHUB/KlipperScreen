@@ -41,7 +41,7 @@ class ScreenPanel:
 
     def emergency_stop(self, widget):
         if self._config.get_main_config().getboolean('confirm_estop', False):
-            self._screen._confirm_send_action(widget, _("Stop Syncraft with an Emergency Stop?"),
+            self._screen._confirm_send_action(widget, _("Are you sure you want to run Emergency Stop?"),
                                               "printer.emergency_stop")
         else:
             self._screen._ws.klippy.emergency_stop()

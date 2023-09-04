@@ -1293,3 +1293,6 @@ msgstr "Entrez une valeur différente"
 
 msgid "Export Logs to USB"
 msgstr "Exporter les journaux vers USB"
+
+msgid "Tap the screen to confirm"
+msgstr "Appuyez pour confirmer"

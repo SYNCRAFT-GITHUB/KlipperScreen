@@ -1213,3 +1213,6 @@ msgstr "插入不同的值"
 
 msgid "Export Logs to USB"
 msgstr "將日誌導出到外部設備"
+
+msgid "Tap the screen to confirm"
+msgstr "點擊屏幕確認"

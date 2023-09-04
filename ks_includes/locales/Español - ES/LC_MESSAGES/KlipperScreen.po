@@ -1272,3 +1272,6 @@ msgstr "Insertar Valor Personalizado"
 
 msgid "Export Logs to USB"
 msgstr "Exportar registros a USB"
+
+msgid "Tap the screen to confirm"
+msgstr "Toque la pantalla para confirmar"

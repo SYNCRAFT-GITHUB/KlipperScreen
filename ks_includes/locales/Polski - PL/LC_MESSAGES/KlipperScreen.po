@@ -1222,3 +1222,6 @@ msgstr "Zwyczaj"
 
 msgid "Export Logs to USB"
 msgstr "Eksportuj dzienniki na USB"
+
+msgid "Tap the screen to confirm"
+msgstr "Kliknij, aby potwierdzić"
