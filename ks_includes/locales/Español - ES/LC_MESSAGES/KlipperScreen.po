@@ -825,7 +825,7 @@ msgid "This screw is already Adjusted"
 msgstr "Este tornillo ya está ajustado"
 
 msgid "Extras"
-msgstr "Funciones Adicionales"
+msgstr "Adicionales"
 
 msgid "Generic"
 msgstr "Genérico"
@@ -1269,3 +1269,9 @@ msgstr "Ejemplo"
 
 msgid "Insert Custom"
 msgstr "Insertar Valor Personalizado"
+
+msgid "Export Logs to USB"
+msgstr "Exportar registros a USB"
+
+msgid "Tap the screen to confirm"
+msgstr "Toque la pantalla para confirmar"

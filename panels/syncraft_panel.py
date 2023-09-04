@@ -23,6 +23,7 @@ class SyncraftPanel(ScreenPanel):
             'UPDATE': self._gtk.Button("syncraftupdate", _("Update via Internet"), "color1"),
             'FIX': self._gtk.Button("compass", _("Quick System Fixes"), "color1"),
             'UPDATE_USB': self._gtk.Button("usb", _("Update via USB"), "color1"),
+            'EXPORT_LOG': self._gtk.Button("usb-save", _("Export Logs to USB"), "color1"),
         }
         self.buttons['UPDATE'].connect("clicked", self.menu_item_clicked, "update", {
             "name": _("Update"),
@@ -36,17 +37,24 @@ class SyncraftPanel(ScreenPanel):
             "name": _("Update via USB"),
             "panel": "update_usb"
         })
+        self.buttons['EXPORT_LOG'].connect("clicked", self.set_fix_option_to, "EXPORTLOGSTOUSB")
+        self.buttons['EXPORT_LOG'].connect("clicked", self.menu_item_clicked, "script", {
+            "name": _("Export Logs to USB"),
+            "panel": "script"
+        })
+        
 
         grid = self._gtk.HomogeneousGrid()
 
-        grid.attach(self.buttons['UPDATE'], 0, 0, 1, 2)
-        grid.attach(self.buttons['FIX'], 1, 0, 1, 2)
-        grid.attach(self.buttons['UPDATE_USB'], 2, 0, 1, 2)
+        grid.attach(self.buttons['FIX'], 0, 1, 1, 1)
+        grid.attach(self.buttons['UPDATE'], 0, 0, 1, 1)
+        grid.attach(self.buttons['UPDATE_USB'], 1, 0, 1, 1)
+        grid.attach(self.buttons['EXPORT_LOG'], 1, 1, 1, 1)
 
         self.labels['syncraft_panel'] = self._gtk.HomogeneousGrid()
         self.labels['syncraft_panel'].attach(grid, 0, 0, 1, 2)
 
         self.content.add(self.labels['syncraft_panel'])
 
-    def nothing (self):
-        pass
+    def set_fix_option_to(self, button, newfixoption):
+        self._config.replace_fix_option(newvalue=newfixoption)

@@ -212,7 +212,7 @@ msgid "Checking for updates, please wait..."
 msgstr "Trwa sprawdzanie dostępności aktualizacji, proszę czekać..."
 
 msgid "Clear"
-msgstr ""
+msgstr "Jasne"
 
 msgid "Close"
 msgstr "Zamknij"
@@ -382,7 +382,7 @@ msgid "Homing"
 msgstr "Bazowanie"
 
 msgid "Host"
-msgstr ""
+msgstr "Gospodarz"
 
 msgid "Hostname"
 msgstr "Nazwa hosta"
@@ -406,7 +406,7 @@ msgid "Invalid"
 msgstr "Nieprawidłowy"
 
 msgid "Invalid password"
-msgstr ""
+msgstr "Invalid password"
 
 msgid "Invert X"
 msgstr "Odwróć X"
@@ -418,7 +418,7 @@ msgid "Invert Z"
 msgstr "Odwróć Z"
 
 msgid "Klipper Restart"
-msgstr ""
+msgstr "Uruchom ponownie oprogramowanie sprzętowe"
 
 msgid "Klipper has disconnected"
 msgstr "Klipper się rozłączył"
@@ -564,7 +564,7 @@ msgid "Perform a full upgrade?"
 msgstr "Przeprowadzić pełną aktualizację?"
 
 msgid "Pins"
-msgstr ""
+msgstr "Kołki"
 
 msgid "Please recompile and flash the micro-controller."
 msgstr "Proszę przekompilować i sflashować mikrokontroler."
@@ -716,7 +716,7 @@ msgid "Slicer Time correction (%)"
 msgstr "Korekta czasu krajalnicy (%)"
 
 msgid "Slicer:"
-msgstr ""
+msgstr "Krajalnica:"
 
 msgid "Small"
 msgstr "Mały"
@@ -776,10 +776,10 @@ msgid "Unload"
 msgstr "Wyładuj"
 
 msgid "Unretract Extra Length"
-msgstr ""
+msgstr "Cofnij dodatkową długość"
 
 msgid "Unretract Speed"
-msgstr ""
+msgstr "Prędkość cofania"
 
 msgid "Up To Date"
 msgstr "Aktualne"
@@ -812,7 +812,7 @@ msgid "Z Tilt"
 msgstr "Przechył Z"
 
 msgid "Z offset:"
-msgstr ""
+msgstr "Przesunięcie Z:"
 
 msgid "Start Screw Adjust"
 msgstr "Rozpocznij regulację śruby"
@@ -827,7 +827,7 @@ msgid "This screw is already Adjusted"
 msgstr "Ta śruba jest już wyregulowana"
 
 msgid "Extras"
-msgstr "Dodatkowe Funkcje"
+msgstr "Dodatki"
 
 msgid "Generic"
 msgstr "Ogólny"
@@ -1219,3 +1219,9 @@ msgstr "Przykład"
 
 msgid "Insert Custom"
 msgstr "Zwyczaj"
+
+msgid "Export Logs to USB"
+msgstr "Eksportuj dzienniki na USB"
+
+msgid "Tap the screen to confirm"
+msgstr "Kliknij, aby potwierdzić"

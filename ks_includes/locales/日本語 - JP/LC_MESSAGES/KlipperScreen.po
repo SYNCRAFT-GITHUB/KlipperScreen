@@ -203,7 +203,7 @@ msgid "Check ADXL Wiring"
 msgstr "ADXL Wiring を検査する"
 
 msgid "Checking for updates, please wait..."
-msgstr ""
+msgstr "更新を確認しています。お待ちください..."
 
 msgid "Clear"
 msgstr "クリア"
@@ -358,28 +358,28 @@ msgid "Hide temp."
 msgstr "温度を非表示にする"
 
 msgid "Home All"
-msgstr ""
+msgstr "すべてリセット"
 
 msgid "Home X"
-msgstr "Home X"
+msgstr "リセットX"
 
 msgid "Home XY"
-msgstr "Home XY"
+msgstr "リセットXY"
 
 msgid "Home Y"
-msgstr "Home Y"
+msgstr "リセットY"
 
 msgid "Home Z"
-msgstr "Home Z"
+msgstr "リセットZ"
 
 msgid "Homing"
-msgstr "Homing"
+msgstr "リセットする"
 
 msgid "Host"
-msgstr ""
+msgstr "ホスト"
 
 msgid "Hostname"
-msgstr "Hostname"
+msgstr "ホスト名"
 
 msgid "Icon Theme"
 msgstr "アイコンテーマ"
@@ -388,10 +388,10 @@ msgid "Increase"
 msgstr "増加"
 
 msgid "Initializing printer..."
-msgstr ""
+msgstr "プリンターを初期化しています..."
 
 msgid "Input Shaper"
-msgstr ""
+msgstr "入力シェイパー"
 
 msgid "Interface"
 msgstr "インターフェース"
@@ -400,7 +400,7 @@ msgid "Invalid"
 msgstr "不正"
 
 msgid "Invalid password"
-msgstr ""
+msgstr "無効なパスワード"
 
 msgid "Invert X"
 msgstr "X軸を反対にする"
@@ -448,7 +448,7 @@ msgid "Limits"
 msgstr "制限"
 
 msgid "Load"
-msgstr ""
+msgstr "負荷"
 
 msgid "Lower Nozzle"
 msgstr "ノズルが低い"
@@ -566,7 +566,7 @@ msgid "Power On Printer"
 msgstr "プリンター電源"
 
 msgid "Pressure Advance:"
-msgstr ""
+msgstr "圧力前進:"
 
 msgid "Print"
 msgstr "印刷"
@@ -596,25 +596,25 @@ msgid "Profile Name:"
 msgstr "プロファイル:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr ""
+msgstr "助けを求めるときは、KlipperScreen.log を提供してください。\n"
 
 msgid "Quad Gantry Level"
 msgstr "ガントリーレベル"
 
 msgid "Raise Nozzle"
-msgstr ""
+msgstr "ライズエクストルーダー"
 
 msgid "Recover"
-msgstr ""
+msgstr "回復する"
 
 msgid "Recover Hard"
-msgstr ""
+msgstr "ブルートフォースで回復する"
 
 msgid "Recover Soft"
-msgstr ""
+msgstr "ソフトウェアで回復する"
 
 msgid "Reference"
-msgstr ""
+msgstr "参照"
 
 msgid "Refresh"
 msgstr "最新表示"
@@ -663,19 +663,19 @@ msgid "Saved offset: %s"
 msgstr "保存しました offset: %s"
 
 msgid "Screen DPMS"
-msgstr ""
+msgstr "ディスプレイ電源管理信号"
 
 msgid "Screen Power Off Time"
-msgstr ""
+msgstr "画面の電源オフ時間"
 
 msgid "Screws Adjust"
-msgstr ""
+msgstr "ネジ調整"
 
 msgid "Select"
-msgstr ""
+msgstr "選択する"
 
 msgid "Send"
-msgstr ""
+msgstr "送信"
 
 #, python-format
 msgid "Sending Power ON signal to: %s"
@@ -691,7 +691,7 @@ msgid "Show"
 msgstr "表示"
 
 msgid "Show Heater Power"
-msgstr ""
+msgstr "ヒーター電力を表示"
 
 msgid "Shutdown"
 msgstr "シャットダウン"
@@ -712,16 +712,16 @@ msgid "Small"
 msgstr "小"
 
 msgid "Speed (mm/s)"
-msgstr ""
+msgstr "速度(mm/s)"
 
 msgid "Speed +"
-msgstr ""
+msgstr "速度を上げます"
 
 msgid "Speed -"
-msgstr ""
+msgstr "速度を下げる"
 
 msgid "Speed:"
-msgstr ""
+msgstr "スピード："
 
 msgid "Square Corner Velocity"
 msgstr "四隅の速度"
@@ -766,10 +766,10 @@ msgid "Unload"
 msgstr "アンロード"
 
 msgid "Unretract Extra Length"
-msgstr ""
+msgstr "余分な長さを撤回"
 
 msgid "Unretract Speed"
-msgstr ""
+msgstr "アンリトラクト速度"
 
 msgid "Up To Date"
 msgstr "最新"
@@ -796,13 +796,13 @@ msgid "Z Move Speed (mm/s)"
 msgstr "X軸 移動速度 (mm/s)"
 
 msgid "Z Speed (mm/s)"
-msgstr ""
+msgstr "Z速度(mm/s)"
 
 msgid "Z Tilt"
-msgstr ""
+msgstr "Zチルト"
 
 msgid "Z offset:"
-msgstr ""
+msgstr "Z オフセット:"
 
 msgid "Start Screw Adjust"
 msgstr "スタートスクリュー調整"
@@ -1099,3 +1099,9 @@ msgstr "例"
 
 msgid "Insert Custom"
 msgstr "カスタム"
+
+msgid "Export Logs to USB"
+msgstr "ログをUSBにエクスポート"
+
+msgid "Tap the screen to confirm"
+msgstr "画面をタップして確認します"

@@ -64,7 +64,7 @@ msgid "Are you sure do you want to exclude the object?"
 msgstr "Tem certeza de que deseja excluir o objeto?"
 
 msgid "Are you sure you want to run Emergency Stop?"
-msgstr "Executar Parada de Emergência ?"
+msgstr "Executar Parada de Emergência na Syncraft?"
 
 msgid "Are you sure you wish to cancel this print?"
 msgstr "Cancelar a impressão ?"
@@ -396,7 +396,7 @@ msgid "Initializing printer..."
 msgstr "Inicializando Impressora..."
 
 msgid "Input Shaper"
-msgstr ""
+msgstr "Modelador de Entrada"
 
 msgid "Interface"
 msgstr "Interface"
@@ -417,22 +417,22 @@ msgid "Invert Z"
 msgstr "Inverter Z"
 
 msgid "Klipper Restart"
-msgstr "Reiniciar Klipper"
+msgstr "Reiniciar Firmware"
 
 msgid "Klipper has disconnected"
-msgstr "Klipper foi desconectado"
+msgstr "O Firmware foi desconectado"
 
 msgid "Klipper has encountered an error."
-msgstr "Klipper encontrou um erro."
+msgstr "O Firmware encontrou um erro."
 
 msgid "Klipper has shutdown"
-msgstr "Klipper foi desligado"
+msgstr "O Firmware foi desligado"
 
 msgid "Klipper is attempting to start"
-msgstr "Klipper está iniciando"
+msgstr "O Firmware está iniciando"
 
 msgid "Klipper will reboot"
-msgstr "Klipper será reiniciado"
+msgstr "O Firmware será reiniciado"
 
 msgid "KlipperScreen will reboot"
 msgstr "KlipperScreen será reiniciado"
@@ -774,7 +774,7 @@ msgid "Unload"
 msgstr "Descarregar"
 
 msgid "Unretract Extra Length"
-msgstr ""
+msgstr "Retrair Comprimento Extra"
 
 msgid "Unretract Speed"
 msgstr "Velocidade Inversa de Retração"
@@ -859,7 +859,7 @@ msgid "mm/s²"
 msgstr "mm/s²"
 
 msgid "mm³/s"
-msgstr ""
+msgstr "mm³/s"
 
 #~ msgid "Sort:"
 #~ msgstr "Ordenar:"
@@ -916,7 +916,7 @@ msgid "Backup File not found"
 msgstr "Arquivo de Backup não Encontrado"
 
 msgid "USB not inserted into Printer"
-msgstr "O USB não está inserido na impressora"
+msgstr "Dispositivo USB não inserido"
 
 msgid "Unsupported Update File"
 msgstr "Arquivo de Atualização não Suportado"
@@ -1112,3 +1112,9 @@ msgstr "Exemplo"
 
 msgid "Insert Custom"
 msgstr "Inserir customizado"
+
+msgid "Export Logs to USB"
+msgstr "Exportar Logs para USB"
+
+msgid "Tap the screen to confirm"
+msgstr "Toque na tela para confirmar"

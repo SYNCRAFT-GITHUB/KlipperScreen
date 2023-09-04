@@ -4,6 +4,8 @@ import gi
 import subprocess
 import os
 import socket
+import shutil
+import datetime
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Pango
@@ -42,11 +44,10 @@ class ExecuteScript(ScreenPanel):
         self.labels['execute_script_panel'].attach(grid, 0, 0, 1, 2)
         self.content.add(self.labels['execute_script_panel'])
 
-    # NONE, FILES, CAMERA, LIGHT, KLIPPERSCREEN, KLIPPER
     def execute (self, button):
 
         fix_option = self._config.get_fix_option()
-        offline_scripts = ["USB_DEFAULT", "USB_RECOVER", "CLEANGCODEFILES"]
+        offline_scripts = ["USB_DEFAULT", "USB_RECOVER", "CLEANGCODEFILES", "EXPORTLOGSTOUSB"]
 
         if not self.internet_connection() and fix_option not in offline_scripts:
             message: str = _("This procedure requires internet connection")
@@ -76,6 +77,21 @@ class ExecuteScript(ScreenPanel):
         if (fix_option == "CLEANGCODEFILES"):
             script_path = '/home/pi/KlipperScreen/scripts/fix/cleangcodefiles.sh'
             subprocess.call(['bash', script_path])
+
+        if (fix_option == "EXPORTLOGSTOUSB"):
+
+            usb_path: str = "/home/pi/printer_data/gcodes/USB"
+            if os.path.exists(usb_path):
+                if len(os.listdir(usb_path)) == 0:
+                    message: str = _("USB not inserted into Printer")
+                    self._screen.show_popup_message(message, level=2)
+                else:
+                    script_path = '/home/pi/KlipperScreen/scripts/fix/exportlogstousb.sh'
+                    subprocess.call(['bash', script_path])
+                    self._screen.restart_ks()
+            else:
+                message: str = _("Error")
+                self._screen.show_popup_message(message, level=2)
 
         if (fix_option == "USB_DEFAULT"):
 

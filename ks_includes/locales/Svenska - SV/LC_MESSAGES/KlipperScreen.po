@@ -817,7 +817,7 @@ msgid "This screw is already Adjusted"
 msgstr "Denna skruv är redan justerad"
 
 msgid "Extras"
-msgstr "Ytterligare Funktioner"
+msgstr "Extrafunktioner"
 
 msgid "Generic"
 msgstr "Generisk"
@@ -1153,3 +1153,9 @@ msgstr "Exempel"
 
 msgid "Insert Custom"
 msgstr "Beställnings"
+
+msgid "Export Logs to USB"
+msgstr "Exportera loggar till USB"
+
+msgid "Tap the screen to confirm"
+msgstr "Tryck för att bekräfta"

@@ -58,7 +58,7 @@ class KlipperScreenConfig:
             'sv': 'Svenska - SV',
             'ru': 'Русский - RU',
             'ko': '한국어 - KO',
-            'jp': '日本語 - JA',
+            'jp': '日本語 - JP',
             'zh_CN': '简体中文 - ZH_CN',
             'zh_TW': '繁體中文 - ZH_TW',
         }
@@ -289,7 +289,7 @@ class KlipperScreenConfig:
                 "section": "main", "name": _("Slicer Time correction (%)"), "type": "scale", "value": "100",
                 "range": [50, 150], "step": 1}},
             {"autoclose_popups": {"section": "main", "name": _("Auto-close notifications"), "type": "binary",
-                                  "value": "True"}},
+                                  "value": "False"}},
             {"show_heater_power": {"section": "main", "name": _("Show Heater Power"), "type": "binary",
                                    "value": "False", "callback": screen.reload_panels}},
             {"show_experimental_material": {"section": "main", "name": _("Show experimental Materials"), "type": "binary",
