@@ -827,7 +827,7 @@ msgid "This screw is already Adjusted"
 msgstr "Diese Schraube ist bereits eingestellt"
 
 msgid "Extras"
-msgstr "Zusätzliche Funktionen"
+msgstr "Extras"
 
 msgid "Generic"
 msgstr "Generisch"

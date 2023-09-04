@@ -289,7 +289,7 @@ class KlipperScreenConfig:
                 "section": "main", "name": _("Slicer Time correction (%)"), "type": "scale", "value": "100",
                 "range": [50, 150], "step": 1}},
             {"autoclose_popups": {"section": "main", "name": _("Auto-close notifications"), "type": "binary",
-                                  "value": "True"}},
+                                  "value": "False"}},
             {"show_heater_power": {"section": "main", "name": _("Show Heater Power"), "type": "binary",
                                    "value": "False", "callback": screen.reload_panels}},
             {"show_experimental_material": {"section": "main", "name": _("Show experimental Materials"), "type": "binary",

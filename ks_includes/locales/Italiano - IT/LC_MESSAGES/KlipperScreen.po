@@ -814,7 +814,7 @@ msgid "This screw is already Adjusted"
 msgstr "Questa vite è già regolata"
 
 msgid "Extras"
-msgstr "Funzioni Aggiuntive"
+msgstr "Ulteriori"
 
 msgid "Generic"
 msgstr "Generico"

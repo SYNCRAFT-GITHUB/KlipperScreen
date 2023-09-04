@@ -829,7 +829,7 @@ msgid "This screw is already Adjusted"
 msgstr "Этот винт уже отрегулирован"
 
 msgid "Extras"
-msgstr "Дополнительные функции"
+msgstr "Дополнительно"
 
 msgid "Generic"
 msgstr "Общий"
