@@ -822,8 +822,8 @@ msgstr "Andet"
 
 msgid "commit"
 msgid_plural "commits"
-msgstr[0] "ændring"
-msgstr[1] "ændringer"
+msgstr[0] "commit"
+msgstr[1] "commits"
 
 msgid "dBm"
 msgstr "dBm"

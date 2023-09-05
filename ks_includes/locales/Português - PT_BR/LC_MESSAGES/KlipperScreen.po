@@ -54,11 +54,11 @@ msgstr "Aplicar"
 
 #, python-format
 msgid "Apply %.2f offset to Endstop?"
-msgstr "Aplicar deslocamento de %.2f para Endstop?"
+msgstr "Aplicar desloc. de %.2f para Endstop?"
 
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
-msgstr "Aplicar deslocamento %s%.2f ao Sonda?"
+msgstr "Aplicar desloc. %s%.2f ao Sonda?"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Tem certeza de que deseja excluir o objeto?"
@@ -267,13 +267,13 @@ msgid "Do you want to recover %s?"
 msgstr "Deseja recuperar %s?"
 
 msgid "Elapsed:"
-msgstr "Tempo Corrido:"
+msgstr "Corrido:"
 
 msgid "Error"
 msgstr "Erro"
 
 msgid "Estimated Time Method"
-msgstr "Método de Tempo Estimado"
+msgstr "Método de T. Estimado"
 
 msgid "Exclude Object"
 msgstr "Excluir Objeto"
@@ -291,7 +291,7 @@ msgid "Extrusion -"
 msgstr "- Extrusão"
 
 msgid "Failed, adjust position first"
-msgstr "Falhou, ajuste a posição primeiro"
+msgstr "Ocorreu um problema. Ajuste a posição primeiro!"
 
 msgid "Fan"
 msgstr "Ventoinha"
@@ -357,10 +357,10 @@ msgid "Hide"
 msgstr "Ocultar"
 
 msgid "Hide sensors in Temp."
-msgstr "Ocultar sensores na Temperatura."
+msgstr "Ocultar sensores na Temp."
 
 msgid "Hide temp."
-msgstr "Ocultar temperatura"
+msgstr "Ocultar Temp."
 
 msgid "Home All"
 msgstr "Zerar XYZ"
@@ -598,7 +598,7 @@ msgid "Printing"
 msgstr "Imprimindo"
 
 msgid "Probe Offset"
-msgstr "Deslocamento da Sonda"
+msgstr "Desloc. da Sonda"
 
 msgid "Profile Name:"
 msgstr "Nome do Perfil:"
@@ -668,7 +668,7 @@ msgstr "Salvou"
 
 #, python-format
 msgid "Saved offset: %s"
-msgstr "Deslocamento salvo: %s"
+msgstr "Desloc. salvo: %s"
 
 msgid "Screen DPMS"
 msgstr "Tela DPMS"
@@ -810,7 +810,7 @@ msgid "Z Tilt"
 msgstr "Inclinação Z"
 
 msgid "Z offset:"
-msgstr "Deslocamento Z:"
+msgstr "Desloc. Z:"
 
 msgid "Start Screw Adjust"
 msgstr "Iniciar Nivelamento Manual"
@@ -835,8 +835,8 @@ msgstr "Outro"
 
 msgid "commit"
 msgid_plural "commits"
-msgstr[0] "comprometer-se"
-msgstr[1] "compromete"
+msgstr[0] "commit"
+msgstr[1] "commits"
 
 msgid "dBm"
 msgstr "dBm"
