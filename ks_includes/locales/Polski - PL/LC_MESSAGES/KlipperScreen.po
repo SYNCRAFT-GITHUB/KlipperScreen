@@ -837,9 +837,9 @@ msgstr "Inny"
 
 msgid "commit"
 msgid_plural "commits"
-msgstr[0] "zmiana"
-msgstr[1] "zmiany"
-msgstr[2] "zmiany"
+msgstr[0] "commit"
+msgstr[1] "commits"
+msgstr[2] "commits"
 
 msgid "dBm"
 msgstr "dBm"
