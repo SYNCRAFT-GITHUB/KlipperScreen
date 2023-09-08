@@ -837,8 +837,8 @@ msgstr "Andere"
 
 msgid "commit"
 msgid_plural "commits"
-msgstr[0] "Änderung"
-msgstr[1] "Änderungen"
+msgstr[0] "commit"
+msgstr[1] "commits"
 
 msgid "dBm"
 msgstr "dBm"

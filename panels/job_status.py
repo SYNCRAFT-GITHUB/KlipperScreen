@@ -122,7 +122,7 @@ class JobStatusPanel(ScreenPanel):
         self.labels['thumbnail'] = Gtk.Image()
         self.labels['info_grid'] = Gtk.Grid()
         self.thumb_alignment = Gtk.Alignment.new(0.5, 0.5, 0, 0)
-        self.thumb_alignment.set_padding(78, 0, 0, 120)
+        self.thumb_alignment.set_padding(78, 0, 0, 78)
         self.thumb_alignment.add(self.labels['thumbnail'])
         self.labels['info_grid'].attach(self.thumb_alignment, 2, 0, 1, 1)
         if self._printer.get_tools():
