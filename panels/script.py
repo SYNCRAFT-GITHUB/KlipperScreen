@@ -78,6 +78,10 @@ class ExecuteScript(ScreenPanel):
             script_path = '/home/pi/KlipperScreen/scripts/fix/cleangcodefiles.sh'
             subprocess.call(['bash', script_path])
 
+        if (fix_option == "MOONRAKER"):
+            script_path = '/home/pi/KlipperScreen/scripts/fix/moonraker.sh'
+            subprocess.call(['bash', script_path])
+
         if (fix_option == "EXPORTLOGSTOUSB"):
 
             usb_path: str = "/home/pi/printer_data/gcodes/USB"
