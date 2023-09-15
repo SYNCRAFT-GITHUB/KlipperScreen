@@ -1118,3 +1118,45 @@ msgstr "Exportar Logs para USB"
 
 msgid "Tap the screen to confirm"
 msgstr "Toque na tela para confirmar"
+
+msgid "An error has occurred"
+msgstr "Ocorreu um erro"
+
+msgid "Are you sure?"
+msgstr "Tem certeza?"
+
+msgid "Revert"
+msgstr "Reverter"
+
+msgid "Restore"
+msgstr "Restaurar"
+
+msgid "Restore to Factory Default"
+msgstr "Restaurar para padrão de fábrica"
+
+msgid "Restore All"
+msgstr "Restaurar Tudo"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "Tem certeza de que deseja redefinir para as configurações de fábrica?"
+
+msgid "Are you sure you want to Update?"
+msgstr "Tem certeza de que deseja atualizar?"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "Exportar Instaladores do Syncraft para USB"
+
+msgid "Your system version does not support this feature"
+msgstr "A versão do seu sistema não suporta esta funcionalidade"
+
+msgid "Out of Date"
+msgstr "Desatualizado"
+
+msgid "Update required"
+msgstr "Atualização necessária"
+
+msgid "This software is already updated"
+msgstr "Este software já está atualizado"
+
+msgid "Restart to apply"
+msgstr "Reinicie a Syncraft para aplicar"

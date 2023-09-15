@@ -1296,3 +1296,45 @@ msgstr "Exporter les journaux vers USB"
 
 msgid "Tap the screen to confirm"
 msgstr "Appuyez pour confirmer"
+
+msgid "An error has occurred"
+msgstr "Une erreur est survenue"
+
+msgid "Are you sure?"
+msgstr "Il en est sûr ?"
+
+msgid "Revert"
+msgstr "Inverser"
+
+msgid "Restore"
+msgstr "Restaurer"
+
+msgid "Restore to Factory Default"
+msgstr "Restaurer les paramètres d'usine par défaut"
+
+msgid "Restore All"
+msgstr "Tout restaurer"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "Êtes-vous sûr de vouloir réinitialiser les paramètres d'usine par défaut ?"
+
+msgid "Are you sure you want to to Update?"
+msgstr "Mettre à jour?"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "Exporter les installateurs Syncraft vers Cura"
+
+msgid "Your system version does not support this feature"
+msgstr "La version de votre système ne prend pas en charge cette fonctionnalité"
+
+msgid "Out of Date"
+msgstr "Périmé"
+
+msgid "Update required"
+msgstr "Mise à jour requise"
+
+msgid "This software is already updated"
+msgstr "Le logiciel est déjà mis à jour"
+
+msgid "Restart to apply"
+msgstr "Redémarrez l'imprimante pour appliquer"

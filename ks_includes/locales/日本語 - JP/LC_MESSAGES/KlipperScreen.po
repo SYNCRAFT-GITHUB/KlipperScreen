@@ -1105,3 +1105,45 @@ msgstr "ログをUSBにエクスポート"
 
 msgid "Tap the screen to confirm"
 msgstr "画面をタップして確認します"
+
+msgid "An error has occurred"
+msgstr "エラーが発生しました"
+
+msgid "Are you sure?"
+msgstr "本当によろしいですか？"
+
+msgid "Revert"
+msgstr "元に戻す"
+
+msgid "Restore"
+msgstr "復元"
+
+msgid "Restore to Factory Default"
+msgstr "工場出荷時のデフォルトに復元"
+
+msgid "Restore All"
+msgstr "すべて復元"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "工場出荷時設定にリセットしますか？"
+
+msgid "Are you sure you want to Update?"
+msgstr "アップデートしますか？"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "SyncraftインストーラーをUSBにエクスポート"
+
+msgid "Your system version does not support this feature"
+msgstr "お使いのシステムバージョンではこの機能はサポートされていません"
+
+msgid "Out of Date"
+msgstr "更新が必要"
+
+msgid "Update required"
+msgstr "更新が必要です"
+
+msgid "This software is already updated"
+msgstr "このソフトウェアは既に最新バージョンです"
+
+msgid "Restart to apply"
+msgstr "適用するために再起動"

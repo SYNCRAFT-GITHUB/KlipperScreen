@@ -1159,3 +1159,45 @@ msgstr "Exportera loggar till USB"
 
 msgid "Tap the screen to confirm"
 msgstr "Tryck för att bekräfta"
+
+msgid "An error has occurred"
+msgstr "Ett fel har inträffat"
+
+msgid "Are you sure?"
+msgstr "Är du säker?"
+
+msgid "Revert"
+msgstr "Återgå"
+
+msgid "Restore"
+msgstr "Återställ"
+
+msgid "Restore to Factory Default"
+msgstr "Återställ till fabriksinställningar"
+
+msgid "Restore All"
+msgstr "Återställ allt"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "Är du säker på att du vill återställa till fabriksinställningarna?"
+
+msgid "Are you sure you want to Update?"
+msgstr "Är du säker på att du vill uppdatera?"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "Exportera Syncraft-installatörer till USB"
+
+msgid "Your system version does not support this feature"
+msgstr "Din systemversion stöder inte den här funktionen"
+
+msgid "Out of Date"
+msgstr "Föråldrad"
+
+msgid "Update required"
+msgstr "Uppdatering krävs"
+
+msgid "This software is already updated"
+msgstr "Den här programvaran är redan uppdaterad"
+
+msgid "Restart to apply"
+msgstr "Starta om för att tillämpa"

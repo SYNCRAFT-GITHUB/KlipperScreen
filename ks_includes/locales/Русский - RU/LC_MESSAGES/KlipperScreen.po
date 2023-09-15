@@ -1285,3 +1285,45 @@ msgstr "Экспорт журналов на USB"
 
 msgid "Tap the screen to confirm"
 msgstr "Нажмите, чтобы подтвердить"
+
+msgid "An error has occurred"
+msgstr "Произошла ошибка"
+
+msgid "Are you sure?"
+msgstr "Вы уверены?"
+
+msgid "Revert"
+msgstr "Отменить"
+
+msgid "Restore"
+msgstr "Восстановить"
+
+msgid "Restore to Factory Default"
+msgstr "Восстановить заводские настройки"
+
+msgid "Restore All"
+msgstr "Восстановить все"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "Вы уверены, что хотите сбросить на заводские настройки?"
+
+msgid "Are you sure you want to Update?"
+msgstr "Вы уверены, что хотите обновить?"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "Экспортировать установщики Syncraft на USB"
+
+msgid "Your system version does not support this feature"
+msgstr "Ваша версия системы не поддерживает эту функцию"
+
+msgid "Out of Date"
+msgstr "Устаревшее"
+
+msgid "Update required"
+msgstr "Требуется обновление"
+
+msgid "This software is already updated"
+msgstr "Это программное обеспечение уже обновлено"
+
+msgid "Restart to apply"
+msgstr "Перезагрузите для применения"

@@ -1097,8 +1097,47 @@ msgstr ""
 msgid "Export Logs to USB"
 msgstr ""
 
-msgid "Export Logs to USB"
+msgid "Tap the screen to confirm"
 msgstr ""
 
-msgid "Tap the screen to confirm"
+msgid "An error has occurred"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr ""
+
+msgid "Revert"
+msgstr ""
+
+msgid "Restore"
+msgstr ""
+
+msgid "Restore to Factory Default"
+msgstr ""
+
+msgid "Restore All"
+msgstr ""
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr ""
+
+msgid "Are you sure you want to to Update?"
+msgstr ""
+
+msgid "Export Syncraft Installers to USB"
+msgstr ""
+
+msgid "Your system version does not support this feature"
+msgstr ""
+
+msgid "Out of Date"
+msgstr ""
+
+msgid "Update required"
+msgstr ""
+
+msgid "This software is already updated"
+msgstr ""
+
+msgid "Restart to apply"
 msgstr ""

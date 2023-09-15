@@ -1240,3 +1240,45 @@ msgstr "将日志导出到外部设备"
 
 msgid "Tap the screen to confirm"
 msgstr "点击屏幕确认"
+
+msgid "An error has occurred"
+msgstr "发生了错误"
+
+msgid "Are you sure?"
+msgstr "您确定吗？"
+
+msgid "Revert"
+msgstr "还原"
+
+msgid "Restore"
+msgstr "还原"
+
+msgid "Restore to Factory Default"
+msgstr "恢复到出厂设置"
+
+msgid "Restore All"
+msgstr "全部还原"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "您确定要恢复到出厂设置吗？"
+
+msgid "Are you sure you want to Update?"
+msgstr "您确定要更新吗？"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "将软件包安装程序导出到外部设备"
+
+msgid "Your system version does not support this feature"
+msgstr "您的系统版本不支持此功能"
+
+msgid "Out of Date"
+msgstr "已过期"
+
+msgid "Update required"
+msgstr "需要更新"
+
+msgid "This software is already updated"
+msgstr "此软件已经更新"
+
+msgid "Restart to apply"
+msgstr "重新启动以应用"

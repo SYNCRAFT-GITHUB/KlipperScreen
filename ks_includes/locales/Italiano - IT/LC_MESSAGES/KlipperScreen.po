@@ -1234,3 +1234,45 @@ msgstr "Esporta i registri su USB"
 
 msgid "Tap the screen to confirm"
 msgstr "Tocca per confermare"
+
+msgid "An error has occurred"
+msgstr "Si è verificato un errore"
+
+msgid "Are you sure?"
+msgstr "Sei sicuro?"
+
+msgid "Revert"
+msgstr "Ripristina"
+
+msgid "Restore"
+msgstr "Ripristina"
+
+msgid "Restore to Factory Default"
+msgstr "Ripristina alle impostazioni di fabbrica"
+
+msgid "Restore All"
+msgstr "Ripristina tutto"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "Sei sicuro di voler ripristinare le impostazioni di fabbrica?"
+
+msgid "Are you sure you want to Update?"
+msgstr "Sei sicuro di voler aggiornare?"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "Esporta gli installatori Syncraft su USB"
+
+msgid "Your system version does not support this feature"
+msgstr "La versione del tuo sistema non supporta questa funzione"
+
+msgid "Out of Date"
+msgstr "Obsoleto"
+
+msgid "Update required"
+msgstr "Aggiornamento richiesto"
+
+msgid "This software is already updated"
+msgstr "Questo software è già aggiornato"
+
+msgid "Restart to apply"
+msgstr "Riavvia per applicare"

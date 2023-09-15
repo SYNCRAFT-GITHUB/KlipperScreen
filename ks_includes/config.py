@@ -109,7 +109,7 @@ class KlipperScreenConfig:
             printers.append("Printer Printer")
         self.printers = [
             {printer[8:]: {
-                "moonraker_host": self.config.get(printer, "moonraker_host", fallback="127.0.0.1"),
+                "moonraker_host": self.config.get(printer, "moonraker_host", fallback="pd01.local"),
                 "moonraker_port": self.config.get(printer, "moonraker_port", fallback="7125"),
                 "moonraker_api_key": self.config.get(printer, "moonraker_api_key", fallback="").replace('"', '')
             }} for printer in printers
@@ -160,6 +160,34 @@ class KlipperScreenConfig:
             lang = self.lang_converter[lang]
         self.lang = self.langs[lang]
         self.lang.install(names=['gettext', 'ngettext'])
+
+    def linux(self, version: str):
+        if version == 'bullseye':
+            return True
+        else:
+            return False
+        try:
+            with open("/etc/os-release", "r") as os_release_file:
+                for line in os_release_file:
+                    if line.startswith("VERSION="):
+                        version_info = line.strip().split("=")[1].strip('"')
+                        if version_info and version in version_info.lower():
+                            return True
+        except FileNotFoundError:
+            return None
+
+    def repo_status(self, repo_path: str) -> str:
+        try:
+            repo = git.Repo(repo_path)
+            remote_branch = repo.remote().refs[0]
+            local_branch = repo.active_branch
+            if local_branch.commit != remote_branch.commit:
+                return 'outdated'
+            else:
+                return 'up-to-date'
+        except Exception as e:
+            print(f"Error: {e}")
+            return 'error'
 
     def validate_config(self):
         valid = True

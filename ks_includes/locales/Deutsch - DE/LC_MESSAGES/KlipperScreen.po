@@ -1251,3 +1251,45 @@ msgstr "Protokolle auf USB exportieren"
 
 msgid "Tap the screen to confirm"
 msgstr "Zum Bestätigen tippen"
+
+msgid "An error has occurred"
+msgstr "Ein Fehler ist aufgetreten"
+
+msgid "Are you sure?"
+msgstr "Er ist sicher?"
+
+msgid "Revert"
+msgstr "Umkehren"
+
+msgid "Restore"
+msgstr "Etwas wiederherstellen"
+
+msgid "Restore to Factory Default"
+msgstr "Auf Werkseinstellungen zurücksetzen"
+
+msgid "Restore All"
+msgstr "Alles wiederherstellen"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "Sind Sie sicher, dass Sie die Werkseinstellungen wiederherstellen möchten?"
+
+msgid "Are you sure you want to to Update?"
+msgstr "Aktualisieren?"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "Exportieren Sie Syncraft-Installationsprogramme nach Cura"
+
+msgid "Your system version does not support this feature"
+msgstr "Ihre Systemversion unterstützt diese Funktion nicht"
+
+msgid "Out of Date"
+msgstr "Veraltet"
+
+msgid "Update required"
+msgstr "Aktualisierung erforderlich"
+
+msgid "This software is already updated"
+msgstr "Die Software ist bereits aktualisiert"
+
+msgid "Restart to apply"
+msgstr "Starten Sie den Drucker neu, um die Anwendung anzuwenden"

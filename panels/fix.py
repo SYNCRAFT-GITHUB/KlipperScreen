@@ -27,6 +27,7 @@ class FixPanel(ScreenPanel):
             'FIX_MAINSAIL': self._gtk.Button("monitor", _("Mainsail"), "color3"),
             'FIX_LED': self._gtk.Button("light", _("LED Light Driver"), "color4"),
             'FIX_MOONRAKER': self._gtk.Button("moonraker", _("Moonraker"), "color1"),
+            'EXPORT_LOGS_USB': self._gtk.Button("usb-save", _("Export Logs to USB"), "color1"),
         }
 
         self.buttons['CLEAN_GCODE'].connect("clicked", self.set_fix_option_to, "CLEANGCODEFILES")
@@ -69,10 +70,16 @@ class FixPanel(ScreenPanel):
             "name": _("Fix"),
             "panel": "fix_steps"
         })
+        self.buttons['EXPORT_LOGS_USB'].connect("clicked", self.set_fix_option_to, "EXPORTLOGSTOUSB")
+        self.buttons['EXPORT_LOGS_USB'].connect("clicked", self.menu_item_clicked, "fix_steps", {
+            "name": _("Fix"),
+            "panel": "script"
+        })
 
         grid = self._gtk.HomogeneousGrid()
 
-        grid.attach(self.buttons['FIX_FILES'], 0, 0, 2, 1)
+        grid.attach(self.buttons['FIX_FILES'], 0, 0, 1, 1)
+        grid.attach(self.buttons['EXPORT_LOGS_USB'], 1, 0, 1, 1)
         grid.attach(self.buttons['CLEAN_GCODE'], 1, 1, 1, 1)
         grid.attach(self.buttons['FIX_CAMERA'], 0, 3, 1, 1)
         grid.attach(self.buttons['FIX_KLIPPERSCREEN'], 0, 2, 1, 1)

@@ -1211,3 +1211,45 @@ msgstr "Eksporter logfiler til USB"
 
 msgid "Tap the screen to confirm"
 msgstr "Tryk på skærmen for at bekræfte"
+
+msgid "An error has occurred"
+msgstr "Der opstod en fejl"
+
+msgid "Are you sure?"
+msgstr "Er han sikker?"
+
+msgid "Revert"
+msgstr "At vende"
+
+msgid "Restore"
+msgstr "At gendanne"
+
+msgid "Restore to Factory Default"
+msgstr "Gendan til fabriksstandard"
+
+msgid "Restore All"
+msgstr "Gendan alle"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "Er du sikker på, at du vil nulstille til fabriksstandarden?"
+
+msgid "Are you sure you want to to Update?"
+msgstr "At opdatere?"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "Eksporter Syncraft-installatører til Cura"
+
+msgid "Your system version does not support this feature"
+msgstr "Din systemversion understøtter ikke denne funktion"
+
+msgid "Out of Date"
+msgstr "Umoderne"
+
+msgid "Update required"
+msgstr "Opdatering nødvendig"
+
+msgid "This software is already updated"
+msgstr "Softwaren er allerede opdateret"
+
+msgid "Restart to apply"
+msgstr "Genstart printeren for at anvende"

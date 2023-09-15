@@ -1225,3 +1225,45 @@ msgstr "Eksportuj dzienniki na USB"
 
 msgid "Tap the screen to confirm"
 msgstr "Kliknij, aby potwierdzić"
+
+msgid "An error has occurred"
+msgstr "Wystąpił błąd"
+
+msgid "Are you sure?"
+msgstr "Czy jesteś pewny?"
+
+msgid "Revert"
+msgstr "Przywróć"
+
+msgid "Restore"
+msgstr "Przywróć"
+
+msgid "Restore to Factory Default"
+msgstr "Przywróć domyślne ustawienia fabryczne"
+
+msgid "Restore All"
+msgstr "Przywróć wszystko"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "Czy na pewno chcesz przywrócić ustawienia fabryczne?"
+
+msgid "Are you sure you want to Update?"
+msgstr "Czy na pewno chcesz zaktualizować?"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "Eksportuj instalatory Syncraft na USB"
+
+msgid "Your system version does not support this feature"
+msgstr "Twoja wersja systemu nie obsługuje tej funkcji"
+
+msgid "Out of Date"
+msgstr "Przestarzałe"
+
+msgid "Update required"
+msgstr "Wymagana aktualizacja"
+
+msgid "This software is already updated"
+msgstr "To oprogramowanie jest już zaktualizowane"
+
+msgid "Restart to apply"
+msgstr "Uruchom ponownie, aby zastosować zmiany"
