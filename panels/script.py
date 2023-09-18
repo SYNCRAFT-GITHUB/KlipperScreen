@@ -47,7 +47,7 @@ class ExecuteScript(ScreenPanel):
         fix_option = self._config.get_fix_option()
         offline_scripts = ["USB_DEFAULT", "USB_RECOVER", "CLEANGCODEFILES", "EXPORTLOGSTOUSB"]
 
-        if not self.internet_connection() and fix_option not in offline_scripts:
+        if not self._config.internet_connection() and fix_option not in offline_scripts:
             message: str = _("This procedure requires internet connection")
             self._screen.show_popup_message(message, level=2)
             return None
@@ -123,7 +123,7 @@ class ExecuteScript(ScreenPanel):
 
         fix_option = self._config.get_fix_option()
 
-        def core_script(self, core_script_dir: str, usb: bool = False, web=False):
+        def core_script(core_script_dir: str, usb: bool = False, web=False):
 
             usb_machine_path: str = os.path.join('/home', 'pi', 'printer_data', 'gcodes', 'USB')
             if len(os.listdir(usb_machine_path)) == 0:
@@ -170,37 +170,48 @@ class ExecuteScript(ScreenPanel):
 
         if (fix_option == "UPDATE_KLE"):
             core_script(SCRIPT.UPDATE.KLE)
+            self._screen.reload_panels()
+
         if (fix_option == "UPDATE_KS"):
             core_script(SCRIPT.UPDATE.KS)
+            self._screen.reload_panels()
+
         if (fix_option == "UPDATE_MAINSAIL"):
             core_script(SCRIPT.UPDATE.MAINSAIL)
+            os.system('sudo reboot')
+
         if (fix_option == "UPDATE_MOONRAKER"):
             core_script(SCRIPT.UPDATE.MOONRAKER)
+            self._screen.reload_panels()
+
         if (fix_option == "UPDATE_PDC"):
             core_script(SCRIPT.UPDATE.PDC)
+            os.system('sudo reboot')
+
         if (fix_option == "REVERT_KLE"):
             core_script(SCRIPT.REVERT.KLE)
+            self._screen.reload_panels()
+
         if (fix_option == "REVERT_KS"):
             core_script(SCRIPT.REVERT.KS)
+            self._screen.reload_panels()
+
         if (fix_option == "REVERT_MAINSAIL"):
             core_script(SCRIPT.REVERT.MAINSAIL)
+            os.system('sudo reboot')
+
         if (fix_option == "REVERT_MOONRAKER"):
             core_script(SCRIPT.REVERT.MOONRAKER)
+            self._screen.reload_panels()
+
         if (fix_option == "REVERT_PDC"):
             core_script(SCRIPT.REVERT.PDC)
+            os.system('sudo reboot')
+
         if (fix_option == "USB_SLICER"):
             core_script(SCRIPT.USB.SLICER)
+            self._screen.reload_panels()
+
         if (fix_option == "USB_LOGS"):
             core_script(SCRIPT.USB.LOGS)
-
-
-
-
-
-    def internet_connection(self):
-        try:
-            socket.create_connection(("www.google.com", 80))
-            return True
-        except OSError:
-            pass
-        return False
+            self._screen.reload_panels()

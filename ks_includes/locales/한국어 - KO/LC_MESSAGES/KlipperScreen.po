@@ -1215,3 +1215,9 @@ msgstr "이 소프트웨어는 이미 최신 버전입니다"
 
 msgid "Restart to apply"
 msgstr "적용하려면 다시 시작하세요"
+
+msgid "Calibration"
+msgstr "교정"
+
+msgid "Mesh"
+msgstr "망사"

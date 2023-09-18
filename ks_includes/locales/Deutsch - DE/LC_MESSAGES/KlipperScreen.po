@@ -1293,3 +1293,9 @@ msgstr "Die Software ist bereits aktualisiert"
 
 msgid "Restart to apply"
 msgstr "Starten Sie den Drucker neu, um die Anwendung anzuwenden"
+
+msgid "Calibration"
+msgstr "Kalibrieren"
+
+msgid "Mesh"
+msgstr "Gittergewebe"

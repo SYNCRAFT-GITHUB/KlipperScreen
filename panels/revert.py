@@ -34,11 +34,11 @@ class RevertToStock(ScreenPanel):
         scroll.add(grid)
         self.content.add(scroll)
 
-        columns = 1
+        columns = 2
 
         for i, action in enumerate(self.actions):
             name: str = action.name
-            self.labels[name] = self._gtk.Button(action.icon, f"{name}", f"color{1 + i % 4}")
+            self.labels[name] = self._gtk.Button(action.icon, f"{name}", None)
             self.labels[name].connect("clicked", self.set_fix_option_to, action.code)
             self.labels[name].connect("clicked", self.menu_item_clicked, "script", {
             "name": _("System"),

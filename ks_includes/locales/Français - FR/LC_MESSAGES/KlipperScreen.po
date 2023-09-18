@@ -1338,3 +1338,9 @@ msgstr "Le logiciel est déjà mis à jour"
 
 msgid "Restart to apply"
 msgstr "Redémarrez l'imprimante pour appliquer"
+
+msgid "Calibration"
+msgstr "Étalonner"
+
+msgid "Mesh"
+msgstr "Engrener"

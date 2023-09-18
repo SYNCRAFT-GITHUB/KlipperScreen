@@ -48,7 +48,7 @@ class Keypad(Gtk.Box):
         self.labels['entry'].props.xalign = 0.5
         self.labels['entry'].connect("activate", self.update_entry, "E")
 
-        b = self._gtk.Button('cancel', _('Close'), None, .66, Gtk.PositionType.LEFT, 1)
+        b = self._gtk.Button('cancel', None, None, .66, Gtk.PositionType.LEFT, 1)
         b.connect("clicked", close_function)
 
         self.add(self.labels['entry'])

@@ -1317,3 +1317,9 @@ msgstr "El software ya está actualizado."
 
 msgid "Restart to apply"
 msgstr "Reinicie la Syncraft para aplicar"
+
+msgid "Calibration"
+msgstr "Calibración"
+
+msgid "Mesh"
+msgstr "Malla"

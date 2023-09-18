@@ -1276,3 +1276,9 @@ msgstr "Questo software è già aggiornato"
 
 msgid "Restart to apply"
 msgstr "Riavvia per applicare"
+
+msgid "Calibration"
+msgstr "Calibrare"
+
+msgid "Mesh"
+msgstr "Maglia"

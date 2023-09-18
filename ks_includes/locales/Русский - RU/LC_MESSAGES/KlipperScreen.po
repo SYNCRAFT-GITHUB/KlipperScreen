@@ -1327,3 +1327,9 @@ msgstr "Это программное обеспечение уже обновл
 
 msgid "Restart to apply"
 msgstr "Перезагрузите для применения"
+
+msgid "Calibration"
+msgstr "Калибровка"
+
+msgid "Mesh"
+msgstr "сетка"

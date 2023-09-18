@@ -1253,3 +1253,9 @@ msgstr "Softwaren er allerede opdateret"
 
 msgid "Restart to apply"
 msgstr "Genstart printeren for at anvende"
+
+msgid "Calibration"
+msgstr "Kalibrer"
+
+msgid "Mesh"
+msgstr "Mesh"

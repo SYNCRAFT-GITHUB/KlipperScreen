@@ -1282,3 +1282,9 @@ msgstr "此软件已经更新"
 
 msgid "Restart to apply"
 msgstr "重新启动以应用"
+
+msgid "Calibration"
+msgstr "校准"
+
+msgid "Mesh"
+msgstr "网"

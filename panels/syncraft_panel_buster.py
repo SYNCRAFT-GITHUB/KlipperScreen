@@ -10,9 +10,9 @@ from ks_includes.screen_panel import ScreenPanel
 
 
 def create_panel(*args):
-    return SyncraftPanel(*args)
+    return SyncraftPanelBuster(*args)
 
-class SyncraftPanel(ScreenPanel):
+class SyncraftPanelBuster(ScreenPanel):
 
     def __init__(self, screen, title):
 
@@ -23,7 +23,7 @@ class SyncraftPanel(ScreenPanel):
             'UPDATE': self._gtk.Button("update", _("Update via Internet"), "color1"),
             'REVERT': self._gtk.Button (
                 "compass" if self._config.linux('buster') else "stock",
-                _("Quick System Fixes") if self._config.linux('buster') else _("Factory Reset"),
+                _("Quick System Fixes") if self._config.linux('buster') else _("Restore to Factory Default"),
                 "color1"),
             'UPDATE_USB': self._gtk.Button("usb", _("Update via USB"), "color1"),
         }

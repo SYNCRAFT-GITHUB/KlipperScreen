@@ -1,6 +1,5 @@
-import gi
 import subprocess
-import git
+import gi
 import os
 
 gi.require_version("Gtk", "3.0")
@@ -17,28 +16,20 @@ class UpdateWeb(ScreenPanel):
         super().__init__(screen, title)
 
         class SystemAction:
-            def __init__ (self, name: str, code: str, icon: str, path: str):
-                self.path = path
+            def __init__ (self, name: str, code: str, icon: str, repo_name: str):
+                self.repo_name = repo_name
                 self.name = name
                 self.code = code
                 self.icon = icon
 
         softwares_path = os.path.join('/home', 'pi', 'SyncraftCore', 'softwares')
 
-        class DIR:
-            LED = os.path.join(softwares_path, 'klipper-led_effect')
-            PDC = os.path.join(softwares_path, 'printerdataconfig')
-            KS = os.path.join(softwares_path, 'KlipperScreen')
-            MAINSAIL = os.path.join(softwares_path, 'mainsail')
-            MOONRAKER = os.path.join(softwares_path, 'moonraker')
-            KLIPPER = os.path.join(softwares_path, 'klipper')
-
         self.actions = [
-            SystemAction(f"{_('Essential Files')}",   code='UPDATE_PDC',          icon='file',      path=DIR.PDC),
-            SystemAction(f"{_('KlipperScreen')}",     code='UPDATE_KS',           icon='screen',    path=DIR.KS),
-            SystemAction(f"{_('Mainsail')}",          code='UPDATE_MAINSAIL',     icon='monitor',   path=DIR.MAINSAIL),
-            SystemAction(f"{_('Moonraker')}",         code='UPDATE_MOONRAKER',    icon='moonraker', path=DIR.MOONRAKER),
-            SystemAction(f"{_('LED Light Driver')}",  code='UPDATE_KLE',          icon='light',     path=DIR.LED),
+            SystemAction(f"{_('Essential Files')}",   code='UPDATE_PDC',          icon='file',      repo_name='printerdataconfig'),
+            SystemAction(f"{_('KlipperScreen')}",     code='UPDATE_KS',           icon='screen',    repo_name='KlipperScreen'),
+            SystemAction(f"{_('Mainsail')}",          code='UPDATE_MAINSAIL',     icon='monitor',   repo_name='mainsail'),
+            SystemAction(f"{_('Moonraker')}",         code='UPDATE_MOONRAKER',    icon='moonraker', repo_name='moonraker'),
+            SystemAction(f"{_('LED Light Driver')}",  code='UPDATE_KLE',          icon='light',     repo_name='klipper-led_effect'),
         ]
 
         grid = self._gtk.HomogeneousGrid()
@@ -53,16 +44,23 @@ class UpdateWeb(ScreenPanel):
 
             name: str = action.name
             style_context = 'updated'
+            check_script_path = os.path.join('/home', 'pi', 'SyncraftCore', 'scripts', 'check', 'repo', 'apply.py')
 
-            repo_status = self._config.repo_status(action.path)
+            command = f"python3 {check_script_path} --software {action.repo_name}"
+            repo_status: str = ''
 
-            if repo_status == 'up-to-date':
+            try:
+                repo_status = subprocess.check_output(command, shell=True, text=True)
+            except:
+                pass
+
+            if 'up-to-date' in repo_status:
                 name = f'{_("This software is already updated")}'
                 style_context = 'updated'
-            if repo_status == 'outdated':
+            if 'outdated' in repo_status:
                 name = f'{_("Update required").upper()}: {action.name}'
                 style_context = 'invalid'
-            elif repo_status == 'error':
+            if 'error' in repo_status:
                 name = f'{_("Error")}: {action.name}'.upper()
                 style_context = 'problem'
 
@@ -79,6 +77,7 @@ class UpdateWeb(ScreenPanel):
             else:
                 col = i % columns
                 row = int(i / columns)
+
             grid.attach(self.labels[action.code], col, row, 1, 1)
 
 

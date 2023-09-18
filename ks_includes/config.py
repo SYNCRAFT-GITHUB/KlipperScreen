@@ -7,6 +7,7 @@ import re
 import copy
 import pathlib
 import locale
+import git
 
 from io import StringIO
 
@@ -176,18 +177,13 @@ class KlipperScreenConfig:
         except FileNotFoundError:
             return None
 
-    def repo_status(self, repo_path: str) -> str:
+    def internet_connection(self) -> bool:
         try:
-            repo = git.Repo(repo_path)
-            remote_branch = repo.remote().refs[0]
-            local_branch = repo.active_branch
-            if local_branch.commit != remote_branch.commit:
-                return 'outdated'
-            else:
-                return 'up-to-date'
-        except Exception as e:
-            print(f"Error: {e}")
-            return 'error'
+            socket.create_connection(("www.google.com", 80))
+            return True
+        except OSError:
+            pass
+        return False
 
     def validate_config(self):
         valid = True

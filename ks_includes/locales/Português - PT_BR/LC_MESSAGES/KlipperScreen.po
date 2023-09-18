@@ -273,7 +273,7 @@ msgid "Error"
 msgstr "Erro"
 
 msgid "Estimated Time Method"
-msgstr "Método de T. Estimado"
+msgstr "Método de Te. Estimado"
 
 msgid "Exclude Object"
 msgstr "Excluir Objeto"
@@ -589,7 +589,7 @@ msgid "Printer"
 msgstr "Impressora"
 
 msgid "Printer Connections"
-msgstr "Conexões da impressora"
+msgstr "Conexões"
 
 msgid "Printer Select"
 msgstr "Selecione a impressora"
@@ -674,7 +674,7 @@ msgid "Screen DPMS"
 msgstr "Tela DPMS"
 
 msgid "Screen Power Off Time"
-msgstr "Tempo de desligamento da tela"
+msgstr "Descanso de Tela"
 
 msgid "Screws Adjust"
 msgstr "Niv. Manual"
@@ -1160,3 +1160,9 @@ msgstr "Este software já está atualizado"
 
 msgid "Restart to apply"
 msgstr "Reinicie a Syncraft para aplicar"
+
+msgid "Calibration"
+msgstr "Calibração"
+
+msgid "Mesh"
+msgstr "Malha"

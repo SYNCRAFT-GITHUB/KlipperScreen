@@ -1147,3 +1147,9 @@ msgstr "このソフトウェアは既に最新バージョンです"
 
 msgid "Restart to apply"
 msgstr "適用するために再起動"
+
+msgid "Calibration"
+msgstr "校正する"
+
+msgid "Mesh"
+msgstr "メッシュ"

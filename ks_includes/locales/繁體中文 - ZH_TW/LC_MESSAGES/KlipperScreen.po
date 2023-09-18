@@ -1258,3 +1258,9 @@ msgstr "此軟體已經更新"
 
 msgid "Restart to apply"
 msgstr "重新啟動以套用"
+
+msgid "Calibration"
+msgstr "校準"
+
+msgid "Mesh"
+msgstr "網"

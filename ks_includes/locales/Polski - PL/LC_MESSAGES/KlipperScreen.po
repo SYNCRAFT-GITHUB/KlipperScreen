@@ -1267,3 +1267,9 @@ msgstr "To oprogramowanie jest już zaktualizowane"
 
 msgid "Restart to apply"
 msgstr "Uruchom ponownie, aby zastosować zmiany"
+
+msgid "Calibration"
+msgstr "Kalibrowanie"
+
+msgid "Mesh"
+msgstr "Siatka"

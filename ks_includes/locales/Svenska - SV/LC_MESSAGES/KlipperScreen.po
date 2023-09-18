@@ -1201,3 +1201,9 @@ msgstr "Den här programvaran är redan uppdaterad"
 
 msgid "Restart to apply"
 msgstr "Starta om för att tillämpa"
+
+msgid "Calibration"
+msgstr "Kalibrera"
+
+msgid "Mesh"
+msgstr "Maska"

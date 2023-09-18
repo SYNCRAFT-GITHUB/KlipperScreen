@@ -1141,3 +1141,9 @@ msgstr ""
 
 msgid "Restart to apply"
 msgstr ""
+
+msgid "Calibration"
+msgstr ""
+
+msgid "Mesh"
+msgstr ""
