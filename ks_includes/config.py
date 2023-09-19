@@ -7,7 +7,6 @@ import re
 import copy
 import pathlib
 import locale
-import git
 
 from io import StringIO
 
