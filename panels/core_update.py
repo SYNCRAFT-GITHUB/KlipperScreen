@@ -23,6 +23,7 @@ class UpdateWeb(ScreenPanel):
                 self.icon = icon
 
         softwares_path = os.path.join('/home', 'pi', 'SyncraftCore', 'softwares')
+        self.need_update: bool = False
 
         self.actions = [
             SystemAction(f"{_('Essential Files')}",   code='UPDATE_PDC',          icon='file',      repo_name='printerdataconfig'),
@@ -37,6 +38,15 @@ class UpdateWeb(ScreenPanel):
         scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         scroll.add(grid)
         self.content.add(scroll)
+
+
+        self.update_all_btn = self._gtk.Button('arrow-up', _('Full Update'), "color1")
+
+        self.update_all_btn.connect("clicked", self.update_all_action)
+
+        self.update_all_btn_space = 2
+        self.update_all_btn.get_style_context().add_class('update')
+        grid.attach(self.update_all_btn, 0, 0, 1, self.update_all_btn_space)
 
         columns = 1
 
@@ -54,23 +64,30 @@ class UpdateWeb(ScreenPanel):
             except:
                 pass
 
+            self.able_to_update: bool = False
+
             if 'up-to-date' in repo_status:
                 name = f'{_("This software is already updated")}'
                 style_context = 'updated'
             if 'outdated' in repo_status:
                 name = f'{_("Update required").upper()}: {action.name}'
                 style_context = 'invalid'
+                self.need_update = True
+                self.able_to_update = True
             if 'error' in repo_status:
                 name = f'{_("Error")}: {action.name}'.upper()
                 style_context = 'problem'
 
             self.labels[action.code] = self._gtk.Button(action.icon, f"{name}", f"color{1 + i % 4}")
             self.labels[action.code].get_style_context().add_class(style_context)
-            self.labels[action.code].connect("clicked", self.set_fix_option_to, action.code)
-            self.labels[action.code].connect("clicked", self.menu_item_clicked, "script", {
-            "name": _("System"),
-            "panel": "script"
-            })
+
+            if self.able_to_update:
+                self.labels[action.code].connect("clicked", self.set_fix_option_to, action.code)
+                self.labels[action.code].connect("clicked", self.menu_item_clicked, "script", {
+                "name": _("System"),
+                "panel": "script"
+                })
+
             if self._screen.vertical_mode:
                 row = i % columns
                 col = int(i / columns)
@@ -78,8 +95,19 @@ class UpdateWeb(ScreenPanel):
                 col = i % columns
                 row = int(i / columns)
 
-            grid.attach(self.labels[action.code], col, row, 1, 1)
+            grid.attach(self.labels[action.code], col, row+self.update_all_btn_space, 1, 1)
 
 
     def set_fix_option_to(self, button, newfixoption):
         self._config.replace_fix_option(newvalue=newfixoption)
+
+    def update_all_action(self, button):
+        if self.need_update:
+            self._config.replace_fix_option(newvalue='UPDATE_ALL')
+            self.menu_item_clicked(widget=None, panel="script", item={
+            "name": _("System"),
+            "panel": "script"
+            })
+        else:
+            message: str = _("This software is already updated")
+            self._screen.show_popup_message(message, level=2)

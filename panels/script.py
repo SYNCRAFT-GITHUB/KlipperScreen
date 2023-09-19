@@ -153,12 +153,15 @@ class ExecuteScript(ScreenPanel):
         
         class SCRIPT:
             class UPDATE:
+                DOWNLOAD_ALL = os.path.join(core, 'scripts', 'core', 'update', 'apply.py')
+                APPLY_ALL = os.path.join(update_dir, 'apply.sh')
                 KLE = os.path.join(update_dir, 'kle', 'apply.sh')
                 KS = os.path.join(update_dir, 'klipperscreen', 'apply.sh')
                 MAINSAIL = os.path.join(update_dir, 'mainsail', 'apply.sh')
                 MOONRAKER = os.path.join(update_dir, 'moonraker', 'apply.sh')
                 PDC = os.path.join(pdc_dir, 'update', 'apply.py')
             class REVERT:
+                APPLY_ALL = os.path.join(revert_dir, 'apply.sh')
                 KLE = os.path.join(revert_dir, 'kle', 'apply.sh')
                 KS = os.path.join(revert_dir, 'klipperscreen', 'apply.sh')
                 MAINSAIL = os.path.join(revert_dir, 'mainsail', 'apply.sh')
@@ -167,6 +170,15 @@ class ExecuteScript(ScreenPanel):
             class USB:
                 SLICER = os.path.join(core, 'slicer', 'apply.sh')
                 LOGS = os.path.join(pdc_dir, 'logs', 'usb', 'apply.sh')
+
+        if (fix_option == "UPDATE_ALL"):
+            core_script(SCRIPT.UPDATE.DOWNLOAD_ALL)
+            core_script(SCRIPT.UPDATE.APPLY_ALL)
+            os.system('sudo reboot')
+
+        if (fix_option == "REVERT_ALL"):
+            core_script(SCRIPT.REVERT.APPLY_ALL)
+            os.system('sudo reboot')
 
         if (fix_option == "UPDATE_KLE"):
             core_script(SCRIPT.UPDATE.KLE)
