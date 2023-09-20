@@ -44,8 +44,5 @@ class UpdateFromUsbPanel(ScreenPanel):
 
         self.content.add(self.labels['update_from_usb'])
 
-    def nothing (self):
-        pass
-
     def set_fix_option_to(self, button, newfixoption):
         self._config.replace_fix_option(newvalue=newfixoption)

@@ -130,7 +130,7 @@ class ExecuteScript(ScreenPanel):
                 message: str = _("USB not inserted into Printer")
                 self._screen.show_popup_message(message, level=2)
                 return None
-            if not self.internet_connection() and web == True:
+            if not self._config.internet_connection() and web:
                 message: str = _("This procedure requires internet connection")
                 self._screen.show_popup_message(message, level=2)
                 return None
@@ -186,7 +186,7 @@ class ExecuteScript(ScreenPanel):
 
         if (fix_option == "UPDATE_KS"):
             core_script(SCRIPT.UPDATE.KS)
-            self._screen.reload_panels()
+            os.system('sudo reboot')
 
         if (fix_option == "UPDATE_MAINSAIL"):
             core_script(SCRIPT.UPDATE.MAINSAIL)

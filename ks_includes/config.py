@@ -1,5 +1,6 @@
 import configparser
 import gettext
+import socket
 import os
 import logging
 import json
