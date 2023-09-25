@@ -1344,3 +1344,33 @@ msgstr "Étalonner"
 
 msgid "Mesh"
 msgstr "Engrener"
+
+msgid "There is a new update available"
+msgstr "Une nouvelle mise à jour est disponible"
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr "Une nouvelle mise à jour est disponible, mettez à jour en utilisant le menu Syncraft"
+
+msgid "New update available"
+msgstr "Nouvelle mise à jour disponible"
+
+msgid "No updates available"
+msgstr "Aucune mise à jour disponible"
+
+msgid "Download Update"
+msgstr "Télécharger la mise à jour"
+
+msgid "Click to download the new update"
+msgstr "Cliquez pour télécharger la nouvelle mise à jour"
+
+msgid "Your machine is out of date"
+msgstr "Votre machine est obsolète"
+
+msgid "Everything is properly updated"
+msgstr "Tout est correctement mis à jour"
+
+msgid "Please wait"
+msgstr "Veuillez patienter"
+
+msgid "In progress, please wait"
+msgstr "En cours, veuillez patienter"

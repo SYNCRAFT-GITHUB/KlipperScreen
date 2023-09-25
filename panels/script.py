@@ -126,8 +126,13 @@ class ExecuteScript(ScreenPanel):
         def core_script(core_script_dir: str, usb: bool = False, web=False):
 
             usb_machine_path: str = os.path.join('/home', 'pi', 'printer_data', 'gcodes', 'USB')
-            if len(os.listdir(usb_machine_path)) == 0:
-                message: str = _("USB not inserted into Printer")
+            if os.path.exists(usb_machine_path):
+                if len(os.listdir(usb_machine_path)) == 0:
+                    message: str = _("USB not inserted into Printer")
+                    self._screen.show_popup_message(message, level=2)
+                    return None
+            else:
+                message: str = _("An error has occurred")
                 self._screen.show_popup_message(message, level=2)
                 return None
             if not self._config.internet_connection() and web:
@@ -153,6 +158,7 @@ class ExecuteScript(ScreenPanel):
         
         class SCRIPT:
             class UPDATE:
+                USB = os.path.join(maintenance, 'usb', 'apply.sh')
                 DOWNLOAD_ALL = os.path.join(core, 'scripts', 'core', 'update', 'apply.py')
                 APPLY_ALL = os.path.join(update_dir, 'apply.sh')
                 KLE = os.path.join(update_dir, 'kle', 'apply.sh')
@@ -171,6 +177,10 @@ class ExecuteScript(ScreenPanel):
                 SLICER = os.path.join(core, 'slicer', 'apply.sh')
                 LOGS = os.path.join(pdc_dir, 'logs', 'usb', 'apply.sh')
 
+        if (fix_option == "UPDATE_USB"):
+            core_script(SCRIPT.UPDATE.USB)
+            os.system('sudo reboot')
+        
         if (fix_option == "UPDATE_ALL"):
             core_script(SCRIPT.UPDATE.DOWNLOAD_ALL)
             core_script(SCRIPT.UPDATE.APPLY_ALL)

@@ -1288,3 +1288,33 @@ msgstr "校准"
 
 msgid "Mesh"
 msgstr "网"
+
+msgid "There is a new update available"
+msgstr "有新的更新可用"
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr "有新的更新可用，使用菜单更新"
+
+msgid "New update available"
+msgstr "有新的更新可用"
+
+msgid "No updates available"
+msgstr "没有可用的更新"
+
+msgid "Download Update"
+msgstr "下载更新"
+
+msgid "Click to download the new update"
+msgstr "点击下载新的更新"
+
+msgid "Your machine is out of date"
+msgstr "您的机器已过时"
+
+msgid "Everything is properly updated"
+msgstr "一切都已正确更新"
+
+msgid "Please wait"
+msgstr "请等待"
+
+msgid "In progress, please wait"
+msgstr "正在进行，请等待"

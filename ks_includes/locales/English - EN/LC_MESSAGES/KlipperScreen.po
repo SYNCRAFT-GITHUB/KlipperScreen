@@ -1147,3 +1147,33 @@ msgstr ""
 
 msgid "Mesh"
 msgstr ""
+
+msgid "There is a new update available"
+msgstr ""
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr ""
+
+msgid "New update available"
+msgstr ""
+
+msgid "No updates available"
+msgstr ""
+
+msgid "Download Update"
+msgstr ""
+
+msgid "Click to download the new update"
+msgstr ""
+
+msgid "Your machine is out of date"
+msgstr ""
+
+msgid "Everything is properly updated"
+msgstr ""
+
+msgid "Please wait"
+msgstr ""
+
+msgid "In progress, please wait"
+msgstr ""

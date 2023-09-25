@@ -1153,3 +1153,33 @@ msgstr "校正する"
 
 msgid "Mesh"
 msgstr "メッシュ"
+
+msgid "There is a new update available"
+msgstr "新しいアップデートが利用可能です"
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr "メニューを使用して新しいアップデートをダウンロードしてください"
+
+msgid "New update available"
+msgstr "新しいアップデートが利用可能です"
+
+msgid "No updates available"
+msgstr "利用可能なアップデートはありません"
+
+msgid "Download Update"
+msgstr "アップデートをダウンロード"
+
+msgid "Click to download the new update"
+msgstr "新しいアップデートをダウンロードするにはクリックしてください"
+
+msgid "Your machine is out of date"
+msgstr "お使いのマシンは最新ではありません"
+
+msgid "Everything is properly updated"
+msgstr "すべてが正しく更新されています"
+
+msgid "Please wait"
+msgstr "お待ちください"
+
+msgid "In progress, please wait"
+msgstr "進行中です、お待ちください

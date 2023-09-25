@@ -1273,3 +1273,33 @@ msgstr "Kalibrowanie"
 
 msgid "Mesh"
 msgstr "Siatka"
+
+msgid "There is a new update available"
+msgstr "Dostępna jest nowa aktualizacja"
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr "Dostępna jest nowa aktualizacja, zaktualizuj za pomocą menu Syncraft"
+
+msgid "New update available"
+msgstr "Dostępna jest nowa aktualizacja"
+
+msgid "No updates available"
+msgstr "Brak dostępnych aktualizacji"
+
+msgid "Download Update"
+msgstr "Pobierz aktualizację"
+
+msgid "Click to download the new update"
+msgstr "Kliknij, aby pobrać nową aktualizację"
+
+msgid "Your machine is out of date"
+msgstr "Twój sprzęt jest przestarzały"
+
+msgid "Everything is properly updated"
+msgstr "Wszystko jest odpowiednio zaktualizowane"
+
+msgid "Please wait"
+msgstr "Proszę czekać"
+
+msgid "In progress, please wait"
+msgstr "W trakcie, proszę czekać"

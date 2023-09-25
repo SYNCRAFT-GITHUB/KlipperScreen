@@ -1299,3 +1299,33 @@ msgstr "Kalibrieren"
 
 msgid "Mesh"
 msgstr "Gittergewebe"
+
+msgid "There is a new update available"
+msgstr "Es steht ein neues Update zur Verfügung"
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr "Es steht ein neues Update zur Verfügung, aktualisieren Sie über das Syncraft-Menü"
+
+msgid "New update available"
+msgstr "Neues Update verfügbar"
+
+msgid "No updates available"
+msgstr "Keine Updates verfügbar"
+
+msgid "Download Update"
+msgstr "Update herunterladen"
+
+msgid "Click to download the new update"
+msgstr "Klicken Sie, um das neue Update herunterzuladen"
+
+msgid "Your machine is out of date"
+msgstr "Ihre Maschine ist veraltet"
+
+msgid "Everything is properly updated"
+msgstr "Alles ist ordnungsgemäß aktualisiert"
+
+msgid "Please wait"
+msgstr "Bitte warten"
+
+msgid "In progress, please wait"
+msgstr "In Bearbeitung, bitte warten"

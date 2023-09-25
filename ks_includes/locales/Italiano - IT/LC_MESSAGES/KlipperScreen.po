@@ -1282,3 +1282,33 @@ msgstr "Calibrare"
 
 msgid "Mesh"
 msgstr "Maglia"
+
+msgid "There is a new update available"
+msgstr "È disponibile un nuovo aggiornamento"
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr "È disponibile un nuovo aggiornamento, aggiornare utilizzando il menu Syncraft"
+
+msgid "New update available"
+msgstr "Nuovo aggiornamento disponibile"
+
+msgid "No updates available"
+msgstr "Nessun aggiornamento disponibile"
+
+msgid "Download Update"
+msgstr "Scarica l'aggiornamento"
+
+msgid "Click to download the new update"
+msgstr "Fai clic per scaricare il nuovo aggiornamento"
+
+msgid "Your machine is out of date"
+msgstr "La tua macchina è obsoleta"
+
+msgid "Everything is properly updated"
+msgstr "Tutto è stato correttamente aggiornato"
+
+msgid "Please wait"
+msgstr "Attendere prego"
+
+msgid "In progress, please wait"
+msgstr "In corso, attendere prego"

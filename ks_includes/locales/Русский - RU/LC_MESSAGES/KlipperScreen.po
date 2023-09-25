@@ -1333,3 +1333,33 @@ msgstr "Калибровка"
 
 msgid "Mesh"
 msgstr "сетка"
+
+msgid "There is a new update available"
+msgstr "Доступно новое обновление"
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr "Пожалуйста, загрузите новое обновление, используя меню"
+
+msgid "New update available"
+msgstr "Доступно новое обновление"
+
+msgid "No updates available"
+msgstr "Нет доступных обновлений"
+
+msgid "Download Update"
+msgstr "Загрузить обновление"
+
+msgid "Click to download the new update"
+msgstr "Нажмите, чтобы загрузить новое обновление"
+
+msgid "Your machine is out of date"
+msgstr "Ваше устройство устарело"
+
+msgid "Everything is properly updated"
+msgstr "Все актуально и обновлено"
+
+msgid "Please wait"
+msgstr "Пожалуйста, подождите"
+
+msgid "In progress, please wait"
+msgstr "Идет выполнение, пожалуйста, подождите"

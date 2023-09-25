@@ -1166,3 +1166,33 @@ msgstr "Calibração"
 
 msgid "Mesh"
 msgstr "Malha"
+
+msgid "There is a new update available"
+msgstr "Há uma nova atualização disponível"
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr "Há uma nova atualização disponível, atualize usando o menu Syncraft"
+
+msgid "New update available"
+msgstr "Nova atualização disponível"
+
+msgid "No updates available"
+msgstr "Não há atualizações disponíveis"
+
+msgid "Download Update"
+msgstr "Baixar Atualização"
+
+msgid "Click to download the new update"
+msgstr "Clique para baixar a nova atualização"
+
+msgid "Your machine is out of date"
+msgstr "Sua máquina está desatualizada"
+
+msgid "Everything is properly updated"
+msgstr "Tudo está devidamente atualizado"
+
+msgid "Please wait"
+msgstr "Por favor, aguarde"
+
+msgid "In progress, please wait"
+msgstr "Em progresso, por favor, aguarde"
