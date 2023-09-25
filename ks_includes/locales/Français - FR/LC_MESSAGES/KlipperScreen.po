@@ -1033,9 +1033,6 @@ msgstr "mm³/s"
 #~ msgid "Fan -"
 #~ msgstr "Ventilateur-"
 
-#~ msgid "System Information"
-#~ msgstr "Info systeme"
-
 #~ msgid "Time Elapsed"
 #~ msgstr "Temps écoulé"
 
@@ -1374,3 +1371,24 @@ msgstr "Veuillez patienter"
 
 msgid "In progress, please wait"
 msgstr "En cours, veuillez patienter"
+
+msgid "System Information"
+msgstr "Informations système"
+
+msgid "Information"
+msgstr "Information"
+
+msgid "Export Logs"
+msgstr "Exporter les journaux"
+
+msgid "Export Syncraft Packs"
+msgstr "Exporter les packs Syncraft"
+
+msgid "Platform"
+msgstr "Plateforme"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "Model"
+msgstr "Modèle"

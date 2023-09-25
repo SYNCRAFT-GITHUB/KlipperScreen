@@ -1363,3 +1363,24 @@ msgstr "Пожалуйста, подождите"
 
 msgid "In progress, please wait"
 msgstr "Идет выполнение, пожалуйста, подождите"
+
+msgid "System Information"
+msgstr "Информация о системе"
+
+msgid "Information"
+msgstr "Информация"
+
+msgid "Export Logs"
+msgstr "Экспорт журналов"
+
+msgid "Export Syncraft Packs"
+msgstr "Экспорт пакетов Syncraft"
+
+msgid "Platform"
+msgstr "Платформа"
+
+msgid "Version"
+msgstr "Версия"
+
+msgid "Model"
+msgstr "Модель"

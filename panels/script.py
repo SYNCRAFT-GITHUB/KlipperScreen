@@ -151,83 +151,29 @@ class ExecuteScript(ScreenPanel):
                 return None
 
         core = os.path.join('/home', 'pi', 'SyncraftCore')
-        maintenance = os.path.join(core, 'scripts', 'maintenance')
-        pdc_dir = os.path.join(core, 'scripts', 'pdc')
-        update_dir = os.path.join(maintenance, 'update')
-        revert_dir = os.path.join(maintenance, 'revert')
         
         class SCRIPT:
             class UPDATE:
-                USB = os.path.join(maintenance, 'usb', 'apply.sh')
-                DOWNLOAD_ALL = os.path.join(core, 'scripts', 'core', 'update', 'apply.py')
-                APPLY_ALL = os.path.join(update_dir, 'apply.sh')
-                KLE = os.path.join(update_dir, 'kle', 'apply.sh')
-                KS = os.path.join(update_dir, 'klipperscreen', 'apply.sh')
-                MAINSAIL = os.path.join(update_dir, 'mainsail', 'apply.sh')
-                MOONRAKER = os.path.join(update_dir, 'moonraker', 'apply.sh')
-                PDC = os.path.join(pdc_dir, 'update', 'apply.py')
+                DOWNLOAD = os.path.join(core, 'core', 'update', 'apply.py')
+                APPLY = os.path.join(core, 'state', 'upgrade', 'apply.sh')
             class REVERT:
-                APPLY_ALL = os.path.join(revert_dir, 'apply.sh')
-                KLE = os.path.join(revert_dir, 'kle', 'apply.sh')
-                KS = os.path.join(revert_dir, 'klipperscreen', 'apply.sh')
-                MAINSAIL = os.path.join(revert_dir, 'mainsail', 'apply.sh')
-                MOONRAKER = os.path.join(revert_dir, 'moonraker', 'apply.sh')
-                PDC = os.path.join(pdc_dir, 'revert', 'apply.py')
+                APPLY = os.path.join(core, 'state', 'downgrade', 'apply.sh')
             class USB:
-                SLICER = os.path.join(core, 'slicer', 'apply.sh')
-                LOGS = os.path.join(pdc_dir, 'logs', 'usb', 'apply.sh')
+                UPDATE = os.path.join(core, 'usb', 'update','apply.sh')
+                SLICER = os.path.join(core, 'usb', 'slicer','apply.sh')
+                LOGS = os.path.join(core, 'usb', 'logs','apply.sh')
 
         if (fix_option == "UPDATE_USB"):
-            core_script(SCRIPT.UPDATE.USB)
+            core_script(SCRIPT.USB.UPDATE)
             os.system('sudo reboot')
         
         if (fix_option == "UPDATE_ALL"):
-            core_script(SCRIPT.UPDATE.DOWNLOAD_ALL)
-            core_script(SCRIPT.UPDATE.APPLY_ALL)
+            core_script(SCRIPT.UPDATE.DOWNLOAD)
+            core_script(SCRIPT.UPDATE.APPLY)
             os.system('sudo reboot')
 
         if (fix_option == "REVERT_ALL"):
-            core_script(SCRIPT.REVERT.APPLY_ALL)
-            os.system('sudo reboot')
-
-        if (fix_option == "UPDATE_KLE"):
-            core_script(SCRIPT.UPDATE.KLE)
-            self._screen.reload_panels()
-
-        if (fix_option == "UPDATE_KS"):
-            core_script(SCRIPT.UPDATE.KS)
-            os.system('sudo reboot')
-
-        if (fix_option == "UPDATE_MAINSAIL"):
-            core_script(SCRIPT.UPDATE.MAINSAIL)
-            os.system('sudo reboot')
-
-        if (fix_option == "UPDATE_MOONRAKER"):
-            core_script(SCRIPT.UPDATE.MOONRAKER)
-            self._screen.reload_panels()
-
-        if (fix_option == "UPDATE_PDC"):
-            core_script(SCRIPT.UPDATE.PDC)
-            os.system('sudo reboot')
-
-        if (fix_option == "REVERT_KLE"):
-            core_script(SCRIPT.REVERT.KLE)
-            self._screen.reload_panels()
-
-        if (fix_option == "REVERT_KS"):
-            core_script(SCRIPT.REVERT.KS)
-            self._screen.reload_panels()
-
-        if (fix_option == "REVERT_MAINSAIL"):
-            core_script(SCRIPT.REVERT.MAINSAIL)
-            os.system('sudo reboot')
-
-        if (fix_option == "REVERT_MOONRAKER"):
-            core_script(SCRIPT.REVERT.MOONRAKER)
-            self._screen.reload_panels()
-
-        if (fix_option == "REVERT_PDC"):
-            core_script(SCRIPT.REVERT.PDC)
+            core_script(SCRIPT.REVERT.APPLY)
             os.system('sudo reboot')
 
         if (fix_option == "USB_SLICER"):

@@ -1329,3 +1329,24 @@ msgstr "Bitte warten"
 
 msgid "In progress, please wait"
 msgstr "In Bearbeitung, bitte warten"
+
+msgid "System Information"
+msgstr "Systeminformationen"
+
+msgid "Information"
+msgstr "Information"
+
+msgid "Export Logs"
+msgstr "Protokolle exportieren"
+
+msgid "Export Syncraft Packs"
+msgstr "Syncraft-Pakete exportieren"
+
+msgid "Platform"
+msgstr "Plattform"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "Model"
+msgstr "Modell"

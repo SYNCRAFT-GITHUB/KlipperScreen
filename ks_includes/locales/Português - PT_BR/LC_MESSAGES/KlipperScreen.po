@@ -1144,7 +1144,7 @@ msgid "Are you sure you want to Update?"
 msgstr "Tem certeza de que deseja atualizar?"
 
 msgid "Export Syncraft Installers to USB"
-msgstr "Exportar Instaladores do Syncraft para USB"
+msgstr "Exportar Pacotes Syncraft"
 
 msgid "Your system version does not support this feature"
 msgstr "A versão do seu sistema não suporta esta funcionalidade"
@@ -1196,3 +1196,24 @@ msgstr "Por favor, aguarde"
 
 msgid "In progress, please wait"
 msgstr "Em progresso, por favor, aguarde"
+
+msgid "System Information"
+msgstr "Informações do Sistema"
+
+msgid "Information"
+msgstr "Informações"
+
+msgid "Export Logs"
+msgstr "Exportar Logs"
+
+msgid "Export Syncraft Packs"
+msgstr "Exportar Pacotes Syncraft"
+
+msgid "Platform"
+msgstr "Plataforma"
+
+msgid "Version"
+msgstr "Versão"
+
+msgid "Model"
+msgstr "Modelo"

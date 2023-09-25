@@ -22,8 +22,8 @@ class SyncraftPanel(ScreenPanel):
         self.buttons = {
             'UPDATE': self._gtk.Button("update", _("Update via Internet"), "color1"),
             'REVERT': self._gtk.Button ("stock", _("Factory Reset"), "color1"),
-            'UPDATE_USB': self._gtk.Button("usb", _("Update via USB"), "color1"),
-            'LOGS_USB': self._gtk.Button("usb-save", _("Export Logs to USB"), "color1"),
+            'USB_ACTIONS': self._gtk.Button("usb", _("USB"), "color1"),
+            'SYSTEM_INFO': self._gtk.Button("info", _("System Information"), "color1"),
         }
         self.buttons['UPDATE'].connect("clicked", self.menu_item_clicked, "update", {
             "name": _("Update"),
@@ -34,23 +34,21 @@ class SyncraftPanel(ScreenPanel):
             "name":_("System"),
             "panel": "script"
         })
-        self.buttons['UPDATE_USB'].connect("clicked",self.set_fix_option_to,"UPDATE_USB")
-        self.buttons['UPDATE_USB'].connect("clicked", self.menu_item_clicked, "script", {
+        self.buttons['USB_ACTIONS'].connect("clicked", self.menu_item_clicked, "USB_ACTIONS", {
             "name": _("System"),
-            "panel": "script"
+            "panel": "usb_actions"
         })
-        self.buttons['LOGS_USB'].connect("clicked",self.set_fix_option_to,"USB_LOGS")
-        self.buttons['LOGS_USB'].connect("clicked", self.menu_item_clicked, "script", {
-            "name": _("System"),
-            "panel": "script"
+        self.buttons['SYSTEM_INFO'].connect("clicked", self.menu_item_clicked, "system_info", {
+            "name": _("Information"),
+            "panel": "system_info"
         })
 
         grid = self._gtk.HomogeneousGrid()
 
         grid.attach(self.buttons['REVERT'], 0, 1, 1, 1)
         grid.attach(self.buttons['UPDATE'], 0, 0, 1, 1)
-        grid.attach(self.buttons['UPDATE_USB'], 1, 0, 1, 1)
-        grid.attach(self.buttons['LOGS_USB'], 1, 1, 1, 1)
+        grid.attach(self.buttons['USB_ACTIONS'], 1, 0, 1, 1)
+        grid.attach(self.buttons['SYSTEM_INFO'], 1, 1, 1, 1)
 
         self.labels['syncraft_panel'] = self._gtk.HomogeneousGrid()
         self.labels['syncraft_panel'].attach(grid, 0, 0, 1, 2)

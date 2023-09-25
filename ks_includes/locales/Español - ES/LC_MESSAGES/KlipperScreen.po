@@ -1353,3 +1353,24 @@ msgstr "Por favor, espere"
 
 msgid "In progress, please wait"
 msgstr "En progreso, por favor, espere"
+
+msgid "System Information"
+msgstr "Información del Sistema"
+
+msgid "Information"
+msgstr "Información"
+
+msgid "Export Logs"
+msgstr "Exportar Registros"
+
+msgid "Export Syncraft Packs"
+msgstr "Exportar Paquetes de Syncraft"
+
+msgid "Platform"
+msgstr "Plataforma"
+
+msgid "Version"
+msgstr "Versión"
+
+msgid "Model"
+msgstr "Modelo"

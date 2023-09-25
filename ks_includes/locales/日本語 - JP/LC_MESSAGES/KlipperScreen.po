@@ -1183,3 +1183,24 @@ msgstr "お待ちください"
 
 msgid "In progress, please wait"
 msgstr "進行中です、お待ちください
+
+msgid "System Information"
+msgstr "システム情報"
+
+msgid "Information"
+msgstr "情報"
+
+msgid "Export Logs"
+msgstr "ログのエクスポート"
+
+msgid "Export Syncraft Packs"
+msgstr "Syncraftパックのエクスポート"
+
+msgid "Platform"
+msgstr "プラットフォーム"
+
+msgid "Version"
+msgstr "バージョン"
+
+msgid "Model"
+msgstr "モデル"

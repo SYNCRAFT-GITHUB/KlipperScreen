@@ -1318,3 +1318,24 @@ msgstr "请等待"
 
 msgid "In progress, please wait"
 msgstr "正在进行，请等待"
+
+msgid "System Information"
+msgstr "系统信息"
+
+msgid "Information"
+msgstr "信息"
+
+msgid "Export Logs"
+msgstr "导出日志"
+
+msgid "Export Syncraft Packs"
+msgstr "导出Syncraft包"
+
+msgid "Platform"
+msgstr "平台"
+
+msgid "Version"
+msgstr "版本"
+
+msgid "Model"
+msgstr "模型"

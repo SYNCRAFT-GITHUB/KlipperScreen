@@ -1251,3 +1251,24 @@ msgstr "기다려주십시오"
 
 msgid "In progress, please wait"
 msgstr "진행 중입니다. 기다려주십시오"
+
+msgid "System Information"
+msgstr "시스템 정보"
+
+msgid "Information"
+msgstr "정보"
+
+msgid "Export Logs"
+msgstr "로그 내보내기"
+
+msgid "Export Syncraft Packs"
+msgstr "Syncraft 팩 내보내기"
+
+msgid "Platform"
+msgstr "플랫폼"
+
+msgid "Version"
+msgstr "버전"
+
+msgid "Model"
+msgstr "모델"

@@ -1177,3 +1177,24 @@ msgstr ""
 
 msgid "In progress, please wait"
 msgstr ""
+
+msgid "System Information"
+msgstr ""
+
+msgid "Information"
+msgstr ""
+
+msgid "Export Logs"
+msgstr ""
+
+msgid "Export Syncraft Packs"
+msgstr ""
+
+msgid "Platform"
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+msgid "Model"
+msgstr ""
