@@ -1339,3 +1339,6 @@ msgstr "版本"
 
 msgid "Model"
 msgstr "模型"
+
+msgid "USB Device"
+msgstr "USB设备"

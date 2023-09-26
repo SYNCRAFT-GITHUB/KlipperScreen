@@ -1324,3 +1324,6 @@ msgstr "Wersja"
 
 msgid "Model"
 msgstr "Model"
+
+msgid "USB Device"
+msgstr "Urządzenie USB"

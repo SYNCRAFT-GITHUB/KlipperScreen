@@ -33,9 +33,10 @@ class SyncraftPanelBuster(ScreenPanel):
             "name": _("Quick System Fixes"),
             "panel": "fix"
         })
+        self.buttons['UPDATE_USB'].connect("clicked", self.set_fix_option_to, "UPDATEVIAUSB")
         self.buttons['UPDATE_USB'].connect("clicked", self.menu_item_clicked, "update_usb", {
-            "name": _("Update via USB"),
-            "panel": "update_usb"
+            "name": _("System"),
+            "panel": "script"
         })
         self.buttons['EXPORT_LOG'].connect("clicked", self.set_fix_option_to, "EXPORTLOGSTOUSB")
         self.buttons['EXPORT_LOG'].connect("clicked", self.menu_item_clicked, "script", {

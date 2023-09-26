@@ -1272,3 +1272,6 @@ msgstr "버전"
 
 msgid "Model"
 msgstr "모델"
+
+msgid "USB Device"
+msgstr "USB 장치"

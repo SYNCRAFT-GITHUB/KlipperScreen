@@ -1,4 +1,5 @@
 import logging
+import random
 import os
 import gi
 
@@ -50,7 +51,7 @@ class Configurations(ScreenPanel):
 
         for i, btn in enumerate(self.config_buttons):
 
-            self.button = self._gtk.Button(btn.icon, btn.title, "color1")
+            self.button = self._gtk.Button(btn.icon, btn.title, f"color{random.randint(1, 4)}")
             
             self.button.connect("clicked", self.menu_item_clicked, btn.panel, {
                 "name": _(btn.title),

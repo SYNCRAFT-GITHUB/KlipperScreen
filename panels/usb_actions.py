@@ -20,8 +20,8 @@ class UsbActions(ScreenPanel):
         self.menu = ['usb_actions_panel']
 
         self.buttons = {
-            'UPDATE': self._gtk.Button("usb-save", _("Update via USB"), "color1"),
-            'LOGS': self._gtk.Button ("logs", _("Export Logs"), "color1"),
+            'UPDATE': self._gtk.Button("usb-save", _("Update via USB"), "color3"),
+            'LOGS': self._gtk.Button ("logs", _("Export Logs"), "color2"),
             'SLICER': self._gtk.Button("cura", _("Export Syncraft Packs"), "color1"),
         }
         self.buttons['UPDATE'].connect("clicked",self.set_fix_option_to,"UPDATE_USB")
@@ -42,9 +42,9 @@ class UsbActions(ScreenPanel):
 
         grid = self._gtk.HomogeneousGrid()
 
-        grid.attach(self.buttons['UPDATE'], 0, 1, 1, 1)
+        grid.attach(self.buttons['UPDATE'], 1, 0, 1, 2)
         grid.attach(self.buttons['LOGS'], 0, 0, 1, 1)
-        grid.attach(self.buttons['SLICER'], 1, 0, 1, 1)
+        grid.attach(self.buttons['SLICER'], 0, 1, 1, 1)
 
         self.labels['usb_actions_panel'] = self._gtk.HomogeneousGrid()
         self.labels['usb_actions_panel'].attach(grid, 0, 0, 1, 2)

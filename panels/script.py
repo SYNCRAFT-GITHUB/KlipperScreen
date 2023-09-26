@@ -45,7 +45,7 @@ class ExecuteScript(ScreenPanel):
     def execute_buster (self, button):
 
         fix_option = self._config.get_fix_option()
-        offline_scripts = ["USB_DEFAULT", "USB_RECOVER", "CLEANGCODEFILES", "EXPORTLOGSTOUSB"]
+        offline_scripts = ["UPDATEVIAUSB", "CLEANGCODEFILES", "EXPORTLOGSTOUSB"]
 
         if not self._config.internet_connection() and fix_option not in offline_scripts:
             message: str = _("This procedure requires internet connection")
@@ -95,24 +95,12 @@ class ExecuteScript(ScreenPanel):
                 message: str = _("Error")
                 self._screen.show_popup_message(message, level=2)
 
-        if (fix_option == "USB_DEFAULT"):
+        if (fix_option == "UPDATEVIAUSB"):
 
             path: str = '/home/pi/printer_data/gcodes/USB/SYNCRAFT/update.sh'
 
             if not os.path.exists(path):
                 message: str = _("Update File not found")
-                self._screen.show_popup_message(message, level=2)
-
-            elif os.path.exists(path):
-                script_path = path
-                subprocess.call(['bash', script_path])
-
-        if (fix_option == "USB_RECOVER"):
-
-            path: str = '/home/pi/printer_data/gcodes/USB/SYNCRAFT/RECOVER/update.sh'
-
-            if not os.path.exists(path):
-                message: str = _("Backup File not found")
                 self._screen.show_popup_message(message, level=2)
 
             elif os.path.exists(path):
@@ -162,6 +150,9 @@ class ExecuteScript(ScreenPanel):
                 UPDATE = os.path.join(core, 'usb', 'update','apply.sh')
                 SLICER = os.path.join(core, 'usb', 'slicer','apply.sh')
                 LOGS = os.path.join(core, 'usb', 'logs','apply.sh')
+            class MACHINE:
+                APPLY = os.path.join(core, 'machine', 'apply.sh')
+                SXUSB = os.path.join(core, 'machine', 'usbsxservice', 'apply.sh')
 
         if (fix_option == "UPDATE_USB"):
             core_script(SCRIPT.USB.UPDATE)
@@ -174,6 +165,7 @@ class ExecuteScript(ScreenPanel):
 
         if (fix_option == "REVERT_ALL"):
             core_script(SCRIPT.REVERT.APPLY)
+            core_script(SCRIPT.SXUSB)
             os.system('sudo reboot')
 
         if (fix_option == "USB_SLICER"):
@@ -183,3 +175,7 @@ class ExecuteScript(ScreenPanel):
         if (fix_option == "USB_LOGS"):
             core_script(SCRIPT.USB.LOGS)
             self._screen.reload_panels()
+
+        if (fix_option == "CLEAR_GCODES"):
+            core_script(SCRIPT.MACHINE.SXUSB)
+            os.system('sudo reboot')

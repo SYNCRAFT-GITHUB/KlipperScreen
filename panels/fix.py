@@ -1,4 +1,5 @@
 import logging
+import random
 
 import gi
 
@@ -20,14 +21,14 @@ class FixPanel(ScreenPanel):
         self.menu = ['fix_panel']
 
         self.buttons = {
-            'FIX_FILES': self._gtk.Button("file", _("Essential Files"), "color1"),
-            'CLEAN_GCODE': self._gtk.Button("clean", _("Clear GCodes Folder"), "color1"),
-            'FIX_CAMERA': self._gtk.Button("camera", _("Camera Driver"), "color2"),
-            'FIX_KLIPPERSCREEN': self._gtk.Button("screen", _("KlipperScreen"), "color3"),
-            'FIX_MAINSAIL': self._gtk.Button("monitor", _("Mainsail"), "color3"),
-            'FIX_LED': self._gtk.Button("light", _("LED Light Driver"), "color4"),
-            'FIX_MOONRAKER': self._gtk.Button("moonraker", _("Moonraker"), "color1"),
-            'EXPORT_LOGS_USB': self._gtk.Button("usb-save", _("Export Logs to USB"), "color1"),
+            'FIX_FILES': self._gtk.Button("file", _("Essential Files"), f"color{random.randint(1, 4)}"),
+            'CLEAN_GCODE': self._gtk.Button("clean", _("Clear GCodes Folder"), f"color{random.randint(1, 4)}"),
+            'FIX_CAMERA': self._gtk.Button("camera", _("Camera Driver"), f"color{random.randint(1, 4)}"),
+            'FIX_KLIPPERSCREEN': self._gtk.Button("screen", _("KlipperScreen"), f"color{random.randint(1, 4)}"),
+            'FIX_MAINSAIL': self._gtk.Button("monitor", _("Mainsail"), f"color{random.randint(1, 4)}"),
+            'FIX_LED': self._gtk.Button("light", _("LED Light Driver"), f"color{random.randint(1, 4)}"),
+            'FIX_MOONRAKER': self._gtk.Button("moonraker", _("Moonraker"), f"color{random.randint(1, 4)}"),
+            'EXPORT_LOGS_USB': self._gtk.Button("usb-save", _("Export Logs to USB"), f"color{random.randint(1, 4)}"),
         }
 
         self.buttons['CLEAN_GCODE'].connect("clicked", self.set_fix_option_to, "CLEANGCODEFILES")
@@ -79,13 +80,11 @@ class FixPanel(ScreenPanel):
         grid = self._gtk.HomogeneousGrid()
 
         grid.attach(self.buttons['FIX_FILES'], 0, 0, 1, 1)
-        grid.attach(self.buttons['EXPORT_LOGS_USB'], 1, 0, 1, 1)
-        grid.attach(self.buttons['CLEAN_GCODE'], 1, 1, 1, 1)
         grid.attach(self.buttons['FIX_CAMERA'], 0, 3, 1, 1)
         grid.attach(self.buttons['FIX_KLIPPERSCREEN'], 0, 2, 1, 1)
         grid.attach(self.buttons['FIX_MAINSAIL'], 1, 2, 1, 1)
         grid.attach(self.buttons['FIX_LED'], 1, 3, 1, 1)
-        grid.attach(self.buttons['FIX_MOONRAKER'], 0, 1, 1, 1)
+        grid.attach(self.buttons['FIX_MOONRAKER'], 1, 0, 1, 1)
 
         self.labels['fix_panel'] = self._gtk.HomogeneousGrid()
         self.labels['fix_panel'].attach(grid, 0, 0, 2, 2)

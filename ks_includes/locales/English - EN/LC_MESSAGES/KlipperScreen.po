@@ -1198,3 +1198,6 @@ msgstr ""
 
 msgid "Model"
 msgstr ""
+
+msgid "USB Device"
+msgstr ""

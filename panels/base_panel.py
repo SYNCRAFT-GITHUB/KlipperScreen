@@ -23,7 +23,6 @@ class BasePanel(ScreenPanel):
         self.titlebar_items = []
         self.titlebar_name_type = None
         self.buttons_showing = {
-            'macros_shortcut': False,
             'brightness_shortcut': False,
             'printer_select': len(self._config.get_printers()) > 1,
         }
@@ -38,12 +37,6 @@ class BasePanel(ScreenPanel):
         if len(self._config.get_printers()) > 1:
             self.control['printer_select'] = self._gtk.Button('shuffle', scale=abscale)
             self.control['printer_select'].connect("clicked", self._screen.show_printer_select)
-
-        self.control['macros_shortcut'] = self._gtk.Button('custom-script', scale=abscale)
-        self.control['macros_shortcut'].connect("clicked", self.menu_item_clicked, "gcode_macros", {
-            "name": "Macros",
-            "panel": "gcode_macros"
-        })
 
         self.control['brightness_shortcut'] = self._gtk.Button('brightness-high', scale=abscale)
         self.control['brightness_shortcut'].connect("clicked", self.menu_item_clicked, "brightness", {
@@ -73,7 +66,6 @@ class BasePanel(ScreenPanel):
         self.show_back(False)
         if self.buttons_showing['printer_select']:
             self.action_bar.add(self.control['printer_select'])
-        self.show_macro_shortcut(self._config.get_main_config().getboolean('side_macro_shortcut', True))
         self.show_screen_brightness(self._config.get_main_config().getboolean('side_brightness_shortcut', True))
         self.action_bar.add(self.control['estop'])
         self.show_estop(False)
@@ -268,19 +260,6 @@ class BasePanel(ScreenPanel):
             return
         self.control['back'].set_sensitive(False)
         self.control['home'].set_sensitive(False)
-
-    def show_macro_shortcut(self, show=False):
-        if show is True and self.buttons_showing['macros_shortcut'] is False:
-            self.action_bar.add(self.control['macros_shortcut'])
-            if self.buttons_showing['printer_select'] is False:
-                self.action_bar.reorder_child(self.control['macros_shortcut'], 2)
-            else:
-                self.action_bar.reorder_child(self.control['macros_shortcut'], 3)
-            self.control['macros_shortcut'].show()
-            self.buttons_showing['macros_shortcut'] = True
-        elif show is False and self.buttons_showing['macros_shortcut'] is True:
-            self.action_bar.remove(self.control['macros_shortcut'])
-            self.buttons_showing['macros_shortcut'] = False
 
     def show_screen_brightness(self, show=False):
         if show is True and self.buttons_showing['brightness_shortcut'] is False:

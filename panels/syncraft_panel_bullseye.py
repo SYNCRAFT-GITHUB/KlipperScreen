@@ -20,9 +20,9 @@ class SyncraftPanel(ScreenPanel):
         self.menu = ['syncraft_panel']
 
         self.buttons = {
-            'UPDATE': self._gtk.Button("update", _("Update via Internet"), "color1"),
+            'UPDATE': self._gtk.Button("update", _("Update via Internet"), "color3"),
             'REVERT': self._gtk.Button ("stock", _("Factory Reset"), "color1"),
-            'USB_ACTIONS': self._gtk.Button("usb", _("USB"), "color1"),
+            'USB_ACTIONS': self._gtk.Button("usb", _("USB Device"), "color2"),
             'SYSTEM_INFO': self._gtk.Button("info", _("System Information"), "color1"),
         }
         self.buttons['UPDATE'].connect("clicked", self.menu_item_clicked, "update", {
@@ -35,7 +35,7 @@ class SyncraftPanel(ScreenPanel):
             "panel": "script"
         })
         self.buttons['USB_ACTIONS'].connect("clicked", self.menu_item_clicked, "USB_ACTIONS", {
-            "name": _("System"),
+            "name": _("USB Device"),
             "panel": "usb_actions"
         })
         self.buttons['SYSTEM_INFO'].connect("clicked", self.menu_item_clicked, "system_info", {

@@ -1392,3 +1392,6 @@ msgstr "Version"
 
 msgid "Model"
 msgstr "Modèle"
+
+msgid "USB Device"
+msgstr "Périphérique USB"

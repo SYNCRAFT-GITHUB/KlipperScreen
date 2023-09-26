@@ -1,5 +1,8 @@
+import subprocess
 import logging
 import platform
+import getmac
+import socket
 import gi
 import os
 
@@ -28,11 +31,13 @@ class SystemInfo(ScreenPanel):
         self.content.add(self.info)
 
         self.text: str = f"""
+        {_('Hostname')}: {socket.gethostname()}
         {_('Platform')}: {platform.platform()}
         {_('Version')}: {platform.release()}
         {_('Sistema')}: {platform.system()}
         {_('Modelo')}: {self.getScxModel()}
         {_('SyncraftCore')}: {os.path.exists(self.core_path)}
+        {_('MAC')}: {getmac.get_mac_address()}
         """
 
         self.labels['text'] = Gtk.Label(f"{self.text}")
@@ -56,3 +61,9 @@ class SystemInfo(ScreenPanel):
                 return prop.get('model')
         except:
             return 'X1'
+
+    def get_mac_address(self, ip_address):
+        arp_command = ['arp', '-n', ip_address]
+        output = subprocess.check_output(arp_command).decode()
+        mac_address = output.split()[3]
+        return mac_address

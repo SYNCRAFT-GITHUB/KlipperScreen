@@ -1204,3 +1204,6 @@ msgstr "バージョン"
 
 msgid "Model"
 msgstr "モデル"
+
+msgid "USB Device"
+msgstr "USBデバイス"
