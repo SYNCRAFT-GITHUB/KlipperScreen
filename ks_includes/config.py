@@ -45,6 +45,7 @@ class KlipperScreenConfig:
         self.config_path = self.get_config_file_location(configfile)
         logging.debug(f"Config path location: {self.config_path}")
         self.defined_config = None
+        self.empty_title = True
         self.lang = None
         self.langs = {}
         self.lang_converter = {
@@ -110,7 +111,7 @@ class KlipperScreenConfig:
             printers.append("Printer Printer")
         self.printers = [
             {printer[8:]: {
-                "moonraker_host": self.config.get(printer, "moonraker_host", fallback="pd02.local"),
+                "moonraker_host": self.config.get(printer, "moonraker_host", fallback="127.0.0.1"),
                 "moonraker_port": self.config.get(printer, "moonraker_port", fallback="7125"),
                 "moonraker_api_key": self.config.get(printer, "moonraker_api_key", fallback="").replace('"', '')
             }} for printer in printers

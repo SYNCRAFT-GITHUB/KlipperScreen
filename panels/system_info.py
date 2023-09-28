@@ -1,7 +1,6 @@
 import subprocess
 import logging
 import platform
-import getmac
 import socket
 import gi
 import os
@@ -37,7 +36,6 @@ class SystemInfo(ScreenPanel):
         {_('Sistema')}: {platform.system()}
         {_('Modelo')}: {self.getScxModel()}
         {_('SyncraftCore')}: {os.path.exists(self.core_path)}
-        {_('MAC')}: {getmac.get_mac_address()}
         """
 
         self.labels['text'] = Gtk.Label(f"{self.text}")

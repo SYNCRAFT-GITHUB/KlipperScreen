@@ -285,6 +285,9 @@ class BasePanel(ScreenPanel):
             self.buttons_showing['printer_select'] = False
 
     def set_title(self, title):
+        if self._config.empty_title:
+            self.titlelbl.set_label(f"")
+            return
         if not title:
             self.titlelbl.set_label(f"{self._screen.connecting_to_printer}")
             return
