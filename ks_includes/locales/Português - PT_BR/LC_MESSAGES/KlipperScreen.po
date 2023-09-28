@@ -664,7 +664,7 @@ msgid "Save configuration?"
 msgstr "Salvar configuração?"
 
 msgid "Saved"
-msgstr "Salvou"
+msgstr "Salvo"
 
 #, python-format
 msgid "Saved offset: %s"
