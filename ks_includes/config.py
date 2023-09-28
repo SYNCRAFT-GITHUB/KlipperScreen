@@ -164,10 +164,6 @@ class KlipperScreenConfig:
         self.lang.install(names=['gettext', 'ngettext'])
 
     def linux(self, version: str):
-        if version == 'bullseye':
-            return True
-        else:
-            return False
         try:
             with open("/etc/os-release", "r") as os_release_file:
                 for line in os_release_file:
