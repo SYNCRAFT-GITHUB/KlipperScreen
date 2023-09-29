@@ -235,8 +235,7 @@ class KlipperScreenConfig:
 
             for key in self.config[section]:
                 if key not in bools and key not in strs and key not in numbers:
-                    msg = f'Option "{key}" not recognized for section "[{section}]"'
-                    self.errors.append(msg)
+                    print(f'Option "{key}" not recognized for section "[{section}]"')
                     # This most probably is not a big issue, continue to load the config
                 elif key in numbers and not self.is_float(self.config[section][key]) \
                         or key in bools and self.config[section][key] not in ["False", "false", "True", "true"]:

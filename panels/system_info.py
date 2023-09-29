@@ -33,8 +33,8 @@ class SystemInfo(ScreenPanel):
         {_('Hostname')}: {socket.gethostname()}
         {_('Platform')}: {platform.platform()}
         {_('Version')}: {platform.release()}
-        {_('Sistema')}: {platform.system()}
-        {_('Modelo')}: {self.getScxModel()}
+        {_('System')}: {platform.system()}
+        {_('Model')}: {self.getScxModel()}
         {_('SyncraftCore')}: {os.path.exists(self.core_path)}
         """
 

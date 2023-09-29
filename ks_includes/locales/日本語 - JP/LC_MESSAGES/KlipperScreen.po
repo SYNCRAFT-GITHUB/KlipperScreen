@@ -1182,7 +1182,7 @@ msgid "Please wait"
 msgstr "お待ちください"
 
 msgid "In progress, please wait"
-msgstr "進行中です、お待ちください
+msgstr "進行中です、お待ちください"
 
 msgid "System Information"
 msgstr "システム情報"
@@ -1207,3 +1207,30 @@ msgstr "モデル"
 
 msgid "USB Device"
 msgstr "USBデバイス"
+
+msgid "Spool"
+msgstr "スプール"
+
+msgid "One"
+msgstr "一"
+
+msgid "Two"
+msgstr "二"
+
+msgid "Three"
+msgstr "三"
+
+msgid "Four"
+msgstr "四"
+
+msgid "Five"
+msgstr "五"
+
+msgid "Six"
+msgstr "六"
+
+msgid "Seven"
+msgstr "七"
+
+msgid "Eight"
+msgstr "八"

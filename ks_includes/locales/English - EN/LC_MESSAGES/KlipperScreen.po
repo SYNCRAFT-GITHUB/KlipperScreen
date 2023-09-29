@@ -1201,3 +1201,30 @@ msgstr ""
 
 msgid "USB Device"
 msgstr ""
+
+msgid "Spool"
+msgstr ""
+
+msgid "One"
+msgstr ""
+
+msgid "Two"
+msgstr ""
+
+msgid "Three"
+msgstr ""
+
+msgid "Four"
+msgstr ""
+
+msgid "Five"
+msgstr ""
+
+msgid "Six"
+msgstr ""
+
+msgid "Seven"
+msgstr ""
+
+msgid "Eight"
+msgstr ""

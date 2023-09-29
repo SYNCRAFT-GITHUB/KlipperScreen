@@ -1342,3 +1342,30 @@ msgstr "模型"
 
 msgid "USB Device"
 msgstr "USB设备"
+
+msgid "Spool"
+msgstr "卷轴"
+
+msgid "One"
+msgstr "一"
+
+msgid "Two"
+msgstr "二"
+
+msgid "Three"
+msgstr "三"
+
+msgid "Four"
+msgstr "四"
+
+msgid "Five"
+msgstr "五"
+
+msgid "Six"
+msgstr "六"
+
+msgid "Seven"
+msgstr "七"
+
+msgid "Eight"
+msgstr "八"

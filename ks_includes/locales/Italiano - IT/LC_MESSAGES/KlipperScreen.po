@@ -1336,3 +1336,30 @@ msgstr "Modello"
 
 msgid "USB Device"
 msgstr "Dispositivo USB"
+
+msgid "Spool"
+msgstr "Bobina"
+
+msgid "One"
+msgstr "Uno"
+
+msgid "Two"
+msgstr "Due"
+
+msgid "Three"
+msgstr "Tre"
+
+msgid "Four"
+msgstr "Quattro"
+
+msgid "Five"
+msgstr "Cinque"
+
+msgid "Six"
+msgstr "Sei"
+
+msgid "Seven"
+msgstr "Sette"
+
+msgid "Eight"
+msgstr "Otto"

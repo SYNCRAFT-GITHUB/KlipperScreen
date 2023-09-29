@@ -1275,3 +1275,30 @@ msgstr "모델"
 
 msgid "USB Device"
 msgstr "USB 장치"
+
+msgid "Spool"
+msgstr "스풀"
+
+msgid "One"
+msgstr "일"
+
+msgid "Two"
+msgstr "이"
+
+msgid "Three"
+msgstr "삼"
+
+msgid "Four"
+msgstr "사"
+
+msgid "Five"
+msgstr "오"
+
+msgid "Six"
+msgstr "육"
+
+msgid "Seven"
+msgstr "칠"
+
+msgid "Eight"
+msgstr "팔"

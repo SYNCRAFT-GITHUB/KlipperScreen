@@ -1093,7 +1093,7 @@ msgid "Material incompatibility Alert"
 msgstr "Alerta de incompatibilidade de material"
 
 msgid "Change Timezone"
-msgstr "Alerar Fuso Horário"
+msgstr "Alterar Fuso Horário"
 
 msgid "My timezone is not on the list"
 msgstr "Meu fuso horário não foi listado"
@@ -1220,3 +1220,30 @@ msgstr "Modelo"
 
 msgid "USB Device"
 msgstr "Dispositivo USB"
+
+msgid "Spool"
+msgstr "Carretel"
+
+msgid "One"
+msgstr "Um"
+
+msgid "Two"
+msgstr "Dois"
+
+msgid "Three"
+msgstr "Três"
+
+msgid "Four"
+msgstr "Quatro"
+
+msgid "Five"
+msgstr "Cinco"
+
+msgid "Six"
+msgstr "Seis"
+
+msgid "Seven"
+msgstr "Sete"
+
+msgid "Eight"
+msgstr "Oito"

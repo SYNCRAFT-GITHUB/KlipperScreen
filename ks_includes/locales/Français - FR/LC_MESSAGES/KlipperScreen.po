@@ -1395,3 +1395,30 @@ msgstr "Modèle"
 
 msgid "USB Device"
 msgstr "Périphérique USB"
+
+msgid "Spool"
+msgstr "Bobine"
+
+msgid "One"
+msgstr "Un"
+
+msgid "Two"
+msgstr "Deux"
+
+msgid "Three"
+msgstr "Trois"
+
+msgid "Four"
+msgstr "Quatre"
+
+msgid "Five"
+msgstr "Cinq"
+
+msgid "Six"
+msgstr "Six"
+
+msgid "Seven"
+msgstr "Sept"
+
+msgid "Eight"
+msgstr "Huit"

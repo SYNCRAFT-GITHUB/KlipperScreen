@@ -1387,3 +1387,30 @@ msgstr "Модель"
 
 msgid "USB Device"
 msgstr "Устройство USB"
+
+msgid "Spool"
+msgstr "Катушка"
+
+msgid "One"
+msgstr "Один"
+
+msgid "Two"
+msgstr "Два"
+
+msgid "Three"
+msgstr "Три"
+
+msgid "Four"
+msgstr "Четыре"
+
+msgid "Five"
+msgstr "Пять"
+
+msgid "Six"
+msgstr "Шесть"
+
+msgid "Seven"
+msgstr "Семь"
+
+msgid "Eight"
+msgstr "Восемь"
