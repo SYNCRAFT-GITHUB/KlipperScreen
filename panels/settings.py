@@ -19,13 +19,34 @@ class SettingsPanel(ScreenPanel):
         options.append({"printers": {
             "name": _("Printer Connections"),
             "type": "menu",
-            "menu": "printers"
+            "menu": "printers",
+            "icon": "moonraker"
         }})
         options.append({"change_system_timezone": {
             "name": _("Change Timezone"),
             "type": "panel",
-            "panel": "timezone_select"
+            "panel": "timezone_select",
+            "icon": "world-web"
         }})
+        options.append({"system_info": {
+            "name": _("System Information"),
+            "type": "panel",
+            "panel": "system_info",
+            "icon": "info"
+        }})
+        options.append({"clear_gcodes": {
+            "name": _("Clear GCodes Folder"),
+            "type": "script",
+            "script": "CLEANGCODEFILES" if self._config.linux('buster') else "CLEAR_GCODES",
+            "icon": "custom-script"
+        }})
+        if not self._config.linux('buster'):
+            options.append({"factory_reset": {
+                "name": _("Factory Reset"),
+                "type": "script",
+                "script": "REVERT_ALL",
+                "icon": "stock"
+            }})
 
         self.labels['settings_menu'] = self._gtk.ScrolledWindow()
         self.labels['settings'] = Gtk.Grid()
@@ -120,10 +141,20 @@ class SettingsPanel(ScreenPanel):
             open_menu.set_halign(Gtk.Align.END)
             dev.add(open_menu)
         elif option['type'] == "panel":
-            open_panel = self._gtk.Button("settings", style="color3")
+            open_panel = self._gtk.Button(option['icon'], style="color3")
             open_panel.connect("clicked", self.menu_item_clicked, option['panel'], {
             "name": option['name'],
             "panel": option['panel']
+            })
+            open_panel.set_hexpand(False)
+            open_panel.set_halign(Gtk.Align.END)
+            dev.add(open_panel)
+        elif option['type'] == "script":
+            open_panel = self._gtk.Button(option['icon'], style="color3")
+            open_panel.connect("clicked",self.set_fix_option_to, option['script'])
+            open_panel.connect("clicked", self.menu_item_clicked, "script", {
+            "name": option['name'],
+            "panel": "script"
             })
             open_panel.set_hexpand(False)
             open_panel.set_halign(Gtk.Align.END)
@@ -140,3 +171,6 @@ class SettingsPanel(ScreenPanel):
         self.labels[boxname].insert_row(pos)
         self.labels[boxname].attach(opt_array[opt_name]['row'], 0, pos, 1, 1)
         self.labels[boxname].show_all()
+
+    def set_fix_option_to(self, button, newfixoption):
+        self._config.replace_fix_option(newvalue=newfixoption)

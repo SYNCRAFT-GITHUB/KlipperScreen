@@ -1240,3 +1240,132 @@ msgstr "将日志导出到外部设备"
 
 msgid "Tap the screen to confirm"
 msgstr "点击屏幕确认"
+
+msgid "An error has occurred"
+msgstr "发生了错误"
+
+msgid "Are you sure?"
+msgstr "您确定吗？"
+
+msgid "Revert"
+msgstr "还原"
+
+msgid "Restore"
+msgstr "还原"
+
+msgid "Restore to Factory Default"
+msgstr "恢复到出厂设置"
+
+msgid "Restore All"
+msgstr "全部还原"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "您确定要恢复到出厂设置吗？"
+
+msgid "Are you sure you want to Update?"
+msgstr "您确定要更新吗？"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "将软件包安装程序导出到外部设备"
+
+msgid "Your system version does not support this feature"
+msgstr "您的系统版本不支持此功能"
+
+msgid "Out of Date"
+msgstr "已过期"
+
+msgid "Update required"
+msgstr "需要更新"
+
+msgid "This software is already updated"
+msgstr "此软件已经更新"
+
+msgid "Restart to apply"
+msgstr "重新启动以应用"
+
+msgid "Calibration"
+msgstr "校准"
+
+msgid "Mesh"
+msgstr "网"
+
+msgid "There is a new update available"
+msgstr "有新的更新可用"
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr "有新的更新可用，使用菜单更新"
+
+msgid "New update available"
+msgstr "有新的更新可用"
+
+msgid "No updates available"
+msgstr "没有可用的更新"
+
+msgid "Download Update"
+msgstr "下载更新"
+
+msgid "Click to download the new update"
+msgstr "点击下载新的更新"
+
+msgid "Your machine is out of date"
+msgstr "您的机器已过时"
+
+msgid "Everything is properly updated"
+msgstr "一切都已正确更新"
+
+msgid "Please wait"
+msgstr "请等待"
+
+msgid "In progress, please wait"
+msgstr "正在进行，请等待"
+
+msgid "System Information"
+msgstr "系统信息"
+
+msgid "Information"
+msgstr "信息"
+
+msgid "Export Logs"
+msgstr "导出日志"
+
+msgid "Export Syncraft Packs"
+msgstr "导出Syncraft包"
+
+msgid "Platform"
+msgstr "平台"
+
+msgid "Version"
+msgstr "版本"
+
+msgid "Model"
+msgstr "模型"
+
+msgid "USB Device"
+msgstr "USB设备"
+
+msgid "Spool"
+msgstr "卷轴"
+
+msgid "One"
+msgstr "一"
+
+msgid "Two"
+msgstr "二"
+
+msgid "Three"
+msgstr "三"
+
+msgid "Four"
+msgstr "四"
+
+msgid "Five"
+msgstr "五"
+
+msgid "Six"
+msgstr "六"
+
+msgid "Seven"
+msgstr "七"
+
+msgid "Eight"
+msgstr "八"

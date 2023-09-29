@@ -315,6 +315,9 @@ class KlipperScreen(Gtk.Window):
         if self.popup_message is not None:
             self.close_popup_message()
 
+        if 'timeout' in message.lower():
+            return
+
         messages = {
             '!PROEXTRUDER_DONT_MATCH_GCODE': _("The inserted Extruder is incompatible with this File"),
             '!MATERIAL_DONT_MATCH_GCODE': _("The material you're using is not compatible with this file"),
@@ -716,9 +719,6 @@ class KlipperScreen(Gtk.Window):
         msg = msg if "ready" not in msg else ""
         self.printer_initializing(_("Klipper has shutdown") + "\n\n" + msg, remove=True)
 
-    def toggle_macro_shortcut(self, value):
-        self.base_panel.show_macro_shortcut(value)
-
     def toggle_brightness_shortcut(self, value):
         self.base_panel.show_screen_brightness(value)
 
@@ -930,7 +930,6 @@ class KlipperScreen(Gtk.Window):
                 logging.error("Couldn't get the temperature store size")
 
     def base_panel_show_all(self):
-        self.base_panel.show_macro_shortcut(self._config.get_main_config().getboolean('side_macro_shortcut', True))
         self.base_panel.show_screen_brightness(self._config.get_main_config().getboolean('side_brightness_shortcut', True))
         self.base_panel.show_heaters(True)
         self.base_panel.show_estop(True)

@@ -82,7 +82,7 @@ class ZCalibratePanel(ScreenPanel):
 
         distgrid = Gtk.Grid()
         for j, i in enumerate(self.distances):
-            self.widgets[i] = self._gtk.Button(label=i)
+            self.widgets[i] = self._gtk.Button(label=f'{i}{_("mm")}')
             self.widgets[i].set_direction(Gtk.TextDirection.LTR)
             self.widgets[i].connect("clicked", self.change_distance, i)
             ctx = self.widgets[i].get_style_context()
@@ -96,9 +96,7 @@ class ZCalibratePanel(ScreenPanel):
                 ctx.add_class("distbutton_active")
             distgrid.attach(self.widgets[i], j, 0, 1, 1)
 
-        self.widgets['move_dist'] = Gtk.Label(_("Move Distance (mm)"))
         distances = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        distances.pack_start(self.widgets['move_dist'], True, True, 0)
         distances.pack_start(distgrid, True, True, 0)
 
         grid = Gtk.Grid()

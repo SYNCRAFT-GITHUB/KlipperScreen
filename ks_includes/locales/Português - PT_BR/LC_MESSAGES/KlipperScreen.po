@@ -273,7 +273,7 @@ msgid "Error"
 msgstr "Erro"
 
 msgid "Estimated Time Method"
-msgstr "Método de T. Estimado"
+msgstr "Método de Te. Estimado"
 
 msgid "Exclude Object"
 msgstr "Excluir Objeto"
@@ -589,7 +589,7 @@ msgid "Printer"
 msgstr "Impressora"
 
 msgid "Printer Connections"
-msgstr "Conexões da impressora"
+msgstr "Conexões"
 
 msgid "Printer Select"
 msgstr "Selecione a impressora"
@@ -664,7 +664,7 @@ msgid "Save configuration?"
 msgstr "Salvar configuração?"
 
 msgid "Saved"
-msgstr "Salvou"
+msgstr "Salvo"
 
 #, python-format
 msgid "Saved offset: %s"
@@ -674,7 +674,7 @@ msgid "Screen DPMS"
 msgstr "Tela DPMS"
 
 msgid "Screen Power Off Time"
-msgstr "Tempo de desligamento da tela"
+msgstr "Descanso de Tela"
 
 msgid "Screws Adjust"
 msgstr "Niv. Manual"
@@ -1093,7 +1093,7 @@ msgid "Material incompatibility Alert"
 msgstr "Alerta de incompatibilidade de material"
 
 msgid "Change Timezone"
-msgstr "Alerar Fuso Horário"
+msgstr "Alterar Fuso Horário"
 
 msgid "My timezone is not on the list"
 msgstr "Meu fuso horário não foi listado"
@@ -1118,3 +1118,132 @@ msgstr "Exportar Logs para USB"
 
 msgid "Tap the screen to confirm"
 msgstr "Toque na tela para confirmar"
+
+msgid "An error has occurred"
+msgstr "Ocorreu um erro"
+
+msgid "Are you sure?"
+msgstr "Tem certeza?"
+
+msgid "Revert"
+msgstr "Reverter"
+
+msgid "Restore"
+msgstr "Restaurar"
+
+msgid "Restore to Factory Default"
+msgstr "Restaurar para padrão de fábrica"
+
+msgid "Restore All"
+msgstr "Restaurar Tudo"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "Tem certeza de que deseja redefinir para as configurações de fábrica?"
+
+msgid "Are you sure you want to Update?"
+msgstr "Tem certeza de que deseja atualizar?"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "Exportar Pacotes Syncraft"
+
+msgid "Your system version does not support this feature"
+msgstr "A versão do seu sistema não suporta esta funcionalidade"
+
+msgid "Out of Date"
+msgstr "Desatualizado"
+
+msgid "Update required"
+msgstr "Atualização necessária"
+
+msgid "This software is already updated"
+msgstr "Este software já está atualizado"
+
+msgid "Restart to apply"
+msgstr "Reinicie a Syncraft para aplicar"
+
+msgid "Calibration"
+msgstr "Calibração"
+
+msgid "Mesh"
+msgstr "Malha"
+
+msgid "There is a new update available"
+msgstr "Há uma nova atualização disponível"
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr "Há uma nova atualização disponível, atualize usando o menu Syncraft"
+
+msgid "New update available"
+msgstr "Nova atualização disponível"
+
+msgid "No updates available"
+msgstr "Não há atualizações disponíveis"
+
+msgid "Download Update"
+msgstr "Baixar Atualização"
+
+msgid "Click to download the new update"
+msgstr "Clique para baixar a nova atualização"
+
+msgid "Your machine is out of date"
+msgstr "Sua máquina está desatualizada"
+
+msgid "Everything is properly updated"
+msgstr "Tudo está devidamente atualizado"
+
+msgid "Please wait"
+msgstr "Por favor, aguarde"
+
+msgid "In progress, please wait"
+msgstr "Em progresso, por favor, aguarde"
+
+msgid "System Information"
+msgstr "Informações do Sistema"
+
+msgid "Information"
+msgstr "Informações"
+
+msgid "Export Logs"
+msgstr "Exportar Logs"
+
+msgid "Export Syncraft Packs"
+msgstr "Exportar Pacotes Syncraft"
+
+msgid "Platform"
+msgstr "Plataforma"
+
+msgid "Version"
+msgstr "Versão"
+
+msgid "Model"
+msgstr "Modelo"
+
+msgid "USB Device"
+msgstr "Dispositivo USB"
+
+msgid "Spool"
+msgstr "Carretel"
+
+msgid "One"
+msgstr "Um"
+
+msgid "Two"
+msgstr "Dois"
+
+msgid "Three"
+msgstr "Três"
+
+msgid "Four"
+msgstr "Quatro"
+
+msgid "Five"
+msgstr "Cinco"
+
+msgid "Six"
+msgstr "Seis"
+
+msgid "Seven"
+msgstr "Sete"
+
+msgid "Eight"
+msgstr "Oito"

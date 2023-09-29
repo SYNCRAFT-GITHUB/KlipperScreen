@@ -1,5 +1,6 @@
 import configparser
 import gettext
+import socket
 import os
 import logging
 import json
@@ -44,6 +45,7 @@ class KlipperScreenConfig:
         self.config_path = self.get_config_file_location(configfile)
         logging.debug(f"Config path location: {self.config_path}")
         self.defined_config = None
+        self.empty_title = True
         self.lang = None
         self.langs = {}
         self.lang_converter = {
@@ -161,6 +163,25 @@ class KlipperScreenConfig:
         self.lang = self.langs[lang]
         self.lang.install(names=['gettext', 'ngettext'])
 
+    def linux(self, version: str):
+        try:
+            with open("/etc/os-release", "r") as os_release_file:
+                for line in os_release_file:
+                    if line.startswith("VERSION="):
+                        version_info = line.strip().split("=")[1].strip('"')
+                        if version_info and version in version_info.lower():
+                            return True
+        except FileNotFoundError:
+            return None
+
+    def internet_connection(self) -> bool:
+        try:
+            socket.create_connection(("www.google.com", 80))
+            return True
+        except OSError:
+            pass
+        return False
+
     def validate_config(self):
         valid = True
         for section in self.config:
@@ -172,7 +193,7 @@ class KlipperScreenConfig:
                 bools = (
                     'invert_x', 'invert_y', 'invert_z', '24htime', 'only_heaters', 'show_cursor', 'confirm_estop',
                     'autoclose_popups', 'use_dpms', 'use_default_menu', 'show_saved_from_usb', 'side_brightness_shortcut',
-                    'side_macro_shortcut', 'use-matchbox-keyboard', 'show_heater_power', 'show_experimental_material',
+                    'use-matchbox-keyboard', 'show_heater_power', 'show_experimental_material',
                 )
                 strs = (
                     'default_printer', 'language', 'print_sort_dir', 'theme', 'screen_blanking', 'font_size',
@@ -214,8 +235,7 @@ class KlipperScreenConfig:
 
             for key in self.config[section]:
                 if key not in bools and key not in strs and key not in numbers:
-                    msg = f'Option "{key}" not recognized for section "[{section}]"'
-                    self.errors.append(msg)
+                    print(f'Option "{key}" not recognized for section "[{section}]"')
                     # This most probably is not a big issue, continue to load the config
                 elif key in numbers and not self.is_float(self.config[section][key]) \
                         or key in bools and self.config[section][key] not in ["False", "false", "True", "true"]:
@@ -268,17 +288,13 @@ class KlipperScreenConfig:
             {"side_brightness_shortcut": {
                 "section": "main", "name": _("Change Screen Brightness"), "type": "binary",
                 "value": "False", "callback": screen.toggle_brightness_shortcut}},
-            {"side_macro_shortcut": {
-                "section": "main", "name": _("Macro shortcut on sidebar"), "type": "binary",
-                "value": "False", "callback": screen.toggle_macro_shortcut}},
             {"font_size": {
                 "section": "main", "name": _("Font Size"), "type": "dropdown",
                 "value": "medium", "callback": screen.restart_ks, "options": [
                     {"name": _("Small"), "value": "small"},
                     {"name": _("Medium") + " " + _("(default)"), "value": "medium"},
                     {"name": _("Large"), "value": "large"},
-                    {"name": _("Extra Large"), "value": "extralarge"},
-                    {"name": _("Maximum"), "value": "max"}]}},
+                    {"name": _("Extra Large"), "value": "extralarge"}]}},
             {"confirm_estop": {"section": "main", "name": _("Confirm Emergency Stop"), "type": "binary",
                                "value": "True"}},
             {"only_heaters": {"section": "main", "name": _("Hide sensors in Temp."), "type": "binary",

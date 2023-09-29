@@ -1234,3 +1234,132 @@ msgstr "Esporta i registri su USB"
 
 msgid "Tap the screen to confirm"
 msgstr "Tocca per confermare"
+
+msgid "An error has occurred"
+msgstr "Si è verificato un errore"
+
+msgid "Are you sure?"
+msgstr "Sei sicuro?"
+
+msgid "Revert"
+msgstr "Ripristina"
+
+msgid "Restore"
+msgstr "Ripristina"
+
+msgid "Restore to Factory Default"
+msgstr "Ripristina alle impostazioni di fabbrica"
+
+msgid "Restore All"
+msgstr "Ripristina tutto"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "Sei sicuro di voler ripristinare le impostazioni di fabbrica?"
+
+msgid "Are you sure you want to Update?"
+msgstr "Sei sicuro di voler aggiornare?"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "Esporta gli installatori Syncraft su USB"
+
+msgid "Your system version does not support this feature"
+msgstr "La versione del tuo sistema non supporta questa funzione"
+
+msgid "Out of Date"
+msgstr "Obsoleto"
+
+msgid "Update required"
+msgstr "Aggiornamento richiesto"
+
+msgid "This software is already updated"
+msgstr "Questo software è già aggiornato"
+
+msgid "Restart to apply"
+msgstr "Riavvia per applicare"
+
+msgid "Calibration"
+msgstr "Calibrare"
+
+msgid "Mesh"
+msgstr "Maglia"
+
+msgid "There is a new update available"
+msgstr "È disponibile un nuovo aggiornamento"
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr "È disponibile un nuovo aggiornamento, aggiornare utilizzando il menu Syncraft"
+
+msgid "New update available"
+msgstr "Nuovo aggiornamento disponibile"
+
+msgid "No updates available"
+msgstr "Nessun aggiornamento disponibile"
+
+msgid "Download Update"
+msgstr "Scarica l'aggiornamento"
+
+msgid "Click to download the new update"
+msgstr "Fai clic per scaricare il nuovo aggiornamento"
+
+msgid "Your machine is out of date"
+msgstr "La tua macchina è obsoleta"
+
+msgid "Everything is properly updated"
+msgstr "Tutto è stato correttamente aggiornato"
+
+msgid "Please wait"
+msgstr "Attendere prego"
+
+msgid "In progress, please wait"
+msgstr "In corso, attendere prego"
+
+msgid "System Information"
+msgstr "Informazioni di sistema"
+
+msgid "Information"
+msgstr "Informazione"
+
+msgid "Export Logs"
+msgstr "Esporta i registri"
+
+msgid "Export Syncraft Packs"
+msgstr "Esporta pacchetti Syncraft"
+
+msgid "Platform"
+msgstr "Piattaforma"
+
+msgid "Version"
+msgstr "Versione"
+
+msgid "Model"
+msgstr "Modello"
+
+msgid "USB Device"
+msgstr "Dispositivo USB"
+
+msgid "Spool"
+msgstr "Bobina"
+
+msgid "One"
+msgstr "Uno"
+
+msgid "Two"
+msgstr "Due"
+
+msgid "Three"
+msgstr "Tre"
+
+msgid "Four"
+msgstr "Quattro"
+
+msgid "Five"
+msgstr "Cinque"
+
+msgid "Six"
+msgstr "Sei"
+
+msgid "Seven"
+msgstr "Sette"
+
+msgid "Eight"
+msgstr "Otto"

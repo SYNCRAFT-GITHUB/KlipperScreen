@@ -1225,3 +1225,132 @@ msgstr "Eksportuj dzienniki na USB"
 
 msgid "Tap the screen to confirm"
 msgstr "Kliknij, aby potwierdzić"
+
+msgid "An error has occurred"
+msgstr "Wystąpił błąd"
+
+msgid "Are you sure?"
+msgstr "Czy jesteś pewny?"
+
+msgid "Revert"
+msgstr "Przywróć"
+
+msgid "Restore"
+msgstr "Przywróć"
+
+msgid "Restore to Factory Default"
+msgstr "Przywróć domyślne ustawienia fabryczne"
+
+msgid "Restore All"
+msgstr "Przywróć wszystko"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "Czy na pewno chcesz przywrócić ustawienia fabryczne?"
+
+msgid "Are you sure you want to Update?"
+msgstr "Czy na pewno chcesz zaktualizować?"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "Eksportuj instalatory Syncraft"
+
+msgid "Your system version does not support this feature"
+msgstr "Twoja wersja systemu nie obsługuje tej funkcji"
+
+msgid "Out of Date"
+msgstr "Przestarzałe"
+
+msgid "Update required"
+msgstr "Wymagana aktualizacja"
+
+msgid "This software is already updated"
+msgstr "To oprogramowanie jest już zaktualizowane"
+
+msgid "Restart to apply"
+msgstr "Uruchom ponownie, aby zastosować zmiany"
+
+msgid "Calibration"
+msgstr "Kalibrowanie"
+
+msgid "Mesh"
+msgstr "Siatka"
+
+msgid "There is a new update available"
+msgstr "Dostępna jest nowa aktualizacja"
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr "Dostępna jest nowa aktualizacja, zaktualizuj za pomocą menu Syncraft"
+
+msgid "New update available"
+msgstr "Dostępna jest nowa aktualizacja"
+
+msgid "No updates available"
+msgstr "Brak dostępnych aktualizacji"
+
+msgid "Download Update"
+msgstr "Pobierz aktualizację"
+
+msgid "Click to download the new update"
+msgstr "Kliknij, aby pobrać nową aktualizację"
+
+msgid "Your machine is out of date"
+msgstr "Twój sprzęt jest przestarzały"
+
+msgid "Everything is properly updated"
+msgstr "Wszystko jest odpowiednio zaktualizowane"
+
+msgid "Please wait"
+msgstr "Proszę czekać"
+
+msgid "In progress, please wait"
+msgstr "W trakcie, proszę czekać"
+
+msgid "System Information"
+msgstr "Informacje o systemie"
+
+msgid "Information"
+msgstr "Informacje"
+
+msgid "Export Logs"
+msgstr "Eksportuj dzienniki"
+
+msgid "Export Syncraft Packs"
+msgstr "Eksportuj pakiety Syncraft"
+
+msgid "Platform"
+msgstr "Platforma"
+
+msgid "Version"
+msgstr "Wersja"
+
+msgid "Model"
+msgstr "Model"
+
+msgid "USB Device"
+msgstr "Urządzenie USB"
+
+msgid "Spool"
+msgstr "Szpula"
+
+msgid "One"
+msgstr "Jeden"
+
+msgid "Two"
+msgstr "Dwa"
+
+msgid "Three"
+msgstr "Trzy"
+
+msgid "Four"
+msgstr "Cztery"
+
+msgid "Five"
+msgstr "Pięć"
+
+msgid "Six"
+msgstr "Sześć"
+
+msgid "Seven"
+msgstr "Siedem"
+
+msgid "Eight"
+msgstr "Osiem"

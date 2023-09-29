@@ -11,10 +11,10 @@ from ks_includes.screen_panel import ScreenPanel
 
 
 def create_panel(*args):
-    return ExtrudePanel(*args)
+    return FilamentPanel(*args)
 
 
-class ExtrudePanel(ScreenPanel):
+class FilamentPanel(ScreenPanel):
 
     def __init__(self, screen, title):
         super().__init__(screen, title)
@@ -136,7 +136,7 @@ class ExtrudePanel(ScreenPanel):
                     break
                 name = x[23:].strip()
                 self.labels[x] = {
-                    'label': Gtk.Label(name.capitalize().replace('_', ' ')),
+                    'label': Gtk.Label(name.replace('_', ' ').replace('spool', _('Spool')).replace('one', _("One")).replace('two', _("Two"))),
                     'switch': Gtk.Switch(),
                     'box': Gtk.Box()
                 }

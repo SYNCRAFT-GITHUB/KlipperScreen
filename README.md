@@ -16,19 +16,35 @@ KlipperScreen is a touchscreen GUI that interfaces with [Klipper](https://github
 ## Demonstration Images
 
 ### Main Menu
-![main_menu](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/8ca83ccd-0187-4e11-9865-d41c0f60387e)
+![foto1](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/757a6ca2-30aa-4c56-8d52-a0e1254c88ba)
+
 
 ### Filament Tab
-![filament_menu](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/b184489b-8283-4eaa-a5a4-0824bc0f246c)
+![foto3](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/1e25f99d-a783-445e-9b37-3a970d4b0ac2)
+
+### Select Extruder
+![foto4](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/ece06ad8-6905-47c9-9567-5008e5312f04)
+
 
 ### Load Filament
-![loadfilament_menu](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/7867c74f-5acd-4f01-ad2a-90e51d4043a3)
+![foto5](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/7a3fc444-43ac-4807-b976-fb8960038f33)
+
 
 ### Print Tab
-![print_tab](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/8c49c29b-9ff0-4584-ab31-018f3c27570a)
+![foto2](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/8c8f7482-5dcf-4f80-9650-39ca7a4aa69e)
+
 
 ### Job Status
-![jobstatus_menu](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/7c59489d-5ecc-4030-9988-de825a798dff)
+![foto11](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/f9a077d1-bbfe-4b45-aa52-37a8b8926c38)
+
 
 ### Configuration Menu
-![config_menu](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/35634768-4c76-48e7-a1b8-aadba64d97d1)
+![foto9](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/8e216054-5b7e-428c-ae1a-503dcd6e2101)
+
+
+### Settings
+![foto6](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/3aecddd2-b97b-4941-a9e5-b5a3e39eef78)
+
+### Multiple Themes
+![foto12](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/d4afb786-8eb2-457d-965f-7a3fc0dcecc0)
+

@@ -10,9 +10,9 @@ from ks_includes.screen_panel import ScreenPanel
 
 
 def create_panel(*args):
-    return SyncraftPanel(*args)
+    return SyncraftPanelBuster(*args)
 
-class SyncraftPanel(ScreenPanel):
+class SyncraftPanelBuster(ScreenPanel):
 
     def __init__(self, screen, title):
 
@@ -20,22 +20,23 @@ class SyncraftPanel(ScreenPanel):
         self.menu = ['syncraft_panel']
 
         self.buttons = {
-            'UPDATE': self._gtk.Button("syncraftupdate", _("Update via Internet"), "color1"),
+            'UPDATE': self._gtk.Button("update", _("Update via Internet"), "color1"),
             'FIX': self._gtk.Button("compass", _("Quick System Fixes"), "color1"),
             'UPDATE_USB': self._gtk.Button("usb", _("Update via USB"), "color1"),
             'EXPORT_LOG': self._gtk.Button("usb-save", _("Export Logs to USB"), "color1"),
         }
-        self.buttons['UPDATE'].connect("clicked", self.menu_item_clicked, "update", {
+        self.buttons['UPDATE'].connect("clicked", self.menu_item_clicked, "moonraker_update", {
             "name": _("Update"),
-            "panel": "update"
+            "panel": "moonraker_update"
         })
         self.buttons['FIX'].connect("clicked", self.menu_item_clicked, "fix", {
             "name": _("Quick System Fixes"),
             "panel": "fix"
         })
+        self.buttons['UPDATE_USB'].connect("clicked", self.set_fix_option_to, "UPDATEVIAUSB")
         self.buttons['UPDATE_USB'].connect("clicked", self.menu_item_clicked, "update_usb", {
-            "name": _("Update via USB"),
-            "panel": "update_usb"
+            "name": _("System"),
+            "panel": "script"
         })
         self.buttons['EXPORT_LOG'].connect("clicked", self.set_fix_option_to, "EXPORTLOGSTOUSB")
         self.buttons['EXPORT_LOG'].connect("clicked", self.menu_item_clicked, "script", {
