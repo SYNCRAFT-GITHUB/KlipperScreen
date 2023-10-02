@@ -88,7 +88,7 @@ class SystemPanel(ScreenPanel):
         self._screen.show_popup_message(_("Checking for updates, please wait..."), level=1)
         GLib.timeout_add_seconds(1, self.get_updates, "true")
 
-    def get_updates(self, refresh="false"):
+    def get_updates(self, refresh="true"):
         update_resp = self._screen.apiclient.send_request(f"machine/update/status?refresh={refresh}")
         if not update_resp:
             self.update_status = {}
