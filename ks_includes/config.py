@@ -1,13 +1,15 @@
 import configparser
-import gettext
-import socket
-import os
+import datetime
 import logging
-import json
-import re
-import copy
+import gettext
 import pathlib
 import locale
+import random
+import socket
+import json
+import copy
+import os
+import re
 
 from io import StringIO
 
@@ -50,19 +52,16 @@ class KlipperScreenConfig:
         self.langs = {}
         self.lang_converter = {
             'en': 'English - EN',
-            'da': 'Dansk - DA',
             'de': 'Deutsch - DE',
             'es': 'Español - ES',
             'fr': 'Français - FR',
             'it': 'Italiano - IT',
             'pl': 'Polski - PL',
             'pt': 'Português - PT_BR',
-            'sv': 'Svenska - SV',
             'ru': 'Русский - RU',
             'ko': '한국어 - KO',
             'jp': '日本語 - JP',
             'zh_CN': '简体中文 - ZH_CN',
-            'zh_TW': '繁體中文 - ZH_TW',
         }
 
         try:
