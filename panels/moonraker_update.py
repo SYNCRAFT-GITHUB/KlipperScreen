@@ -66,15 +66,10 @@ class SystemPanel(ScreenPanel):
                 self.labels[f"{prog}_status"].set_hexpand(False)
                 self.labels[f"{prog}_status"].connect("clicked", self.show_update_info, prog)
 
-                if prog in ALLOWED_SERVICES:
-                    self.labels[f"{prog}_restart"] = self._gtk.Button("refresh", scale=.7)
-                    self.labels[f"{prog}_restart"].connect("clicked", self.restart, prog)
-                    infogrid.attach(self.labels[f"{prog}_restart"], 0, i, 1, 1)
-
-                infogrid.attach(self.labels[f"{prog}_status"], 2, i, 1, 1)
+                infogrid.attach(self.labels[f"{prog}_status"], 1, i, 1, 1)
                 self.update_program_info(prog)
 
-                infogrid.attach(self.labels[prog], 1, i, 1, 1)
+                infogrid.attach(self.labels[prog], 0, i, 1, 1)
                 self.labels[prog].get_style_context().add_class('updater-item')
                 i = i + 1
 
@@ -256,6 +251,8 @@ class SystemPanel(ScreenPanel):
 
     def update_program_info(self, p):
 
+        title: str = p.capitalize()
+
         if 'version_info' not in self.update_status or p not in self.update_status['version_info']:
             logging.info(f"Unknown version: {p}")
             return
@@ -277,23 +274,23 @@ class SystemPanel(ScreenPanel):
                     self._already_updated(p, info)
                     self.labels[f"{p}_status"].get_style_context().remove_class('invalid')
                 else:
-                    self.labels[p].set_markup(f"<b>{p}</b>\n{info['version']} -> {info['remote_version']}")
+                    self.labels[p].set_markup(f"<b>{title}</b>")
                     self._needs_update(p, info['version'], info['remote_version'])
             else:
                 logging.info(f"Invalid {p} {info['version']}")
-                self.labels[p].set_markup(f"<b>{p}</b>\n{info['version']}")
+                self.labels[p].set_markup(f"<b>{title}</b>")
                 self.labels[f"{p}_status"].set_label(_("Invalid"))
                 self.labels[f"{p}_status"].get_style_context().add_class('invalid')
                 self.labels[f"{p}_status"].set_sensitive(True)
         elif 'version' in info and info['version'] == info['remote_version']:
             self._already_updated(p, info)
         else:
-            self.labels[p].set_markup(f"<b>{p}</b>\n{info['version']} -> {info['remote_version']}")
+            self.labels[p].set_markup(f"<b>{title}</b>")
             self._needs_update(p, info['version'], info['remote_version'])
 
     def _already_updated(self, p, info):
         logging.info(f"{p} {info['version']}")
-        self.labels[p].set_markup(f"<b>{p}</b>\n{info['version']}")
+        self.labels[p].set_markup(f"<b>{p.capitalize()}</b>")
         self.labels[f"{p}_status"].set_label(_("Up To Date"))
         self.labels[f"{p}_status"].get_style_context().remove_class('update')
         self.labels[f"{p}_status"].set_sensitive(False)

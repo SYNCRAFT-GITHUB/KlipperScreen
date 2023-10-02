@@ -27,7 +27,7 @@ class SyncraftPanel(ScreenPanel):
         }
         self.buttons['UPDATE'].connect("clicked", self.menu_item_clicked, "update", {
             "name": _("Update"),
-            "panel": "moonraker_update" if self._config.linux('buster') else "core_update"
+            "panel": "moonraker_update" #core_update
         })
         self.buttons['REVERT'].connect("clicked",self.set_fix_option_to,"REVERT_ALL")
         self.buttons['REVERT'].connect("clicked", self.menu_item_clicked, "script", {
