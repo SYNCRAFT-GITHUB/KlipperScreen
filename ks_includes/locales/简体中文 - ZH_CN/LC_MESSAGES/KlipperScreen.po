@@ -616,7 +616,7 @@ msgid "Reference"
 msgstr "参考"
 
 msgid "Refresh"
-msgstr ""
+msgstr "充值"
 
 msgid "Restart"
 msgstr "重启Klipper"

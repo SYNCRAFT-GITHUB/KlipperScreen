@@ -1,6 +1,7 @@
 import subprocess
 import logging
 import platform
+import getmac
 import socket
 import gi
 import os
@@ -34,6 +35,7 @@ class SystemInfo(ScreenPanel):
         {_('Platform')}: {platform.platform()}
         {_('Version')}: {platform.release()}
         {_('System')}: {platform.system()}
+        {_('Mac')}: {getmac.get_mac_address()}
         {_('Model')}: {self.getScxModel()}
         {_('SyncraftCore')}: {os.path.exists(self.core_path)}
         """

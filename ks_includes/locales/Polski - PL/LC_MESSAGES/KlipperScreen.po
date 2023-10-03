@@ -1239,7 +1239,7 @@ msgid "Restore"
 msgstr "Przywróć"
 
 msgid "Restore to Factory Default"
-msgstr "Przywróć domyślne ustawienia fabryczne"
+msgstr "Zresetuj system"
 
 msgid "Restore All"
 msgstr "Przywróć wszystko"
