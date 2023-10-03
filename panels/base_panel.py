@@ -40,7 +40,7 @@ class BasePanel(ScreenPanel):
             self.control['printer_select'] = self._gtk.Button('shuffle', scale=abscale)
             self.control['printer_select'].connect("clicked", self._screen.show_printer_select)
 
-        self.control['brightness_shortcut'] = self._gtk.Button('brightness-high', scale=abscale)
+        self.control['brightness_shortcut'] = self._gtk.Button('brightness', scale=abscale)
         self.control['brightness_shortcut'].connect("clicked", self.change_brightness)
 
         self.control['estop'] = self._gtk.Button('emergency', scale=abscale)
