@@ -41,7 +41,7 @@ class KlippyRest:
         response_data = False
         try:
             callee = getattr(requests, request_method)
-            response = callee(url, json=json, data=data, headers=headers, timeout=15)
+            response = callee(url, json=json, data=data, headers=headers, timeout=13)
             response.raise_for_status()
             if json_response:
                 logging.debug(f"Sending request to {url}")

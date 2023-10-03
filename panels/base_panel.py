@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+import subprocess
 import contextlib
 import logging
+import glob
 
 import gi
 
@@ -39,10 +41,7 @@ class BasePanel(ScreenPanel):
             self.control['printer_select'].connect("clicked", self._screen.show_printer_select)
 
         self.control['brightness_shortcut'] = self._gtk.Button('brightness-high', scale=abscale)
-        self.control['brightness_shortcut'].connect("clicked", self.menu_item_clicked, "brightness", {
-            "name": _("Screen Brightness"),
-            "panel": "brightness"
-        })
+        self.control['brightness_shortcut'].connect("clicked", self.change_brightness)
 
         self.control['estop'] = self._gtk.Button('emergency', scale=abscale)
         self.control['estop'].connect("clicked", self.emergency_stop)
@@ -108,6 +107,30 @@ class BasePanel(ScreenPanel):
             self.main_grid.attach(self.content, 1, 1, 1, 1)
 
         self.update_time()
+
+    def change_brightness(self, button):
+        brightness_files = glob.glob('/sys/class/backlight/*/brightness')
+        if not brightness_files:
+            message: str = _("An error has occurred")
+            self._screen.show_popup_message(message, level=3)
+            return
+        
+        brightness_file_path = brightness_files[0]
+        with open(brightness_file_path, 'r') as brightness_file:
+            brightness_value = brightness_file.read().strip()
+            if brightness_value == '255':
+                self.set_brightness(value=25)
+            elif brightness_value == '100':
+                self.set_brightness(value=255)
+            elif brightness_value == '25':
+                self.set_brightness(value=100)
+
+    def set_brightness (self, value):
+        bash_command = f"echo {value} | sudo tee /sys/class/backlight/*/brightness"
+        try:
+            subprocess.run(bash_command, shell=True, check=True)
+        except subprocess.CalledProcessError as e:
+            print(f"Error: {e}")
 
     def show_heaters(self, show=True):
         try:

@@ -35,7 +35,7 @@ class SystemPanel(ScreenPanel):
         grid = self._gtk.HomogeneousGrid()
         grid.set_row_homogeneous(False)
 
-        update_all = self._gtk.Button('arrow-up', _('Full Update'), 'color1')
+        update_all = self._gtk.Button('arrow-up', _('Update'), 'color1')
         update_all.connect("clicked", self.show_update_info, "full")
         update_all.set_vexpand(False)
         self.refresh = self._gtk.Button('web-refresh', _('Refresh'), 'color2')
@@ -64,7 +64,7 @@ class SystemPanel(ScreenPanel):
 
                 self.labels[f"{prog}_status"] = self._gtk.Button()
                 self.labels[f"{prog}_status"].set_hexpand(False)
-                self.labels[f"{prog}_status"].connect("clicked", self.show_update_info, prog)
+                # self.labels[f"{prog}_status"].connect("clicked", self.show_update_info, prog)
 
                 infogrid.attach(self.labels[f"{prog}_status"], 1, i, 1, 1)
                 self.update_program_info(prog)
@@ -110,7 +110,12 @@ class SystemPanel(ScreenPanel):
         self._screen._ws.send_method("machine.services.restart", {"service": program})
 
     def show_update_info(self, widget, program):
-        info = self.update_status['version_info'][program] if program in self.update_status['version_info'] else {}
+        info = {}
+        try:
+            if program in self.update_status['version_info']:
+                info = self.update_status['version_info'][program]
+        except (Exception) as e:
+            print(f'e: {e}')
 
         scroll = self._gtk.ScrolledWindow()
         scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
@@ -251,7 +256,7 @@ class SystemPanel(ScreenPanel):
 
     def update_program_info(self, p):
 
-        title: str = p.capitalize()
+        title: str = f'{p[0].upper()}{p[1:]}'
 
         if 'version_info' not in self.update_status or p not in self.update_status['version_info']:
             logging.info(f"Unknown version: {p}")
@@ -279,7 +284,7 @@ class SystemPanel(ScreenPanel):
             else:
                 logging.info(f"Invalid {p} {info['version']}")
                 self.labels[p].set_markup(f"<b>{title}</b>")
-                self.labels[f"{p}_status"].set_label(_("Invalid"))
+                self.labels[f"{p}_status"].set_label(_("?"))
                 self.labels[f"{p}_status"].get_style_context().add_class('invalid')
                 self.labels[f"{p}_status"].set_sensitive(True)
         elif 'version' in info and info['version'] == info['remote_version']:
@@ -290,15 +295,15 @@ class SystemPanel(ScreenPanel):
 
     def _already_updated(self, p, info):
         logging.info(f"{p} {info['version']}")
-        self.labels[p].set_markup(f"<b>{p.capitalize()}</b>")
+        self.labels[p].set_markup(f"<b>{p[0].upper()}{p[1:]}</b>")
         self.labels[f"{p}_status"].set_label(_("Up To Date"))
         self.labels[f"{p}_status"].get_style_context().remove_class('update')
         self.labels[f"{p}_status"].set_sensitive(False)
 
     def _needs_update(self, p, local="", remote=""):
         logging.info(f"{p} {local} -> {remote}")
-        self.labels[f"{p}_status"].set_label(_("Update"))
-        self.labels[f"{p}_status"].get_style_context().add_class('update')
+        self.labels[f"{p}_status"].set_label(_("Out of Date"))
+        self.labels[f"{p}_status"].get_style_context().add_class('updater-item')
         self.labels[f"{p}_status"].set_sensitive(True)
 
     def reboot_poweroff(self, widget, method):
