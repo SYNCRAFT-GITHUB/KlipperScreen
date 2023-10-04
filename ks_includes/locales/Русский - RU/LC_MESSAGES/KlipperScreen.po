@@ -1414,3 +1414,15 @@ msgstr "Семь"
 
 msgid "Eight"
 msgstr "Восемь"
+
+msgid "Connect"
+msgstr "Подключить"
+
+msgid "Customize"
+msgstr "Настроить"
+
+msgid "Here are some recommended steps to get started"
+msgstr "Вот несколько шагов, чтобы начать"
+
+msgid "If you want, you can adjust all of this later"
+msgstr "Если хочешь, можешь пропустить это"

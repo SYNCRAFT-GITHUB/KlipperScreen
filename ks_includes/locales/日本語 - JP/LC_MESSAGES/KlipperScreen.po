@@ -936,7 +936,7 @@ msgid "Remove Password Protection"
 msgstr "パスワード保護を削除"
 
 msgid "Welcome to Syncraft"
-msgstr "Syncraftへようこそ"
+msgstr "新しいプリンターへようこそ!"
 
 msgid "No, I don't agree."
 msgstr "いいえ、同意しません。"
@@ -1234,3 +1234,15 @@ msgstr "七"
 
 msgid "Eight"
 msgstr "八"
+
+msgid "Connect"
+msgstr "接続する"
+
+msgid "Customize"
+msgstr "カスタマイズ"
+
+msgid "Here are some recommended steps to get started"
+msgstr "はじめるためのおすすめの手順はこちらです"
+
+msgid "If you want, you can adjust all of this later"
+msgstr "必要に応じて、後ですべて調整できます"

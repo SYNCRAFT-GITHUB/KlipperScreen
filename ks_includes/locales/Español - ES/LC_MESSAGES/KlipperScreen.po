@@ -1404,3 +1404,15 @@ msgstr "Siete"
 
 msgid "Eight"
 msgstr "Ocho"
+
+msgid "Connect"
+msgstr "Conectar"
+
+msgid "Customize"
+msgstr "Personalizar"
+
+msgid "Here are some recommended steps to get started"
+msgstr "Aquí tienes algunos pasos para empezar"
+
+msgid "If you want, you can adjust all of this later"
+msgstr "Si lo deseas, puedes ajustarlo todo más tarde"

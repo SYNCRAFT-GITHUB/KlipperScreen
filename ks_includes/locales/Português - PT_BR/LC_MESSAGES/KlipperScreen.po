@@ -1247,3 +1247,15 @@ msgstr "Sete"
 
 msgid "Eight"
 msgstr "Oito"
+
+msgid "Connect"
+msgstr "Conectar"
+
+msgid "Customize"
+msgstr "Customizar"
+
+msgid "Here are some recommended steps to get started"
+msgstr "Aqui estão alguns passos recomendados para começar"
+
+msgid "If you want, you can adjust all of this later"
+msgstr "Se você quiser, pode ajustar tudo isso mais tarde"

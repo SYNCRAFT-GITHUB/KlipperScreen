@@ -1363,3 +1363,15 @@ msgstr "Sette"
 
 msgid "Eight"
 msgstr "Otto"
+
+msgid "Connect"
+msgstr "Connetti"
+
+msgid "Customize"
+msgstr "Personalizza"
+
+msgid "Here are some recommended steps to get started"
+msgstr "Ecco alcuni passaggi per iniziare"
+
+msgid "If you want, you can adjust all of this later"
+msgstr "Se vuoi, puoi aggiustare tutto più tardi"

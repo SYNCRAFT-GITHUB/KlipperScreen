@@ -1422,3 +1422,15 @@ msgstr "Sept"
 
 msgid "Eight"
 msgstr "Huit"
+
+msgid "Connect"
+msgstr "Connecter"
+
+msgid "Customize"
+msgstr "Personnaliser"
+
+msgid "Here are some recommended steps to get started"
+msgstr "Voici quelques étapes pour commencer"
+
+msgid "If you want, you can adjust all of this later"
+msgstr "Si tu veux, tu peux le faire plus tard"

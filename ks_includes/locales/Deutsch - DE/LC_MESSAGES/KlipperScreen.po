@@ -172,7 +172,7 @@ msgid "Bed screw configuration:"
 msgstr "Bettschraubenkonfiguration:"
 
 msgid "Calibrate"
-msgstr "Höheneinstellung"
+msgstr "Kalibrieren"
 
 msgid "Calibrated"
 msgstr "Kalibriert"
@@ -785,7 +785,7 @@ msgid "Up To Date"
 msgstr "Aktuell"
 
 msgid "Update"
-msgstr "Update"
+msgstr "Aktualisieren"
 
 msgid "Updating"
 msgstr "Aktualisiere"
@@ -1380,3 +1380,15 @@ msgstr "Sieben"
 
 msgid "Eight"
 msgstr "Acht"
+
+msgid "Connect"
+msgstr "Verbinden"
+
+msgid "Customize"
+msgstr "Anpassen"
+
+msgid "Here are some recommended steps to get started"
+msgstr "Hier sind einige Schritte, um loszulegen"
+
+msgid "If you want, you can adjust all of this later"
+msgstr "Wenn Sie möchten, können Sie dies später tun"
