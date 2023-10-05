@@ -151,10 +151,23 @@ class TimezoneSelect(ScreenPanel):
         self._screen.restart_ks()
 
     def apply_timezone_by_text(self, widget):
+
         code = self.labels['timezone_name'].get_text()
+
+        magic_words = ['welcome']
+        if code in magic_words:
+            self.magic(code=code)
+            return
+
         code = code.title()
         code = code.replace(" ", "/", 1)
         code = code.replace(" ", "_")
         command = f"sudo timedatectl set-timezone {code}"
         subprocess.call(command, shell=True)
         self._screen.restart_ks()
+
+    def magic(self, code):
+
+        if code == 'welcome':
+            self.set_bool_config_option(section="hidden", option="welcome", boolean=True)
+            self._screen.reload_panels()

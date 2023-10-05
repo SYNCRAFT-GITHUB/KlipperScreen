@@ -35,7 +35,7 @@ class Configurations(ScreenPanel):
             ConfigurationButton(button='BED_MESH', panel='bed_mesh', title=_("Mesh"), icon='bed-mesh'),
             ConfigurationButton(button='Z_CALIBRATE', panel='zcalibrate', title=_("Calibrate"), icon='calibration'),
             ConfigurationButton(button='EXTRAS', panel='extras', title=_("Extras"), icon='fine-tune'),
-            ConfigurationButton(button='SYNCRAFT', panel=syncraft_panel, title=_("Syncraft"), icon='syncraft'),
+            ConfigurationButton(button='SYNCRAFT', panel="welcome", title=_("Syncraft"), icon='syncraft'),
             ConfigurationButton(button='NETWORK', panel='network', title=_("Network"), icon='network'),
             ConfigurationButton(button='SETTINGS', panel='settings', title=_("Settings"), icon='settings'),
             ConfigurationButton(button='POWER', panel='power', title=_("Power"), icon='shutdown'),

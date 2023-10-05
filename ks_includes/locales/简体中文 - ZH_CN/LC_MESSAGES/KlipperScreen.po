@@ -671,7 +671,7 @@ msgid "Screen Power Off Time"
 msgstr "关闭屏幕时间"
 
 msgid "Screws Adjust"
-msgstr "调平"
+msgstr "手动水平"
 
 msgid "Select"
 msgstr "选择"
@@ -1387,3 +1387,9 @@ msgstr "以下是一些推荐的开始步骤"
 
 msgid "If you want, you can adjust all of this later"
 msgstr "如果您愿意，您可以稍后调整所有这些"
+
+msgid "You can access through the browser with %s"
+msgstr "通过浏览器访问：%s"
+
+msgid "Syncraft Address: %s"
+msgstr "机器网络地址：%s"

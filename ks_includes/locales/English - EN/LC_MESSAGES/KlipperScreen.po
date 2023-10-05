@@ -1240,3 +1240,9 @@ msgstr ""
 
 msgid "If you want, you can adjust all of this later"
 msgstr ""
+
+msgid "You can access through the browser with %s"
+msgstr ""
+
+msgid "Syncraft Address: %s"
+msgstr ""

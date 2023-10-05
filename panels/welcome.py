@@ -1,4 +1,5 @@
 import logging
+import socket
 import os
 import gi
 
@@ -28,6 +29,7 @@ class WelcomePanel(ScreenPanel):
 
         self.texts = [
             f'{_("Welcome to Syncraft")}',
+            f'{_("You can access through the browser with %s") % socket.gethostname() }',
             f'{_("Here are some recommended steps to get started")}',
             f'{_("If you want, you can adjust all of this later")}',
         ]
@@ -80,4 +82,5 @@ class WelcomePanel(ScreenPanel):
         self.content.add(self.labels['syncraft_panel'])
 
     def finish_all(self, button):
+        self.set_bool_config_option(section="hidden", option="welcome", boolean=False)
         self._screen.reload_panels()

@@ -949,7 +949,7 @@ msgid "Remove Password Protection"
 msgstr "Remover proteção por senha"
 
 msgid "Welcome to Syncraft"
-msgstr "Bem-vindo a Syncraft"
+msgstr "Dê um \"Oi\" para sua nova Syncraft!"
 
 msgid "No, I don't agree."
 msgstr "Não, não concordo."
@@ -1000,7 +1000,7 @@ msgid "Screen Brightness"
 msgstr "Brilho da Tela"
 
 msgid "Change Screen Brightness"
-msgstr "Mudar o brilho da tela"
+msgstr "Mudar o brilho na barra lateral"
 
 msgid "Almost Off"
 msgstr "Quase Desligado"
@@ -1259,3 +1259,9 @@ msgstr "Aqui estão alguns passos recomendados para começar"
 
 msgid "If you want, you can adjust all of this later"
 msgstr "Se você quiser, pode ajustar tudo isso mais tarde"
+
+msgid "You can access through the browser with %s"
+msgstr "Você pode acessar pelo navegador usando %s"
+
+msgid "Syncraft Address: %s"
+msgstr "Endereço do Syncraft: %s"

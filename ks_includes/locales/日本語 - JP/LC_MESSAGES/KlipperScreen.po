@@ -669,7 +669,7 @@ msgid "Screen Power Off Time"
 msgstr "画面の電源オフ時間"
 
 msgid "Screws Adjust"
-msgstr "ネジ調整"
+msgstr "手動レベリング"
 
 msgid "Select"
 msgstr "選択する"
@@ -1246,3 +1246,9 @@ msgstr "はじめるためのおすすめの手順はこちらです"
 
 msgid "If you want, you can adjust all of this later"
 msgstr "必要に応じて、後ですべて調整できます"
+
+msgid "You can access through the browser with %s"
+msgstr "ブラウザを使用してアクセス：%s"
+
+msgid "Syncraft Address: %s"
+msgstr "マシンウェブアドレス：%s"

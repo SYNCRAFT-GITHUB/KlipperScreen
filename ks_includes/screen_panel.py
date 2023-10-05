@@ -114,6 +114,12 @@ class ScreenPanel:
         if callback is not None:
             callback(switch.get_active())
 
+    def set_bool_config_option(self, section, option, boolean: bool):
+        if section not in self._config.get_config().sections():
+            self._config.get_config().add_section(section)
+        self._config.set(section, option, "True" if boolean else "False")
+        self._config.save_user_config_options()
+
     @staticmethod
     def format_time(seconds):
         if seconds is None or seconds <= 0:

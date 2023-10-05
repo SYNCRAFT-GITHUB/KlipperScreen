@@ -677,7 +677,7 @@ msgid "Screen Power Off Time"
 msgstr "Bildschirm abschalten in"
 
 msgid "Screws Adjust"
-msgstr "Schrauben Einstellen"
+msgstr "Manuelles Niv."
 
 msgid "Select"
 msgstr "Wählen"
@@ -1392,3 +1392,9 @@ msgstr "Hier sind einige Schritte, um loszulegen"
 
 msgid "If you want, you can adjust all of this later"
 msgstr "Wenn Sie möchten, können Sie dies später tun"
+
+msgid "You can access through the browser with %s"
+msgstr "Sie können über den Browser mit %s zugreifen"
+
+msgid "Syncraft Address: %s"
+msgstr "Syncraft Adresse: %s"

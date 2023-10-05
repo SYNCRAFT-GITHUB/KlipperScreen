@@ -82,6 +82,13 @@ class SettingsPanel(ScreenPanel):
         return False
 
     def add_option(self, boxname, opt_array, opt_name, option):
+
+        try:
+            if option['section'] == 'hidden':
+                return
+        except Exception as e:
+            print (f'e: {e}')
+            
         if option['type'] is None:
             return
         name = Gtk.Label()
