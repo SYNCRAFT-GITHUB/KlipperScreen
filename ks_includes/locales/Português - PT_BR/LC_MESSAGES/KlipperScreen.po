@@ -1265,3 +1265,6 @@ msgstr "Você pode acessar pelo navegador usando %s"
 
 msgid "Syncraft Address: %s"
 msgstr "Endereço do Syncraft: %s"
+
+msgid "Connect to WiFi"
+msgstr "Conectar ao Wi-Fi"

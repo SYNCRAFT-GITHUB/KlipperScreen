@@ -1393,3 +1393,6 @@ msgstr "通过浏览器访问：%s"
 
 msgid "Syncraft Address: %s"
 msgstr "机器网络地址：%s"
+
+msgid "Connect to WiFi"
+msgstr "连接到网络"

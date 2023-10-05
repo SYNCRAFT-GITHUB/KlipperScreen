@@ -1252,3 +1252,6 @@ msgstr "ブラウザを使用してアクセス：%s"
 
 msgid "Syncraft Address: %s"
 msgstr "マシンウェブアドレス：%s"
+
+msgid "Connect to WiFi"
+msgstr "インターネットに接続する"

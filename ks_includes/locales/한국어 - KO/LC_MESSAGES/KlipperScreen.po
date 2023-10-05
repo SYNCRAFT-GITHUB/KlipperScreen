@@ -1320,3 +1320,6 @@ msgstr "브라우저를 통한 접속: %s"
 
 msgid "Syncraft Address: %s"
 msgstr "기계 웹 주소: %s"
+
+msgid "Connect to WiFi"
+msgstr "인터넷에 연결하다"

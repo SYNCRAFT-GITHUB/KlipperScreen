@@ -1432,3 +1432,6 @@ msgstr "Доступ через браузер с помощью %s"
 
 msgid "Syncraft Address: %s"
 msgstr "Адрес принтера: %s"
+
+msgid "Connect to WiFi"
+msgstr "Подключиться к Интернету"
