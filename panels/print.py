@@ -174,14 +174,25 @@ class PrintPanel(ScreenPanel):
             else:
                 return False
 
+        def is_usb_prints(string):
+            if string.endswith("/USB_PRINTS"):
+                return True
+            else:
+                return False
+
+        if is_usb_prints(fullpath) and self._config.get_main_config().get('show_saved_from_usb') != "True":
+            return
+
         if filename: # Normal File
             name.set_markup(f'<big><b>{os.path.splitext(filename)[0].replace("_", " ")}</b></big>')
-        elif not is_usb(fullpath) and not is_usb_device(fullpath): # Normal Folder
+        elif not is_usb(fullpath) and not is_usb_device(fullpath) and not is_usb_prints(fullpath): # Normal Folder
             name.set_markup(f'<big><b>{os.path.split(fullpath)[-1].replace("_", " ")}</b></big>')
         elif is_usb(fullpath): # USB System Link
             name.set_markup(f'<big><b>{_("Access Files on USB")}</b></big>')
         elif is_usb_device(fullpath): # USB Device Inside System Link
             name.set_markup(f'<big><b>{_("USB")}</b></big>')
+        elif is_usb_prints(fullpath):
+            name.set_markup(f'<big><b>{_("Files saved from USB")}</b></big>')
         name.set_hexpand(True)
         name.set_halign(Gtk.Align.START)
         name.set_line_wrap(True)
@@ -206,11 +217,11 @@ class PrintPanel(ScreenPanel):
             delete.connect("clicked", self.confirm_delete_file, f"gcodes/{fullpath}")
             rename.connect("clicked", self.show_rename, f"gcodes/{fullpath}")
             GLib.idle_add(self.image_load, fullpath)
-        if is_usb(fullpath) or is_usb_device(fullpath):
+        if is_usb(fullpath) or is_usb_device(fullpath) or is_usb_prints(fullpath):
             print (f"IS_USB_DEVICE: {is_usb_device(fullpath)}.")
             action = self._gtk.Button("load", style="color3")
             action.connect("clicked", self.change_dir, fullpath)
-            icon = self._gtk.Button("usb")
+            icon = self._gtk.Button("usb" if not is_usb_prints(fullpath) else "usb-save")
             icon.connect("clicked", self.change_dir, fullpath)
         elif not filename:
             action = self._gtk.Button("load", style="color3")
@@ -228,7 +239,7 @@ class PrintPanel(ScreenPanel):
         row.set_hexpand(True)
         row.set_vexpand(False)
         row.attach(icon, 0, 0, 1, 2)
-        if is_usb(fullpath) or is_usb_device(fullpath):
+        if is_usb(fullpath) or is_usb_device(fullpath) or is_usb_prints(fullpath):
             row.attach(name, 1, 0, 3, 3)
         else:
             row.attach(name, 1, 0, 3, 1)
@@ -360,7 +371,6 @@ class PrintPanel(ScreenPanel):
         
         dialog = self._gtk.Dialog(self._screen, buttons, grid, self.confirm_print_response, filename)
         dialog.set_title(_("Print"))
-       
 
     def confirm_print_response(self, dialog, response_id, filename):
         self._gtk.remove_dialog(dialog)

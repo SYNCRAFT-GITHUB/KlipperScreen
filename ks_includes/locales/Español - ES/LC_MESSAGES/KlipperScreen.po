@@ -677,7 +677,7 @@ msgid "Screen Power Off Time"
 msgstr "Apagar pantalla tras"
 
 msgid "Screws Adjust"
-msgstr "Ajustar Tornillos"
+msgstr "Niv. Manual"
 
 msgid "Select"
 msgstr "Seleccionar"
@@ -1275,3 +1275,153 @@ msgstr "Exportar registros a USB"
 
 msgid "Tap the screen to confirm"
 msgstr "Toque la pantalla para confirmar"
+
+msgid "An error has occurred"
+msgstr "Ocurrio un error"
+
+msgid "Are you sure?"
+msgstr "¿Está seguro?"
+
+msgid "Revert"
+msgstr "Retroceder"
+
+msgid "Restore"
+msgstr "Para restaurar"
+
+msgid "Restore to Factory Default"
+msgstr "Restaurar a los valores predeterminados de fábrica"
+
+msgid "Restore All"
+msgstr "Restaura todo"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "¿Está seguro de que desea restablecer los valores predeterminados de fábrica?"
+
+msgid "Are you sure you want to to Update?"
+msgstr "¿Actualizar?"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "Exportar instaladores de Syncraft a Cura"
+
+msgid "Your system version does not support this feature"
+msgstr "La versión de su sistema no admite esta función"
+
+msgid "Out of Date"
+msgstr "Fuera de plazo"
+
+msgid "Update required"
+msgstr "Actualización requerida"
+
+msgid "This software is already updated"
+msgstr "El software ya está actualizado."
+
+msgid "Restart to apply"
+msgstr "Reinicie la Syncraft para aplicar"
+
+msgid "Calibration"
+msgstr "Calibración"
+
+msgid "Mesh"
+msgstr "Malla"
+
+msgid "There is a new update available"
+msgstr "Hay una nueva actualización disponible"
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr "Hay una nueva actualización disponible, actualice utilizando el menú de Syncraft"
+
+msgid "New update available"
+msgstr "Nueva actualización disponible"
+
+msgid "No updates available"
+msgstr "No hay actualizaciones disponibles"
+
+msgid "Download Update"
+msgstr "Descargar actualización"
+
+msgid "Click to download the new update"
+msgstr "Haga clic para descargar la nueva actualización"
+
+msgid "Your machine is out of date"
+msgstr "Su máquina está desactualizada"
+
+msgid "Everything is properly updated"
+msgstr "Todo está correctamente actualizado"
+
+msgid "Please wait"
+msgstr "Por favor, espere"
+
+msgid "In progress, please wait"
+msgstr "En progreso, por favor, espere"
+
+msgid "System Information"
+msgstr "Información del Sistema"
+
+msgid "Information"
+msgstr "Información"
+
+msgid "Export Logs"
+msgstr "Exportar Registros"
+
+msgid "Export Syncraft Packs"
+msgstr "Exportar Paquetes de Syncraft"
+
+msgid "Platform"
+msgstr "Plataforma"
+
+msgid "Version"
+msgstr "Versión"
+
+msgid "Model"
+msgstr "Modelo"
+
+msgid "USB Device"
+msgstr "Dispositivo USB"
+
+msgid "Spool"
+msgstr "Carrete"
+
+msgid "One"
+msgstr "Uno"
+
+msgid "Two"
+msgstr "Dos"
+
+msgid "Three"
+msgstr "Tres"
+
+msgid "Four"
+msgstr "Cuatro"
+
+msgid "Five"
+msgstr "Cinco"
+
+msgid "Six"
+msgstr "Seis"
+
+msgid "Seven"
+msgstr "Siete"
+
+msgid "Eight"
+msgstr "Ocho"
+
+msgid "Connect"
+msgstr "Conectar"
+
+msgid "Customize"
+msgstr "Personalizar"
+
+msgid "Here are some recommended steps to get started"
+msgstr "Aquí tienes algunos pasos para empezar"
+
+msgid "If you want, you can adjust all of this later"
+msgstr "Si lo deseas, puedes ajustarlo todo más tarde"
+
+msgid "You can access through the browser with %s"
+msgstr "Puede acceder a través del navegador con %s"
+
+msgid "Syncraft Address: %s"
+msgstr "Dirección de Syncraft: %s"
+
+msgid "Connect to WiFi"
+msgstr "Conéctate a Wi-Fi"

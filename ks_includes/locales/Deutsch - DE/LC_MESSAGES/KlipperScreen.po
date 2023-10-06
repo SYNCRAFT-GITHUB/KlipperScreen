@@ -172,7 +172,7 @@ msgid "Bed screw configuration:"
 msgstr "Bettschraubenkonfiguration:"
 
 msgid "Calibrate"
-msgstr "Höheneinstellung"
+msgstr "Kalibrieren"
 
 msgid "Calibrated"
 msgstr "Kalibriert"
@@ -677,7 +677,7 @@ msgid "Screen Power Off Time"
 msgstr "Bildschirm abschalten in"
 
 msgid "Screws Adjust"
-msgstr "Schrauben Einstellen"
+msgstr "Manuelles Niv."
 
 msgid "Select"
 msgstr "Wählen"
@@ -785,7 +785,7 @@ msgid "Up To Date"
 msgstr "Aktuell"
 
 msgid "Update"
-msgstr "Update"
+msgstr "Aktualisieren"
 
 msgid "Updating"
 msgstr "Aktualisiere"
@@ -1251,3 +1251,153 @@ msgstr "Protokolle auf USB exportieren"
 
 msgid "Tap the screen to confirm"
 msgstr "Zum Bestätigen tippen"
+
+msgid "An error has occurred"
+msgstr "Ein Fehler ist aufgetreten"
+
+msgid "Are you sure?"
+msgstr "Er ist sicher?"
+
+msgid "Revert"
+msgstr "Umkehren"
+
+msgid "Restore"
+msgstr "Etwas wiederherstellen"
+
+msgid "Restore to Factory Default"
+msgstr "Auf Werkseinstellungen zurücksetzen"
+
+msgid "Restore All"
+msgstr "Alles wiederherstellen"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "Sind Sie sicher, dass Sie die Werkseinstellungen wiederherstellen möchten?"
+
+msgid "Are you sure you want to to Update?"
+msgstr "Aktualisieren?"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "Exportieren Sie Syncraft-Installationsprogramme nach Cura"
+
+msgid "Your system version does not support this feature"
+msgstr "Ihre Systemversion unterstützt diese Funktion nicht"
+
+msgid "Out of Date"
+msgstr "Veraltet"
+
+msgid "Update required"
+msgstr "Aktualisierung erforderlich"
+
+msgid "This software is already updated"
+msgstr "Die Software ist bereits aktualisiert"
+
+msgid "Restart to apply"
+msgstr "Starten Sie den Drucker neu, um die Anwendung anzuwenden"
+
+msgid "Calibration"
+msgstr "Kalibrieren"
+
+msgid "Mesh"
+msgstr "Gittergewebe"
+
+msgid "There is a new update available"
+msgstr "Es steht ein neues Update zur Verfügung"
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr "Es steht ein neues Update zur Verfügung, aktualisieren Sie über das Syncraft-Menü"
+
+msgid "New update available"
+msgstr "Neues Update verfügbar"
+
+msgid "No updates available"
+msgstr "Keine Updates verfügbar"
+
+msgid "Download Update"
+msgstr "Update herunterladen"
+
+msgid "Click to download the new update"
+msgstr "Klicken Sie, um das neue Update herunterzuladen"
+
+msgid "Your machine is out of date"
+msgstr "Ihre Maschine ist veraltet"
+
+msgid "Everything is properly updated"
+msgstr "Alles ist ordnungsgemäß aktualisiert"
+
+msgid "Please wait"
+msgstr "Bitte warten"
+
+msgid "In progress, please wait"
+msgstr "In Bearbeitung, bitte warten"
+
+msgid "System Information"
+msgstr "Systeminformationen"
+
+msgid "Information"
+msgstr "Information"
+
+msgid "Export Logs"
+msgstr "Protokolle exportieren"
+
+msgid "Export Syncraft Packs"
+msgstr "Syncraft-Pakete exportieren"
+
+msgid "Platform"
+msgstr "Plattform"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "Model"
+msgstr "Modell"
+
+msgid "USB Device"
+msgstr "USB-Gerät"
+
+msgid "Spool"
+msgstr "Spule"
+
+msgid "One"
+msgstr "Eins"
+
+msgid "Two"
+msgstr "Zwei"
+
+msgid "Three"
+msgstr "Drei"
+
+msgid "Four"
+msgstr "Vier"
+
+msgid "Five"
+msgstr "Fünf"
+
+msgid "Six"
+msgstr "Sechs"
+
+msgid "Seven"
+msgstr "Sieben"
+
+msgid "Eight"
+msgstr "Acht"
+
+msgid "Connect"
+msgstr "Verbinden"
+
+msgid "Customize"
+msgstr "Anpassen"
+
+msgid "Here are some recommended steps to get started"
+msgstr "Hier sind einige Schritte, um loszulegen"
+
+msgid "If you want, you can adjust all of this later"
+msgstr "Wenn Sie möchten, können Sie dies später tun"
+
+msgid "You can access through the browser with %s"
+msgstr "Sie können über den Browser mit %s zugreifen"
+
+msgid "Syncraft Address: %s"
+msgstr "Syncraft Adresse: %s"
+
+msgid "Connect to WiFi"
+msgstr "Mit einem Netzwerk verbinden"

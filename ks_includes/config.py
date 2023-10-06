@@ -1,12 +1,15 @@
 import configparser
-import gettext
-import os
+import datetime
 import logging
-import json
-import re
-import copy
+import gettext
 import pathlib
 import locale
+import random
+import socket
+import json
+import copy
+import os
+import re
 
 from io import StringIO
 
@@ -24,10 +27,8 @@ SCREEN_BLANKING_OPTIONS = [
 
 klipperscreendir = pathlib.Path(__file__).parent.resolve().parent
 
-
 class ConfigError(Exception):
     pass
-
 
 class KlipperScreenConfig:
     config = None
@@ -40,11 +41,13 @@ class KlipperScreenConfig:
         self.errors = []
         self.fix_option: str = "NONE"
         self.nozzle: str = "NONE"
+        self.show_saved_from_usb: bool = False
         self.default_config_path = os.path.join(klipperscreendir, "ks_includes", "defaults.conf")
         self.config = configparser.ConfigParser()
         self.config_path = self.get_config_file_location(configfile)
         logging.debug(f"Config path location: {self.config_path}")
         self.defined_config = None
+        self.empty_title = True
         self.lang = None
         self.langs = {}
 
@@ -142,6 +145,14 @@ class KlipperScreenConfig:
         self.lang = self.langs[lang]
         self.lang.install(names=['gettext', 'ngettext'])
 
+    def internet_connection(self) -> bool:
+        try:
+            socket.create_connection(("www.google.com", 80))
+            return True
+        except OSError:
+            pass
+        return False
+
     def validate_config(self):
         valid = True
         for section in self.config:
@@ -152,8 +163,8 @@ class KlipperScreenConfig:
             if section == 'main':
                 bools = (
                     'invert_x', 'invert_y', 'invert_z', '24htime', 'only_heaters', 'show_cursor', 'confirm_estop',
-                    'autoclose_popups', 'use_dpms', 'use_default_menu', 'side_brightness_shortcut',
-                    'side_macro_shortcut', 'use-matchbox-keyboard', 'show_heater_power', 'show_experimental_material',
+                    'autoclose_popups', 'use_dpms', 'use_default_menu', 'show_saved_from_usb', 'side_brightness_shortcut',
+                    'use-matchbox-keyboard', 'show_heater_power', 'show_experimental_material',
                 )
                 strs = (
                     'default_printer', 'language', 'print_sort_dir', 'theme', 'screen_blanking', 'font_size',
@@ -163,6 +174,12 @@ class KlipperScreenConfig:
                     'job_complete_timeout', 'job_error_timeout', 'move_speed_xy', 'move_speed_z',
                     'print_estimate_compensation', 'width', 'height',
                 )
+            elif section == 'hidden':
+                bools = (
+                    'welcome',
+                )
+                strs = ()
+                numbers = ()
             elif section.startswith('printer '):
                 bools = (
                     'invert_x', 'invert_y', 'invert_z',
@@ -195,8 +212,7 @@ class KlipperScreenConfig:
 
             for key in self.config[section]:
                 if key not in bools and key not in strs and key not in numbers:
-                    msg = f'Option "{key}" not recognized for section "[{section}]"'
-                    self.errors.append(msg)
+                    print(f'Option "{key}" not recognized for section "[{section}]"')
                     # This most probably is not a big issue, continue to load the config
                 elif key in numbers and not self.is_float(self.config[section][key]) \
                         or key in bools and self.config[section][key] not in ["False", "false", "True", "true"]:
@@ -243,20 +259,20 @@ class KlipperScreenConfig:
                     {"name": _("Never"), "value": "off"}]
             }},
             {"24htime": {"section": "main", "name": _("24 Hour Time"), "type": "binary", "value": "True"}},
+            {"welcome": {"section": "hidden", "name": _("Welcome to Syncraft"), "type": "binary", "value": "False"}},
+            {"show_saved_from_usb": {
+                "section": "main", "name": _("Show files saved from USB"), "type": "binary",
+                "value": "False", "callback": screen.reload_panels}},
             {"side_brightness_shortcut": {
                 "section": "main", "name": _("Change Screen Brightness"), "type": "binary",
                 "value": "False", "callback": screen.toggle_brightness_shortcut}},
-            {"side_macro_shortcut": {
-                "section": "main", "name": _("Macro shortcut on sidebar"), "type": "binary",
-                "value": "False", "callback": screen.toggle_macro_shortcut}},
             {"font_size": {
                 "section": "main", "name": _("Font Size"), "type": "dropdown",
                 "value": "medium", "callback": screen.restart_ks, "options": [
                     {"name": _("Small"), "value": "small"},
                     {"name": _("Medium") + " " + _("(default)"), "value": "medium"},
                     {"name": _("Large"), "value": "large"},
-                    {"name": _("Extra Large"), "value": "extralarge"},
-                    {"name": _("Maximum"), "value": "max"}]}},
+                    {"name": _("Extra Large"), "value": "extralarge"}]}},
             {"confirm_estop": {"section": "main", "name": _("Confirm Emergency Stop"), "type": "binary",
                                "value": "True"}},
             {"only_heaters": {"section": "main", "name": _("Hide sensors in Temp."), "type": "binary",
@@ -394,6 +410,9 @@ class KlipperScreenConfig:
     def replace_nozzle (self, newvalue) -> str:
         self.nozzle = newvalue
 
+    def toggle_show_saved_from_usb (self, value):
+        self.show_saved_from_usb = value
+
     def get_config_file_location(self, file):
         # Passed config (-c) by default is ~/KlipperScreen.conf
         logging.info(f"Passed config (-c): {file}")
@@ -438,6 +457,9 @@ class KlipperScreenConfig:
 
     def get_main_config(self):
         return self.config['main']
+
+    def get_hidden_config(self):
+        return self.config['hidden']
 
     def get_menu_items(self, menu="__main", subsection=""):
         if subsection != "":

@@ -669,7 +669,7 @@ msgid "Screen Power Off Time"
 msgstr "화면 절전 시간"
 
 msgid "Screws Adjust"
-msgstr "베드 스크류 조정"
+msgstr "수동 레벨 조정"
 
 msgid "Select"
 msgstr "선택"
@@ -1173,3 +1173,153 @@ msgstr "외부 장치로 로그 내보내기"
 
 msgid "Tap the screen to confirm"
 msgstr "확인하려면 탭하세요."
+
+msgid "An error has occurred"
+msgstr "오류가 발생했습니다"
+
+msgid "Are you sure?"
+msgstr "확실합니까?"
+
+msgid "Revert"
+msgstr "되돌리기"
+
+msgid "Restore"
+msgstr "복원"
+
+msgid "Restore to Factory Default"
+msgstr "공장 기본값으로 복원"
+
+msgid "Restore All"
+msgstr "모두 복원"
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr "공장 설정으로 초기화하시겠습니까?"
+
+msgid "Are you sure you want to Update?"
+msgstr "업데이트 하시겠습니까?"
+
+msgid "Export Syncraft Installers to USB"
+msgstr "Syncraft 설치 프로그램을 USB로 내보내기"
+
+msgid "Your system version does not support this feature"
+msgstr "귀하의 시스템 버전은 이 기능을 지원하지 않습니다"
+
+msgid "Out of Date"
+msgstr "오래된 버전"
+
+msgid "Update required"
+msgstr "업데이트 필요"
+
+msgid "This software is already updated"
+msgstr "이 소프트웨어는 이미 최신 버전입니다"
+
+msgid "Restart to apply"
+msgstr "적용하려면 다시 시작하세요"
+
+msgid "Calibration"
+msgstr "교정"
+
+msgid "Mesh"
+msgstr "망사"
+
+msgid "There is a new update available"
+msgstr "새로운 업데이트가 있습니다"
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr "메뉴를 사용하여 새 업데이트를 다운로드하세요."
+
+msgid "New update available"
+msgstr "새로운 업데이트가 있습니다"
+
+msgid "No updates available"
+msgstr "사용 가능한 업데이트가 없습니다"
+
+msgid "Download Update"
+msgstr "업데이트 다운로드"
+
+msgid "Click to download the new update"
+msgstr "새로운 업데이트를 다운로드하려면 클릭하세요"
+
+msgid "Your machine is out of date"
+msgstr "귀하의 기기는 오래된 버전입니다"
+
+msgid "Everything is properly updated"
+msgstr "모든 것이 정상적으로 업데이트되었습니다"
+
+msgid "Please wait"
+msgstr "기다려주십시오"
+
+msgid "In progress, please wait"
+msgstr "진행 중입니다. 기다려주십시오"
+
+msgid "System Information"
+msgstr "시스템 정보"
+
+msgid "Information"
+msgstr "정보"
+
+msgid "Export Logs"
+msgstr "로그 내보내기"
+
+msgid "Export Syncraft Packs"
+msgstr "Syncraft 팩 내보내기"
+
+msgid "Platform"
+msgstr "플랫폼"
+
+msgid "Version"
+msgstr "버전"
+
+msgid "Model"
+msgstr "모델"
+
+msgid "USB Device"
+msgstr "USB 장치"
+
+msgid "Spool"
+msgstr "스풀"
+
+msgid "One"
+msgstr "일"
+
+msgid "Two"
+msgstr "이"
+
+msgid "Three"
+msgstr "삼"
+
+msgid "Four"
+msgstr "사"
+
+msgid "Five"
+msgstr "오"
+
+msgid "Six"
+msgstr "육"
+
+msgid "Seven"
+msgstr "칠"
+
+msgid "Eight"
+msgstr "팔"
+
+msgid "Connect"
+msgstr "연결"
+
+msgid "Customize"
+msgstr "맞춤 설정"
+
+msgid "Here are some recommended steps to get started"
+msgstr "시작하기 위한 권장 단계입니다"
+
+msgid "If you want, you can adjust all of this later"
+msgstr "원하는 경우 나중에 조정할 수 있습니다."
+
+msgid "You can access through the browser with %s"
+msgstr "브라우저를 통한 접속: %s"
+
+msgid "Syncraft Address: %s"
+msgstr "기계 웹 주소: %s"
+
+msgid "Connect to WiFi"
+msgstr "인터넷에 연결하다"

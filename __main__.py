@@ -126,6 +126,11 @@ class KlipperScreen(Gtk.Window):
         self.vertical_mode = self.aspect_ratio < 1.0
         logging.info(f"Screen resolution: {self.width}x{self.height}")
         self.theme = self._config.get_main_config().get('theme')
+        self.theme_converter = {
+            'material_darker': 'Industrial', 'material_dark': 'Neon', 'colorized': 'Colorful'
+        }
+        if self.theme in self.theme_converter:
+            self.theme = self.theme_converter[self.theme]
         self.show_cursor = self._config.get_main_config().getboolean("show_cursor", fallback=False)
         self.gtk = KlippyGtk(self)
         self.init_style()
@@ -309,6 +314,9 @@ class KlipperScreen(Gtk.Window):
         self.close_screensaver()
         if self.popup_message is not None:
             self.close_popup_message()
+
+        if 'timeout' in message.lower():
+            return
 
         messages = {
             '!PROEXTRUDER_DONT_MATCH_GCODE': _("The inserted Extruder is incompatible with this File"),
@@ -711,9 +719,6 @@ class KlipperScreen(Gtk.Window):
         msg = msg if "ready" not in msg else ""
         self.printer_initializing(_("Klipper has shutdown") + "\n\n" + msg, remove=True)
 
-    def toggle_macro_shortcut(self, value):
-        self.base_panel.show_macro_shortcut(value)
-
     def toggle_brightness_shortcut(self, value):
         self.base_panel.show_screen_brightness(value)
 
@@ -925,14 +930,14 @@ class KlipperScreen(Gtk.Window):
                 logging.error("Couldn't get the temperature store size")
 
     def base_panel_show_all(self):
-        self.base_panel.show_macro_shortcut(self._config.get_main_config().getboolean('side_macro_shortcut', True))
         self.base_panel.show_screen_brightness(self._config.get_main_config().getboolean('side_brightness_shortcut', True))
         self.base_panel.show_heaters(True)
         self.base_panel.show_estop(True)
 
     def printer_ready(self):
         self.close_popup_message()
-        self.show_panel('main_panel', "main_menu", None, 2, items=self._config.get_menu_items("__main"))
+        self.first_panel = "welcome" if self._config.get_hidden_config().getboolean('welcome', False) else "main_menu"
+        self.show_panel('main_panel', self.first_panel, None, 2, items=self._config.get_menu_items("__main"))
         self.base_panel_show_all()
 
     def printer_printing(self):

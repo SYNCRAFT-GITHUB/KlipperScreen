@@ -1097,8 +1097,155 @@ msgstr ""
 msgid "Export Logs to USB"
 msgstr ""
 
-msgid "Export Logs to USB"
+msgid "Tap the screen to confirm"
 msgstr ""
 
-msgid "Tap the screen to confirm"
+msgid "An error has occurred"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr ""
+
+msgid "Revert"
+msgstr ""
+
+msgid "Restore"
+msgstr ""
+
+msgid "Restore to Factory Default"
+msgstr ""
+
+msgid "Restore All"
+msgstr ""
+
+msgid "Are you sure you want to reset to factory default?"
+msgstr ""
+
+msgid "Are you sure you want to to Update?"
+msgstr ""
+
+msgid "Export Syncraft Installers to USB"
+msgstr ""
+
+msgid "Your system version does not support this feature"
+msgstr ""
+
+msgid "Out of Date"
+msgstr ""
+
+msgid "Update required"
+msgstr ""
+
+msgid "This software is already updated"
+msgstr ""
+
+msgid "Restart to apply"
+msgstr ""
+
+msgid "Calibration"
+msgstr ""
+
+msgid "Mesh"
+msgstr ""
+
+msgid "There is a new update available"
+msgstr ""
+
+msgid "There is a new update available, update using the Syncraft menu"
+msgstr ""
+
+msgid "New update available"
+msgstr ""
+
+msgid "No updates available"
+msgstr ""
+
+msgid "Download Update"
+msgstr ""
+
+msgid "Click to download the new update"
+msgstr ""
+
+msgid "Your machine is out of date"
+msgstr ""
+
+msgid "Everything is properly updated"
+msgstr ""
+
+msgid "Please wait"
+msgstr ""
+
+msgid "In progress, please wait"
+msgstr ""
+
+msgid "System Information"
+msgstr ""
+
+msgid "Information"
+msgstr ""
+
+msgid "Export Logs"
+msgstr ""
+
+msgid "Export Syncraft Packs"
+msgstr ""
+
+msgid "Platform"
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+msgid "Model"
+msgstr ""
+
+msgid "USB Device"
+msgstr ""
+
+msgid "Spool"
+msgstr ""
+
+msgid "One"
+msgstr ""
+
+msgid "Two"
+msgstr ""
+
+msgid "Three"
+msgstr ""
+
+msgid "Four"
+msgstr ""
+
+msgid "Five"
+msgstr ""
+
+msgid "Six"
+msgstr ""
+
+msgid "Seven"
+msgstr ""
+
+msgid "Eight"
+msgstr ""
+
+msgid "Connect"
+msgstr ""
+
+msgid "Customize"
+msgstr ""
+
+msgid "Here are some recommended steps to get started"
+msgstr ""
+
+msgid "If you want, you can adjust all of this later"
+msgstr ""
+
+msgid "You can access through the browser with %s"
+msgstr ""
+
+msgid "Syncraft Address: %s"
+msgstr ""
+
+msgid "Connect to WiFi"
 msgstr ""

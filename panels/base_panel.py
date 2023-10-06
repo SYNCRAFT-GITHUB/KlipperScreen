@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+import subprocess
 import contextlib
 import logging
+import glob
 
 import gi
 
@@ -23,7 +25,6 @@ class BasePanel(ScreenPanel):
         self.titlebar_items = []
         self.titlebar_name_type = None
         self.buttons_showing = {
-            'macros_shortcut': False,
             'brightness_shortcut': False,
             'printer_select': len(self._config.get_printers()) > 1,
         }
@@ -39,17 +40,8 @@ class BasePanel(ScreenPanel):
             self.control['printer_select'] = self._gtk.Button('shuffle', scale=abscale)
             self.control['printer_select'].connect("clicked", self._screen.show_printer_select)
 
-        self.control['macros_shortcut'] = self._gtk.Button('custom-script', scale=abscale)
-        self.control['macros_shortcut'].connect("clicked", self.menu_item_clicked, "gcode_macros", {
-            "name": "Macros",
-            "panel": "gcode_macros"
-        })
-
-        self.control['brightness_shortcut'] = self._gtk.Button('brightness-high', scale=abscale)
-        self.control['brightness_shortcut'].connect("clicked", self.menu_item_clicked, "brightness", {
-            "name": _("Screen Brightness"),
-            "panel": "brightness"
-        })
+        self.control['brightness_shortcut'] = self._gtk.Button('brightness', scale=abscale)
+        self.control['brightness_shortcut'].connect("clicked", self.change_brightness)
 
         self.control['estop'] = self._gtk.Button('emergency', scale=abscale)
         self.control['estop'].connect("clicked", self.emergency_stop)
@@ -73,7 +65,6 @@ class BasePanel(ScreenPanel):
         self.show_back(False)
         if self.buttons_showing['printer_select']:
             self.action_bar.add(self.control['printer_select'])
-        self.show_macro_shortcut(self._config.get_main_config().getboolean('side_macro_shortcut', True))
         self.show_screen_brightness(self._config.get_main_config().getboolean('side_brightness_shortcut', True))
         self.action_bar.add(self.control['estop'])
         self.show_estop(False)
@@ -116,6 +107,30 @@ class BasePanel(ScreenPanel):
             self.main_grid.attach(self.content, 1, 1, 1, 1)
 
         self.update_time()
+
+    def change_brightness(self, button):
+        brightness_files = glob.glob('/sys/class/backlight/*/brightness')
+        if not brightness_files:
+            message: str = _("An error has occurred")
+            self._screen.show_popup_message(message, level=3)
+            return
+        
+        brightness_file_path = brightness_files[0]
+        with open(brightness_file_path, 'r') as brightness_file:
+            brightness_value = brightness_file.read().strip()
+            if brightness_value == '255':
+                self.set_brightness(value=25)
+            elif brightness_value == '100':
+                self.set_brightness(value=255)
+            elif brightness_value == '25':
+                self.set_brightness(value=100)
+
+    def set_brightness (self, value):
+        bash_command = f"echo {value} | sudo tee /sys/class/backlight/*/brightness"
+        try:
+            subprocess.run(bash_command, shell=True, check=True)
+        except subprocess.CalledProcessError as e:
+            print(f"Error: {e}")
 
     def show_heaters(self, show=True):
         try:
@@ -269,19 +284,6 @@ class BasePanel(ScreenPanel):
         self.control['back'].set_sensitive(False)
         self.control['home'].set_sensitive(False)
 
-    def show_macro_shortcut(self, show=False):
-        if show is True and self.buttons_showing['macros_shortcut'] is False:
-            self.action_bar.add(self.control['macros_shortcut'])
-            if self.buttons_showing['printer_select'] is False:
-                self.action_bar.reorder_child(self.control['macros_shortcut'], 2)
-            else:
-                self.action_bar.reorder_child(self.control['macros_shortcut'], 3)
-            self.control['macros_shortcut'].show()
-            self.buttons_showing['macros_shortcut'] = True
-        elif show is False and self.buttons_showing['macros_shortcut'] is True:
-            self.action_bar.remove(self.control['macros_shortcut'])
-            self.buttons_showing['macros_shortcut'] = False
-
     def show_screen_brightness(self, show=False):
         if show is True and self.buttons_showing['brightness_shortcut'] is False:
             self.action_bar.add(self.control['brightness_shortcut'])
@@ -306,6 +308,9 @@ class BasePanel(ScreenPanel):
             self.buttons_showing['printer_select'] = False
 
     def set_title(self, title):
+        if self._config.empty_title:
+            self.titlelbl.set_label(f"")
+            return
         if not title:
             self.titlelbl.set_label(f"{self._screen.connecting_to_printer}")
             return
