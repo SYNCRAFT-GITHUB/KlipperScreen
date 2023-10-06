@@ -37,7 +37,7 @@ class SettingsPanel(ScreenPanel):
         options.append({"clear_gcodes": {
             "name": _("Clear GCodes Folder"),
             "type": "script",
-            "script": "CLEANGCODEFILES" if self._config.linux('buster') else "CLEAR_GCODES",
+            "script": "CLEAR_GCODES",
             "icon": "custom-script"
         }})
         options.append({"factory_reset": {
