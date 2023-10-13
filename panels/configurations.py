@@ -28,7 +28,7 @@ class Configurations(ScreenPanel):
                 self.title = title
                 self.show = show
 
-        syncraft_panel = 'syncraft_panel_buster' if self._config.linux('buster') else 'syncraft_panel_bullseye'
+        syncraft_panel = 'syncraft_panel_buster' if self._config.linux('buster') else 'syncraft_panel_new'
 
         self.config_buttons = [
             ConfigurationButton(button='SYNCRAFT', panel=syncraft_panel, title=_("Syncraft"), icon='syncraft'),
