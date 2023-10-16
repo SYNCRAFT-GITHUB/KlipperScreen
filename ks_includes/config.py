@@ -202,6 +202,12 @@ class KlipperScreenConfig:
                     'job_complete_timeout', 'job_error_timeout', 'move_speed_xy', 'move_speed_z',
                     'print_estimate_compensation', 'width', 'height',
                 )
+            elif section == 'hidden':
+                bools = (
+                    'welcome',
+                )
+                strs = ()
+                numbers = ()
             elif section.startswith('printer '):
                 bools = (
                     'invert_x', 'invert_y', 'invert_z',
@@ -281,6 +287,7 @@ class KlipperScreenConfig:
                     {"name": _("Never"), "value": "off"}]
             }},
             {"24htime": {"section": "main", "name": _("24 Hour Time"), "type": "binary", "value": "True"}},
+            {"welcome": {"section": "hidden", "name": _("Welcome to Syncraft"), "type": "binary", "value": "False"}},
             {"show_saved_from_usb": {
                 "section": "main", "name": _("Show files saved from USB"), "type": "binary",
                 "value": "False", "callback": screen.reload_panels}},
@@ -478,6 +485,9 @@ class KlipperScreenConfig:
 
     def get_main_config(self):
         return self.config['main']
+
+    def get_hidden_config(self):
+        return self.config['hidden']
 
     def get_menu_items(self, menu="__main", subsection=""):
         if subsection != "":

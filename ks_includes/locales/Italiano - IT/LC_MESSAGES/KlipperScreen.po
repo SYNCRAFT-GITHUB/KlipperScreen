@@ -666,7 +666,7 @@ msgid "Screen Power Off Time"
 msgstr "Tempo Spegnim. Schermo"
 
 msgid "Screws Adjust"
-msgstr "Calibra Screws"
+msgstr "Liv. Manuale"
 
 msgid "Select"
 msgstr "Selezionare"
@@ -1363,3 +1363,24 @@ msgstr "Sette"
 
 msgid "Eight"
 msgstr "Otto"
+
+msgid "Connect"
+msgstr "Connetti"
+
+msgid "Customize"
+msgstr "Personalizza"
+
+msgid "Here are some recommended steps to get started"
+msgstr "Ecco alcuni passaggi per iniziare"
+
+msgid "If you want, you can adjust all of this later"
+msgstr "Se vuoi, puoi aggiustare tutto più tardi"
+
+msgid "You can access through the browser with %s"
+msgstr "Puoi accedere tramite il browser con %s"
+
+msgid "Syncraft Address: %s"
+msgstr "Indirizzo di Syncraft: %s"
+
+msgid "Connect to WiFi"
+msgstr "Connettiti al Wi-Fi"

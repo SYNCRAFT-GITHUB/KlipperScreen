@@ -669,7 +669,7 @@ msgid "Screen Power Off Time"
 msgstr "화면 절전 시간"
 
 msgid "Screws Adjust"
-msgstr "베드 스크류 조정"
+msgstr "수동 레벨 조정"
 
 msgid "Select"
 msgstr "선택"
@@ -1302,3 +1302,24 @@ msgstr "칠"
 
 msgid "Eight"
 msgstr "팔"
+
+msgid "Connect"
+msgstr "연결"
+
+msgid "Customize"
+msgstr "맞춤 설정"
+
+msgid "Here are some recommended steps to get started"
+msgstr "시작하기 위한 권장 단계입니다"
+
+msgid "If you want, you can adjust all of this later"
+msgstr "원하는 경우 나중에 조정할 수 있습니다."
+
+msgid "You can access through the browser with %s"
+msgstr "브라우저를 통한 접속: %s"
+
+msgid "Syncraft Address: %s"
+msgstr "기계 웹 주소: %s"
+
+msgid "Connect to WiFi"
+msgstr "인터넷에 연결하다"

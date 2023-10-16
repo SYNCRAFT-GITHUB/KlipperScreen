@@ -8,7 +8,7 @@ cd "/home/pi/printer_data"
 
 sudo rm -r config
 
-git clone -b syncraftx1 https://github.com/SYNCRAFT-GITHUB/printerdataconfig.git
+git clone -b syncraftx1-arc-stable https://github.com/SYNCRAFT-GITHUB/printerdataconfig.git
 
 mv printerdataconfig config
 

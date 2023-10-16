@@ -16,12 +16,6 @@ class SettingsPanel(ScreenPanel):
         self.printers = self.settings = {}
         self.menu = ['settings_menu']
         options = self._config.get_configurable_options().copy()
-        options.append({"printers": {
-            "name": _("Printer Connections"),
-            "type": "menu",
-            "menu": "printers",
-            "icon": "moonraker"
-        }})
         options.append({"change_system_timezone": {
             "name": _("Change Timezone"),
             "type": "panel",
@@ -33,6 +27,12 @@ class SettingsPanel(ScreenPanel):
             "type": "panel",
             "panel": "system_info",
             "icon": "info"
+        }})
+        options.append({"network": {
+            "name": _("Connect to WiFi"),
+            "type": "panel",
+            "panel": "network",
+            "icon": "network"
         }})
         options.append({"clear_gcodes": {
             "name": _("Clear GCodes Folder"),
@@ -55,20 +55,6 @@ class SettingsPanel(ScreenPanel):
             name = list(option)[0]
             self.add_option('settings', self.settings, name, option[name])
 
-        self.labels['printers_menu'] = self._gtk.ScrolledWindow()
-        self.labels['printers'] = Gtk.Grid()
-        self.labels['printers_menu'].add(self.labels['printers'])
-        for printer in self._config.get_printers():
-            pname = list(printer)[0]
-            self.printers[pname] = {
-                "name": pname,
-                "section": f"printer {pname}",
-                "type": "printer",
-                "moonraker_host": printer[pname]['moonraker_host'],
-                "moonraker_port": printer[pname]['moonraker_port'],
-            }
-            self.add_option("printers", self.printers, pname, self.printers[pname])
-
         self.content.add(self.labels['settings_menu'])
 
     def activate(self):
@@ -82,6 +68,13 @@ class SettingsPanel(ScreenPanel):
         return False
 
     def add_option(self, boxname, opt_array, opt_name, option):
+
+        try:
+            if option['section'] == 'hidden':
+                return
+        except Exception as e:
+            print (f'e: {e}')
+            
         if option['type'] is None:
             return
         name = Gtk.Label()

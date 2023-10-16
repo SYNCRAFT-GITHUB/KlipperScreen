@@ -160,7 +160,7 @@ class PrintPanel(ScreenPanel):
         name = Gtk.Label()
         name.get_style_context().add_class("print-filename")
 
-        if self._config.linux('bullseye'):
+        if not self._config.linux('buster'):
 
             def is_usb(string):
                 if string.endswith("/USB"):
@@ -439,7 +439,7 @@ class PrintPanel(ScreenPanel):
 
     def confirm_print(self, widget, filename):
 
-        if self._config.linux('bullseye'):
+        if not self._config.linux('buster'):
 
             buttons = [
                 {"name": _("Print"), "response": Gtk.ResponseType.OK},

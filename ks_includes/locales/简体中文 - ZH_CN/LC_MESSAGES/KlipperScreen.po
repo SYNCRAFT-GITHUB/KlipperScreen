@@ -47,7 +47,7 @@ msgid "Actions"
 msgstr "控制"
 
 msgid "Add profile"
-msgstr ""
+msgstr "添加个人资料"
 
 msgid "Apply"
 msgstr "应用"
@@ -157,7 +157,7 @@ msgid "Auto-calibrate"
 msgstr "自动校准"
 
 msgid "Auto-close notifications"
-msgstr ""
+msgstr "自动关闭通知"
 
 msgid "Auto-scroll"
 msgstr "自动滚屏"
@@ -181,7 +181,7 @@ msgid "Calibrated, save configuration to make it permanent"
 msgstr "已校准，保存配置后生效"
 
 msgid "Calibrating"
-msgstr ""
+msgstr "执行校准"
 
 msgid "Can't set above the maximum:"
 msgstr "设置值超出最大值："
@@ -248,7 +248,7 @@ msgid "Decrease"
 msgstr "减少"
 
 msgid "Delete File?"
-msgstr ""
+msgstr "删除文件？"
 
 msgid "Deselect"
 msgstr "取消选择"
@@ -276,10 +276,10 @@ msgid "Estimated Time Method"
 msgstr "估算剩余时间方式"
 
 msgid "Exclude Object"
-msgstr ""
+msgstr "排除对象"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "特大号"
 
 msgid "Extrude"
 msgstr "挤出机"
@@ -307,6 +307,9 @@ msgstr "使用耗材:"
 
 msgid "Filament:"
 msgstr "耗材:"
+
+msgid "Filament"
+msgstr "耗材"
 
 msgid "File"
 msgstr "文件"
@@ -399,7 +402,7 @@ msgid "Invalid"
 msgstr "无效"
 
 msgid "Invalid password"
-msgstr ""
+msgstr "无效的密码"
 
 msgid "Invert X"
 msgstr "反转X轴"
@@ -474,16 +477,16 @@ msgid "Max Velocity"
 msgstr "最大速度"
 
 msgid "Maximum"
-msgstr ""
+msgstr "最大限度"
 
 msgid "Measure Both"
-msgstr ""
+msgstr "测量两者"
 
 msgid "Measure X"
-msgstr ""
+msgstr "测量 X"
 
 msgid "Measure Y"
-msgstr ""
+msgstr "测量 Y"
 
 msgid "Medium"
 msgstr "中"
@@ -492,7 +495,7 @@ msgid "Menu"
 msgstr "菜单"
 
 msgid "Mesh calibrate"
-msgstr ""
+msgstr "网格校准"
 
 msgid "Modified"
 msgstr "修改时间"
@@ -513,10 +516,10 @@ msgid "Network"
 msgstr "网络"
 
 msgid "Never"
-msgstr ""
+msgstr "绝不"
 
 msgid "New"
-msgstr ""
+msgstr "新的"
 
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
@@ -553,7 +556,7 @@ msgid "Perform a full upgrade?"
 msgstr "是否全部升级？"
 
 msgid "Pins"
-msgstr ""
+msgstr "针脚"
 
 msgid "Please recompile and flash the micro-controller."
 msgstr "请重新编译并烧录微控制器。"
@@ -577,13 +580,13 @@ msgid "Print Time"
 msgstr "打印用时"
 
 msgid "Printer"
-msgstr ""
+msgstr "打印机"
 
 msgid "Printer Connections"
 msgstr "龙门架调平"
 
 msgid "Printer Select"
-msgstr ""
+msgstr "打印机选择"
 
 msgid "Printing"
 msgstr "打印中"
@@ -595,7 +598,7 @@ msgid "Profile Name:"
 msgstr "配置文件名称:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr ""
+msgstr "寻求帮助时提供系统日志。\n"
 
 msgid "Quad Gantry Level"
 msgstr "龙门架调平"
@@ -604,7 +607,7 @@ msgid "Raise Nozzle"
 msgstr "升高喷嘴"
 
 msgid "Recover"
-msgstr ""
+msgstr "恢复"
 
 msgid "Recover Hard"
 msgstr "重置(Hard)"
@@ -637,10 +640,10 @@ msgid "Retraction Speed"
 msgstr "回抽速度"
 
 msgid "Retry"
-msgstr ""
+msgstr "重试"
 
 msgid "Retrying"
-msgstr ""
+msgstr "重试"
 
 msgid "Save"
 msgstr "保存"
@@ -668,7 +671,7 @@ msgid "Screen Power Off Time"
 msgstr "关闭屏幕时间"
 
 msgid "Screws Adjust"
-msgstr "调平"
+msgstr "手动水平"
 
 msgid "Select"
 msgstr "选择"
@@ -690,10 +693,10 @@ msgid "Show"
 msgstr "显示"
 
 msgid "Show Heater Power"
-msgstr ""
+msgstr "显示加热器功率"
 
 msgid "Shutdown"
-msgstr ""
+msgstr "关闭"
 
 msgid "Size"
 msgstr "大小"
@@ -759,16 +762,16 @@ msgid "Unknown Heater"
 msgstr "未知加热器"
 
 msgid "Unknown screw position"
-msgstr ""
+msgstr "螺丝位置未知"
 
 msgid "Unload"
 msgstr "卸载"
 
 msgid "Unretract Extra Length"
-msgstr ""
+msgstr "取消额外长度"
 
 msgid "Unretract Speed"
-msgstr ""
+msgstr "缩回速度"
 
 msgid "Up To Date"
 msgstr "最新的"
@@ -1094,6 +1097,9 @@ msgstr "下载 Android 版"
 msgid "Do not show this again."
 msgstr "不要再显示此内容。"
 
+msgid "Feeder"
+msgstr "耗材喂料器"
+
 msgid "Extruder"
 msgstr "挤出机"
 
@@ -1369,3 +1375,24 @@ msgstr "七"
 
 msgid "Eight"
 msgstr "八"
+
+msgid "Connect"
+msgstr "连接"
+
+msgid "Customize"
+msgstr "自定义"
+
+msgid "Here are some recommended steps to get started"
+msgstr "以下是一些推荐的开始步骤"
+
+msgid "If you want, you can adjust all of this later"
+msgstr "如果您愿意，您可以稍后调整所有这些"
+
+msgid "You can access through the browser with %s"
+msgstr "通过浏览器访问：%s"
+
+msgid "Syncraft Address: %s"
+msgstr "机器网络地址：%s"
+
+msgid "Connect to WiFi"
+msgstr "连接到网络"

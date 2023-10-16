@@ -931,7 +931,8 @@ class KlipperScreen(Gtk.Window):
 
     def printer_ready(self):
         self.close_popup_message()
-        self.show_panel('main_panel', "main_menu", None, 2, items=self._config.get_menu_items("__main"))
+        self.first_panel = "welcome" if self._config.get_hidden_config().getboolean('welcome', False) else "main_menu"
+        self.show_panel('main_panel', self.first_panel, None, 2, items=self._config.get_menu_items("__main"))
         self.base_panel_show_all()
 
     def printer_printing(self):
