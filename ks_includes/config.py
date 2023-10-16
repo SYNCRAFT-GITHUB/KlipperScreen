@@ -163,10 +163,6 @@ class KlipperScreenConfig:
         self.lang.install(names=['gettext', 'ngettext'])
 
     def linux(self, version: str):
-        if 'buster' in version:
-            return False
-        else:
-            return True
         try:
             with open("/etc/os-release", "r") as os_release_file:
                 for line in os_release_file:
