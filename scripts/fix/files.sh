@@ -12,6 +12,12 @@ git clone -b syncraftx1 https://github.com/SYNCRAFT-GITHUB/printerdataconfig.git
 
 mv printerdataconfig config
 
+cd /home/pi
+
+sudo rm -r printerdataconfig
+
+git clone -b syncraftx1 https://github.com/SYNCRAFT-GITHUB/printerdataconfig.git
+
 ############################
 #   VARIABLE DECLARATION   #
 ############################
@@ -114,9 +120,9 @@ echo "[HELPER] DONE: $process."
 
 process='Apply Syncraft Mainsail'
 echo "[HELPER] START: $process."
-sudo rm -r ~/mainsail
+sudo rm -r /home/pi/mainsail
 mkdir mainsail
-cd ~/mainsail
+cd /home/pi/mainsail
 wget -q https://github.com/SYNCRAFT-GITHUB/mainsail/releases/latest/download/mainsail.zip
 unzip -q mainsail.zip
 echo "[HELPER] DONE: $process."
@@ -173,7 +179,7 @@ echo "[HELPER] DONE: $process."
 
 process='Create USB Folder'
 echo "[HELPER] START: $process."
-cd ~/printer_data/gcodes
+cd /home/pi/printer_data/gcodes
 mkdir USB_PRINTS
 mkdir USB
 mkdir .JOB
@@ -182,13 +188,13 @@ cd ~
 
 process='Create Transfer Python Script'
 echo "[HELPER] START: $process."
-cd ~/printerdataconfig/scripts
-sudo cp ~/printerdataconfig/scripts/backup-transfer.py ~/printerdataconfig/scripts/transfer.py
+cd /home/pi/printerdataconfig/scripts
+sudo cp /home/pi/printerdataconfig/scripts/backup-transfer.py /home/pi/printerdataconfig/scripts/transfer.py
 echo "[HELPER] DONE: $process."
 
 process='Use Python First Transfer Script'
 echo "[HELPER] START: $process."
-sudo python3 ~/printerdataconfig/scripts/first-transfer.py
+sudo python3 /home/pi/printerdataconfig/scripts/first-transfer.py
 echo "[HELPER] DONE: $process."
 cd ~
 
@@ -199,9 +205,9 @@ echo "[HELPER] DONE: $process."
 
 process='Create Legacy Text file with false value'
 echo "[HELPER] START: $process."
-cd ~/printerdataconfig
+cd /home/pi/printerdataconfig
 echo "false" > legacy.txt
-sudo chmod 777 ~/printerdataconfig/legacy.txt
+sudo chmod 777 /home/pi/printerdataconfig/legacy.txt
 echo "[HELPER] DONE: $process."
 
 echo -e "\n\n[HELPER] DONE."
