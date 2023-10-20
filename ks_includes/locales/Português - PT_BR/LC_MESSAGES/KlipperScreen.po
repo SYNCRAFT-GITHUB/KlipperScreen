@@ -1268,3 +1268,30 @@ msgstr "Endereço do Syncraft: %s"
 
 msgid "Connect to WiFi"
 msgstr "Conectar ao Wi-Fi"
+
+msgid "Insert Material Name"
+msgstr "Insira o nome do material"
+
+msgid "Must contain between %s and %s characters."
+msgstr "Deve conter entre %s e %s caracteres."
+
+msgid "The name should contain only letters and numbers"
+msgstr "O nome deve conter apenas letras e números"
+
+msgid "This name cannot be used"
+msgstr "Este nome não pode ser usado"
+
+msgid "Select which extruders are compatible"
+msgstr "Selecione quais ProExtruder são compatíveis"
+
+msgid "Extrusion Temperature for the Material"
+msgstr "Temperatura de Extrusão"
+
+msgid "Add Material"
+msgstr "Adicionar Material"
+
+msgid "Add Custom Material"
+msgstr "Adicionar Material Customizado"
+
+msgid "Remove Material"
+msgstr "Remover Material"

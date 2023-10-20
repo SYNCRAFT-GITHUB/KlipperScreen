@@ -1323,3 +1323,30 @@ msgstr "기계 웹 주소: %s"
 
 msgid "Connect to WiFi"
 msgstr "인터넷에 연결하다"
+
+msgid "Insert Material Name"
+msgstr "자료 이름 입력"
+
+msgid "Must contain between %s and %s characters."
+msgstr "%s에서 %s 문자 사이여야 합니다."
+
+msgid "The name should contain only letters and numbers"
+msgstr "이름은 문자와 숫자만 포함해야 합니다."
+
+msgid "This name cannot be used"
+msgstr "이 이름을 사용할 수 없습니다."
+
+msgid "Select which extruders are compatible"
+msgstr "어떤 엑스트루더가 호환되는지 선택"
+
+msgid "Extrusion Temperature for the Material"
+msgstr "자료의 압출 온도"
+
+msgid "Add Material"
+msgstr "자료 추가"
+
+msgid "Add Custom Material"
+msgstr "사용자 정의 자료 추가"
+
+msgid "Remove Material"
+msgstr "자료 제거"

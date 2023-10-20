@@ -23,7 +23,7 @@ class Keyboard(Gtk.Box):
         language = self.detect_language(screen._config.get_main_config().get("language", None))
         logging.info(f"Keyboard {language}")
 
-        if language == "de":
+        if language == "Deutsch - DE":
             self.keys = [
                 [
                     ["q", "w", "e", "r", "t", "z", "u", "i", "o", "p", "ü"],
@@ -50,7 +50,7 @@ class Keyboard(Gtk.Box):
                     ["ABC", " ", "↓"],
                 ]
             ]
-        elif language == "fr":
+        elif language == "Français - FR":
             self.keys = [
                 [
                     ["a", "z", "e", "r", "t", "y", "u", "i", "o", "p"],
@@ -105,7 +105,7 @@ class Keyboard(Gtk.Box):
                 ]
             ]
 
-            if language == "es":
+            if language == "Español - ES":
                 self.keys[0][1].append("ñ")
                 self.keys[1][1].append("Ñ")
 

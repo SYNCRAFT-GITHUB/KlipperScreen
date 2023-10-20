@@ -1249,3 +1249,30 @@ msgstr ""
 
 msgid "Connect to WiFi"
 msgstr ""
+
+msgid "Insert Material Name"
+msgstr ""
+
+msgid "Must contain between %s and %s characters."
+msgstr ""
+
+msgid "The name should contain only letters and numbers"
+msgstr ""
+
+msgid "This name cannot be used"
+msgstr ""
+
+msgid "Select which extruders are compatible"
+msgstr ""
+
+msgid "Extrusion Temperature for the Material"
+msgstr ""
+
+msgid "Add Material"
+msgstr ""
+
+msgid "Add Custom Material"
+msgstr ""
+
+msgid "Remove Material"
+msgstr ""

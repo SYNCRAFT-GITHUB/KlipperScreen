@@ -1,6 +1,6 @@
 import logging
 import re
-
+import random
 import gi
 
 gi.require_version("Gtk", "3.0")
@@ -8,17 +8,22 @@ from gi.repository import Gtk, Pango
 
 from ks_includes.KlippyGcodes import KlippyGcodes
 from ks_includes.screen_panel import ScreenPanel
+from .material_load import PrinterMaterial
+from .material_load import materials
 
 def create_panel(*args):
     return FilamentPanel(*args)
 
+error_messages = [
+    _("An error has occurred"),
+    _("This name cannot be used")
+]
 
 class FilamentPanel(ScreenPanel):
 
     def __init__(self, screen, title):
         super().__init__(screen, title)
-        self.menu = ['add_filament_menu']
-        grid = self._gtk.HomogeneousGrid()
+        i: int = 0
 
         self.bools = {
             'ST025': False,
@@ -28,16 +33,60 @@ class FilamentPanel(ScreenPanel):
             'FIBER06': False,
         }
 
-        dev = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=2) # 5
-        dev.get_style_context().add_class("frame-item")
-        dev.set_hexpand(True)
-        dev.set_vexpand(False)
-        dev.set_valign(Gtk.Align.CENTER)
+        grid = self._gtk.HomogeneousGrid()
+        scroll = self._gtk.ScrolledWindow()
+        scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        scroll.add(grid)
+        self.content.add(scroll)
 
-        for key, value in bools.items():
+        textfield_label = self._gtk.Label(_('Insert Material Name'))
+        textfield_label.set_hexpand(False)
+        self.labels['filament_name'] = Gtk.Entry()
+        self.labels['filament_name'].set_text('')
+        self.labels['filament_name'].set_hexpand(True)
+        self.labels['filament_name'].connect("activate", self.apply_custom_filament)
+        self.labels['filament_name'].connect("focus-in-event", self._screen.show_keyboard)
+
+        box = Gtk.Box()
+        box.pack_start(self.labels['filament_name'], True, True, 5)
+
+        self.labels['insert_name'] = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+        self.labels['insert_name'].set_valign(Gtk.Align.CENTER)
+        self.labels['insert_name'].set_hexpand(True)
+        self.labels['insert_name'].set_vexpand(True)
+        self.labels['insert_name'].pack_start(textfield_label, True, True, 5)
+        self.labels['insert_name'].pack_start(box, True, True, 5)
+
+        grid.attach(self.labels['insert_name'], 0, (i), 3, 1)
+        i += 1
+        self.labels['filament_name'].grab_focus_without_selecting()
+
+        self.labels['text_nozzle'] = Gtk.Label(_('Select which extruders are compatible'))
+        grid.attach(self.labels['text_nozzle'], 0, (i), 3, 1)
+        i += 1
+
+        for key, value in self.bools.items():
+
+            dev = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5) # 5
+            dev.get_style_context().add_class("frame-item")
+            dev.set_hexpand(True)
+            dev.set_vexpand(False)
+            dev.set_valign(Gtk.Align.CENTER)
+
+            key_title: str = key
+            if 'ST025' in key:
+                key_title = 'Standard 0.25mm'
+            elif 'ST04' in key:
+                key_title = 'Standard 0.4mm'
+            elif 'ST08' in key:
+                key_title = 'Standard 0.8mm'
+            elif 'FIBER06' in key:
+                key_title = 'Fiber 0.6mm'
+            elif 'METAL04' in key:
+                key_title = 'Metal 0.4mm'
 
             name = Gtk.Label()
-            name.set_markup(f"<big><b>{key}</b></big>")
+            name.set_markup(f"<big><b>{key_title}</b></big>")
             name.set_hexpand(True)
             name.set_vexpand(True)
             name.set_halign(Gtk.Align.START)
@@ -47,62 +96,98 @@ class FilamentPanel(ScreenPanel):
 
             labels = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
             labels.add(name)
+            dev.add(labels)
 
             switch = Gtk.Switch()
-            switch.set_active(self.bools['ST025'])
-            switch.connect("notify::active", self.test)
+            switch.set_active(self.bools[key])
+            switch.connect("notify::active", self.toggle_bool, key)
             dev.add(switch)
-            self.content.add(dev)
-            self.content.add(dev)
-            self.content.add(dev)
+            grid.attach(dev, 0, i, 3, 1)
+            i += 1
 
-        self.labels['text'] = Gtk.Label(f"Mamma Mia! :D")
+        self.temp_value: int = 200
+        self.default_temp_text = f"{_('Extrusion Temperature for the Material')}: {self.temp_value}"
+        self.labels['text_temp'] = Gtk.Label(self.default_temp_text)
+        grid.attach(self.labels['text_temp'], 0, (i), 3, 1)
+        i += 1
 
-        #grid.attach(self.buttons['ST025'], 0, 0, 1, 1)
-        #grid.attach(self.buttons['ST04'], 1, 0, 1, 1)
-        #grid.attach(self.buttons['ST08'], 2, 0, 1, 1)
-        #grid.attach(self.buttons['FIBER06'], 3, 0, 1, 1)
-        #grid.attach(self.buttons['METAL04'], 4, 0, 1, 1)
+        self.labels['plus_button'] = self._gtk.Button("increase", None, f"color{random.randint(1, 4)}")
+        self.labels['plus_button'].connect("clicked", self.increase_temp)
+        self.labels['minus_button'] = self._gtk.Button("decrease", None, f"color{random.randint(1, 4)}")
+        self.labels['minus_button'].connect("clicked", self.decrease_temp)
 
-        self.labels['add_filament_menu'] = self._gtk.HomogeneousGrid()
-        self.labels['add_filament_menu'].attach(grid, 0, 0, 1, 2)
+        grid.attach(self.labels['plus_button'], 2, (i), 1, 1)
+        grid.attach(self.labels['minus_button'], 0, (i), 1, 1)
 
-        self.content.add(self.labels['text'])
-        self.content.add(self.labels['add_filament_menu'])
+        self.labels['finish'] = self._gtk.Button("complete", _('Add Custom Material'), f"color1")
+        self.labels['finish'].connect("clicked", self.apply_custom_filament)
+        grid.attach(self.labels['finish'], 0, (i+1), 3, 1)
 
-        pl = self._gtk.Label(_('INSERT FILAMENT NAME'))
-        pl.set_hexpand(False)
-        self.labels['filament_name'] = Gtk.Entry()
-        self.labels['filament_name'].set_text('')
-        self.labels['filament_name'].set_hexpand(True)
-        self.labels['filament_name'].connect("activate", self.apply_custom_filament)
-        self.labels['filament_name'].connect("focus-in-event", self._screen.show_keyboard)
-
-        save = self._gtk.Button("complete", _("Save"), "color3")
-        save.set_hexpand(False)
-        save.connect("clicked", self.apply_custom_filament)
-
-        box = Gtk.Box()
-        box.pack_start(self.labels['filament_name'], True, True, 5)
-        box.pack_start(save, False, False, 5)
-
-        self.labels['insert_name'] = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
-        self.labels['insert_name'].set_valign(Gtk.Align.CENTER)
-        self.labels['insert_name'].set_hexpand(True)
-        self.labels['insert_name'].set_vexpand(True)
-        self.labels['insert_name'].pack_start(pl, True, True, 5)
-        self.labels['insert_name'].pack_start(box, True, True, 5)
-
-        self.content.add(self.labels['insert_name'])
-        self.labels['filament_name'].grab_focus_without_selecting()
 
     def apply_custom_filament(self, widget):
 
-        code = self.labels['filament_name'].get_text()
-
-    def test(self, widget, text):
-        if self.bools["ST025"]:
-            self.bools["ST025"] = False
+        code = (self.labels['filament_name'].get_text()).lstrip()
+        
+        if len(code) < 3 or len(code) > 7:
+            message = message = error_messages[1]
+            self._screen.show_popup_message(message, level=2)
+            return None
         else:
-            self.bools["ST025"] = True
-        print(f'TEST FUNCTION: {self.bools["ST025"]}')
+            name = code.upper()
+
+        code = self.clean_code(code)
+        filament = PrinterMaterial(name=name, code=code, custom=[])
+
+        has_extruder: bool = False
+        for key, value in self.bools.items():
+            if value:
+                filament.custom.append(key)
+                has_extruder = True
+
+        if not has_extruder:
+            message = error_messages[0]
+            self._screen.show_popup_message(message, level=2)
+            return None
+
+        for material in materials:
+            if material.name == name or material.code == code:
+                message = message = error_messages[1]
+                self._screen.show_popup_message(message, level=2)
+                return None
+        
+        materials.append(filament)
+        for _ in range(0,2):
+            self._screen._menu_go_back()
+    
+    def clean_code(self, text: str) -> str:
+        clean_code = (re.sub(r'[^a-zA-Z0-9]', '', text)).upper()
+        self.letters = self.numbers = ""
+        for char in clean_code:
+            if char.isalpha():
+                self.letters += char
+            elif char.isdigit():
+                self.numbers += char
+        result = self.letters + self.numbers
+        return result
+
+    def reload_temp_text(self):
+        self.default_temp_text = f"{_('Extrusion Temperature for the Material')}: {self.temp_value}"
+
+    def decrease_temp(self, button):
+        self.temp_value -= 5
+        self.reload_temp_text()
+        self.labels['text_temp'].set_label(self.default_temp_text)
+
+    def increase_temp(self, button):
+        self.temp_value += 5
+        self.reload_temp_text()
+        self.labels['text_temp'].set_label(self.default_temp_text)
+
+    def toggle_bool(self, switch, state, bool_key):
+        try:
+            if self.bools[bool_key]:
+                self.bools[bool_key] = False
+            else:
+                self.bools[bool_key] = True
+        except:
+            pass
