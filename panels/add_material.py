@@ -15,7 +15,7 @@ from .material_load import materials_json_path
 from .material_load import custom_json_path
 
 def create_panel(*args):
-    return FilamentPanel(*args)
+    return AddCustomMaterial(*args)
 
 error_messages = [
     _("An error has occurred"),
@@ -24,7 +24,7 @@ error_messages = [
     _("The maximum limit has been reached")
 ]
 
-class FilamentPanel(ScreenPanel):
+class AddCustomMaterial(ScreenPanel):
 
     def __init__(self, screen, title):
         super().__init__(screen, title)
@@ -205,7 +205,9 @@ class FilamentPanel(ScreenPanel):
         with open(custom_json_path, 'w') as json_file:
             json.dump(custom_json_file, json_file, indent=4)
 
-        self._screen.restart_ks()
+        os.system('service KlipperScreen restart')
+        self._config.restart_ks()
+        return None
 
     def clear_all(self, button):
 
@@ -222,7 +224,9 @@ class FilamentPanel(ScreenPanel):
         with open(custom_json_path, 'w') as file:
             json.dump([], file)
 
-        self._screen.restart_ks()
+        os.system('service KlipperScreen restart')
+        self._config.restart_ks()
+        return None
     
     def clean_code(self, text: str) -> str:
         clean_code = (re.sub(r'[^a-zA-Z0-9]', '', text)).upper()
