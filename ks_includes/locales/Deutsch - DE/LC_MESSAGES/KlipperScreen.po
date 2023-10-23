@@ -1428,3 +1428,12 @@ msgstr "+ Maßgeschneidertes Material"
 
 msgid "Remove Material"
 msgstr "Material entfernen"
+
+msgid "Delete all custom Materials"
+msgstr "Löschen Sie alle Materialien"
+
+msgid "The maximum limit has been reached"
+msgstr "Das Maximum wurde erreicht"
+
+msgid "Select at least one Extruder"
+msgstr "Füllen Sie die kompatible Liste aus"

@@ -1282,3 +1282,12 @@ msgstr "カスタム材料を追加"
 
 msgid "Remove Material"
 msgstr "材料を削除"
+
+msgid "Delete all custom Materials"
+msgstr "すべての素材を削除する"
+
+msgid "The maximum limit has been reached"
+msgstr "最大制限に達しました"
+
+msgid "Select at least one Extruder"
+msgstr "少なくとも1つのエクストルーダを選択"

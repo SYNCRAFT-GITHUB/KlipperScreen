@@ -1462,3 +1462,12 @@ msgstr "+ индивидуальный материал"
 
 msgid "Remove Material"
 msgstr "Удалить материал"
+
+msgid "Delete all custom Materials"
+msgstr "Удалить все материалы"
+
+msgid "The maximum limit has been reached"
+msgstr "Достигнут максимальный лимит"
+
+msgid "Select at least one Extruder"
+msgstr "Выберите хотя бы один элемент в списке"

@@ -81,7 +81,8 @@ class ChMaterialPanel(ScreenPanel):
         self.texts = [
             _("This material is considered experimental for the selected Extruder."),
             _("This action may result in unexpected results."),
-            _("You are loading untested material, this may result in unexpected results.")
+            _("You are loading untested material, this may result in unexpected results."),
+            _("Extrusion Temperature for the Material")
             ]
 
         grid = self._gtk.HomogeneousGrid()
@@ -124,8 +125,8 @@ class ChMaterialPanel(ScreenPanel):
         for material in custom_materials:
         
             if selected_nozzle in material.compatible:
-                index_button = self._gtk.Button("circle-blue", material.name, "color2")
-                index_button.connect("clicked", self.nothing_at_all)
+                index_button = self._gtk.Button("circle-purple", material.name, "color2")
+                index_button.connect("clicked", self.confirm_print_custom, material.code, material.temp)
                 gridvariable.attach(index_button, i, repeat_three, 1, 1)
                 
                 if repeat_three == 2:
@@ -172,11 +173,11 @@ class ChMaterialPanel(ScreenPanel):
         for _ in range(0,2):
             self._screen._menu_go_back()
 
-    def confirm_print_custom(self, widget, code):
-        params = {"script": f"LOAD_FILAMENT_{code}"}
+    def confirm_print_custom(self, widget, code, temp: int):
+        params = {"script": f"LOAD_FILAMENT_GENERIC T={temp}"}
         self._screen._confirm_send_action(
             None,
-            self.texts[0] + "\n\n" + self.texts[1] + "\n\n",
+            self.texts[2] + "\n\n" + self.texts[3] + f": {temp} (°C)\n\n",
             "printer.gcode.script",
             params
         )

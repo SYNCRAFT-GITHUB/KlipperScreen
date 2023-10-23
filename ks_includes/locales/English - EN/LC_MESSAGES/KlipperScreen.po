@@ -1276,3 +1276,12 @@ msgstr ""
 
 msgid "Remove Material"
 msgstr ""
+
+msgid "Delete all custom Materials"
+msgstr ""
+
+msgid "The maximum limit has been reached"
+msgstr ""
+
+msgid "Select at least one Extruder"
+msgstr ""

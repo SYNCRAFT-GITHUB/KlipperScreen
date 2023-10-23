@@ -1423,3 +1423,12 @@ msgstr "添加自定义材料"
 
 msgid "Remove Material"
 msgstr "删除材料"
+
+msgid "Delete all custom Materials"
+msgstr "删除所有材料"
+
+msgid "The maximum limit has been reached"
+msgstr "已达到最大限制"
+
+msgid "Select at least one Extruder"
+msgstr "至少选择一个挤出头"

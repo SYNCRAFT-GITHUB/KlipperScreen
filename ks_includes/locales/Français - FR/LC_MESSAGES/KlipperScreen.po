@@ -1470,3 +1470,12 @@ msgstr "Ajouter un matériau personnalisé"
 
 msgid "Remove Material"
 msgstr "Supprimer le matériau"
+
+msgid "Delete all custom Materials"
+msgstr "Supprimer tous les matériaux"
+
+msgid "The maximum limit has been reached"
+msgstr "La limite maximale a été atteinte"
+
+msgid "Select at least one Extruder"
+msgstr "Sélectionnez au moins un extrudeur"

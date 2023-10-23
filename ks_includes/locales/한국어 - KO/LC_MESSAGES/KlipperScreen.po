@@ -1350,3 +1350,12 @@ msgstr "사용자 정의 자료 추가"
 
 msgid "Remove Material"
 msgstr "자료 제거"
+
+msgid "Delete all custom Materials"
+msgstr "모든 사용자 정의 재료 삭제"
+
+msgid "The maximum limit has been reached"
+msgstr "최대 제한에 도달했습니다"
+
+msgid "Select at least one Extruder"
+msgstr "목록에서 항목을 하나 이상 선택하세요"

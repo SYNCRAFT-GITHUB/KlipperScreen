@@ -1295,3 +1295,12 @@ msgstr "Adicionar Material Customizado"
 
 msgid "Remove Material"
 msgstr "Remover Material"
+
+msgid "Delete all custom Materials"
+msgstr "Redefinir materiais customizados"
+
+msgid "The maximum limit has been reached"
+msgstr "O limite máximo foi atingido"
+
+msgid "Select at least one Extruder"
+msgstr "Selecione pelo menos um ProExtruder"
