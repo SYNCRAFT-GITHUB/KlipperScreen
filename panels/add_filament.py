@@ -1,6 +1,8 @@
 import logging
 import re
 import random
+import json
+import os
 import gi
 
 gi.require_version("Gtk", "3.0")
@@ -8,8 +10,9 @@ from gi.repository import Gtk, Pango
 
 from ks_includes.KlippyGcodes import KlippyGcodes
 from ks_includes.screen_panel import ScreenPanel
-from .material_load import PrinterMaterial
-from .material_load import materials
+from .material_load import CustomPrinterMaterial
+from .material_load import materials_json_path
+from .material_load import custom_json_path
 
 def create_panel(*args):
     return FilamentPanel(*args)
@@ -105,19 +108,22 @@ class FilamentPanel(ScreenPanel):
             grid.attach(dev, 0, i, 3, 1)
             i += 1
 
-        self.temp_value: int = 200
+        self.temp_value: int = 220
         self.default_temp_text = f"{_('Extrusion Temperature for the Material')}: {self.temp_value}"
         self.labels['text_temp'] = Gtk.Label(self.default_temp_text)
         grid.attach(self.labels['text_temp'], 0, (i), 3, 1)
         i += 1
 
         self.labels['plus_button'] = self._gtk.Button("increase", None, f"color{random.randint(1, 4)}")
-        self.labels['plus_button'].connect("clicked", self.increase_temp)
+        self.labels['plus_button'].connect("clicked", self.increase_temp, 2)
         self.labels['minus_button'] = self._gtk.Button("decrease", None, f"color{random.randint(1, 4)}")
-        self.labels['minus_button'].connect("clicked", self.decrease_temp)
+        self.labels['minus_button'].connect("clicked", self.decrease_temp, 2)
+        self.labels['minus_small_button'] = self._gtk.Button(None, "―", f"color{random.randint(1, 4)}")
+        self.labels['minus_small_button'].connect("clicked", self.decrease_temp, 1)
 
         grid.attach(self.labels['plus_button'], 2, (i), 1, 1)
         grid.attach(self.labels['minus_button'], 0, (i), 1, 1)
+        #grid.attach(self.labels['minus_small_button'], 0, (i), 1, 1)
 
         self.labels['finish'] = self._gtk.Button("complete", _('Add Custom Material'), f"color1")
         self.labels['finish'].connect("clicked", self.apply_custom_filament)
@@ -125,6 +131,16 @@ class FilamentPanel(ScreenPanel):
 
 
     def apply_custom_filament(self, widget):
+
+        if not os.path.isfile(custom_json_path):
+            with open(custom_json_path, 'w') as json_file:
+                json.dump([], json_file)
+
+        with open(custom_json_path, 'r') as json_file:
+            try:
+                custom_json_file = json.load(json_file)
+            except json.JSONDecodeError:
+                custom_json_file = []
 
         code = (self.labels['filament_name'].get_text()).lstrip()
         
@@ -136,12 +152,12 @@ class FilamentPanel(ScreenPanel):
             name = code.upper()
 
         code = self.clean_code(code)
-        filament = PrinterMaterial(name=name, code=code, custom=[])
+        compatible_extruders = []
 
         has_extruder: bool = False
         for key, value in self.bools.items():
             if value:
-                filament.custom.append(key)
+                compatible_extruders.append(key)
                 has_extruder = True
 
         if not has_extruder:
@@ -149,15 +165,25 @@ class FilamentPanel(ScreenPanel):
             self._screen.show_popup_message(message, level=2)
             return None
 
-        for material in materials:
-            if material.name == name or material.code == code:
+        for material in custom_json_file:
+            if (material['name'] == name or material['code'] == code):
                 message = message = error_messages[1]
                 self._screen.show_popup_message(message, level=2)
                 return None
+
+        new_material = {
+            "name": name,
+            "code": code,
+            "compatible" : compatible_extruders,
+            "temp": int(self.temp_value)
+        }
         
-        materials.append(filament)
-        for _ in range(0,2):
-            self._screen._menu_go_back()
+        custom_json_file.append(new_material)
+
+        with open(custom_json_path, 'w') as json_file:
+            json.dump(custom_json_file, json_file, indent=4)
+
+        self._screen.restart_ks()
     
     def clean_code(self, text: str) -> str:
         clean_code = (re.sub(r'[^a-zA-Z0-9]', '', text)).upper()
@@ -173,13 +199,19 @@ class FilamentPanel(ScreenPanel):
     def reload_temp_text(self):
         self.default_temp_text = f"{_('Extrusion Temperature for the Material')}: {self.temp_value}"
 
-    def decrease_temp(self, button):
-        self.temp_value -= 5
+    def decrease_temp(self, button, by: int):
+        self.temp_value -= by
+        if not self.temp_value in range(180, 320):
+            self.temp_value += by
+            return None
         self.reload_temp_text()
         self.labels['text_temp'].set_label(self.default_temp_text)
 
-    def increase_temp(self, button):
-        self.temp_value += 5
+    def increase_temp(self, button, by: int):
+        self.temp_value += by
+        if not self.temp_value in range(180, 320):
+            self.temp_value -= by
+            return None
         self.reload_temp_text()
         self.labels['text_temp'].set_label(self.default_temp_text)
 

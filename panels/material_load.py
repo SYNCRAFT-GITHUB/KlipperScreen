@@ -1,4 +1,6 @@
 import logging
+import json
+import os
 
 import gi
 
@@ -9,110 +11,60 @@ from ks_includes.KlippyGcodes import KlippyGcodes
 from ks_includes.screen_panel import ScreenPanel
 
 class PrinterMaterial:
-    def __init__ (self, name: str, code: str, compatible: [str] = [], experimental: [str] = [], custom: [str] = []):
+    def __init__ (self, name: str, code: str, compatible: [str] = [], experimental: [str] = []):
         self.name = name
         self.code = code
         self.compatible = compatible
         self.experimental = experimental
-        self.custom = custom
 
-materials = [
-    PrinterMaterial(
-        name="PLA", 
-        code="PLA", 
-        compatible=["ST025", "ST04", "ST08"], 
-        experimental=["FIBER06", "METAL04"]),
-    PrinterMaterial(
-        name="NYLON",
-        code="NYLON", 
-        compatible=["ST04", "ST08"],
-        experimental=["ST025", "FIBER06", "METAL04"]),
-    PrinterMaterial(
-        name="TO. PLA",
-        code="TOUGH_PLA", 
-        compatible=["ST025", "ST04", "ST08"],
-        experimental=["FIBER06", "METAL04"]),
-    PrinterMaterial(
-        name="CPE",
-        code="CPE",
-        compatible=["ST04", "ST08"], 
-        experimental=["ST025", "FIBER06", "METAL04"]),
-    PrinterMaterial(
-        name="ABS", 
-        code="ABS", 
-        compatible=["ST025", "ST04", "ST08"], 
-        experimental=["FIBER06", "METAL04"]),
-    PrinterMaterial(
-        name="PP", 
-        code="PP", 
-        compatible=["ST04"], 
-        experimental=["ST025", "ST08", "FIBER06", "METAL04"]),
-    PrinterMaterial(
-        name="CPE +", 
-        code="CPEPLUS", 
-        compatible=["ST04"], 
-        experimental=["ST025", "ST08", "FIBER06", "METAL04"]),
-    PrinterMaterial(
-        name="PETG",
-        code="PETG", 
-        compatible=["ST04", "ST08"], 
-        experimental=["ST025", "FIBER06", "METAL04"]),
-    PrinterMaterial(
-        name="PC", 
-        code="PC",
-        compatible=["ST04"], 
-        experimental=["ST025", "ST08", "FIBER06", "METAL04"]),
-    PrinterMaterial(
-        name="TPU 95A",
-        code="TPU_A95", 
-        compatible=["ST04", "ST08"],
-        experimental=["ST025", "FIBER06", "METAL04"]),
-    PrinterMaterial(
-        name="TPU D64", 
-        code="TPU_D64",
-        compatible=["ST04", "ST08"], 
-        experimental=["ST025", "FIBER06", "METAL04"]),
-    PrinterMaterial(
-        name="PET", 
-        code="PET", 
-        compatible=[],
-        experimental=["ST025", "ST04", "ST08", "FIBER06", "METAL04"]),
-    PrinterMaterial(
-        name="PAHT CF15", 
-        code="PAHT_CF15", 
-        compatible=["FIBER06"], 
-        experimental=[]),
-    PrinterMaterial(
-        name="PET CF15", 
-        code="PET_CF15",
-        compatible=["FIBER06"], 
-        experimental=[]),
-    PrinterMaterial(
-        name="PC GF30", 
-        code="PC_GF30", 
-        compatible=["FIBER06"], 
-        experimental=[]),
-    PrinterMaterial(
-        name="PP GF30", 
-        code="PP_GF30", 
-        compatible=["FIBER06"],
-        experimental=[]),
-    PrinterMaterial(
-        name="316 L", 
-        code="L316", 
-        compatible=["METAL04"],
-        experimental=[]),
-    PrinterMaterial(
-        name="17-4PH",
-        code="PH_174", 
-        compatible=["METAL04"],
-        experimental=[]),
-    PrinterMaterial(
-        name="ASA",
-        code="ASA",
-        compatible=["ST04"], 
-        experimental=[]),
-]
+class CustomPrinterMaterial:
+    def __init__ (self, name: str, code: str, compatible: [str] = [], temp: int=0):
+        self.name = name
+        self.code = code
+        self.compatible = compatible
+        self.temp = temp
+
+materials = []
+custom_materials = []
+
+materials_json_path: str = os.path.join(os.getcwd(), "ks_includes", "materials", "stock.json")
+custom_json_path: str = os.path.join(os.getcwd(), "ks_includes", "materials", "custom.json")
+
+def read_materials_from_json(file_path=materials_json_path, custom_path=custom_json_path):
+    print(f'file_path: {file_path}')
+    try:
+        with open(file_path, 'r') as json_file:
+            data = json.load(json_file)
+            for item in data:
+                material = PrinterMaterial(
+                    name=item['name'],
+                    code=item['code'],
+                    compatible=item['compatible'],
+                    experimental=item['experimental'],
+                )
+                materials.append(material)
+    except FileNotFoundError:
+        print(f"Not found: {file_path}")
+    except json.JSONDecodeError:
+        print(f"Error decoding JSON: {file_path}")
+
+    try:
+        with open(custom_path, 'r') as json_file:
+            data = json.load(json_file)
+            for item in data:
+                material = CustomPrinterMaterial(
+                    name=item['name'],
+                    code=item['code'],
+                    compatible=item['compatible'],
+                    temp=item['temp'],
+                )
+                custom_materials.append(material)
+    except FileNotFoundError:
+        print(f"Not found: {file_path}")
+    except json.JSONDecodeError:
+        print(f"Error decoding JSON: {file_path}")
+
+read_materials_from_json()
 
 def create_panel(*args):
     return ChMaterialPanel(*args)
@@ -169,9 +121,9 @@ class ChMaterialPanel(ScreenPanel):
                 else:
                     repeat_three += 1
 
-        for material in materials:
-
-            if selected_nozzle in material.custom:
+        for material in custom_materials:
+        
+            if selected_nozzle in material.compatible:
                 index_button = self._gtk.Button("circle-blue", material.name, "color2")
                 index_button.connect("clicked", self.nothing_at_all)
                 gridvariable.attach(index_button, i, repeat_three, 1, 1)

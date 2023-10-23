@@ -1,0 +1,213 @@
+[
+    {
+        "name": "PLA",
+        "code": "PLA",
+        "compatible": [
+            "ST025",
+            "ST04",
+            "ST08"
+        ],
+        "experimental": [
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "NYLON",
+        "code": "NYLON",
+        "compatible": [
+            "ST04",
+            "ST08"
+        ],
+        "experimental": [
+            "ST025",
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "TO. PLA",
+        "code": "TOUGH_PLA",
+        "compatible": [
+            "ST025",
+            "ST04",
+            "ST08"
+        ],
+        "experimental": [
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "CPE",
+        "code": "CPE",
+        "compatible": [
+            "ST04",
+            "ST08"
+        ],
+        "experimental": [
+            "ST025",
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "ABS",
+        "code": "ABS",
+        "compatible": [
+            "ST025",
+            "ST04",
+            "ST08"
+        ],
+        "experimental": [
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "PP",
+        "code": "PP",
+        "compatible": [
+            "ST04"
+        ],
+        "experimental": [
+            "ST025",
+            "ST08",
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "CPE +",
+        "code": "CPEPLUS",
+        "compatible": [
+            "ST04"
+        ],
+        "experimental": [
+            "ST025",
+            "ST08",
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "PETG",
+        "code": "PETG",
+        "compatible": [
+            "ST04",
+            "ST08"
+        ],
+        "experimental": [
+            "ST025",
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "PC",
+        "code": "PC",
+        "compatible": [
+            "ST04"
+        ],
+        "experimental": [
+            "ST025",
+            "ST08",
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "TPU 95A",
+        "code": "TPU_A95",
+        "compatible": [
+            "ST04",
+            "ST08"
+        ],
+        "experimental": [
+            "ST025",
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "TPU D64",
+        "code": "TPU_D64",
+        "compatible": [
+            "ST04",
+            "ST08"
+        ],
+        "experimental": [
+            "ST025",
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "PET",
+        "code": "PET",
+        "compatible": [],
+        "experimental": [
+            "ST025",
+            "ST04",
+            "ST08",
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "PAHT CF15",
+        "code": "PAHT_CF15",
+        "compatible": [
+            "FIBER06"
+        ],
+        "experimental": []
+    },
+    {
+        "name": "PET CF15",
+        "code": "PET_CF15",
+        "compatible": [
+            "FIBER06"
+        ],
+        "experimental": []
+    },
+    {
+        "name": "PC GF30",
+        "code": "PC_GF30",
+        "compatible": [
+            "FIBER06"
+        ],
+        "experimental": []
+    },
+    {
+        "name": "PP GF30",
+        "code": "PP_GF30",
+        "compatible": [
+            "FIBER06"
+        ],
+        "experimental": []
+    },
+    {
+        "name": "316 L",
+        "code": "L316",
+        "compatible": [
+            "METAL04"
+        ],
+        "experimental": []
+    },
+    {
+        "name": "17-4PH",
+        "code": "PH_174",
+        "compatible": [
+            "METAL04"
+        ],
+        "experimental": []
+    },
+    {
+        "name": "ASA",
+        "code": "ASA",
+        "compatible": [
+            "ST04"
+        ],
+        "experimental": []
+    }
+]
