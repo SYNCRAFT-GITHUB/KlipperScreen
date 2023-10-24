@@ -40,12 +40,12 @@ class SettingsPanel(ScreenPanel):
             "script": "CLEANGCODEFILES" if self._config.linux('buster') else "CLEAR_GCODES",
             "icon": "custom-script"
         }})
-        options.append({"add_material": {
-            "name": _("Add Material"),
-            "type": "panel",
-            "panel": "add_material",
-            "icon": "filament_plus"
-        }})
+        #options.append({"add_material": {
+        #    "name": _("Add Material"),
+        #    "type": "panel",
+        #    "panel": "add_material",
+        #    "icon": "filament_plus"
+        #}})
         if not self._config.linux('buster'):
             options.append({"factory_reset": {
                 "name": _("Factory Reset"),

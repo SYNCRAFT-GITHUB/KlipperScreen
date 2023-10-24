@@ -209,5 +209,43 @@
             "ST04"
         ],
         "experimental": []
+    },
+    {
+        "name": "PC/ABS",
+        "code": "PC_ABS",
+        "compatible": [
+            "ST04"
+        ],
+        "experimental": [
+            "ST08"
+        ]
+    },
+    {
+        "name": "I150",
+        "code": "I150",
+        "compatible": [
+            "ST04"
+        ],
+        "experimental": [
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "I151",
+        "code": "I151",
+        "compatible": [
+            "METAL04"
+        ],
+        "experimental": []
+    },
+    {
+        "name": "I180",
+        "code": "I180",
+        "compatible": [
+            "FIBER06",
+            "METAL04"
+        ],
+        "experimental": []
     }
 ]
