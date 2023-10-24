@@ -11,8 +11,6 @@ from gi.repository import Gtk, Pango
 from ks_includes.KlippyGcodes import KlippyGcodes
 from ks_includes.screen_panel import ScreenPanel
 from .material_load import CustomPrinterMaterial
-from .material_load import materials_json_path
-from .material_load import custom_json_path
 
 def create_panel(*args):
     return AddCustomMaterial(*args)
@@ -37,6 +35,9 @@ class AddCustomMaterial(ScreenPanel):
             'METAL04': False,
             'FIBER06': False,
         }
+
+        self.materials_json_path = self._config.materials_path(custom=False)
+        self.custom_json_path = self._config.materials_path(custom=True)
 
         grid = self._gtk.HomogeneousGrid()
         scroll = self._gtk.ScrolledWindow()
@@ -137,17 +138,17 @@ class AddCustomMaterial(ScreenPanel):
 
     def apply_custom_filament(self, widget):
 
-        if not os.path.isfile(custom_json_path):
-            with open(custom_json_path, 'w') as json_file:
+        if not os.path.isfile(self.custom_json_path):
+            with open(self.custom_json_path, 'w') as json_file:
                 json.dump([], json_file)
 
-        with open(custom_json_path, 'r') as json_file:
+        with open(self.custom_json_path, 'r') as json_file:
             try:
                 custom_json_file = json.load(json_file)
             except json.JSONDecodeError:
                 custom_json_file = []
 
-        with open(materials_json_path, 'r') as json_file:
+        with open(self.materials_json_path, 'r') as json_file:
             try:
                 materials_json_file = json.load(json_file)
             except json.JSONDecodeError:
@@ -202,30 +203,30 @@ class AddCustomMaterial(ScreenPanel):
             self._screen.show_popup_message(message, level=2)
             return None
 
-        with open(custom_json_path, 'w') as json_file:
+        with open(self.custom_json_path, 'w') as json_file:
             json.dump(custom_json_file, json_file, indent=4)
 
         os.system('service KlipperScreen restart')
-        self._config.restart_ks()
+        self._screen.restart_ks()
         return None
 
     def clear_all(self, button):
 
-        if not os.path.isfile(custom_json_path):
-            with open(custom_json_path, 'w') as json_file:
+        if not os.path.isfile(self.custom_json_path):
+            with open(self.custom_json_path, 'w') as json_file:
                 json.dump([], json_file)
 
-        with open(custom_json_path, 'r') as json_file:
+        with open(self.custom_json_path, 'r') as json_file:
             try:
                 custom_json_file = json.load(json_file)
             except json.JSONDecodeError:
                 custom_json_file = []
 
-        with open(custom_json_path, 'w') as file:
+        with open(self.custom_json_path, 'w') as file:
             json.dump([], file)
 
         os.system('service KlipperScreen restart')
-        self._config.restart_ks()
+        self._screen.restart_ks()
         return None
     
     def clean_code(self, text: str) -> str:

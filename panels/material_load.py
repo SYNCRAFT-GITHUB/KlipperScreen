@@ -24,47 +24,45 @@ class CustomPrinterMaterial:
         self.compatible = compatible
         self.temp = temp
 
-materials = []
-custom_materials = []
+def read_materials_from_json(file_path: str, custom_path: str, custom: bool = False):
 
-materials_json_path: str = os.path.join(os.getcwd(), "ks_includes", "materials", "stock.json")
-custom_json_path: str = os.path.join(os.getcwd(), "ks_includes", "materials", "custom.json")
+    if custom:
+        try:
+            with open(custom_path, 'r') as json_file:
+                data = json.load(json_file)
+                return_array = []
+                for item in data:
+                    material = CustomPrinterMaterial(
+                        name=item['name'],
+                        code=item['code'],
+                        compatible=item['compatible'],
+                        temp=item['temp'],
+                    )
+                    return_array.append(material)
+                return return_array
+        except FileNotFoundError:
+            print(f"Not found: {file_path}")
+        except json.JSONDecodeError:
+            print(f"Error decoding JSON: {file_path}")
 
-def read_materials_from_json(file_path=materials_json_path, custom_path=custom_json_path):
-    print(f'file_path: {file_path}')
-    try:
-        with open(file_path, 'r') as json_file:
-            data = json.load(json_file)
-            for item in data:
-                material = PrinterMaterial(
-                    name=item['name'],
-                    code=item['code'],
-                    compatible=item['compatible'],
-                    experimental=item['experimental'],
-                )
-                materials.append(material)
-    except FileNotFoundError:
-        print(f"Not found: {file_path}")
-    except json.JSONDecodeError:
-        print(f"Error decoding JSON: {file_path}")
-
-    try:
-        with open(custom_path, 'r') as json_file:
-            data = json.load(json_file)
-            for item in data:
-                material = CustomPrinterMaterial(
-                    name=item['name'],
-                    code=item['code'],
-                    compatible=item['compatible'],
-                    temp=item['temp'],
-                )
-                custom_materials.append(material)
-    except FileNotFoundError:
-        print(f"Not found: {file_path}")
-    except json.JSONDecodeError:
-        print(f"Error decoding JSON: {file_path}")
-
-read_materials_from_json()
+    if not custom:
+        try:
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                return_array = []
+                for item in data:
+                    material = PrinterMaterial(
+                        name=item['name'],
+                        code=item['code'],
+                        compatible=item['compatible'],
+                        experimental=item['experimental'],
+                    )
+                    return_array.append(material)
+                return return_array
+        except FileNotFoundError:
+            print(f"Not found: {file_path}")
+        except json.JSONDecodeError:
+            print(f"Error decoding JSON: {file_path}")
 
 def create_panel(*args):
     return ChMaterialPanel(*args)
@@ -75,6 +73,12 @@ class ChMaterialPanel(ScreenPanel):
 
         super().__init__(screen, title)
         self.menu = ['material_menu']
+
+        self.materials_json_path = self._config.materials_path(custom=False)
+        self.custom_json_path = self._config.materials_path(custom=True)
+
+        self.materials = read_materials_from_json(self.materials_json_path, self.custom_json_path)
+        self.custom_materials = read_materials_from_json(self.materials_json_path, self.custom_json_path, custom=True)
 
         self.buttons = {}
 
@@ -109,7 +113,7 @@ class ChMaterialPanel(ScreenPanel):
         repeat_three: int = 0
         i: int = 0
 
-        for material in materials:
+        for material in self.materials:
 
             if selected_nozzle in material.compatible:
                 index_button = self._gtk.Button("circle-green", material.name, "color3")
@@ -122,7 +126,7 @@ class ChMaterialPanel(ScreenPanel):
                 else:
                     repeat_three += 1
 
-        for material in custom_materials:
+        for material in self.custom_materials:
         
             if selected_nozzle in material.compatible:
                 index_button = self._gtk.Button("circle-purple", material.name, "color2")
@@ -136,7 +140,7 @@ class ChMaterialPanel(ScreenPanel):
                     repeat_three += 1
                 
 
-        for material in materials:
+        for material in self.materials:
 
             show_experimental = self._config.get_main_config().getboolean('show_experimental_material', False)
             allowed_for_experimental = ["ST025", "ST04", "ST08"]
@@ -152,7 +156,7 @@ class ChMaterialPanel(ScreenPanel):
                     else:
                         repeat_three += 1
 
-            if material.code == materials[-1].code:
+            if material.code == self.materials[-1].code:
                 size: int = 1
                 index: int = repeat_three
                 while index != 2:
