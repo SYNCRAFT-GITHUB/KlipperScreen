@@ -10,9 +10,9 @@ from ks_includes.screen_panel import ScreenPanel
 
 
 def create_panel(*args):
-    return ChMaterialPanel(*args)
+    return LegacyChMaterialPanel(*args)
 
-class ChMaterialPanel(ScreenPanel):
+class LegacyChMaterialPanel(ScreenPanel):
 
     def __init__(self, screen, title):
 
@@ -121,6 +121,26 @@ class ChMaterialPanel(ScreenPanel):
                 name="ASA",
                 code="ASA",
                 compatible=["ST04"], 
+                experimental=[]),
+            PrinterMaterial(
+                name="PC/ABS",
+                code="PC_ABS",
+                compatible=["ST04"], 
+                experimental=["ST08"]),
+            PrinterMaterial(
+                name="I 150",
+                code="I150",
+                compatible=["ST04"], 
+                experimental=["FIBER06", "METAL04"]),
+            PrinterMaterial(
+                name="I 151",
+                code="I151",
+                compatible=["METAL04"], 
+                experimental=[]),
+            PrinterMaterial(
+                name="I 180",
+                code="I180",
+                compatible=["FIBER06", "METAL04"], 
                 experimental=[]),
         ]
 
