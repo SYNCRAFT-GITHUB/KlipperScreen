@@ -1,7 +1,23 @@
 [
     {
-        "name": "PLA",
-        "code": "PLA",
+        "name": "17-4PH",
+        "code": "PH_174",
+        "compatible": [
+            "METAL04"
+        ],
+        "experimental": []
+    },
+    {
+        "name": "316 L",
+        "code": "L316",
+        "compatible": [
+            "METAL04"
+        ],
+        "experimental": []
+    },
+    {
+        "name": "ABS",
+        "code": "ABS",
         "compatible": [
             "ST025",
             "ST04",
@@ -13,30 +29,12 @@
         ]
     },
     {
-        "name": "NYLON",
-        "code": "NYLON",
+        "name": "ASA",
+        "code": "ASA",
         "compatible": [
-            "ST04",
-            "ST08"
+            "ST04"
         ],
-        "experimental": [
-            "ST025",
-            "FIBER06",
-            "METAL04"
-        ]
-    },
-    {
-        "name": "TO. PLA",
-        "code": "TOUGH_PLA",
-        "compatible": [
-            "ST025",
-            "ST04",
-            "ST08"
-        ],
-        "experimental": [
-            "FIBER06",
-            "METAL04"
-        ]
+        "experimental": []
     },
     {
         "name": "CPE",
@@ -52,8 +50,126 @@
         ]
     },
     {
-        "name": "ABS",
-        "code": "ABS",
+        "name": "CPE +",
+        "code": "CPEPLUS",
+        "compatible": [
+            "ST04"
+        ],
+        "experimental": [
+            "ST025",
+            "ST08",
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "I 150",
+        "code": "I150",
+        "compatible": [
+            "ST04"
+        ],
+        "experimental": [
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "I 151",
+        "code": "I151",
+        "compatible": [
+            "METAL04"
+        ],
+        "experimental": []
+    },
+    {
+        "name": "I 180",
+        "code": "I180",
+        "compatible": [
+            "FIBER06",
+            "METAL04"
+        ],
+        "experimental": []
+    },
+    {
+        "name": "NYLON",
+        "code": "NYLON",
+        "compatible": [
+            "ST04",
+            "ST08"
+        ],
+        "experimental": [
+            "ST025",
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "PAHT CF15",
+        "code": "PAHT_CF15",
+        "compatible": [
+            "FIBER06"
+        ],
+        "experimental": []
+    },
+    {
+        "name": "PC",
+        "code": "PC",
+        "compatible": [
+            "ST04"
+        ],
+        "experimental": [
+            "ST025",
+            "ST08",
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "PC/ABS",
+        "code": "PC_ABS",
+        "compatible": [
+            "ST04"
+        ],
+        "experimental": [
+            "ST08"
+        ]
+    },
+    {
+        "name": "PET",
+        "code": "PET",
+        "compatible": [],
+        "experimental": [
+            "ST025",
+            "ST04",
+            "ST08",
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "PET CF15",
+        "code": "PET_CF15",
+        "compatible": [
+            "FIBER06"
+        ],
+        "experimental": []
+    },
+    {
+        "name": "PETG",
+        "code": "PETG",
+        "compatible": [
+            "ST04",
+            "ST08"
+        ],
+        "experimental": [
+            "ST025",
+            "FIBER06",
+            "METAL04"
+        ]
+    },
+    {
+        "name": "PLA",
+        "code": "PLA",
         "compatible": [
             "ST025",
             "ST04",
@@ -78,40 +194,22 @@
         ]
     },
     {
-        "name": "CPE +",
-        "code": "CPEPLUS",
+        "name": "PP GF30",
+        "code": "PP_GF30",
         "compatible": [
-            "ST04"
+            "FIBER06"
         ],
-        "experimental": [
-            "ST025",
-            "ST08",
-            "FIBER06",
-            "METAL04"
-        ]
+        "experimental": []
     },
     {
-        "name": "PETG",
-        "code": "PETG",
+        "name": "TO. PLA",
+        "code": "TOUGH_PLA",
         "compatible": [
+            "ST025",
             "ST04",
             "ST08"
         ],
         "experimental": [
-            "ST025",
-            "FIBER06",
-            "METAL04"
-        ]
-    },
-    {
-        "name": "PC",
-        "code": "PC",
-        "compatible": [
-            "ST04"
-        ],
-        "experimental": [
-            "ST025",
-            "ST08",
             "FIBER06",
             "METAL04"
         ]
@@ -141,111 +239,5 @@
             "FIBER06",
             "METAL04"
         ]
-    },
-    {
-        "name": "PET",
-        "code": "PET",
-        "compatible": [],
-        "experimental": [
-            "ST025",
-            "ST04",
-            "ST08",
-            "FIBER06",
-            "METAL04"
-        ]
-    },
-    {
-        "name": "PAHT CF15",
-        "code": "PAHT_CF15",
-        "compatible": [
-            "FIBER06"
-        ],
-        "experimental": []
-    },
-    {
-        "name": "PET CF15",
-        "code": "PET_CF15",
-        "compatible": [
-            "FIBER06"
-        ],
-        "experimental": []
-    },
-    {
-        "name": "PC GF30",
-        "code": "PC_GF30",
-        "compatible": [
-            "FIBER06"
-        ],
-        "experimental": []
-    },
-    {
-        "name": "PP GF30",
-        "code": "PP_GF30",
-        "compatible": [
-            "FIBER06"
-        ],
-        "experimental": []
-    },
-    {
-        "name": "316 L",
-        "code": "L316",
-        "compatible": [
-            "METAL04"
-        ],
-        "experimental": []
-    },
-    {
-        "name": "17-4PH",
-        "code": "PH_174",
-        "compatible": [
-            "METAL04"
-        ],
-        "experimental": []
-    },
-    {
-        "name": "ASA",
-        "code": "ASA",
-        "compatible": [
-            "ST04"
-        ],
-        "experimental": []
-    },
-    {
-        "name": "PC/ABS",
-        "code": "PC_ABS",
-        "compatible": [
-            "ST04"
-        ],
-        "experimental": [
-            "ST08"
-        ]
-    },
-    {
-        "name": "I150",
-        "code": "I150",
-        "compatible": [
-            "ST04"
-        ],
-        "experimental": [
-            "FIBER06",
-            "METAL04"
-        ]
-    },
-    {
-        "name": "I151",
-        "code": "I151",
-        "compatible": [
-            "METAL04"
-        ],
-        "experimental": []
-    },
-    {
-        "name": "I180",
-        "code": "I180",
-        "compatible": [
-            "FIBER06",
-            "METAL04"
-        ],
-        "experimental": []
     }
 ]

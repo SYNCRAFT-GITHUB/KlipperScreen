@@ -157,7 +157,7 @@ class AddCustomMaterial(ScreenPanel):
         code = (self.labels['filament_name'].get_text()).lstrip()
         
         if len(code) < 3 or len(code) > 7:
-            message = message = f"{error_messages[1]} (3...7)"
+            message = f"{error_messages[1]} (3...7)"
             self._screen.show_popup_message(message, level=2)
             return None
         else:
@@ -179,13 +179,13 @@ class AddCustomMaterial(ScreenPanel):
 
         for material in custom_json_file:
             if (material['name'] == name or material['code'] == code):
-                message = message = error_messages[1]
+                message = error_messages[1]
                 self._screen.show_popup_message(message, level=2)
                 return None
 
         for material in materials_json_file:
             if (material['name'] == name or material['code'] == code):
-                message = message = error_messages[1]
+                message = error_messages[1]
                 self._screen.show_popup_message(message, level=2)
                 return None
 
@@ -198,8 +198,8 @@ class AddCustomMaterial(ScreenPanel):
         
         custom_json_file.append(new_material)
 
-        if (len(custom_json_file) >= 10):
-            message = message = error_messages[3]
+        if (len(custom_json_file) >= 30):
+            message = error_messages[3]
             self._screen.show_popup_message(message, level=2)
             return None
 
