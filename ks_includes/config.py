@@ -178,7 +178,7 @@ class KlipperScreenConfig:
 
     def materials_path(self, custom: bool) -> str:
 
-        if self.linux('buster'):
+        if self.linux('dev'):
             if custom:
                 return os.path.join(os.getcwd(), "ks_includes", "custom.json")
             else:
