@@ -1,6 +1,7 @@
 import logging
 import json
 import os
+import re
 
 import gi
 
@@ -134,10 +135,17 @@ class ChMaterialPanel(ScreenPanel):
         for material in self.custom_materials:
         
             if selected_nozzle in material.compatible:
-                index_button = self._gtk.Button("circle-purple", material.name, "color2")
-                index_button.connect("clicked", self.confirm_print_custom, material.code, material.temp)
+                allow = self.allow_custom(material)
+
+                if allow:
+                    index_button = self._gtk.Button("circle-purple", material.name, "color2")
+                    index_button.connect("clicked", self.confirm_print_custom, material.code, material.temp)
+                else:
+                    index_button = self._gtk.Button("invalid", _('Invalid'), "color2")
+                    index_button.connect("clicked", self.nothing_at_all)
+
                 gridvariable.attach(index_button, repeat_three, i, 1, 1)
-                
+
                 if repeat_three == 4:
                     repeat_three = 0
                     i += 1
@@ -172,6 +180,19 @@ class ChMaterialPanel(ScreenPanel):
                     index_button.connect("clicked", self.confirm_print_generic)
                     gridvariable.attach(index_button, repeat_three, i, size, 1)
 
+    def allow_custom(self, material: CustomPrinterMaterial) -> bool:
+        pattern = r'[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]'
+        name = material.name
+        code = material.code
+        if not len(name) in range(3, 8):
+            return False
+        if re.search(pattern, name):
+            return False
+        if re.search(pattern, code):
+            return False
+        if not material.temp in range(5, 351):
+            return False
+        return True
 
     def confirm_print_experimental(self, widget, code):
         params = {"script": f"LOAD_FILAMENT_{code}"}
@@ -206,5 +227,5 @@ class ChMaterialPanel(ScreenPanel):
         for _ in range(0,2):
                 self._screen._menu_go_back()
 
-    def nothing_at_all():
+    def nothing_at_all(self, widget=None):
         pass
