@@ -12,7 +12,7 @@ if [ ! -d "$folder_path" ]; then
     echo "$name CREATED FOLDER: $folder_path"
 fi
 
-custom_materials_json_path="/home/pi/KlipperScreen/ks_includes/custom.json"
+custom_materials_json_path="/home/pi/custom.json"
 usb_save_path="$folder_path/materials.json"
 
 if [ -f "$custom_materials_json_path" ]; then
