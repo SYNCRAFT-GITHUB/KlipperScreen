@@ -1304,3 +1304,9 @@ msgstr "O limite máximo foi atingido"
 
 msgid "Select at least one Extruder"
 msgstr "Selecione pelo menos um ProExtruder"
+
+msgid "Export custom materials to USB"
+msgstr "Exportar materiais para USB"
+
+msgid "Import custom materials from USB"
+msgstr "Importar materiais de um USB"

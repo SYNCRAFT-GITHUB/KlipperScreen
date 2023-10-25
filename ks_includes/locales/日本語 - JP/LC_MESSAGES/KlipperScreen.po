@@ -1291,3 +1291,9 @@ msgstr "最大制限に達しました"
 
 msgid "Select at least one Extruder"
 msgstr "少なくとも1つのエクストルーダを選択"
+
+msgid "Export custom materials to USB"
+msgstr "USB へカスタム素材をエクスポート"
+
+msgid "Import custom materials from USB"
+msgstr "USB からカスタム素材をインポート"
