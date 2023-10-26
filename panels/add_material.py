@@ -199,11 +199,21 @@ class AddCustomMaterial(ScreenPanel):
             self._screen.show_popup_message(message, level=2)
             return None
 
+        try:
+            iter(custom_json_file)
+        except:
+            custom_json_file = []
+
         for material in custom_json_file:
             if (material['name'] == name or material['code'] == code):
                 message = error_messages[1]
                 self._screen.show_popup_message(message, level=2)
                 return None
+
+        try:
+            iter(materials_json_file)
+        except:
+            materials_json_file = []
 
         for material in materials_json_file:
             if (material['name'] == name or material['code'] == code):
