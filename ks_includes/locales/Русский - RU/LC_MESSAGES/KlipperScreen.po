@@ -1471,3 +1471,9 @@ msgstr "Достигнут максимальный лимит"
 
 msgid "Select at least one Extruder"
 msgstr "Выберите хотя бы один элемент в списке"
+
+msgid "Export custom materials to USB"
+msgstr "Экспорт материалов на USB"
+
+msgid "Import custom materials from USB"
+msgstr "Импорт материалов с USB"

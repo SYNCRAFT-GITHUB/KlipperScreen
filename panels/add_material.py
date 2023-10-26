@@ -131,10 +131,32 @@ class AddCustomMaterial(ScreenPanel):
         grid.attach(self.labels['finish'], 0, (i), 3, 2)
         i += 2
 
+        self.labels['export_usb'] = self._gtk.Button("usb-save", _('Export custom materials to USB'), "color2")
+        self.labels['export_usb'].connect("clicked", self.set_fix_option_to, "EXPORTCUSTOMMATERIALSTOUSB")
+        self.labels['export_usb'].connect("clicked", self.menu_item_clicked, "update_usb", {
+            "name": _("System"),
+            "panel": "script"
+        })
+        grid.attach(self.labels['export_usb'], 0, (i), 3, 1)
+        i += 1
+
+        self.labels['import_usb'] = self._gtk.Button("usb", _('Import custom materials from USB'), "color2")
+        self.labels['import_usb'].connect("clicked", self.set_fix_option_to, "IMPORTCUSTOMMATERIALSFROMUSB")
+        self.labels['import_usb'].connect("clicked", self.menu_item_clicked, "update_usb", {
+            "name": _("System"),
+            "panel": "script"
+        })
+        grid.attach(self.labels['import_usb'], 0, (i), 3, 1)
+        i += 1
+
         self.labels['clear_all'] = self._gtk.Button("stock", _('Delete all custom Materials'), None)
         self.labels['clear_all'].connect("clicked", self.clear_all)
-        grid.attach(self.labels['clear_all'], 0, (i+1), 3, 1)
+        grid.attach(self.labels['clear_all'], 0, (i), 3, 1)
+        i += 1
 
+
+    def set_fix_option_to(self, button, newfixoption):
+        self._config.replace_fix_option(newvalue=newfixoption)
 
     def apply_custom_filament(self, widget):
 
@@ -157,7 +179,7 @@ class AddCustomMaterial(ScreenPanel):
         code = (self.labels['filament_name'].get_text()).lstrip()
         
         if len(code) < 3 or len(code) > 7:
-            message = message = f"{error_messages[1]} (3...7)"
+            message = f"{error_messages[1]} (3...7)"
             self._screen.show_popup_message(message, level=2)
             return None
         else:
@@ -177,15 +199,25 @@ class AddCustomMaterial(ScreenPanel):
             self._screen.show_popup_message(message, level=2)
             return None
 
+        try:
+            iter(custom_json_file)
+        except:
+            custom_json_file = []
+
         for material in custom_json_file:
             if (material['name'] == name or material['code'] == code):
-                message = message = error_messages[1]
+                message = error_messages[1]
                 self._screen.show_popup_message(message, level=2)
                 return None
 
+        try:
+            iter(materials_json_file)
+        except:
+            materials_json_file = []
+
         for material in materials_json_file:
             if (material['name'] == name or material['code'] == code):
-                message = message = error_messages[1]
+                message = error_messages[1]
                 self._screen.show_popup_message(message, level=2)
                 return None
 
@@ -198,8 +230,8 @@ class AddCustomMaterial(ScreenPanel):
         
         custom_json_file.append(new_material)
 
-        if (len(custom_json_file) >= 10):
-            message = message = error_messages[3]
+        if (len(custom_json_file) >= 30):
+            message = error_messages[3]
             self._screen.show_popup_message(message, level=2)
             return None
 

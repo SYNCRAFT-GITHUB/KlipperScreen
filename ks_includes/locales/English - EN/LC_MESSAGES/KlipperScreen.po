@@ -1285,3 +1285,9 @@ msgstr ""
 
 msgid "Select at least one Extruder"
 msgstr ""
+
+msgid "Export custom materials to USB"
+msgstr ""
+
+msgid "Import custom materials from USB"
+msgstr ""

@@ -1432,3 +1432,9 @@ msgstr "已达到最大限制"
 
 msgid "Select at least one Extruder"
 msgstr "至少选择一个挤出头"
+
+msgid "Export custom materials to USB"
+msgstr "将材料导出到外部存储"
+
+msgid "Import custom materials from USB"
+msgstr "从外部存储导入材料"
