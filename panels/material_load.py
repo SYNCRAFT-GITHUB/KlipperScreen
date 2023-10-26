@@ -119,6 +119,11 @@ class ChMaterialPanel(ScreenPanel):
         scroll.add(gridvariable)
         self.content.add(scroll)
 
+        try:
+            iter(self.materials)
+        except:
+            self.materials = []
+
         for material in self.materials:
 
             if selected_nozzle in material.compatible:
@@ -131,6 +136,11 @@ class ChMaterialPanel(ScreenPanel):
                     i += 1
                 else:
                     repeat_three += 1
+
+        try:
+            iter(self.custom_materials)
+        except:
+            self.custom_materials = []
 
         for material in self.custom_materials:
         
