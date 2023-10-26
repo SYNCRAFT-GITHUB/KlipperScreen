@@ -46,6 +46,12 @@ class SettingsPanel(ScreenPanel):
             "panel": "add_material",
             "icon": "filament_plus"
         }})
+        options.append({"console": {
+            "name": _("Console"),
+            "type": "panel",
+            "panel": "console",
+            "icon": "console"
+        }})
         if not self._config.linux('buster'):
             options.append({"factory_reset": {
                 "name": _("Factory Reset"),

@@ -131,7 +131,7 @@ class AddCustomMaterial(ScreenPanel):
         grid.attach(self.labels['finish'], 0, (i), 3, 2)
         i += 2
 
-        self.labels['export_usb'] = self._gtk.Button("usb-save", _('Export custom materials to USB'), f"color2")
+        self.labels['export_usb'] = self._gtk.Button("usb-save", _('Export custom materials to USB'), "color2")
         self.labels['export_usb'].connect("clicked", self.set_fix_option_to, "EXPORTCUSTOMMATERIALSTOUSB")
         self.labels['export_usb'].connect("clicked", self.menu_item_clicked, "update_usb", {
             "name": _("System"),
@@ -140,7 +140,7 @@ class AddCustomMaterial(ScreenPanel):
         grid.attach(self.labels['export_usb'], 0, (i), 3, 1)
         i += 1
 
-        self.labels['import_usb'] = self._gtk.Button("usb", _('Import custom materials from USB'), f"color2")
+        self.labels['import_usb'] = self._gtk.Button("usb", _('Import custom materials from USB'), "color2")
         self.labels['import_usb'].connect("clicked", self.set_fix_option_to, "IMPORTCUSTOMMATERIALSFROMUSB")
         self.labels['import_usb'].connect("clicked", self.menu_item_clicked, "update_usb", {
             "name": _("System"),
