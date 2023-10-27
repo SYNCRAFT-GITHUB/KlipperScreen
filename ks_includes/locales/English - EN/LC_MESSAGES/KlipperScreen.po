@@ -1291,3 +1291,6 @@ msgstr ""
 
 msgid "Import custom materials from USB"
 msgstr ""
+
+msgid "Chamber"
+msgstr ""

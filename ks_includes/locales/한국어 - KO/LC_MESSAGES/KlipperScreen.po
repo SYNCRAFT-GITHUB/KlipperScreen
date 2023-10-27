@@ -1365,3 +1365,6 @@ msgstr "자료를 외부 저장소로 내보내기"
 
 msgid "Import custom materials from USB"
 msgstr "외부 저장소에서 자료 가져오기"
+
+msgid "Chamber"
+msgstr "방"

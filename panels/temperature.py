@@ -316,7 +316,7 @@ class TemperaturePanel(ScreenPanel):
             dev_type = "sensor"
         elif device.startswith("temperature_fan"):
             f = 1 + sum("temperature_fan" in d for d in self.devices)
-            devname = f'{_("Chamber Fan")}'
+            devname = f'{_("Chamber")}'
             image = "fan"
             class_name = f"graph_label_fan_{f}"
             dev_type = "fan"

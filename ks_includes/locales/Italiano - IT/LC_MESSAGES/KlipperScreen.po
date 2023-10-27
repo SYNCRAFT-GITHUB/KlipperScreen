@@ -1426,3 +1426,6 @@ msgstr "Esporta materiali su USB"
 
 msgid "Import custom materials from USB"
 msgstr "Importa materiali da USB"
+
+msgid "Chamber"
+msgstr "Camera"
