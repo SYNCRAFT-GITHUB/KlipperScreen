@@ -61,7 +61,7 @@ class SystemInfo(ScreenPanel):
                 prop = yaml.safe_load(prop)
                 return prop.get('model')
         except:
-            return 'X1'
+            return 'X2'
 
     def get_mac_address(self, ip_address):
         arp_command = ['arp', '-n', ip_address]
