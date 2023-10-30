@@ -51,26 +51,16 @@ class MovePanel(ScreenPanel):
 
         grid = self._gtk.HomogeneousGrid()
         if self._screen.vertical_mode:
-            if self._screen.lang_ltr:
-                grid.attach(self.buttons['x+'], 2, 1, 1, 1)
-                grid.attach(self.buttons['x-'], 0, 1, 1, 1)
-                grid.attach(self.buttons['z+'], 2, 2, 1, 1)
-                grid.attach(self.buttons['z-'], 0, 2, 1, 1)
-            else:
-                grid.attach(self.buttons['x+'], 0, 1, 1, 1)
-                grid.attach(self.buttons['x-'], 2, 1, 1, 1)
-                grid.attach(self.buttons['z+'], 0, 2, 1, 1)
-                grid.attach(self.buttons['z-'], 2, 2, 1, 1)
+            grid.attach(self.buttons['x+'], 2, 1, 1, 1)
+            grid.attach(self.buttons['x-'], 0, 1, 1, 1)
+            grid.attach(self.buttons['z+'], 2, 2, 1, 1)
+            grid.attach(self.buttons['z-'], 0, 2, 1, 1)
             grid.attach(self.buttons['y+'], 1, 0, 1, 1)
             grid.attach(self.buttons['y-'], 1, 1, 1, 1)
 
         else:
-            if self._screen.lang_ltr:
-                grid.attach(self.buttons['x+'], 2, 1, 1, 1)
-                grid.attach(self.buttons['x-'], 0, 1, 1, 1)
-            else:
-                grid.attach(self.buttons['x+'], 0, 1, 1, 1)
-                grid.attach(self.buttons['x-'], 2, 1, 1, 1)
+            grid.attach(self.buttons['x+'], 2, 1, 1, 1)
+            grid.attach(self.buttons['x-'], 0, 1, 1, 1)
             grid.attach(self.buttons['y+'], 1, 0, 1, 1)
             grid.attach(self.buttons['y-'], 1, 1, 1, 1)
             grid.attach(self.buttons['z+'], 3, 0, 1, 1)
@@ -93,9 +83,9 @@ class MovePanel(ScreenPanel):
             self.labels[i].set_direction(Gtk.TextDirection.LTR)
             self.labels[i].connect("clicked", self.change_distance, i)
             ctx = self.labels[i].get_style_context()
-            if (self._screen.lang_ltr and j == 0) or (not self._screen.lang_ltr and j == len(self.distances) - 1):
+            if j == 0:
                 ctx.add_class("distbutton_top")
-            elif (not self._screen.lang_ltr and j == 0) or (self._screen.lang_ltr and j == len(self.distances) - 1):
+            elif j == len(self.distances) - 1:
                 ctx.add_class("distbutton_bottom")
             else:
                 ctx.add_class("distbutton")

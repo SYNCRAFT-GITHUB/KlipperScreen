@@ -51,21 +51,6 @@ PRINTER_BASE_STATUS_OBJECTS = [
 klipperscreendir = pathlib.Path(__file__).parent.resolve()
 
 
-def set_text_direction(lang=None):
-    rtl_languages = ['he']
-    if lang is None:
-        for lng in rtl_languages:
-            if locale.getdefaultlocale()[0].startswith(lng):
-                lang = lng
-                break
-    if lang in rtl_languages:
-        Gtk.Widget.set_default_direction(Gtk.TextDirection.RTL)
-        logging.debug("Enabling RTL mode")
-        return False
-    Gtk.Widget.set_default_direction(Gtk.TextDirection.LTR)
-    return True
-
-
 def state_execute(callback):
     callback()
 
@@ -107,7 +92,6 @@ class KlipperScreen(Gtk.Window):
         configfile = os.path.normpath(os.path.expanduser(args.configfile))
 
         self._config = KlipperScreenConfig(configfile, self)
-        self.lang_ltr = set_text_direction(self._config.get_main_config().get("language", None))
 
         self.connect("key-press-event", self._key_press_event)
         self.connect("configure_event", self.update_size)
@@ -719,7 +703,6 @@ class KlipperScreen(Gtk.Window):
 
     def change_language(self, lang):
         self._config.install_language(lang)
-        self.lang_ltr = set_text_direction(lang)
         self._config._create_configurable_options(self)
         self.reload_panels()
 

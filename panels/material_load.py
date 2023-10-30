@@ -25,14 +25,14 @@ class CustomPrinterMaterial:
         self.compatible = compatible
         self.temp = temp
 
-def read_materials_from_json(file_path: str, custom_path: str, custom: bool = False):
+def read_materials_from_json(file_path: str, custom: bool = False):
 
-    if custom:
-        try:
-            with open(custom_path, 'r') as json_file:
-                data = json.load(json_file)
-                return_array = []
-                for item in data:
+    try:
+        with open(file_path, 'r') as json_file:
+            data = json.load(json_file)
+            return_array = []
+            for item in data:
+                if custom:
                     material = CustomPrinterMaterial(
                         name=item['name'],
                         code=item['code'],
@@ -40,18 +40,7 @@ def read_materials_from_json(file_path: str, custom_path: str, custom: bool = Fa
                         temp=item['temp'],
                     )
                     return_array.append(material)
-                return return_array
-        except FileNotFoundError:
-            print(f"Not found: {file_path}")
-        except json.JSONDecodeError:
-            print(f"Error decoding JSON: {file_path}")
-
-    if not custom:
-        try:
-            with open(file_path, 'r') as json_file:
-                data = json.load(json_file)
-                return_array = []
-                for item in data:
+                else:
                     material = PrinterMaterial(
                         name=item['name'],
                         code=item['code'],
@@ -59,11 +48,11 @@ def read_materials_from_json(file_path: str, custom_path: str, custom: bool = Fa
                         experimental=item['experimental'],
                     )
                     return_array.append(material)
-                return return_array
-        except FileNotFoundError:
-            print(f"Not found: {file_path}")
-        except json.JSONDecodeError:
-            print(f"Error decoding JSON: {file_path}")
+            return return_array
+    except FileNotFoundError:
+        print(f"Not found: {file_path}")
+    except json.JSONDecodeError:
+        print(f"Error decoding JSON: {file_path}")
 
 def create_panel(*args):
     return ChMaterialPanel(*args)
@@ -78,8 +67,8 @@ class ChMaterialPanel(ScreenPanel):
         self.materials_json_path = self._config.materials_path(custom=False)
         self.custom_json_path = self._config.materials_path(custom=True)
 
-        self.materials = read_materials_from_json(self.materials_json_path, self.custom_json_path)
-        self.custom_materials = read_materials_from_json(self.materials_json_path, self.custom_json_path, custom=True)
+        self.materials = read_materials_from_json(self.materials_json_path)
+        self.custom_materials = read_materials_from_json(self.custom_json_path, custom=True)
 
         self.buttons = {}
 
