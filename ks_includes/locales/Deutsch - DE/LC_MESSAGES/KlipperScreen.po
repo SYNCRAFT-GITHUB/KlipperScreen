@@ -1401,3 +1401,48 @@ msgstr "Syncraft Adresse: %s"
 
 msgid "Connect to WiFi"
 msgstr "Mit einem Netzwerk verbinden"
+
+msgid "Insert Material Name"
+msgstr "Materialnamen eingeben"
+
+msgid "Must contain between %s and %s characters."
+msgstr "Muss zwischen %s und %s Zeichen enthalten."
+
+msgid "The name should contain only letters and numbers"
+msgstr "Darf nur Buchstaben oder Zahlen enthalten"
+
+msgid "This name cannot be used"
+msgstr "Dieser Name kann nicht verwendet werden"
+
+msgid "Select which extruders are compatible"
+msgstr "Wählen Sie aus, welche kompatibel sein sollen"
+
+msgid "Extrusion Temperature for the Material"
+msgstr "Extrusionstemperatur"
+
+msgid "Add Material"
+msgstr "Material hinzufügen"
+
+msgid "Add Custom Material"
+msgstr "+ Maßgeschneidertes Material"
+
+msgid "Remove Material"
+msgstr "Material entfernen"
+
+msgid "Delete all custom Materials"
+msgstr "Löschen Sie alle Materialien"
+
+msgid "The maximum limit has been reached"
+msgstr "Das Maximum wurde erreicht"
+
+msgid "Select at least one Extruder"
+msgstr "Füllen Sie die kompatible Liste aus"
+
+msgid "Export custom materials to USB"
+msgstr "Materialien auf USB exportieren"
+
+msgid "Import custom materials from USB"
+msgstr "Materialien von USB importieren"
+
+msgid "Chamber"
+msgstr "Kammer"

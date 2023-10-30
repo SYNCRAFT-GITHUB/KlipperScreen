@@ -21,6 +21,7 @@ class MovePanel(ScreenPanel):
         super().__init__(screen, title)
         self.settings = {}
         self.menu = ['move_menu']
+        self.current_extruder = self._printer.get_stat("toolhead", "extruder")
         self.buttons = {
             'x+': self._gtk.Button("arrow-right", "X+", "color1"),
             'x-': self._gtk.Button("arrow-left", "X-", "color1"),
@@ -48,29 +49,34 @@ class MovePanel(ScreenPanel):
         self.buttons['motors_off'].connect("clicked", self._screen._confirm_send_action,
                                            _("Are you sure you wish to disable motors?"),
                                            "printer.gcode.script", script)
+        
+        extgrid = self._gtk.HomogeneousGrid()
+        limit = 5
+        i = 0
+        for extruder in self._printer.get_tools():
+            if self._printer.extrudercount > 1:
+                self.labels[extruder] = self._gtk.Button(f"extruder-{self._printer.get_tool_number(extruder)+1}", None)
+            else:
+                self.labels[extruder] = self._gtk.Button(f"extruder-{self._printer.get_tool_number(extruder)+1}", "")
+            self.labels[extruder].connect("clicked", self.change_extruder, extruder)
+            if extruder == self.current_extruder:
+                self.labels[extruder].get_style_context().add_class("button_active")
+            if i < limit:
+                extgrid.attach(self.labels[extruder], i, 0, 1, 1)
+                i += 1
 
         grid = self._gtk.HomogeneousGrid()
         if self._screen.vertical_mode:
-            if self._screen.lang_ltr:
-                grid.attach(self.buttons['x+'], 2, 1, 1, 1)
-                grid.attach(self.buttons['x-'], 0, 1, 1, 1)
-                grid.attach(self.buttons['z+'], 2, 2, 1, 1)
-                grid.attach(self.buttons['z-'], 0, 2, 1, 1)
-            else:
-                grid.attach(self.buttons['x+'], 0, 1, 1, 1)
-                grid.attach(self.buttons['x-'], 2, 1, 1, 1)
-                grid.attach(self.buttons['z+'], 0, 2, 1, 1)
-                grid.attach(self.buttons['z-'], 2, 2, 1, 1)
+            grid.attach(self.buttons['x+'], 2, 1, 1, 1)
+            grid.attach(self.buttons['x-'], 0, 1, 1, 1)
+            grid.attach(self.buttons['z+'], 2, 2, 1, 1)
+            grid.attach(self.buttons['z-'], 0, 2, 1, 1)
             grid.attach(self.buttons['y+'], 1, 0, 1, 1)
             grid.attach(self.buttons['y-'], 1, 1, 1, 1)
 
         else:
-            if self._screen.lang_ltr:
-                grid.attach(self.buttons['x+'], 2, 1, 1, 1)
-                grid.attach(self.buttons['x-'], 0, 1, 1, 1)
-            else:
-                grid.attach(self.buttons['x+'], 0, 1, 1, 1)
-                grid.attach(self.buttons['x-'], 2, 1, 1, 1)
+            grid.attach(self.buttons['x+'], 2, 1, 1, 1)
+            grid.attach(self.buttons['x-'], 0, 1, 1, 1)
             grid.attach(self.buttons['y+'], 1, 0, 1, 1)
             grid.attach(self.buttons['y-'], 1, 1, 1, 1)
             grid.attach(self.buttons['z+'], 3, 0, 1, 1)
@@ -93,9 +99,9 @@ class MovePanel(ScreenPanel):
             self.labels[i].set_direction(Gtk.TextDirection.LTR)
             self.labels[i].connect("clicked", self.change_distance, i)
             ctx = self.labels[i].get_style_context()
-            if (self._screen.lang_ltr and j == 0) or (not self._screen.lang_ltr and j == len(self.distances) - 1):
+            if j == 0:
                 ctx.add_class("distbutton_top")
-            elif (not self._screen.lang_ltr and j == 0) or (self._screen.lang_ltr and j == len(self.distances) - 1):
+            elif j == len(self.distances) - 1:
                 ctx.add_class("distbutton_bottom")
             else:
                 ctx.add_class("distbutton")
@@ -112,11 +118,8 @@ class MovePanel(ScreenPanel):
 
         bottomgrid = self._gtk.HomogeneousGrid()
         bottomgrid.set_direction(Gtk.TextDirection.LTR)
-        bottomgrid.attach(self.labels['pos_x'], 0, 0, 1, 1)
-        bottomgrid.attach(self.labels['pos_y'], 1, 0, 1, 1)
-        bottomgrid.attach(self.labels['pos_z'], 2, 0, 1, 1)
-        bottomgrid.attach(self.labels['move_dist'], 0, 1, 3, 1)
         bottomgrid.attach(adjust, 3, 0, 1, 2)
+        bottomgrid.attach(extgrid, 2, 0, 1, 2)
 
         self.labels['move_menu'] = self._gtk.HomogeneousGrid()
         self.labels['move_menu'].attach(grid, 0, 0, 1, 3)
@@ -192,6 +195,14 @@ class MovePanel(ScreenPanel):
         self.labels[f"{self.distance}"].get_style_context().remove_class("distbutton_active")
         self.labels[f"{distance}"].get_style_context().add_class("distbutton_active")
         self.distance = distance
+
+    def change_extruder(self, widget, extruder):
+        logging.info(f"Changing extruder to {extruder}")
+        for tool in self._printer.get_tools():
+            self.labels[tool].get_style_context().remove_class("button_active")
+        self.labels[extruder].get_style_context().add_class("button_active")
+
+        self._screen._ws.klippy.gcode_script(f"T{self._printer.get_tool_number(extruder)}")
 
     def move(self, widget, axis, direction):
         if self._config.get_config()['main'].getboolean(f"invert_{axis.lower()}", False):

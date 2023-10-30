@@ -160,110 +160,216 @@ class PrintPanel(ScreenPanel):
         name = Gtk.Label()
         name.get_style_context().add_class("print-filename")
 
-        def is_usb(string):
-            if string.endswith("/USB"):
-                return True
+        if not self._config.linux('buster'):
+
+            def is_usb(string):
+                if string.endswith("/USB"):
+                    return True
+                else:
+                    return False
+
+            def is_usb_device(string):
+                pattern = r'/'
+                occurrences = re.findall(pattern, string)
+                if string.startswith("gcodes/USB/") and len(occurrences) == 2:
+                    return True
+                else:
+                    return False
+
+            def is_usb_prints(string):
+                if string.endswith("/USB_PRINTS"):
+                    return True
+                else:
+                    return False
+
+            if is_usb_prints(fullpath) and self._config.get_main_config().get('show_saved_from_usb') != "True":
+                return
+
+            if filename: # Normal File
+                name.set_markup(f'<big><b>{os.path.splitext(filename)[0].replace("_", " ")}</b></big>')
+            elif not is_usb(fullpath) and not is_usb_device(fullpath) and not is_usb_prints(fullpath): # Normal Folder
+                name.set_markup(f'<big><b>{os.path.split(fullpath)[-1].replace("_", " ")}</b></big>')
+            elif is_usb(fullpath): # USB System Link
+                name.set_markup(f'<big><b>{_("Access Files on USB")}</b></big>')
+            elif is_usb_device(fullpath): # USB Device Inside System Link
+                name.set_markup(f'<big><b>{_("USB")}</b></big>')
+            elif is_usb_prints(fullpath):
+                name.set_markup(f'<big><b>{_("Files saved from USB")}</b></big>')
+            name.set_hexpand(True)
+            name.set_halign(Gtk.Align.START)
+            name.set_line_wrap(True)
+            name.set_line_wrap_mode(Pango.WrapMode.CHAR)
+
+            info = Gtk.Label()
+            info.set_hexpand(True)
+            info.set_halign(Gtk.Align.START)
+            info.get_style_context().add_class("print-info")
+
+            delete = self._gtk.Button("delete", style="color1", scale=self.bts)
+            delete.set_hexpand(False)
+            rename = self._gtk.Button("files", style="color2", scale=self.bts)
+            rename.set_hexpand(False)
+
+            if filename:
+                action = self._gtk.Button("resume", style="color3")
+                action.connect("clicked", self.confirm_print, fullpath)
+                info.set_markup(self.get_file_info_str(fullpath))
+                icon = Gtk.Button()
+                icon.connect("clicked", self.confirm_print, fullpath)
+                delete.connect("clicked", self.confirm_delete_file, f"gcodes/{fullpath}")
+                rename.connect("clicked", self.show_rename, f"gcodes/{fullpath}")
+                GLib.idle_add(self.image_load, fullpath)
+            if is_usb(fullpath) or is_usb_device(fullpath) or is_usb_prints(fullpath):
+                print (f"IS_USB_DEVICE: {is_usb_device(fullpath)}.")
+                action = self._gtk.Button("load", style="color3")
+                action.connect("clicked", self.change_dir, fullpath)
+                icon = self._gtk.Button("usb" if not is_usb_prints(fullpath) else "usb-save")
+                icon.connect("clicked", self.change_dir, fullpath)
+            elif not filename:
+                action = self._gtk.Button("load", style="color3")
+                action.connect("clicked", self.change_dir, fullpath)
+                icon = self._gtk.Button("folder")
+                icon.connect("clicked", self.change_dir, fullpath)
+                delete.connect("clicked", self.confirm_delete_directory, fullpath)
+                rename.connect("clicked", self.show_rename, fullpath)
+            icon.set_hexpand(False)
+            action.set_hexpand(False)
+            action.set_halign(Gtk.Align.END)
+
+            row = Gtk.Grid()
+            row.get_style_context().add_class("frame-item")
+            row.set_hexpand(True)
+            row.set_vexpand(False)
+            row.attach(icon, 0, 0, 1, 2)
+            if is_usb(fullpath) or is_usb_device(fullpath) or is_usb_prints(fullpath):
+                row.attach(name, 1, 0, 3, 3)
             else:
-                return False
+                row.attach(name, 1, 0, 3, 1)
+                row.attach(info, 1, 1, 1, 1)
+                row.attach(rename, 2, 1, 1, 1)
+                row.attach(delete, 3, 1, 1, 1)
 
-        def is_usb_device(string):
-            pattern = r'/'
-            occurrences = re.findall(pattern, string)
-            if string.startswith("gcodes/USB/") and len(occurrences) == 2:
-                return True
+            if not filename or (filename and os.path.splitext(filename)[1] in [".gcode", ".g", ".gco", ".ufp"]):
+                row.attach(action, 4, 0, 1, 2)
+
+            if filename is not None:
+                self.files[fullpath] = row
+                self.labels['files'][fullpath] = {
+                    "icon": icon,
+                    "info": info,
+                    "name": name
+                }
             else:
-                return False
+                self.directories[fullpath] = row
+                self.labels['directories'][fullpath] = {
+                    "info": info,
+                    "name": name
+                }
+                self.dir_panels[fullpath] = Gtk.Grid()
+        
+        if self._config.linux('buster'):
 
-        def is_usb_prints(string):
-            if string.endswith("/USB_PRINTS"):
-                return True
+            def is_usb(string):
+                if string[-3:] == "USB":
+                    return True
+                else:
+                    return False
+
+            def is_usb_prints(string):
+                if string[-10:] == "USB_PRINTS":
+                    return True
+                else:
+                    return False
+
+            if is_usb_prints(fullpath) and self._config.get_main_config().get('show_saved_from_usb') != "True":
+                return
+
+            if filename:
+                name.set_markup(f'<big><b>{os.path.splitext(filename)[0].replace("_", " ")}</b></big>')
+            elif not is_usb(fullpath) and not is_usb_prints(fullpath):
+                name.set_markup(f'<big><b>{os.path.split(fullpath)[-1].replace("_", " ")}</b></big>')
+            elif is_usb(fullpath) and not is_usb_prints(fullpath):
+                name.set_markup(f'<big><b>{_("Access Files on USB")}</b></big>')
+            elif is_usb_prints(fullpath):
+                name.set_markup(f'<big><b>{_("Files saved from USB")}</b></big>')
+            name.set_hexpand(True)
+            name.set_halign(Gtk.Align.START)
+            name.set_line_wrap(True)
+            name.set_line_wrap_mode(Pango.WrapMode.CHAR)
+
+            info = Gtk.Label()
+            info.set_hexpand(True)
+            info.set_halign(Gtk.Align.START)
+            info.get_style_context().add_class("print-info")
+
+            delete = self._gtk.Button("delete", style="color1", scale=self.bts)
+            delete.set_hexpand(False)
+            rename = self._gtk.Button("files", style="color2", scale=self.bts)
+            rename.set_hexpand(False)
+
+            if filename:
+                action = self._gtk.Button("resume", style="color3")
+                action.connect("clicked", self.confirm_print, fullpath)
+                info.set_markup(self.get_file_info_str(fullpath))
+                icon = Gtk.Button()
+                icon.connect("clicked", self.confirm_print, fullpath)
+                delete.connect("clicked", self.confirm_delete_file, f"gcodes/{fullpath}")
+                rename.connect("clicked", self.show_rename, f"gcodes/{fullpath}")
+                GLib.idle_add(self.image_load, fullpath)
+            if is_usb(fullpath) and not is_usb_prints(fullpath):
+                action = self._gtk.Button("load", style="color3")
+                action.connect("clicked", self.change_dir, fullpath)
+                icon = self._gtk.Button("usb")
+                icon.connect("clicked", self.change_dir, fullpath)
+            if is_usb_prints(fullpath) and not is_usb(fullpath):
+                action = self._gtk.Button("load", style="color3")
+                action.connect("clicked", self.change_dir, fullpath)
+                icon = self._gtk.Button("usb-save")
+                icon.connect("clicked", self.change_dir, fullpath)
+                delete.connect("clicked", self.confirm_delete_directory, fullpath)
+            if not filename and not is_usb(fullpath) and not is_usb_prints(fullpath):
+                action = self._gtk.Button("load", style="color3")
+                action.connect("clicked", self.change_dir, fullpath)
+                icon = self._gtk.Button("folder")
+                icon.connect("clicked", self.change_dir, fullpath)
+                delete.connect("clicked", self.confirm_delete_directory, fullpath)
+                rename.connect("clicked", self.show_rename, fullpath)
+            icon.set_hexpand(False)
+            action.set_hexpand(False)
+            action.set_halign(Gtk.Align.END)
+
+            row = Gtk.Grid()
+            row.get_style_context().add_class("frame-item")
+            row.set_hexpand(True)
+            row.set_vexpand(False)
+            row.attach(icon, 0, 0, 1, 2)
+            if is_usb(fullpath) and not is_usb_prints(fullpath):
+                row.attach(name, 1, 0, 3, 3)
+            if is_usb_prints(fullpath) and not is_usb(fullpath):
+                row.attach(name, 1, 0, 3, 3)
+            if not is_usb(fullpath) and not is_usb_prints(fullpath):
+                row.attach(name, 1, 0, 3, 1)
+                row.attach(info, 1, 1, 1, 1)
+                row.attach(rename, 2, 1, 1, 1)
+                row.attach(delete, 3, 1, 1, 1)
+
+            if not filename or (filename and os.path.splitext(filename)[1] in [".gcode", ".g", ".gco", ".ufp"]):
+                row.attach(action, 4, 0, 1, 2)
+
+            if filename is not None:
+                self.files[fullpath] = row
+                self.labels['files'][fullpath] = {
+                    "icon": icon,
+                    "info": info,
+                    "name": name
+                }
             else:
-                return False
-
-        if is_usb_prints(fullpath) and self._config.get_main_config().get('show_saved_from_usb') != "True":
-            return
-
-        if filename: # Normal File
-            name.set_markup(f'<big><b>{os.path.splitext(filename)[0].replace("_", " ")}</b></big>')
-        elif not is_usb(fullpath) and not is_usb_device(fullpath) and not is_usb_prints(fullpath): # Normal Folder
-            name.set_markup(f'<big><b>{os.path.split(fullpath)[-1].replace("_", " ")}</b></big>')
-        elif is_usb(fullpath): # USB System Link
-            name.set_markup(f'<big><b>{_("Access Files on USB")}</b></big>')
-        elif is_usb_device(fullpath): # USB Device Inside System Link
-            name.set_markup(f'<big><b>{_("USB")}</b></big>')
-        elif is_usb_prints(fullpath):
-            name.set_markup(f'<big><b>{_("Files saved from USB")}</b></big>')
-        name.set_hexpand(True)
-        name.set_halign(Gtk.Align.START)
-        name.set_line_wrap(True)
-        name.set_line_wrap_mode(Pango.WrapMode.CHAR)
-
-        info = Gtk.Label()
-        info.set_hexpand(True)
-        info.set_halign(Gtk.Align.START)
-        info.get_style_context().add_class("print-info")
-
-        delete = self._gtk.Button("delete", style="color1", scale=self.bts)
-        delete.set_hexpand(False)
-        rename = self._gtk.Button("files", style="color2", scale=self.bts)
-        rename.set_hexpand(False)
-
-        if filename:
-            action = self._gtk.Button("resume", style="color3")
-            action.connect("clicked", self.confirm_print, fullpath)
-            info.set_markup(self.get_file_info_str(fullpath))
-            icon = Gtk.Button()
-            icon.connect("clicked", self.confirm_print, fullpath)
-            delete.connect("clicked", self.confirm_delete_file, f"gcodes/{fullpath}")
-            rename.connect("clicked", self.show_rename, f"gcodes/{fullpath}")
-            GLib.idle_add(self.image_load, fullpath)
-        if is_usb(fullpath) or is_usb_device(fullpath) or is_usb_prints(fullpath):
-            print (f"IS_USB_DEVICE: {is_usb_device(fullpath)}.")
-            action = self._gtk.Button("load", style="color3")
-            action.connect("clicked", self.change_dir, fullpath)
-            icon = self._gtk.Button("usb" if not is_usb_prints(fullpath) else "usb-save")
-            icon.connect("clicked", self.change_dir, fullpath)
-        elif not filename:
-            action = self._gtk.Button("load", style="color3")
-            action.connect("clicked", self.change_dir, fullpath)
-            icon = self._gtk.Button("folder")
-            icon.connect("clicked", self.change_dir, fullpath)
-            delete.connect("clicked", self.confirm_delete_directory, fullpath)
-            rename.connect("clicked", self.show_rename, fullpath)
-        icon.set_hexpand(False)
-        action.set_hexpand(False)
-        action.set_halign(Gtk.Align.END)
-
-        row = Gtk.Grid()
-        row.get_style_context().add_class("frame-item")
-        row.set_hexpand(True)
-        row.set_vexpand(False)
-        row.attach(icon, 0, 0, 1, 2)
-        if is_usb(fullpath) or is_usb_device(fullpath) or is_usb_prints(fullpath):
-            row.attach(name, 1, 0, 3, 3)
-        else:
-            row.attach(name, 1, 0, 3, 1)
-            row.attach(info, 1, 1, 1, 1)
-            row.attach(rename, 2, 1, 1, 1)
-            row.attach(delete, 3, 1, 1, 1)
-
-        if not filename or (filename and os.path.splitext(filename)[1] in [".gcode", ".g", ".gco", ".ufp"]):
-            row.attach(action, 4, 0, 1, 2)
-
-        if filename is not None:
-            self.files[fullpath] = row
-            self.labels['files'][fullpath] = {
-                "icon": icon,
-                "info": info,
-                "name": name
-            }
-        else:
-            self.directories[fullpath] = row
-            self.labels['directories'][fullpath] = {
-                "info": info,
-                "name": name
-            }
-            self.dir_panels[fullpath] = Gtk.Grid()
+                self.directories[fullpath] = row
+                self.labels['directories'][fullpath] = {
+                    "info": info,
+                    "name": name
+                }
+                self.dir_panels[fullpath] = Gtk.Grid()
 
     def image_load(self, filepath):
         pixbuf = self.get_file_image(filepath, small=True)
@@ -333,44 +439,97 @@ class PrintPanel(ScreenPanel):
 
     def confirm_print(self, widget, filename):
 
-        buttons = [
-            {"name": _("Print"), "response": Gtk.ResponseType.OK},
-            {"name": _("Cancel"), "response": Gtk.ResponseType.CANCEL}
-        ]
+        if not self._config.linux('buster'):
 
-        job_path: str = f"{home}/printer_data/gcodes/.JOB"
-        if not os.path.exists(job_path):
-            os.makedirs(job_path)
-        destination = os.path.join(job_path, os.path.basename(filename))
-        filetocopy = os.path.join(f"{home}/printer_data/gcodes", filename)
-        if filetocopy != destination:
-            shutil.copy2(filetocopy, destination)
-        filename = f".JOB/{os.path.basename(filename)}"
-        filename = filename.replace(".ufp", ".gcode")
+            buttons = [
+                {"name": _("Print"), "response": Gtk.ResponseType.OK},
+                {"name": _("Cancel"), "response": Gtk.ResponseType.CANCEL}
+            ]
 
-        label = Gtk.Label()
-        label.set_markup(f"<b>{os.path.basename(filename)}</b>\n")
-        label.set_hexpand(True)
-        label.set_halign(Gtk.Align.CENTER)
-        label.set_vexpand(True)
-        label.set_valign(Gtk.Align.CENTER)
-        label.set_line_wrap(True)
-        label.set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
+            job_path: str = f"{home}/printer_data/gcodes/.JOB"
+            if not os.path.exists(job_path):
+                os.makedirs(job_path)
+            destination = os.path.join(job_path, os.path.basename(filename))
+            filetocopy = os.path.join(f"{home}/printer_data/gcodes", filename)
+            if filetocopy != destination:
+                shutil.copy2(filetocopy, destination)
+            filename = f".JOB/{os.path.basename(filename)}"
+            filename = filename.replace(".ufp", ".gcode")
 
-        grid = Gtk.Grid()
-        grid.set_vexpand(True)
-        grid.set_halign(Gtk.Align.CENTER)
-        grid.set_valign(Gtk.Align.CENTER)
-        grid.add(label)
+            label = Gtk.Label()
+            label.set_markup(f"<b>{os.path.basename(filename)}</b>\n")
+            label.set_hexpand(True)
+            label.set_halign(Gtk.Align.CENTER)
+            label.set_vexpand(True)
+            label.set_valign(Gtk.Align.CENTER)
+            label.set_line_wrap(True)
+            label.set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
 
-        pixbuf = self.get_file_image(filename, self._screen.width * .9, self._screen.height * .6)
-        if pixbuf is not None:
-            image = Gtk.Image.new_from_pixbuf(pixbuf)
-            image.set_vexpand(False)
-            grid.attach_next_to(image, label, Gtk.PositionType.BOTTOM, 1, 1)
-        
-        dialog = self._gtk.Dialog(self._screen, buttons, grid, self.confirm_print_response, filename)
-        dialog.set_title(_("Print"))
+            grid = Gtk.Grid()
+            grid.set_vexpand(True)
+            grid.set_halign(Gtk.Align.CENTER)
+            grid.set_valign(Gtk.Align.CENTER)
+            grid.add(label)
+
+            pixbuf = self.get_file_image(filename, self._screen.width * .9, self._screen.height * .6)
+            if pixbuf is not None:
+                image = Gtk.Image.new_from_pixbuf(pixbuf)
+                image.set_vexpand(False)
+                grid.attach_next_to(image, label, Gtk.PositionType.BOTTOM, 1, 1)
+            
+            dialog = self._gtk.Dialog(self._screen, buttons, grid, self.confirm_print_response, filename)
+            dialog.set_title(_("Print"))
+
+        if self._config.linux('buster'):
+
+            buttons = [
+                {"name": _("Print"), "response": Gtk.ResponseType.OK},
+                {"name": _("Cancel"), "response": Gtk.ResponseType.CANCEL}
+            ]
+
+            def is_usb(string):
+                if string.startswith("USB/"):
+                    return True
+                else:
+                    return False
+
+            usb_prints: str = f"{home}/printer_data/gcodes/USB_PRINTS"
+            job_path: str = f"{home}/printer_data/gcodes/.JOB"
+            if not os.path.exists(job_path):
+                os.makedirs(job_path)
+            destination = os.path.join(job_path, os.path.basename(filename))
+            filetocopy = os.path.join(f"{home}/printer_data/gcodes", filename)
+            if filetocopy != destination:
+                shutil.copy2(filetocopy, destination)
+            if is_usb(filename):
+                shutil.copy2(filetocopy, usb_prints)
+            filename = f".JOB/{os.path.basename(filename)}"
+            filename = filename.replace(".ufp", ".gcode")
+
+            label = Gtk.Label()
+            label.set_markup(f"<b>{os.path.basename(filename)}</b>\n")
+            label.set_hexpand(True)
+            label.set_halign(Gtk.Align.CENTER)
+            label.set_vexpand(True)
+            label.set_valign(Gtk.Align.CENTER)
+            label.set_line_wrap(True)
+            label.set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
+
+            grid = Gtk.Grid()
+            grid.set_vexpand(True)
+            grid.set_halign(Gtk.Align.CENTER)
+            grid.set_valign(Gtk.Align.CENTER)
+            grid.add(label)
+
+            pixbuf = self.get_file_image(filename, self._screen.width * .9, self._screen.height * .6)
+            if pixbuf is not None:
+                image = Gtk.Image.new_from_pixbuf(pixbuf)
+                image.set_vexpand(False)
+                grid.attach_next_to(image, label, Gtk.PositionType.BOTTOM, 1, 1)
+            
+            dialog = self._gtk.Dialog(self._screen, buttons, grid, self.confirm_print_response, filename)
+            dialog.set_title(_("Print"))
+       
 
     def confirm_print_response(self, dialog, response_id, filename):
         self._gtk.remove_dialog(dialog)

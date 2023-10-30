@@ -145,6 +145,49 @@ class KlipperScreenConfig:
         self.lang = self.langs[lang]
         self.lang.install(names=['gettext', 'ngettext'])
 
+    def linux(self, version: str):
+        try:
+            with open("/etc/os-release", "r") as os_release_file:
+                for line in os_release_file:
+                    if line.startswith("VERSION="):
+                        version_info = line.strip().split("=")[1].strip('"')
+                        if version_info and version in version_info.lower():
+                            return True
+        except FileNotFoundError:
+            if 'dev' in version:
+                return True
+            else:
+                return None
+
+    def materials_path(self, custom: bool) -> str:
+        core_path = os.path.join('/home', 'pi', 'SyncraftCore')
+
+        if self.linux('dev'):
+            if custom:
+                return os.path.join(os.getcwd(), "ks_includes", "custom.json")
+            else:
+                return os.path.join(os.getcwd(), "ks_includes", "materials.json")
+
+        if self.linux('buster'):
+            if custom:
+                return os.path.join("/home", "pi", "custom.json")
+            else:
+                return os.path.join(os.getcwd(), "ks_includes", "materials.json")
+
+        if not self.linux('buster'):
+
+            if os.path.exists(core_path):
+                if custom:
+                    return os.path.join(core_path, "materials", "custom.json")
+                else:
+                    return os.path.join(core_path, "materials", "stock.json")
+            else:
+                if custom:
+                    return os.path.join(os.getcwd(), "ks_includes", "custom.json")
+                else:
+                    return os.path.join(os.getcwd(), "ks_includes", "materials.json")
+
+    @staticmethod
     def internet_connection(self) -> bool:
         try:
             socket.create_connection(("www.google.com", 80))

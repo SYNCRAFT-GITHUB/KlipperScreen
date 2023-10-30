@@ -456,7 +456,7 @@ msgid "Load"
 msgstr "Cargar"
 
 msgid "Lower Nozzle"
-msgstr "Bajar Boquilla"
+msgstr "Bajar"
 
 msgid "Macro shortcut on sidebar"
 msgstr "Atajo a Macros en el lateral"
@@ -610,7 +610,7 @@ msgid "Quad Gantry Level"
 msgstr "Nivelación cuádruple"
 
 msgid "Raise Nozzle"
-msgstr "Levantar Boquilla"
+msgstr "Levantar"
 
 msgid "Recover"
 msgstr "Recuperar"
@@ -1425,3 +1425,48 @@ msgstr "Dirección de Syncraft: %s"
 
 msgid "Connect to WiFi"
 msgstr "Conéctate a Wi-Fi"
+
+msgid "Insert Material Name"
+msgstr "Ingresa un nombre"
+
+msgid "Must contain between %s and %s characters."
+msgstr "Debe contener entre %s y %s caracteres."
+
+msgid "The name should contain only letters and numbers"
+msgstr "El nombre debe contener solo letras y números"
+
+msgid "This name cannot be used"
+msgstr "No se puede utilizar este nombre"
+
+msgid "Select which extruders are compatible"
+msgstr "Seleccione cuáles serán compatibles"
+
+msgid "Extrusion Temperature for the Material"
+msgstr "Temperatura de extrusión"
+
+msgid "Add Material"
+msgstr "Agregar Material"
+
+msgid "Add Custom Material"
+msgstr "Agregar Material Personalizado"
+
+msgid "Remove Material"
+msgstr "Eliminar Material"
+
+msgid "Delete all custom Materials"
+msgstr "Eliminar todos los materiales"
+
+msgid "The maximum limit has been reached"
+msgstr "Se ha alcanzado el límite máximo"
+
+msgid "Select at least one Extruder"
+msgstr "Selecciona al menos un extrusor"
+
+msgid "Export custom materials to USB"
+msgstr "Exportar materiales a USB"
+
+msgid "Import custom materials from USB"
+msgstr "Importar materiales desde USB"
+
+msgid "Chamber"
+msgstr "Cámara"

@@ -28,8 +28,10 @@ class Configurations(ScreenPanel):
                 self.title = title
                 self.show = show
 
+        syncraft_panel = 'syncraft_panel_buster' if self._config.linux('buster') else 'syncraft_panel_new'
+
         self.config_buttons = [
-            ConfigurationButton(button='SYNCRAFT', panel='syncraft_panel', title=_("Syncraft"), icon='syncraft'),
+            ConfigurationButton(button='SYNCRAFT', panel=syncraft_panel, title=_("Syncraft"), icon='syncraft'),
             ConfigurationButton(button='CALIBRATE', panel='zcalibrate', title=_("Calibrate"), icon='bed-level'),
             ConfigurationButton(button='SETTINGS', panel='settings', title=_("Settings"), icon='settings'),
             ConfigurationButton(button='POWER', panel='power', title=_("Power"), icon='shutdown'),

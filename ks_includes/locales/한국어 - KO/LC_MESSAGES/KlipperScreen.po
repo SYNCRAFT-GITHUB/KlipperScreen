@@ -1323,3 +1323,48 @@ msgstr "기계 웹 주소: %s"
 
 msgid "Connect to WiFi"
 msgstr "인터넷에 연결하다"
+
+msgid "Insert Material Name"
+msgstr "자료 이름 입력"
+
+msgid "Must contain between %s and %s characters."
+msgstr "%s에서 %s 문자 사이여야 합니다."
+
+msgid "The name should contain only letters and numbers"
+msgstr "이름은 문자와 숫자만 포함해야 합니다."
+
+msgid "This name cannot be used"
+msgstr "이 이름을 사용할 수 없습니다."
+
+msgid "Select which extruders are compatible"
+msgstr "어떤 엑스트루더가 호환되는지 선택"
+
+msgid "Extrusion Temperature for the Material"
+msgstr "자료의 압출 온도"
+
+msgid "Add Material"
+msgstr "자료 추가"
+
+msgid "Add Custom Material"
+msgstr "사용자 정의 자료 추가"
+
+msgid "Remove Material"
+msgstr "자료 제거"
+
+msgid "Delete all custom Materials"
+msgstr "모든 사용자 정의 재료 삭제"
+
+msgid "The maximum limit has been reached"
+msgstr "최대 제한에 도달했습니다"
+
+msgid "Select at least one Extruder"
+msgstr "목록에서 항목을 하나 이상 선택하세요"
+
+msgid "Export custom materials to USB"
+msgstr "자료를 외부 저장소로 내보내기"
+
+msgid "Import custom materials from USB"
+msgstr "외부 저장소에서 자료 가져오기"
+
+msgid "Chamber"
+msgstr "방"

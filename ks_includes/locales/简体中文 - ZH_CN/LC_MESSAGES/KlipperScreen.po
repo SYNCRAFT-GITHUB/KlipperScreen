@@ -1396,3 +1396,48 @@ msgstr "机器网络地址：%s"
 
 msgid "Connect to WiFi"
 msgstr "连接到网络"
+
+msgid "Insert Material Name"
+msgstr "材料名称"
+
+msgid "Must contain between %s and %s characters."
+msgstr "必须包含 %s 至 %s 个字符。"
+
+msgid "The name should contain only letters and numbers"
+msgstr "名称应仅包含字母和数字"
+
+msgid "This name cannot be used"
+msgstr "不能使用此名称"
+
+msgid "Select which extruders are compatible"
+msgstr "选择兼容的挤出机"
+
+msgid "Extrusion Temperature for the Material"
+msgstr "材料的挤出温度"
+
+msgid "Add Material"
+msgstr "添加材料"
+
+msgid "Add Custom Material"
+msgstr "添加自定义材料"
+
+msgid "Remove Material"
+msgstr "删除材料"
+
+msgid "Delete all custom Materials"
+msgstr "删除所有材料"
+
+msgid "The maximum limit has been reached"
+msgstr "已达到最大限制"
+
+msgid "Select at least one Extruder"
+msgstr "至少选择一个挤出头"
+
+msgid "Export custom materials to USB"
+msgstr "将材料导出到外部存储"
+
+msgid "Import custom materials from USB"
+msgstr "从外部存储导入材料"
+
+msgid "Chamber"
+msgstr "室"

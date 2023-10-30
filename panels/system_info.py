@@ -16,6 +16,7 @@ from ks_includes.screen_panel import ScreenPanel
 def create_panel(*args):
     return SystemInfo(*args)
 
+
 class SystemInfo(ScreenPanel):
 
     def __init__(self, screen, title):
@@ -45,7 +46,7 @@ class SystemInfo(ScreenPanel):
         self.labels['text'].set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
         self.labels['text'].set_halign(Gtk.Align.CENTER)
         self.labels['text'].set_valign(Gtk.Align.CENTER)
-        
+
         self.content.add(self.labels['text'])
 
         grid = self._gtk.HomogeneousGrid()
@@ -54,7 +55,7 @@ class SystemInfo(ScreenPanel):
         self.labels['system_info'].attach(grid, 0, 0, 2, 2)
         self.content.add(self.labels['system_info'])
 
-    def getScxModel (self):
+    def getScxModel(self):
         try:
             with open(os.path.join(self.core_path, 'core', 'info.yaml'), 'r') as prop:
                 prop = yaml.safe_load(prop)

@@ -1255,3 +1255,48 @@ msgstr "マシンウェブアドレス：%s"
 
 msgid "Connect to WiFi"
 msgstr "インターネットに接続する"
+
+msgid "Insert Material Name"
+msgstr "材料名を挿入"
+
+msgid "Must contain between %s and %s characters."
+msgstr "%s から %s 文字でなければなりません。"
+
+msgid "The name should contain only letters and numbers"
+msgstr "文字と数字のみを使用できます"
+
+msgid "This name cannot be used"
+msgstr "この名前は使用できません"
+
+msgid "Select which extruders are compatible"
+msgstr "セットマテリアルの互換性"
+
+msgid "Extrusion Temperature for the Material"
+msgstr "押出温度"
+
+msgid "Add Material"
+msgstr "材料を追加"
+
+msgid "Add Custom Material"
+msgstr "カスタム材料を追加"
+
+msgid "Remove Material"
+msgstr "材料を削除"
+
+msgid "Delete all custom Materials"
+msgstr "すべての素材を削除する"
+
+msgid "The maximum limit has been reached"
+msgstr "最大制限に達しました"
+
+msgid "Select at least one Extruder"
+msgstr "少なくとも1つのエクストルーダを選択"
+
+msgid "Export custom materials to USB"
+msgstr "USB へカスタム素材をエクスポート"
+
+msgid "Import custom materials from USB"
+msgstr "USB からカスタム素材をインポート"
+
+msgid "Chamber"
+msgstr "チャンバー"

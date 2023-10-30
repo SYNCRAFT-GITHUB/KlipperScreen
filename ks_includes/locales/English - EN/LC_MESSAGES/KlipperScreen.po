@@ -1249,3 +1249,48 @@ msgstr ""
 
 msgid "Connect to WiFi"
 msgstr ""
+
+msgid "Insert Material Name"
+msgstr ""
+
+msgid "Must contain between %s and %s characters."
+msgstr ""
+
+msgid "The name should contain only letters and numbers"
+msgstr ""
+
+msgid "This name cannot be used"
+msgstr ""
+
+msgid "Select which extruders are compatible"
+msgstr ""
+
+msgid "Extrusion Temperature for the Material"
+msgstr ""
+
+msgid "Add Material"
+msgstr ""
+
+msgid "Add Custom Material"
+msgstr ""
+
+msgid "Remove Material"
+msgstr ""
+
+msgid "Delete all custom Materials"
+msgstr ""
+
+msgid "The maximum limit has been reached"
+msgstr ""
+
+msgid "Select at least one Extruder"
+msgstr ""
+
+msgid "Export custom materials to USB"
+msgstr ""
+
+msgid "Import custom materials from USB"
+msgstr ""
+
+msgid "Chamber"
+msgstr ""

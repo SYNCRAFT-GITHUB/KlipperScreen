@@ -1435,3 +1435,48 @@ msgstr "Адрес принтера: %s"
 
 msgid "Connect to WiFi"
 msgstr "Подключиться к Интернету"
+
+msgid "Insert Material Name"
+msgstr "Введите название материала"
+
+msgid "Must contain between %s and %s characters."
+msgstr "Должно содержать от %s до %s символов."
+
+msgid "The name should contain only letters and numbers"
+msgstr "Разрешены только буквы и цифры"
+
+msgid "This name cannot be used"
+msgstr "Это имя нельзя использовать"
+
+msgid "Select which extruders are compatible"
+msgstr "Установить совместимость материалов"
+
+msgid "Extrusion Temperature for the Material"
+msgstr "Температура экструзии"
+
+msgid "Add Material"
+msgstr "Добавить материал"
+
+msgid "Add Custom Material"
+msgstr "+ индивидуальный материал"
+
+msgid "Remove Material"
+msgstr "Удалить материал"
+
+msgid "Delete all custom Materials"
+msgstr "Удалить все материалы"
+
+msgid "The maximum limit has been reached"
+msgstr "Достигнут максимальный лимит"
+
+msgid "Select at least one Extruder"
+msgstr "Выберите хотя бы один элемент в списке"
+
+msgid "Export custom materials to USB"
+msgstr "Экспорт материалов на USB"
+
+msgid "Import custom materials from USB"
+msgstr "Импорт материалов с USB"
+
+msgid "Chamber"
+msgstr "Камера"

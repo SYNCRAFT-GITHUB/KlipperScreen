@@ -37,15 +37,28 @@ class SettingsPanel(ScreenPanel):
         options.append({"clear_gcodes": {
             "name": _("Clear GCodes Folder"),
             "type": "script",
-            "script": "CLEAR_GCODES",
+            "script": "CLEANGCODEFILES" if self._config.linux('buster') else "CLEAR_GCODES",
             "icon": "custom-script"
         }})
-        options.append({"factory_reset": {
-            "name": _("Factory Reset"),
-            "type": "script",
-            "script": "REVERT_ALL",
-            "icon": "stock"
+        options.append({"add_material": {
+            "name": _("Add Material"),
+            "type": "panel",
+            "panel": "add_material",
+            "icon": "filament_plus"
         }})
+        options.append({"console": {
+            "name": _("Console"),
+            "type": "panel",
+            "panel": "console",
+            "icon": "console"
+        }})
+        if not self._config.linux('buster'):
+            options.append({"factory_reset": {
+                "name": _("Factory Reset"),
+                "type": "script",
+                "script": "REVERT_ALL",
+                "icon": "stock"
+            }})
 
         self.labels['settings_menu'] = self._gtk.ScrolledWindow()
         self.labels['settings'] = Gtk.Grid()

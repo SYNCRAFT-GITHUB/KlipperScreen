@@ -29,7 +29,6 @@ class WelcomePanel(ScreenPanel):
 
         self.texts = [
             f'{_("Welcome to Syncraft")}',
-            f'{_("You can access through the browser with %s") % socket.gethostname() }',
             f'{_("Here are some recommended steps to get started")}',
             f'{_("If you want, you can adjust all of this later")}',
         ]

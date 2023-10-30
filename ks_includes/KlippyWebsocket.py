@@ -3,6 +3,7 @@
 import threading
 import json
 import logging
+import os
 
 import gi
 import websocket
