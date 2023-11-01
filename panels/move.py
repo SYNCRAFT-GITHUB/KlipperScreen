@@ -95,7 +95,7 @@ class MovePanel(ScreenPanel):
 
         distgrid = Gtk.Grid()
         for j, i in enumerate(self.distances):
-            self.labels[i] = self._gtk.Button(label=i)
+            self.labels[i] = self._gtk.Button(label=f"{i}{_('mm')}")
             self.labels[i].set_direction(Gtk.TextDirection.LTR)
             self.labels[i].connect("clicked", self.change_distance, i)
             ctx = self.labels[i].get_style_context()

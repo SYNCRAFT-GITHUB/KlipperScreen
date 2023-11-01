@@ -34,6 +34,16 @@ class KlippyGcodes:
         return f"{KlippyGcodes.SET_EXT_TEMP} T{tool} S{temp}"
 
     @staticmethod
+    def gcode_offset(adjust=False, x=0, y=0, z=0, move=0):
+        cmd = "SET_GCODE_OFFSET"
+        adj = "_ADJUST" if adjust else ""
+        cmd += f" X{adj}={x}" if x != 0 else ""
+        cmd += f" Y{adj}={y}" if y != 0 else ""
+        cmd += f" Z{adj}={z}" if z != 0 else ""
+        cmd += f" MOVE={move}" if move != 0 else ""
+        return cmd
+
+    @staticmethod
     def set_heater_temp(heater, temp):
         return f'SET_HEATER_TEMPERATURE heater="{heater}" target={temp}'
 
