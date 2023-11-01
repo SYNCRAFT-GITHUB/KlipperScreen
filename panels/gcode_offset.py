@@ -39,6 +39,7 @@ class GCodeOffsetPanel(ScreenPanel):
         self.labels['x+'].connect("clicked", self.increment, True, False)
         self.labels['y-'].connect("clicked", self.decrease, False, True)
         self.labels['x-'].connect("clicked", self.decrease, True, False)
+        self.labels['ok'].connect("clicked", self.apply)
         self.labels['reset'].connect("clicked", self.reset_values)
 
         grid.attach(self.labels['y+'], 1, 0, 1, 1)
