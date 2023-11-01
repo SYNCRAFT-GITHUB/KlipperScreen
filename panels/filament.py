@@ -86,11 +86,9 @@ class FilamentPanel(ScreenPanel):
             self.labels[f"dist{i}"] = self._gtk.Button(label=i)
             self.labels[f"dist{i}"].connect("clicked", self.change_distance, int(i))
             ctx = self.labels[f"dist{i}"].get_style_context()
-            if ((self._screen.lang_ltr is True and j == 0) or
-                    (self._screen.lang_ltr is False and j == len(self.distances) - 1)):
+            if j == 0:
                 ctx.add_class("distbutton_top")
-            elif ((self._screen.lang_ltr is False and j == 0) or
-                  (self._screen.lang_ltr is True and j == len(self.distances) - 1)):
+            elif j == len(self.distances) - 1:
                 ctx.add_class("distbutton_bottom")
             else:
                 ctx.add_class("distbutton")
@@ -103,11 +101,9 @@ class FilamentPanel(ScreenPanel):
             self.labels[f"speed{i}"] = self._gtk.Button(label=i)
             self.labels[f"speed{i}"].connect("clicked", self.change_speed, int(i))
             ctx = self.labels[f"speed{i}"].get_style_context()
-            if ((self._screen.lang_ltr is True and j == 0) or
-                    (self._screen.lang_ltr is False and j == len(self.speeds) - 1)):
+            if j == 0:
                 ctx.add_class("distbutton_top")
-            elif ((self._screen.lang_ltr is False and j == 0) or
-                  (self._screen.lang_ltr is True and j == len(self.speeds) - 1)):
+            elif j == len(self.speeds) - 1:
                 ctx.add_class("distbutton_bottom")
             else:
                 ctx.add_class("distbutton")

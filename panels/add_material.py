@@ -205,7 +205,7 @@ class AddCustomMaterial(ScreenPanel):
             custom_json_file = []
 
         for material in custom_json_file:
-            if (material['name'] == name or material['code'] == code):
+            if material['name'] == name or material['code'] == code:
                 message = error_messages[1]
                 self._screen.show_popup_message(message, level=2)
                 return None
@@ -216,7 +216,7 @@ class AddCustomMaterial(ScreenPanel):
             materials_json_file = []
 
         for material in materials_json_file:
-            if (material['name'] == name or material['code'] == code):
+            if material['name'] == name or material['code'] == code:
                 message = error_messages[1]
                 self._screen.show_popup_message(message, level=2)
                 return None
@@ -230,7 +230,7 @@ class AddCustomMaterial(ScreenPanel):
         
         custom_json_file.append(new_material)
 
-        if (len(custom_json_file) >= 30):
+        if len(custom_json_file) >= 30:
             message = error_messages[3]
             self._screen.show_popup_message(message, level=2)
             return None

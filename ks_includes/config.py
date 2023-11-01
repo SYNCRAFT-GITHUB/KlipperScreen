@@ -177,6 +177,7 @@ class KlipperScreenConfig:
                 return None
 
     def materials_path(self, custom: bool) -> str:
+        core_path = os.path.join('/home', 'pi', 'SyncraftCore')
 
         if self.linux('dev'):
             if custom:
@@ -191,18 +192,19 @@ class KlipperScreenConfig:
                 return os.path.join(os.getcwd(), "ks_includes", "materials.json")
 
         if not self.linux('buster'):
-            core_materials = os.path.join("/home", "pi", "SyncraftCore", "materials")
-            if os.path.exists(core_materials):
+
+            if os.path.exists(core_path):
                 if custom:
-                    return os.path.join(core_materials, "custom.json")
+                    return os.path.join(core_path, "materials", "custom.json")
                 else:
-                    return os.path.join(core_materials, "stock.json")
+                    return os.path.join(core_path, "materials", "stock.json")
             else:
                 if custom:
                     return os.path.join(os.getcwd(), "ks_includes", "custom.json")
                 else:
                     return os.path.join(os.getcwd(), "ks_includes", "materials.json")
 
+    @staticmethod
     def internet_connection(self) -> bool:
         try:
             socket.create_connection(("www.google.com", 80))
