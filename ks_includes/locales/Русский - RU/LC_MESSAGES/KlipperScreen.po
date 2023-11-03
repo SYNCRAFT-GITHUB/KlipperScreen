@@ -1480,3 +1480,15 @@ msgstr "Импорт материалов с USB"
 
 msgid "Chamber"
 msgstr "Камера"
+
+msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
+msgstr "Сработала зонд до движения"
+
+msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
+msgstr "Уже в ручном режиме зонда Z"
+
+msgid "ENDSTOP X STILL TRIGGERED AFTER RETRACT"
+msgstr "Концевой выключатель X все еще активирован после отката"
+
+msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
+msgstr "Сработки на зонде после выполнения всех движений нет"

@@ -1488,3 +1488,15 @@ msgstr "Importer des matériaux depuis USB"
 
 msgid "Chamber"
 msgstr "Chambre"
+
+msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
+msgstr "La sonde a été déclenchée avant le mouvement"
+
+msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
+msgstr "Déjà en mode de sonde Z manuel."
+
+msgid "ENDSTOP X STILL TRIGGERED AFTER RETRACT"
+msgstr "Fin de course X reste déclenché après la rétraction"
+
+msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
+msgstr "Pas de déclenchement sur la sonde après avoir effectué tous les mouvements"

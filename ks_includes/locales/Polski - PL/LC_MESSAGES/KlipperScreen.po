@@ -1420,3 +1420,15 @@ msgstr "Importuj materiały z USB"
 
 msgid "Chamber"
 msgstr "Izba"
+
+msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
+msgstr "Sonda została aktywowana przed ruchem"
+
+msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
+msgstr "Jesteś już w trybie ręcznej sondy Z"
+
+msgid "ENDSTOP X STILL TRIGGERED AFTER RETRACT"
+msgstr "Czujnik krańcowy X nadal aktywowany po wycofaniu"
+
+msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
+msgstr "Brak aktywacji na sondzie po wykonaniu wszystkich ruchów"

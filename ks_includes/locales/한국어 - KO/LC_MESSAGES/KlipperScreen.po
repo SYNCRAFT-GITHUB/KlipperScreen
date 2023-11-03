@@ -1368,3 +1368,15 @@ msgstr "외부 저장소에서 자료 가져오기"
 
 msgid "Chamber"
 msgstr "방"
+
+msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
+msgstr "이동 전에 프로브가 작동되었습니다."
+
+msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
+msgstr "이미 수동 Z 프로브 모드입니다."
+
+msgid "ENDSTOP X STILL TRIGGERED AFTER RETRACT"
+msgstr "축 X 엔드스톱이 후퇴 후에도 계속 작동됩니다."
+
+msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
+msgstr "모든 움직임을 실행한 후 프로브에서 트리거가 없습니다."
