@@ -101,4 +101,5 @@ class GCodeOffsetPanel(ScreenPanel):
 
     def apply(self, widget):
         self._screen._ws.klippy.gcode_script(KlippyGcodes.gcode_offset(x=self.x, y=self.y))
+        self.reset_values(widget=widget)
         self._screen._menu_go_back()
