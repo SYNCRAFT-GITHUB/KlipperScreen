@@ -28,12 +28,13 @@ class GCodeOffsetPanel(ScreenPanel):
         grid = self._gtk.HomogeneousGrid()
         self.labels['gcode_offset_panel'] = self._gtk.HomogeneousGrid()
         
-        self.labels['y+'] = self._gtk.Button("increase", "Y", "color1")
-        self.labels['x+'] = self._gtk.Button("increase", "X", "color1")
-        self.labels['y-'] = self._gtk.Button("decrease", "Y", "color2")
-        self.labels['x-'] = self._gtk.Button("decrease", "X", "color2")
+        self.labels['y+'] = self._gtk.Button("y_increase", None, "color1")
+        self.labels['x+'] = self._gtk.Button("x_increase", None, "color1")
+        self.labels['y-'] = self._gtk.Button("y_decrease", None, "color2")
+        self.labels['x-'] = self._gtk.Button("x_decrease", None, "color2")
         self.labels['ok'] = self._gtk.Button("complete", None, "color3")
         self.labels['reset'] = self._gtk.Button("refresh", None, None)
+        self.labels['reset'].set_property("opacity", 0.3)
 
         self.labels['y+'].connect("clicked", self.increment, False, True)
         self.labels['x+'].connect("clicked", self.increment, True, False)
@@ -100,6 +101,7 @@ class GCodeOffsetPanel(ScreenPanel):
         self.labels['xy'].set_label(f"X: {self.x}\n\nY: {self.y}")
 
     def apply(self, widget):
+        print(f"{KlippyGcodes.gcode_offset(x=self.x, y=self.y)}")
         self._screen._ws.klippy.gcode_script(KlippyGcodes.gcode_offset(x=self.x, y=self.y))
         self.reset_values(widget=widget)
         self._screen._menu_go_back()

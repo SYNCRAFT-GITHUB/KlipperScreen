@@ -34,7 +34,8 @@ class Configurations(ScreenPanel):
             ConfigurationButton(button='SYNCRAFT', panel=syncraft_panel, title=_("Syncraft"), icon='syncraft'),
             ConfigurationButton(button='CALIBRATE', panel='zcalibrate', title=_("Calibrate"), icon='bed-level'),
             ConfigurationButton(button='SETTINGS', panel='settings', title=_("Settings"), icon='settings'),
-            ConfigurationButton(button='POWER', panel='power', title=_("Power"), icon='shutdown')
+            ConfigurationButton(button='POWER', panel='power', title=_("Power"), icon='shutdown'),
+            ConfigurationButton(button='DEV', panel='gcode_offset', title=_("DEV"), icon='custom-script')
         ]
 
         grid = self._gtk.HomogeneousGrid()

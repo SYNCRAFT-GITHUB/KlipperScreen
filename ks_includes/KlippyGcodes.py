@@ -35,7 +35,7 @@ class KlippyGcodes:
 
     @staticmethod
     def gcode_offset(adjust=False, x=0, y=0, z=0, move=0):
-        cmd = "SET_GCODE_OFFSET"
+        cmd = "IDEX_OFFSET"
         adj = "_ADJUST" if adjust else ""
         cmd += f" X{adj}={x}" if x != 0 else ""
         cmd += f" Y{adj}={y}" if y != 0 else ""
