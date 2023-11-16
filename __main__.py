@@ -303,16 +303,25 @@ class KlipperScreen(Gtk.Window):
         if 'timeout' in message.lower():
             return
 
-        messages = {
+        syncraft_messages = {
             '!PROEXTRUDER_DONT_MATCH_GCODE': _("The inserted Extruder is incompatible with this File"),
             '!MATERIAL_DONT_MATCH_GCODE': _("The material you're using is not compatible with this file"),
             '!PRINTER_MODEL_MISMATCH': _("The file you are trying to print is for a different printer model")
         }
 
+        klipper_messages = {
+            'Probe triggered prior to movement': _("PROBE TRIGGERED PRIOR TO MOVEMENT"),
+            'Already in a manual Z probe. Use ABORT to abort it.': _("ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"),
+            'Endstop x still triggered after retract': _("ENDSTOP X STILL TRIGGERED AFTER RETRACT"),
+            'No trigger on probe after full movement': _("NO TRIGGER ON PROBE AFTER FULL MOVEMENT")
+        }
+
         def msgProperty (property, level):
             if (property == "message"):
+                if message in klipper_messages:
+                    return klipper_messages[message]
                 if message.startswith("!"):
-                    return messages[message]
+                    return syncraft_messages[message]
                 else:
                     return message
             if (property == "width"):

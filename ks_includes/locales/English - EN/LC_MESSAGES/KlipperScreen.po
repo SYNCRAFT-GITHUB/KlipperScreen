@@ -1294,3 +1294,15 @@ msgstr ""
 
 msgid "Chamber"
 msgstr ""
+
+msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
+msgstr ""
+
+msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
+msgstr ""
+
+msgid "ENDSTOP X STILL TRIGGERED AFTER RETRACT"
+msgstr ""
+
+msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
+msgstr ""

@@ -1300,3 +1300,15 @@ msgstr "USB からカスタム素材をインポート"
 
 msgid "Chamber"
 msgstr "チャンバー"
+
+msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
+msgstr "動きの前にプローブがトリガーされました"
+
+msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
+msgstr "既に手動のZプローブモードです"
+
+msgid "ENDSTOP X STILL TRIGGERED AFTER RETRACT"
+msgstr "リトラクト後もエンドストップ X がトリガーされたままです"
+
+msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
+msgstr "すべての動きを実行した後、プローブでトリガーがありません"

@@ -1446,3 +1446,15 @@ msgstr "Materialien von USB importieren"
 
 msgid "Chamber"
 msgstr "Kammer"
+
+msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
+msgstr "Sonde wurde vor der Bewegung ausgelöst"
+
+msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
+msgstr "Bereits in einer manuellen Z-Sonde."
+
+msgid "ENDSTOP X STILL TRIGGERED AFTER RETRACT"
+msgstr "Endschalter X ist nach dem Zurückziehen immer noch ausgelöst"
+
+msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
+msgstr "Keine Auslösung an der Sonde nach vollständiger Bewegung"

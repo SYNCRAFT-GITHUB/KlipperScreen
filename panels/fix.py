@@ -86,13 +86,13 @@ class FixPanel(ScreenPanel):
 
         grid = self._gtk.HomogeneousGrid()
 
-        grid.attach(self.buttons['FIX_FILES'], 0, 0, 1, 1)
-        grid.attach(self.buttons['FIX_FILES_BOWDEN'], 1, 0, 1, 1)
-        grid.attach(self.buttons['FIX_CAMERA'], 0, 3, 1, 1)
-        #grid.attach(self.buttons['FIX_KLIPPERSCREEN'], 0, 2, 1, 1)
-        grid.attach(self.buttons['FIX_MAINSAIL'], 1, 2, 1, 1)
-        grid.attach(self.buttons['FIX_LED'], 1, 3, 1, 1)
-        grid.attach(self.buttons['FIX_MOONRAKER'], 0, 2, 1, 1)
+        grid.attach(self.buttons['FIX_FILES'], 0, 0, 2, 1)
+        grid.attach(self.buttons['FIX_FILES_BOWDEN'], 2, 0, 2, 1)
+        grid.attach(self.buttons['FIX_CAMERA'], 0, 3, 2, 1)
+        grid.attach(self.buttons['FIX_KLIPPERSCREEN'], 2, 2, 1, 1)
+        grid.attach(self.buttons['FIX_MAINSAIL'], 3, 2, 1, 1)
+        grid.attach(self.buttons['FIX_LED'], 2, 3, 2, 1)
+        grid.attach(self.buttons['FIX_MOONRAKER'], 0, 2, 2, 1)
 
         self.labels['fix_panel'] = self._gtk.HomogeneousGrid()
         self.labels['fix_panel'].attach(grid, 0, 0, 2, 2)

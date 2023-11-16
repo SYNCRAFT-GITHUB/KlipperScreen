@@ -1313,3 +1313,15 @@ msgstr "Importar materiais de um USB"
 
 msgid "Chamber"
 msgstr "Câmara"
+
+msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
+msgstr "Sonda foi acionada antes do movimento"
+
+msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
+msgstr "Já se encontra em Sonda Manual (Eixo Z)."
+
+msgid "ENDSTOP X STILL TRIGGERED AFTER RETRACT"
+msgstr "Endstop (Eixo X) continua acionado após retrair"
+
+msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
+msgstr "Nenhum gatilho na Sonda após executar todos os movimentos"
