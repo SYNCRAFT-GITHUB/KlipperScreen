@@ -5,7 +5,8 @@
         "compatible": [
             "METAL04"
         ],
-        "experimental": []
+        "experimental": [],
+        "temp": 260
     },
     {
         "name": "316 L",
@@ -13,7 +14,8 @@
         "compatible": [
             "METAL04"
         ],
-        "experimental": []
+        "experimental": [],
+        "temp": 260
     },
     {
         "name": "ABS",
@@ -26,7 +28,8 @@
         "experimental": [
             "FIBER06",
             "METAL04"
-        ]
+        ],
+        "temp": 245
     },
     {
         "name": "ASA",
@@ -34,7 +37,8 @@
         "compatible": [
             "ST04"
         ],
-        "experimental": []
+        "experimental": [],
+        "temp": 255
     },
     {
         "name": "CPE",
@@ -47,7 +51,8 @@
             "ST025",
             "FIBER06",
             "METAL04"
-        ]
+        ],
+        "temp": 255
     },
     {
         "name": "CPE +",
@@ -60,7 +65,8 @@
             "ST08",
             "FIBER06",
             "METAL04"
-        ]
+        ],
+        "temp": 275
     },
     {
         "name": "I 150",
@@ -71,7 +77,8 @@
         "experimental": [
             "FIBER06",
             "METAL04"
-        ]
+        ],
+        "temp": 250
     },
     {
         "name": "I 151",
@@ -79,7 +86,8 @@
         "compatible": [
             "METAL04"
         ],
-        "experimental": []
+        "experimental": [],
+        "temp": 245
     },
     {
         "name": "I 180",
@@ -88,7 +96,8 @@
             "FIBER06",
             "METAL04"
         ],
-        "experimental": []
+        "experimental": [],
+        "temp": 255
     },
     {
         "name": "NYLON",
@@ -101,7 +110,8 @@
             "ST025",
             "FIBER06",
             "METAL04"
-        ]
+        ],
+        "temp": 250
     },
     {
         "name": "PAHT CF15",
@@ -109,7 +119,8 @@
         "compatible": [
             "FIBER06"
         ],
-        "experimental": []
+        "experimental": [],
+        "temp": 275
     },
     {
         "name": "PC",
@@ -122,7 +133,8 @@
             "ST08",
             "FIBER06",
             "METAL04"
-        ]
+        ],
+        "temp": 285
     },
     {
         "name": "PC/ABS",
@@ -132,7 +144,8 @@
         ],
         "experimental": [
             "ST08"
-        ]
+        ],
+        "temp": 280
     },
     {
         "name": "PET",
@@ -144,7 +157,8 @@
             "ST08",
             "FIBER06",
             "METAL04"
-        ]
+        ],
+        "temp": 250
     },
     {
         "name": "PET CF15",
@@ -152,7 +166,8 @@
         "compatible": [
             "FIBER06"
         ],
-        "experimental": []
+        "experimental": [],
+        "temp": 270
     },
     {
         "name": "PETG",
@@ -165,7 +180,8 @@
             "ST025",
             "FIBER06",
             "METAL04"
-        ]
+        ],
+        "temp": 250
     },
     {
         "name": "PLA",
@@ -178,7 +194,8 @@
         "experimental": [
             "FIBER06",
             "METAL04"
-        ]
+        ],
+        "temp": 220
     },
     {
         "name": "PP",
@@ -191,7 +208,8 @@
             "ST08",
             "FIBER06",
             "METAL04"
-        ]
+        ],
+        "temp": 225
     },
     {
         "name": "PP GF30",
@@ -199,7 +217,8 @@
         "compatible": [
             "FIBER06"
         ],
-        "experimental": []
+        "experimental": [],
+        "temp": 260
     },
     {
         "name": "TO. PLA",
@@ -212,7 +231,8 @@
         "experimental": [
             "FIBER06",
             "METAL04"
-        ]
+        ],
+        "temp": 225
     },
     {
         "name": "TPU 95A",
@@ -225,7 +245,8 @@
             "ST025",
             "FIBER06",
             "METAL04"
-        ]
+        ],
+        "temp": 235
     },
     {
         "name": "TPU D64",
@@ -238,6 +259,7 @@
             "ST025",
             "FIBER06",
             "METAL04"
-        ]
+        ],
+        "temp": 235
     }
 ]
