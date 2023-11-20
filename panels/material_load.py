@@ -12,11 +12,12 @@ from ks_includes.KlippyGcodes import KlippyGcodes
 from ks_includes.screen_panel import ScreenPanel
 
 class PrinterMaterial:
-    def __init__ (self, name: str, code: str, compatible: [str] = [], experimental: [str] = []):
+    def __init__ (self, name: str, code: str, compatible: [str] = [], experimental: [str] = [], temp: int=0):
         self.name = name
         self.code = code
         self.compatible = compatible
         self.experimental = experimental
+        self.temp = temp
 
 class CustomPrinterMaterial:
     def __init__ (self, name: str, code: str, compatible: [str] = [], temp: int=0):
@@ -46,6 +47,7 @@ def read_materials_from_json(file_path: str, custom: bool = False):
                         code=item['code'],
                         compatible=item['compatible'],
                         experimental=item['experimental'],
+                        temp=item['temp'],
                     )
                     return_array.append(material)
             return return_array
@@ -92,11 +94,6 @@ class ChMaterialPanel(ScreenPanel):
         self.storegrid = grid
         
 
-    def materialgcodescript(self, widget, material: str):
-        self._screen._ws.klippy.gcode_script(f"LOAD_FILAMENT_{material}")
-        for _ in range(0,2):
-            self._screen._menu_go_back()
-
     def gridattach(self, gridvariable):
 
         selected_nozzle: str = self._config.get_nozzle()
@@ -117,7 +114,7 @@ class ChMaterialPanel(ScreenPanel):
 
             if selected_nozzle in material.compatible:
                 index_button = self._gtk.Button("circle-green", material.name, "color3")
-                index_button.connect("clicked", self.materialgcodescript, material.code)
+                index_button.connect("clicked", self.confirm_print_default, material.code, material.temp)
                 gridvariable.attach(index_button, repeat_three, i, 1, 1)
                 
                 if repeat_three == 4:
@@ -159,7 +156,7 @@ class ChMaterialPanel(ScreenPanel):
             
             if selected_nozzle in material.experimental and selected_nozzle in allowed_for_experimental:
                 index_button = self._gtk.Button("circle-orange", material.name, "color1")
-                index_button.connect("clicked", self.confirm_print_experimental, material.code)
+                index_button.connect("clicked", self.confirm_print_experimental, material.code, material.temp)
                 if show_experimental:
                     gridvariable.attach(index_button, repeat_three, i, 1, 1)
                     if repeat_three == 4:
@@ -171,6 +168,10 @@ class ChMaterialPanel(ScreenPanel):
             if selected_nozzle in allowed_for_experimental:
                 if material.code == self.materials[-1].code:
                     size: int = 1
+                    if repeat_three == 0:
+                        break
+                    else:
+                        pass
                     index: int = repeat_three
                     while index != 4:
                         size += 1
@@ -193,8 +194,13 @@ class ChMaterialPanel(ScreenPanel):
             return False
         return True
 
-    def confirm_print_experimental(self, widget, code):
-        params = {"script": f"LOAD_FILAMENT_{code}"}
+    def confirm_print_default(self, widget, code, temp: int):
+        self._screen._ws.klippy.gcode_script(f"LOAD_FILAMENT T={temp} M='{code}'")
+        for _ in range(0,2):
+            self._screen._menu_go_back()
+
+    def confirm_print_experimental(self, widget, code, temp: int):
+        params = {"script": f"LOAD_FILAMENT T={temp} M='{code}'"}
         self._screen._confirm_send_action(
             None,
             self.texts[0] + "\n\n" + self.texts[1] + "\n\n",
@@ -205,7 +211,7 @@ class ChMaterialPanel(ScreenPanel):
             self._screen._menu_go_back()
 
     def confirm_print_custom(self, widget, code, temp: int):
-        params = {"script": f"LOAD_FILAMENT_GENERIC T={temp}"}
+        params = {"script": f"LOAD_FILAMENT T={temp} M='{code}'"}
         self._screen._confirm_send_action(
             None,
             self.texts[2] + "\n\n" + self.texts[3] + f": {temp} (°C)\n\n",
@@ -216,7 +222,7 @@ class ChMaterialPanel(ScreenPanel):
             self._screen._menu_go_back()
 
     def confirm_print_generic(self, widget):
-        params = {"script": "LOAD_FILAMENT_GENERIC"}
+        params = {"script": f"LOAD_FILAMENT M='GENERIC'"}
         self._screen._confirm_send_action(
             None,
             self.texts[2] + "\n\n",

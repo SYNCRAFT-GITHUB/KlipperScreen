@@ -1471,6 +1471,12 @@ msgstr "Importar materiales desde USB"
 msgid "Chamber"
 msgstr "Cámara"
 
+msgid "The average update rate is 1 second"
+msgstr "La frecuencia de actualización promedio es de 1 segundo"
+
+msgid "Sensors"
+msgstr "Sensores"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 
