@@ -1421,6 +1421,12 @@ msgstr "Importuj materiały z USB"
 msgid "Chamber"
 msgstr "Izba"
 
+msgid "The average update rate is 1 second"
+msgstr "Średnia częstotliwość odświeżania: 1 sekunda"
+
+msgid "Sensors"
+msgstr "Czujniki"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonda została aktywowana przed ruchem"
 

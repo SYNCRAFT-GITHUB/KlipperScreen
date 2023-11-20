@@ -52,6 +52,12 @@ class SettingsPanel(ScreenPanel):
             "panel": "console",
             "icon": "console"
         }})
+        options.append({"sensors": {
+            "name": _("Sensors"),
+            "type": "panel",
+            "panel": "sensors",
+            "icon": "sensor"
+        }})
         if not self._config.linux('buster'):
             options.append({"factory_reset": {
                 "name": _("Factory Reset"),

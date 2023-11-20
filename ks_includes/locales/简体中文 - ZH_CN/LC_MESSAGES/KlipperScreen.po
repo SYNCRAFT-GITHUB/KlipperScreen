@@ -1442,6 +1442,12 @@ msgstr "从外部存储导入材料"
 msgid "Chamber"
 msgstr "室"
 
+msgid "The average update rate is 1 second"
+msgstr "平均刷新率：1 秒"
+
+msgid "Sensors"
+msgstr "传感器"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

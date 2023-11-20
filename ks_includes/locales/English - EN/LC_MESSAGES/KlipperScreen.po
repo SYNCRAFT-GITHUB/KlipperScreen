@@ -1295,6 +1295,12 @@ msgstr ""
 msgid "Chamber"
 msgstr ""
 
+msgid "The average update rate is 1 second"
+msgstr ""
+
+msgid "Sensors"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr ""
 
@@ -1306,3 +1312,4 @@ msgstr ""
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr ""
+

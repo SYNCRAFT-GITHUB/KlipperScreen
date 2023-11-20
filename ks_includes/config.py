@@ -204,7 +204,6 @@ class KlipperScreenConfig:
                 else:
                     return os.path.join(os.getcwd(), "ks_includes", "materials.json")
 
-    @staticmethod
     def internet_connection(self) -> bool:
         try:
             socket.create_connection(("www.google.com", 80))

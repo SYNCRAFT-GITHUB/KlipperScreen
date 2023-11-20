@@ -1369,6 +1369,12 @@ msgstr "외부 저장소에서 자료 가져오기"
 msgid "Chamber"
 msgstr "방"
 
+msgid "The average update rate is 1 second"
+msgstr "평균 새로 고침 빈도: 1초"
+
+msgid "Sensors"
+msgstr "센서"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 

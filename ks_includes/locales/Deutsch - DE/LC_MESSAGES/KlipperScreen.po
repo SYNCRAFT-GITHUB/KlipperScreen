@@ -1447,6 +1447,12 @@ msgstr "Materialien von USB importieren"
 msgid "Chamber"
 msgstr "Kammer"
 
+msgid "The average update rate is 1 second"
+msgstr "Durchschnittliche Aktualisierungsrate: 1 Sekunde"
+
+msgid "Sensors"
+msgstr "Sensoren"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 

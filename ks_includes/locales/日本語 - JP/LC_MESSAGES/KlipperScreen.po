@@ -1301,6 +1301,12 @@ msgstr "USB からカスタム素材をインポート"
 msgid "Chamber"
 msgstr "チャンバー"
 
+msgid "The average update rate is 1 second"
+msgstr "平均リフレッシュレート:1秒"
+
+msgid "Sensors"
+msgstr "センサー"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 
