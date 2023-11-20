@@ -49,10 +49,6 @@ class SensorsPanel(ScreenPanel):
         self.content.add(endstop_sensors_grid)
         self.content.add(probe_sensors_grid)
 
-        self.below_text = Gtk.Label(_("The average update rate is 1 second"))
-        if self._config.linux("buster"):
-            self.content.add(self.below_text)
-
     def loop(self, sensor_list, sensor_grid):
         if len(sensor_list) > 0:
             for number_index, x in enumerate(sensor_list):
