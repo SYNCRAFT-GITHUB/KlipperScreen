@@ -79,7 +79,6 @@ class GCodeOffsetPanel(ScreenPanel):
         self.labels[f"{self.distance}"].get_style_context().remove_class("distbutton_active")
         self.labels[f"{distance}"].get_style_context().add_class("distbutton_active")
         self.distance = distance
-        print(f"SELF.DISTANCE = {self.distance}")
 
     def reset_values(self, widget):
         self.x = 0.0

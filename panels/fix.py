@@ -101,6 +101,3 @@ class FixPanel(ScreenPanel):
 
     def set_fix_option_to(self, button, newfixoption):
         self._config.replace_fix_option(newvalue=newfixoption)
-
-    def nothing (self):
-        pass

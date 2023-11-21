@@ -60,5 +60,4 @@ class ScrewsAdjust(ScreenPanel):
             self._screen._ws.klippy.gcode_script(KlippyGcodes.Z_TILT)
 
     def screws_tilt_calculate(self, widget):
-        # self.home()
         self._screen._ws.klippy.gcode_script("BED_SCREWS_ADJUST")

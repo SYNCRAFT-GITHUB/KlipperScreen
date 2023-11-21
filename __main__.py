@@ -79,7 +79,7 @@ class KlipperScreen(Gtk.Window):
 
     def __init__(self, args, version):
         try:
-            super().__init__(title="KlipperScreen")
+            super().__init__(title="Syncraft")
         except Exception as e:
             logging.exception(e)
             raise RuntimeError from e

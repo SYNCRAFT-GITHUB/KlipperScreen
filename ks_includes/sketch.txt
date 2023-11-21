@@ -1,0 +1,85 @@
+import logging
+import random
+import os
+import gi
+
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk, Pango
+
+from ks_includes.KlippyGcodes import KlippyGcodes
+from ks_includes.screen_panel import ScreenPanel
+
+
+class BasicPanel():
+    def __init__(self, columns, buttons, menu='PanelMenu'):
+        self.menu = menu
+        self.columns = columns
+        self.buttons = buttons
+    
+    class Button:
+        def __init__(self, button: str, title: str, icon: str, panel='', show: bool = True):
+            self.button = button
+            self.icon = icon
+            self.title = title
+            self.show = show
+            self.panel = panel
+
+    def render(self):
+        grid = ScreenPanel._gtk.HomogeneousGrid()
+        scroll = ScreenPanel._gtk.ScrolledWindow()
+        scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        scroll.add(grid)
+
+        for i, btn in enumerate(self.buttons):
+
+            self.button = ScreenPanel._gtk.Button(btn.icon, btn.title, f"color{random.randint(1, 4)}")
+            
+            self.button.connect("clicked", ScreenPanel.menu_item_clicked, btn.panel, {
+                "name": btn.title,
+                "panel": btn.panel,
+            }, 'generic_item')
+
+            if btn.panel == 'script':
+                self.button.connect("clicked", self.set_fix_option_to, btn.button)
+
+            col = i % self.columns
+            row = int(i / self.columns)
+            grid.attach(self.button, col, row, 1, 1)
+
+        return grid
+
+    def set_fix_option_to(self, button, newfixoption):
+        ScreenPanel._config.replace_fix_option(newvalue=newfixoption)
+
+
+# TEST-PANEL
+
+import logging
+import os
+import gi
+
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk, Pango
+
+from ks_includes.KlippyGcodes import KlippyGcodes
+from ks_includes.basic_panel import ScreenPanel
+from ks_includes.basic_panel import BasicPanel
+
+def create_panel(*args):
+    return MegaBanana(*args)
+
+buttons = [
+    BasicPanel.Button(button='CALIBRATE', panel='zcalibrate', title=_("Calibrate"), icon='bed-level'),
+    BasicPanel.Button(button='SETTINGS', panel='settings', title=_("Settings"), icon='settings'),
+    BasicPanel.Button(button='EXPORTLOGSTOUSB', panel='script', title=_("Export Logs to USB"), icon='usb-save'),
+]
+
+basic_panel_instance = BasicPanel(columns=2, buttons=buttons)
+
+class MegaBanana(ScreenPanel):
+
+    def __init__(self, screen, title):
+
+        super().__init__(screen, title)
+        self.content.add(basic_panel_instance.render())
+        print(f'render: {basic_panel_instance.render()}')
