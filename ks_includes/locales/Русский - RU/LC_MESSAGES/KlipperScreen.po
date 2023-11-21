@@ -1498,3 +1498,6 @@ msgstr "Концевой выключатель X все еще активиро
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "Сработки на зонде после выполнения всех движений нет"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "Очистите стол или повторите калибровку."

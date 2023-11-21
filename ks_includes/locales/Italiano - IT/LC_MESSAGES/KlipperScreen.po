@@ -1447,3 +1447,6 @@ msgstr "Finecorsa X rimane attivato dopo la retrazione"
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "Nessuna attivazione sulla sonda dopo l'esecuzione di tutti i movimenti"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "Pulire la tavola o ripetere una calibrazione"

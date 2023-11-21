@@ -395,6 +395,24 @@ class KlipperScreenConfig:
             if name not in list(self.config[vals['section']]):
                 self.config.set(vals['section'], name, vals['value'])
 
+    def variables_value_check(self, key, value, string: bool = False) -> bool:
+        pdc_path = os.path.join('/home', 'pi', 'printer_data', 'config')
+        variables_path = os.path.join(pdc_path, 'variables.cfg')
+        try:
+            with open(variables_path, 'r') as file:
+                content = file.read()
+                if string:
+                    search_term = f"{key} = '{value}'"
+                else:
+                    search_term = f"{key} = '{value}'"
+                if search_term in content:
+                    return True
+                else:
+                    return False
+        except:
+            print("Unable to find 'variables.cfg' file. Returning 'False'!")
+            return False
+
     def exclude_from_config(self, config):
         exclude_list = ['preheat']
         if not self.defined_config.getboolean('main', "use_default_menu", fallback=True):

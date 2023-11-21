@@ -1506,3 +1506,6 @@ msgstr "Fin de course X reste déclenché après la rétraction"
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "Pas de déclenchement sur la sonde après avoir effectué tous les mouvements"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "Nettoyer la table ou refaire un calibrage"

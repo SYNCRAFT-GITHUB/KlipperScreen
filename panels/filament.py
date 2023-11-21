@@ -18,7 +18,7 @@ class FilamentPanel(ScreenPanel):
 
     def __init__(self, screen, title):
         super().__init__(screen, title)
-        self.current_extruder = self._printer.get_stat("toolhead", "extruder")
+        self.current_extruder = self.get_current_extruder() # self._printer.get_stat("toolhead", "extruder")
         macros = self._printer.get_gcode_macros()
         self.load_filament = any("LOAD_FILAMENT" in macro.upper() for macro in macros)
         self.unload_filament = any("UNLOAD_FILAMENT" in macro.upper() for macro in macros)
@@ -171,6 +171,12 @@ class FilamentPanel(ScreenPanel):
 
         self.content.add(grid)
 
+    def get_current_extruder(self) -> str:
+        if self._config.variables_value_check('currentextruder', 'extruder', string=True):
+            return 'extruder'
+        else:
+            return 'extruder_stepper extruder1'
+
     def process_busy(self, busy):
         for button in self.buttons:
             if button == "temperature":
@@ -196,7 +202,7 @@ class FilamentPanel(ScreenPanel):
                 data["toolhead"]["extruder"] != self.current_extruder):
             for extruder in self._printer.get_tools():
                 self.labels[extruder].get_style_context().remove_class("button_active")
-            self.current_extruder = data["toolhead"]["extruder"]
+            self.current_extruder = self.get_current_extruder() # data["toolhead"]["extruder"]
             self.labels[self.current_extruder].get_style_context().add_class("button_active")
 
         for x in self._printer.get_filament_sensors():

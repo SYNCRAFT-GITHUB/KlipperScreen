@@ -1464,3 +1464,6 @@ msgstr "Endschalter X ist nach dem Zurückziehen immer noch ausgelöst"
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "Keine Auslösung an der Sonde nach vollständiger Bewegung"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "Reinigen Sie den Tisch oder führen Sie eine Kalibrierung erneut durch"

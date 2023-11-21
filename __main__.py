@@ -313,7 +313,8 @@ class KlipperScreen(Gtk.Window):
             'Probe triggered prior to movement': _("PROBE TRIGGERED PRIOR TO MOVEMENT"),
             'Already in a manual Z probe. Use ABORT to abort it.': _("ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"),
             'Endstop x still triggered after retract': _("ENDSTOP X STILL TRIGGERED AFTER RETRACT"),
-            'No trigger on probe after full movement': _("NO TRIGGER ON PROBE AFTER FULL MOVEMENT")
+            'No trigger on probe after full movement': _("NO TRIGGER ON PROBE AFTER FULL MOVEMENT"),
+            'Probe samples exceed samples_tolerance': _("PROBE SAMPLES EXCEED SAMPLES_TOLERANCE")
         }
 
         def msgProperty (property, level):

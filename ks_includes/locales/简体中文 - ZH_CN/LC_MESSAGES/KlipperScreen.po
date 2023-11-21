@@ -1459,3 +1459,6 @@ msgstr "在缩回后，X轴的限位开关仍然被触发"
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "在执行所有动作后，探针上没有触发"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "清洁工作台，或重新进行全面校准"

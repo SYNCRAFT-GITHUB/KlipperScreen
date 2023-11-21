@@ -1386,3 +1386,6 @@ msgstr "축 X 엔드스톱이 후퇴 후에도 계속 작동됩니다."
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "모든 움직임을 실행한 후 프로브에서 트리거가 없습니다."
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "테이블을 청소하거나 교정을 다시 실행하세요."

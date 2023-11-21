@@ -1318,3 +1318,6 @@ msgstr "リトラクト後もエンドストップ X がトリガーされたま
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "すべての動きを実行した後、プローブでトリガーがありません"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "テーブルを掃除するか、完全なキャリブレーションをやり直す"

@@ -1331,3 +1331,6 @@ msgstr "Endstop (Eixo X) continua acionado após retrair"
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "Nenhum gatilho na Sonda após executar todos os movimentos"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "A Mesa está incorretamente calibrada ou suja"

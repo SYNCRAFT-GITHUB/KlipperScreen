@@ -1313,3 +1313,6 @@ msgstr ""
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr ""
 
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr ""
+

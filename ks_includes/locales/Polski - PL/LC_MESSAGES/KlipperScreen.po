@@ -1438,3 +1438,6 @@ msgstr "Czujnik krańcowy X nadal aktywowany po wycofaniu"
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "Brak aktywacji na sondzie po wykonaniu wszystkich ruchów"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "Wyczyść stół lub powtórz kalibrację"
