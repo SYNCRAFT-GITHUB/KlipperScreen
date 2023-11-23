@@ -152,7 +152,7 @@ class ChMaterialPanel(ScreenPanel):
         for material in self.materials:
 
             show_experimental = self._config.get_main_config().getboolean('show_experimental_material', False)
-            allowed_for_experimental = ["ST025", "ST04", "ST08"]
+            allowed_for_experimental = ["Standard 0.25mm", "Standard 0.4mm", "Standard 0.8mm"]
             
             if selected_nozzle in material.experimental and selected_nozzle in allowed_for_experimental:
                 index_button = self._gtk.Button("circle-orange", material.name, "color1")
@@ -195,12 +195,12 @@ class ChMaterialPanel(ScreenPanel):
         return True
 
     def confirm_print_default(self, widget, code, temp: int):
-        self._screen._ws.klippy.gcode_script(f"LOAD_FILAMENT T={temp} M='{code}'")
+        self._screen._ws.klippy.gcode_script(f"LOAD_FILAMENT T={temp} M='{code}' NZ='{selected_nozzle}'")
         for _ in range(0,2):
             self._screen._menu_go_back()
 
     def confirm_print_experimental(self, widget, code, temp: int):
-        params = {"script": f"LOAD_FILAMENT T={temp} M='{code}'"}
+        params = {"script": f"LOAD_FILAMENT T={temp} M='{code}' NZ='{selected_nozzle}'"}
         self._screen._confirm_send_action(
             None,
             self.texts[0] + "\n\n" + self.texts[1] + "\n\n",
@@ -211,7 +211,7 @@ class ChMaterialPanel(ScreenPanel):
             self._screen._menu_go_back()
 
     def confirm_print_custom(self, widget, code, temp: int):
-        params = {"script": f"LOAD_FILAMENT T={temp} M='{code}'"}
+        params = {"script": f"LOAD_FILAMENT T={temp} M='{code}' NZ='{selected_nozzle}'"}
         self._screen._confirm_send_action(
             None,
             self.texts[2] + "\n\n" + self.texts[3] + f": {temp} (°C)\n\n",
@@ -222,7 +222,7 @@ class ChMaterialPanel(ScreenPanel):
             self._screen._menu_go_back()
 
     def confirm_print_generic(self, widget):
-        params = {"script": f"LOAD_FILAMENT M='GENERIC'"}
+        params = {"script": f"LOAD_FILAMENT M='GENERIC' NZ='{selected_nozzle}'"}
         self._screen._confirm_send_action(
             None,
             self.texts[2] + "\n\n",

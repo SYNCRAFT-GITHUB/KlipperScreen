@@ -6,6 +6,7 @@ import pathlib
 import locale
 import random
 import socket
+import host
 import json
 import copy
 import os
@@ -110,9 +111,9 @@ class KlipperScreenConfig:
             printers.append("Printer Printer")
         self.printers = [
             {printer[8:]: {
-                "moonraker_host": self.config.get(printer, "moonraker_host", fallback="127.0.0.1"),
-                "moonraker_port": self.config.get(printer, "moonraker_port", fallback="7125"),
-                "moonraker_api_key": self.config.get(printer, "moonraker_api_key", fallback="").replace('"', '')
+                "moonraker_host": self.config.get(printer, "moonraker_host", fallback=host.MOONRAKER_HOST),
+                "moonraker_port": self.config.get(printer, "moonraker_port", fallback=host.MOONRAKER_PORT),
+                "moonraker_api_key": self.config.get(printer, "moonraker_api_key", fallback=host.MOONRAKER_API_KEY).replace('"', '')
             }} for printer in printers
         ]
 
