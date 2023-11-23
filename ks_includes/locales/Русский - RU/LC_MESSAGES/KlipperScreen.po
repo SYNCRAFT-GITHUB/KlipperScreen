@@ -79,6 +79,9 @@ msgstr "Вы уверены что хотите перезагрузить си�
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Вы хотите выключить принтер?"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "Позволь мне угадать... Кто-то украл твой булочку"
+
 msgid "Update via Internet"
 msgstr "Обновление через Интернет"
 

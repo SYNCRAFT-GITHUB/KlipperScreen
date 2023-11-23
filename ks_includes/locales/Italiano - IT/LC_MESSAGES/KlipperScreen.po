@@ -73,6 +73,9 @@ msgstr "Riavviare il Sistema?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Spegnere il Sistema?"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "Lascia che indovini... Qualcuno ha rubato la tua Sweetroll"
+
 msgid "Update via Internet"
 msgstr "Aggiornamento tramite Internet"
 

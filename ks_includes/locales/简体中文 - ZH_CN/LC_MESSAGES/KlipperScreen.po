@@ -78,6 +78,9 @@ msgstr "您确定要重启系统吗？"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "您确定要关闭系统吗？"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "清除！ 我怎么帮你？"
+
 msgid "Update via Internet"
 msgstr "通过互联网更新"
 

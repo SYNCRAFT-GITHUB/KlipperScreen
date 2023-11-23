@@ -73,6 +73,9 @@ msgstr "システムを再起動しますか？"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "システムをシャットダウンしますか？"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "推測してみよう... 誰かがあなたのスイートロールを盗んだんだね"
+
 msgid "Update via Internet"
 msgstr "インターネット経由でアップデートする"
 

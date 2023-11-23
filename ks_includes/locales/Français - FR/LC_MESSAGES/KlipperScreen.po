@@ -78,6 +78,9 @@ msgstr "Êtes-vous sûr de vouloir redémarrer le système ?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Êtes-vous sûr de vouloir arrêter le système ?"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "Laissez-moi deviner... Quelqu'un a volé votre pain sucré"
+
 msgid "Update via Internet"
 msgstr "Mise à jour via Internet"
 

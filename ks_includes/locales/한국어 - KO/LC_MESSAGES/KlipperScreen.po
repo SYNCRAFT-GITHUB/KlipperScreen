@@ -73,6 +73,9 @@ msgstr "시스템을 재시작 하시겠습니까?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "시스템을 종료 하시겠습니까?"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "추측해 봐... 누군가 너의 스위트롤을 훔쳤어"
+
 msgid "Update via Internet"
 msgstr "인터넷을 통한 업데이트"
 

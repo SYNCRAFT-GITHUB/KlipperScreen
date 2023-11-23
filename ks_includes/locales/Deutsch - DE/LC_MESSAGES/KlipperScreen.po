@@ -78,6 +78,9 @@ msgstr "Möchten Sie das System wirklich neu starten?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Möchten Sie das System wirklich herunterfahren?"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "Lass mich raten... Jemand hat deinen Süßrollen gestohlen"
+
 msgid "Update via Internet"
 msgstr "Update über Internet"
 

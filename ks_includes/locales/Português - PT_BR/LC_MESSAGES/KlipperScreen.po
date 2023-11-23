@@ -78,6 +78,9 @@ msgstr "Reiniciar o sistema ?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Desligar o sistema ?"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "Deixa eu adivinhar... Alguém roubou seu Pãozinho Doce"
+
 msgid "Update via Internet"
 msgstr "Atualizar pela Internet"
 

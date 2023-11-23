@@ -4,7 +4,6 @@ import subprocess
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, GLib
 from ks_includes.screen_panel import ScreenPanel
-from ks_includes.host import Moonraker as M
 
 
 def create_panel(*args):
@@ -155,7 +154,7 @@ class TimezoneSelect(ScreenPanel):
 
         code = self.labels['timezone_name'].get_text()
 
-        magic_words = ['welcome', 'newhost=']
+        magic_words = ['welcome', 'help']
         if code in magic_words:
             self.magic(code=code)
             return
@@ -173,7 +172,7 @@ class TimezoneSelect(ScreenPanel):
             self.set_bool_config_option(section="hidden", option="welcome", boolean=True)
             self._screen.reload_panels()
 
-        if code == 'newhost=':
-            newhost = code.replace("newhost", "")
-            M.set_new_connection(host=newhost)
-            self._screen.restart_ks()
+        if code == 'help':
+            message: str = _("Let me guess... Someone stole your Sweetroll")
+            self._screen.show_popup_message(message, level=1)
+            self._screen.remove_keyboard()

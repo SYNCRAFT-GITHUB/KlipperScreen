@@ -73,6 +73,9 @@ msgstr ""
 msgid "Are you sure you wish to shutdown the system?"
 msgstr ""
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr ""
+
 msgid "Update via Internet"
 msgstr ""
 
