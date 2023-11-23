@@ -1,3 +1,4 @@
+from ks_includes.host import Moonraker as M
 import configparser
 import datetime
 import logging
@@ -6,7 +7,6 @@ import pathlib
 import locale
 import random
 import socket
-import host
 import json
 import copy
 import os
@@ -107,13 +107,28 @@ class KlipperScreenConfig:
             self.errors.append(msg)
 
         printers = sorted([i for i in self.config.sections() if i.startswith("printer ")])
+
         if len(printers) == 0:
             printers.append("Printer Printer")
+
+        host_json_path = os.path.join(os.getcwd(), "ks_includes", "dev-host.json")
+        if os.path.exists(host_json_path):
+            try:
+                with open(host_json_path, 'r') as file:
+                    data = json.load(file)
+                    M.set_new_connection(
+                        host=data['host'],
+                        port=data['port'],
+                        api=data['api_key']
+                        )
+            except:
+                print('Unable to read host json file')
+
         self.printers = [
             {printer[8:]: {
-                "moonraker_host": self.config.get(printer, "moonraker_host", fallback=host.MOONRAKER_HOST),
-                "moonraker_port": self.config.get(printer, "moonraker_port", fallback=host.MOONRAKER_PORT),
-                "moonraker_api_key": self.config.get(printer, "moonraker_api_key", fallback=host.MOONRAKER_API_KEY).replace('"', '')
+                "moonraker_host": self.config.get(printer, "moonraker_host", fallback=M.get_host()),
+                "moonraker_port": self.config.get(printer, "moonraker_port", fallback=M.get_port()),
+                "moonraker_api_key": self.config.get(printer, "moonraker_api_key", fallback=M.get_api()).replace('"', '')
             }} for printer in printers
         ]
 
