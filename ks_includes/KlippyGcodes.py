@@ -18,12 +18,18 @@ class KlippyGcodes:
     SET_FAN_SPEED = "M106"
     SET_SPD_FACTOR = "M220"
 
+    LOAD_FILAMENT = "LOAD_FILAMENT"
+
     PROBE_CALIBRATE = "PROBE_CALIBRATE"
     Z_ENDSTOP_CALIBRATE = "CALIBRATE_Z_ENDSTOP"
     TESTZ = "TESTZ Z="
     ABORT = "ABORT"
     ACCEPT = "ACCEPT"
     ADJUSTED = "ADJUSTED"
+
+    @staticmethod
+    def load_filament(t, m, nz):
+        return f"{KlippyGcodes.LOAD_FILAMENT} T={t} M='{m}' NZ='{nz}'"
 
     @staticmethod
     def set_bed_temp(temp):
