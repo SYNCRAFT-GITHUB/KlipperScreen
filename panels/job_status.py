@@ -378,8 +378,8 @@ class JobStatusPanel(ScreenPanel):
             'pause': self._gtk.Button("pause", _("Pause"), "color1"),
             'restart': self._gtk.Button("refresh", _("Restart"), "color3"),
             'resume': self._gtk.Button("unpause", _("Resume"), "color1"),
-            'save_offset_probe': self._gtk.Button("home-z", _("Save Z") + "\n" + "Probe", "color1"),
-            'save_offset_endstop': self._gtk.Button("home-z", _("Save Z") + "\n" + "Endstop", "color2"),
+            'save_offset_probe': self._gtk.Button("letter-z", _("Save") + " Probe", None),
+            'save_offset_endstop': self._gtk.Button("letter-z", _("Save") + " Endstop", None),
         }
         self.buttons['cancel'].connect("clicked", self.cancel)
         self.buttons['control'].connect("clicked", self._screen._go_to_submenu, "")
@@ -731,7 +731,6 @@ class JobStatusPanel(ScreenPanel):
             self.labels["status"].set_label(_("Cancelled"))
         elif state == "complete":
             self.labels["status"].set_label(_("Complete"))
-        self.state = state
         self.show_buttons_for_state()
 
     def show_buttons_for_state(self):

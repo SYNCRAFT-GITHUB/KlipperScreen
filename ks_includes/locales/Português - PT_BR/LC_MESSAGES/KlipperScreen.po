@@ -54,11 +54,11 @@ msgstr "Aplicar"
 
 #, python-format
 msgid "Apply %.2f offset to Endstop?"
-msgstr "Aplicar desloc. de %.2f para Endstop?"
+msgstr "Aplicar deslocamento de %.2f para Endstop?"
 
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
-msgstr "Aplicar desloc. %s%.2f ao Sonda?"
+msgstr "Aplicar deslocamento %s%.2f ao Sonda?"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Tem certeza de que deseja excluir o objeto?"
@@ -671,7 +671,7 @@ msgstr "Salvo"
 
 #, python-format
 msgid "Saved offset: %s"
-msgstr "Desloc. salvo: %s"
+msgstr "Deslocamento salvo: %s"
 
 msgid "Screen DPMS"
 msgstr "Tela DPMS"
