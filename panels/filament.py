@@ -172,10 +172,16 @@ class FilamentPanel(ScreenPanel):
         self.content.add(grid)
 
     def get_current_extruder(self) -> str:
-        if self._config.variables_value_check('currentextruder', 'extruder', string=True):
-            return 'extruder'
+        if self._config.linux('buster'):
+            if self._config.variables_value_check('currentextruder', 'extruder', string=True):
+                return 'extruder'
+            else:
+                return 'extruder_stepper extruder1'
         else:
-            return 'extruder_stepper extruder1' if self._config.linux('buster') else 'extruder1'
+            if self._config.variables_value_check('active_carriage', 0):
+                return 'extruder'
+            else:
+                return 'extruder1'
 
     def process_busy(self, busy):
         for button in self.buttons:

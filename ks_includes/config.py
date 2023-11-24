@@ -420,7 +420,7 @@ class KlipperScreenConfig:
                 if string:
                     search_term = f"{key} = '{value}'"
                 else:
-                    search_term = f"{key} = '{value}'"
+                    search_term = f"{key} = {value}"
                 if search_term in content:
                     return True
                 else:
