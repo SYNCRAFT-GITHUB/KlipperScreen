@@ -1490,6 +1490,12 @@ msgstr "Средняя частота обновления: 1 секунда"
 msgid "Sensors"
 msgstr "Датчики"
 
+msgid "This may have been caused by a recent update"
+msgstr "Это может быть вызвано недавним обновлением"
+
+msgid "Restart the machine for the updates to take effect"
+msgstr "Перезапустите машину, чтобы обновления вступили в силу"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

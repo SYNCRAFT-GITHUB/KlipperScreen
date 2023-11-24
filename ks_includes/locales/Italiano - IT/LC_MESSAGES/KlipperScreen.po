@@ -1439,6 +1439,12 @@ msgstr "La frequenza di aggiornamento media è di 1 secondo"
 msgid "Sensors"
 msgstr "Sensori"
 
+msgid "This may have been caused by a recent update"
+msgstr "Ciò potrebbe essere causato da un aggiornamento recente"
+
+msgid "Restart the machine for the updates to take effect"
+msgstr "Riavvia la macchina affinché gli aggiornamenti abbiano effetto"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda è stata attivata prima del movimento"
 

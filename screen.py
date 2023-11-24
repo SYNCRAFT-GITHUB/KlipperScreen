@@ -297,6 +297,14 @@ class KlipperScreen(Gtk.Window):
         if 'timeout' in message.lower():
             return
 
+        if 'unknown command:' in message.lower():
+            msg_texts = [
+                message,
+                _('This may have been caused by a recent update'),
+                _('Restart the machine for the updates to take effect')
+            ]
+            message = f"{msg_texts[0]}.\n{msg_texts[1]}.\n{msg_texts[2]}."
+
         syncraft_messages = {
             '!PROEXTRUDER_DONT_MATCH_GCODE': _("The inserted Extruder is incompatible with this File"),
             '!MATERIAL_DONT_MATCH_GCODE': _("The material you're using is not compatible with this file"),

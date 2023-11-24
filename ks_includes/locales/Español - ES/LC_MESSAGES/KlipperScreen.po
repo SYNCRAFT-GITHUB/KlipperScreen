@@ -79,7 +79,7 @@ msgid "Are you sure you wish to shutdown the system?"
 msgstr "¿Está seguro que desea apagar el sistema?"
 
 msgid "Let me guess... Someone stole your Sweetroll"
-msgstr "Déjame adivinar... Alguien robó tu panecillo dulce"
+msgstr "Déjame adivinar... ¿Alguien robó tu Pan de Azúcar?"
 
 msgid "Update via Internet"
 msgstr "Actualización a través de Internet"

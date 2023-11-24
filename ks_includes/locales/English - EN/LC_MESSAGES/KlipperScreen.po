@@ -1304,6 +1304,12 @@ msgstr ""
 msgid "Sensors"
 msgstr ""
 
+msgid "This may have been caused by a recent update"
+msgstr ""
+
+msgid "Restart the machine for the updates to take effect"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr ""
 

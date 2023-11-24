@@ -1430,6 +1430,12 @@ msgstr "Średnia częstotliwość odświeżania: 1 sekunda"
 msgid "Sensors"
 msgstr "Czujniki"
 
+msgid "This may have been caused by a recent update"
+msgstr "To może być spowodowane niedawną aktualizacją"
+
+msgid "Restart the machine for the updates to take effect"
+msgstr "Uruchom ponownie maszynę, aby aktualizacje zostały uwzględnione"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonda została aktywowana przed ruchem"
 

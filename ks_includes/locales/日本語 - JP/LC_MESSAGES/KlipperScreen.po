@@ -1310,6 +1310,12 @@ msgstr "平均リフレッシュレート:1秒"
 msgid "Sensors"
 msgstr "センサー"
 
+msgid "This may have been caused by a recent update"
+msgstr "これは最近のアップデートによる可能性があります"
+
+msgid "Restart the machine for the updates to take effect"
+msgstr "アップデートが有効になるようにマシンを再起動してください"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

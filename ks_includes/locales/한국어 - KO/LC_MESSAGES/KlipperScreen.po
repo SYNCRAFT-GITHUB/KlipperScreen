@@ -1378,6 +1378,12 @@ msgstr "평균 새로 고침 빈도: 1초"
 msgid "Sensors"
 msgstr "센서"
 
+msgid "This may have been caused by a recent update"
+msgstr "최근 업데이트로 인한 것일 수 있습니다"
+
+msgid "Restart the machine for the updates to take effect"
+msgstr "업데이트가 적용되려면 기계를 재시작하세요"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 
