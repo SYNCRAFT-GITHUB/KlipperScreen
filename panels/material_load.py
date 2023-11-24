@@ -66,6 +66,8 @@ class ChMaterialPanel(ScreenPanel):
         super().__init__(screen, title)
         self.menu = ['material_menu']
 
+        self.selected_nozzle: str = self._config.get_nozzle()
+
         self.materials_json_path = self._config.materials_path(custom=False)
         self.custom_json_path = self._config.materials_path(custom=True)
 
@@ -96,7 +98,6 @@ class ChMaterialPanel(ScreenPanel):
 
     def gridattach(self, gridvariable):
 
-        selected_nozzle: str = self._config.get_nozzle()
         repeat_three: int = 0
         i: int = 0
 
@@ -112,7 +113,7 @@ class ChMaterialPanel(ScreenPanel):
 
         for material in self.materials:
 
-            if selected_nozzle in material.compatible:
+            if self.selected_nozzle in material.compatible:
                 index_button = self._gtk.Button("circle-green", material.name, "color3")
                 index_button.connect("clicked", self.confirm_print_default, material.code, material.temp)
                 gridvariable.attach(index_button, repeat_three, i, 1, 1)
@@ -130,7 +131,7 @@ class ChMaterialPanel(ScreenPanel):
 
         for material in self.custom_materials:
         
-            if selected_nozzle in material.compatible:
+            if self.selected_nozzle in material.compatible:
                 allow = self.allow_custom(material)
 
                 if allow:
@@ -154,7 +155,7 @@ class ChMaterialPanel(ScreenPanel):
             show_experimental = self._config.get_main_config().getboolean('show_experimental_material', False)
             allowed_for_experimental = ["Standard 0.25mm", "Standard 0.4mm", "Standard 0.8mm"]
             
-            if selected_nozzle in material.experimental and selected_nozzle in allowed_for_experimental:
+            if self.selected_nozzle in material.experimental and self.selected_nozzle in allowed_for_experimental:
                 index_button = self._gtk.Button("circle-orange", material.name, "color1")
                 index_button.connect("clicked", self.confirm_print_experimental, material.code, material.temp)
                 if show_experimental:
@@ -165,7 +166,7 @@ class ChMaterialPanel(ScreenPanel):
                     else:
                         repeat_three += 1
 
-            if selected_nozzle in allowed_for_experimental:
+            if self.selected_nozzle in allowed_for_experimental:
                 if material.code == self.materials[-1].code:
                     size: int = 1
                     if repeat_three == 0:
@@ -195,12 +196,12 @@ class ChMaterialPanel(ScreenPanel):
         return True
 
     def confirm_print_default(self, widget, code, temp: int):
-        self._screen._ws.klippy.gcode_script(f"LOAD_FILAMENT T={temp} M='{code}' NZ='{selected_nozzle}'")
+        self._screen._ws.klippy.gcode_script(f"LOAD_FILAMENT T={temp} M='{code}' NZ='{self.selected_nozzle}'")
         for _ in range(0,2):
             self._screen._menu_go_back()
 
     def confirm_print_experimental(self, widget, code, temp: int):
-        params = {"script": f"LOAD_FILAMENT T={temp} M='{code}' NZ='{selected_nozzle}'"}
+        params = {"script": f"LOAD_FILAMENT T={temp} M='{code}' NZ='{self.selected_nozzle}'"}
         self._screen._confirm_send_action(
             None,
             self.texts[0] + "\n\n" + self.texts[1] + "\n\n",
@@ -211,7 +212,7 @@ class ChMaterialPanel(ScreenPanel):
             self._screen._menu_go_back()
 
     def confirm_print_custom(self, widget, code, temp: int):
-        params = {"script": f"LOAD_FILAMENT T={temp} M='{code}' NZ='{selected_nozzle}'"}
+        params = {"script": f"LOAD_FILAMENT T={temp} M='{code}' NZ='{self.selected_nozzle}'"}
         self._screen._confirm_send_action(
             None,
             self.texts[2] + "\n\n" + self.texts[3] + f": {temp} (°C)\n\n",
@@ -222,7 +223,7 @@ class ChMaterialPanel(ScreenPanel):
             self._screen._menu_go_back()
 
     def confirm_print_generic(self, widget):
-        params = {"script": f"LOAD_FILAMENT M='GENERIC' NZ='{selected_nozzle}'"}
+        params = {"script": f"LOAD_FILAMENT M='GENERIC' NZ='{self.selected_nozzle}'"}
         self._screen._confirm_send_action(
             None,
             self.texts[2] + "\n\n",
