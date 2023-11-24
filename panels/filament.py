@@ -175,7 +175,7 @@ class FilamentPanel(ScreenPanel):
         if self._config.variables_value_check('currentextruder', 'extruder', string=True):
             return 'extruder'
         else:
-            return 'extruder_stepper extruder1'
+            return 'extruder_stepper extruder1' if self._config.linux('buster') else 'extruder1'
 
     def process_busy(self, busy):
         for button in self.buttons:
