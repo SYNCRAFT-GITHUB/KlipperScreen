@@ -73,6 +73,9 @@ msgstr "시스템을 재시작 하시겠습니까?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "시스템을 종료 하시겠습니까?"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "추측해 봐... 누군가 너의 스위트롤을 훔쳤어"
+
 msgid "Update via Internet"
 msgstr "인터넷을 통한 업데이트"
 
@@ -1369,6 +1372,18 @@ msgstr "외부 저장소에서 자료 가져오기"
 msgid "Chamber"
 msgstr "방"
 
+msgid "The average update rate is 1 second"
+msgstr "평균 새로 고침 빈도: 1초"
+
+msgid "Sensors"
+msgstr "센서"
+
+msgid "This may have been caused by a recent update"
+msgstr "최근 업데이트로 인한 것일 수 있습니다"
+
+msgid "Restart the machine for the updates to take effect"
+msgstr "업데이트가 적용되려면 기계를 재시작하세요"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 
@@ -1380,3 +1395,6 @@ msgstr "축 X 엔드스톱이 후퇴 후에도 계속 작동됩니다."
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "모든 움직임을 실행한 후 프로브에서 트리거가 없습니다."
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "테이블을 청소하거나 교정을 다시 실행하세요."

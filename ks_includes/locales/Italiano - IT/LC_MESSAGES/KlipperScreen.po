@@ -73,6 +73,9 @@ msgstr "Riavviare il Sistema?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Spegnere il Sistema?"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "Lascia che indovini... Qualcuno ha rubato la tua Sweetroll"
+
 msgid "Update via Internet"
 msgstr "Aggiornamento tramite Internet"
 
@@ -1430,6 +1433,18 @@ msgstr "Importa materiali da USB"
 msgid "Chamber"
 msgstr "Camera"
 
+msgid "The average update rate is 1 second"
+msgstr "La frequenza di aggiornamento media è di 1 secondo"
+
+msgid "Sensors"
+msgstr "Sensori"
+
+msgid "This may have been caused by a recent update"
+msgstr "Ciò potrebbe essere causato da un aggiornamento recente"
+
+msgid "Restart the machine for the updates to take effect"
+msgstr "Riavvia la macchina affinché gli aggiornamenti abbiano effetto"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda è stata attivata prima del movimento"
 
@@ -1441,3 +1456,6 @@ msgstr "Finecorsa X rimane attivato dopo la retrazione"
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "Nessuna attivazione sulla sonda dopo l'esecuzione di tutti i movimenti"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "Pulire la tavola o ripetere una calibrazione"

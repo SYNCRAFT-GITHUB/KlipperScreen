@@ -22,8 +22,6 @@ COLORS = {
     "warning": "#c9c9c9"
 }
 
-# query_endstops
-# query_probe
 class ConsolePanel(ScreenPanel):
     def __init__(self, screen, title):
         super().__init__(screen, title)
@@ -49,24 +47,25 @@ class ConsolePanel(ScreenPanel):
         o3_button = self._gtk.Button("refresh", _('Clear') + " ", None, self.bts, Gtk.PositionType.RIGHT, 1)
         o3_button.connect("clicked", self.clear)
 
-        query_endstops = self._gtk.Button("console", "Query Endstops" + ' ', None, self.bts , Gtk.PositionType.RIGHT, 1)
-        query_endstops.connect("clicked", self.send_command, "query_endstops")
-        query_probe = self._gtk.Button("console", "Query Probe" + ' ', None, self.bts , Gtk.PositionType.RIGHT, 1)
-        query_probe.connect("clicked", self.send_command, "query_probe")
+        g28 = self._gtk.Button("console", _("Home All") + ' ', None, self.bts , Gtk.PositionType.RIGHT, 1)
+        g28.connect("clicked", self.send_command, "G28")
+
+        bed_mesh_calibrate = self._gtk.Button("console", _("Calibrar Malha") + ' ', None, self.bts , Gtk.PositionType.RIGHT, 1)
+        bed_mesh_calibrate.connect("clicked", self.send_command, "BED_MESH_CALIBRATE")
 
         options = Gtk.Grid()
         options.set_vexpand(False)
         if self._screen.vertical_mode:
             #options.attach(o1_lbl, 0, 0, 1, 1)
-            options.attach(query_endstops, 0, 1, 1, 1)
+            options.attach(bed_mesh_calibrate, 0, 1, 1, 1)
             #options.attach(o2_lbl, 1, 0, 1, 1)
-            options.attach(query_probe, 1, 1, 1, 1)
+            options.attach(g28, 1, 1, 1, 1)
             options.attach(o3_button, 3, 0, 1, 2)
         else: # This
             #options.attach(o1_lbl, 0, 0, 1, 1)
-            options.attach(query_endstops, 1, 0, 1, 1)
+            options.attach(bed_mesh_calibrate, 1, 0, 1, 1)
             #options.attach(o2_lbl, 2, 0, 1, 1)
-            options.attach(query_probe, 3, 0, 1, 1)
+            options.attach(g28, 3, 0, 1, 1)
             options.attach(o3_button, 4, 0, 1, 1)
 
         sw = Gtk.ScrolledWindow()

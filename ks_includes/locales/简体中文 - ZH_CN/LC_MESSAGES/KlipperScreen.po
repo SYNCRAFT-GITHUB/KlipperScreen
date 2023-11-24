@@ -78,6 +78,9 @@ msgstr "您确定要重启系统吗？"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "您确定要关闭系统吗？"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "清除！ 我怎么帮你？"
+
 msgid "Update via Internet"
 msgstr "通过互联网更新"
 
@@ -1442,6 +1445,18 @@ msgstr "从外部存储导入材料"
 msgid "Chamber"
 msgstr "室"
 
+msgid "The average update rate is 1 second"
+msgstr "平均刷新率：1 秒"
+
+msgid "Sensors"
+msgstr "传感器"
+
+msgid "This may have been caused by a recent update"
+msgstr "这可能是由最近的更新引起的"
+
+msgid "Restart the machine for the updates to take effect"
+msgstr "重新启动机器以使更新生效"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 
@@ -1453,3 +1468,6 @@ msgstr "在缩回后，X轴的限位开关仍然被触发"
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "在执行所有动作后，探针上没有触发"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "清洁工作台，或重新进行全面校准"

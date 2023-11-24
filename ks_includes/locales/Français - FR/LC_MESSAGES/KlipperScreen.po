@@ -78,6 +78,9 @@ msgstr "Êtes-vous sûr de vouloir redémarrer le système ?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Êtes-vous sûr de vouloir arrêter le système ?"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "Laissez-moi deviner... Quelqu'un a volé votre pain sucré"
+
 msgid "Update via Internet"
 msgstr "Mise à jour via Internet"
 
@@ -1489,6 +1492,18 @@ msgstr "Importer des matériaux depuis USB"
 msgid "Chamber"
 msgstr "Chambre"
 
+msgid "The average update rate is 1 second"
+msgstr "Le taux de rafraîchissement moyen est de 1 seconde"
+
+msgid "Sensors"
+msgstr "Capteurs"
+
+msgid "This may have been caused by a recent update"
+msgstr "Cela pourrait avoir été causé par une mise à jour récente"
+
+msgid "Restart the machine for the updates to take effect"
+msgstr "Redémarrez la machine pour que les mises à jour prennent effet"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonde a été déclenchée avant le mouvement"
 
@@ -1500,3 +1515,6 @@ msgstr "Fin de course X reste déclenché après la rétraction"
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "Pas de déclenchement sur la sonde après avoir effectué tous les mouvements"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "Nettoyer la table ou refaire un calibrage"

@@ -18,6 +18,8 @@ class KlippyGcodes:
     SET_FAN_SPEED = "M106"
     SET_SPD_FACTOR = "M220"
 
+    LOAD_FILAMENT = "LOAD_FILAMENT"
+
     PROBE_CALIBRATE = "PROBE_CALIBRATE"
     Z_ENDSTOP_CALIBRATE = "CALIBRATE_Z_ENDSTOP"
     TESTZ = "TESTZ Z="
@@ -26,22 +28,16 @@ class KlippyGcodes:
     ADJUSTED = "ADJUSTED"
 
     @staticmethod
+    def load_filament(t, m, nz):
+        return f"{KlippyGcodes.LOAD_FILAMENT} T={t} M='{m}' NZ='{nz}'"
+
+    @staticmethod
     def set_bed_temp(temp):
         return f"{KlippyGcodes.SET_BED_TEMP} S{temp}"
 
     @staticmethod
     def set_ext_temp(temp, tool=0):
         return f"{KlippyGcodes.SET_EXT_TEMP} T{tool} S{temp}"
-
-    @staticmethod
-    def gcode_offset(adjust=False, x=0, y=0, z=0, move=0):
-        cmd = "IDEX_OFFSET"
-        adj = "_ADJUST" if adjust else ""
-        cmd += f" X{adj}={x}" if x != 0 else ""
-        cmd += f" Y{adj}={y}" if y != 0 else ""
-        cmd += f" Z{adj}={z}" if z != 0 else ""
-        cmd += f" MOVE={move}" if move != 0 else ""
-        return cmd
 
     @staticmethod
     def set_heater_temp(heater, temp):

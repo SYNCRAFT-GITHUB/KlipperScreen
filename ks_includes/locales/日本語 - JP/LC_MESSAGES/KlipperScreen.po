@@ -73,6 +73,9 @@ msgstr "システムを再起動しますか？"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "システムをシャットダウンしますか？"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "推測してみよう... 誰かがあなたのスイートロールを盗んだんだね"
+
 msgid "Update via Internet"
 msgstr "インターネット経由でアップデートする"
 
@@ -1301,6 +1304,18 @@ msgstr "USB からカスタム素材をインポート"
 msgid "Chamber"
 msgstr "チャンバー"
 
+msgid "The average update rate is 1 second"
+msgstr "平均リフレッシュレート:1秒"
+
+msgid "Sensors"
+msgstr "センサー"
+
+msgid "This may have been caused by a recent update"
+msgstr "これは最近のアップデートによる可能性があります"
+
+msgid "Restart the machine for the updates to take effect"
+msgstr "アップデートが有効になるようにマシンを再起動してください"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 
@@ -1312,3 +1327,6 @@ msgstr "リトラクト後もエンドストップ X がトリガーされたま
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "すべての動きを実行した後、プローブでトリガーがありません"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "テーブルを掃除するか、完全なキャリブレーションをやり直す"

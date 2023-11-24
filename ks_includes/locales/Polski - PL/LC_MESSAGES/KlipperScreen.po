@@ -79,6 +79,9 @@ msgstr "Czy na pewno chcesz ponownie uruchomić system?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Czy na pewno chcesz wyłączyć system?"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "Pozwól, że zgadnę... Ktoś ukradł twój bułeczki z nadzieniem"
+
 msgid "Update via Internet"
 msgstr "Aktualizuj przez Internet"
 
@@ -1421,6 +1424,18 @@ msgstr "Importuj materiały z USB"
 msgid "Chamber"
 msgstr "Izba"
 
+msgid "The average update rate is 1 second"
+msgstr "Średnia częstotliwość odświeżania: 1 sekunda"
+
+msgid "Sensors"
+msgstr "Czujniki"
+
+msgid "This may have been caused by a recent update"
+msgstr "To może być spowodowane niedawną aktualizacją"
+
+msgid "Restart the machine for the updates to take effect"
+msgstr "Uruchom ponownie maszynę, aby aktualizacje zostały uwzględnione"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonda została aktywowana przed ruchem"
 
@@ -1432,3 +1447,6 @@ msgstr "Czujnik krańcowy X nadal aktywowany po wycofaniu"
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "Brak aktywacji na sondzie po wykonaniu wszystkich ruchów"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "Wyczyść stół lub powtórz kalibrację"

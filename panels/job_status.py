@@ -122,7 +122,7 @@ class JobStatusPanel(ScreenPanel):
         self.labels['thumbnail'] = Gtk.Image()
         self.labels['info_grid'] = Gtk.Grid()
         self.thumb_alignment = Gtk.Alignment.new(0.5, 0.5, 0, 0)
-        self.thumb_alignment.set_padding(20, 0, 0, 50)
+        self.thumb_alignment.set_padding(78, 0, 0, 78)
         self.thumb_alignment.add(self.labels['thumbnail'])
         self.labels['info_grid'].attach(self.thumb_alignment, 2, 0, 1, 1)
         if self._printer.get_tools():
@@ -378,9 +378,8 @@ class JobStatusPanel(ScreenPanel):
             'pause': self._gtk.Button("pause", _("Pause"), "color1"),
             'restart': self._gtk.Button("refresh", _("Restart"), "color3"),
             'resume': self._gtk.Button("unpause", _("Resume"), "color1"),
-            'save_offset_probe': self._gtk.Button("home-z", _("Save Z") + "\n" + "Probe", "color1"),
-            'save_offset_endstop': self._gtk.Button("home-z", _("Save Z") + "\n" + "Endstop", "color2"),
-            'DEV_BUTTON': self._gtk.Button("custom-script", "[DEV] OFFSET", "color1"),
+            'save_offset_probe': self._gtk.Button("letter-z", _("Save") + " Probe", None),
+            'save_offset_endstop': self._gtk.Button("letter-z", _("Save") + " Endstop", None),
         }
         self.buttons['cancel'].connect("clicked", self.cancel)
         self.buttons['control'].connect("clicked", self._screen._go_to_submenu, "")
@@ -392,8 +391,6 @@ class JobStatusPanel(ScreenPanel):
         self.buttons['resume'].connect("clicked", self.resume)
         self.buttons['save_offset_probe'].connect("clicked", self.save_offset, "probe")
         self.buttons['save_offset_endstop'].connect("clicked", self.save_offset, "endstop")
-        self.buttons['DEV_BUTTON'].connect("clicked", self.menu_item_clicked, "gcode_offset", {
-            "panel": "gcode_offset", "name": "gcode_offset"})
 
     def save_offset(self, widget, device):
         sign = "+" if self.zoffset > 0 else "-"
@@ -734,7 +731,6 @@ class JobStatusPanel(ScreenPanel):
             self.labels["status"].set_label(_("Cancelled"))
         elif state == "complete":
             self.labels["status"].set_label(_("Complete"))
-        self.state = state
         self.show_buttons_for_state()
 
     def show_buttons_for_state(self):
@@ -745,7 +741,6 @@ class JobStatusPanel(ScreenPanel):
             self.buttons['button_grid'].attach(self.buttons['cancel'], 0, 0, 1, 1)
             self.buttons['button_grid'].attach(self.buttons['fine_tune'], 2, 0, 1, 1)
             self.buttons['button_grid'].attach(self.buttons['control'], 3, 0, 1, 1)
-            self.buttons['button_grid'].attach(self.buttons['DEV_BUTTON'], 4, 0, 1, 1)
             self.enable_button("pause", "cancel")
             self.can_close = False
         elif self.state == "paused":
@@ -769,11 +764,10 @@ class JobStatusPanel(ScreenPanel):
                     self.buttons['button_grid'].attach(self.buttons["save_offset_probe"], 1, 0, 1, 1)
                 else:
                     self.buttons['button_grid'].attach(Gtk.Label(""), 1, 0, 1, 1)
-            else:
-                self.buttons['button_grid'].attach(Gtk.Label(""), 0, 0, 1, 1)
-                self.buttons['button_grid'].attach(Gtk.Label(""), 1, 0, 1, 1)
 
             if self.state != "cancelling":
+                self.buttons['button_grid'].attach(self.buttons["save_offset_endstop"], 0, 0, 1, 1)
+                self.buttons['button_grid'].attach(self.buttons["save_offset_probe"], 1, 0, 1, 1)
                 self.buttons['button_grid'].attach(self.buttons['restart'], 2, 0, 1, 1)
                 self.buttons['button_grid'].attach(self.buttons['menu'], 3, 0, 1, 1)
                 self.can_close = True

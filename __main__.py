@@ -79,7 +79,7 @@ class KlipperScreen(Gtk.Window):
 
     def __init__(self, args, version):
         try:
-            super().__init__(title="KlipperScreen")
+            super().__init__(title="Syncraft")
         except Exception as e:
             logging.exception(e)
             raise RuntimeError from e
@@ -303,6 +303,14 @@ class KlipperScreen(Gtk.Window):
         if 'timeout' in message.lower():
             return
 
+        if 'unknown command:' in message.lower():
+            msg_texts = [
+                message,
+                _('This may have been caused by a recent update'),
+                _('Restart the machine for the updates to take effect')
+            ]
+            message = f"{msg_texts[0]}.\n{msg_texts[1]}.\n{msg_texts[2]}."
+
         syncraft_messages = {
             '!PROEXTRUDER_DONT_MATCH_GCODE': _("The inserted Extruder is incompatible with this File"),
             '!MATERIAL_DONT_MATCH_GCODE': _("The material you're using is not compatible with this file"),
@@ -313,7 +321,8 @@ class KlipperScreen(Gtk.Window):
             'Probe triggered prior to movement': _("PROBE TRIGGERED PRIOR TO MOVEMENT"),
             'Already in a manual Z probe. Use ABORT to abort it.': _("ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"),
             'Endstop x still triggered after retract': _("ENDSTOP X STILL TRIGGERED AFTER RETRACT"),
-            'No trigger on probe after full movement': _("NO TRIGGER ON PROBE AFTER FULL MOVEMENT")
+            'No trigger on probe after full movement': _("NO TRIGGER ON PROBE AFTER FULL MOVEMENT"),
+            'Probe samples exceed samples_tolerance': _("PROBE SAMPLES EXCEED SAMPLES_TOLERANCE")
         }
 
         def msgProperty (property, level):
