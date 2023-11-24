@@ -58,7 +58,7 @@ msgstr "Aplicar deslocamento de %.2f para Endstop?"
 
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
-msgstr "Aplicar deslocamento %s%.2f ao Sonda?"
+msgstr "Aplicar deslocamento de %s%.2f para a Sonda?"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Tem certeza de que deseja excluir o objeto?"
