@@ -731,6 +731,7 @@ class JobStatusPanel(ScreenPanel):
             self.labels["status"].set_label(_("Cancelled"))
         elif state == "complete":
             self.labels["status"].set_label(_("Complete"))
+        self.state = state
         self.show_buttons_for_state()
 
     def show_buttons_for_state(self):
@@ -764,6 +765,9 @@ class JobStatusPanel(ScreenPanel):
                     self.buttons['button_grid'].attach(self.buttons["save_offset_probe"], 1, 0, 1, 1)
                 else:
                     self.buttons['button_grid'].attach(Gtk.Label(""), 1, 0, 1, 1)
+            else:
+                self.buttons['button_grid'].attach(Gtk.Label(""), 0, 0, 1, 1)
+                self.buttons['button_grid'].attach(Gtk.Label(""), 1, 0, 1, 1)
 
             if self.state != "cancelling":
                 self.buttons['button_grid'].attach(self.buttons["save_offset_endstop"], 0, 0, 1, 1)
