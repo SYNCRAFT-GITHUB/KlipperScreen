@@ -56,6 +56,7 @@ class ChNozzleLoadPanel(ScreenPanel):
 
     def nozzlegcodescript(self, widget, nozzle: str):
         self._config.replace_nozzle(newvalue=nozzle)
+        self._screen._ws.klippy.gcode_script(f"NOZZLE_SET NZ='{nozzle}'")
         self.menu_item_clicked(widget=widget, panel="material_load", item={
             "name": _("Select the Material"),
             "panel": "material_load"
