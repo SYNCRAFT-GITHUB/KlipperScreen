@@ -1310,6 +1310,9 @@ msgstr ""
 msgid "Restart the machine for the updates to take effect"
 msgstr ""
 
+msgid "One of the materials you're using is not compatible with this file"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr ""
 

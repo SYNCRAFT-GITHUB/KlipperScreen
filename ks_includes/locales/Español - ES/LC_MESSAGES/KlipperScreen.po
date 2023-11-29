@@ -1480,6 +1480,9 @@ msgstr "La frecuencia de actualización promedio es de 1 segundo"
 msgid "Sensors"
 msgstr "Sensores"
 
+msgid "One of the materials you're using is not compatible with this file"
+msgstr "Uno de los materiales que estás utilizando no es compatible con este archivo"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

@@ -1436,6 +1436,9 @@ msgstr "To może być spowodowane niedawną aktualizacją"
 msgid "Restart the machine for the updates to take effect"
 msgstr "Uruchom ponownie maszynę, aby aktualizacje zostały uwzględnione"
 
+msgid "One of the materials you're using is not compatible with this file"
+msgstr "Jeden z materiałów, których używasz, nie jest kompatybilny z tym plikiem"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonda została aktywowana przed ruchem"
 

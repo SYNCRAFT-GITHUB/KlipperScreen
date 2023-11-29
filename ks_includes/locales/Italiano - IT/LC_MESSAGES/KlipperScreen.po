@@ -1445,6 +1445,9 @@ msgstr "Ciò potrebbe essere causato da un aggiornamento recente"
 msgid "Restart the machine for the updates to take effect"
 msgstr "Riavvia la macchina affinché gli aggiornamenti abbiano effetto"
 
+msgid "One of the materials you're using is not compatible with this file"
+msgstr "Uno dei materiali che stai utilizzando non è compatibile con questo file"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda è stata attivata prima del movimento"
 

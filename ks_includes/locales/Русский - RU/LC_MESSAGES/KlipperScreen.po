@@ -1496,6 +1496,9 @@ msgstr "Это может быть вызвано недавним обновл�
 msgid "Restart the machine for the updates to take effect"
 msgstr "Перезапустите машину, чтобы обновления вступили в силу"
 
+msgid "One of the materials you're using is not compatible with this file"
+msgstr "Один из используемых вами материалов несовместим с этим файлом."
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

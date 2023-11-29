@@ -306,8 +306,9 @@ class KlipperScreen(Gtk.Window):
             message = f"{msg_texts[0]}.\n{msg_texts[1]}.\n{msg_texts[2]}."
 
         syncraft_messages = {
-            '!PROEXTRUDER_DONT_MATCH_GCODE': _("The inserted Extruder is incompatible with this File"),
-            '!MATERIAL_DONT_MATCH_GCODE': _("The material you're using is not compatible with this file"),
+            '!PROEXTRUDER_DOESNT_MATCH_GCODE': _("The inserted Extruder is incompatible with this File"),
+            '!MATERIAL_DOESNT_MATCH_GCODE': _("The material you're using is not compatible with this file"),
+            '!SOME_MATERIAL_DOESNT_MATCH_GCODE': _("One of the materials you're using is not compatible with this file"),
             '!PRINTER_MODEL_MISMATCH': _("The file you are trying to print is for a different printer model")
         }
 

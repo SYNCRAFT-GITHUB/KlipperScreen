@@ -1384,6 +1384,9 @@ msgstr "최근 업데이트로 인한 것일 수 있습니다"
 msgid "Restart the machine for the updates to take effect"
 msgstr "업데이트가 적용되려면 기계를 재시작하세요"
 
+msgid "One of the materials you're using is not compatible with this file"
+msgstr "업로드한 자료 중 일부가 파일과 일치하지 않습니다."
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 

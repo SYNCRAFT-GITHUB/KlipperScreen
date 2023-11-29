@@ -1457,6 +1457,9 @@ msgstr "这可能是由最近的更新引起的"
 msgid "Restart the machine for the updates to take effect"
 msgstr "重新启动机器以使更新生效"
 
+msgid "One of the materials you're using is not compatible with this file"
+msgstr "部分上传的材料与您的文件不符"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

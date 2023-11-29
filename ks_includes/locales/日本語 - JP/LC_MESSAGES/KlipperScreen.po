@@ -1310,6 +1310,9 @@ msgstr "平均リフレッシュレート:1秒"
 msgid "Sensors"
 msgstr "センサー"
 
+msgid "One of the materials you're using is not compatible with this file"
+msgstr "アップロードされた素材の一部がファイルと一致しません"
+
 msgid "This may have been caused by a recent update"
 msgstr "これは最近のアップデートによる可能性があります"
 
