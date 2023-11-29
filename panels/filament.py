@@ -18,7 +18,7 @@ class FilamentPanel(ScreenPanel):
 
     def __init__(self, screen, title):
         super().__init__(screen, title)
-        self.current_extruder = self.get_current_extruder() # self._printer.get_stat("toolhead", "extruder")
+        self.current_extruder = self._printer.get_stat("toolhead", "extruder")
         macros = self._printer.get_gcode_macros()
         self.load_filament = any("LOAD_FILAMENT" in macro.upper() for macro in macros)
         self.unload_filament = any("UNLOAD_FILAMENT" in macro.upper() for macro in macros)
@@ -86,9 +86,11 @@ class FilamentPanel(ScreenPanel):
             self.labels[f"dist{i}"] = self._gtk.Button(label=i)
             self.labels[f"dist{i}"].connect("clicked", self.change_distance, int(i))
             ctx = self.labels[f"dist{i}"].get_style_context()
-            if j == 0:
+            if ((self._screen.lang_ltr is True and j == 0) or
+                    (self._screen.lang_ltr is False and j == len(self.distances) - 1)):
                 ctx.add_class("distbutton_top")
-            elif j == len(self.distances) - 1:
+            elif ((self._screen.lang_ltr is False and j == 0) or
+                  (self._screen.lang_ltr is True and j == len(self.distances) - 1)):
                 ctx.add_class("distbutton_bottom")
             else:
                 ctx.add_class("distbutton")
@@ -101,9 +103,11 @@ class FilamentPanel(ScreenPanel):
             self.labels[f"speed{i}"] = self._gtk.Button(label=i)
             self.labels[f"speed{i}"].connect("clicked", self.change_speed, int(i))
             ctx = self.labels[f"speed{i}"].get_style_context()
-            if j == 0:
+            if ((self._screen.lang_ltr is True and j == 0) or
+                    (self._screen.lang_ltr is False and j == len(self.speeds) - 1)):
                 ctx.add_class("distbutton_top")
-            elif j == len(self.speeds) - 1:
+            elif ((self._screen.lang_ltr is False and j == 0) or
+                  (self._screen.lang_ltr is True and j == len(self.speeds) - 1)):
                 ctx.add_class("distbutton_bottom")
             else:
                 ctx.add_class("distbutton")
@@ -132,7 +136,7 @@ class FilamentPanel(ScreenPanel):
                     break
                 name = x[23:].strip()
                 self.labels[x] = {
-                    'label': Gtk.Label(f" {name.replace('_', ' ').replace('spool', _('Spool')).replace('one', _('One')).replace('two', _('Two'))} "),
+                    'label': Gtk.Label(name.replace('_', ' ').replace('spool', _('Spool')).replace('one', _("One")).replace('two', _("Two"))),
                     'switch': Gtk.Switch(),
                     'box': Gtk.Box()
                 }
@@ -170,18 +174,6 @@ class FilamentPanel(ScreenPanel):
             grid.attach(sensors, 0, 4, 4, 1)
 
         self.content.add(grid)
-
-    def get_current_extruder(self) -> str:
-        if self._config.linux('buster'):
-            if self._config.variables_value_check('currentextruder', 'extruder', string=True):
-                return 'extruder'
-            else:
-                return 'extruder_stepper extruder1'
-        else:
-            if self._config.variables_value_check('active_carriage', 0):
-                return 'extruder'
-            else:
-                return 'extruder1'
 
     def process_busy(self, busy):
         for button in self.buttons:
