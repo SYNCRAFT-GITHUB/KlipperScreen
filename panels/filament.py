@@ -208,7 +208,7 @@ class FilamentPanel(ScreenPanel):
                 data["toolhead"]["extruder"] != self.current_extruder):
             for extruder in self._printer.get_tools():
                 self.labels[extruder].get_style_context().remove_class("button_active")
-            self.current_extruder = self.get_current_extruder() # data["toolhead"]["extruder"]
+            self.current_extruder = data["toolhead"]["extruder"]
             self.labels[self.current_extruder].get_style_context().add_class("button_active")
 
         for x in self._printer.get_filament_sensors():
