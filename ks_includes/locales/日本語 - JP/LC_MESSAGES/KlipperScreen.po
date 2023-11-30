@@ -1319,6 +1319,15 @@ msgstr "これは最近のアップデートによる可能性があります"
 msgid "Restart the machine for the updates to take effect"
 msgstr "アップデートが有効になるようにマシンを再起動してください"
 
+msgid "Internal Lights"
+msgstr "ライト"
+
+msgid "You cannot perform this action while printing"
+msgstr "印刷中はこのアクションを実行できません"
+
+msgid "Hot Unload"
+msgstr "加熱してアンロードする"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

@@ -157,11 +157,14 @@ class KlipperScreenConfig:
     def install_language(self, lang):
         if lang in self.lang_converter:
             lang = self.lang_converter[lang]
-        if lang is None or lang == "system_lang":
-            for language in self.lang_list:
-                if locale.getdefaultlocale()[0].startswith(language):
-                    logging.debug("Using system lang")
-                    lang = language
+        try:
+            if lang is None or lang == "system_lang":
+                for language in self.lang_list:
+                    if locale.getdefaultlocale()[0].startswith(language):
+                        logging.debug("Using system lang")
+                        lang = language
+        except:
+            lang = "English - EN"
         if lang is not None and lang not in self.lang_list:
             # try to match a parent
             for language in self.lang_list:

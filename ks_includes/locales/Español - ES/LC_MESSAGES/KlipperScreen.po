@@ -1483,6 +1483,15 @@ msgstr "Sensores"
 msgid "One of the materials you're using is not compatible with this file"
 msgstr "Uno de los materiales que estás utilizando no es compatible con este archivo"
 
+msgid "Internal Lights"
+msgstr "Luces Internas"
+
+msgid "You cannot perform this action while printing"
+msgstr "No puedes realizar esta acción mientras estás imprimiendo"
+
+msgid "Hot Unload"
+msgstr "Calentar y Descargar"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

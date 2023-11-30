@@ -1442,6 +1442,15 @@ msgstr "Jeden z materiałów, których używasz, nie jest kompatybilny z tym pli
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonda została aktywowana przed ruchem"
 
+msgid "Internal Lights"
+msgstr "Światła Wewnętrzne"
+
+msgid "You cannot perform this action while printing"
+msgstr "Nie możesz wykonać tej czynności podczas drukowania"
+
+msgid "Hot Unload"
+msgstr "Podgrzej i rozładuj"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"
 

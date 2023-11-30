@@ -23,10 +23,20 @@ class OutputPinPanel(ScreenPanel):
 
         self.load_pins()
 
-        scroll = self._gtk.ScrolledWindow()
-        scroll.add(self.labels['devices'])
+        self.scroll = self._gtk.ScrolledWindow()
+        self.scroll.add(self.labels['devices'])
 
-        self.content.add(scroll)
+        self.add_button_new(_("Hot Unload"), 'hot', 'color1', 'gcode_carlos')
+
+        self.content.add(self.scroll)
+
+    def add_button(self, title, icon, color, gcode):
+
+        grid = Gtk.Grid()
+        button = self._gtk.Button(icon, title, color)
+        button.connect("clicked", self._screen._ws.klippy.gcode_script, gcode)
+        grid.attach(button, 0, 0, 1, 1)
+        self.scroll.add(grid)
 
     def load_pins(self):
         output_pins = self._printer.get_output_pins()
@@ -37,16 +47,68 @@ class OutputPinPanel(ScreenPanel):
                 continue
             self.add_pin(pin)
 
+    def perform_hot_unload(self, button):
+        if self._printer.get_stat("print_stats")['state'] == "printing":
+            message: str = _("You cannot perform this action while printing")
+            self._screen.show_popup_message(message, level=2)
+            return None
+        self._screen._ws.klippy.gcode_script(f'HOT_UNLOAD_FILAMENT T={self.devices["Hot Unload"]["scale"].get_value()}')
+
+    def add_button_new(self, title, icon, color, gcode):
+
+        name = Gtk.Label()
+        name.set_markup(f'\n<big><b>{title}</b></big>\n') 
+        name.set_hexpand(True)
+        name.set_vexpand(True)
+        name.set_halign(Gtk.Align.START)
+        name.set_valign(Gtk.Align.CENTER)
+        name.set_line_wrap(True)
+        name.set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
+
+        scale = Gtk.Button(icon, None, color)
+        scale.set_hexpand(True)
+        scale.get_style_context().add_class("fan_slider")
+
+        scale = Gtk.Scale.new_with_range(orientation=Gtk.Orientation.HORIZONTAL, min=100, max=300, step=1)
+        scale.set_value(200)
+        scale.set_digits(0)
+        scale.set_hexpand(True)
+        scale.set_has_origin(True)
+        scale.get_style_context().add_class("fan_slider")
+
+        act_btn = self._gtk.Button(icon, None, "color1", 1)
+        act_btn.set_hexpand(False)
+        act_btn.connect("clicked", self.perform_hot_unload)
+
+        pin_col = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
+        pin_col.add(act_btn)
+        pin_col.add(scale)
+
+        pin_row = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        pin_row.add(name)
+        pin_row.add(pin_col)
+
+        self.devices[title] = {
+            "row": pin_row,
+            "scale": scale,
+        }
+
+        devices = sorted(self.devices)
+        pos = 2
+
+        self.labels['devices'].insert_row(pos)
+        self.labels['devices'].attach(self.devices[title]['row'], 0, pos, 1, 1)
+        self.labels['devices'].show_all()
+
     def add_pin(self, pin):
 
-        # Replaces the Pin's name with a more visually pleasing version
-        def goodLookingName(pin_name: str) -> str:
-
-            return (pin_name.replace("_", " ")).title()
+        pin_name: str = 'Title'
+        if 'case_light' in pin:
+            pin_name = _("Internal Lights")
 
         logging.info(f"Adding pin: {pin}")
         name = Gtk.Label()
-        name.set_markup(f'\n<big><b>{goodLookingName(" ".join(pin.split(" ")[1:]))}</b></big>\n') 
+        name.set_markup(f'\n<big><b>{pin_name}</b></big>\n') 
         name.set_hexpand(True)
         name.set_vexpand(True)
         name.set_halign(Gtk.Align.START)

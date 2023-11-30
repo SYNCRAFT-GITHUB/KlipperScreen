@@ -1460,6 +1460,15 @@ msgstr "重新启动机器以使更新生效"
 msgid "One of the materials you're using is not compatible with this file"
 msgstr "部分上传的材料与您的文件不符"
 
+msgid "Internal Lights"
+msgstr "内部灯光"
+
+msgid "You cannot perform this action while printing"
+msgstr "此操作已被阻止，因为您正在打印"
+
+msgid "Hot Unload"
+msgstr "加热并卸载灯丝"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

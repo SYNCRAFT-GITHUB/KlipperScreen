@@ -1507,6 +1507,15 @@ msgstr "Redémarrez la machine pour que les mises à jour prennent effet"
 msgid "One of the materials you're using is not compatible with this file"
 msgstr "L'un des matériaux que vous utilisez n'est pas compatible avec ce fichier"
 
+msgid "Internal Lights"
+msgstr "Lumières"
+
+msgid "You cannot perform this action while printing"
+msgstr "Vous ne pouvez pas effectuer cette action pendant l'impression"
+
+msgid "Hot Unload"
+msgstr "Chauffer et décharger"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonde a été déclenchée avant le mouvement"
 

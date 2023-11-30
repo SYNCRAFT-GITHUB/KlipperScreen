@@ -1387,6 +1387,15 @@ msgstr "업데이트가 적용되려면 기계를 재시작하세요"
 msgid "One of the materials you're using is not compatible with this file"
 msgstr "업로드한 자료 중 일부가 파일과 일치하지 않습니다."
 
+msgid "Internal Lights"
+msgstr "등"
+
+msgid "You cannot perform this action while printing"
+msgstr "인쇄 중에는 이 작업을 수행할 수 없습니다"
+
+msgid "Hot Unload"
+msgstr "가열 및 언로드"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 

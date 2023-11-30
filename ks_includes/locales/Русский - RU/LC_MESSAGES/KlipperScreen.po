@@ -1499,6 +1499,15 @@ msgstr "Перезапустите машину, чтобы обновления
 msgid "One of the materials you're using is not compatible with this file"
 msgstr "Один из используемых вами материалов несовместим с этим файлом."
 
+msgid "Internal Lights"
+msgstr "Свет"
+
+msgid "You cannot perform this action while printing"
+msgstr "Вы не можете выполнять это действие во время печати"
+
+msgid "Hot Unload"
+msgstr "Нагрев и разгрузка"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 
