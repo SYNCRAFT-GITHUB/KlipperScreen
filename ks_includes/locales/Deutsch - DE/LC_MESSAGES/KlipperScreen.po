@@ -78,6 +78,9 @@ msgstr "Möchten Sie das System wirklich neu starten?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Möchten Sie das System wirklich herunterfahren?"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "Lass mich raten ... Hat jemand deinen Zuckerhut gestohlen?"
+
 msgid "Update via Internet"
 msgstr "Update über Internet"
 
@@ -1453,6 +1456,18 @@ msgstr "Durchschnittliche Aktualisierungsrate: 1 Sekunde"
 msgid "Sensors"
 msgstr "Sensoren"
 
+msgid "One of the materials you're using is not compatible with this file"
+msgstr "Eines der Materialien, die du verwendest, ist nicht kompatibel mit dieser Datei"
+
+msgid "Internal Lights"
+msgstr "Beleuchtung"
+
+msgid "You cannot perform this action while printing"
+msgstr "Sie können diese Aktion nicht während des Druckens ausführen"
+
+msgid "Hot Unload"
+msgstr "Heißentladung"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 
@@ -1464,3 +1479,6 @@ msgstr "Endschalter X ist nach dem Zurückziehen immer noch ausgelöst"
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "Keine Auslösung an der Sonde nach vollständiger Bewegung"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "Reinigen Sie den Tisch oder führen Sie eine Kalibrierung erneut durch"

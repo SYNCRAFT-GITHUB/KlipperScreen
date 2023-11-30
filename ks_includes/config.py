@@ -1,3 +1,4 @@
+from ks_includes.host import Moonraker as M
 import configparser
 import datetime
 import logging
@@ -106,13 +107,28 @@ class KlipperScreenConfig:
             self.errors.append(msg)
 
         printers = sorted([i for i in self.config.sections() if i.startswith("printer ")])
+
         if len(printers) == 0:
             printers.append("Printer Printer")
+
+        host_json_path = os.path.join(os.getcwd(), "ks_includes", "dev-host.json")
+        if os.path.exists(host_json_path):
+            try:
+                with open(host_json_path, 'r') as file:
+                    data = json.load(file)
+                    M.set_new_connection(
+                        host=data['host'],
+                        port=data['port'],
+                        api=data['api_key']
+                        )
+            except:
+                print('Unable to read host json file')
+
         self.printers = [
             {printer[8:]: {
-                "moonraker_host": self.config.get(printer, "moonraker_host", fallback="127.0.0.1"),
-                "moonraker_port": self.config.get(printer, "moonraker_port", fallback="7125"),
-                "moonraker_api_key": self.config.get(printer, "moonraker_api_key", fallback="").replace('"', '')
+                "moonraker_host": self.config.get(printer, "moonraker_host", fallback=M.get_host()),
+                "moonraker_port": self.config.get(printer, "moonraker_port", fallback=M.get_port()),
+                "moonraker_api_key": self.config.get(printer, "moonraker_api_key", fallback=M.get_api()).replace('"', '')
             }} for printer in printers
         ]
 
@@ -141,11 +157,14 @@ class KlipperScreenConfig:
     def install_language(self, lang):
         if lang in self.lang_converter:
             lang = self.lang_converter[lang]
-        if lang is None or lang == "system_lang":
-            for language in self.lang_list:
-                if locale.getdefaultlocale()[0].startswith(language):
-                    logging.debug("Using system lang")
-                    lang = language
+        try:
+            if lang is None or lang == "system_lang":
+                for language in self.lang_list:
+                    if locale.getdefaultlocale()[0].startswith(language):
+                        logging.debug("Using system lang")
+                        lang = language
+        except:
+            lang = "English - EN"
         if lang is not None and lang not in self.lang_list:
             # try to match a parent
             for language in self.lang_list:
@@ -394,6 +413,24 @@ class KlipperScreenConfig:
                 self.config.add_section(vals['section'])
             if name not in list(self.config[vals['section']]):
                 self.config.set(vals['section'], name, vals['value'])
+
+    def variables_value_check(self, key, value, string: bool = False) -> bool:
+        pdc_path = os.path.join('/home', 'pi', 'printer_data', 'config')
+        variables_path = os.path.join(pdc_path, 'variables.cfg')
+        try:
+            with open(variables_path, 'r') as file:
+                content = file.read()
+                if string:
+                    search_term = f"{key} = '{value}'"
+                else:
+                    search_term = f"{key} = {value}"
+                if search_term in content:
+                    return True
+                else:
+                    return False
+        except:
+            print("Unable to find 'variables.cfg' file. Returning 'False'!")
+            return False
 
     def exclude_from_config(self, config):
         exclude_list = ['preheat']

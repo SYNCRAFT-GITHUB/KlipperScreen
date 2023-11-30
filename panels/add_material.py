@@ -29,11 +29,11 @@ class AddCustomMaterial(ScreenPanel):
         i: int = 0
 
         self.bools = {
-            'ST025': False,
-            'ST04': False,
-            'ST08': False,
-            'METAL04': False,
-            'FIBER06': False,
+            'Standard 0.25mm': False,
+            'Standard 0.4mm': False,
+            'Standard 0.8mm': False,
+            'Metal 0.4mm': False,
+            'Fiber 0.6mm': False,
         }
 
         self.materials_json_path = self._config.materials_path(custom=False)
@@ -80,15 +80,15 @@ class AddCustomMaterial(ScreenPanel):
             dev.set_valign(Gtk.Align.CENTER)
 
             key_title: str = key
-            if 'ST025' in key:
+            if 'Standard 0.25mm' in key:
                 key_title = f'Standard 0.25{_("mm")}'
-            elif 'ST04' in key:
+            elif 'Standard 0.4mm' in key:
                 key_title = f'Standard 0.4{_("mm")}'
-            elif 'ST08' in key:
+            elif 'Standard 0.8mm' in key:
                 key_title = f'Standard 0.8{_("mm")}'
-            elif 'FIBER06' in key:
+            elif 'Fiber 0.6mm' in key:
                 key_title = f'Fiber 0.6{_("mm")}'
-            elif 'METAL04' in key:
+            elif 'Metal 0.4mm' in key:
                 key_title = f'Metal 0.4{_("mm")}'
 
             name = Gtk.Label()

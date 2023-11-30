@@ -54,11 +54,11 @@ msgstr "Aplicar"
 
 #, python-format
 msgid "Apply %.2f offset to Endstop?"
-msgstr "Aplicar desloc. de %.2f para Endstop?"
+msgstr "Aplicar deslocamento de %.2f para Endstop?"
 
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
-msgstr "Aplicar desloc. %s%.2f ao Sonda?"
+msgstr "Aplicar deslocamento de %s%.2f para a Sonda?"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Tem certeza de que deseja excluir o objeto?"
@@ -77,6 +77,9 @@ msgstr "Reiniciar o sistema ?"
 
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Desligar o sistema ?"
+
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "Deixa eu adivinhar... Alguém roubou seu Pãozinho de Açúcar?"
 
 msgid "Update via Internet"
 msgstr "Atualizar pela Internet"
@@ -291,7 +294,7 @@ msgid "Extrusion -"
 msgstr "- Extrusão"
 
 msgid "Failed, adjust position first"
-msgstr "Ocorreu um problema. Ajuste a posição primeiro!"
+msgstr "Ocorreu um problema. Tente ajustar a posição da mesa."
 
 msgid "Fan"
 msgstr "Ventoinha"
@@ -668,7 +671,7 @@ msgstr "Salvo"
 
 #, python-format
 msgid "Saved offset: %s"
-msgstr "Desloc. salvo: %s"
+msgstr "Deslocamento salvo: %s"
 
 msgid "Screen DPMS"
 msgstr "Tela DPMS"
@@ -937,7 +940,7 @@ msgid "Show files saved from USB"
 msgstr "Mostrar arquivos salvos do USB"
 
 msgid "Want to enter a four-digit password to prevent unauthorized or unwanted people?"
-msgstr "Deseja inserir uma senha de quatro dígitos para impedir que pessoas não autorizadas?"
+msgstr "Deseja inserir uma senha de quatro dígitos para evitar o uso de pessoas não autorizadas?"
 
 msgid "Enter Password"
 msgstr "Digite a senha"
@@ -1320,6 +1323,24 @@ msgstr "A taxa média de atualização é de 1 segundo"
 msgid "Sensors"
 msgstr "Sensores"
 
+msgid "This may have been caused by a recent update"
+msgstr "Isso pode ter sido causado por uma atualização recente"
+
+msgid "Restart the machine for the updates to take effect"
+msgstr "Reinicie a máquina para que as atualizações tenham efeito"
+
+msgid "One of the materials you're using is not compatible with this file"
+msgstr "Algum dos materiais carregados não é compatível com este arquivo"
+
+msgid "Internal Lights"
+msgstr "Luzes Internas"
+
+msgid "You cannot perform this action while printing"
+msgstr "Você não pode realizar esta ação enquanto estiver imprimindo"
+
+msgid "Hot Unload"
+msgstr "Aquecer e Descarregar"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonda foi acionada antes do movimento"
 
@@ -1331,3 +1352,6 @@ msgstr "Endstop (Eixo X) continua acionado após retrair"
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "Nenhum gatilho na Sonda após executar todos os movimentos"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "A Mesa está incorretamente calibrada ou suja"

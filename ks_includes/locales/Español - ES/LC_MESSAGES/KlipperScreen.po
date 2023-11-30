@@ -78,6 +78,9 @@ msgstr "¿Está seguro que desea reiniciar el sistema?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "¿Está seguro que desea apagar el sistema?"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "Déjame adivinar... ¿Alguien robó tu Pan de Azúcar?"
+
 msgid "Update via Internet"
 msgstr "Actualización a través de Internet"
 
@@ -1477,6 +1480,18 @@ msgstr "La frecuencia de actualización promedio es de 1 segundo"
 msgid "Sensors"
 msgstr "Sensores"
 
+msgid "One of the materials you're using is not compatible with this file"
+msgstr "Uno de los materiales que estás utilizando no es compatible con este archivo"
+
+msgid "Internal Lights"
+msgstr "Luces Internas"
+
+msgid "You cannot perform this action while printing"
+msgstr "No puedes realizar esta acción mientras estás imprimiendo"
+
+msgid "Hot Unload"
+msgstr "Calentar y Descargar"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 
@@ -1488,3 +1503,6 @@ msgstr "Endstop (Eje X) sigue activado después de retraer"
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "No hay activación en la Sonda después de realizar todos los movimientos"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "La mesa está mal calibrada o debe estar limpia"

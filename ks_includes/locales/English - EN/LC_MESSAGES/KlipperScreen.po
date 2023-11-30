@@ -73,6 +73,9 @@ msgstr ""
 msgid "Are you sure you wish to shutdown the system?"
 msgstr ""
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr ""
+
 msgid "Update via Internet"
 msgstr ""
 
@@ -1301,6 +1304,24 @@ msgstr ""
 msgid "Sensors"
 msgstr ""
 
+msgid "This may have been caused by a recent update"
+msgstr ""
+
+msgid "Restart the machine for the updates to take effect"
+msgstr ""
+
+msgid "One of the materials you're using is not compatible with this file"
+msgstr ""
+
+msgid "Internal Lights"
+msgstr ""
+
+msgid "You cannot perform this action while printing"
+msgstr ""
+
+msgid "Hot Unload"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr ""
 
@@ -1311,5 +1332,8 @@ msgid "ENDSTOP X STILL TRIGGERED AFTER RETRACT"
 msgstr ""
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
+msgstr ""
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
 msgstr ""
 

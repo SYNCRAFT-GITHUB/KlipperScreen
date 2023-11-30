@@ -79,6 +79,9 @@ msgstr "Вы уверены что хотите перезагрузить си�
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Вы хотите выключить принтер?"
 
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "Позволь мне угадать... Кто-то украл твой булочку"
+
 msgid "Update via Internet"
 msgstr "Обновление через Интернет"
 
@@ -1487,6 +1490,24 @@ msgstr "Средняя частота обновления: 1 секунда"
 msgid "Sensors"
 msgstr "Датчики"
 
+msgid "This may have been caused by a recent update"
+msgstr "Это может быть вызвано недавним обновлением"
+
+msgid "Restart the machine for the updates to take effect"
+msgstr "Перезапустите машину, чтобы обновления вступили в силу"
+
+msgid "One of the materials you're using is not compatible with this file"
+msgstr "Один из используемых вами материалов несовместим с этим файлом."
+
+msgid "Internal Lights"
+msgstr "Свет"
+
+msgid "You cannot perform this action while printing"
+msgstr "Вы не можете выполнять это действие во время печати"
+
+msgid "Hot Unload"
+msgstr "Нагрев и разгрузка"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 
@@ -1498,3 +1519,6 @@ msgstr "Концевой выключатель X все еще активиро
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "Сработки на зонде после выполнения всех движений нет"
+
+msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+msgstr "Очистите стол или повторите калибровку."
