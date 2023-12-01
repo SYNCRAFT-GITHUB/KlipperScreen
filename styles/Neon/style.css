@@ -13,7 +13,8 @@ button {
 }
 
 button:active {
-    background-color: #d8a415;
+    border-radius: 8em;
+    background-color: #007db4;
 }
 
 .button_active {
@@ -24,7 +25,7 @@ button:active {
 
 button.color1 {
     background-color: #090909;
-    border-color: #d46900;
+    border-color: #2ba2d6;
     border-radius: 1em;
 }
 
@@ -51,7 +52,7 @@ button.color1:active, button.color2:active, button.color3:active, button.color4:
 }
 
 button.active {
-    background-color: #ee6002;
+    background-color: #007db4;
 }
 
 button.update {
@@ -174,7 +175,7 @@ textview .time {
 }
 
 .distbutton_active {
-    background-color: #d46900;
+    background-color: #007db4;
 }
 
 .fan_slider {
@@ -238,5 +239,6 @@ textview .time {
 }
 
 .keyboard_pad {
-    background-color: #090909; /*base02*/
+    border-radius: 10em;
+    background-color: #090909;
 }

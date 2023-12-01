@@ -50,7 +50,7 @@ class ConsolePanel(ScreenPanel):
         g28 = self._gtk.Button("console", _("Home All") + ' ', None, self.bts , Gtk.PositionType.RIGHT, 1)
         g28.connect("clicked", self.send_command, "G28")
 
-        bed_mesh_calibrate = self._gtk.Button("console", _("Calibrar Malha") + ' ', None, self.bts , Gtk.PositionType.RIGHT, 1)
+        bed_mesh_calibrate = self._gtk.Button("console", _("Mesh calibrate") + ' ', None, self.bts , Gtk.PositionType.RIGHT, 1)
         bed_mesh_calibrate.connect("clicked", self.send_command, "BED_MESH_CALIBRATE")
 
         options = Gtk.Grid()

@@ -39,7 +39,7 @@ button.color1:active, button.color2:active, button.color3:active, button.color4:
 button.update {
     color: #2196f3;
     background-color: rgb(40, 52, 56);
-    border-color: #2196f3;
+    border-color: #1f70b3;
     border-radius: .5em;
     border-width: .1em;
 }
@@ -116,7 +116,7 @@ scrollbar, scrollbar button, scrollbar trough {
 }
 
 scrollbar slider {
-    background-color: #E2E2E2;
+    background-color: rgb(65, 93, 105);
 }
 
 textview .time {
@@ -217,5 +217,6 @@ textview .time {
 }
 
 .keyboard_pad {
+    border-radius: .15em;
     background-color: rgb(54, 71, 79);
 }

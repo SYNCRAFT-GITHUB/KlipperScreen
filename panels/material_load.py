@@ -177,7 +177,7 @@ class ChMaterialPanel(ScreenPanel):
                     while index != 4:
                         size += 1
                         index += 1
-                    index_button = self._gtk.Button("circle-red", _("Generic"), "color4")
+                    index_button = self._gtk.Button("circle-red", _("Generic"), "color2")
                     index_button.connect("clicked", self.confirm_print_generic)
                     gridvariable.attach(index_button, repeat_three, i, size, 1)
 

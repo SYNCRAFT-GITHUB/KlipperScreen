@@ -14,10 +14,10 @@ window {
 
 button {
     background-image: none;
-    background-color: #13181C;
+    background-color: #171e23;
     margin: .25em;
     padding: .2em .5em 0;
-    border-radius: 0;
+    border-radius: .25em;
     border: 0;
     -gtk-icon-shadow: none;
 }
@@ -48,25 +48,25 @@ button label {
 }
 
 button.color1 {
-    border-bottom: .4em solid #ED6500;
+    border-bottom: .4em solid #a8a19c;
     margin: .3em;
     min-height: 3em;
 }
 
 button.color2 {
-    border-bottom: .4em solid #B10080;
+    border-bottom: .4em solid #b7a0b0;
     margin: .3em;
     min-height: 3em;
 }
 
 button.color3 {
-    border-bottom: .4em solid #009384;
+    border-bottom: .4em solid #9ab5b3;
     margin: .3em;
     min-height: 3em;
 }
 
 button.color4 {
-    border-bottom: .4em solid #A7E100;
+    border-bottom: .4em solid #b2ba9a;
     margin: .3em;
     min-height: 3em;
 }
@@ -107,11 +107,16 @@ combobox arrow {
 }
 
 switch {
+    background-color: #313131;
     margin: 0.75em;
     min-width: 6em;
     min-height: 3em;
     border: 0;
     border-radius: 3em;
+}
+
+switch:checked {
+    background-color: #5e5e5e;
 }
 
 switch slider {
