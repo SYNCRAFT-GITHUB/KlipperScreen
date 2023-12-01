@@ -219,5 +219,6 @@ textview .time {
 }
 
 .keyboard_pad {
+    border-radius: .15em;
     background-color: #090909; /*base02*/
 }

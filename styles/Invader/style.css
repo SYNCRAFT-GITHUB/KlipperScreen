@@ -219,5 +219,6 @@ textview .time {
 }
 
 .keyboard_pad {
-    background-color: #635e5e;
+    border-radius: .3em;
+    background-color: #212121;
 }
