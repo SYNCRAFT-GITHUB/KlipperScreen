@@ -1460,6 +1460,15 @@ msgstr "Non puoi eseguire questa azione durante la stampa"
 msgid "Hot Unload"
 msgstr "Riscalda e scarica"
 
+msgid "Calibrate IDEX"
+msgstr "Calibrare IDEX"
+
+msgid "This procedure will start printing a specific 3D model for calibration."
+msgstr "Questa procedura avvierà la stampa di un modello 3D dedicato per la calibrazione."
+
+msgid "It is recommended to use materials of the same type with different colors."
+msgstr "Si consiglia di utilizzare materiali dello stesso tipo, ma con colori diversi."
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 

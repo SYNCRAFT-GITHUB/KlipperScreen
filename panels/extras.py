@@ -26,7 +26,7 @@ class OutputPinPanel(ScreenPanel):
         self.scroll = self._gtk.ScrolledWindow()
         self.scroll.add(self.labels['devices'])
 
-        self.add_button_new(_("Hot Unload"), 'hot', 'color1', 'gcode_carlos')
+        self.add_button_new(_("Hot Unload"), 'hot', 'color1', 'gcode')
 
         self.content.add(self.scroll)
 
@@ -52,7 +52,7 @@ class OutputPinPanel(ScreenPanel):
             message: str = _("You cannot perform this action while printing")
             self._screen.show_popup_message(message, level=2)
             return None
-        self._screen._ws.klippy.gcode_script(f'HOT_UNLOAD_FILAMENT T={self.devices["Hot Unload"]["scale"].get_value()}')
+        self._screen._ws.klippy.gcode_script(f'HOT_UNLOAD_FILAMENT T={self.devices[_("Hot Unload")]["scale"].get_value()}')
 
     def add_button_new(self, title, icon, color, gcode):
 

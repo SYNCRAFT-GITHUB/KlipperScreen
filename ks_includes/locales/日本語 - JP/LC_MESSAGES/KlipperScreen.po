@@ -1328,6 +1328,15 @@ msgstr "印刷中はこのアクションを実行できません"
 msgid "Hot Unload"
 msgstr "加熱してアンロードする"
 
+msgid "Calibrate IDEX"
+msgstr "IDEX 校正"
+
+msgid "This procedure will start printing a specific 3D model for calibration."
+msgstr "この手順により、キャリブレーション用の専用パーツが印刷されます。"
+
+msgid "It is recommended to use materials of the same type with different colors."
+msgstr "同じ種類の色違いの素材を使用することをお勧めします。"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

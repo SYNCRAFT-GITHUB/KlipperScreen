@@ -1469,6 +1469,15 @@ msgstr "此操作已被阻止，因为您正在打印"
 msgid "Hot Unload"
 msgstr "加热并卸载灯丝"
 
+msgid "Calibrate IDEX"
+msgstr "两台挤出机的打印校准部分"
+
+msgid "This procedure will start printing a specific 3D model for calibration."
+msgstr "此过程将打印用于校准打印机的两个挤出机的专用部件。"
+
+msgid "It is recommended to use materials of the same type with different colors."
+msgstr "但是，建议使用相同类型但具有不同颜色的材料，以便更容易可视化和评估差异。"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 
