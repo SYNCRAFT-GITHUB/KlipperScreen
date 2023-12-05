@@ -1396,6 +1396,15 @@ msgstr "인쇄 중에는 이 작업을 수행할 수 없습니다"
 msgid "Hot Unload"
 msgstr "가열 및 언로드"
 
+msgid "Calibrate IDEX"
+msgstr "인쇄 교정 두 압출기의 일부"
+
+msgid "This procedure will start printing a specific 3D model for calibration."
+msgstr "이 절차에서는 교정을 위한 전용 부품을 인쇄합니다."
+
+msgid "It is recommended to use materials of the same type with different colors."
+msgstr "동일한 유형이지만 색상이 다른 재료를 사용하는 것이 좋습니다."
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 

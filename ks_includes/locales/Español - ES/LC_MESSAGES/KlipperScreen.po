@@ -1492,6 +1492,15 @@ msgstr "No puedes realizar esta acción mientras estás imprimiendo"
 msgid "Hot Unload"
 msgstr "Calentar y Descargar"
 
+msgid "Calibrate IDEX"
+msgstr "Calibración IDEX"
+
+msgid "This procedure will start printing a specific 3D model for calibration."
+msgstr "Este procedimiento comenzará a imprimir un modelo 3D dedicado para la calibración."
+
+msgid "It is recommended to use materials of the same type with different colors."
+msgstr "Se recomienda utilizar materiales del mismo tipo, pero de diferentes colores."
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

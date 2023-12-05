@@ -1045,7 +1045,7 @@ msgid "Chamber Fan"
 msgstr "Ventoinha"
 
 msgid "Select Syncraft ProExtruder"
-msgstr "Selecione o ProExtruder da Syncraft"
+msgstr "Selecione o ProExtruder"
 
 msgid "Select Extruder"
 msgstr "Selecione o Extrusor"
@@ -1340,6 +1340,15 @@ msgstr "Você não pode realizar esta ação enquanto estiver imprimindo"
 
 msgid "Hot Unload"
 msgstr "Aquecer e Descarregar"
+
+msgid "Calibrate IDEX"
+msgstr "Calibrar IDEX"
+
+msgid "This procedure will start printing a specific 3D model for calibration."
+msgstr "Este procedimento irá imprimir uma peça dedicada para calibração."
+
+msgid "It is recommended to use materials of the same type with different colors."
+msgstr "É recomedado utilizar materiais do mesmo tipo, entretanto com cores diferentes."
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonda foi acionada antes do movimento"

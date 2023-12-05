@@ -1508,6 +1508,15 @@ msgstr "Вы не можете выполнять это действие во �
 msgid "Hot Unload"
 msgstr "Нагрев и разгрузка"
 
+msgid "Calibrate IDEX"
+msgstr "Калибровочная часть двух экструдеров"
+
+msgid "This procedure will start printing a specific 3D model for calibration."
+msgstr "В ходе этой процедуры будет распечатана специальная часть для калибровки."
+
+msgid "It is recommended to use materials of the same type with different colors."
+msgstr "Рекомендуется использовать материалы одного типа, но разных цветов."
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

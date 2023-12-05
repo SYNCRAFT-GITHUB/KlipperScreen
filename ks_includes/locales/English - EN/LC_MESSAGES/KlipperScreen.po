@@ -1322,6 +1322,15 @@ msgstr ""
 msgid "Hot Unload"
 msgstr ""
 
+msgid "Calibrate IDEX"
+msgstr ""
+
+msgid "This procedure will start printing a specific 3D model for calibration."
+msgstr ""
+
+msgid "It is recommended to use materials of the same type with different colors."
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr ""
 
