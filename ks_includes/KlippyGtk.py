@@ -25,6 +25,7 @@ class KlippyGtk:
     def __init__(self, screen):
         self.screen = screen
         self.themedir = os.path.join(pathlib.Path(__file__).parent.resolve().parent, "styles", screen.theme, "images")
+        self.imagesdir = os.path.join(pathlib.Path(__file__).parent.resolve().parent, "images")
         self.cursor = screen.show_cursor
         self.font_size_type = screen._config.get_main_config().get("font_size", "medium")
         self.width = screen.width
@@ -108,16 +109,17 @@ class KlippyGtk:
             la.get_style_context().add_class(style)
         return la
 
-    def Image(self, image_name=None, width=None, height=None):
+    def Image(self, image_name=None, width=None, height=None, universal=False):
         if image_name is None:
             return Gtk.Image()
-        pixbuf = self.PixbufFromIcon(image_name, width, height)
+        pixbuf = self.PixbufFromIcon(image_name, width, height, universal)
         return Gtk.Image.new_from_pixbuf(pixbuf) if pixbuf is not None else Gtk.Image()
 
-    def PixbufFromIcon(self, filename, width=None, height=None):
+    def PixbufFromIcon(self, filename, width=None, height=None, universal=False):
         width = width if width is not None else self.img_width
         height = height if height is not None else self.img_height
-        filename = os.path.join(self.themedir, filename)
+        contentdir = self.themedir if not universal else self.imagesdir
+        filename = os.path.join(contentdir, filename)
         for ext in ["svg", "png"]:
             pixbuf = self.PixbufFromFile(f"{filename}.{ext}", int(width), int(height))
             if pixbuf is not None:
