@@ -1501,6 +1501,9 @@ msgstr "Este procedimiento comenzará a imprimir un modelo 3D dedicado para la c
 msgid "It is recommended to use materials of the same type with different colors."
 msgstr "Se recomienda utilizar materiales del mismo tipo, pero de diferentes colores."
 
+msgid "Both feeders must have materials inserted"
+msgstr "Asegúrese de que ambos alimentadores estén cargados con materiales"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

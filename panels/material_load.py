@@ -136,7 +136,7 @@ class ChMaterialPanel(ScreenPanel):
 
                 if allow:
                     index_button = self._gtk.Button("circle-purple", material.name, "color2")
-                    index_button.connect("clicked", self.confirm_print_custom, material.code, material.temp)
+                    index_button.connect("clicked", self.confirm_print_custom, material.temp)
                 else:
                     index_button = self._gtk.Button("invalid", _('Invalid'), "color2")
                     index_button.connect("clicked", self.load_invalid_material)

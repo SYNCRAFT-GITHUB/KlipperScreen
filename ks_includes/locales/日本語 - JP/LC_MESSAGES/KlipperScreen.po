@@ -1337,6 +1337,9 @@ msgstr "この手順により、キャリブレーション用の専用パーツ
 msgid "It is recommended to use materials of the same type with different colors."
 msgstr "同じ種類の色違いの素材を使用することをお勧めします。"
 
+msgid "Both feeders must have materials inserted"
+msgstr "材料が両方のフィーダーに挿入されていることを確認します。"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

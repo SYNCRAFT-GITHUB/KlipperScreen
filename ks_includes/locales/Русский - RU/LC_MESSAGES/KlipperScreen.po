@@ -1517,6 +1517,9 @@ msgstr "В ходе этой процедуры будет распечатан�
 msgid "It is recommended to use materials of the same type with different colors."
 msgstr "Рекомендуется использовать материалы одного типа, но разных цветов."
 
+msgid "Both feeders must have materials inserted"
+msgstr "Подтвердите наличие материалов в обоих питателях."
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

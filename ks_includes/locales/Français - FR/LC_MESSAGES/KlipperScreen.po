@@ -1525,6 +1525,9 @@ msgstr "Cette procédure lancera l'impression d'un modèle 3D dédié pour l'ét
 msgid "It is recommended to use materials of the same type with different colors."
 msgstr "Il est recommandé d’utiliser des matériaux du même type, mais de couleurs différentes."
 
+msgid "Both feeders must have materials inserted"
+msgstr "Assurez-vous que les deux chargeurs sont chargés de matériaux"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonde a été déclenchée avant le mouvement"
 

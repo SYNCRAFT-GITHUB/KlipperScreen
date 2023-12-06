@@ -1331,6 +1331,9 @@ msgstr ""
 msgid "It is recommended to use materials of the same type with different colors."
 msgstr ""
 
+msgid "Both feeders must have materials inserted"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr ""
 
