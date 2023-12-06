@@ -1460,6 +1460,9 @@ msgstr "Ta procedura spowoduje wydrukowanie dedykowanej części do kalibracji."
 msgid "It is recommended to use materials of the same type with different colors."
 msgstr "Zaleca się stosowanie materiałów tego samego rodzaju, ale o różnych kolorach."
 
+msgid "Both feeders must have materials inserted"
+msgstr "Potwierdzić obecność materiałów w obu podajnikach"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"
 

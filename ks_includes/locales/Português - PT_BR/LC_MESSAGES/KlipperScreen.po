@@ -1350,6 +1350,9 @@ msgstr "Este procedimento irá imprimir uma peça dedicada para calibração."
 msgid "It is recommended to use materials of the same type with different colors."
 msgstr "É recomedado utilizar materiais do mesmo tipo, entretanto com cores diferentes."
 
+msgid "Both feeders must have materials inserted"
+msgstr "Ambos alimentadores devem estar com materiais inseridos"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonda foi acionada antes do movimento"
 
