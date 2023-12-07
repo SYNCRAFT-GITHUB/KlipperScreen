@@ -13,7 +13,7 @@ known_errors = [
     KnownError(
         error= '!PROEXTRUDER_DOESNT_MATCH_GCODE',
         message= 'The inserted Extruder is incompatible with this File',
-        code="88E"
+        code=None
         ),
     KnownError(
         error= '!MATERIAL_DOESNT_MATCH_GCODE',
@@ -28,6 +28,11 @@ known_errors = [
     KnownError(
         error= '!PRINTER_MODEL_MISMATCH',
         message= 'The file you are trying to print is for a different printer model',
+        code=None
+        ),
+    KnownError(
+        error= '!BOTH_CANNOT_BE_EMPTY',
+        message= 'Both feeders must have materials inserted',
         code=None
         ),
     KnownError(
