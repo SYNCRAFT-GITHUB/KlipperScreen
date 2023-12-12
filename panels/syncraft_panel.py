@@ -29,18 +29,12 @@ class BusterSyncraftPanel(ScreenPanel):
                 self.panel = panel
 
         
-        if self._config.linux('buster'):
-            self.config_buttons = [
-                SyncraftPanelButton(button='UPDATE', panel='update', title=_("Update via Internet"), icon='update'),
-                SyncraftPanelButton(button='UPDATEVIAUSB', panel='script', title=_("Update via USB"), icon='usb'),
-                SyncraftPanelButton(button='FIX', panel='fix', title=_("Quick System Fixes"), icon='compass'),
-                SyncraftPanelButton(button='EXPORTLOGSTOUSB', panel='script', title=_("Export Logs to USB"), icon='usb-save'),
-            ]
-        else:
-            self.config_buttons = [
-                SyncraftPanelButton(button='UPDATE', panel='update', title=_("Update via Internet"), icon='update'),
-                SyncraftPanelButton(button='USB_ACTIONS', panel='usb_actions', title=_("USB Device"), icon='usb'),
-            ]
+        self.config_buttons = [
+            SyncraftPanelButton(button='UPDATE', panel='update', title=_("Update via Internet"), icon='update'),
+            SyncraftPanelButton(button='UPDATEVIAUSB', panel='script', title=_("Update via USB"), icon='usb'),
+            SyncraftPanelButton(button='FIX', panel='fix', title=_("Quick System Fixes"), icon='compass'),
+            SyncraftPanelButton(button='EXPORTLOGSTOUSB', panel='script', title=_("Export Logs to USB"), icon='usb-save'),
+        ]
 
         grid = self._gtk.HomogeneousGrid()
         scroll = self._gtk.ScrolledWindow()

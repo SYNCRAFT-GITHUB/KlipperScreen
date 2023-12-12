@@ -27,8 +27,6 @@ class SensorsPanel(ScreenPanel):
         probe_sensors_list = ["probe"]
         filament_sensors_list = self._printer.get_filament_sensors()
         endstops_sensors_list = ["Endstop X", "Endstop Y", "Endstop Z"]
-        if not self._config.linux("buster"):
-            endstops_sensors_list.append("Dual Carriage")
 
         spool_sensors_grid = Gtk.Grid()
         self.arrange_grid(spool_sensors_grid)
@@ -112,8 +110,6 @@ class SensorsPanel(ScreenPanel):
             update_endstop_label(e="x", data=data)
             update_endstop_label(e="y", data=data)
             update_endstop_label(e="z", data=data)
-            if not self._config.linux("buster"):
-                update_endstop_label(e="dual_carriage", data=data, startswith="")
 
         if action == "notify_busy":
             return
