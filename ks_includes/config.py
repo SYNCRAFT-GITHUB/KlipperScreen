@@ -412,14 +412,15 @@ class KlipperScreenConfig:
             return False
 
     def variables_value_reveal(self, key) -> str:
+        config = configparser.ConfigParser()
         pdc_path = os.path.join('/home', 'pi', 'printer_data', 'config')
         variables_path = os.path.join(pdc_path, 'variables.cfg')
         try:
-            with open(variables_path, 'r') as prop:
-                prop = yaml.safe_load(prop)
-                return prop.get(f'{key}'.lower())
+            with open(variables_path, 'r') as variab:
+                variab = config.read_file(variab)
+                return config.get('DEFAULT', str(key).lower())
         except:
-            print("Unable to find 'variables.cfg' file.")
+            print("Unable to read 'variables.cfg' file.")
             return False
 
     def exclude_from_config(self, config):
