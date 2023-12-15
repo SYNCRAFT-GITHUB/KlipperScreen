@@ -543,7 +543,7 @@ popover button {
 }
 
 .filament_sensor switch {
-    margin: 0;
+    margin: 4;
 }
 
 .filament_sensor_detected {
