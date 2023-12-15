@@ -310,8 +310,8 @@ class BasePanel(ScreenPanel):
     def set_title(self, title):
         material_ext0 = str(self._config.variables_value_reveal('material_ext0'))[1:-1]
         material_ext1 = str(self._config.variables_value_reveal('material_ext1'))[1:-1]
-        label_ext0 = material_ext0 if not 'empty' in material_ext0 else _("Empty")
-        label_ext1 = material_ext1 if not 'empty' in material_ext1 else _("Empty")
+        label_ext0 = _("Empty") if 'empty' in material_ext0 else material_ext0
+        label_ext1 = _("Empty") if 'empty' in material_ext1 else material_ext1
         if self._config.empty_title:
             self.titlelbl.set_label(f"{label_ext0} | {label_ext1}")
             return
