@@ -1,3 +1,4 @@
+import configparser
 import logging
 import re
 
@@ -136,8 +137,10 @@ class FilamentPanel(ScreenPanel):
                 if s > limit:
                     break
                 name = x[23:].strip()
+                public_name = name.replace('_', ' ').replace('spool', _('Spool')).replace('one', _("One")).replace('two', _("Two"))
                 self.labels[x] = {
-                    'label': Gtk.Label(name.replace('_', ' ').replace('spool', _('Spool')).replace('one', _("One")).replace('two', _("Two"))),
+                    'label': Gtk.Label(public_name),
+                    'public': str(public_name),
                     'switch': Gtk.Switch(),
                     'box': Gtk.Box()
                 }
@@ -183,6 +186,7 @@ class FilamentPanel(ScreenPanel):
             self.buttons[button].set_sensitive((not busy))
 
     def process_update(self, action, data):
+        
         if action == "notify_busy":
             self.process_busy(data)
             return
@@ -205,6 +209,20 @@ class FilamentPanel(ScreenPanel):
             self.labels[self.current_extruder].get_style_context().add_class("button_active")
 
         for x in self._printer.get_filament_sensors():
+
+            ext0_material = self._config.variables_value_reveal('material_ext0')
+            ext1_material = self._config.variables_value_reveal('material_ext0')
+            if 'one' in str(x).lower():
+                if 'empty' in ext0_material:
+                    self.labels[x]['label'].set_label(f" {self.labels[x]['public']} ")
+                else:
+                    self.labels[x]['label'].set_label(f" {self.labels[x]['public']}: {ext0_material} ")
+            elif 'two' in str(x).lower():
+                if 'empty' in ext1_material:
+                    self.labels[x]['label'].set_label(f" {self.labels[x]['public']} ")
+                else:
+                    self.labels[x]['label'].set_label(f" {self.labels[x]['public']}: {ext1_material} ")
+
             if x in data:
                 if 'enabled' in data[x]:
                     self._printer.set_dev_stat(x, "enabled", data[x]['enabled'])
