@@ -207,6 +207,12 @@ class FilamentPanel(ScreenPanel):
             self.current_extruder = data["toolhead"]["extruder"]
             self.labels[self.current_extruder].get_style_context().add_class("button_active")
 
+        material_ext0 = str(self._config.variables_value_reveal('material_ext0'))[1:-1]
+        material_ext1 = str(self._config.variables_value_reveal('material_ext1'))[1:-1]
+        label_ext0 = _("Empty") if 'empty' in material_ext0 else material_ext0
+        label_ext1 = _("Empty") if 'empty' in material_ext1 else material_ext1
+        self._screen.base_panel.set_title(f"{label_ext0} | {label_ext1}")
+
         for x in self._printer.get_filament_sensors():
             if x in data:
                 if 'enabled' in data[x]:
