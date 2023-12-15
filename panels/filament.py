@@ -1,4 +1,3 @@
-import configparser
 import logging
 import re
 
@@ -151,9 +150,10 @@ class FilamentPanel(ScreenPanel):
                 self.labels[x]['switch'].set_property("width-request", round(self._gtk.font_size * 2))
                 self.labels[x]['switch'].set_property("height-request", round(self._gtk.font_size))
                 self.labels[x]['switch'].connect("notify::active", self.enable_disable_fs, name, x)
-                self.labels[x]['box'].pack_start(self.labels[x]['label'], True, True, 10)
-                self.labels[x]['box'].pack_start(self.labels[x]['switch'], False, False, 0)
+                self.labels[x]['box'].pack_start(self.labels[x]['label'], True, True, 5)
+                self.labels[x]['box'].pack_start(self.labels[x]['switch'], False, False, 5)
                 self.labels[x]['box'].get_style_context().add_class("filament_sensor")
+                self.labels[x]['box'].set_hexpand(True)
                 sensors.attach(self.labels[x]['box'], s, 0, 1, 1)
 
         grid = Gtk.Grid()
@@ -186,7 +186,6 @@ class FilamentPanel(ScreenPanel):
             self.buttons[button].set_sensitive((not busy))
 
     def process_update(self, action, data):
-        
         if action == "notify_busy":
             self.process_busy(data)
             return
@@ -209,20 +208,6 @@ class FilamentPanel(ScreenPanel):
             self.labels[self.current_extruder].get_style_context().add_class("button_active")
 
         for x in self._printer.get_filament_sensors():
-
-            if 'spool_one' in str(x).lower():
-                material = self._config.variables_value_reveal('material_ext0')
-                if 'empty' in str(material):
-                    self.labels[x]['label'].set_label(f" {self.labels[x]['public']} ")
-                else:
-                    self.labels[x]['label'].set_label(f" {self.labels[x]['public']}: {str(material)[1:-1]} ")
-            elif 'spool_two' in str(x).lower():
-                material = self._config.variables_value_reveal('material_ext1')
-                if 'empty' in str(material):
-                    self.labels[x]['label'].set_label(f" {self.labels[x]['public']} ")
-                else:
-                    self.labels[x]['label'].set_label(f" {self.labels[x]['public']}: {str(material)[1:-1]} ")
-
             if x in data:
                 if 'enabled' in data[x]:
                     self._printer.set_dev_stat(x, "enabled", data[x]['enabled'])
