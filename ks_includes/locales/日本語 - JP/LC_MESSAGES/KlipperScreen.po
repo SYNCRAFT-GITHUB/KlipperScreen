@@ -1331,6 +1331,12 @@ msgstr "加熱してアンロードする"
 msgid "Calibrate IDEX"
 msgstr "IDEX 校正"
 
+msgid "Empty"
+msgstr "空の"
+
+msgid "Display materials in the top"
+msgstr "トップバーにマテリアルを表示"
+
 msgid "This procedure will start printing a specific 3D model for calibration."
 msgstr "この手順により、キャリブレーション用の専用パーツが印刷されます。"
 

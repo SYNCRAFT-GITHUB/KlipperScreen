@@ -1344,6 +1344,12 @@ msgstr "Aquecer e Descarregar"
 msgid "Calibrate IDEX"
 msgstr "Calibrar IDEX"
 
+msgid "Empty"
+msgstr "Vazio"
+
+msgid "Display materials in the top"
+msgstr "Exibir materiais no topo da tela"
+
 msgid "This procedure will start printing a specific 3D model for calibration."
 msgstr "Este procedimento irá imprimir uma peça dedicada para calibração."
 

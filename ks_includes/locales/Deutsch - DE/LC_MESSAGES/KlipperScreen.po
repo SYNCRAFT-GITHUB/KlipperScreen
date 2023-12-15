@@ -1471,6 +1471,12 @@ msgstr "Heißentladung"
 msgid "Calibrate IDEX"
 msgstr "IDEX-Kalibrierung"
 
+msgid "Empty"
+msgstr "Leer"
+
+msgid "Display materials in the top"
+msgstr "Zeigen Sie Materialien oben an"
+
 msgid "This procedure will start printing a specific 3D model for calibration."
 msgstr "Mit diesem Verfahren wird der Druck eines speziellen 3D-Modells zur Kalibrierung gestartet."
 

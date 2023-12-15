@@ -1325,6 +1325,12 @@ msgstr ""
 msgid "Calibrate IDEX"
 msgstr ""
 
+msgid "Empty"
+msgstr ""
+
+msgid "Display materials in the top"
+msgstr ""
+
 msgid "This procedure will start printing a specific 3D model for calibration."
 msgstr ""
 

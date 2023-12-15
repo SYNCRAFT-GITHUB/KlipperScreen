@@ -1399,6 +1399,12 @@ msgstr "가열 및 언로드"
 msgid "Calibrate IDEX"
 msgstr "인쇄 교정 두 압출기의 일부"
 
+msgid "Empty"
+msgstr "비어 있는"
+
+msgid "Display materials in the top"
+msgstr "상단 바에 자료 표시"
+
 msgid "This procedure will start printing a specific 3D model for calibration."
 msgstr "이 절차에서는 교정을 위한 전용 부품을 인쇄합니다."
 
