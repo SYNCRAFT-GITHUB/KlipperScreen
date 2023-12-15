@@ -18,6 +18,8 @@ from jinja2 import Environment
 from signal import SIGTERM
 
 from ks_includes import functions
+from ks_includes.error import KnownError
+from ks_includes.error import known_errors
 from ks_includes.KlippyWebsocket import KlippyWebsocket
 from ks_includes.KlippyRest import KlippyRest
 from ks_includes.files import KlippyFiles
@@ -303,6 +305,12 @@ class KlipperScreen(Gtk.Window):
         if 'timeout' in message.lower():
             return
 
+        known_error = None
+        for er in known_errors:
+            if message in er.error:
+                known_error = er
+                break
+
         if 'unknown command:' in message.lower():
             msg_texts = [
                 message,
@@ -310,44 +318,8 @@ class KlipperScreen(Gtk.Window):
                 _('Restart the machine for the updates to take effect')
             ]
             message = f"{msg_texts[0]}.\n{msg_texts[1]}.\n{msg_texts[2]}."
-
-        self.syncraft_messages = {
-            '!PROEXTRUDER_DOESNT_MATCH_GCODE': _("The inserted Extruder is incompatible with this File"),
-            '!MATERIAL_DOESNT_MATCH_GCODE': _("The material you're using is not compatible with this file"),
-            '!SOME_MATERIAL_DOESNT_MATCH_GCODE': _("One of the materials you're using is not compatible with this file"),
-            '!PRINTER_MODEL_MISMATCH': _("The file you are trying to print is for a different printer model")
-        }
-
-        self.klipper_messages = {
-            'Probe triggered prior to movement': _("PROBE TRIGGERED PRIOR TO MOVEMENT"),
-            'Already in a manual Z probe. Use ABORT to abort it.': _("ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"),
-            'Endstop x still triggered after retract': _("ENDSTOP X STILL TRIGGERED AFTER RETRACT"),
-            'No trigger on probe after full movement': _("NO TRIGGER ON PROBE AFTER FULL MOVEMENT"),
-            'Probe samples exceed samples_tolerance': _("PROBE SAMPLES EXCEED SAMPLES_TOLERANCE")
-        }
-
-        def msgProperty (property, level):
-            if (property == "message"):
-                if message in self.klipper_messages:
-                    return self.klipper_messages[message]
-                if message.startswith("!"):
-                    return self.syncraft_messages[message]
-                else:
-                    return message
-            if (property == "width"):
-                return (self.width * .9)
-            if (property == "length"):
-                if (level == 1 or level == 2):
-                    return (-1)
-                if (level == 3 or level == 4):
-                    return (msgProperty("width", None) * 0.2)
-            if (property == "screentime"):
-                if (level == 1 or level == 2):
-                    return 12
-                if (level == 3 or level == 4):
-                    return 25
                 
-        msg = Gtk.Button(label=msgProperty("message", None))
+        msg = Gtk.Button(label=message if known_error is None else _(known_error.message))
         msg.set_hexpand(True)
         msg.set_vexpand(True)
         msg.get_child().set_line_wrap(True)
@@ -357,30 +329,36 @@ class KlipperScreen(Gtk.Window):
         msg.get_style_context().add_class("message_popup")
         if level == 1:
             msg.get_style_context().add_class("message_popup_echo")
-            popup_screentime = msgProperty("screentime", 1)
-            popup_length = msgProperty("length", 1)
-            popup_width = msgProperty("width", 1)
         elif level == 2:
             msg.get_style_context().add_class("message_popup_warning")
-            popup_screentime = msgProperty("screentime", 2)
-            popup_length = msgProperty("length", 2)
-            popup_width = msgProperty("width", 2)
         elif level == 3:
             msg.get_style_context().add_class("message_popup_error")
-            popup_screentime = msgProperty("screentime", 3)
-            popup_length = msgProperty("length", 3)
-            popup_width = msgProperty("width", 3)
         else:
             msg.get_style_context().add_class("message_popup_alert")
-            popup_screentime = msgProperty("screentime", 4)
-            popup_length = msgProperty("length", 4)
-            popup_width = msgProperty("width", 4)
+
+        popup_screentime = 12 if level == 1 or level == 2 else 25
+        popup_length = -1 if level == 1 or level == 2 else (self.width * .9) * 0.2
+        popup_width = self.width * 0.9
+
+        self.pop_grid = self.gtk.HomogeneousGrid()
+        self.pop_grid.attach(msg, 0, 0, 1, 1)
+        
+        try:
+            if known_error.code:
+                event_box = Gtk.EventBox()
+                self.image = self.gtk.Image(f"help-{known_error.code}", self.gtk.content_width * 4, self.gtk.content_height * .4, universal=True)
+                event_box.add(self.image)
+                event_box.connect("button-press-event", self.close_popup_message)
+                self.pop_grid.attach(event_box, 0, 1, 1, 3)
+        except:
+            pass
 
         popup = Gtk.Popover.new(self.base_panel.titlebar)
         popup.get_style_context().add_class("message_popup_popover")
         popup.set_size_request(popup_width, popup_length)
         popup.set_halign(Gtk.Align.CENTER)
-        popup.add(msg)
+        
+        popup.add(self.pop_grid)
         popup.popup()
 
         self.popup_message = popup
@@ -391,7 +369,7 @@ class KlipperScreen(Gtk.Window):
 
         return False
 
-    def close_popup_message(self, widget=None):
+    def close_popup_message(self, widget=None, *args):
         if self.popup_message is None:
             return
         self.popup_message.popdown()
