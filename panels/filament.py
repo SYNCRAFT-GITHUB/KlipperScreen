@@ -212,16 +212,17 @@ class FilamentPanel(ScreenPanel):
 
             ext0_material = self._config.variables_value_reveal('material_ext0')
             ext1_material = self._config.variables_value_reveal('material_ext0')
-            if 'one' in str(x).lower():
+            print(f'x: {x}')
+            if 'spool_one' in str(x).lower():
                 if 'empty' in str(ext0_material):
                     self.labels[x]['label'].set_label(f" {self.labels[x]['public']} ")
                 else:
-                    self.labels[x]['label'].set_label(f" {self.labels[x]['public']}: {ext0_material} ")
-            elif 'two' in str(x).lower():
-                if 'empty' in str(ext0_material):
+                    self.labels[x]['label'].set_label(f" {self.labels[x]['public']}: {ext0_material.replace('\'', '')} ")
+            elif 'spool_two' in str(x).lower():
+                if 'empty' in str(ext1_material):
                     self.labels[x]['label'].set_label(f" {self.labels[x]['public']} ")
                 else:
-                    self.labels[x]['label'].set_label(f" {self.labels[x]['public']}: {ext1_material} ")
+                    self.labels[x]['label'].set_label(f" {self.labels[x]['public']}: {ext1_material.replace('\'', '')} ")
 
             if x in data:
                 if 'enabled' in data[x]:

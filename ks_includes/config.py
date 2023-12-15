@@ -417,8 +417,10 @@ class KlipperScreenConfig:
         variables_path = os.path.join(pdc_path, 'variables.cfg')
         try:
             with open(variables_path, 'r') as variab:
-                variab = config.read_file(variab)
-                return config.get('DEFAULT', str(key).lower())
+                config.read_file(variab, source=variables_path)
+                print(f"File path: {variables_path}")
+                print(f"Config sections: {config.sections()}")
+                return config.get('Variables', str(key).lower())
         except:
             print("Unable to read 'variables.cfg' file.")
             return False
