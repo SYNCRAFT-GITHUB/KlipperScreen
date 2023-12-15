@@ -82,6 +82,11 @@ switch:checked {
     background-color: rgb(68, 110, 123);
 }
 
+entry {
+    background-color: rgb(54, 71, 79);
+    border-color: rgb(40, 52, 56);
+}
+
 label {
     color: #e2e2e2;
 }
@@ -99,6 +104,7 @@ menuitem {
 trough {
     background-color: rgb(40, 52, 56);
     color: #e2e2e2;
+    border-radius: .5em;
 }
 
 trough highlight, trough progress {
@@ -135,7 +141,7 @@ textview .time {
 .dialog button {
     background-color: rgb(53, 75, 84);
     border-bottom-color: rgb(53, 75, 84);
-    border-radius: .25em;
+    border-radius: .75em;
 }
 
 .dialog button:nth-child(1) {
