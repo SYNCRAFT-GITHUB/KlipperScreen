@@ -207,11 +207,20 @@ class FilamentPanel(ScreenPanel):
             self.current_extruder = data["toolhead"]["extruder"]
             self.labels[self.current_extruder].get_style_context().add_class("button_active")
 
-        material_ext0 = str(self._config.variables_value_reveal('material_ext0'))[1:-1]
-        material_ext1 = str(self._config.variables_value_reveal('material_ext1'))[1:-1]
-        label_ext0 = _("Empty") if 'empty' in material_ext0 else material_ext0
-        label_ext1 = _("Empty") if 'empty' in material_ext1 else material_ext1
-        self._screen.base_panel.set_title(f"{label_ext0} | {label_ext1}")
+        if self._config.get_main_config().getboolean('materials_on_top', True):
+            nozzle = str(self._config.variables_value_reveal('nozzle'))
+            current_ext = str(self._config.variables_value_reveal('currentextruder'))
+            material_ext0 = str(self._config.variables_value_reveal('material_ext0'))
+            material_ext1 = str(self._config.variables_value_reveal('material_ext1'))
+            label_nozzle = _("Error") if self._config.variables_value_reveal('nozzle') == False else nozzle[1:-1]
+            current_ext_label = _("Error") if self._config.variables_value_reveal('currentextruder') == False else current_ext[1:-1]
+            current_ext_label = "1" if '1' in current_ext_label else current_ext[1:-1]
+            current_ext_label = "2" if '2' in current_ext_label else current_ext[1:-1]
+            label_ext0 = _("Empty") if 'empty' in material_ext0 else material_ext0[1:-1]
+            label_ext0 = _("Error") if self._config.variables_value_reveal('material_ext0') == False else material_ext0[1:-1]
+            label_ext1 = _("Empty") if 'empty' in material_ext1 else material_ext1[1:-1]
+            label_ext1 = _("Error") if self._config.variables_value_reveal('material_ext1') == False else material_ext1[1:-1]
+            self._screen.base_panel.set_title(f"{current_ext_label} | {nozzle} | {label_ext0} | {label_ext1}")
 
         for x in self._printer.get_filament_sensors():
             if x in data:
