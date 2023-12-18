@@ -1,10 +1,16 @@
 #!/bin/bash
 
+random_number=$((RANDOM % 100 + 800))
+
 #################
 #   CLONE PDC   #
 #################
 
+ks_backup_filename="/home/pi/ks-backup-$random_number.conf"
+
 cd "/home/pi/printer_data"
+
+cp config/KlipperScreen.conf $ks_backup_filename
 
 sudo rm -r config
 
@@ -101,7 +107,7 @@ ptrdc_dir_bckp="$ptrdc_dir/backups"
 
 cp $ptrdc_dir_bckp/backup-printer.cfg $ptrdc_dir/printer.cfg
 cp $ptrdc_dir_bckp/backup-variables.cfg $ptrdc_dir/variables.cfg
-cp $ptrdc_dir_bckp/backup-KlipperScreen.conf $ptrdc_dir/KlipperScreen.conf
+sudo cp $ks_backup_filename $ptrdc_dir/KlipperScreen.conf
 chown pi $ptrdc_dir/printer.cfg
 chown pi $ptrdc_dir/variables.cfg
 chown pi $ptrdc_dir/KlipperScreen.conf
