@@ -2,6 +2,7 @@
 import subprocess
 import contextlib
 import logging
+import os
 import glob
 
 import gi
@@ -313,6 +314,9 @@ class BasePanel(ScreenPanel):
             self.titlelbl.set_label(f" ")
             return
         else:
+            if not os.path.exists('/home/pi/printer_data/config/variables.cfg'):
+                self.titlelbl.set_label(f" ")
+                return
             nozzle = self._config.variables_value_reveal('nozzle')
             current_ext = self._config.variables_value_reveal('currentextruder')
             material_ext0 = self._config.variables_value_reveal('material_ext0')

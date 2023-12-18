@@ -1,5 +1,6 @@
 import logging
 import re
+import os
 
 import gi
 
@@ -208,21 +209,24 @@ class FilamentPanel(ScreenPanel):
             self.labels[self.current_extruder].get_style_context().add_class("button_active")
 
         if self._config.get_main_config().getboolean('materials_on_top', True):
-            nozzle = self._config.variables_value_reveal('nozzle')
-            current_ext = self._config.variables_value_reveal('currentextruder')
-            material_ext0 = self._config.variables_value_reveal('material_ext0')
-            material_ext1 = self._config.variables_value_reveal('material_ext1')
-
-            if current_ext == False:
-                current_ext = _("Error")
-            elif '1' in current_ext:
-                current_ext = f'{_("Feeder")[0]}2'
+            if not os.path.exists('/home/pi/printer_data/config/variables.cfg'):
+                self.titlelbl.set_label(f" ")
             else:
-                current_ext = f'{_("Feeder")[0]}1'
+                nozzle = self._config.variables_value_reveal('nozzle')
+                current_ext = self._config.variables_value_reveal('currentextruder')
+                material_ext0 = self._config.variables_value_reveal('material_ext0')
+                material_ext1 = self._config.variables_value_reveal('material_ext1')
 
-            material_ext0 = _("Empty") if 'empty' in str(material_ext0) else material_ext0[1:-1]
-            material_ext1 = _("Empty") if 'empty' in str(material_ext1) else material_ext1[1:-1]
-            self._screen.base_panel.set_title(f"{current_ext} {nozzle[1:-1]} - {material_ext0}, {material_ext1}")
+                if current_ext == False:
+                    current_ext = _("Error")
+                elif '1' in current_ext:
+                    current_ext = f'{_("Feeder")[0]}2'
+                else:
+                    current_ext = f'{_("Feeder")[0]}1'
+
+                material_ext0 = _("Empty") if 'empty' in str(material_ext0) else material_ext0[1:-1]
+                material_ext1 = _("Empty") if 'empty' in str(material_ext1) else material_ext1[1:-1]
+                self._screen.base_panel.set_title(f"{current_ext} {nozzle[1:-1]} - {material_ext0}, {material_ext1}")
 
         for x in self._printer.get_filament_sensors():
             if x in data:
