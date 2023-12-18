@@ -1,5 +1,6 @@
 import logging
 import re
+import os
 
 import gi
 
@@ -127,6 +128,7 @@ class FilamentPanel(ScreenPanel):
 
         filament_sensors = self._printer.get_filament_sensors()
         sensors = Gtk.Grid()
+        sensors.set_size_request(self._gtk.content_width - 30, -1)
         if len(filament_sensors) > 0:
             sensors.set_column_spacing(5)
             sensors.set_row_spacing(5)
@@ -136,8 +138,10 @@ class FilamentPanel(ScreenPanel):
                 if s > limit:
                     break
                 name = x[23:].strip()
+                public_name = name.replace('_', ' ').replace('spool', _('Spool')).replace('one', _("One")).replace('two', _("Two"))
                 self.labels[x] = {
-                    'label': Gtk.Label(name.replace('_', ' ').replace('spool', _('Spool')).replace('one', _("One")).replace('two', _("Two"))),
+                    'label': Gtk.Label(public_name),
+                    'public': str(public_name),
                     'switch': Gtk.Switch(),
                     'box': Gtk.Box()
                 }
@@ -203,6 +207,26 @@ class FilamentPanel(ScreenPanel):
                 self.labels[extruder].get_style_context().remove_class("button_active")
             self.current_extruder = data["toolhead"]["extruder"]
             self.labels[self.current_extruder].get_style_context().add_class("button_active")
+
+        if self._config.get_main_config().getboolean('materials_on_top', True):
+            if not os.path.exists('/home/pi/printer_data/config/variables.cfg'):
+                self.titlelbl.set_label(f" ")
+            else:
+                nozzle = self._config.variables_value_reveal('nozzle')
+                current_ext = self._config.variables_value_reveal('currentextruder')
+                material_ext0 = self._config.variables_value_reveal('material_ext0')
+                material_ext1 = self._config.variables_value_reveal('material_ext1')
+
+                if current_ext == False:
+                    current_ext = _("Error")
+                elif '1' in current_ext:
+                    current_ext = f'{_("Feeder")[0]}2'
+                else:
+                    current_ext = f'{_("Feeder")[0]}1'
+
+                material_ext0 = _("Empty") if 'empty' in str(material_ext0) else material_ext0[1:-1]
+                material_ext1 = _("Empty") if 'empty' in str(material_ext1) else material_ext1[1:-1]
+                self._screen.base_panel.set_title(f"{current_ext} {nozzle[1:-1]} - {material_ext0}, {material_ext1}")
 
         for x in self._printer.get_filament_sensors():
             if x in data:

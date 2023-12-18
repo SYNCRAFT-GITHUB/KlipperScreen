@@ -1511,6 +1511,12 @@ msgstr "Нагрев и разгрузка"
 msgid "Calibrate IDEX"
 msgstr "Калибровочная часть двух экструдеров"
 
+msgid "Empty"
+msgstr "Пустой"
+
+msgid "Display materials in the top"
+msgstr "Выводить материалы вверху"
+
 msgid "This procedure will start printing a specific 3D model for calibration."
 msgstr "В ходе этой процедуры будет распечатана специальная часть для калибровки."
 

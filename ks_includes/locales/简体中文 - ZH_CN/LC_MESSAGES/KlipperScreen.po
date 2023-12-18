@@ -1472,6 +1472,12 @@ msgstr "加热并卸载灯丝"
 msgid "Calibrate IDEX"
 msgstr "两台挤出机的打印校准部分"
 
+msgid "Empty"
+msgstr "空的"
+
+msgid "Display materials in the top"
+msgstr "在顶栏中显示材料"
+
 msgid "This procedure will start printing a specific 3D model for calibration."
 msgstr "此过程将打印用于校准打印机的两个挤出机的专用部件。"
 

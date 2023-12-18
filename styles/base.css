@@ -539,11 +539,11 @@ popover button {
 }
 
 .filament_sensor {
-    border-radius: 3em;
+    border-radius: 2em;
 }
 
 .filament_sensor switch {
-    margin: 0;
+    margin: 4;
 }
 
 .filament_sensor_detected {

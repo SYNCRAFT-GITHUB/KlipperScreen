@@ -1463,6 +1463,12 @@ msgstr "Zaleca się stosowanie materiałów tego samego rodzaju, ale o różnych
 msgid "Both feeders must have materials inserted"
 msgstr "Potwierdzić obecność materiałów w obu podajnikach"
 
+msgid "Empty"
+msgstr "Pusty"
+
+msgid "Display materials in the top"
+msgstr "Wyświetlaj materiały na górze"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"
 

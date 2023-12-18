@@ -221,7 +221,7 @@ class KlipperScreenConfig:
                 bools = (
                     'invert_x', 'invert_y', 'invert_z', '24htime', 'only_heaters', 'show_cursor', 'confirm_estop',
                     'autoclose_popups', 'use_dpms', 'use_default_menu', 'show_saved_from_usb', 'side_brightness_shortcut',
-                    'use-matchbox-keyboard', 'show_heater_power', 'show_experimental_material',
+                    'use-matchbox-keyboard', 'show_heater_power', 'show_experimental_material', 'materials_on_top',
                 )
                 strs = (
                     'default_printer', 'language', 'print_sort_dir', 'theme', 'screen_blanking', 'font_size',
@@ -345,6 +345,8 @@ class KlipperScreenConfig:
                                    "value": "False", "callback": screen.reload_panels}},
             {"show_experimental_material": {"section": "main", "name": _("Show experimental Materials"), "type": "binary",
                                    "value": "True", "callback": screen.reload_panels}},
+            {"materials_on_top": {"section": "main", "name": _("Display materials in the top"), "type": "binary",
+                                   "value": "False", "callback": screen.reload_panels}},
             # {"": {"section": "main", "name": _(""), "type": ""}}
         ]
 
@@ -408,7 +410,19 @@ class KlipperScreenConfig:
                 else:
                     return False
         except:
-            print("Unable to find 'variables.cfg' file. Returning 'False'!")
+            print("Unable to find 'variables.cfg' file. Returning False!")
+            return False
+
+    def variables_value_reveal(self, key) -> str:
+        config = configparser.ConfigParser()
+        pdc_path = os.path.join('/home', 'pi', 'printer_data', 'config')
+        variables_path = os.path.join(pdc_path, 'variables.cfg')
+        try:
+            with open(variables_path, 'r') as variab:
+                config.read_file(variab, source=variables_path)
+                return config.get('Variables', str(key).lower())
+        except:
+            print("Unable to read 'variables.cfg' file.")
             return False
 
     def exclude_from_config(self, config):
