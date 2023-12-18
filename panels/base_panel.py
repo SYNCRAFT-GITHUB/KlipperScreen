@@ -317,10 +317,13 @@ class BasePanel(ScreenPanel):
             if not os.path.exists('/home/pi/printer_data/config/variables.cfg'):
                 self.titlelbl.set_label(f" ")
                 return
-            nozzle = self._config.variables_value_reveal('nozzle')
-            current_ext = self._config.variables_value_reveal('currentextruder')
-            material_ext0 = self._config.variables_value_reveal('material_ext0')
-            material_ext1 = self._config.variables_value_reveal('material_ext1')
+            try:
+                nozzle = self._config.variables_value_reveal('nozzle')
+                current_ext = self._config.variables_value_reveal('currentextruder')
+                material_ext0 = self._config.variables_value_reveal('material_ext0')
+                material_ext1 = self._config.variables_value_reveal('material_ext1')
+            except:
+                nozzle = current_ext = material_ext0 = material_ext1 = '?'
 
             if current_ext == False:
                 current_ext = _("Error")
