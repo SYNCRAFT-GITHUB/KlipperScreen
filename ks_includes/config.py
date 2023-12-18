@@ -410,7 +410,7 @@ class KlipperScreenConfig:
                 else:
                     return False
         except:
-            print("Unable to find 'variables.cfg' file. Returning 'False'!")
+            print("Unable to find 'variables.cfg' file. Returning False!")
             return False
 
     def variables_value_reveal(self, key) -> str:
@@ -420,8 +420,6 @@ class KlipperScreenConfig:
         try:
             with open(variables_path, 'r') as variab:
                 config.read_file(variab, source=variables_path)
-                print(f"File path: {variables_path}")
-                print(f"Config sections: {config.sections()}")
                 return config.get('Variables', str(key).lower())
         except:
             print("Unable to read 'variables.cfg' file.")
