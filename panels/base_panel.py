@@ -324,7 +324,8 @@ class BasePanel(ScreenPanel):
                 material_ext1 = self._config.variables_value_reveal('material_ext1')
             except:
                 nozzle = current_ext = material_ext0 = material_ext1 = '?'
-
+            if 'none' in nozzle:
+                nozzle = _('Extruder')
             if current_ext == False:
                 current_ext = _("Error")
             elif '1' in current_ext:
