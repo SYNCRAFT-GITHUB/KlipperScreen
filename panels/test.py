@@ -7,10 +7,10 @@ from ks_includes.screen_panel import ScreenPanel
 
 
 def create_panel(*args):
-    return SettingsPanel(*args)
+    return TestPanel(*args)
 
 
-class SettingsPanel(ScreenPanel):
+class TestPanel(ScreenPanel):
     def __init__(self, screen, title):
         super().__init__(screen, title)
         self.printers = self.settings = {}
@@ -21,42 +21,6 @@ class SettingsPanel(ScreenPanel):
             "type": "panel",
             "panel": "timezone",
             "icon": "world-web"
-        }})
-        options.append({"system_info": {
-            "name": _("System Information"),
-            "type": "panel",
-            "panel": "system_info",
-            "icon": "info"
-        }})
-        options.append({"network": {
-            "name": _("Connect to WiFi"),
-            "type": "panel",
-            "panel": "network",
-            "icon": "network"
-        }})
-        options.append({"clear_gcodes": {
-            "name": _("Clear GCodes Folder"),
-            "type": "script",
-            "script": "CLEANGCODEFILES",
-            "icon": "custom-script"
-        }})
-        options.append({"add_material": {
-            "name": _("Add Material"),
-            "type": "panel",
-            "panel": "add_material",
-            "icon": "filament_plus"
-        }})
-        options.append({"console": {
-            "name": _("Console"),
-            "type": "panel",
-            "panel": "console",
-            "icon": "console"
-        }})
-        options.append({"sensors": {
-            "name": _("Sensors"),
-            "type": "panel",
-            "panel": "sensors",
-            "icon": "sensor"
         }})
 
         self.labels['settings_menu'] = self._gtk.ScrolledWindow()
@@ -88,6 +52,17 @@ class SettingsPanel(ScreenPanel):
             
         if option['type'] is None:
             return
+
+        allowed_options = [
+            _("Change Screen Brightness"),
+            _("Language"),
+            _("Icon Theme"),
+            _("Font Size"),
+        ]
+
+        if not option['name'] in allowed_options:
+            return None
+
         name = Gtk.Label()
         name.set_markup(f"<big><b>{option['name']}</b></big>")
         name.set_hexpand(True)
@@ -105,16 +80,6 @@ class SettingsPanel(ScreenPanel):
         dev.set_hexpand(True)
         dev.set_vexpand(False)
         dev.set_valign(Gtk.Align.CENTER)
-
-        if self._config.get_hidden_config().getboolean('welcome', True):
-            allowed_options = [
-                _("Change Screen Brightness"),
-                _("Language"),
-                _("Icon Theme"),
-                _("Font Size"),
-            ]
-            if not option['name'] in allowed_options:
-                return None
 
         dev.add(labels)
         if option['type'] == "binary":
