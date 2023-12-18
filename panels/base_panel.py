@@ -325,7 +325,7 @@ class BasePanel(ScreenPanel):
             except:
                 nozzle = current_ext = material_ext0 = material_ext1 = '?'
             if 'none' in nozzle:
-                nozzle = _('Extruder')
+                nozzle = f" { _('Extruder')} "
             if current_ext == False:
                 current_ext = _("Error")
             elif '1' in current_ext:
