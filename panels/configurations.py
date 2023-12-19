@@ -33,6 +33,7 @@ class Configurations(ScreenPanel):
             ConfigurationButton(button='CALIBRATE', panel='zcalibrate', title=_("Calibrate"), icon='bed-level'),
             ConfigurationButton(button='SETTINGS', panel='settings', title=_("Settings"), icon='settings'),
             ConfigurationButton(button='POWER', panel='power', title=_("Power"), icon='shutdown'),
+            ConfigurationButton(button='NEW_FILAMENT', panel='new_filament', title="NEW_FILAMENT", icon='filament'),
         ]
 
         grid = self._gtk.HomogeneousGrid()
