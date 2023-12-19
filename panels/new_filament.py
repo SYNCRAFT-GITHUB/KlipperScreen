@@ -24,8 +24,6 @@ class NewFilament(ScreenPanel):
         self.current_extruder = self._printer.get_stat("toolhead", "extruder")
         filament_sensors_list = self._printer.get_filament_sensors()
         self.nozzle = self.get_variable('nozzle')
-        self.material_ext0 = self.get_variable('material_ext0')
-        self.material_ext1 = self.get_variable('material_ext1')
 
         self.buttons = {
             'load': self._gtk.Button("arrow-up", _("Load"), "color3", Gtk.PositionType.BOTTOM, 3),
@@ -58,7 +56,7 @@ class NewFilament(ScreenPanel):
                 grid.attach(self.labels[extruder], 3, 3, 3, 1)
             i += 1
 
-        proextruders = {
+        self.proextruders = {
             'Standard 0.25mm': 'nozzle-ST025',
             'Standard 0.4mm': 'nozzle-ST04',
             'Standard 0.8mm': 'nozzle-ST08',
@@ -67,7 +65,7 @@ class NewFilament(ScreenPanel):
         }
 
         i: int = 0
-        for key, value in proextruders.items():
+        for key, value in self.proextruders.items():
             self.labels[key] = self._gtk.Button(value, None, None)
             self.labels[key].connect("clicked", self.nozzlegcodescript, key)
             grid.attach(self.labels[key], i, 4, 1, 1)
@@ -96,26 +94,25 @@ class NewFilament(ScreenPanel):
         self.labels[self.current_extruder].set_property("opacity", 1.0)
         self.current_extruder = self._printer.get_stat("toolhead", "extruder")
 
-        self.material_ext0 = self.get_variable('material_ext0')
-        self.material_ext1 = self.get_variable('material_ext1')
-
         for extruder in self._printer.get_tools():
             if '1' in extruder:
                 material = self.get_variable('material_ext1')
             else:
-                material= self.get_variable('material_ext0')
+                material = self.get_variable('material_ext0')
+            if 'empty' in material:
+                material = _("Empty")
             self.labels[extruder].set_label(f"{material}")
             if extruder != self.current_extruder:
                 self.labels[extruder].set_property("opacity", 0.3)
 
-        self.labels[self.nozzle].get_style_context().remove_class("button_active")
-        self.nozzle = self.get_variable('nozzle')
-        self.labels[self.nozzle].get_style_context().add_class("button_active")
-
-        # self.labels['reset'].set_property("opacity", 0.3)
+        if self.get_variable('nozzle') not in self.proextruders:
+            pass
+        else:
+            self.labels[self.nozzle].get_style_context().remove_class("button_active")
+            self.nozzle = self.get_variable('nozzle')
+            self.labels[self.nozzle].get_style_context().add_class("button_active")
 
         for x, extruder in zip(self._printer.get_filament_sensors(), self._printer.get_tools()):
-            print(f'-------\n\n\n\nx: {x}\n\nextruder: {extruder}\n\n\n\n---')
             if x in data:
                 if 'enabled' in data[x]:
                     self._printer.set_dev_stat(x, "enabled", data[x]['enabled'])
