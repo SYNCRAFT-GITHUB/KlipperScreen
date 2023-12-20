@@ -493,7 +493,7 @@ class KlipperScreenConfig:
         return self.fix_option
 
     def get_extruder_option (self) -> str:
-            return self.extruder_option
+        return self.extruder_option
 
     def get_nozzle (self) -> str:
         return self.nozzle

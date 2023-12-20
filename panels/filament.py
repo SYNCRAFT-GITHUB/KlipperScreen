@@ -40,8 +40,8 @@ class FilamentPanel(ScreenPanel):
             'unload': self._gtk.Button("arrow-down", _("Unload"), "color2", Gtk.PositionType.BOTTOM, 3),
             'extrude': self._gtk.Button("extrude", None, "color1", .62),
             'retract': self._gtk.Button("retract", None, "color1", .62),
-            'material_ext0': self._gtk.Button("filament", None, None, .62),
-            'material_ext1': self._gtk.Button("filament", None, None, .62),
+            'material_ext0': self._gtk.Button("filament", None, "color3", .62),
+            'material_ext1': self._gtk.Button("filament", None, "color3", .62),
         }
 
         grid = self._gtk.HomogeneousGrid()
