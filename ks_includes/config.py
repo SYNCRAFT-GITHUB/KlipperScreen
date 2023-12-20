@@ -417,7 +417,7 @@ class KlipperScreenConfig:
         config = configparser.ConfigParser()
         pdc_path = os.path.join('/home', 'pi', 'printer_data', 'config')
         variables_path = os.path.join(pdc_path, 'variables.cfg')
-        # variables_path = '/Users/rafael/variables.cfg'
+        variables_path = '/Users/rafael/variables.cfg'
         try:
             with open(variables_path, 'r') as variab:
                 config.read_file(variab, source=variables_path)

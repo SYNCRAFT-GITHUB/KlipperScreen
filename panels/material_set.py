@@ -57,15 +57,16 @@ def read_materials_from_json(file_path: str, custom: bool = False):
         print(f"Error decoding JSON: {file_path}")
 
 def create_panel(*args):
-    return ChMaterialPanel(*args)
+    return SetMaterialPanel(*args)
 
-class ChMaterialPanel(ScreenPanel):
+class SetMaterialPanel(ScreenPanel):
 
     def __init__(self, screen, title):
 
         super().__init__(screen, title)
         self.menu = ['material_menu']
 
+        self.current_extruder = self._config.variables_value_reveal('currentextruder')
         self.nozzle: str = self._config.get_nozzle()
 
         self.materials_json_path = self._config.materials_path(custom=False)
@@ -78,9 +79,7 @@ class ChMaterialPanel(ScreenPanel):
 
         self.texts = [
             _("This material is considered experimental for the selected Extruder."),
-            _("This action may result in unexpected results."),
-            _("You are loading untested material, this may result in unexpected results."),
-            _("Extrusion Temperature for the Material")
+            _("This action may result in unexpected results.")
             ]
 
         grid = self._gtk.HomogeneousGrid()
@@ -115,7 +114,7 @@ class ChMaterialPanel(ScreenPanel):
 
             if self.nozzle in material.compatible:
                 index_button = self._gtk.Button("circle-green", material.name, "color3")
-                index_button.connect("clicked", self.confirm_print_default, material.code, material.temp)
+                index_button.connect("clicked", self.confirm_print_default, material.code)
                 gridvariable.attach(index_button, repeat_three, i, 1, 1)
                 
                 if repeat_three == 4:
@@ -136,7 +135,7 @@ class ChMaterialPanel(ScreenPanel):
 
                 if allow:
                     index_button = self._gtk.Button("circle-purple", material.name, "color2")
-                    index_button.connect("clicked", self.confirm_print_custom, material.temp)
+                    index_button.connect("clicked", self.confirm_print_custom)
                 else:
                     index_button = self._gtk.Button("invalid", _('Invalid'), "color2")
                     index_button.connect("clicked", self.load_invalid_material)
@@ -157,7 +156,7 @@ class ChMaterialPanel(ScreenPanel):
             
             if self.nozzle in material.experimental and self.nozzle in allowed_for_experimental:
                 index_button = self._gtk.Button("circle-orange", material.name, "color1")
-                index_button.connect("clicked", self.confirm_print_experimental, material.code, material.temp)
+                index_button.connect("clicked", self.confirm_print_experimental, material.code)
                 if show_experimental:
                     gridvariable.attach(index_button, repeat_three, i, 1, 1)
                     if repeat_three == 4:
@@ -195,12 +194,12 @@ class ChMaterialPanel(ScreenPanel):
             return False
         return True
 
-    def confirm_print_default(self, widget, code, temp: int):
-        self._screen._ws.klippy.gcode_script(Gcode.load_filament(temp, code, self.nozzle))
+    def confirm_print_default(self, widget, code):
+        self._screen._ws.klippy.gcode_script(Gcode.change_material(m=code, ext=self.current_extruder))
         self._screen._menu_go_back()
 
-    def confirm_print_experimental(self, widget, code, temp: int):
-        script = Gcode.load_filament(temp, code, self.nozzle)
+    def confirm_print_experimental(self, widget, code):
+        script = Gcode.change_material(m=code, ext=self.current_extruder)
         params = {"script": script}
         self._screen._confirm_send_action(
             None,
@@ -210,24 +209,23 @@ class ChMaterialPanel(ScreenPanel):
         )
         self._screen._menu_go_back()
 
-    def confirm_print_custom(self, widget, temp: int):
-        script = Gcode.load_filament(temp, "GENERIC", self.nozzle)
+    def confirm_print_custom(self, widget):
+        script = Gcode.change_material(m='GENERIC', ext=self.current_extruder)
         params = {"script": script}
         self._screen._confirm_send_action(
             None,
-            self.texts[2] + "\n\n" + self.texts[3] + f": {temp} (°C)\n\n",
+            self.texts[1] + "\n\n",
             "printer.gcode.script",
             params
         )
         self._screen._menu_go_back()
 
     def confirm_print_generic(self, widget):
-        generic_temp: int = 255
-        script = Gcode.load_filament(generic_temp, "GENERIC", self.nozzle)
+        script = Gcode.change_material(m=code, ext=self.current_extruder)
         params = {"script": script}
         self._screen._confirm_send_action(
             None,
-            self.texts[2] + "\n\n" + self.texts[3] + f": {generic_temp} (°C)\n\n",
+            self.texts[0] + "\n\n" + self.texts[1] + "\n\n",
             "printer.gcode.script",
             params
         )

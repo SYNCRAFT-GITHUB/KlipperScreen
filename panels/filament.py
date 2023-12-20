@@ -1,7 +1,7 @@
+import configparser
 import logging
-import re
+import random
 import os
-
 import gi
 
 gi.require_version("Gtk", "3.0")
@@ -14,262 +14,120 @@ from ks_includes.screen_panel import ScreenPanel
 def create_panel(*args):
     return FilamentPanel(*args)
 
-
 class FilamentPanel(ScreenPanel):
 
     def __init__(self, screen, title):
+
         super().__init__(screen, title)
-        self.current_extruder = self._printer.get_stat("toolhead", "extruder")
+        self.menu = ['filament']
+
         macros = self._printer.get_gcode_macros()
         self.load_filament = any("LOAD_FILAMENT" in macro.upper() for macro in macros)
         self.unload_filament = any("UNLOAD_FILAMENT" in macro.upper() for macro in macros)
 
         self.speeds = ['1', '2', '5', '25']
         self.distances = ['5', '10', '15', '25']
-        if self.ks_printer_cfg is not None:
-            dis = self.ks_printer_cfg.get("extrude_distances", '5, 10, 15, 25')
-            if re.match(r'^[0-9,\s]+$', dis):
-                dis = [str(i.strip()) for i in dis.split(',')]
-                if 1 < len(dis) < 5:
-                    self.distances = dis
-            vel = self.ks_printer_cfg.get("extrude_speeds", '1, 2, 5, 25')
-            if re.match(r'^[0-9,\s]+$', vel):
-                vel = [str(i.strip()) for i in vel.split(',')]
-                if 1 < len(vel) < 5:
-                    self.speeds = vel
 
         self.distance = int(self.distances[1])
         self.speed = int(self.speeds[1])
+
+        self.current_extruder = self.get_variable('currentextruder')
+        filament_sensors_list = self._printer.get_filament_sensors()
+        self.nozzle = self.get_variable('nozzle')
+
         self.buttons = {
-            'load': self._gtk.Button("arrow-up", _("Load"), "color3"),
-            'unload': self._gtk.Button("arrow-down", _("Unload"), "color2"),
-            'extrude': self._gtk.Button("extrude", _("Extrude"), "color4"),
-            'retract': self._gtk.Button("retract", _("Retract"), "color1"),
-            'temperature': self._gtk.Button("heat-up", _("Temperature"), "color4"),
-            'nozzle': self._gtk.Button("extruder", _("Extruder"), "color4"),
+            'load': self._gtk.Button("arrow-up", _("Load"), "color3", Gtk.PositionType.BOTTOM, 3),
+            'unload': self._gtk.Button("arrow-down", _("Unload"), "color2", Gtk.PositionType.BOTTOM, 3),
+            'extrude': self._gtk.Button("extrude", None, "color1", .62),
+            'retract': self._gtk.Button("retract", None, "color1", .62),
+            'material_ext0': self._gtk.Button("filament", None, None, .62),
+            'material_ext1': self._gtk.Button("filament", None, None, .62),
         }
-        self.buttons['load'].connect("clicked", self.menu_item_clicked, "nozzle_load", {
-            "name": _("Select Extruder"),
-            "panel": "nozzle_load"
-        })
+
+        grid = self._gtk.HomogeneousGrid()
+        # COLUNA, LINHA, ESPAÇO COLUNA, ESPAÇO LINHA
+        grid.attach(self.buttons['load'], 0, 0, 3, 3)
+        grid.attach(self.buttons['unload'], 3, 0, 3, 3)
+        grid.attach(self.buttons['material_ext0'], 0, 3, 1, 1)
+        grid.attach(self.buttons['material_ext1'], 5, 3, 1, 1)
+
         self.buttons['unload'].connect("clicked", self.load_unload, "-")
-        self.buttons['extrude'].connect("clicked", self.extrude, "+")
-        self.buttons['retract'].connect("clicked", self.extrude, "-")
-        self.buttons['nozzle'].connect("clicked", self.menu_item_clicked, "nozzle", {
-            "name": _("Change your Extruder"),
-            "panel": "nozzle"
-        })
-        self.buttons['temperature'].connect("clicked", self.menu_item_clicked, "temperature", {
-            "name": _("Temperature"),
-            "panel": "temperature"
+
+        self.buttons['load'].connect("clicked", self.reset_material_panel)
+        self.buttons['load'].connect("clicked", self.menu_item_clicked, "material_load", {
+            "name": _("Select the Material"),
+            "panel": "material_load"
         })
 
-        extgrid = self._gtk.HomogeneousGrid()
-        limit = 5
+        self.buttons['material_ext0'].connect("clicked", self.reset_material_panel)
+        self.buttons['material_ext0'].connect("clicked", self.menu_item_clicked, "material_set", {
+            "name": _("Select the Material"),
+            "panel": "material_set"
+        })
+
+        self.buttons['material_ext1'].connect("clicked", self.reset_material_panel)
+        self.buttons['material_ext1'].connect("clicked", self.menu_item_clicked, "material_set", {
+            "name": _("Select the Material"),
+            "panel": "material_set"
+        })
+
+        self.ext_feeder = {
+            'extruder_stepper extruder1': 'extruder1',
+            'extruder': 'extruder'
+        }
+
         i = 0
         for extruder in self._printer.get_tools():
-            if self._printer.extrudercount > 1:
-                self.labels[extruder] = self._gtk.Button("feeder", _("Feeder") + f" {self._printer.get_tool_number(extruder)+1}")
-            else:
-                self.labels[extruder] = self._gtk.Button("feeder", "")
+            self.labels[extruder] = self._gtk.Button(f"extruder-{i+1}", None, None, .62, Gtk.PositionType.LEFT, 1)
             self.labels[extruder].connect("clicked", self.change_extruder, extruder)
-            if extruder == self.current_extruder:
-                self.labels[extruder].get_style_context().add_class("button_active")
-            if i < limit:
-                extgrid.attach(self.labels[extruder], i, 0, 1, 1)
-                i += 1
-        if i < (limit - 1):
-            extgrid.attach(self.buttons['nozzle'], i + 1, 0, 1, 1)
-            extgrid.attach(self.buttons['temperature'], i + 2, 0, 1, 1)
-
-        distgrid = Gtk.Grid()
-        for j, i in enumerate(self.distances):
-            self._screen.lang_ltr = True
-            self.labels[f"dist{i}"] = self._gtk.Button(label=i)
-            self.labels[f"dist{i}"].connect("clicked", self.change_distance, int(i))
-            ctx = self.labels[f"dist{i}"].get_style_context()
-            if ((self._screen.lang_ltr is True and j == 0) or
-                    (self._screen.lang_ltr is False and j == len(self.distances) - 1)):
-                ctx.add_class("distbutton_top")
-            elif ((self._screen.lang_ltr is False and j == 0) or
-                  (self._screen.lang_ltr is True and j == len(self.distances) - 1)):
-                ctx.add_class("distbutton_bottom")
+            self.labels[extruder].get_style_context().add_class("filament_sensor")
+            if self.ext_feeder[extruder] != self.current_extruder:
+                self.labels[extruder].set_property("opacity", 0.3)
+            if i == 0:
+                grid.attach(self.labels[extruder], i+1, 3, 2, 1)
             else:
-                ctx.add_class("distbutton")
-            if int(i) == self.distance:
-                ctx.add_class("distbutton_active")
-            distgrid.attach(self.labels[f"dist{i}"], j, 0, 1, 1)
+                grid.attach(self.labels[extruder], 3, 3, 2, 1)
+            i += 1
 
-        speedgrid = Gtk.Grid()
-        for j, i in enumerate(self.speeds):
-            self.labels[f"speed{i}"] = self._gtk.Button(label=i)
-            self.labels[f"speed{i}"].connect("clicked", self.change_speed, int(i))
-            ctx = self.labels[f"speed{i}"].get_style_context()
-            if ((self._screen.lang_ltr is True and j == 0) or
-                    (self._screen.lang_ltr is False and j == len(self.speeds) - 1)):
-                ctx.add_class("distbutton_top")
-            elif ((self._screen.lang_ltr is False and j == 0) or
-                  (self._screen.lang_ltr is True and j == len(self.speeds) - 1)):
-                ctx.add_class("distbutton_bottom")
-            else:
-                ctx.add_class("distbutton")
-            if int(i) == self.speed:
-                ctx.add_class("distbutton_active")
-            speedgrid.attach(self.labels[f"speed{i}"], j, 0, 1, 1)
+        self.proextruders = {
+            'Standard 0.25mm': 'nozzle-ST025',
+            'Standard 0.4mm': 'nozzle-ST04',
+            'Standard 0.8mm': 'nozzle-ST08',
+            'Metal 0.4mm': 'nozzle-METAL04',
+            'Fiber 0.6mm': 'nozzle-FIBER06',
+        }
 
-        distbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        self.labels['extrude_dist'] = Gtk.Label(_("Distance (mm)"))
-        distbox.pack_start(self.labels['extrude_dist'], True, True, 0)
-        distbox.add(distgrid)
-        speedbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        self.labels['extrude_speed'] = Gtk.Label(_("Speed (mm/s)"))
-        speedbox.pack_start(self.labels['extrude_speed'], True, True, 0)
-        speedbox.add(speedgrid)
+        i: int = 0
+        for key, value in self.proextruders.items():
+            self.labels[key] = self._gtk.Button(value, None, None)
+            self.labels[key].connect("clicked", self.nozzlegcodescript, key)
+            grid.attach(self.labels[key], i, 4, 1, 1)
+            i += 1
 
-        filament_sensors = self._printer.get_filament_sensors()
-        sensors = Gtk.Grid()
-        sensors.set_size_request(self._gtk.content_width - 30, -1)
-        if len(filament_sensors) > 0:
-            sensors.set_column_spacing(5)
-            sensors.set_row_spacing(5)
-            sensors.set_halign(Gtk.Align.CENTER)
-            sensors.set_valign(Gtk.Align.CENTER)
-            for s, x in enumerate(filament_sensors):
-                if s > limit:
-                    break
-                name = x[23:].strip()
-                public_name = name.replace('_', ' ').replace('spool', _('Spool')).replace('one', _("One")).replace('two', _("Two"))
-                self.labels[x] = {
-                    'label': Gtk.Label(public_name),
-                    'public': str(public_name),
-                    'switch': Gtk.Switch(),
-                    'box': Gtk.Box()
-                }
-                self.labels[x]['label'].set_halign(Gtk.Align.CENTER)
-                self.labels[x]['label'].set_hexpand(True)
-                self.labels[x]['label'].set_ellipsize(Pango.EllipsizeMode.END)
-                self.labels[x]['switch'].set_property("width-request", round(self._gtk.font_size * 2))
-                self.labels[x]['switch'].set_property("height-request", round(self._gtk.font_size))
-                self.labels[x]['switch'].connect("notify::active", self.enable_disable_fs, name, x)
-                self.labels[x]['box'].pack_start(self.labels[x]['label'], True, True, 5)
-                self.labels[x]['box'].pack_start(self.labels[x]['switch'], False, False, 5)
-                self.labels[x]['box'].get_style_context().add_class("filament_sensor")
-                self.labels[x]['box'].set_hexpand(True)
-                sensors.attach(self.labels[x]['box'], s, 0, 1, 1)
+        self.labels['settings'] = self._gtk.Button("settings", None, None)
+        grid.attach(self.labels['settings'], i, 4, 1, 1)
 
-        grid = Gtk.Grid()
-        grid.set_column_homogeneous(True)
-        grid.attach(extgrid, 0, 0, 4, 1)
+        self.labels['settings'].connect("clicked", self.menu_item_clicked, "filament_gear", {
+            "name": _("Filament"),
+            "panel": "filament_gear"
+        })
 
-        if self._screen.vertical_mode:
-            grid.attach(self.buttons['load'], 0, 1, 2, 1)
-            grid.attach(self.buttons['unload'], 0, 2, 2, 1)
-            grid.attach(self.buttons['extrude'], 2, 2, 2, 1)
-            grid.attach(self.buttons['retract'], 2, 1, 2, 1)
-            grid.attach(distbox, 0, 3, 4, 1)
-            grid.attach(speedbox, 0, 4, 4, 1)
-            grid.attach(sensors, 0, 5, 4, 1)
-        else:
-            grid.attach(self.buttons['load'], 0, 2, 1, 1)
-            grid.attach(self.buttons['unload'], 1, 2, 1, 1)
-            grid.attach(self.buttons['extrude'], 2, 2, 1, 1)
-            grid.attach(self.buttons['retract'], 3, 2, 1, 1)
-            grid.attach(distbox, 0, 3, 2, 1)
-            grid.attach(speedbox, 2, 3, 2, 1)
-            grid.attach(sensors, 0, 4, 4, 1)
+
+
+
+
 
         self.content.add(grid)
 
-    def process_busy(self, busy):
-        for button in self.buttons:
-            if button == "temperature":
-                continue
-            self.buttons[button].set_sensitive((not busy))
-
-    def process_update(self, action, data):
-        if action == "notify_busy":
-            self.process_busy(data)
-            return
-        if action != "notify_status_update":
-            return
-        for x in self._printer.get_tools():
-            self.update_temp(
-                x,
-                self._printer.get_dev_stat(x, "nothing"), # It should be "temperature"
-                self._printer.get_dev_stat(x, "target"),
-                self._printer.get_dev_stat(x, "power"),
-                lines=2,
-            )
-
-        if ("toolhead" in data and "extruder" in data["toolhead"] and
-                data["toolhead"]["extruder"] != self.current_extruder):
-            for extruder in self._printer.get_tools():
-                self.labels[extruder].get_style_context().remove_class("button_active")
-            self.current_extruder = data["toolhead"]["extruder"]
-            self.labels[self.current_extruder].get_style_context().add_class("button_active")
-
-        if self._config.get_main_config().getboolean('materials_on_top', True):
-            if not os.path.exists('/home/pi/printer_data/config/variables.cfg'):
-                self.titlelbl.set_label(f" ")
-            else:
-                try:
-                    nozzle = self._config.variables_value_reveal('nozzle')
-                    current_ext = self._config.variables_value_reveal('currentextruder')
-                    material_ext0 = self._config.variables_value_reveal('material_ext0')
-                    material_ext1 = self._config.variables_value_reveal('material_ext1')
-                except:
-                    nozzle = current_ext = material_ext0 = material_ext1 = '?'
-                if 'none' in nozzle:
-                    nozzle = f" { _('Extruder')} "
-                if current_ext == False:
-                    current_ext = _("Error")
-                elif '1' in current_ext:
-                    current_ext = f'{_("Feeder")[0]}2'
-                else:
-                    current_ext = f'{_("Feeder")[0]}1'
-                material_ext0 = _("Empty") if 'empty' in str(material_ext0) else material_ext0
-                material_ext1 = _("Empty") if 'empty' in str(material_ext1) else material_ext1
-                self._screen.base_panel.set_title(f"{current_ext} {nozzle} - {material_ext0}, {material_ext1}")
-
-        for x in self._printer.get_filament_sensors():
-            if x in data:
-                if 'enabled' in data[x]:
-                    self._printer.set_dev_stat(x, "enabled", data[x]['enabled'])
-                    self.labels[x]['switch'].set_active(data[x]['enabled'])
-                if 'filament_detected' in data[x]:
-                    self._printer.set_dev_stat(x, "filament_detected", data[x]['filament_detected'])
-                    if self._printer.get_stat(x, "enabled"):
-                        if data[x]['filament_detected']:
-                            self.labels[x]['box'].get_style_context().remove_class("filament_sensor_empty")
-                            self.labels[x]['box'].get_style_context().add_class("filament_sensor_detected")
-                        else:
-                            self.labels[x]['box'].get_style_context().remove_class("filament_sensor_detected")
-                            self.labels[x]['box'].get_style_context().add_class("filament_sensor_empty")
-                logging.info(f"{x}: {self._printer.get_stat(x)}")
-
-    def change_distance(self, widget, distance):
-        logging.info(f"### Distance {distance}")
-        self.labels[f"dist{self.distance}"].get_style_context().remove_class("distbutton_active")
-        self.labels[f"dist{distance}"].get_style_context().add_class("distbutton_active")
-        self.distance = distance
-
-    def change_extruder(self, widget, extruder):
-        logging.info(f"Changing extruder to {extruder}")
-        for tool in self._printer.get_tools():
-            self.labels[tool].get_style_context().remove_class("button_active")
-        self.labels[extruder].get_style_context().add_class("button_active")
-
-        self._screen._ws.klippy.gcode_script(f"T{self._printer.get_tool_number(extruder)}")
-
-    def change_speed(self, widget, speed):
-        logging.info(f"### Speed {speed}")
-        self.labels[f"speed{self.speed}"].get_style_context().remove_class("distbutton_active")
-        self.labels[f"speed{speed}"].get_style_context().add_class("distbutton_active")
-        self.speed = speed
-
-    def extrude(self, widget, direction):
-        self._screen._ws.klippy.gcode_script(KlippyGcodes.EXTRUDE_REL)
-        self._screen._ws.klippy.gcode_script(KlippyGcodes.extrude(f"{direction}{self.distance}", f"{self.speed * 60}"))
+    def reset_material_panel(self, button):
+        try:
+            del self._screen.panels['material_load']
+        except:
+            pass
+        try:
+            del self._screen.panels['material_set']
+        except:
+            pass
 
     def load_unload(self, widget, direction):
         if direction == "-":
@@ -283,16 +141,57 @@ class FilamentPanel(ScreenPanel):
             else:
                 self._screen._ws.klippy.gcode_script(f"LOAD_FILAMENT SPEED={self.speed * 60}")
 
-    def enable_disable_fs(self, switch, gparams, name, x):
-        if switch.get_active():
-            self._printer.set_dev_stat(x, "enabled", True)
-            self._screen._ws.klippy.gcode_script(f"SET_FILAMENT_SENSOR SENSOR={name} ENABLE=1")
-            if self._printer.get_stat(x, "filament_detected"):
-                self.labels[x]['box'].get_style_context().add_class("filament_sensor_detected")
+    def get_variable(self, key) -> str:
+        return self._config.variables_value_reveal(key)
+
+    def process_update(self, action, data):
+        if action == "notify_busy":
+            return
+        if action != "notify_status_update":
+            return
+
+        self.current_extruder = self.get_variable('currentextruder')
+
+        for extruder in self._printer.get_tools():
+            if '1' in extruder:
+                material = self.get_variable('material_ext1')
             else:
-                self.labels[x]['box'].get_style_context().add_class("filament_sensor_empty")
+                material = self.get_variable('material_ext0')
+            if 'empty' in material:
+                material = _("Empty")
+            self.labels[extruder].set_label(material)
+            if self.ext_feeder[extruder] != self.current_extruder:
+                self.labels[extruder].set_property("opacity", 0.3)
+            else:
+                self.labels[extruder].set_property("opacity", 1.0)
+
+        if self.get_variable('nozzle') not in self.proextruders:
+            pass
         else:
-            self._printer.set_dev_stat(x, "enabled", False)
-            self._screen._ws.klippy.gcode_script(f"SET_FILAMENT_SENSOR SENSOR={name} ENABLE=0")
-            self.labels[x]['box'].get_style_context().remove_class("filament_sensor_empty")
-            self.labels[x]['box'].get_style_context().remove_class("filament_sensor_detected")
+            self.labels[self.nozzle].get_style_context().remove_class("button_active")
+            self.nozzle = self.get_variable('nozzle')
+            self.labels[self.nozzle].get_style_context().add_class("button_active")
+
+        for x, extruder in zip(self._printer.get_filament_sensors(), self._printer.get_tools()):
+            if x in data:
+                if 'enabled' in data[x]:
+                    self._printer.set_dev_stat(x, "enabled", data[x]['enabled'])
+                if 'filament_detected' in data[x]:
+                    self._printer.set_dev_stat(x, "filament_detected", data[x]['filament_detected'])
+                    if self._printer.get_stat(x, "enabled"):
+                        if data[x]['filament_detected']:
+                            self.labels[extruder].get_style_context().remove_class("filament_sensor_empty")
+                            self.labels[extruder].get_style_context().add_class("filament_sensor_detected")
+                        else:
+                            self.labels[extruder].get_style_context().remove_class("filament_sensor_detected")
+                            self.labels[extruder].get_style_context().add_class("filament_sensor_empty")
+                logging.info(f"{x}: {self._printer.get_stat(x)}")
+
+    def change_extruder(self, widget, extruder):
+        logging.info(f"Changing extruder to {extruder}")
+        self._screen._ws.klippy.gcode_script(f"T{self._printer.get_tool_number(extruder)}")
+
+    def nozzlegcodescript(self, widget, nozzle: str):
+        self._config.replace_nozzle(newvalue=nozzle)
+        self._screen._ws.klippy.gcode_script(f"NOZZLE_SET NZ='{nozzle}'")
+        #self.labels[nozzle].get_style_context().add_class("button_active")
