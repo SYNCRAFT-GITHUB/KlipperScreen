@@ -21,7 +21,7 @@ class NewFilament(ScreenPanel):
         super().__init__(screen, title)
         self.menu = ['filament']
 
-        self.current_extruder = self._printer.get_stat("toolhead", "extruder")
+        self.current_extruder = self.get_variable('currentextruder')
         filament_sensors_list = self._printer.get_filament_sensors()
         self.nozzle = self.get_variable('nozzle')
 
@@ -43,12 +43,17 @@ class NewFilament(ScreenPanel):
         grid.attach(self.buttons['retract'], 3, 2, 2, 1)
         grid.attach(self.buttons['material_ext1'], 5, 2, 1, 1)
 
+        self.ext_feeder = {
+            'extruder_stepper extruder1': 'extruder1',
+            'extruder': 'extruder'
+        }
+
         i = 0
         for extruder in self._printer.get_tools():
-            self.labels[extruder] = self._gtk.Button(f"extruder-{i+1}", None, None, .50, Gtk.PositionType.LEFT, 1)
+            self.labels[extruder] = self._gtk.Button(f"extruder-{i+1}", None, None, .62, Gtk.PositionType.LEFT, 1)
             self.labels[extruder].connect("clicked", self.change_extruder, extruder)
-            self.labels[extruder].get_style_context().add_class("filament_sensor") # here
-            if extruder != self.current_extruder:
+            self.labels[extruder].get_style_context().add_class("filament_sensor")
+            if self.ext_feeder[extruder] != self.current_extruder:
                 self.labels[extruder].set_property("opacity", 0.3)
             if i == 0:
                 grid.attach(self.labels[extruder], i, 3, 3, 1)
@@ -86,13 +91,11 @@ class NewFilament(ScreenPanel):
 
     def process_update(self, action, data):
         if action == "notify_busy":
-            self.process_busy(data)
             return
         if action != "notify_status_update":
             return
 
-        self.labels[self.current_extruder].set_property("opacity", 1.0)
-        self.current_extruder = self._printer.get_stat("toolhead", "extruder")
+        self.current_extruder = self.get_variable('currentextruder')
 
         for extruder in self._printer.get_tools():
             if '1' in extruder:
@@ -101,9 +104,11 @@ class NewFilament(ScreenPanel):
                 material = self.get_variable('material_ext0')
             if 'empty' in material:
                 material = _("Empty")
-            self.labels[extruder].set_label(f"{material}")
-            if extruder != self.current_extruder:
+            self.labels[extruder].set_label(material)
+            if self.ext_feeder[extruder] != self.current_extruder:
                 self.labels[extruder].set_property("opacity", 0.3)
+            else:
+                self.labels[extruder].set_property("opacity", 1.0)
 
         if self.get_variable('nozzle') not in self.proextruders:
             pass
@@ -127,19 +132,9 @@ class NewFilament(ScreenPanel):
                             self.labels[extruder].get_style_context().add_class("filament_sensor_empty")
                 logging.info(f"{x}: {self._printer.get_stat(x)}")
 
-
-
-
-
-
-
-
     def change_extruder(self, widget, extruder):
         logging.info(f"Changing extruder to {extruder}")
         self._screen._ws.klippy.gcode_script(f"T{self._printer.get_tool_number(extruder)}")
-
-        
-
 
     def nozzlegcodescript(self, widget, nozzle: str):
         self._config.replace_nozzle(newvalue=nozzle)
