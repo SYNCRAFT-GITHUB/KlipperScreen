@@ -67,6 +67,7 @@ class SetMaterialPanel(ScreenPanel):
         self.menu = ['material_menu']
 
         self.current_extruder = self._config.variables_value_reveal('currentextruder')
+        self.extruder_option = self._config.get_extruder_option()
         self.nozzle: str = self._config.get_nozzle()
 
         self.materials_json_path = self._config.materials_path(custom=False)
@@ -195,11 +196,11 @@ class SetMaterialPanel(ScreenPanel):
         return True
 
     def confirm_print_default(self, widget, code):
-        self._screen._ws.klippy.gcode_script(Gcode.change_material(m=code, ext=self.current_extruder))
+        self._screen._ws.klippy.gcode_script(Gcode.change_material(m=code, ext=self.extruder_option))
         self._screen._menu_go_back()
 
     def confirm_print_experimental(self, widget, code):
-        script = Gcode.change_material(m=code, ext=self.current_extruder)
+        script = Gcode.change_material(m=code, ext=self.extruder_option)
         params = {"script": script}
         self._screen._confirm_send_action(
             None,
@@ -210,7 +211,7 @@ class SetMaterialPanel(ScreenPanel):
         self._screen._menu_go_back()
 
     def confirm_print_custom(self, widget):
-        script = Gcode.change_material(m='GENERIC', ext=self.current_extruder)
+        script = Gcode.change_material(m='GENERIC', ext=self.extruder_option)
         params = {"script": script}
         self._screen._confirm_send_action(
             None,
@@ -221,7 +222,7 @@ class SetMaterialPanel(ScreenPanel):
         self._screen._menu_go_back()
 
     def confirm_print_generic(self, widget):
-        script = Gcode.change_material(m=code, ext=self.current_extruder)
+        script = Gcode.change_material(m='GENERIC', ext=self.extruder_option)
         params = {"script": script}
         self._screen._confirm_send_action(
             None,

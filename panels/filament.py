@@ -60,12 +60,14 @@ class FilamentPanel(ScreenPanel):
         })
 
         self.buttons['material_ext0'].connect("clicked", self.reset_material_panel)
+        self.buttons['material_ext0'].connect("clicked", self.replace_extruder_option, 'extruder')
         self.buttons['material_ext0'].connect("clicked", self.menu_item_clicked, "material_set", {
             "name": _("Select the Material"),
             "panel": "material_set"
         })
 
         self.buttons['material_ext1'].connect("clicked", self.reset_material_panel)
+        self.buttons['material_ext1'].connect("clicked", self.replace_extruder_option, 'extruder1')
         self.buttons['material_ext1'].connect("clicked", self.menu_item_clicked, "material_set", {
             "name": _("Select the Material"),
             "panel": "material_set"
@@ -128,6 +130,9 @@ class FilamentPanel(ScreenPanel):
             del self._screen.panels['material_set']
         except:
             pass
+
+    def replace_extruder_option(self, button, newvalue):
+        self._config.replace_extruder_option(newvalue=newvalue)
 
     def load_unload(self, widget, direction):
         if direction == "-":
@@ -194,4 +199,3 @@ class FilamentPanel(ScreenPanel):
     def nozzlegcodescript(self, widget, nozzle: str):
         self._config.replace_nozzle(newvalue=nozzle)
         self._screen._ws.klippy.gcode_script(f"NOZZLE_SET NZ='{nozzle}'")
-        #self.labels[nozzle].get_style_context().add_class("button_active")

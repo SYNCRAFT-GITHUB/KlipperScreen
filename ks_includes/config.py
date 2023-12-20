@@ -41,6 +41,7 @@ class KlipperScreenConfig:
         self.lang_list = None
         self.errors = []
         self.fix_option: str = "NONE"
+        self.extruder_option: str = "NONE"
         self.nozzle: str = self.variables_value_reveal('nozzle')
         self.show_saved_from_usb: bool = False
         self.default_config_path = os.path.join(klipperscreendir, "ks_includes", "defaults.conf")
@@ -491,11 +492,17 @@ class KlipperScreenConfig:
     def get_fix_option (self) -> str:
         return self.fix_option
 
+    def get_extruder_option (self) -> str:
+            return self.extruder_option
+
     def get_nozzle (self) -> str:
         return self.nozzle
 
     def replace_fix_option (self, newvalue) -> str:
         self.fix_option = newvalue
+
+    def replace_extruder_option (self, newvalue) -> str:
+        self.extruder_option = newvalue
 
     def replace_nozzle (self, newvalue) -> str:
         self.nozzle = newvalue
