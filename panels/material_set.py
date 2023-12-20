@@ -169,16 +169,12 @@ class SetMaterialPanel(ScreenPanel):
             if self.nozzle in allowed_for_experimental:
                 if material.code == self.materials[-1].code:
                     size: int = 1
-                    if repeat_three == 0:
-                        break
-                    else:
-                        pass
                     index: int = repeat_three
                     while index != 4:
                         size += 1
                         index += 1
-                    index_button = self._gtk.Button("circle-red", _("Generic"), "color2")
-                    index_button.connect("clicked", self.confirm_print_generic)
+                    index_button = self._gtk.Button("circle-white", _("Empty"), "color3")
+                    index_button.connect("clicked", self.confirm_print_empty)
                     gridvariable.attach(index_button, repeat_three, i, size, 1)
 
     def allow_custom(self, material: CustomPrinterMaterial) -> bool:
@@ -198,6 +194,10 @@ class SetMaterialPanel(ScreenPanel):
     def confirm_print_default(self, widget, code):
         self._screen._ws.klippy.gcode_script(Gcode.change_material(m=code, ext=self.extruder_option))
         self._screen._menu_go_back()
+
+    def confirm_print_empty(self, widget):
+            self._screen._ws.klippy.gcode_script(Gcode.change_material(m='empty', ext=self.extruder_option))
+            self._screen._menu_go_back()
 
     def confirm_print_experimental(self, widget, code):
         script = Gcode.change_material(m=code, ext=self.extruder_option)
