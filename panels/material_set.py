@@ -166,16 +166,15 @@ class SetMaterialPanel(ScreenPanel):
                     else:
                         repeat_three += 1
 
-            if self.nozzle in allowed_for_experimental:
-                if material.code == self.materials[-1].code:
-                    size: int = 1
-                    index: int = repeat_three
-                    while index != 4:
-                        size += 1
-                        index += 1
-                    index_button = self._gtk.Button("circle-white", _("Empty"), "color3")
-                    index_button.connect("clicked", self.confirm_print_empty)
-                    gridvariable.attach(index_button, repeat_three, i, size, 1)
+            if material.code == self.materials[-1].code:
+                size: int = 1
+                index: int = repeat_three
+                while index != 4:
+                    size += 1
+                    index += 1
+                index_button = self._gtk.Button("circle-white", _("Empty"), "color3")
+                index_button.connect("clicked", self.confirm_print_empty)
+                gridvariable.attach(index_button, repeat_three, i, size, 1)
 
     def allow_custom(self, material: CustomPrinterMaterial) -> bool:
         pattern = r'[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]'
