@@ -333,11 +333,11 @@ class BasePanel(ScreenPanel):
             else:
                 current_ext = f'{_("Feeder")[0]}1'
 
-            material_ext0 = _("Empty") if 'empty' in str(material_ext0) else material_ext0[1:-1]
-            material_ext1 = _("Empty") if 'empty' in str(material_ext1) else material_ext1[1:-1]
+            material_ext0 = _("Empty") if 'empty' in str(material_ext0) else material_ext0
+            material_ext1 = _("Empty") if 'empty' in str(material_ext1) else material_ext1
 
             if self._config.empty_title:
-                self.titlelbl.set_label(f"{current_ext} {nozzle[1:-1]} - {material_ext0}, {material_ext1}")
+                self.titlelbl.set_label(f"{current_ext} {nozzle} - {material_ext0}, {material_ext1}")
                 return
             if not title:
                 self.titlelbl.set_label(f"{self._screen.connecting_to_printer}")

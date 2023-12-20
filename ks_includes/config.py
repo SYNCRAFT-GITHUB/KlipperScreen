@@ -41,7 +41,7 @@ class KlipperScreenConfig:
         self.lang_list = None
         self.errors = []
         self.fix_option: str = "NONE"
-        self.nozzle: str = "NONE"
+        self.nozzle: str = self.variables_value_reveal('nozzle')
         self.show_saved_from_usb: bool = False
         self.default_config_path = os.path.join(klipperscreendir, "ks_includes", "defaults.conf")
         self.config = configparser.ConfigParser()
@@ -417,11 +417,11 @@ class KlipperScreenConfig:
         config = configparser.ConfigParser()
         pdc_path = os.path.join('/home', 'pi', 'printer_data', 'config')
         variables_path = os.path.join(pdc_path, 'variables.cfg')
-        # variables_path = '/Users/rafael/variables.cfg'
+        variables_path = '/Users/rafael/variables.cfg'
         try:
             with open(variables_path, 'r') as variab:
                 config.read_file(variab, source=variables_path)
-                return config.get('Variables', str(key).lower())
+                return str(config.get('Variables', str(key).lower())[1:-1])
         except:
             print("Unable to read 'variables.cfg' file.")
             return False

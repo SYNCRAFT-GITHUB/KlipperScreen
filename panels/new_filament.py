@@ -21,6 +21,16 @@ class NewFilament(ScreenPanel):
         super().__init__(screen, title)
         self.menu = ['filament']
 
+        macros = self._printer.get_gcode_macros()
+        self.load_filament = any("LOAD_FILAMENT" in macro.upper() for macro in macros)
+        self.unload_filament = any("UNLOAD_FILAMENT" in macro.upper() for macro in macros)
+
+        self.speeds = ['1', '2', '5', '25']
+        self.distances = ['5', '10', '15', '25']
+
+        self.distance = int(self.distances[1])
+        self.speed = int(self.speeds[1])
+
         self.current_extruder = self.get_variable('currentextruder')
         filament_sensors_list = self._printer.get_filament_sensors()
         self.nozzle = self.get_variable('nozzle')
@@ -30,18 +40,23 @@ class NewFilament(ScreenPanel):
             'unload': self._gtk.Button("arrow-down", _("Unload"), "color2", Gtk.PositionType.BOTTOM, 3),
             'extrude': self._gtk.Button("extrude", None, "color1", .62),
             'retract': self._gtk.Button("retract", None, "color1", .62),
-            'material_ext0': self._gtk.Button("filament", None, "color2", .62),
-            'material_ext1': self._gtk.Button("filament", None, "color2", .62),
+            'material_ext0': self._gtk.Button("filament", None, None, .62),
+            'material_ext1': self._gtk.Button("filament", None, None, .62),
         }
 
         grid = self._gtk.HomogeneousGrid()
         # COLUNA, LINHA, ESPAÇO COLUNA, ESPAÇO LINHA
-        grid.attach(self.buttons['load'], 0, 0, 3, 2)
-        grid.attach(self.buttons['unload'], 3, 0, 3, 2)
-        grid.attach(self.buttons['material_ext0'], 0, 2, 1, 1)
-        grid.attach(self.buttons['extrude'], 1, 2, 2, 1)
-        grid.attach(self.buttons['retract'], 3, 2, 2, 1)
-        grid.attach(self.buttons['material_ext1'], 5, 2, 1, 1)
+        grid.attach(self.buttons['load'], 0, 0, 3, 3)
+        grid.attach(self.buttons['unload'], 3, 0, 3, 3)
+        grid.attach(self.buttons['material_ext0'], 0, 3, 1, 1)
+        grid.attach(self.buttons['material_ext1'], 5, 3, 1, 1)
+
+        self.buttons['unload'].connect("clicked", self.load_unload, "-")
+        self.buttons['load'].connect("clicked", self.reset_material_panel)
+        self.buttons['load'].connect("clicked", self.menu_item_clicked, "material_load", {
+            "name": _("Select the Material"),
+            "panel": "material_load"
+        })
 
         self.ext_feeder = {
             'extruder_stepper extruder1': 'extruder1',
@@ -56,9 +71,9 @@ class NewFilament(ScreenPanel):
             if self.ext_feeder[extruder] != self.current_extruder:
                 self.labels[extruder].set_property("opacity", 0.3)
             if i == 0:
-                grid.attach(self.labels[extruder], i, 3, 3, 1)
+                grid.attach(self.labels[extruder], i+1, 3, 2, 1)
             else:
-                grid.attach(self.labels[extruder], 3, 3, 3, 1)
+                grid.attach(self.labels[extruder], 3, 3, 2, 1)
             i += 1
 
         self.proextruders = {
@@ -79,6 +94,11 @@ class NewFilament(ScreenPanel):
         self.labels['settings'] = self._gtk.Button("settings", None, None)
         grid.attach(self.labels['settings'], i, 4, 1, 1)
 
+        self.labels['settings'].connect("clicked", self.menu_item_clicked, "filament", {
+            "name": _("Filament"),
+            "panel": "filament"
+        })
+
 
 
 
@@ -86,8 +106,26 @@ class NewFilament(ScreenPanel):
 
         self.content.add(grid)
 
+    def reset_material_panel(self, button):
+        try:
+            del self._screen.panels['material_load']
+        except:
+            pass
+
+    def load_unload(self, widget, direction):
+        if direction == "-":
+            if not self.unload_filament:
+                self._screen.show_popup_message("Macro UNLOAD_FILAMENT not found")
+            else:
+                self._screen._ws.klippy.gcode_script(f"UNLOAD_FILAMENT SPEED={self.speed * 60}")
+        if direction == "+":
+            if not self.load_filament:
+                self._screen.show_popup_message("Macro LOAD_FILAMENT not found")
+            else:
+                self._screen._ws.klippy.gcode_script(f"LOAD_FILAMENT SPEED={self.speed * 60}")
+
     def get_variable(self, key) -> str:
-        return self._config.variables_value_reveal(key)[1:-1]
+        return self._config.variables_value_reveal(key)
 
     def process_update(self, action, data):
         if action == "notify_busy":

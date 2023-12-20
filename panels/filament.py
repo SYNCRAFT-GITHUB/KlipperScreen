@@ -227,9 +227,9 @@ class FilamentPanel(ScreenPanel):
                     current_ext = f'{_("Feeder")[0]}2'
                 else:
                     current_ext = f'{_("Feeder")[0]}1'
-                material_ext0 = _("Empty") if 'empty' in str(material_ext0) else material_ext0[1:-1]
-                material_ext1 = _("Empty") if 'empty' in str(material_ext1) else material_ext1[1:-1]
-                self._screen.base_panel.set_title(f"{current_ext} {nozzle[1:-1]} - {material_ext0}, {material_ext1}")
+                material_ext0 = _("Empty") if 'empty' in str(material_ext0) else material_ext0
+                material_ext1 = _("Empty") if 'empty' in str(material_ext1) else material_ext1
+                self._screen.base_panel.set_title(f"{current_ext} {nozzle} - {material_ext0}, {material_ext1}")
 
         for x in self._printer.get_filament_sensors():
             if x in data:
