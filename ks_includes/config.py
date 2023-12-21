@@ -424,8 +424,8 @@ class KlipperScreenConfig:
                 config.read_file(variab, source=variables_path)
                 return str(config.get('Variables', str(key).lower())[1:-1])
         except:
-            print("Unable to read 'variables.cfg' file.")
-            return False
+            print(f"Unable to read 'variables.cfg' to get value from key '{key}'.")
+            return 'none'
 
     def exclude_from_config(self, config):
         exclude_list = ['preheat']
