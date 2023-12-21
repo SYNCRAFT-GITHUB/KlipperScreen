@@ -23,23 +23,22 @@ class ChUnloadPanel(ScreenPanel):
         self.labels['text'] = Gtk.Label(f"\n")
         self.content.add(self.labels['text'])
 
-        self.above = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=3)
-        self.below = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=3)
+        self.above = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=2)
+        self.below = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=2)
 
         self.spacer = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.spacer.set_vexpand(True)
-        self.spacer.set_hexpand(False)
+        self.spacer.set_hexpand(True)
         self.spacer.set_halign(Gtk.Align.CENTER) 
 
-        self.create_image_button("unload_full", self.above, "Standard 0.25mm")
-        self.create_image_button("unload_standyby", self.above, "Standard 0.4mm")
+        self.create_image_button("unload-full", self.above, "Standard 0.25mm")
+        self.create_image_button("unload-standby", self.above, "Standard 0.4mm")
 
         self.content.add(self.above)
-        #self.content.add(self.below)
         
     def create_image_button(self, image_path, box, nozzle):
         event_box = Gtk.EventBox()
-        image = self._gtk.Image(image_path, self._gtk.content_width * 4, self._gtk.content_height * .4)
+        image = self._gtk.Image(image_path, self._gtk.content_width * 5, self._gtk.content_height * .8)
         event_box.add(image)
         event_box.connect("button-press-event", self.on_image_clicked, nozzle)
         box.pack_start(event_box, True, True, 8)
