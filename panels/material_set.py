@@ -64,7 +64,7 @@ class SetMaterialPanel(ScreenPanel):
     def __init__(self, screen, title):
 
         super().__init__(screen, title)
-        self.menu = ['material_menu']
+        self.menu = ['material_set_menu']
 
         self.current_extruder = self._config.variables_value_reveal('currentextruder')
         self.extruder_option = self._config.get_extruder_option()
@@ -87,11 +87,11 @@ class SetMaterialPanel(ScreenPanel):
 
         self.gridattach(gridvariable=grid)
 
-        self.labels['material_menu'] = self._gtk.HomogeneousGrid()
-        self.labels['material_menu'].attach(grid, 0, 0, 1, 3)
+        self.labels['material_set_menu'] = self._gtk.HomogeneousGrid()
+        self.labels['material_set_menu'].attach(grid, 0, 0, 1, 3)
 
-        self.content.remove(self.labels['material_menu'])
-        self.content.add(self.labels['material_menu'])
+        self.content.remove(self.labels['material_set_menu'])
+        self.content.add(self.labels['material_set_menu'])
 
         self.storegrid = grid
         
@@ -115,7 +115,7 @@ class SetMaterialPanel(ScreenPanel):
 
             if self.nozzle in material.compatible:
                 index_button = self._gtk.Button("circle-green", material.name, "color3")
-                index_button.connect("clicked", self.confirm_print_default, material.code)
+                index_button.connect("clicked", self.confirm_set_default, material.code)
                 gridvariable.attach(index_button, repeat_three, i, 1, 1)
                 
                 if repeat_three == 4:
@@ -136,10 +136,10 @@ class SetMaterialPanel(ScreenPanel):
 
                 if allow:
                     index_button = self._gtk.Button("circle-purple", material.name, "color2")
-                    index_button.connect("clicked", self.confirm_print_custom)
+                    index_button.connect("clicked", self.confirm_set_custom)
                 else:
                     index_button = self._gtk.Button("invalid", _('Invalid'), "color2")
-                    index_button.connect("clicked", self.load_invalid_material)
+                    index_button.connect("clicked", self.set_invalid_material)
 
                 gridvariable.attach(index_button, repeat_three, i, 1, 1)
 
@@ -157,7 +157,7 @@ class SetMaterialPanel(ScreenPanel):
             
             if self.nozzle in material.experimental and self.nozzle in allowed_for_experimental:
                 index_button = self._gtk.Button("circle-orange", material.name, "color1")
-                index_button.connect("clicked", self.confirm_print_experimental, material.code)
+                index_button.connect("clicked", self.confirm_set_experimental, material.code)
                 if show_experimental:
                     gridvariable.attach(index_button, repeat_three, i, 1, 1)
                     if repeat_three == 4:
@@ -173,7 +173,7 @@ class SetMaterialPanel(ScreenPanel):
                     size += 1
                     index += 1
                 index_button = self._gtk.Button("circle-white", _("Empty"), "color3")
-                index_button.connect("clicked", self.confirm_print_empty)
+                index_button.connect("clicked", self.confirm_set_empty)
                 gridvariable.attach(index_button, repeat_three, i, size, 1)
 
     def allow_custom(self, material: CustomPrinterMaterial) -> bool:
@@ -190,15 +190,15 @@ class SetMaterialPanel(ScreenPanel):
             return False
         return True
 
-    def confirm_print_default(self, widget, code):
+    def confirm_set_default(self, widget, code):
         self._screen._ws.klippy.gcode_script(Gcode.change_material(m=code, ext=self.extruder_option))
         self._screen._menu_go_back()
 
-    def confirm_print_empty(self, widget):
+    def confirm_set_empty(self, widget):
             self._screen._ws.klippy.gcode_script(Gcode.change_material(m='empty', ext=self.extruder_option))
             self._screen._menu_go_back()
 
-    def confirm_print_experimental(self, widget, code):
+    def confirm_set_experimental(self, widget, code):
         script = Gcode.change_material(m=code, ext=self.extruder_option)
         params = {"script": script}
         self._screen._confirm_send_action(
@@ -209,7 +209,7 @@ class SetMaterialPanel(ScreenPanel):
         )
         self._screen._menu_go_back()
 
-    def confirm_print_custom(self, widget):
+    def confirm_set_custom(self, widget):
         script = Gcode.change_material(m='GENERIC', ext=self.extruder_option)
         params = {"script": script}
         self._screen._confirm_send_action(
@@ -220,18 +220,7 @@ class SetMaterialPanel(ScreenPanel):
         )
         self._screen._menu_go_back()
 
-    def confirm_print_generic(self, widget):
-        script = Gcode.change_material(m='GENERIC', ext=self.extruder_option)
-        params = {"script": script}
-        self._screen._confirm_send_action(
-            None,
-            self.texts[0] + "\n\n" + self.texts[1] + "\n\n",
-            "printer.gcode.script",
-            params
-        )
-        self._screen._menu_go_back()
-
-    def load_invalid_material(self, widget=None):
+    def set_invalid_material(self, widget=None):
         message: str = _("Incompatible Material")
         self._screen.show_popup_message(message, level=3)
         return None

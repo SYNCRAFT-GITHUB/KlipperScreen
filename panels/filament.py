@@ -25,45 +25,37 @@ class FilamentPanel(ScreenPanel):
         self.load_filament = any("LOAD_FILAMENT" in macro.upper() for macro in macros)
         self.unload_filament = any("UNLOAD_FILAMENT" in macro.upper() for macro in macros)
 
-        self.speeds = ['1', '2', '5', '25']
-        self.distances = ['5', '10', '15', '25']
-
-        self.distance = int(self.distances[1])
-        self.speed = int(self.speeds[1])
+        self.distance: int = 10
+        self.speed: int = 2
 
         self.current_extruder = self.get_variable('currentextruder')
-        filament_sensors_list = self._printer.get_filament_sensors()
         self.nozzle = self.get_variable('nozzle')
 
         self.buttons = {
             'load': self._gtk.Button("arrow-up", _("Load"), "color3", Gtk.PositionType.BOTTOM, 3),
             'unload': self._gtk.Button("arrow-down", _("Unload"), "color2", Gtk.PositionType.BOTTOM, 3),
-            'material_ext0': self._gtk.Button("filament", None, "color1", .62),
-            'material_ext1': self._gtk.Button("filament", None, "color1", .62),
+            'material_ext0': self._gtk.Button("filament", None, "color1", .68),
+            'material_ext1': self._gtk.Button("filament", None, "color1", .68),
         }
 
         grid = self._gtk.HomogeneousGrid()
-        # COLUNA, LINHA, ESPAÇO COLUNA, ESPAÇO LINHA
         grid.attach(self.buttons['load'], 0, 0, 3, 3)
         grid.attach(self.buttons['unload'], 3, 0, 3, 3)
         grid.attach(self.buttons['material_ext0'], 0, 3, 1, 1)
         grid.attach(self.buttons['material_ext1'], 5, 3, 1, 1)
 
         self.buttons['unload'].connect("clicked", self.load_unload, "-")
-
         self.buttons['load'].connect("clicked", self.reset_material_panel)
         self.buttons['load'].connect("clicked", self.menu_item_clicked, "material_load", {
             "name": _("Select the Material"),
             "panel": "material_load"
         })
-
         self.buttons['material_ext0'].connect("clicked", self.reset_material_panel)
         self.buttons['material_ext0'].connect("clicked", self.replace_extruder_option, 'extruder')
         self.buttons['material_ext0'].connect("clicked", self.menu_item_clicked, "material_set", {
             "name": _("Select the Material"),
             "panel": "material_set"
         })
-
         self.buttons['material_ext1'].connect("clicked", self.reset_material_panel)
         self.buttons['material_ext1'].connect("clicked", self.replace_extruder_option, 'extruder1')
         self.buttons['material_ext1'].connect("clicked", self.menu_item_clicked, "material_set", {
@@ -76,17 +68,14 @@ class FilamentPanel(ScreenPanel):
             'extruder': 'extruder'
         }
 
-        i = 0
+        i = 1
         for extruder in self._printer.get_tools():
-            self.labels[extruder] = self._gtk.Button(f"extruder-{i+1}", None, None, .62, Gtk.PositionType.LEFT, 1)
+            self.labels[extruder] = self._gtk.Button(f"extruder-{i}", None, None, .68, Gtk.PositionType.LEFT, 1)
             self.labels[extruder].connect("clicked", self.change_extruder, extruder)
             self.labels[extruder].get_style_context().add_class("filament_sensor")
             if self.ext_feeder[extruder] != self.current_extruder:
                 self.labels[extruder].set_property("opacity", 0.3)
-            if i == 0:
-                grid.attach(self.labels[extruder], i+1, 3, 2, 1)
-            else:
-                grid.attach(self.labels[extruder], 3, 3, 2, 1)
+            grid.attach(self.labels[extruder], (i+(i/2)), 3, 2, 1)
             i += 1
 
         self.proextruders = {
@@ -111,11 +100,6 @@ class FilamentPanel(ScreenPanel):
             "name": _("Filament"),
             "panel": "filament_gear"
         })
-
-
-
-
-
 
         self.content.add(grid)
 
@@ -147,8 +131,13 @@ class FilamentPanel(ScreenPanel):
     def get_variable(self, key) -> str:
         return self._config.variables_value_reveal(key)
 
+    def process_busy(self, busy):
+            for button in self.buttons:
+                self.buttons[button].set_sensitive((not busy))
+
     def process_update(self, action, data):
         if action == "notify_busy":
+            self.process_busy(data)
             return
         if action != "notify_status_update":
             return
