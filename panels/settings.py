@@ -106,6 +106,16 @@ class SettingsPanel(ScreenPanel):
         dev.set_vexpand(False)
         dev.set_valign(Gtk.Align.CENTER)
 
+        if self._config.get_hidden_config().getboolean('welcome', True):
+            allowed_options = [
+                _("Change Screen Brightness"),
+                _("Language"),
+                _("Icon Theme"),
+                _("Font Size"),
+            ]
+            if not option['name'] in allowed_options:
+                return None
+
         dev.add(labels)
         if option['type'] == "binary":
             switch = Gtk.Switch()

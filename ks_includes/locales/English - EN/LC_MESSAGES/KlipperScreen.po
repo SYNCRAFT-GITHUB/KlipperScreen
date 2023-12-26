@@ -1340,6 +1340,9 @@ msgstr ""
 msgid "Both feeders must have materials inserted"
 msgstr ""
 
+msgid "Change material for non-active feeder"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr ""
 

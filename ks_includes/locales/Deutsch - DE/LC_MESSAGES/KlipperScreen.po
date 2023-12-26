@@ -1486,6 +1486,9 @@ msgstr "Es wird empfohlen, Materialien des gleichen Typs, jedoch mit unterschied
 msgid "Both feeders must have materials inserted"
 msgstr "Stellen Sie sicher, dass beide Zuführungen mit Materialien beladen sind"
 
+msgid "Change material for non-active feeder"
+msgstr "Material für nicht aktiven Feeder wechseln"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 

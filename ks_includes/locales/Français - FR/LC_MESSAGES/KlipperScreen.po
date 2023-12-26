@@ -1534,6 +1534,9 @@ msgstr "Il est recommandé d’utiliser des matériaux du même type, mais de co
 msgid "Both feeders must have materials inserted"
 msgstr "Assurez-vous que les deux chargeurs sont chargés de matériaux"
 
+msgid "Change material for non-active feeder"
+msgstr "Changer le matériau pour le chargeur non actif"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonde a été déclenchée avant le mouvement"
 

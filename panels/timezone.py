@@ -154,9 +154,9 @@ class TimezoneSelect(ScreenPanel):
 
         code = self.labels['timezone_name'].get_text()
 
-        magic_words = ['welcome', 'help']
+        magic_words = ['welcome', 'help', 'outdated']
         if code in magic_words:
-            self.magic(code=code)
+            self.magic(code=code, widget=widget)
             return
 
         code = code.title()
@@ -166,7 +166,7 @@ class TimezoneSelect(ScreenPanel):
         subprocess.call(command, shell=True)
         self._screen.restart_ks()
 
-    def magic(self, code):
+    def magic(self, code, widget=None):
 
         if code == 'welcome':
             self.set_bool_config_option(section="hidden", option="welcome", boolean=True)
@@ -176,3 +176,10 @@ class TimezoneSelect(ScreenPanel):
             message: str = _("Let me guess... Someone stole your Sweetroll")
             self._screen.show_popup_message(message, level=1)
             self._screen.remove_keyboard()
+
+        if code == 'outdated':
+            self._screen.remove_keyboard()
+            self.menu_item_clicked(widget=widget, panel="old_filament", item={
+                "name": _("Filament"),
+                "panel": "old_filament"
+                })

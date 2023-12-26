@@ -28,6 +28,10 @@ class KlippyGcodes:
     ADJUSTED = "ADJUSTED"
 
     @staticmethod
+    def change_material(m, ext="extruder"):
+        return f"CHANGE_MATERIAL M='{m}' EXT='{ext}'"
+
+    @staticmethod
     def load_filament(t, m, nz):
         return f"{KlippyGcodes.LOAD_FILAMENT} T={t} M='{m}' NZ='{nz}'"
 

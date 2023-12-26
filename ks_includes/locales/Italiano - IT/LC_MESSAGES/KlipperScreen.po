@@ -1478,6 +1478,9 @@ msgstr "Si consiglia di utilizzare materiali dello stesso tipo, ma con colori di
 msgid "Both feeders must have materials inserted"
 msgstr "Assicurarsi che entrambi gli alimentatori siano carichi di materiali"
 
+msgid "Change material for non-active feeder"
+msgstr "Cambia materiale per l'alimentatore non attivo"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 

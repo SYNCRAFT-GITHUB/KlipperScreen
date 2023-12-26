@@ -41,7 +41,8 @@ class KlipperScreenConfig:
         self.lang_list = None
         self.errors = []
         self.fix_option: str = "NONE"
-        self.nozzle: str = "NONE"
+        self.extruder_option: str = "NONE"
+        self.nozzle: str = self.variables_value_reveal('nozzle')
         self.show_saved_from_usb: bool = False
         self.default_config_path = os.path.join(klipperscreendir, "ks_includes", "defaults.conf")
         self.config = configparser.ConfigParser()
@@ -417,13 +418,14 @@ class KlipperScreenConfig:
         config = configparser.ConfigParser()
         pdc_path = os.path.join('/home', 'pi', 'printer_data', 'config')
         variables_path = os.path.join(pdc_path, 'variables.cfg')
+        # variables_path = '/Users/rafael/variables.cfg'
         try:
             with open(variables_path, 'r') as variab:
                 config.read_file(variab, source=variables_path)
-                return config.get('Variables', str(key).lower())
+                return str(config.get('Variables', str(key).lower())[1:-1])
         except:
-            print("Unable to read 'variables.cfg' file.")
-            return False
+            print(f"Unable to read 'variables.cfg' to get value from key '{key}'.")
+            return 'none'
 
     def exclude_from_config(self, config):
         exclude_list = ['preheat']
@@ -490,11 +492,17 @@ class KlipperScreenConfig:
     def get_fix_option (self) -> str:
         return self.fix_option
 
+    def get_extruder_option (self) -> str:
+        return self.extruder_option
+
     def get_nozzle (self) -> str:
         return self.nozzle
 
     def replace_fix_option (self, newvalue) -> str:
         self.fix_option = newvalue
+
+    def replace_extruder_option (self, newvalue) -> str:
+        self.extruder_option = newvalue
 
     def replace_nozzle (self, newvalue) -> str:
         self.nozzle = newvalue

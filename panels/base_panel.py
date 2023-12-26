@@ -230,6 +230,24 @@ class BasePanel(ScreenPanel):
             self._screen._menu_go_back()
 
     def process_update(self, action, data):
+
+        if self._config.get_main_config().getboolean('materials_on_top', True):
+            nozzle = self._config.variables_value_reveal('nozzle')
+            current_ext = self._config.variables_value_reveal('currentextruder')
+            material_ext0 = self._config.variables_value_reveal('material_ext0')
+            material_ext1 = self._config.variables_value_reveal('material_ext1')
+            if 'none' in nozzle:
+                nozzle = f" { _('Extruder')} "
+            if current_ext == False:
+                current_ext = _("Error")
+            elif '1' in current_ext:
+                current_ext = f'{_("Feeder")[0]}2'
+            else:
+                current_ext = f'{_("Feeder")[0]}1'
+            material_ext0 = _("Empty") if 'empty' in str(material_ext0) else material_ext0
+            material_ext1 = _("Empty") if 'empty' in str(material_ext1) else material_ext1
+            self._screen.base_panel.set_title(f"{current_ext} {nozzle} - {material_ext0}, {material_ext1}")
+
         if action == "notify_update_response":
             if self.update_dialog is None:
                 self.show_update_dialog()
@@ -310,47 +328,20 @@ class BasePanel(ScreenPanel):
             self.buttons_showing['printer_select'] = False
 
     def set_title(self, title):
+
         if not self._config.get_main_config().getboolean('materials_on_top', True):
-            self.titlelbl.set_label(f" ")
+            self.titlelbl.set_label(" ")
             return
-        else:
-            if not os.path.exists('/home/pi/printer_data/config/variables.cfg'):
-                self.titlelbl.set_label(f" ")
-                return
-            try:
-                nozzle = self._config.variables_value_reveal('nozzle')
-                current_ext = self._config.variables_value_reveal('currentextruder')
-                material_ext0 = self._config.variables_value_reveal('material_ext0')
-                material_ext1 = self._config.variables_value_reveal('material_ext1')
-            except:
-                nozzle = current_ext = material_ext0 = material_ext1 = '?'
-            if 'none' in nozzle:
-                nozzle = f" { _('Extruder')} "
-            if current_ext == False:
-                current_ext = _("Error")
-            elif '1' in current_ext:
-                current_ext = f'{_("Feeder")[0]}2'
-            else:
-                current_ext = f'{_("Feeder")[0]}1'
 
-            material_ext0 = _("Empty") if 'empty' in str(material_ext0) else material_ext0[1:-1]
-            material_ext1 = _("Empty") if 'empty' in str(material_ext1) else material_ext1[1:-1]
+        try:
+            env = Environment(extensions=["jinja2.ext.i18n"], autoescape=True)
+            env.install_gettext_translations(self._config.get_lang())
+            j2_temp = env.from_string(title)
+            title = j2_temp.render()
+        except Exception as e:
+            logging.debug(f"Error parsing jinja for title: {title}\n{e}")
 
-            if self._config.empty_title:
-                self.titlelbl.set_label(f"{current_ext} {nozzle[1:-1]} - {material_ext0}, {material_ext1}")
-                return
-            if not title:
-                self.titlelbl.set_label(f"{self._screen.connecting_to_printer}")
-                return
-            try:
-                env = Environment(extensions=["jinja2.ext.i18n"], autoescape=True)
-                env.install_gettext_translations(self._config.get_lang())
-                j2_temp = env.from_string(title)
-                title = j2_temp.render()
-            except Exception as e:
-                logging.debug(f"Error parsing jinja for title: {title}\n{e}")
-
-            self.titlelbl.set_label(f"{self._screen.connecting_to_printer} | {title}")
+        self.titlelbl.set_label(f"{title}")
 
     def update_time(self):
         now = datetime.now()
