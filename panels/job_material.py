@@ -46,14 +46,14 @@ class JobMaterialChange(ScreenPanel):
             'extruder': 'extruder'
         }
 
-        i = 1
-        j = 0
+        extruder_index = 0
+        position = 0
         for extruder in self._printer.get_tools():
-            self.labels[extruder] = self._gtk.Button(f"extruder-{i}", None, None, .68, Gtk.PositionType.LEFT, 1)
+            self.labels[extruder] = self._gtk.Button(f"extruder-{extruder_index+1}", None, None, .68, Gtk.PositionType.LEFT, 1)
             self.labels[extruder].get_style_context().add_class("filament_sensor")
-            grid.attach(self.labels[extruder], j, 0, 2, 1)
-            i += 1
-            j += 3
+            grid.attach(self.labels[extruder], position, 0, 2, 1)
+            extruder_index += 1
+            position += 3
 
         self.proextruders = {
             'Standard 0.25mm': 'nozzle-ST025',
@@ -63,11 +63,11 @@ class JobMaterialChange(ScreenPanel):
             'Fiber 0.6mm': 'nozzle-FIBER06',
         }
 
-        i: int = 0
+        position = 0
         for key, value in self.proextruders.items():
             self.labels[key] = self._gtk.Button(value, None, None)
-            grid.attach(self.labels[key], i, 2, 1, 1)
-            i += 1
+            grid.attach(self.labels[key], position, 2, 1, 1)
+            position += 1
 
         grid.attach(self.buttons['material_change'], 0, 3, 5, 2)
 
