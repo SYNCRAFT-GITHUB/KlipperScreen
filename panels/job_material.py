@@ -23,9 +23,6 @@ class JobMaterialChange(ScreenPanel):
 
         macros = self._printer.get_gcode_macros()
 
-        self.distance: int = 10
-        self.speed: int = 2
-
         self.current_extruder = self.get_variable('currentextruder')
         self.nozzle = self.get_variable('nozzle')
 
@@ -66,8 +63,6 @@ class JobMaterialChange(ScreenPanel):
             'Fiber 0.6mm': 'nozzle-FIBER06',
         }
 
-        # grid.attach(self._gtk.Label(_("Change material for non-active feeder")), 0, 3, 1, 1)
-
         i: int = 0
         for key, value in self.proextruders.items():
             self.labels[key] = self._gtk.Button(value, None, None)
@@ -97,20 +92,8 @@ class JobMaterialChange(ScreenPanel):
     def get_variable(self, key) -> str:
         return self._config.variables_value_reveal(key)
 
-    def process_busy(self, busy):
-        for button in self.buttons:
-            self.buttons[button].set_sensitive((not busy))
-        try:
-            for key, value in self.proextruders.items():
-                self.labels[key].set_sensitive((not busy))
-            for extruder in self._printer.get_tools():
-                self.labels[extruder].set_sensitive((not busy))
-        except:
-            pass
-
     def process_update(self, action, data):
         if action == "notify_busy":
-            self.process_busy(data)
             return
         if action != "notify_status_update":
             return
