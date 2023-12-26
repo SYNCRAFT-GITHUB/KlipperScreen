@@ -16,35 +16,25 @@ KlipperScreen is a touchscreen GUI that interfaces with [Klipper](https://github
 ## Demonstration Images
 
 ### Main Menu
-![foto1](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/757a6ca2-30aa-4c56-8d52-a0e1254c88ba)
-
+![main_menu](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/cf7625b1-30db-4f86-843b-dbc227e60ac6)
 
 ### Filament Tab
-![foto3](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/1e25f99d-a783-445e-9b37-3a970d4b0ac2)
-
-### Select Extruder
-![foto4](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/ece06ad8-6905-47c9-9567-5008e5312f04)
-
+![filament](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/f83f1ec9-4e3d-4cd4-a745-82c003ce5dbc)
+![filament_gear](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/fca0eefc-6acf-4c70-9893-7b96ab4db9a4)
 
 ### Load Filament
-![foto5](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/7a3fc444-43ac-4807-b976-fb8960038f33)
-
+![SELECT_MATERIAL](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/53aeebc2-8466-476e-8c6e-070033d7fa2a)
 
 ### Print Tab
-![foto2](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/8c8f7482-5dcf-4f80-9650-39ca7a4aa69e)
-
+![print](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/1c1bec4f-30d0-435c-b27b-7718fbe28bc7)
 
 ### Job Status
-![foto11](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/f9a077d1-bbfe-4b45-aa52-37a8b8926c38)
-
-
-### Configuration Menu
-![foto9](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/8e216054-5b7e-428c-ae1a-503dcd6e2101)
-
+![printing](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/842a9342-8022-408a-b4be-3c7718312601)
 
 ### Settings
-![foto6](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/3aecddd2-b97b-4941-a9e5-b5a3e39eef78)
+![settings](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/73ed5f05-4428-4b7e-948f-9a3bc863e178)
 
-### Multiple Themes
-![foto12](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/d4afb786-8eb2-457d-965f-7a3fc0dcecc0)
+### Themes
+![themes](https://github.com/SYNCRAFT-GITHUB/KlipperScreen/assets/110249038/d1efc4fb-62db-4054-9c03-312629d63e2e)
+
 
