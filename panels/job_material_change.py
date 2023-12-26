@@ -32,11 +32,10 @@ class JobMaterialChange(ScreenPanel):
         self.content.add(self._gtk.Label("\n\n"))
 
         self.buttons = {
-            'material_change': self._gtk.Button("filament", _("Change material for non-active feeder"), "color1", 2, Gtk.PositionType.BOTTOM),
+            'material_change': self._gtk.Button("filament", _("Change material for non-active feeder"), "color1", 1, Gtk.PositionType.BOTTOM),
         }
 
         grid = self._gtk.HomogeneousGrid()
-        grid.attach(self.buttons['material_change'], 0, 3, 5, 3)
 
         self.buttons['material_change'].connect("clicked", self.reset_material_panel)
         self.buttons['material_change'].connect("clicked", self.replace_extruder_option_with_opposite)
@@ -50,13 +49,14 @@ class JobMaterialChange(ScreenPanel):
             'extruder': 'extruder'
         }
 
-        i = 0
+        i = 1
+        j = 0
         for extruder in self._printer.get_tools():
             self.labels[extruder] = self._gtk.Button(f"extruder-{i}", None, None, .68, Gtk.PositionType.LEFT, 1)
-            self.labels[extruder].connect("clicked", self.nothing)
             self.labels[extruder].get_style_context().add_class("filament_sensor")
-            grid.attach(self.labels[extruder], i, 2, 2, 1)
-            i += 3
+            grid.attach(self.labels[extruder], j, 0, 2, 1)
+            i += 1
+            j += 3
 
         self.proextruders = {
             'Standard 0.25mm': 'nozzle-ST025',
@@ -71,9 +71,10 @@ class JobMaterialChange(ScreenPanel):
         i: int = 0
         for key, value in self.proextruders.items():
             self.labels[key] = self._gtk.Button(value, None, None)
-            self.labels[key].connect("clicked", self.nothing)
-            grid.attach(self.labels[key], i, 0, 1, 1)
+            grid.attach(self.labels[key], i, 2, 1, 1)
             i += 1
+
+        grid.attach(self.buttons['material_change'], 0, 3, 5, 2)
 
         self.content.add(grid)
 
@@ -147,6 +148,3 @@ class JobMaterialChange(ScreenPanel):
                             self.labels[extruder].get_style_context().remove_class("filament_sensor_detected")
                             self.labels[extruder].get_style_context().add_class("filament_sensor_empty")
                 logging.info(f"{x}: {self._printer.get_stat(x)}")
-
-    def nothing(self, button):
-        pass
