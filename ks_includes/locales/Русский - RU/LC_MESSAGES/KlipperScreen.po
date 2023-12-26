@@ -1526,6 +1526,9 @@ msgstr "Рекомендуется использовать материалы �
 msgid "Both feeders must have materials inserted"
 msgstr "Подтвердите наличие материалов в обоих питателях."
 
+msgid "Change material for non-active feeder"
+msgstr "Изменить материал для неактивного питателя"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

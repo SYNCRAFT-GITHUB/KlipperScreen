@@ -1487,6 +1487,9 @@ msgstr "但是，建议使用相同类型但具有不同颜色的材料，以便
 msgid "Both feeders must have materials inserted"
 msgstr "打印机必须插入两种材料"
 
+msgid "Change material for non-active feeder"
+msgstr "专门为不活动的进料器更换材料"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

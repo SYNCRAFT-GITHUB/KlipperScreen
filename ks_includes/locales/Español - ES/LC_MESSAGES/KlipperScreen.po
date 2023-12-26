@@ -1510,6 +1510,9 @@ msgstr "Se recomienda utilizar materiales del mismo tipo, pero de diferentes col
 msgid "Both feeders must have materials inserted"
 msgstr "Asegúrese de que ambos alimentadores estén cargados con materiales"
 
+msgid "Change material for non-active feeder"
+msgstr "Cambiar material para alimentador no activo"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

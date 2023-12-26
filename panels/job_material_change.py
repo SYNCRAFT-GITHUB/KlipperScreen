@@ -12,9 +12,9 @@ from ks_includes.screen_panel import ScreenPanel
 
 
 def create_panel(*args):
-    return FilamentPanel(*args)
+    return JobMaterialChange(*args)
 
-class FilamentPanel(ScreenPanel):
+class JobMaterialChange(ScreenPanel):
 
     def __init__(self, screen, title):
 
@@ -22,8 +22,6 @@ class FilamentPanel(ScreenPanel):
         self.menu = ['filament']
 
         macros = self._printer.get_gcode_macros()
-        self.load_filament = any("LOAD_FILAMENT" in macro.upper() for macro in macros)
-        self.unload_filament = any("UNLOAD_FILAMENT" in macro.upper() for macro in macros)
 
         self.distance: int = 10
         self.speed: int = 2
@@ -31,34 +29,18 @@ class FilamentPanel(ScreenPanel):
         self.current_extruder = self.get_variable('currentextruder')
         self.nozzle = self.get_variable('nozzle')
 
+        self.content.add(self._gtk.Label("\n\n"))
+
         self.buttons = {
-            'load': self._gtk.Button("arrow-up", _("Load"), "color3", Gtk.PositionType.BOTTOM, 3),
-            'unload': self._gtk.Button("arrow-down", _("Unload"), "color2", Gtk.PositionType.BOTTOM, 3),
-            'material_ext0': self._gtk.Button("filament", None, "color1", .68),
-            'material_ext1': self._gtk.Button("filament", None, "color1", .68),
+            'material_change': self._gtk.Button("filament", _("Change material for non-active feeder"), "color1", 2, Gtk.PositionType.BOTTOM),
         }
 
         grid = self._gtk.HomogeneousGrid()
-        grid.attach(self.buttons['load'], 0, 0, 3, 3)
-        grid.attach(self.buttons['unload'], 3, 0, 3, 3)
-        grid.attach(self.buttons['material_ext0'], 0, 3, 1, 1)
-        grid.attach(self.buttons['material_ext1'], 5, 3, 1, 1)
+        grid.attach(self.buttons['material_change'], 0, 3, 5, 3)
 
-        self.buttons['unload'].connect("clicked", self.load_unload, "-")
-        self.buttons['load'].connect("clicked", self.reset_material_panel)
-        self.buttons['load'].connect("clicked", self.menu_item_clicked, "material_load", {
-            "name": _("Select the Material"),
-            "panel": "material_load"
-        })
-        self.buttons['material_ext0'].connect("clicked", self.reset_material_panel)
-        self.buttons['material_ext0'].connect("clicked", self.replace_extruder_option, 'extruder')
-        self.buttons['material_ext0'].connect("clicked", self.menu_item_clicked, "material_set", {
-            "name": _("Select the Material"),
-            "panel": "material_set"
-        })
-        self.buttons['material_ext1'].connect("clicked", self.reset_material_panel)
-        self.buttons['material_ext1'].connect("clicked", self.replace_extruder_option, 'extruder1')
-        self.buttons['material_ext1'].connect("clicked", self.menu_item_clicked, "material_set", {
+        self.buttons['material_change'].connect("clicked", self.reset_material_panel)
+        self.buttons['material_change'].connect("clicked", self.replace_extruder_option_with_opposite)
+        self.buttons['material_change'].connect("clicked", self.menu_item_clicked, "material_set", {
             "name": _("Select the Material"),
             "panel": "material_set"
         })
@@ -68,15 +50,13 @@ class FilamentPanel(ScreenPanel):
             'extruder': 'extruder'
         }
 
-        i = 1
+        i = 0
         for extruder in self._printer.get_tools():
             self.labels[extruder] = self._gtk.Button(f"extruder-{i}", None, None, .68, Gtk.PositionType.LEFT, 1)
-            self.labels[extruder].connect("clicked", self.change_extruder, extruder)
+            self.labels[extruder].connect("clicked", self.nothing)
             self.labels[extruder].get_style_context().add_class("filament_sensor")
-            if self.ext_feeder[extruder] != self.current_extruder:
-                self.labels[extruder].set_property("opacity", 0.3)
-            grid.attach(self.labels[extruder], (i+(i/2)), 3, 2, 1)
-            i += 1
+            grid.attach(self.labels[extruder], i, 2, 2, 1)
+            i += 3
 
         self.proextruders = {
             'Standard 0.25mm': 'nozzle-ST025',
@@ -86,20 +66,14 @@ class FilamentPanel(ScreenPanel):
             'Fiber 0.6mm': 'nozzle-FIBER06',
         }
 
+        # grid.attach(self._gtk.Label(_("Change material for non-active feeder")), 0, 3, 1, 1)
+
         i: int = 0
         for key, value in self.proextruders.items():
             self.labels[key] = self._gtk.Button(value, None, None)
-            self.labels[key].connect("clicked", self.nozzlegcodescript, key)
-            grid.attach(self.labels[key], i, 4, 1, 1)
+            self.labels[key].connect("clicked", self.nothing)
+            grid.attach(self.labels[key], i, 0, 1, 1)
             i += 1
-
-        self.labels['settings'] = self._gtk.Button("settings", None, None)
-        grid.attach(self.labels['settings'], i, 4, 1, 1)
-
-        self.labels['settings'].connect("clicked", self.menu_item_clicked, "filament_gear", {
-            "name": _("Filament"),
-            "panel": "filament_gear"
-        })
 
         self.content.add(grid)
 
@@ -113,20 +87,11 @@ class FilamentPanel(ScreenPanel):
         except:
             pass
 
-    def replace_extruder_option(self, button, newvalue):
-        self._config.replace_extruder_option(newvalue=newvalue)
-
-    def load_unload(self, widget, direction):
-        if direction == "-":
-            if not self.unload_filament:
-                self._screen.show_popup_message("Macro UNLOAD_FILAMENT not found")
-            else:
-                self._screen._ws.klippy.gcode_script(f"UNLOAD_FILAMENT SPEED={self.speed * 60}")
-        if direction == "+":
-            if not self.load_filament:
-                self._screen.show_popup_message("Macro LOAD_FILAMENT not found")
-            else:
-                self._screen._ws.klippy.gcode_script(f"LOAD_FILAMENT SPEED={self.speed * 60}")
+    def replace_extruder_option_with_opposite(self, button):
+        if "extruder1" in self.current_extruder:
+            self._config.replace_extruder_option(newvalue="extruder")
+        else:
+            self._config.replace_extruder_option(newvalue="extruder1")
 
     def get_variable(self, key) -> str:
         return self._config.variables_value_reveal(key)
@@ -159,17 +124,14 @@ class FilamentPanel(ScreenPanel):
             if 'empty' in material:
                 material = _("Empty")
             self.labels[extruder].set_label(material)
-            if self.ext_feeder[extruder] != self.current_extruder:
-                self.labels[extruder].set_property("opacity", 0.3)
-            else:
-                self.labels[extruder].set_property("opacity", 1.0)
 
         if self.get_variable('nozzle') not in self.proextruders:
             pass
         else:
-            self.labels[self.nozzle].get_style_context().remove_class("button_active")
+            for key, value in self.proextruders.items():
+                self.labels[key].set_property("opacity", 0.3)
             self.nozzle = self.get_variable('nozzle')
-            self.labels[self.nozzle].get_style_context().add_class("button_active")
+            self.labels[self.nozzle].set_property("opacity", 1.0)
 
         for x, extruder in zip(self._printer.get_filament_sensors(), self._printer.get_tools()):
             if x in data:
@@ -186,10 +148,5 @@ class FilamentPanel(ScreenPanel):
                             self.labels[extruder].get_style_context().add_class("filament_sensor_empty")
                 logging.info(f"{x}: {self._printer.get_stat(x)}")
 
-    def change_extruder(self, widget, extruder):
-        logging.info(f"Changing extruder to {extruder}")
-        self._screen._ws.klippy.gcode_script(f"T{self._printer.get_tool_number(extruder)}")
-
-    def nozzlegcodescript(self, widget, nozzle: str):
-        self._config.replace_nozzle(newvalue=nozzle)
-        self._screen._ws.klippy.gcode_script(f"NOZZLE_SET NZ='{nozzle}'")
+    def nothing(self, button):
+        pass

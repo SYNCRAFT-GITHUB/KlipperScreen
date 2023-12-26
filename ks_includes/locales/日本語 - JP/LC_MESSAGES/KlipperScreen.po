@@ -1346,6 +1346,9 @@ msgstr "同じ種類の色違いの素材を使用することをお勧めしま
 msgid "Both feeders must have materials inserted"
 msgstr "材料が両方のフィーダーに挿入されていることを確認します。"
 
+msgid "Change material for non-active feeder"
+msgstr "非アクティブなフィーダーの材質を変更する"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 
