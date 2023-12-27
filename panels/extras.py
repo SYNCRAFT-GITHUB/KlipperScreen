@@ -26,7 +26,7 @@ class OutputPinPanel(ScreenPanel):
         self.scroll = self._gtk.ScrolledWindow()
         self.scroll.add(self.labels['devices'])
 
-        self.add_button_new(_("Hot Unload"), 'hot', 'color1', 'gcode')
+        self.add_button_new(f'{_("Hot Unload")} (°C)', 'hot', 'color1', 'gcode')
 
         self.content.add(self.scroll)
 

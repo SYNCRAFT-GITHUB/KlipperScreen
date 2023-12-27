@@ -102,15 +102,17 @@ menuitem {
 }
 
 trough {
-    background-color: rgb(40, 52, 56);
+    background-color: rgb(73, 87, 93);
     color: #e2e2e2;
     border-radius: .5em;
+    border-color: rgb(73, 87, 93);
 }
 
 trough highlight, trough progress {
     background-color: rgb(68, 110, 123);
     color: #e2e2e2;
     border-radius: .5em;
+    border-color: rgb(73, 87, 93);
 }
 
 scale-mark {
