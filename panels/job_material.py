@@ -23,9 +23,6 @@ class JobMaterialChange(ScreenPanel):
 
         macros = self._printer.get_gcode_macros()
 
-        self.distance: int = 10
-        self.speed: int = 2
-
         self.current_extruder = self.get_variable('currentextruder')
         self.nozzle = self.get_variable('nozzle')
 
@@ -49,14 +46,14 @@ class JobMaterialChange(ScreenPanel):
             'extruder': 'extruder'
         }
 
-        i = 1
-        j = 0
+        extruder_index = 0
+        position = 0
         for extruder in self._printer.get_tools():
-            self.labels[extruder] = self._gtk.Button(f"extruder-{i}", None, None, .68, Gtk.PositionType.LEFT, 1)
+            self.labels[extruder] = self._gtk.Button(f"extruder-{extruder_index+1}", None, None, .68, Gtk.PositionType.LEFT, 1)
             self.labels[extruder].get_style_context().add_class("filament_sensor")
-            grid.attach(self.labels[extruder], j, 0, 2, 1)
-            i += 1
-            j += 3
+            grid.attach(self.labels[extruder], position, 0, 2, 1)
+            extruder_index += 1
+            position += 3
 
         self.proextruders = {
             'Standard 0.25mm': 'nozzle-ST025',
@@ -66,13 +63,11 @@ class JobMaterialChange(ScreenPanel):
             'Fiber 0.6mm': 'nozzle-FIBER06',
         }
 
-        # grid.attach(self._gtk.Label(_("Change material for non-active feeder")), 0, 3, 1, 1)
-
-        i: int = 0
+        position = 0
         for key, value in self.proextruders.items():
             self.labels[key] = self._gtk.Button(value, None, None)
-            grid.attach(self.labels[key], i, 2, 1, 1)
-            i += 1
+            grid.attach(self.labels[key], position, 2, 1, 1)
+            position += 1
 
         grid.attach(self.buttons['material_change'], 0, 3, 5, 2)
 
@@ -97,20 +92,8 @@ class JobMaterialChange(ScreenPanel):
     def get_variable(self, key) -> str:
         return self._config.variables_value_reveal(key)
 
-    def process_busy(self, busy):
-        for button in self.buttons:
-            self.buttons[button].set_sensitive((not busy))
-        try:
-            for key, value in self.proextruders.items():
-                self.labels[key].set_sensitive((not busy))
-            for extruder in self._printer.get_tools():
-                self.labels[extruder].set_sensitive((not busy))
-        except:
-            pass
-
     def process_update(self, action, data):
         if action == "notify_busy":
-            self.process_busy(data)
             return
         if action != "notify_status_update":
             return

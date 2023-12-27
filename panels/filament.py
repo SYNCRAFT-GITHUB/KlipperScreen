@@ -25,7 +25,6 @@ class FilamentPanel(ScreenPanel):
         self.load_filament = any("LOAD_FILAMENT" in macro.upper() for macro in macros)
         self.unload_filament = any("UNLOAD_FILAMENT" in macro.upper() for macro in macros)
 
-        self.distance: int = 10
         self.speed: int = 2
 
         self.current_extruder = self.get_variable('currentextruder')
