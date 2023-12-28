@@ -99,14 +99,17 @@ menuitem {
 }
 
 trough {
-    background-color: #121212;
+    background-color: #202020;
     color: #e2e2e2;
+    border-radius: .5em;
+    border-color: #121212;
 }
 
 trough highlight, trough progress {
     background-color: #686868;
     color: #e2e2e2;
     border-radius: .5em;
+    border-color: #121212;
 }
 
 scale-mark {
