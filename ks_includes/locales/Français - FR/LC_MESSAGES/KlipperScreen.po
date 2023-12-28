@@ -235,6 +235,10 @@ msgstr "Connecté"
 msgid "Connecting to %s"
 msgstr "Connexion à %s"
 
+#, python-format
+msgid "Starting %s"
+msgstr "Démarrage de %s"
+
 msgid "Console"
 msgstr "Console"
 
@@ -848,6 +852,11 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] "heure"
 msgstr[1] "heures"
+
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "minute"
+msgstr[1] "minutes"
 
 msgid "minutes"
 msgstr "minutes"
@@ -1536,6 +1545,12 @@ msgstr "Assurez-vous que les deux chargeurs sont chargés de matériaux"
 
 msgid "Change material for non-active feeder"
 msgstr "Changer le matériau pour le chargeur non actif"
+
+msgid "Auto-open Extrude On Pause"
+msgstr "Ouverture automatique de l'extrusion en pause"
+
+msgid "Show Scrollbars Buttons"
+msgstr "Afficher les boutons de barre de défilement"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonde a été déclenchée avant le mouvement"

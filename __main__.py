@@ -193,7 +193,7 @@ class KlipperScreen(Gtk.Window):
             self.printers[ind][name]["moonraker_api_key"],
         )
 
-        self.printer_initializing(_("Connecting to %s") % name, remove=True)
+        self.printer_initializing(_("Starting %s") % name, remove=True)
 
         self._ws = KlippyWebsocket(self,
                                    {

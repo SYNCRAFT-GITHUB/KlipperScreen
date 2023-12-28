@@ -202,7 +202,7 @@ msgid "Cancelling"
 msgstr "Wird unterbrochen"
 
 msgid "Cannot connect to Moonraker"
-msgstr "Es kann keine Verbindung zu Moonraker hergestellt werden"
+msgstr "Verbindung zum internen System fehlgeschlagen"
 
 msgid "Channel"
 msgstr "Kanal"
@@ -234,6 +234,10 @@ msgstr "Verbunden"
 #, python-format
 msgid "Connecting to %s"
 msgstr "Verbinden zu %s"
+
+#, python-format
+msgid "Starting %s"
+msgstr "Starte %s"
 
 msgid "Console"
 msgstr "Konsole"
@@ -507,7 +511,7 @@ msgid "Modified"
 msgstr "Modifiziert"
 
 msgid "Moonraker: connected"
-msgstr "Moonraker: Verbunden"
+msgstr "Das interne System ist verbunden"
 
 msgid "Move"
 msgstr "Bewegen"
@@ -850,6 +854,11 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] "Stunde"
 msgstr[1] "Stunden"
+
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "minute"
+msgstr[1] "minuten"
 
 msgid "minutes"
 msgstr "Minuten"
@@ -1488,6 +1497,12 @@ msgstr "Stellen Sie sicher, dass beide Zuführungen mit Materialien beladen sind
 
 msgid "Change material for non-active feeder"
 msgstr "Material für nicht aktiven Feeder wechseln"
+
+msgid "Auto-open Extrude On Pause"
+msgstr "Extrusion automatisch öffnen bei Pause"
+
+msgid "Show Scrollbars Buttons"
+msgstr "Scrollbar-Buttons anzeigen"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"

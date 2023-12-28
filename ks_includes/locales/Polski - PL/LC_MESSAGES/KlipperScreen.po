@@ -203,7 +203,7 @@ msgid "Cancelling"
 msgstr "Odwoływanie trwa"
 
 msgid "Cannot connect to Moonraker"
-msgstr "Nie można połączyć się z Moonrakerem"
+msgstr "Nie można połączyć się z systemem wewnętrznym"
 
 msgid "Channel"
 msgstr "Kanał"
@@ -235,6 +235,10 @@ msgstr "Połączono"
 #, python-format
 msgid "Connecting to %s"
 msgstr "Łączenie do %s"
+
+#, python-format
+msgid "Starting %s"
+msgstr "Rozpoczęcie %s"
 
 msgid "Console"
 msgstr "Konsola"
@@ -508,7 +512,7 @@ msgid "Modified"
 msgstr "Zmodyfikowane"
 
 msgid "Moonraker: connected"
-msgstr "Moonraker: podłączony"
+msgstr "System wewnętrzny jest podłączony"
 
 msgid "Move"
 msgstr "Ruch"
@@ -852,6 +856,12 @@ msgid_plural "hours"
 msgstr[0] "godzina"
 msgstr[1] "godziny"
 msgstr[2] "godzin"
+
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "minuta"
+msgstr[1] "minuty"
+msgstr[2] "minut"
 
 msgid "minutes"
 msgstr "minut"
@@ -1471,6 +1481,12 @@ msgstr "Wyświetlaj materiały na górze"
 
 msgid "Change material for non-active feeder"
 msgstr "Zmień materiał na nieaktywny podajnik"
+
+msgid "Auto-open Extrude On Pause"
+msgstr "Automatyczne otwieranie ekstruzji w czasie pauzy"
+
+msgid "Show Scrollbars Buttons"
+msgstr "Pokaż przyciski pasków przewijania"
 
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"
