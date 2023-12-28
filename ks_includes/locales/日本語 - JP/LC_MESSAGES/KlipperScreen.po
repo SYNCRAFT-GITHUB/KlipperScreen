@@ -197,7 +197,7 @@ msgid "Cancelling"
 msgstr "キャンセル中"
 
 msgid "Cannot connect to Moonraker"
-msgstr "Moonrakerに接続できません"
+msgstr "内部システムに接続できません"
 
 msgid "Channel"
 msgstr "チャンネル"
@@ -229,6 +229,10 @@ msgstr "接続済み"
 #, python-format
 msgid "Connecting to %s"
 msgstr "%s へ接続中・・・"
+
+#, python-format
+msgid "Starting %s"
+msgstr "%s 開始中"
 
 msgid "Console"
 msgstr "コンソール"
@@ -502,7 +506,7 @@ msgid "Modified"
 msgstr "変更"
 
 msgid "Moonraker: connected"
-msgstr "Moonraker: 接続済"
+msgstr "内部システムが接続されています"
 
 msgid "Move"
 msgstr "移動"
@@ -837,7 +841,13 @@ msgstr ""
 
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
+msgstr[0] "時間"
+msgstr[1] "時間"
+
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "分"
+msgstr[1] "分"
 
 msgid "minutes"
 msgstr "分"
@@ -1348,6 +1358,12 @@ msgstr "材料が両方のフィーダーに挿入されていることを確認
 
 msgid "Change material for non-active feeder"
 msgstr "非アクティブなフィーダーの材質を変更する"
+
+msgid "Auto-open Extrude On Pause"
+msgstr "一時停止時の自動エクストルード開き"
+
+msgid "Show Scrollbars Buttons"
+msgstr "スクロールバーのボタンを表示"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"

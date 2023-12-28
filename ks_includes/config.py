@@ -24,6 +24,9 @@ SCREEN_BLANKING_OPTIONS = [
     3600,  # 1 Hour
     7200,  # 2 Hours
     14400,  # 4 Hours
+    21600,  # 6 Hours
+    28800,  # 8 Hours
+    36000,  # 10 Hours
 ]
 
 klipperscreendir = pathlib.Path(__file__).parent.resolve().parent
@@ -110,7 +113,7 @@ class KlipperScreenConfig:
         printers = sorted([i for i in self.config.sections() if i.startswith("printer ")])
 
         if len(printers) == 0:
-            printers.append("Printer Printer")
+            printers.append("Printer Syncraft X1")
 
         host_json_path = os.path.join(os.getcwd(), "ks_includes", "dev-host.json")
         if os.path.exists(host_json_path):

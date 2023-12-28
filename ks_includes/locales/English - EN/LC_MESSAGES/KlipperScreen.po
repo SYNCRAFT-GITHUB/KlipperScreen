@@ -230,6 +230,10 @@ msgstr ""
 msgid "Connecting to %s"
 msgstr ""
 
+#, python-format
+msgid "Starting %s"
+msgstr ""
+
 msgid "Console"
 msgstr ""
 
@@ -836,6 +840,11 @@ msgid_plural "hours"
 msgstr[0] ""
 msgstr[1] ""
 
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""
+
 msgid "minutes"
 msgstr ""
 
@@ -1341,6 +1350,12 @@ msgid "Both feeders must have materials inserted"
 msgstr ""
 
 msgid "Change material for non-active feeder"
+msgstr ""
+
+msgid "Auto-open Extrude On Pause"
+msgstr ""
+
+msgid "Show Scrollbars Buttons"
 msgstr ""
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
