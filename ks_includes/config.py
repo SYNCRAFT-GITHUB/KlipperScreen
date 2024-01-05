@@ -200,7 +200,6 @@ class KlipperScreenConfig:
                 return None
 
     def materials_path(self, custom: bool) -> str:
-        core_path = os.path.join('/home', 'pi', 'SyncraftCore')
         if custom:
             return os.path.join("/home", "pi", "custom.json")
         else:
@@ -208,7 +207,7 @@ class KlipperScreenConfig:
 
     def internet_connection(self) -> bool:
         try:
-            socket.create_connection(("www.google.com", 80))
+            socket.create_connection(("www.github.com", 80))
             return True
         except OSError:
             pass

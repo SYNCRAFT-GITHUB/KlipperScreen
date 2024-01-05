@@ -1,0 +1,229 @@
+* {
+    color: #e2e2e2;
+    font-family: RobotoMedium;
+}
+
+window {
+    background-color: rgb(56, 40, 53);
+}
+
+.active_device {
+    background-color: rgb(74, 56, 73);
+}
+
+button {
+    background-color: rgb(56, 40, 54);
+}
+
+button:active {
+    background-color: rgb(105, 65, 98);
+}
+
+.button_active {
+    border-color: rgb(105, 65, 102);
+    border-style: solid;
+    background-color: rgb(103, 65, 105);
+}
+
+button.color1, button.color2, button.color3, button.color4 {
+    background-color: rgb(107, 56, 103);
+    border-color: rgb(93, 49, 89);
+    border-width: .3em;
+}
+
+button.color1:active, button.color2:active, button.color3:active, button.color4:active, button.update:active, button.invalid:active, button.problem:active, button.updated:active, .dialog button:active {
+    background-color: rgb(133, 67, 129);
+}
+
+button.update {
+    color: #f321f0;
+    background-color: rgb(56, 40, 54);
+    border-color: #b31fa2;
+    border-radius: .5em;
+    border-width: .1em;
+}
+
+button.invalid {
+    color: #fb00f3;
+    background-color: #3d0736;
+    border-color: #fb00d5;
+    border-radius: .5em;
+    border-width: .1em;
+}
+
+button.problem {
+    color: #e600ff;
+    background-color: #461544;
+    border-color: #fe00f6;
+    border-radius: .5em;
+    border-width: .1em;
+}
+
+button.updated {
+    color: #00fb00;
+    background-color: #1a3a1e;
+    border-color: #00fb00;
+    border-radius: .5em;
+    border-width: .1em;
+}
+
+combobox box button {
+    background-color: rgb(84, 53, 82);
+    border-color: rgb(164, 26, 152);
+    border-radius: .5em;
+}
+
+switch {
+    background-color: rgb(74, 56, 72);
+}
+
+switch:checked {
+    background-color: rgb(123, 68, 117);
+}
+
+entry {
+    background-color: rgb(79, 54, 77);
+    border-color: rgb(56, 40, 55);
+}
+
+label {
+    color: #e2e2e2;
+}
+
+menu {
+    background-color: rgb(56, 40, 55);
+    border-color: rgb(164, 26, 139);
+}
+
+menuitem {
+    background-color: rgb(56, 40, 54);
+    border-color: rgb(155, 26, 164);
+}
+
+trough {
+    background-color: rgb(93, 73, 91);
+    color: #e2e2e2;
+    border-radius: .5em;
+    border-color: rgb(93, 73, 92);
+}
+
+trough highlight, trough progress {
+    background-color: rgb(123, 68, 119);
+    color: #e2e2e2;
+    border-radius: .5em;
+    border-color: rgb(93, 73, 91);
+}
+
+scale-mark {
+    color: #e2e2e2;
+}
+
+scrollbar, scrollbar button, scrollbar trough {
+    background-color: rgb(56, 40, 56);
+}
+
+scrollbar slider {
+    background-color: rgb(105, 65, 102);
+}
+
+textview .time {
+    color: #9e9e9e;
+}
+
+.popup {
+    background-color: #64005f;
+}
+
+.dialog {
+    border: 0;
+    background-color: rgb(56, 40, 56);
+}
+
+.dialog button {
+    background-color: rgb(84, 53, 79);
+    border-bottom-color: rgb(84, 53, 82);
+    border-radius: .75em;
+}
+
+.dialog button:nth-child(1) {
+    border-bottom-color: #562f53;
+}
+
+.dialog button:nth-child(2) {
+    border-bottom-color: #B71C1C;
+}
+
+.tempbutton_top, .tempbutton, .tempbutton_bottom, .distbutton_top, .distbutton, .distbutton_bottom  {
+    border-color: rgb(110, 90, 110);
+    border-width: .1em;
+    background-color: rgb(84, 53, 82);
+}
+
+.distbutton_active {
+    background-color: rgb(110, 90, 109);
+}
+
+.fan_slider {
+    color: #e2e2e2;
+}
+
+.message_popup {
+    border-bottom-color: #e2e2e2;
+}
+
+.message_popup_echo, .message_popup_echo button {
+    background-color: #01410d;
+}
+
+.message_popup_warning, .message_popup_warning button {
+    background-color: #EF6C00;
+}
+
+.message_popup_error, .message_popup_error button {
+    background-color: #B71C1C;
+}
+
+.message_popup_alert, .message_popup_alert button {
+    background-color: #786060;
+}
+
+.numpad_tleft, .numpad_top, .numpad_tright, .numpad_left, .numpad_button, .numpad_right, .numpad_bleft, .numpad_bottom, .numpad_bright {
+    border-color: rgb(110, 90, 108);
+    background-color: rgb(84, 53, 77);
+}
+
+.printing-status {
+    color: #e2e2e2;
+}
+
+.printing-progress-text {
+    color: #e2e2e2;
+}
+
+.printing-status-label {
+    color: #e2e2e2;
+}
+
+.message {
+    border-color: #B71C1C;
+    color: #e2e2e2;
+    background-color: #B71C1C;
+}
+
+.message button {
+    background-color: #e2e2e2;
+    color: rgb(56, 40, 55);
+}
+
+.warning {
+    background-color: #f9b274;
+}
+
+.error {
+    background-color: #CF6679;
+}
+
+.keyboard_pad {
+    border-radius: .15em;
+    background-color: rgb(79, 54, 77);
+}
