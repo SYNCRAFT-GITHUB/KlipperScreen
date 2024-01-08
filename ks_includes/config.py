@@ -65,7 +65,7 @@ class KlipperScreenConfig:
             'pt': 'Português - PT_BR',
             'ru': 'Русский - RU',
             'ko': '한국어 - KO',
-            'jp': '日本語 - JP',
+            'jp': '日本語 - JA',
             'zh_CN': '简体中文 - ZH_CN',
         }
 
@@ -200,7 +200,6 @@ class KlipperScreenConfig:
                 return None
 
     def materials_path(self, custom: bool) -> str:
-        core_path = os.path.join('/home', 'pi', 'SyncraftCore')
         if custom:
             return os.path.join("/home", "pi", "custom.json")
         else:
@@ -208,7 +207,7 @@ class KlipperScreenConfig:
 
     def internet_connection(self) -> bool:
         try:
-            socket.create_connection(("www.google.com", 80))
+            socket.create_connection(("www.github.com", 80))
             return True
         except OSError:
             pass
