@@ -65,7 +65,7 @@ class KlipperScreenConfig:
             'pt': 'Português - PT_BR',
             'ru': 'Русский - RU',
             'ko': '한국어 - KO',
-            'jp': '日本語 - JP',
+            'jp': '日本語 - JA',
             'zh_CN': '简体中文 - ZH_CN',
         }
 
