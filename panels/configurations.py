@@ -21,18 +21,17 @@ class Configurations(ScreenPanel):
         self.menu = ['configurations']
 
         class ConfigurationButton:
-            def __init__(self, button: str, panel: str, title: str, icon: str, show: bool = True):
-                self.button = button
+            def __init__(self, panel: str, title: str, icon: str, show: bool = True):
                 self.icon = icon
                 self.panel = panel
                 self.title = title
                 self.show = show
 
         self.config_buttons = [
-            ConfigurationButton(button='SYNCRAFT', panel="syncraft_panel", title=_("Syncraft"), icon='syncraft'),
-            ConfigurationButton(button='CALIBRATE', panel='zcalibrate', title=_("Calibrate"), icon='bed-level'),
-            ConfigurationButton(button='SETTINGS', panel='settings', title=_("Settings"), icon='settings'),
-            ConfigurationButton(button='POWER', panel='power', title=_("Power"), icon='shutdown')
+            ConfigurationButton(panel="syncraft_panel", title=_("Syncraft"), icon='syncraft'),
+            ConfigurationButton(panel='zcalibrate', title=_("Calibrate"), icon='bed-level'),
+            ConfigurationButton(panel='settings', title=_("Settings"), icon='settings'),
+            ConfigurationButton(panel='power', title=_("Power"), icon='shutdown')
         ]
 
         grid = self._gtk.HomogeneousGrid()

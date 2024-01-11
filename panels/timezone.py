@@ -14,8 +14,6 @@ class TimezoneSelect(ScreenPanel):
     def __init__(self, screen, title):
         super().__init__(screen, title)
 
-        self.show_custom: bool = False
-
         class Timezone:
             def __init__ (self, region: str, location: str):
                 self.region = region
@@ -24,7 +22,7 @@ class TimezoneSelect(ScreenPanel):
                 index: str = f"{self.region}/{self.location}"
                 return index
             def name (self):
-                index: str = f"{self.region[:3].upper()}. {self.location}"
+                index: str = f"{self.region[:2].upper()} {self.location}"
                 return (index.replace("_", " ")).replace("/", " ")
 
         self.timezones = [
@@ -92,7 +90,8 @@ class TimezoneSelect(ScreenPanel):
 
         for i, timezone in enumerate(self.timezones):
             name: str = timezone.name()
-            self.labels[name] = self._gtk.Button("world-web", f"{name}", f"color{1 + i % 4}")
+            name = f"{name[:13]}." if len(name) > 13 else name
+            self.labels[name] = self._gtk.Button("timezone", f"{name}", f"color{1 + i % 4}")
             self.labels[name].connect("clicked", self.apply_timezone, timezone.code())
             if self._screen.vertical_mode:
                 row = i % columns
@@ -143,7 +142,6 @@ class TimezoneSelect(ScreenPanel):
 
         self.content.add(self.labels['insert_timezone'])
         self.labels['timezone_name'].grab_focus_without_selecting()
-        self.show_custom = True
 
     def apply_timezone(self, widget, code):
         command = f"sudo timedatectl set-timezone {code}"
@@ -156,7 +154,7 @@ class TimezoneSelect(ScreenPanel):
 
         magic_words = ['welcome', 'help', 'kill']
         if code in magic_words:
-            self.magic(code=code, widget=widget)
+            self.magic(code=code)
             return
 
         code = code.title()
@@ -166,7 +164,7 @@ class TimezoneSelect(ScreenPanel):
         subprocess.call(command, shell=True)
         self._screen.restart_ks()
 
-    def magic(self, code, widget=None):
+    def magic(self, code):
 
         if code == 'welcome':
             self.set_bool_config_option(section="hidden", option="welcome", boolean=True)
