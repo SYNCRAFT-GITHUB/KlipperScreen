@@ -20,7 +20,7 @@ class SettingsPanel(ScreenPanel):
             "name": _("Change Timezone"),
             "type": "panel",
             "panel": "timezone",
-            "icon": "world-web"
+            "icon": "timezone"
         }})
         options.append({"system_info": {
             "name": _("System Information"),

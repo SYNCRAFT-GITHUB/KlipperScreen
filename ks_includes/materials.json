@@ -195,7 +195,7 @@
             "Fiber 0.6mm",
             "Metal 0.4mm"
         ],
-        "temp": 200
+        "temp": 225
     },
     {
         "name": "PLA +",
@@ -209,7 +209,7 @@
             "Fiber 0.6mm",
             "Metal 0.4mm"
         ],
-        "temp": 205
+        "temp": 230
     },
     {
         "name": "PP",
