@@ -44,23 +44,9 @@ class FilamentPanel(ScreenPanel):
         grid.attach(self.buttons['material_ext1'], 5, 3, 1, 1)
 
         self.buttons['unload'].connect("clicked", self.load_unload, "-")
-        self.buttons['load'].connect("clicked", self.reset_material_panel)
-        self.buttons['load'].connect("clicked", self.menu_item_clicked, "material_load", {
-            "name": _("Select the Material"),
-            "panel": "material_load"
-        })
-        self.buttons['material_ext0'].connect("clicked", self.reset_material_panel)
-        self.buttons['material_ext0'].connect("clicked", self.replace_extruder_option, 'extruder')
-        self.buttons['material_ext0'].connect("clicked", self.menu_item_clicked, "material_set", {
-            "name": _("Select the Material"),
-            "panel": "material_set"
-        })
-        self.buttons['material_ext1'].connect("clicked", self.reset_material_panel)
-        self.buttons['material_ext1'].connect("clicked", self.replace_extruder_option, 'extruder1')
-        self.buttons['material_ext1'].connect("clicked", self.menu_item_clicked, "material_set", {
-            "name": _("Select the Material"),
-            "panel": "material_set"
-        })
+        self.buttons['load'].connect("clicked", self.load_material)
+        self.buttons['material_ext0'].connect("clicked", self.select_material, 'extruder')
+        self.buttons['material_ext1'].connect("clicked", self.select_material, 'extruder1')
 
         self.ext_feeder = {
             'extruder_stepper extruder1': 'extruder1',
@@ -102,17 +88,7 @@ class FilamentPanel(ScreenPanel):
 
         self.content.add(grid)
 
-    def reset_material_panel(self, button):
-        try:
-            del self._screen.panels['material_load']
-        except:
-            pass
-        try:
-            del self._screen.panels['material_set']
-        except:
-            pass
-
-    def replace_extruder_option(self, button, newvalue):
+    def replace_extruder_option(self, newvalue):
         self._config.replace_extruder_option(newvalue=newvalue)
 
     def load_unload(self, widget, direction):
@@ -164,7 +140,12 @@ class FilamentPanel(ScreenPanel):
                 self.labels[extruder].set_property("opacity", 1.0)
 
         if self.get_variable('nozzle') not in self.proextruders:
-            pass
+            for key, value in self.proextruders.items():
+                try:
+                    self.labels[key].get_style_context().remove_class("button_active")
+                    break
+                except:
+                    pass
         else:
             self.labels[self.nozzle].get_style_context().remove_class("button_active")
             self.nozzle = self.get_variable('nozzle')
@@ -192,3 +173,39 @@ class FilamentPanel(ScreenPanel):
     def nozzlegcodescript(self, widget, nozzle: str):
         self._config.replace_nozzle(newvalue=nozzle)
         self._screen._ws.klippy.gcode_script(f"NOZZLE_SET NZ='{nozzle}'")
+
+    def reset_material_panel(self):
+        panels = ["material_load", "material_set"]
+        for panel in panels:
+            try:
+                del self._screen.panels[panel]
+            except:
+                pass
+
+    def load_material(self, widget):
+        self.reset_material_panel()
+        self.nozzle = self.get_variable('nozzle')
+
+        if self.nozzle not in self.proextruders:
+            print(f"self nozzle: {self.nozzle}")
+            message: str = _("Select Syncraft ProExtruder")
+            self._screen.show_popup_message(message, level=2)
+        else:
+            self.menu_item_clicked(widget=widget, panel="material_load", item={
+                "name": _("Select the Material"),
+                "panel": "material_load"
+            })
+
+    def select_material(self, widget, extruder: str):
+        self.reset_material_panel()
+        self.replace_extruder_option(newvalue=extruder)
+        self.nozzle = self.get_variable('nozzle')
+
+        if self.nozzle not in self.proextruders:
+            message: str = _("Select Syncraft ProExtruder")
+            self._screen.show_popup_message(message, level=2)
+        else:
+            self.menu_item_clicked(widget=widget, panel="material_load", item={
+                "name": _("Select the Material"),
+                "panel": "material_load"
+            })
