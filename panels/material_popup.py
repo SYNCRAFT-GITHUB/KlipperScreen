@@ -67,7 +67,6 @@ class MaterialPopUp(ScreenPanel):
         self.menu = ['material_menu']
 
         self.nozzle: str = self._config.get_nozzle()
-
         self.materials_json_path = self._config.materials_path(custom=False)
         self.custom_json_path = self._config.materials_path(custom=True)
 
@@ -215,6 +214,7 @@ class MaterialPopUp(ScreenPanel):
 
     def confirm_print_default(self, widget, code, temp: int):
         self._screen._ws.klippy.gcode_script(Gcode.load_filament(temp, code, self.nozzle))
+        self._config.replace_filament_activity(self._config.get_spool_option(), "busy")
         self._screen._menu_go_back()
 
     def confirm_print_experimental(self, widget, code, temp: int):
@@ -226,6 +226,7 @@ class MaterialPopUp(ScreenPanel):
             "printer.gcode.script",
             params
         )
+        self._config.replace_filament_activity(self._config.get_spool_option(), "busy")
         self._screen._menu_go_back()
 
     def confirm_print_custom(self, widget, temp: int):
@@ -237,6 +238,20 @@ class MaterialPopUp(ScreenPanel):
             "printer.gcode.script",
             params
         )
+        self._config.replace_filament_activity(self._config.get_spool_option(), "busy")
+        self._screen._menu_go_back()
+
+    def confirm_print_generic(self, widget):
+        generic_temp: int = 255
+        script = Gcode.load_filament(generic_temp, "GENERIC", self.nozzle)
+        params = {"script": script}
+        self._config.replace_filament_activity(self._config.get_spool_option(), "busy")
+        self._screen._confirm_send_action(
+            None,
+            self.texts[2] + "\n\n" + self.texts[3] + f": {generic_temp} (°C)\n\n",
+            "printer.gcode.script",
+            params
+        )
         self._screen._menu_go_back()
 
     def get_variable(self, key) -> str:
@@ -244,15 +259,22 @@ class MaterialPopUp(ScreenPanel):
 
     def process_update(self, action, data):
 
+        print(f"spool option: {self._config.get_spool_option()}")
+
         for x in self._printer.get_filament_sensors():
+
             if x in data:
+
+                if self._config.get_filament_activity(x) == "busy":
+                    self._screen._menu_go_back()
+                
                 if 'enabled' in data[x]:
                     self._printer.set_dev_stat(x, "enabled", data[x]['enabled'])
                 if 'filament_detected' in data[x]:
                     self._printer.set_dev_stat(x, "filament_detected", data[x]['filament_detected'])
                     if self._printer.get_stat(x, "enabled"):
                         if not data[x]['filament_detected']:
-                            self._config.replace_filament_activity(x, False)
+                            self._config.replace_filament_activity(x, "empty")
                             self._screen._menu_go_back()
 
         if self.get_variable('nozzle') not in self.proextruders:
@@ -266,18 +288,6 @@ class MaterialPopUp(ScreenPanel):
             for key, value in self.proextruders.items():
                 self.labels[key].set_property("opacity", 0.3)
             self.labels[self.nozzle].set_property("opacity", 1.0)
-
-    def confirm_print_generic(self, widget):
-        generic_temp: int = 255
-        script = Gcode.load_filament(generic_temp, "GENERIC", self.nozzle)
-        params = {"script": script}
-        self._screen._confirm_send_action(
-            None,
-            self.texts[2] + "\n\n" + self.texts[3] + f": {generic_temp} (°C)\n\n",
-            "printer.gcode.script",
-            params
-        )
-        self._screen._menu_go_back()
 
     def load_invalid_material(self, widget=None):
         message: str = _("Incompatible Material")

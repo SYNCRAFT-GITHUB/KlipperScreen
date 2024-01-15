@@ -261,14 +261,15 @@ class MainPanel(MenuPanel):
                 if 'filament_detected' in data[x]:
                     self._printer.set_dev_stat(x, "filament_detected", data[x]['filament_detected'])
                     if self._printer.get_stat(x, "enabled"):
-                        if data[x]['filament_detected'] and not self._config.get_filament_activity(x):
-                            self._config.replace_filament_activity(x, True)
+                        if data[x]['filament_detected'] and self._config.get_filament_activity(x) == "empty":
+                            self._config.replace_filament_activity(x, "loaded")
+                            self._config.replace_spool_option(x)
                             self.menu_item_clicked(widget="material_popup", panel="material_popup", item={
                                     "name": _("Select the Material"),
                                     "panel": "material_popup"
                                 })
-                        else:
-                            self._config.replace_filament_activity(x, False)
+                        elif not data[x]['filament_detected']:
+                            self._config.replace_filament_activity(x, "empty")
 
     def show_numpad(self, widget, device):
 

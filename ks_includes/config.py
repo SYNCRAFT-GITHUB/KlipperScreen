@@ -55,9 +55,10 @@ class KlipperScreenConfig:
         self.empty_title = True
         self.lang = None
         self.langs = {}
+        self.spool_option: str = "NONE"
         self.filament_activity = {
-            'filament_switch_sensor spool_one': True,
-            'filament_switch_sensor spool_two': True
+            'filament_switch_sensor spool_one': 'busy',
+            'filament_switch_sensor spool_two': 'busy'
         }
 
         self.lang_converter = {
@@ -504,8 +505,11 @@ class KlipperScreenConfig:
 
     def get_nozzle (self) -> str:
         return self.nozzle
+
+    def get_spool_option (self):
+        return self.spool_option
         
-    def get_filament_activity (self, x) -> bool:
+    def get_filament_activity (self, x) -> str:
         return self.filament_activity[x]
 
     def replace_fix_option (self, newvalue) -> str:
@@ -516,6 +520,9 @@ class KlipperScreenConfig:
 
     def replace_nozzle (self, newvalue) -> str:
         self.nozzle = newvalue
+
+    def replace_spool_option (self, newvalue) -> str:
+        self.spool_option = newvalue
 
     def replace_filament_activity (self, x, newvalue):
         self.filament_activity[x] = newvalue
