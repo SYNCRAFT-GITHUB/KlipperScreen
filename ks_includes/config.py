@@ -55,6 +55,11 @@ class KlipperScreenConfig:
         self.empty_title = True
         self.lang = None
         self.langs = {}
+        self.filament_activity = {
+            'filament_switch_sensor spool_one': True,
+            'filament_switch_sensor spool_two': True
+        }
+
         self.lang_converter = {
             'en': 'English - EN',
             'de': 'Deutsch - DE',
@@ -499,6 +504,9 @@ class KlipperScreenConfig:
 
     def get_nozzle (self) -> str:
         return self.nozzle
+        
+    def get_filament_activity (self, x) -> bool:
+        return self.filament_activity[x]
 
     def replace_fix_option (self, newvalue) -> str:
         self.fix_option = newvalue
@@ -508,6 +516,9 @@ class KlipperScreenConfig:
 
     def replace_nozzle (self, newvalue) -> str:
         self.nozzle = newvalue
+
+    def replace_filament_activity (self, x, newvalue):
+        self.filament_activity[x] = newvalue
 
     def toggle_show_saved_from_usb (self, value):
         self.show_saved_from_usb = value

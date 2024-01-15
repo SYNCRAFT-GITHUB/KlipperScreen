@@ -243,6 +243,7 @@ class MainPanel(MenuPanel):
         self.grid.show_all()
 
     def process_update(self, action, data):
+
         if action != "notify_status_update":
             return
         for x in (self._printer.get_tools() + self._printer.get_heaters()):
@@ -252,6 +253,22 @@ class MainPanel(MenuPanel):
                 self._printer.get_dev_stat(x, "target"),
                 self._printer.get_dev_stat(x, "power"),
             )
+
+        for x in self._printer.get_filament_sensors():
+            if x in data:
+                if 'enabled' in data[x]:
+                    self._printer.set_dev_stat(x, "enabled", data[x]['enabled'])
+                if 'filament_detected' in data[x]:
+                    self._printer.set_dev_stat(x, "filament_detected", data[x]['filament_detected'])
+                    if self._printer.get_stat(x, "enabled"):
+                        if data[x]['filament_detected'] and not self._config.get_filament_activity(x):
+                            self._config.replace_filament_activity(x, True)
+                            self.menu_item_clicked(widget="material_popup", panel="material_popup", item={
+                                    "name": _("Select the Material"),
+                                    "panel": "material_popup"
+                                })
+                        else:
+                            self._config.replace_filament_activity(x, False)
 
     def show_numpad(self, widget, device):
 

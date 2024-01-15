@@ -53,6 +53,7 @@ PRINTER_BASE_STATUS_OBJECTS = [
 klipperscreendir = pathlib.Path(__file__).parent.resolve()
 
 
+
 def state_execute(callback):
     callback()
 
@@ -112,6 +113,11 @@ class KlipperScreen(Gtk.Window):
         self.vertical_mode = self.aspect_ratio < 1.0
         logging.info(f"Screen resolution: {self.width}x{self.height}")
         self.theme = self._config.get_main_config().get('theme')
+        self.theme_converter = {
+            'material_darker': 'Industrial', 'material_dark': 'Neon', 'colorized': 'Colorful'
+        }
+        if self.theme in self.theme_converter:
+            self.theme = self.theme_converter[self.theme]
         self.show_cursor = self._config.get_main_config().getboolean("show_cursor", fallback=False)
         self.gtk = KlippyGtk(self)
         self.init_style()
@@ -363,7 +369,7 @@ class KlipperScreen(Gtk.Window):
 
         return False
 
-    def close_popup_message(self, widget=None):
+    def close_popup_message(self, widget=None, *args):
         if self.popup_message is None:
             return
         self.popup_message.popdown()
@@ -758,6 +764,7 @@ class KlipperScreen(Gtk.Window):
         self.process_update(action, data)
 
     def process_update(self, *args):
+
         GLib.idle_add(self.base_panel.process_update, *args)
         for x in self.subscriptions:
             GLib.idle_add(self.panels[x].process_update, *args)
