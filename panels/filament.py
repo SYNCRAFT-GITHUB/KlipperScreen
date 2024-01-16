@@ -205,7 +205,7 @@ class FilamentPanel(ScreenPanel):
             message: str = _("Select Syncraft ProExtruder")
             self._screen.show_popup_message(message, level=2)
         else:
-            self.menu_item_clicked(widget=widget, panel="material_load", item={
+            self.menu_item_clicked(widget=widget, panel="material_set", item={
                 "name": _("Select the Material"),
-                "panel": "material_load"
+                "panel": "material_set"
             })

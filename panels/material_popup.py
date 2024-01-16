@@ -200,7 +200,7 @@ class MaterialPopUp(ScreenPanel):
                 index_button = self._gtk.Button("circle-orange", material.name, "color1")
                 index_button.connect("clicked", self.confirm_set_experimental, material.code)
                 if show_experimental:
-                    gridvariable.attach(index_button, repeat_three, i, 1, 1)c
+                    gridvariable.attach(index_button, repeat_three, i, 1, 1)
                     if repeat_three == 4:
                         repeat_three = 0
                         i += 1
