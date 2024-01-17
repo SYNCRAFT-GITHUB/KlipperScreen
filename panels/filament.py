@@ -131,8 +131,10 @@ class FilamentPanel(ScreenPanel):
                 material = self.get_variable('material_ext1')
             else:
                 material = self.get_variable('material_ext0')
-            if 'empty' in material:
+            if 'empty' in material.lower():
                 material = _("Empty")
+            if 'generic' in material.lower():
+                material = _("Generic")
             self.labels[extruder].set_label(material)
             if self.ext_feeder[extruder] != self.current_extruder:
                 self.labels[extruder].set_property("opacity", 0.3)

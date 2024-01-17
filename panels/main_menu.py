@@ -262,8 +262,18 @@ class MainPanel(MenuPanel):
                     self._printer.set_dev_stat(x, "filament_detected", data[x]['filament_detected'])
                     if self._printer.get_stat(x, "enabled"):
                         if data[x]['filament_detected'] and self._config.get_filament_activity(x) == "empty":
+                            panels = ["material_load", "material_set", "material_popup"]
+                            for panel in panels:
+                                try:
+                                    del self._screen.panels[panel]
+                                except:
+                                    pass
                             self._config.replace_filament_activity(x, "loaded")
                             self._config.replace_spool_option(x)
+                            if 'two' in str(x):
+                                self._config.replace_extruder_option(newvalue='extruder1')
+                            else:
+                                self._config.replace_extruder_option(newvalue='extruder')
                             self.menu_item_clicked(widget="material_popup", panel="material_popup", item={
                                     "name": _("Select the Material"),
                                     "panel": "material_popup"

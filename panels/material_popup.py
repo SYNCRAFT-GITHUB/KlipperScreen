@@ -67,7 +67,6 @@ class MaterialPopUp(ScreenPanel):
         self.menu = ['material_set_menu_popup']
 
         self.current_extruder = self._config.variables_value_reveal('currentextruder')
-        self.extruder_option = self._config.get_extruder_option()
         self.nozzle: str = self._config.get_nozzle()
 
         self.materials_json_path = self._config.materials_path(custom=False)
@@ -235,17 +234,17 @@ class MaterialPopUp(ScreenPanel):
         return True
 
     def confirm_set_default(self, widget, code):
-        self._screen._ws.klippy.gcode_script(Gcode.change_material(m=code, ext=self.extruder_option))
+        self._screen._ws.klippy.gcode_script(Gcode.change_material(m=code, ext=self._config.get_extruder_option()))
         self._config.replace_filament_activity(self._config.get_spool_option(), "busy")
         self._screen._menu_go_back()
 
     def confirm_set_empty(self, widget):
-        self._screen._ws.klippy.gcode_script(Gcode.change_material(m='empty', ext=self.extruder_option))
+        self._screen._ws.klippy.gcode_script(Gcode.change_material(m='empty', ext=self._config.get_extruder_option()))
         self._config.replace_filament_activity(self._config.get_spool_option(), "busy")
         self._screen._menu_go_back()
 
     def confirm_set_experimental(self, widget, code):
-        script = Gcode.change_material(m=code, ext=self.extruder_option)
+        script = Gcode.change_material(m=code, ext=self._config.get_extruder_option())
         params = {"script": script}
         self._screen._confirm_send_action(
             None,
@@ -257,7 +256,7 @@ class MaterialPopUp(ScreenPanel):
         self._screen._menu_go_back()
 
     def confirm_set_custom(self, widget):
-        script = Gcode.change_material(m='GENERIC', ext=self.extruder_option)
+        script = Gcode.change_material(m='GENERIC', ext=self._config.get_extruder_option())
         params = {"script": script}
         self._screen._confirm_send_action(
             None,
