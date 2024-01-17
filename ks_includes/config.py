@@ -57,8 +57,8 @@ class KlipperScreenConfig:
         self.langs = {}
         self.spool_option: str = "NONE"
         self.filament_activity = {
-            'filament_switch_sensor spool_one': 'busy',
-            'filament_switch_sensor spool_two': 'busy'
+            'filament_switch_sensor spool_one': 'entry',
+            'filament_switch_sensor spool_two': 'entry'
         }
 
         self.lang_converter = {

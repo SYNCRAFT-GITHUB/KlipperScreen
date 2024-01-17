@@ -120,7 +120,7 @@ class MaterialPopUp(ScreenPanel):
                 if 'filament_detected' in data[x]:
                     self._printer.set_dev_stat(x, "filament_detected", data[x]['filament_detected'])
                     if self._printer.get_stat(x, "enabled"):
-                        if not data[x]['filament_detected']:
+                        if not data[x]['filament_detected'] and x == self._config.get_spool_option():
                             self._config.replace_filament_activity(x, "empty")
                             self._screen._menu_go_back()
 
