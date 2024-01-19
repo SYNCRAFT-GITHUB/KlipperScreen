@@ -83,25 +83,13 @@ class ChMaterialPanel(ScreenPanel):
             _("Extrusion Temperature for the Material")
             ]
 
-        grid = self._gtk.HomogeneousGrid()
-
-        self.gridattach(gridvariable=grid)
-
-        self.labels['material_menu'] = self._gtk.HomogeneousGrid()
-        self.labels['material_menu'].attach(grid, 0, 0, 1, 3)
-
-        self.content.remove(self.labels['material_menu'])
-        self.content.add(self.labels['material_menu'])
-
-        self.storegrid = grid
-
-        current_extruder = self.get_variable('currentextruder')
+        current_extruder = self._config.variables_value_reveal("currentextruder")
         material = None
 
         if current_extruder == "extruder": # Equals the First Extruder
-            material = self.get_variable('material_ext0')
+            material = self._config.variables_value_reveal("material_ext0")
         else:
-            material = self.get_variable('material_ext1')
+            material = self._config.variables_value_reveal("material_ext1")
 
         if not "empty" in material.lower():
             try:
@@ -109,11 +97,17 @@ class ChMaterialPanel(ScreenPanel):
             except:
                 self.materials = []
             for m in self.materials:
-                if m.name == self.material:
+                if m.code == material:
                     self._screen._ws.klippy.gcode_script(Gcode.load_filament(m.temp, m.code, self.nozzle))
-                    self._screen._menu_go_back()
-
-        
+                    self._screen.reload_panels()
+        else:
+            grid = self._gtk.HomogeneousGrid()
+            self.gridattach(gridvariable=grid)
+            self.labels['material_menu'] = self._gtk.HomogeneousGrid()
+            self.labels['material_menu'].attach(grid, 0, 0, 1, 3)
+            self.content.remove(self.labels['material_menu'])
+            self.content.add(self.labels['material_menu'])
+            self.storegrid = grid    
 
     def gridattach(self, gridvariable):
 
