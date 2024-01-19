@@ -94,6 +94,25 @@ class ChMaterialPanel(ScreenPanel):
         self.content.add(self.labels['material_menu'])
 
         self.storegrid = grid
+
+        current_extruder = self.get_variable('currentextruder')
+        material = None
+
+        if current_extruder == "extruder": # Equals the First Extruder
+            material = self.get_variable('material_ext0')
+        else:
+            material = self.get_variable('material_ext1')
+
+        if not "empty" in material.lower():
+            try:
+                iter(self.materials)
+            except:
+                self.materials = []
+            for m in self.materials:
+                if m.name == self.material:
+                    self._screen._ws.klippy.gcode_script(Gcode.load_filament(m.temp, m.code, self.nozzle))
+                    self._screen._menu_go_back()
+
         
 
     def gridattach(self, gridvariable):

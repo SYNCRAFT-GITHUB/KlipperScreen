@@ -123,7 +123,7 @@ class FilamentPanel(ScreenPanel):
             return
         if action != "notify_status_update":
             return
-
+    
         self.current_extruder = self.get_variable('currentextruder')
 
         for extruder in self._printer.get_tools():
@@ -160,7 +160,21 @@ class FilamentPanel(ScreenPanel):
                 if 'filament_detected' in data[x]:
                     self._printer.set_dev_stat(x, "filament_detected", data[x]['filament_detected'])
                     if self._printer.get_stat(x, "enabled"):
-                        if data[x]['filament_detected']:
+                        if data[x]['filament_detected'] and self._config.get_filament_activity(x) == "empty":
+                            self.labels[extruder].get_style_context().remove_class("filament_sensor_empty")
+                            self.labels[extruder].get_style_context().add_class("filament_sensor_detected")
+                            self._screen.delete_temporary_panels()
+                            self._config.replace_filament_activity(x, "loaded")
+                            self._config.replace_spool_option(x)
+                            if 'two' in str(x):
+                                self._config.replace_extruder_option(newvalue='extruder1')
+                            else:
+                                self._config.replace_extruder_option(newvalue='extruder')
+                            self.menu_item_clicked(widget="material_popup", panel="material_popup", item={
+                                    "name": _("Select the Material"),
+                                    "panel": "material_popup"
+                                })
+                        elif data[x]['filament_detected']:
                             self.labels[extruder].get_style_context().remove_class("filament_sensor_empty")
                             self.labels[extruder].get_style_context().add_class("filament_sensor_detected")
                         else:
@@ -176,16 +190,8 @@ class FilamentPanel(ScreenPanel):
         self._config.replace_nozzle(newvalue=nozzle)
         self._screen._ws.klippy.gcode_script(f"NOZZLE_SET NZ='{nozzle}'")
 
-    def reset_material_panel(self):
-        panels = ["material_load", "material_set"]
-        for panel in panels:
-            try:
-                del self._screen.panels[panel]
-            except:
-                pass
-
     def load_material(self, widget):
-        self.reset_material_panel()
+        self._screen.delete_temporary_panels()
         self.nozzle = self.get_variable('nozzle')
 
         if self.nozzle not in self.proextruders:
@@ -199,7 +205,7 @@ class FilamentPanel(ScreenPanel):
             })
 
     def select_material(self, widget, extruder: str):
-        self.reset_material_panel()
+        self._screen.delete_temporary_panels()
         self.replace_extruder_option(newvalue=extruder)
         self.nozzle = self.get_variable('nozzle')
 

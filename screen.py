@@ -375,6 +375,14 @@ class KlipperScreen(Gtk.Window):
         self.popup_message.popdown()
         self.popup_message = None
 
+    def delete_temporary_panels(self):
+        temp = ["material_load", "material_set", "material_popup"]
+        for panel in temp:
+            try:
+                del self.panels[panel]
+            except:
+                pass
+
     def show_error_modal(self, err, e=""):
         logging.error(f"Showing error modal: {err} {e}")
 

@@ -68,16 +68,8 @@ class JobMaterialChange(ScreenPanel):
 
         self.content.add(grid)
 
-    def reset_material_panel(self):
-        panels = ["material_load", "material_set"]
-        for panel in panels:
-            try:
-                del self._screen.panels[panel]
-            except:
-                pass
-
     def set_material(self, button):
-        self.reset_material_panel()
+        self._screen.delete_temporary_panels()
         if "extruder1" in self.current_extruder:
             self._config.replace_extruder_option(newvalue="extruder")
         else:
