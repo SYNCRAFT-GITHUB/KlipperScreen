@@ -259,6 +259,7 @@ class MainPanel(MenuPanel):
             if self._config.detected_in_filament_activity() and ((time.time() - self.start_time) > 1.0):
                 self._screen.delete_temporary_panels()
                 self.start_time = time.time()
+                self._config.replace_filament_activity(x, "busy")
                 self.menu_item_clicked(widget="material_popup", panel="material_popup", item={
                                     "name": _("Select the Material"),
                                     "panel": "material_popup"
