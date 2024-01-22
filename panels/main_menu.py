@@ -27,7 +27,6 @@ class MainPanel(MenuPanel):
         self.grid = self._gtk.HomogeneousGrid()
         self.grid.set_hexpand(True)
         self.grid.set_vexpand(True)
-        self.start_time = time.time()
 
     def initialize(self, items):
         logging.info("### Making MainMenu")
@@ -257,31 +256,27 @@ class MainPanel(MenuPanel):
             )
 
         for x in self._printer.get_filament_sensors():
+            if self._config.detected_in_filament_activity() and ((time.time() - self.start_time) > 1.0):
+                self._screen.delete_temporary_panels()
+                self.start_time = time.time()
+                self.menu_item_clicked(widget="material_popup", panel="material_popup", item={
+                                    "name": _("Select the Material"),
+                                    "panel": "material_popup"
+                                })
             if x in data:
                 if 'enabled' in data[x]:
                     self._printer.set_dev_stat(x, "enabled", data[x]['enabled'])
                 if 'filament_detected' in data[x]:
                     self._printer.set_dev_stat(x, "filament_detected", data[x]['filament_detected'])
                     if self._printer.get_stat(x, "enabled"):
-                        if data[x]['filament_detected'] and self._config.get_filament_activity(x) == "empty":
+                        if self._config.get_filament_activity(x) == "empty" and data[x]['filament_detected']:
                             self.start_time = time.time()
                             self._config.replace_filament_activity(x, "detected")
-                            print("primeiro if !")
-                        if data[x]['filament_detected'] and self._config.get_filament_activity(x) == "detected" \
-                            and ((time.time() - self.start_time) > 1):
-                            print("segundo if !")
-                            self.start_time = time.time()
-                            self._screen.delete_temporary_panels()
-                            self._config.replace_filament_activity(x, "loaded")
                             self._config.replace_spool_option(x)
                             if 'two' in str(x):
                                 self._config.replace_extruder_option(newvalue='extruder1')
                             else:
                                 self._config.replace_extruder_option(newvalue='extruder')
-                            self.menu_item_clicked(widget="material_popup", panel="material_popup", item={
-                                    "name": _("Select the Material"),
-                                    "panel": "material_popup"
-                                })
                         elif not data[x]['filament_detected']:
                             self._config.replace_filament_activity(x, "empty")
 

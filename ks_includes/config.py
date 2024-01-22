@@ -512,6 +512,12 @@ class KlipperScreenConfig:
     def get_filament_activity (self, x) -> str:
         return self.filament_activity[x]
 
+    def detected_in_filament_activity (self) -> bool:
+        for sensor, status in self.filament_activity.items():
+            if status == 'detected':
+                return True
+        return False
+        
     def replace_fix_option (self, newvalue) -> str:
         self.fix_option = newvalue
 

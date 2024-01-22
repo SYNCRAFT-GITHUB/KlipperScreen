@@ -163,17 +163,6 @@ class FilamentPanel(ScreenPanel):
                         if data[x]['filament_detected'] and self._config.get_filament_activity(x) == "empty":
                             self.labels[extruder].get_style_context().remove_class("filament_sensor_empty")
                             self.labels[extruder].get_style_context().add_class("filament_sensor_detected")
-                            self._screen.delete_temporary_panels()
-                            self._config.replace_filament_activity(x, "loaded")
-                            self._config.replace_spool_option(x)
-                            if 'two' in str(x):
-                                self._config.replace_extruder_option(newvalue='extruder1')
-                            else:
-                                self._config.replace_extruder_option(newvalue='extruder')
-                            self.menu_item_clicked(widget="material_popup", panel="material_popup", item={
-                                    "name": _("Select the Material"),
-                                    "panel": "material_popup"
-                                })
                         elif data[x]['filament_detected']:
                             self.labels[extruder].get_style_context().remove_class("filament_sensor_empty")
                             self.labels[extruder].get_style_context().add_class("filament_sensor_detected")
