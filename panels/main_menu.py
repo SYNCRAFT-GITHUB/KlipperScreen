@@ -5,6 +5,7 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, GLib
 from panels.menu import MenuPanel
+import time
 
 from ks_includes.widgets.heatergraph import HeaterGraph
 from ks_includes.widgets.keypad import Keypad
@@ -26,6 +27,7 @@ class MainPanel(MenuPanel):
         self.grid = self._gtk.HomogeneousGrid()
         self.grid.set_hexpand(True)
         self.grid.set_vexpand(True)
+        self.start_time = time.time()
 
     def initialize(self, items):
         logging.info("### Making MainMenu")
@@ -202,7 +204,7 @@ class MainPanel(MenuPanel):
             self._screen.show_popup_message(_("Unknown Heater") + " " + self.active_heater)
         self._printer.set_dev_stat(self.active_heater, "target", temp)
 
-    def  create_left_panel(self):
+    def create_left_panel(self):
 
         self.labels['devices'] = Gtk.Grid()
         self.labels['devices'].get_style_context().add_class('heater-grid')
@@ -262,6 +264,13 @@ class MainPanel(MenuPanel):
                     self._printer.set_dev_stat(x, "filament_detected", data[x]['filament_detected'])
                     if self._printer.get_stat(x, "enabled"):
                         if data[x]['filament_detected'] and self._config.get_filament_activity(x) == "empty":
+                            self.start_time = time.time()
+                            self._config.replace_filament_activity(x, "detected")
+                            print("primeiro if !")
+                        if data[x]['filament_detected'] and self._config.get_filament_activity(x) == "detected" \
+                            and ((time.time() - self.start_time) > 1):
+                            print("segundo if !")
+                            self.start_time = time.time()
                             self._screen.delete_temporary_panels()
                             self._config.replace_filament_activity(x, "loaded")
                             self._config.replace_spool_option(x)
