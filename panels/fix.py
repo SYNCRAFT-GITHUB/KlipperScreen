@@ -23,6 +23,7 @@ class FixPanel(ScreenPanel):
         self.buttons = {
             'FIX_FILES': self._gtk.Button("file", _("Essential Files"), f"color{random.randint(1, 4)}"),
             'FIX_FILES_BOWDEN': self._gtk.Button("file", f'{_("Essential Files")} (BOWDEN)', f"color{random.randint(1, 4)}"),
+            'FIX_FILES_FEEDER': self._gtk.Button("file", f'{_("Essential Files")} (FEEDER)', f"color{random.randint(1, 4)}"),
             'CLEAN_GCODE': self._gtk.Button("clean", _("Clear GCodes Folder"), f"color{random.randint(1, 4)}"),
             'FIX_CAMERA': self._gtk.Button("camera", _("Camera Driver"), f"color{random.randint(1, 4)}"),
             'FIX_KLIPPERSCREEN': self._gtk.Button("screen", _("KlipperScreen"), f"color{random.randint(1, 4)}"),
@@ -46,6 +47,12 @@ class FixPanel(ScreenPanel):
 
         self.buttons['FIX_FILES_BOWDEN'].connect("clicked", self.set_fix_option_to, "FILES_BOWDEN")
         self.buttons['FIX_FILES_BOWDEN'].connect("clicked", self.menu_item_clicked, "fix_steps", {
+            "name": _("Fix"),
+            "panel": "fix_steps"
+        })
+
+        self.buttons['FIX_FILES_FEEDER'].connect("clicked", self.set_fix_option_to, "FILES_FEEDER")
+        self.buttons['FIX_FILES_FEEDER'].connect("clicked", self.menu_item_clicked, "fix_steps", {
             "name": _("Fix"),
             "panel": "fix_steps"
         })
@@ -86,13 +93,16 @@ class FixPanel(ScreenPanel):
 
         grid = self._gtk.HomogeneousGrid()
 
+        # 0, 2, 2, 1
+
         grid.attach(self.buttons['FIX_FILES'], 0, 0, 2, 1)
         grid.attach(self.buttons['FIX_FILES_BOWDEN'], 2, 0, 2, 1)
-        grid.attach(self.buttons['FIX_CAMERA'], 0, 3, 2, 1)
+        grid.attach(self.buttons['FIX_FILES_FEEDER'], 0, 2, 2, 1)
+        grid.attach(self.buttons['FIX_CAMERA'], 0, 3, 1, 1)
         grid.attach(self.buttons['FIX_KLIPPERSCREEN'], 2, 2, 1, 1)
         grid.attach(self.buttons['FIX_MAINSAIL'], 3, 2, 1, 1)
         grid.attach(self.buttons['FIX_LED'], 2, 3, 2, 1)
-        grid.attach(self.buttons['FIX_MOONRAKER'], 0, 2, 2, 1)
+        grid.attach(self.buttons['FIX_MOONRAKER'], 1, 3, 1, 1)
 
         self.labels['fix_panel'] = self._gtk.HomogeneousGrid()
         self.labels['fix_panel'].attach(grid, 0, 0, 2, 2)
