@@ -1358,6 +1358,9 @@ msgstr ""
 msgid "Show Scrollbars Buttons"
 msgstr ""
 
+msgid "Material Selection appears when inserting filament"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

@@ -91,7 +91,7 @@ class ChMaterialPanel(ScreenPanel):
         else:
             material = self._config.variables_value_reveal("material_ext1")
 
-        if not "empty" in material.lower():
+        if self._config.get_main_config().getboolean('auto_select_material', False) and not "empty" in material.lower():
             try:
                 iter(self.materials)
             except:

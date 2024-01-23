@@ -257,13 +257,14 @@ class MainPanel(MenuPanel):
 
         for x in self._printer.get_filament_sensors():
             if self._config.detected_in_filament_activity() and ((time.time() - self.start_time) > 1.0):
-                self._screen.delete_temporary_panels()
-                self.start_time = time.time()
                 self._config.replace_filament_activity(None, "busy", replace="detected")
-                self.menu_item_clicked(widget="material_popup", panel="material_popup", item={
-                                    "name": _("Select the Material"),
-                                    "panel": "material_popup"
-                                })
+                if self._config.get_main_config().getboolean('auto_select_material', False):
+                    self._screen.delete_temporary_panels()
+                    self.start_time = time.time()
+                    self.menu_item_clicked(widget="material_popup", panel="material_popup", item={
+                                        "name": _("Select the Material"),
+                                        "panel": "material_popup"
+                                    })
             if x in data:
                 if 'enabled' in data[x]:
                     self._printer.set_dev_stat(x, "enabled", data[x]['enabled'])

@@ -228,7 +228,7 @@ class KlipperScreenConfig:
             bools = strs = numbers = ()
             if section == 'main':
                 bools = (
-                    'invert_x', 'invert_y', 'invert_z', '24htime', 'only_heaters', 'show_cursor', 'confirm_estop',
+                    'invert_x', 'invert_y', 'invert_z', '24htime', 'only_heaters', 'show_cursor', 'confirm_estop', 'auto_select_material',
                     'autoclose_popups', 'use_dpms', 'use_default_menu', 'show_saved_from_usb', 'side_brightness_shortcut',
                     'use-matchbox-keyboard', 'show_heater_power', 'show_experimental_material', 'materials_on_top',
                 )
@@ -340,6 +340,8 @@ class KlipperScreenConfig:
                     {"name": _("Large"), "value": "large"},
                     {"name": _("Extra Large"), "value": "extralarge"}]}},
             {"confirm_estop": {"section": "main", "name": _("Confirm Emergency Stop"), "type": "binary",
+                               "value": "True"}},
+            {"auto_select_material": {"section": "main", "name": _("Material Selection appears when inserting filament"), "type": "binary",
                                "value": "True"}},
             {"only_heaters": {"section": "main", "name": _("Hide sensors in Temp."), "type": "binary",
                               "value": "False", "callback": screen.reload_panels}},
