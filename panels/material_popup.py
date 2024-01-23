@@ -127,12 +127,12 @@ class MaterialPopUp(ScreenPanel):
             self.generic_button.set_label(_("Select Syncraft ProExtruder"))
             for key, value in self.proextruders.items():
                 try:
-                    self.labels[key].set_property("opacity", 0.3)
+                    self.labels[key].set_property("opacity", 0.2)
                 except:
                     pass
         else:
             for key, value in self.proextruders.items():
-                self.labels[key].set_property("opacity", 0.3)
+                self.labels[key].set_property("opacity", 0.2)
             self.labels[self.nozzle].set_property("opacity", 1.0)
         
 
