@@ -51,13 +51,10 @@ class ZCalibratePanel(ScreenPanel):
         functions = []
         pobox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         space: str = '   '
-        if self._printer.config_section_exists("stepper_z") \
-                and not self._printer.get_config_section("stepper_z")['endstop_pin'].startswith("probe"):
-            self._add_button(f'1: {_("Calibrate")} Endstop{space}', "endstop", pobox)
-            functions.append("endstop")
-        self._add_button(f'{space}2: {_("Screws Adjust")}{space}', "screws", pobox)
+        self._add_button(f'1: {_("Screws Adjust")}{space}', "screws", pobox)
+        functions.append("screws")
         if self.probe:
-            self._add_button(f'{space}3: {_("Calibrate")} Probe', "probe", pobox)
+            self._add_button(f'{space}2: {_("Calibrate")} Probe', "probe", pobox)
             functions.append("probe")
         if self._printer.config_section_exists("bed_mesh") and "probe" not in functions:
             # This is used to do a manual bed mesh if there is no probe
@@ -141,8 +138,6 @@ class ZCalibratePanel(ScreenPanel):
             self._screen._ws.klippy.gcode_script("DELTA_CALIBRATE")
         elif method == "delta_manual":
             self._screen._ws.klippy.gcode_script("DELTA_CALIBRATE METHOD=manual")
-        elif method == "endstop":
-            self._screen._ws.klippy.gcode_script(KlippyGcodes.Z_ENDSTOP_CALIBRATE)
         elif method == "screws":
             self.screws_method()
 

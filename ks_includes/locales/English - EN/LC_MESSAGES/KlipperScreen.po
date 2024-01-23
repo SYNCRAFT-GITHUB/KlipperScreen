@@ -1358,18 +1358,21 @@ msgstr ""
 msgid "Show Scrollbars Buttons"
 msgstr ""
 
-msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
+msgid "Select Material when inserting filament"
 msgstr ""
+
+msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
+msgstr "The ProExtruder must not be pressed"
 
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
-msgstr ""
+msgstr "It is already in Manual Probe (Z Axis)"
 
 msgid "ENDSTOP X STILL TRIGGERED AFTER RETRACT"
-msgstr ""
+msgstr "Endstop (X Axis) remains activated after retracting"
 
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
-msgstr ""
+msgstr "The ProExtruder must be pressed against the table"
 
 msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
-msgstr ""
+msgstr "Table incorrectly calibrated or dirty"
 

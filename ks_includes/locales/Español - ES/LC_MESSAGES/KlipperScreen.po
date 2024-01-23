@@ -112,7 +112,7 @@ msgid "Camera Driver"
 msgstr "Controlador de cámara"
 
 msgid "LED Light Driver"
-msgstr "Controlador de luz LED"
+msgstr "Controlador LED"
 
 msgid "Essential Files"
 msgstr "Archivos esenciales"
@@ -1527,6 +1527,9 @@ msgstr "Abrir auto. la extrusión al hacer una pausa"
 
 msgid "Show Scrollbars Buttons"
 msgstr "Mostrar botones de barras de desplazamiento"
+
+msgid "Select Material when inserting filament"
+msgstr "La selección de material aparece al insertar el filamento"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"

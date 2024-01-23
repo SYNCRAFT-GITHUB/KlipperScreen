@@ -34,12 +34,7 @@ class JobMaterialChange(ScreenPanel):
 
         grid = self._gtk.HomogeneousGrid()
 
-        self.buttons['material_change'].connect("clicked", self.reset_material_panel)
-        self.buttons['material_change'].connect("clicked", self.replace_extruder_option_with_opposite)
-        self.buttons['material_change'].connect("clicked", self.menu_item_clicked, "material_set", {
-            "name": _("Select the Material"),
-            "panel": "material_set"
-        })
+        self.buttons['material_change'].connect("clicked", self.set_material)
 
         self.ext_feeder = {
             'extruder_stepper extruder1': 'extruder1',
@@ -73,21 +68,16 @@ class JobMaterialChange(ScreenPanel):
 
         self.content.add(grid)
 
-    def reset_material_panel(self, button):
-        try:
-            del self._screen.panels['material_load']
-        except:
-            pass
-        try:
-            del self._screen.panels['material_set']
-        except:
-            pass
-
-    def replace_extruder_option_with_opposite(self, button):
+    def set_material(self, button):
+        self._screen.delete_temporary_panels()
         if "extruder1" in self.current_extruder:
             self._config.replace_extruder_option(newvalue="extruder")
         else:
             self._config.replace_extruder_option(newvalue="extruder1")
+        self.menu_item_clicked(widget=button, panel="material_set", item={
+            "name": _("Select the Material"),
+            "panel": "material_set"
+        })
 
     def get_variable(self, key) -> str:
         return self._config.variables_value_reveal(key)
@@ -99,6 +89,7 @@ class JobMaterialChange(ScreenPanel):
             return
 
         self.current_extruder = self.get_variable('currentextruder')
+        self.nozzle = self.get_variable('nozzle')
 
         for extruder in self._printer.get_tools():
             if '1' in extruder:
@@ -110,11 +101,15 @@ class JobMaterialChange(ScreenPanel):
             self.labels[extruder].set_label(material)
 
         if self.get_variable('nozzle') not in self.proextruders:
-            pass
+            for key, value in self.proextruders.items():
+                try:
+                    self.labels[key].set_property("opacity", 0.3)
+                    break
+                except:
+                    pass
         else:
             for key, value in self.proextruders.items():
                 self.labels[key].set_property("opacity", 0.3)
-            self.nozzle = self.get_variable('nozzle')
             self.labels[self.nozzle].set_property("opacity", 1.0)
 
         for x, extruder in zip(self._printer.get_filament_sensors(), self._printer.get_tools()):

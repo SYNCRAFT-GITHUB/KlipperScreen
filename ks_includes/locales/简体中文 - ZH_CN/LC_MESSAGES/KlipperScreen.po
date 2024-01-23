@@ -1505,6 +1505,9 @@ msgstr "暂停时自动打开挤出"
 msgid "Show Scrollbars Buttons"
 msgstr "显示滚动条按钮"
 
+msgid "Select Material when inserting filament"
+msgstr "插入灯丝时自动出现材料选择"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

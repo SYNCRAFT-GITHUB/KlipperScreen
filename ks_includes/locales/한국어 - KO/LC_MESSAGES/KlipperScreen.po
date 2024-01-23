@@ -1016,7 +1016,7 @@ msgid "Remove Password Protection"
 msgstr "암호 보호 제거"
 
 msgid "Welcome to Syncraft"
-msgstr "Synccraft에 오신 것을 환영합니다"
+msgstr "Syncraft에 오신 것을 환영합니다"
 
 msgid "No, I don't agree."
 msgstr "아니요, 동의하지 않습니다."
@@ -1109,7 +1109,7 @@ msgid "Chamber Fan"
 msgstr "바람 선풍기"
 
 msgid "Select Syncraft ProExtruder"
-msgstr "Synccraft ProExtruder 선택"
+msgstr "Syncraft ProExtruder 선택"
 
 msgid "Select Extruder"
 msgstr "노즐 선택"
@@ -1431,6 +1431,9 @@ msgstr "일시 중지 시 자동으로 추출 열기"
 
 msgid "Show Scrollbars Buttons"
 msgstr "스크롤바 버튼 표시"
+
+msgid "Select Material when inserting filament"
+msgstr "자동 재료 선택 메뉴"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."

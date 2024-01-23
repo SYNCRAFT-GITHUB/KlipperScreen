@@ -1496,6 +1496,9 @@ msgstr "Apri automaticamente l'estrusione in pausa"
 msgid "Show Scrollbars Buttons"
 msgstr "Mostra pulsanti barre di scorrimento"
 
+msgid "Select Material when inserting filament"
+msgstr "Forza l'utente a scegliere un materiale inserito"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 

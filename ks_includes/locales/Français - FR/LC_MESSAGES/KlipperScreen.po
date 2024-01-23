@@ -109,13 +109,13 @@ msgid "Fix Software Problems"
 msgstr "Résoudre les problèmes de logiciel"
 
 msgid "Camera Driver"
-msgstr "Logiciel de caméra"
+msgstr "Caméra"
 
 msgid "LED Light Driver"
-msgstr "Logiciel das Luzes da Maquina"
+msgstr "LED"
 
 msgid "Essential Files"
-msgstr "Pièces essentielles du système"
+msgstr "Fichiers de configuration"
 
 msgid "Moonraker"
 msgstr "Moonraker"
@@ -1551,6 +1551,9 @@ msgstr "Ouverture automatique de l'extrusion en pause"
 
 msgid "Show Scrollbars Buttons"
 msgstr "Afficher les boutons de barre de défilement"
+
+msgid "Select Material when inserting filament"
+msgstr "Forcer l'utilisateur à choisir un matériau inséré"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonde a été déclenchée avant le mouvement"

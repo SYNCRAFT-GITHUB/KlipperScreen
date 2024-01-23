@@ -1,6 +1,8 @@
 import configparser
 import logging
 import random
+import json
+import time
 import os
 import gi
 
@@ -9,6 +11,7 @@ from gi.repository import Gtk, Pango
 
 from ks_includes.KlippyGcodes import KlippyGcodes
 from ks_includes.screen_panel import ScreenPanel
+from panels.material_load import PrinterMaterial
 
 
 def create_panel(*args):
@@ -27,6 +30,8 @@ class FilamentPanel(ScreenPanel):
 
         self.speed: int = 2
 
+        self.materials_json_path = self._config.materials_path(custom=False)
+        self.materials = self.read_materials_from_json(self.materials_json_path)
         self.current_extruder = self.get_variable('currentextruder')
         self.nozzle = self.get_variable('nozzle')
 
@@ -44,23 +49,9 @@ class FilamentPanel(ScreenPanel):
         grid.attach(self.buttons['material_ext1'], 5, 3, 1, 1)
 
         self.buttons['unload'].connect("clicked", self.load_unload, "-")
-        self.buttons['load'].connect("clicked", self.reset_material_panel)
-        self.buttons['load'].connect("clicked", self.menu_item_clicked, "material_load", {
-            "name": _("Select the Material"),
-            "panel": "material_load"
-        })
-        self.buttons['material_ext0'].connect("clicked", self.reset_material_panel)
-        self.buttons['material_ext0'].connect("clicked", self.replace_extruder_option, 'extruder')
-        self.buttons['material_ext0'].connect("clicked", self.menu_item_clicked, "material_set", {
-            "name": _("Select the Material"),
-            "panel": "material_set"
-        })
-        self.buttons['material_ext1'].connect("clicked", self.reset_material_panel)
-        self.buttons['material_ext1'].connect("clicked", self.replace_extruder_option, 'extruder1')
-        self.buttons['material_ext1'].connect("clicked", self.menu_item_clicked, "material_set", {
-            "name": _("Select the Material"),
-            "panel": "material_set"
-        })
+        self.buttons['load'].connect("clicked", self.load_material)
+        self.buttons['material_ext0'].connect("clicked", self.select_material, 'extruder')
+        self.buttons['material_ext1'].connect("clicked", self.select_material, 'extruder1')
 
         self.ext_feeder = {
             'extruder_stepper extruder1': 'extruder1',
@@ -102,17 +93,7 @@ class FilamentPanel(ScreenPanel):
 
         self.content.add(grid)
 
-    def reset_material_panel(self, button):
-        try:
-            del self._screen.panels['material_load']
-        except:
-            pass
-        try:
-            del self._screen.panels['material_set']
-        except:
-            pass
-
-    def replace_extruder_option(self, button, newvalue):
+    def replace_extruder_option(self, newvalue):
         self._config.replace_extruder_option(newvalue=newvalue)
 
     def load_unload(self, widget, direction):
@@ -147,7 +128,7 @@ class FilamentPanel(ScreenPanel):
             return
         if action != "notify_status_update":
             return
-
+    
         self.current_extruder = self.get_variable('currentextruder')
 
         for extruder in self._printer.get_tools():
@@ -155,8 +136,10 @@ class FilamentPanel(ScreenPanel):
                 material = self.get_variable('material_ext1')
             else:
                 material = self.get_variable('material_ext0')
-            if 'empty' in material:
+            if 'empty' in material.lower():
                 material = _("Empty")
+            if 'generic' in material.lower():
+                material = _("Generic")
             self.labels[extruder].set_label(material)
             if self.ext_feeder[extruder] != self.current_extruder:
                 self.labels[extruder].set_property("opacity", 0.3)
@@ -164,26 +147,51 @@ class FilamentPanel(ScreenPanel):
                 self.labels[extruder].set_property("opacity", 1.0)
 
         if self.get_variable('nozzle') not in self.proextruders:
-            pass
+            for key, value in self.proextruders.items():
+                try:
+                    self.labels[key].get_style_context().remove_class("button_active")
+                    break
+                except:
+                    pass
         else:
             self.labels[self.nozzle].get_style_context().remove_class("button_active")
             self.nozzle = self.get_variable('nozzle')
             self.labels[self.nozzle].get_style_context().add_class("button_active")
 
         for x, extruder in zip(self._printer.get_filament_sensors(), self._printer.get_tools()):
+            if self._config.detected_in_filament_activity() and ((time.time() - self.start_time) > 1.0):
+                self._config.replace_filament_activity(None, "busy", replace="detected")
+                if self._config.get_main_config().getboolean('auto_select_material', False):
+                    self._screen.delete_temporary_panels()
+                    self.start_time = time.time()
+                    self.menu_item_clicked(widget="material_popup", panel="material_popup", item={
+                                        "name": _("Select the Material"),
+                                        "panel": "material_popup"
+                                    })
             if x in data:
                 if 'enabled' in data[x]:
                     self._printer.set_dev_stat(x, "enabled", data[x]['enabled'])
                 if 'filament_detected' in data[x]:
                     self._printer.set_dev_stat(x, "filament_detected", data[x]['filament_detected'])
                     if self._printer.get_stat(x, "enabled"):
+
                         if data[x]['filament_detected']:
                             self.labels[extruder].get_style_context().remove_class("filament_sensor_empty")
                             self.labels[extruder].get_style_context().add_class("filament_sensor_detected")
                         else:
                             self.labels[extruder].get_style_context().remove_class("filament_sensor_detected")
                             self.labels[extruder].get_style_context().add_class("filament_sensor_empty")
-                logging.info(f"{x}: {self._printer.get_stat(x)}")
+                            self._config.replace_filament_activity(x, "empty")
+
+                        if self._config.get_filament_activity(x) == "empty" and data[x]['filament_detected']:
+                            self.start_time = time.time()
+                            self._config.replace_filament_activity(x, "detected")
+                            self._config.replace_spool_option(x)
+                            if 'two' in str(x):
+                                self._config.replace_extruder_option(newvalue='extruder1')
+                            else:
+                                self._config.replace_extruder_option(newvalue='extruder')
+                    logging.info(f"{x}: {self._printer.get_stat(x)}")
 
     def change_extruder(self, widget, extruder):
         logging.info(f"Changing extruder to {extruder}")
@@ -192,3 +200,66 @@ class FilamentPanel(ScreenPanel):
     def nozzlegcodescript(self, widget, nozzle: str):
         self._config.replace_nozzle(newvalue=nozzle)
         self._screen._ws.klippy.gcode_script(f"NOZZLE_SET NZ='{nozzle}'")
+
+    def read_materials_from_json(self, file_path: str):
+        try:
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                return_array = []
+                for item in data:
+                        material = PrinterMaterial(
+                            name=item['name'],
+                            code=item['code'],
+                            compatible=item['compatible'],
+                            experimental=item['experimental'],
+                            temp=item['temp'],
+                        )
+                        return_array.append(material)
+                return return_array
+        except FileNotFoundError:
+            print(f"Not found: {file_path}")
+        except json.JSONDecodeError:
+            print(f"Error decoding JSON: {file_path}")
+
+    def load_material(self, widget):
+
+        if self.get_variable('nozzle') not in self.proextruders:
+            print(f"self nozzle: {self.nozzle}")
+            message: str = _("Select Syncraft ProExtruder")
+            self._screen.show_popup_message(message, level=2)
+            return
+        
+        self._screen.delete_temporary_panels()
+
+        if self.get_variable('currentextruder') == "extruder":
+            material = self._config.variables_value_reveal("material_ext0")
+        else:
+            material = self._config.variables_value_reveal("material_ext1")
+
+        if not "empty" in material.lower():
+            try:
+                iter(self.materials)
+            except:
+                self.materials = []
+            for m in self.materials:
+                if m.code == material:
+                    self._screen._ws.klippy.gcode_script(KlippyGcodes.load_filament(m.temp, m.code, self.nozzle))
+        else:
+            self.menu_item_clicked(widget=widget, panel="material_load", item={
+                "name": _("Select the Material"),
+                "panel": "material_load"
+            })
+
+    def select_material(self, widget, extruder: str):
+        self._screen.delete_temporary_panels()
+        self.replace_extruder_option(newvalue=extruder)
+        self.nozzle = self.get_variable('nozzle')
+
+        if self.nozzle not in self.proextruders:
+            message: str = _("Select Syncraft ProExtruder")
+            self._screen.show_popup_message(message, level=2)
+        else:
+            self.menu_item_clicked(widget=widget, panel="material_set", item={
+                "name": _("Select the Material"),
+                "panel": "material_set"
+            })

@@ -379,7 +379,6 @@ class JobStatusPanel(ScreenPanel):
             'restart': self._gtk.Button("refresh", _("Restart"), "color3"),
             'resume': self._gtk.Button("unpause", _("Resume"), "color1"),
             'save_offset_probe': self._gtk.Button("letter-z", _("Save") + " Probe", None),
-            'save_offset_endstop': self._gtk.Button("letter-z", _("Save") + " Endstop", None),
         }
         self.buttons['cancel'].connect("clicked", self.cancel)
         self.buttons['control'].connect("clicked", self._screen._go_to_submenu, "")
@@ -390,7 +389,6 @@ class JobStatusPanel(ScreenPanel):
         self.buttons['restart'].connect("clicked", self.restart)
         self.buttons['resume'].connect("clicked", self.resume)
         self.buttons['save_offset_probe'].connect("clicked", self.save_offset, "probe")
-        self.buttons['save_offset_endstop'].connect("clicked", self.save_offset, "endstop")
 
     def save_offset(self, widget, device):
         sign = "+" if self.zoffset > 0 else "-"
@@ -401,8 +399,6 @@ class JobStatusPanel(ScreenPanel):
             label.set_label(_("Apply %s%.2f offset to Probe?") % (sign, abs(self.zoffset))
                             + "\n\n"
                             + _("Saved offset: %s") % saved_z_offset)
-        elif device == "endstop":
-            label.set_label(_("Apply %s%.2f offset to Endstop?") % (sign, abs(self.zoffset)))
         label.set_hexpand(True)
         label.set_halign(Gtk.Align.CENTER)
         label.set_vexpand(True)
@@ -424,8 +420,6 @@ class JobStatusPanel(ScreenPanel):
         if response_id == Gtk.ResponseType.APPLY:
             if device == "probe":
                 self._screen._ws.klippy.gcode_script("Z_OFFSET_APPLY_PROBE")
-            if device == "endstop":
-                self._screen._ws.klippy.gcode_script("Z_OFFSET_APPLY_ENDSTOP")
             self._screen._ws.klippy.gcode_script("SAVE_CONFIG")
 
     def restart(self, widget):
@@ -755,12 +749,7 @@ class JobStatusPanel(ScreenPanel):
             offset = self._printer.get_stat("gcode_move", "homing_origin")
             self.zoffset = float(offset[2]) if offset else 0
             if self.zoffset != 0:
-                endstop = (self._printer.config_section_exists("stepper_z") and
-                           not self._printer.get_config_section("stepper_z")['endstop_pin'].startswith("probe"))
-                if endstop:
-                    self.buttons['button_grid'].attach(self.buttons["save_offset_endstop"], 0, 0, 1, 1)
-                else:
-                    self.buttons['button_grid'].attach(Gtk.Label(""), 0, 0, 1, 1)
+                self.buttons['button_grid'].attach(Gtk.Label(""), 0, 0, 1, 1)
                 if self._printer.get_probe():
                     self.buttons['button_grid'].attach(self.buttons["save_offset_probe"], 1, 0, 1, 1)
                 else:
@@ -770,7 +759,6 @@ class JobStatusPanel(ScreenPanel):
                 self.buttons['button_grid'].attach(Gtk.Label(""), 1, 0, 1, 1)
 
             if self.state != "cancelling":
-                self.buttons['button_grid'].attach(self.buttons["save_offset_endstop"], 0, 0, 1, 1)
                 self.buttons['button_grid'].attach(self.buttons["save_offset_probe"], 1, 0, 1, 1)
                 self.buttons['button_grid'].attach(self.buttons['restart'], 2, 0, 1, 1)
                 self.buttons['button_grid'].attach(self.buttons['menu'], 3, 0, 1, 1)

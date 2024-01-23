@@ -55,6 +55,12 @@ class KlipperScreenConfig:
         self.empty_title = True
         self.lang = None
         self.langs = {}
+        self.spool_option: str = "NONE"
+        self.filament_activity = {
+            'filament_switch_sensor spool_one': 'entry',
+            'filament_switch_sensor spool_two': 'entry'
+        }
+
         self.lang_converter = {
             'en': 'English - EN',
             'de': 'Deutsch - DE',
@@ -222,7 +228,7 @@ class KlipperScreenConfig:
             bools = strs = numbers = ()
             if section == 'main':
                 bools = (
-                    'invert_x', 'invert_y', 'invert_z', '24htime', 'only_heaters', 'show_cursor', 'confirm_estop',
+                    'invert_x', 'invert_y', 'invert_z', '24htime', 'only_heaters', 'show_cursor', 'confirm_estop', 'auto_select_material',
                     'autoclose_popups', 'use_dpms', 'use_default_menu', 'show_saved_from_usb', 'side_brightness_shortcut',
                     'use-matchbox-keyboard', 'show_heater_power', 'show_experimental_material', 'materials_on_top',
                 )
@@ -334,6 +340,8 @@ class KlipperScreenConfig:
                     {"name": _("Large"), "value": "large"},
                     {"name": _("Extra Large"), "value": "extralarge"}]}},
             {"confirm_estop": {"section": "main", "name": _("Confirm Emergency Stop"), "type": "binary",
+                               "value": "True"}},
+            {"auto_select_material": {"section": "main", "name": _("Select Material when inserting filament"), "type": "binary",
                                "value": "True"}},
             {"only_heaters": {"section": "main", "name": _("Hide sensors in Temp."), "type": "binary",
                               "value": "False", "callback": screen.reload_panels}},
@@ -500,6 +508,18 @@ class KlipperScreenConfig:
     def get_nozzle (self) -> str:
         return self.nozzle
 
+    def get_spool_option (self):
+        return self.spool_option
+        
+    def get_filament_activity (self, x) -> str:
+        return self.filament_activity[x]
+
+    def detected_in_filament_activity (self) -> bool:
+        for sensor, status in self.filament_activity.items():
+            if status == 'detected':
+                return True
+        return False
+        
     def replace_fix_option (self, newvalue) -> str:
         self.fix_option = newvalue
 
@@ -508,6 +528,17 @@ class KlipperScreenConfig:
 
     def replace_nozzle (self, newvalue) -> str:
         self.nozzle = newvalue
+
+    def replace_spool_option (self, newvalue) -> str:
+        self.spool_option = newvalue
+
+    def replace_filament_activity (self, x, newvalue, replace=""):
+        if replace == "":
+            self.filament_activity[x] = newvalue
+        else:
+            for sensor, status in self.filament_activity.items():
+                if status == replace:
+                    self.filament_activity[sensor] = newvalue
 
     def toggle_show_saved_from_usb (self, value):
         self.show_saved_from_usb = value

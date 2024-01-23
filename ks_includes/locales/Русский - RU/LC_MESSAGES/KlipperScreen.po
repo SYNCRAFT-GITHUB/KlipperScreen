@@ -1545,6 +1545,9 @@ msgstr "Автоматическое открытие экструзии при 
 msgid "Show Scrollbars Buttons"
 msgstr "Показывать кнопки полос прокрутки"
 
+msgid "Select Material when inserting filament"
+msgstr "Меню автоматического выбора материала"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

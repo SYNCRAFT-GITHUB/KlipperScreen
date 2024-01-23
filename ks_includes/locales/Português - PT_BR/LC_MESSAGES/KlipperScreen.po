@@ -112,10 +112,10 @@ msgid "Camera Driver"
 msgstr "Driver da câmera"
 
 msgid "LED Light Driver"
-msgstr "Driver das luzes LED"
+msgstr "Driver do LED"
 
 msgid "Essential Files"
-msgstr "Arquivos Essenciais"
+msgstr "Arquivos"
 
 msgid "Moonraker"
 msgstr "Moonraker"
@@ -1377,17 +1377,20 @@ msgstr "Abrir a extrusão ao pausar"
 msgid "Show Scrollbars Buttons"
 msgstr "Exibir botões de rolagem"
 
+msgid "Select Material when inserting filament"
+msgstr "Selecionar Material ao inserir filamento"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
-msgstr "Sonda foi acionada antes do movimento"
+msgstr "O ProExtruder foi indevidamente pressionado"
 
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Já se encontra em Sonda Manual (Eixo Z)."
 
 msgid "ENDSTOP X STILL TRIGGERED AFTER RETRACT"
 msgstr "Endstop (Eixo X) continua acionado após retrair"
-
+   
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
-msgstr "Nenhum gatilho na Sonda após executar todos os movimentos"
+msgstr "O ProExtruder deve ser pressionado contra a mesa, dentro dos padrões do tolerância"
 
 msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
-msgstr "A Mesa está incorretamente calibrada ou suja"
+msgstr "Mesa incorretamente calibrada ou suja. Ajuste ou Limpe a mesa, e tente novamente."

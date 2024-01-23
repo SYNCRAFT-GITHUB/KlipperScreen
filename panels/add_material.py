@@ -131,24 +131,6 @@ class AddCustomMaterial(ScreenPanel):
         grid.attach(self.labels['finish'], 0, (i), 3, 2)
         i += 2
 
-        self.labels['export_usb'] = self._gtk.Button("usb-save", _('Export custom materials to USB'), "color2")
-        self.labels['export_usb'].connect("clicked", self.set_fix_option_to, "EXPORTCUSTOMMATERIALSTOUSB")
-        self.labels['export_usb'].connect("clicked", self.menu_item_clicked, "update_usb", {
-            "name": _("System"),
-            "panel": "script"
-        })
-        grid.attach(self.labels['export_usb'], 0, (i), 3, 1)
-        i += 1
-
-        self.labels['import_usb'] = self._gtk.Button("usb", _('Import custom materials from USB'), "color2")
-        self.labels['import_usb'].connect("clicked", self.set_fix_option_to, "IMPORTCUSTOMMATERIALSFROMUSB")
-        self.labels['import_usb'].connect("clicked", self.menu_item_clicked, "update_usb", {
-            "name": _("System"),
-            "panel": "script"
-        })
-        grid.attach(self.labels['import_usb'], 0, (i), 3, 1)
-        i += 1
-
         self.labels['clear_all'] = self._gtk.Button("stock", _('Delete all custom Materials'), None)
         self.labels['clear_all'].connect("clicked", self.clear_all)
         grid.attach(self.labels['clear_all'], 0, (i), 3, 1)
@@ -238,8 +220,7 @@ class AddCustomMaterial(ScreenPanel):
         with open(self.custom_json_path, 'w') as json_file:
             json.dump(custom_json_file, json_file, indent=4)
 
-        os.system('service KlipperScreen restart')
-        self._screen.restart_ks()
+        self._screen.reload_panels()
         return None
 
     def clear_all(self, button):
@@ -257,8 +238,7 @@ class AddCustomMaterial(ScreenPanel):
         with open(self.custom_json_path, 'w') as file:
             json.dump([], file)
 
-        os.system('service KlipperScreen restart')
-        self._screen.restart_ks()
+        self._screen.reload_panels()
         return None
     
     def clean_code(self, text: str) -> str:

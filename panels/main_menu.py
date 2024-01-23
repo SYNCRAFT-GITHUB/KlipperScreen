@@ -5,6 +5,7 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, GLib
 from panels.menu import MenuPanel
+import time
 
 from ks_includes.widgets.heatergraph import HeaterGraph
 from ks_includes.widgets.keypad import Keypad
@@ -202,7 +203,7 @@ class MainPanel(MenuPanel):
             self._screen.show_popup_message(_("Unknown Heater") + " " + self.active_heater)
         self._printer.set_dev_stat(self.active_heater, "target", temp)
 
-    def  create_left_panel(self):
+    def create_left_panel(self):
 
         self.labels['devices'] = Gtk.Grid()
         self.labels['devices'].get_style_context().add_class('heater-grid')
@@ -243,6 +244,7 @@ class MainPanel(MenuPanel):
         self.grid.show_all()
 
     def process_update(self, action, data):
+
         if action != "notify_status_update":
             return
         for x in (self._printer.get_tools() + self._printer.get_heaters()):
@@ -252,6 +254,33 @@ class MainPanel(MenuPanel):
                 self._printer.get_dev_stat(x, "target"),
                 self._printer.get_dev_stat(x, "power"),
             )
+
+        for x in self._printer.get_filament_sensors():
+            if self._config.detected_in_filament_activity() and ((time.time() - self.start_time) > 1.0):
+                self._config.replace_filament_activity(None, "busy", replace="detected")
+                if self._config.get_main_config().getboolean('auto_select_material', False):
+                    self._screen.delete_temporary_panels()
+                    self.start_time = time.time()
+                    self.menu_item_clicked(widget="material_popup", panel="material_popup", item={
+                                        "name": _("Select the Material"),
+                                        "panel": "material_popup"
+                                    })
+            if x in data:
+                if 'enabled' in data[x]:
+                    self._printer.set_dev_stat(x, "enabled", data[x]['enabled'])
+                if 'filament_detected' in data[x]:
+                    self._printer.set_dev_stat(x, "filament_detected", data[x]['filament_detected'])
+                    if self._printer.get_stat(x, "enabled"):
+                        if self._config.get_filament_activity(x) == "empty" and data[x]['filament_detected']:
+                            self.start_time = time.time()
+                            self._config.replace_filament_activity(x, "detected")
+                            self._config.replace_spool_option(x)
+                            if 'two' in str(x):
+                                self._config.replace_extruder_option(newvalue='extruder1')
+                            else:
+                                self._config.replace_extruder_option(newvalue='extruder')
+                        elif not data[x]['filament_detected']:
+                            self._config.replace_filament_activity(x, "empty")
 
     def show_numpad(self, widget, device):
 
