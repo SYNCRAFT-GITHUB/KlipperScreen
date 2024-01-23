@@ -60,6 +60,10 @@ class ExecuteScript(ScreenPanel):
             script_path = '/home/pi/KlipperScreen/scripts/fix/files_bowden.sh'
             subprocess.call(['bash', script_path])
 
+        if (fix_option == "FILES_FEEDER"):
+            script_path = '/home/pi/KlipperScreen/scripts/fix/files_feeder.sh'
+            subprocess.call(['bash', script_path])
+
         if (fix_option == "KLIPPERSCREEN"):
             script_path = '/home/pi/KlipperScreen/scripts/fix/klipperscreen.sh'
             subprocess.call(['bash', script_path])

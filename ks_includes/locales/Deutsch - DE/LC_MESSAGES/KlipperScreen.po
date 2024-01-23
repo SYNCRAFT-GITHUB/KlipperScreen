@@ -115,7 +115,7 @@ msgid "LED Light Driver"
 msgstr "LED-Lichttreiber"
 
 msgid "Essential Files"
-msgstr "Wesentliche Dateien"
+msgstr "Klipper-Dateien"
 
 msgid "Moonraker"
 msgstr "Moonraker"
@@ -424,25 +424,25 @@ msgid "Invert Z"
 msgstr "Achse Z invertieren"
 
 msgid "Klipper Restart"
-msgstr "Klipper Neustart"
+msgstr "Firmware Neustart"
 
 msgid "Klipper has disconnected"
-msgstr "Verbindung zu Klipper getrennt"
+msgstr "Verbindung zu Firmware getrennt"
 
 msgid "Klipper has encountered an error."
-msgstr "Klipper hat einen Fehler festgestellt."
+msgstr "Firmware hat einen Fehler festgestellt."
 
 msgid "Klipper has shutdown"
-msgstr "Klipper abgeschaltet"
+msgstr "Firmware abgeschaltet"
 
 msgid "Klipper is attempting to start"
-msgstr "Klipper ist startbereit"
+msgstr "Firmware ist startbereit"
 
 msgid "Klipper will reboot"
-msgstr "Klipper startet neu"
+msgstr "Firmware startet neu"
 
 msgid "KlipperScreen will reboot"
-msgstr "KlipperScreen startet neu"
+msgstr "Die Anzeigesoftware wird neu gestartet"
 
 msgid "Language"
 msgstr "Sprache"
@@ -959,7 +959,7 @@ msgstr "mm³/s"
 #~ msgstr "Reine Druckzeit"
 
 #~ msgid "Klipper Version"
-#~ msgstr "Klipper Version"
+#~ msgstr "Firmware Version"
 
 #~ msgid ""
 #~ "Klipper has encountered an error with the micro-controller.\n"
@@ -976,7 +976,7 @@ msgstr "mm³/s"
 #~ "Führe einen FIRMWARE_RESTART durch um den Fehler zu beheben."
 
 #~ msgid "KlipperScreen Version"
-#~ msgstr "KlipperScreen Version"
+#~ msgstr "Softwareversion anzeigen"
 
 #~ msgid "Show Only Heaters in Temp."
 #~ msgstr "Nur Heizungen in Temp anzeigen."

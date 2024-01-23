@@ -112,10 +112,10 @@ msgid "Camera Driver"
 msgstr "Driver da câmera"
 
 msgid "LED Light Driver"
-msgstr "Driver das luzes LED"
+msgstr "Driver do LED"
 
 msgid "Essential Files"
-msgstr "Arquivos Essenciais"
+msgstr "Arquivos"
 
 msgid "Moonraker"
 msgstr "Moonraker"
@@ -1387,7 +1387,7 @@ msgid "ENDSTOP X STILL TRIGGERED AFTER RETRACT"
 msgstr "Endstop (Eixo X) continua acionado após retrair"
    
 msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
-msgstr "O ProExtruder deve ser pressionado contra a mesa dentro dos padrões do tolerância"
+msgstr "O ProExtruder deve ser pressionado contra a mesa, dentro dos padrões do tolerância"
 
 msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
 msgstr "Mesa incorretamente calibrada ou suja. Ajuste ou Limpe a mesa, e tente novamente."

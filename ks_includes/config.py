@@ -530,8 +530,13 @@ class KlipperScreenConfig:
     def replace_spool_option (self, newvalue) -> str:
         self.spool_option = newvalue
 
-    def replace_filament_activity (self, x, newvalue):
-        self.filament_activity[x] = newvalue
+    def replace_filament_activity (self, x, newvalue, replace=""):
+        if replace == "":
+            self.filament_activity[x] = newvalue
+        else:
+            for sensor, status in self.filament_activity.items():
+                if status == replace:
+                    self.filament_activity[sensor] = newvalue
 
     def toggle_show_saved_from_usb (self, value):
         self.show_saved_from_usb = value

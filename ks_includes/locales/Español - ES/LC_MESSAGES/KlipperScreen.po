@@ -112,7 +112,7 @@ msgid "Camera Driver"
 msgstr "Controlador de cámara"
 
 msgid "LED Light Driver"
-msgstr "Controlador de luz LED"
+msgstr "Controlador LED"
 
 msgid "Essential Files"
 msgstr "Archivos esenciales"

@@ -113,7 +113,7 @@ msgid "Camera Driver"
 msgstr "Sterownik aparatu"
 
 msgid "LED Light Driver"
-msgstr "Sterownik światła LED"
+msgstr "Sterownik LED"
 
 msgid "Essential Files"
 msgstr "Niezbędne pliki"

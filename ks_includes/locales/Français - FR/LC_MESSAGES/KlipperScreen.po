@@ -109,13 +109,13 @@ msgid "Fix Software Problems"
 msgstr "Résoudre les problèmes de logiciel"
 
 msgid "Camera Driver"
-msgstr "Logiciel de caméra"
+msgstr "Caméra"
 
 msgid "LED Light Driver"
-msgstr "Logiciel das Luzes da Maquina"
+msgstr "LED"
 
 msgid "Essential Files"
-msgstr "Pièces essentielles du système"
+msgstr "Fichiers de configuration"
 
 msgid "Moonraker"
 msgstr "Moonraker"
