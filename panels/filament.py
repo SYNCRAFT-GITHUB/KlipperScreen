@@ -1,6 +1,7 @@
 import configparser
 import logging
 import random
+import json
 import time
 import os
 import gi
@@ -10,6 +11,7 @@ from gi.repository import Gtk, Pango
 
 from ks_includes.KlippyGcodes import KlippyGcodes
 from ks_includes.screen_panel import ScreenPanel
+from panels.material_load import PrinterMaterial
 
 
 def create_panel(*args):
@@ -28,6 +30,8 @@ class FilamentPanel(ScreenPanel):
 
         self.speed: int = 2
 
+        self.materials_json_path = self._config.materials_path(custom=False)
+        self.materials = self.read_materials_from_json(self.materials_json_path)
         self.current_extruder = self.get_variable('currentextruder')
         self.nozzle = self.get_variable('nozzle')
 
@@ -197,14 +201,49 @@ class FilamentPanel(ScreenPanel):
         self._config.replace_nozzle(newvalue=nozzle)
         self._screen._ws.klippy.gcode_script(f"NOZZLE_SET NZ='{nozzle}'")
 
-    def load_material(self, widget):
-        self._screen.delete_temporary_panels()
-        self.nozzle = self.get_variable('nozzle')
+    def read_materials_from_json(self, file_path: str):
+        try:
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                return_array = []
+                for item in data:
+                        material = PrinterMaterial(
+                            name=item['name'],
+                            code=item['code'],
+                            compatible=item['compatible'],
+                            experimental=item['experimental'],
+                            temp=item['temp'],
+                        )
+                        return_array.append(material)
+                return return_array
+        except FileNotFoundError:
+            print(f"Not found: {file_path}")
+        except json.JSONDecodeError:
+            print(f"Error decoding JSON: {file_path}")
 
-        if self.nozzle not in self.proextruders:
+    def load_material(self, widget):
+
+        if self.get_variable('nozzle') not in self.proextruders:
             print(f"self nozzle: {self.nozzle}")
             message: str = _("Select Syncraft ProExtruder")
             self._screen.show_popup_message(message, level=2)
+            return
+        
+        self._screen.delete_temporary_panels()
+
+        if self.get_variable('currentextruder') == "extruder":
+            material = self._config.variables_value_reveal("material_ext0")
+        else:
+            material = self._config.variables_value_reveal("material_ext1")
+
+        if not "empty" in material.lower():
+            try:
+                iter(self.materials)
+            except:
+                self.materials = []
+            for m in self.materials:
+                if m.code == material:
+                    self._screen._ws.klippy.gcode_script(KlippyGcodes.load_filament(m.temp, m.code, self.nozzle))
         else:
             self.menu_item_clicked(widget=widget, panel="material_load", item={
                 "name": _("Select the Material"),

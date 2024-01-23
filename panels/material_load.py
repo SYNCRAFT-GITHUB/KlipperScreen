@@ -91,23 +91,13 @@ class ChMaterialPanel(ScreenPanel):
         else:
             material = self._config.variables_value_reveal("material_ext1")
 
-        if self._config.get_main_config().getboolean('auto_select_material', False) and not "empty" in material.lower():
-            try:
-                iter(self.materials)
-            except:
-                self.materials = []
-            for m in self.materials:
-                if m.code == material:
-                    self._screen._ws.klippy.gcode_script(Gcode.load_filament(m.temp, m.code, self.nozzle))
-                    self._screen.reload_panels()
-        else:
-            grid = self._gtk.HomogeneousGrid()
-            self.gridattach(gridvariable=grid)
-            self.labels['material_menu'] = self._gtk.HomogeneousGrid()
-            self.labels['material_menu'].attach(grid, 0, 0, 1, 3)
-            self.content.remove(self.labels['material_menu'])
-            self.content.add(self.labels['material_menu'])
-            self.storegrid = grid    
+        grid = self._gtk.HomogeneousGrid()
+        self.gridattach(gridvariable=grid)
+        self.labels['material_menu'] = self._gtk.HomogeneousGrid()
+        self.labels['material_menu'].attach(grid, 0, 0, 1, 3)
+        self.content.remove(self.labels['material_menu'])
+        self.content.add(self.labels['material_menu'])
+        self.storegrid = grid    
 
     def gridattach(self, gridvariable):
 
