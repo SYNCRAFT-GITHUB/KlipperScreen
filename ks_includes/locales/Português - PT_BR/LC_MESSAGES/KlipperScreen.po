@@ -1377,11 +1377,8 @@ msgstr "Abrir a extrusão ao pausar"
 msgid "Show Scrollbars Buttons"
 msgstr "Exibir botões de rolagem"
 
-msgid "Show Scrollbars Buttons"
-msgstr "Exibir botões de rolagem"
-
-msgid "Material Selection appears when inserting filament"
-msgstr "Seleção de Material aparece ao inserir um filamento"
+msgid "Select Material when inserting filament"
+msgstr "Selecionar Material ao inserir filamento"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "O ProExtruder foi indevidamente pressionado"

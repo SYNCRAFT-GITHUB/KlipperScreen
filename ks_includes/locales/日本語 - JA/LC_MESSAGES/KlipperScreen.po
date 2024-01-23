@@ -1365,7 +1365,7 @@ msgstr "一時停止時の自動エクストルード開き"
 msgid "Show Scrollbars Buttons"
 msgstr "スクロールバーのボタンを表示"
 
-msgid "Material Selection appears when inserting filament"
+msgid "Select Material when inserting filament"
 msgstr "自動材料選択メニュー"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"

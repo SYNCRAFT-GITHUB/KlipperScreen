@@ -1432,7 +1432,7 @@ msgstr "일시 중지 시 자동으로 추출 열기"
 msgid "Show Scrollbars Buttons"
 msgstr "스크롤바 버튼 표시"
 
-msgid "Material Selection appears when inserting filament"
+msgid "Select Material when inserting filament"
 msgstr "자동 재료 선택 메뉴"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"

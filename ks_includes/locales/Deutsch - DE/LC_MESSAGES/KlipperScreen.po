@@ -1504,7 +1504,7 @@ msgstr "Extrusion automatisch öffnen bei Pause"
 msgid "Show Scrollbars Buttons"
 msgstr "Scrollbar-Buttons anzeigen"
 
-msgid "Material Selection appears when inserting filament"
+msgid "Select Material when inserting filament"
 msgstr "Beim Einlegen des Filaments erscheint die Materialauswahl"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"

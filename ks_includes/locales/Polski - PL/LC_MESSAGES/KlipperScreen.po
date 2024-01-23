@@ -1488,7 +1488,7 @@ msgstr "Automatyczne otwieranie ekstruzji w czasie pauzy"
 msgid "Show Scrollbars Buttons"
 msgstr "Pokaż przyciski pasków przewijania"
 
-msgid "Material Selection appears when inserting filament"
+msgid "Select Material when inserting filament"
 msgstr "Menu automatycznego wyboru materiału"
 
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"

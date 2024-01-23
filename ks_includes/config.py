@@ -341,7 +341,7 @@ class KlipperScreenConfig:
                     {"name": _("Extra Large"), "value": "extralarge"}]}},
             {"confirm_estop": {"section": "main", "name": _("Confirm Emergency Stop"), "type": "binary",
                                "value": "True"}},
-            {"auto_select_material": {"section": "main", "name": _("Material Selection appears when inserting filament"), "type": "binary",
+            {"auto_select_material": {"section": "main", "name": _("Select Material when inserting filament"), "type": "binary",
                                "value": "True"}},
             {"only_heaters": {"section": "main", "name": _("Hide sensors in Temp."), "type": "binary",
                               "value": "False", "callback": screen.reload_panels}},
