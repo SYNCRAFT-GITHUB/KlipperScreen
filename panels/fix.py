@@ -93,6 +93,8 @@ class FixPanel(ScreenPanel):
 
         grid = self._gtk.HomogeneousGrid()
 
+        # 0, 2, 2, 1
+
         grid.attach(self.buttons['FIX_FILES'], 0, 0, 2, 1)
         grid.attach(self.buttons['FIX_FILES_BOWDEN'], 2, 0, 2, 1)
         grid.attach(self.buttons['FIX_FILES_FEEDER'], 0, 2, 2, 1)
