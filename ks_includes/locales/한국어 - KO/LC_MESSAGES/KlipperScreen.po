@@ -1016,7 +1016,7 @@ msgid "Remove Password Protection"
 msgstr "암호 보호 제거"
 
 msgid "Welcome to Syncraft"
-msgstr "Synccraft에 오신 것을 환영합니다"
+msgstr "Syncraft에 오신 것을 환영합니다"
 
 msgid "No, I don't agree."
 msgstr "아니요, 동의하지 않습니다."
@@ -1109,7 +1109,7 @@ msgid "Chamber Fan"
 msgstr "바람 선풍기"
 
 msgid "Select Syncraft ProExtruder"
-msgstr "Synccraft ProExtruder 선택"
+msgstr "Syncraft ProExtruder 선택"
 
 msgid "Select Extruder"
 msgstr "노즐 선택"

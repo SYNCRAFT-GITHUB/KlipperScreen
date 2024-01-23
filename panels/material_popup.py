@@ -124,10 +124,10 @@ class MaterialPopUp(ScreenPanel):
                             self._screen._menu_go_back()
 
         if self.get_variable('nozzle') not in self.proextruders:
+            self.generic_button.set_label(_("Select Syncraft ProExtruder"))
             for key, value in self.proextruders.items():
                 try:
                     self.labels[key].set_property("opacity", 0.3)
-                    break
                 except:
                     pass
         else:
@@ -212,9 +212,9 @@ class MaterialPopUp(ScreenPanel):
                 while index != 4:
                     size += 1
                     index += 1
-                index_button = self._gtk.Button("circle-red", _("Generic"), "color2")
-                index_button.connect("clicked", self.confirm_set_custom)
-                gridvariable.attach(index_button, repeat_three, i, size, 1)
+                self.generic_button = self._gtk.Button("circle-red", _("Generic"), "color2")
+                self.generic_button.connect("clicked", self.confirm_set_custom)
+                gridvariable.attach(self.generic_button, repeat_three, i, size, 1)
 
     def get_variable(self, key) -> str:
         return self._config.variables_value_reveal(key)
