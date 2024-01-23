@@ -238,8 +238,7 @@ class AddCustomMaterial(ScreenPanel):
         with open(self.custom_json_path, 'w') as json_file:
             json.dump(custom_json_file, json_file, indent=4)
 
-        os.system('service KlipperScreen restart')
-        self._screen.restart_ks()
+        self._screen.reload_panels()
         return None
 
     def clear_all(self, button):
@@ -257,8 +256,7 @@ class AddCustomMaterial(ScreenPanel):
         with open(self.custom_json_path, 'w') as file:
             json.dump([], file)
 
-        os.system('service KlipperScreen restart')
-        self._screen.restart_ks()
+        self._screen.reload_panels()
         return None
     
     def clean_code(self, text: str) -> str:
