@@ -249,8 +249,8 @@
         "temp": 235
     },
     {
-        "name": "TPU D64",
-        "code": "TPU D64",
+        "name": "TPU 64D",
+        "code": "TPU 64D",
         "compatible": [
             "Standard 0.4mm",
             "Standard 0.8mm"
