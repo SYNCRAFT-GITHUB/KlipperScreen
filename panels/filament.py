@@ -34,6 +34,7 @@ class FilamentPanel(ScreenPanel):
         self.materials = self.read_materials_from_json(self.materials_json_path)
         self.current_extruder = self.get_variable('currentextruder')
         self.nozzle = self.get_variable('nozzle')
+        self.start_time = time.time()
 
         self.buttons = {
             'load': self._gtk.Button("arrow-up", _("Load"), "color3", Gtk.PositionType.BOTTOM, 3),
@@ -236,7 +237,7 @@ class FilamentPanel(ScreenPanel):
         else:
             material = self._config.variables_value_reveal("material_ext1")
 
-        if not "empty" in material.lower():
+        if not material.lower() in ["empty", "generic"]:
             try:
                 iter(self.materials)
             except:

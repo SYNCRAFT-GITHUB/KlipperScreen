@@ -1393,4 +1393,4 @@ msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
 msgstr "O ProExtruder deve ser pressionado contra a mesa, dentro dos padrões do tolerância"
 
 msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
-msgstr "Mesa incorretamente calibrada ou suja. Ajuste ou Limpe a mesa, e tente novamente."
+msgstr "Mesa incorretamente calibrada ou suja; Ajuste ou Limpe a mesa."
