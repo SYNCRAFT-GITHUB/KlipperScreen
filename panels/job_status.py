@@ -349,7 +349,7 @@ class JobStatusPanel(ScreenPanel):
         ctx.translate(w / 2, h / 2)
         ctx.arc(0, 0, r, 0, 2 * pi)
         ctx.stroke()
-        ctx.set_source_rgb(0.2, 0.2, 0.2)
+        ctx.set_source_rgb(0.05, 0.36, 0.38)
         ctx.arc(0, 0, r, 3 / 2 * pi, 3 / 2 * pi + (self.progress * 2 * pi))
         ctx.stroke()
 

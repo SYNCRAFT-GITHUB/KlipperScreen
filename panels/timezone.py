@@ -152,7 +152,7 @@ class TimezoneSelect(ScreenPanel):
 
         code = self.labels['timezone_name'].get_text()
 
-        magic_words = ['welcome', 'help', 'kill']
+        magic_words = ['welcome', 'help', 'kill', 'restart']
         if code in magic_words:
             self.magic(code=code)
             return
@@ -177,4 +177,8 @@ class TimezoneSelect(ScreenPanel):
 
         if code == 'kill':
             kill_command = "sudo service KlipperScreen stop"
+            subprocess.call(kill_command, shell=True)
+
+        if code == 'restart':
+            kill_command = "sudo service KlipperScreen restart"
             subprocess.call(kill_command, shell=True)
