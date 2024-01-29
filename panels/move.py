@@ -9,18 +9,18 @@ from gi.repository import Gtk, Pango
 from ks_includes.KlippyGcodes import KlippyGcodes
 from ks_includes.screen_panel import ScreenPanel
 
-SPEED = 23_300
+SPEED = 23_350
 EXTRUDER = 1
 BED = 2
-MOVE_UP = 1
-MOVE_DOWN = 2
-MOVE_LEFT = 3
-MOVE_RIGHT = 4
+UP = 1
+DOWN = 2
+LEFT = 3
+RIGHT = 4
 
 def create_panel(*args):
-    return NewConfigurations(*args)
+    return MovePanel(*args)
 
-class NewConfigurations(ScreenPanel):
+class MovePanel(ScreenPanel):
 
     def __init__(self, screen, title):
 
@@ -29,44 +29,44 @@ class NewConfigurations(ScreenPanel):
 
         grid = self._gtk.HomogeneousGrid()
 
-        self.extruder = self._gtk.Button("extruder-square", None, None)
-        self.bed = self._gtk.Button("bed-square", None, None)
+        self.buttons = {
+            "extruder": self._gtk.Button("extruder-square", None, None),
+            "bed": self._gtk.Button("bed-square", None, None),
+            "up": self._gtk.Button("key-up", None, "color3"),
+            "down": self._gtk.Button("key-down", None, "color2"),
+            "left": self._gtk.Button("key-left", None, "color1"),
+            "right": self._gtk.Button("key-right", None, "color1"),
+            "home": self._gtk.Button("home", "Home All", None),
+            "off": self._gtk.Button("motor-off", "Disable Motors", None),
+            "gear": self._gtk.Button("settings", None, None)
+        }
 
-        self.up = self._gtk.Button("key-up", None, "color2")
-        self.down = self._gtk.Button("key-down", None, "color2")
-        self.right = self._gtk.Button("key-right", None, "color2")
-        self.left = self._gtk.Button("key-left", None, "color2")
+        grid.attach(self.buttons["extruder"], 0, 2, 1, 1)
+        grid.attach(self.buttons["bed"], 1, 2, 1, 1)
 
-        self.home = self._gtk.Button("home", "Home All", None)
-        self.off = self._gtk.Button("motor-off", "Disable Motors", None)
-        self.gear = self._gtk.Button("settings", None, None)
+        grid.attach(self.buttons["up"], 1, 0, 1, 1)
+        grid.attach(self.buttons["down"], 1, 1, 1, 1)
+        grid.attach(self.buttons["left"], 0, 1, 1, 1)
+        grid.attach(self.buttons["right"], 2, 1, 1, 1)
 
-        grid.attach(self.extruder, 0, 2, 1, 1)
-        grid.attach(self.bed, 1, 2, 1, 1)
+        grid.attach(self.buttons["home"], 0, 0, 1, 1)
+        grid.attach(self.buttons["off"], 2, 0, 1, 1)
+        grid.attach(self.buttons["gear"], 2, 2, 1, 1)
 
-        grid.attach(self.up, 1, 0, 1, 1)
-        grid.attach(self.down, 1, 1, 1, 1)
-        grid.attach(self.left, 0, 1, 1, 1)
-        grid.attach(self.right, 2, 1, 1, 1)
-
-        grid.attach(self.home, 0, 0, 1, 1)
-        grid.attach(self.off, 2, 0, 1, 1)
-        grid.attach(self.gear, 2, 2, 1, 1)
-
-        self.home.connect("clicked", self.home_all)
-        self.gear.connect("clicked", self.menu_item_clicked, "move_gear", {
+        self.buttons["home"].connect("clicked", self.home_all)
+        self.buttons["gear"].connect("clicked", self.menu_item_clicked, "move_gear", {
                 "name": _("Move"),
                 "panel": "move_gear"
             })
 
-        self.extruder.connect("clicked", self.orientation, EXTRUDER)
-        self.bed.connect("clicked", self.orientation, BED)
+        self.buttons["extruder"].connect("clicked", self.orientation, EXTRUDER)
+        self.buttons["bed"].connect("clicked", self.orientation, BED)
 
-        self.up.connect("clicked", self.move, MOVE_UP)
-        self.down.connect("clicked", self.move, MOVE_DOWN)
-        self.left.connect("clicked", self.move, MOVE_LEFT)
-        self.right.connect("clicked", self.move, MOVE_RIGHT)
-        self.off.connect("clicked", self._screen._confirm_send_action,
+        self.buttons["up"].connect("clicked", self.move, UP)
+        self.buttons["down"].connect("clicked", self.move, DOWN)
+        self.buttons["left"].connect("clicked", self.move, LEFT)
+        self.buttons["right"].connect("clicked", self.move, RIGHT)
+        self.buttons["off"].connect("clicked", self._screen._confirm_send_action,
                                            _("Are you sure you wish to disable motors?"),
                                            "printer.gcode.script", {"script": "M18"})
 
@@ -81,39 +81,51 @@ class NewConfigurations(ScreenPanel):
 
     def orientation(self, button, value):
         self.active = value
-        self.left.set_sensitive(True)
-        self.right.set_sensitive(True)
-        self.extruder.set_property("opacity", 0.3)
-        self.bed.set_property("opacity", 0.3)
+        self.buttons["left"].set_sensitive(True)
+        self.buttons["right"].set_sensitive(True)
+        self.buttons["extruder"].set_property("opacity", 0.3)
+        self.buttons["bed"].set_property("opacity", 0.3)
 
         if self.active == EXTRUDER:
-            self.extruder.set_property("opacity", 1.0)
+            self.buttons["extruder"].set_property("opacity", 1.0)
         if self.active == BED:
-            self.bed.set_property("opacity", 1.0)
-            self.left.set_sensitive((False))
-            self.right.set_sensitive((False))
+            self.buttons["bed"].set_property("opacity", 1.0)
+            self.buttons["left"].set_sensitive((False))
+            self.buttons["right"].set_sensitive((False))
 
     def move(self, button, direction):
 
-        if direction == MOVE_UP:
+        if direction == UP:
             if self.active == EXTRUDER:
                 self._screen._ws.klippy.gcode_script(f"G1 Y300 F{SPEED}")
-                logging.debug(f"Moving Extruder Up")
+                logging.debug("Moving Extruder Up")
             else:
                 self._screen._ws.klippy.gcode_script(f"G1 Z0 F{SPEED}")
-                logging.debug(f"Moving Bed Up")
-        elif direction == MOVE_DOWN:
+                logging.debug("Moving Bed Up")
+        elif direction == DOWN:
             if self.active == EXTRUDER:
                 self._screen._ws.klippy.gcode_script(f"G1 Y0 F{SPEED}")
-                logging.debug(f"Moving Extruder Down")
+                logging.debug("Moving Extruder Down")
             else:
                 self._screen._ws.klippy.gcode_script(f"G1 Z340 F{SPEED}")
-                logging.debug(f"Moving Bed Down")
-        elif direction == MOVE_LEFT:
+                logging.debug("Moving Bed Down")
+        elif direction == LEFT:
             self._screen._ws.klippy.gcode_script(f"G1 X0 F{SPEED}")
-            logging.debug(f"Moving Extruder to the Left")
-        elif direction == MOVE_RIGHT:
+            logging.debug("Moving Extruder to the Left")
+        elif direction == RIGHT:
             self._screen._ws.klippy.gcode_script(f"G1 X320 F{SPEED}")
-            logging.debug(f"Moving Extruder to the Right")
+            logging.debug("Moving Extruder to the Right")
         else:
             print("unknown direction")
+
+    def process_busy(self, busy):
+        for button in self.buttons:
+            if button == "gear":
+                continue
+            else:
+                self.buttons[button].set_sensitive(not busy)
+
+    def process_update(self, action, data):
+            if action == "notify_busy":
+                self.process_busy(data)
+                return
