@@ -166,13 +166,13 @@ msgid "Auto-scroll"
 msgstr "Défilement automatique"
 
 msgid "Bed Level"
-msgstr "Nivellement"
+msgstr "Niveau du tableau"
 
 msgid "Bed Mesh"
-msgstr "Maillage du plateau"
+msgstr "Maille de table"
 
 msgid "Bed screw configuration:"
-msgstr "Configuration des vis:"
+msgstr "Réglages des vis de table:"
 
 msgid "Calibrate"
 msgstr "Calibrer"
@@ -1223,7 +1223,7 @@ msgid "Edit User"
 msgstr "Modifier l'utilisateur"
 
 msgid "Heater Bed"
-msgstr "Table Chauffée"
+msgstr "Tableau"
 
 msgid "Chamber Fan"
 msgstr "Ventilateur"

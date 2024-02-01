@@ -161,13 +161,13 @@ msgid "Auto-scroll"
 msgstr "Auto-scroll"
 
 msgid "Bed Level"
-msgstr "Livello del letto"
+msgstr "Livello del tavolo"
 
 msgid "Bed Mesh"
-msgstr "Rete letto"
+msgstr "Maglia da tavolo"
 
 msgid "Bed screw configuration:"
-msgstr "Configurazione della vite del letto:"
+msgstr "Regolazioni delle viti della tavola:"
 
 msgid "Calibrate"
 msgstr "Calibra"
@@ -1164,7 +1164,7 @@ msgid "Edit User"
 msgstr "Modifica utente"
 
 msgid "Heater Bed"
-msgstr "Tavolo Riscaldato"
+msgstr "Tavolo"
 
 msgid "Chamber Fan"
 msgstr "Ventola"
