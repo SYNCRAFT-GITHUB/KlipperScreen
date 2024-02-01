@@ -36,8 +36,8 @@ class MovePanel(ScreenPanel):
             "down": self._gtk.Button("key-down", None, "color2"),
             "left": self._gtk.Button("key-left", None, "color1"),
             "right": self._gtk.Button("key-right", None, "color1"),
-            "home": self._gtk.Button("home", "Home All", None),
-            "off": self._gtk.Button("motor-off", "Disable Motors", None),
+            "home": self._gtk.Button("home", _("Home All"), None),
+            "off": self._gtk.Button("motor-off", _("Disable Motors"), None),
             "gear": self._gtk.Button("settings", None, None)
         }
 

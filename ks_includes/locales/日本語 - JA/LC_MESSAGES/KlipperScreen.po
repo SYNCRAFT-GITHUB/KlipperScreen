@@ -161,13 +161,13 @@ msgid "Auto-scroll"
 msgstr "自動スクロール"
 
 msgid "Bed Level"
-msgstr "ベッドレベル"
+msgstr "テーブルレベル"
 
 msgid "Bed Mesh"
-msgstr "ベッドメッシュ"
+msgstr "テーブルメッシュ"
 
 msgid "Bed screw configuration:"
-msgstr "ベッドスクリュー設定:"
+msgstr "テーブルネジの調整:"
 
 msgid "Calibrate"
 msgstr "校正"
@@ -1036,7 +1036,7 @@ msgid "Edit User"
 msgstr "ユーザーの編集"
 
 msgid "Heater Bed"
-msgstr "加熱テーブル"
+msgstr "テーブル"
 
 msgid "Chamber Fan"
 msgstr "ウィンドファン"

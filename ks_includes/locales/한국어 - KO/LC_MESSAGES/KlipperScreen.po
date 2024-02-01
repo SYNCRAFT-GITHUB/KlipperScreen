@@ -161,13 +161,13 @@ msgid "Auto-scroll"
 msgstr "오토 스크롤"
 
 msgid "Bed Level"
-msgstr "베드 레베"
+msgstr "테이블 레벨"
 
 msgid "Bed Mesh"
-msgstr "배드 메시"
+msgstr "테이블 메쉬"
 
 msgid "Bed screw configuration:"
-msgstr "침대 나사 구성:"
+msgstr "테이블 나사 구성:"
 
 msgid "Calibrate"
 msgstr "교정"
@@ -1103,7 +1103,7 @@ msgid "Edit User"
 msgstr "사용자 편집"
 
 msgid "Heater Bed"
-msgstr "가열 테이블"
+msgstr "테이블"
 
 msgid "Chamber Fan"
 msgstr "바람 선풍기"
