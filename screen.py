@@ -105,9 +105,15 @@ class KlipperScreen(Gtk.Window):
             raise RuntimeError("Couldn't get default monitor")
         self.width = self._config.get_main_config().getint("width", monitor.get_geometry().width)
         self.height = self._config.get_main_config().getint("height", monitor.get_geometry().height)
-        self.set_default_size(self.width, self.height)
-        self.set_resizable(True)
-        if not (self._config.get_main_config().get("width") or self._config.get_main_config().get("height")):
+        if 'XDG_CURRENT_DESKTOP' in os.environ:
+            logging.warning("Running inside a desktop environment is not recommended")
+            logging.warning("Are you a developer?")
+            self.width = max(int(monitor.get_geometry().width * .5), 480)
+            self.height = max(int(monitor.get_geometry().height * .5), 320)
+            self.set_resizable(True)
+            self.set_default_size(self.width, self.height)
+            self.set_resizable(True)
+        elif not (self._config.get_main_config().get("width") or self._config.get_main_config().get("height")):
             self.fullscreen()
         self.aspect_ratio = self.width / self.height
         self.vertical_mode = self.aspect_ratio < 1.0
@@ -124,6 +130,8 @@ class KlipperScreen(Gtk.Window):
         self.set_icon_from_file(os.path.join(klipperscreendir, "styles", "icon.svg"))
 
         self.base_panel = BasePanel(self, title="Base Panel")
+        logging.warning("Running inside a desktop environment is not recommended")
+        logging.warning("Are you a developer?")
         self.add(self.base_panel.main_grid)
         self.show_all()
         if self.show_cursor:
@@ -772,7 +780,6 @@ class KlipperScreen(Gtk.Window):
         self.process_update(action, data)
 
     def process_update(self, *args):
-
         GLib.idle_add(self.base_panel.process_update, *args)
         for x in self.subscriptions:
             GLib.idle_add(self.panels[x].process_update, *args)
