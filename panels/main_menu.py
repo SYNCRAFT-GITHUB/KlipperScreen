@@ -279,7 +279,7 @@ class MainPanel(MenuPanel):
                                 self._config.replace_extruder_option(newvalue='extruder1')
                             else:
                                 self._config.replace_extruder_option(newvalue='extruder')
-                        elif not data[x]['filament_detected']:
+                        elif data[x]['filament_detected'] == False:
                             self._config.replace_filament_activity(x, "empty")
 
     def show_numpad(self, widget, device):
