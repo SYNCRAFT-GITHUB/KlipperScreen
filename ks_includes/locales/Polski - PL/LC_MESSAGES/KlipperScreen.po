@@ -1491,6 +1491,15 @@ msgstr "Pokaż przyciski pasków przewijania"
 msgid "Select Material when inserting filament"
 msgstr "Menu automatycznego wyboru materiału"
 
+msgid "Cannot change ProExtruder type during filament insertion"
+msgstr "Nie można zmienić typu ekstrudera podczas wkładania włókna"
+
+msgid "Using this material may lead to inaccurate printing results."
+msgstr "Używanie tego materiału może prowadzić do niepożądanych rezultatów drukowania."
+
+msgid "Using an untested material may lead to inaccurate print results."
+msgstr "Użycie nieprzetestowanego materiału może prowadzić do niepożądanych rezultatów."
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"
 

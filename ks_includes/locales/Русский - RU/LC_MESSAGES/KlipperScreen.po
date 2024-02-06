@@ -1548,6 +1548,15 @@ msgstr "Показывать кнопки полос прокрутки"
 msgid "Select Material when inserting filament"
 msgstr "Меню автоматического выбора материала"
 
+msgid "Cannot change ProExtruder type during filament insertion"
+msgstr "Невозможно изменить тип экструдера во время вставки нити."
+
+msgid "Using this material may lead to inaccurate printing results."
+msgstr "Używanie tego materiału może prowadzić do złych lub niepożądanych wyników drukowania."
+
+msgid "Using an untested material may lead to inaccurate print results."
+msgstr "Использование непроверенного материала может привести к нежелательным результатам."
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

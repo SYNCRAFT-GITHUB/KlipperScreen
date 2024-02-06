@@ -87,16 +87,30 @@ class MaterialPopUp(ScreenPanel):
 
         self.texts = [
             _("This material is considered experimental for the selected Extruder."),
-            _("This action may result in unexpected results.")
+            _("Using this material may lead to inaccurate printing results."),
+            _("Using an untested material may lead to inaccurate print results.")
             ]
 
         grid = self._gtk.HomogeneousGrid()
 
-        i: int = 0
-        for key, value in self.proextruders.items():
-            self.labels[key] = self._gtk.Button(value, None, None)
-            grid.attach(self.labels[key], i, 0, 1, 1)
-            i += 1
+        if self.nozzle in self.proextruders:
+            self.labels[self.nozzle] = self._gtk.Button(self.proextruders[self.nozzle], None, None)
+            self.labels[self.nozzle].connect("clicked", self.change_type)
+            grid.attach(self.labels[self.nozzle], 0, 0, 1, 1)
+        else:
+            self.labels['nozzle'] = self._gtk.Button("nozzle-blank", None, None)
+            self.labels['nozzle'].connect("clicked", self.unknown_nozzle)
+            grid.attach(self.labels['nozzle'], 0, 0, 1, 1)
+
+        for i in range(1,4):
+            button = self._gtk.Button("nozzle-blank", None, None)
+            button.connect("clicked", self.change_type)
+            button.set_property("opacity", i/(10 + i))
+            grid.attach(button, i, 0, 1, 1)
+
+        ext_image = "extruder-2" if "two" in self._config.get_spool_option() else "extruder-1"
+        button = self._gtk.Button(ext_image, None, None)
+        grid.attach(button, 4, 0, 1, 1)
 
         self.gridattach(gridvariable=grid)
 
@@ -122,18 +136,6 @@ class MaterialPopUp(ScreenPanel):
                         if not data[x]['filament_detected'] and x == self._config.get_spool_option():
                             self._config.replace_filament_activity(x, "empty")
                             self._screen._menu_go_back()
-
-        if self.get_variable('nozzle') not in self.proextruders:
-            self.generic_button.set_label(_("Select Syncraft ProExtruder"))
-            for key, value in self.proextruders.items():
-                try:
-                    self.labels[key].set_property("opacity", 0.2)
-                except:
-                    pass
-        else:
-            for key, value in self.proextruders.items():
-                self.labels[key].set_property("opacity", 0.2)
-            self.labels[self.nozzle].set_property("opacity", 1.0)
         
 
     def gridattach(self, gridvariable):
@@ -260,7 +262,7 @@ class MaterialPopUp(ScreenPanel):
         params = {"script": script}
         self._screen._confirm_send_action(
             None,
-            self.texts[1] + "\n\n",
+            self.texts[2] + "\n\n",
             "printer.gcode.script",
             params
         )
@@ -271,3 +273,11 @@ class MaterialPopUp(ScreenPanel):
         message: str = _("Incompatible Material")
         self._screen.show_popup_message(message, level=3)
         return None
+
+    def change_type(self, button):
+        message: str = _("Cannot change ProExtruder type during filament insertion")
+        self._screen.show_popup_message(message, level=2)
+
+    def unknown_nozzle(self, button):
+        message: str = _("Select compatible Extruder")
+        self._screen.show_popup_message(message, level=2)

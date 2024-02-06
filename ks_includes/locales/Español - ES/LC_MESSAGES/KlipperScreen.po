@@ -1531,6 +1531,15 @@ msgstr "Mostrar botones de barras de desplazamiento"
 msgid "Select Material when inserting filament"
 msgstr "La selección de material aparece al insertar el filamento"
 
+msgid "Cannot change ProExtruder type during filament insertion"
+msgstr "No se puede cambiar el tipo de extrusor durante la inserción del filamento"
+
+msgid "Using this material may lead to inaccurate printing results."
+msgstr "El uso de este material puede dar lugar a resultados de impresión no deseados."
+
+msgid "Using an untested material may lead to inaccurate print results."
+msgstr "El uso de un material no probado puede dar lugar a resultados no deseados."
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

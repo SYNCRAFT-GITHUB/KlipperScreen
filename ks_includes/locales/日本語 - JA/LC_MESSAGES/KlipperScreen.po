@@ -1368,6 +1368,15 @@ msgstr "スクロールバーのボタンを表示"
 msgid "Select Material when inserting filament"
 msgstr "自動材料選択メニュー"
 
+msgid "Cannot change ProExtruder type during filament insertion"
+msgstr "フィラメントの挿入中に変更を加えることができません"
+
+msgid "Using this material may lead to inaccurate printing results."
+msgstr "この素材を使用すると、望ましくない印刷結果が生じる可能性があります。"
+
+msgid "Using an untested material may lead to inaccurate print results."
+msgstr "テストされていない材料を使用すると、望ましくない結果が生じる可能性があります。"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

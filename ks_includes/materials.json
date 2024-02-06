@@ -114,6 +114,24 @@
         "temp": 250
     },
     {
+        "name": "BVOH",
+        "code": "BVOH",
+        "compatible": [
+            "Standard 0.4mm"
+        ],
+        "experimental": [],
+        "temp": 210
+    },
+    {
+        "name": "PVA",
+        "code": "PVA",
+        "compatible": [
+            "Standard 0.4mm"
+        ],
+        "experimental": [],
+        "temp": 210
+    },
+    {
         "name": "PAHT CF15",
         "code": "PAHT CF15",
         "compatible": [
