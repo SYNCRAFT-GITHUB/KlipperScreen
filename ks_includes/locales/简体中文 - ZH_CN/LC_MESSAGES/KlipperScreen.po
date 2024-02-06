@@ -1508,6 +1508,15 @@ msgstr "显示滚动条按钮"
 msgid "Select Material when inserting filament"
 msgstr "插入灯丝时自动出现材料选择"
 
+msgid "Cannot change ProExtruder type during filament insertion"
+msgstr "将细丝插入机器时更换阻塞"
+
+msgid "Using this material may lead to inaccurate printing results."
+msgstr "使用这种材料可能会影响预期的打印质量。"
+
+msgid "Using an untested material may lead to inaccurate print results."
+msgstr "使用未经测试的材料可能会影响最终打印结果的预期质量。"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 
