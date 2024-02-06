@@ -203,7 +203,7 @@ class SetMaterialPanel(ScreenPanel):
         params = {"script": script}
         self._screen._confirm_send_action(
             None,
-            self.texts[0] + "\n\n" + self.texts[1] + "\n\n",
+            self.texts[0] + "\n\n",
             "printer.gcode.script",
             params
         )
