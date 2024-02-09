@@ -158,11 +158,12 @@
         "name": "PC/ABS",
         "code": "PC-ABS",
         "compatible": [
-            "Standard 0.4mm",
-            "Metal 0.4mm"
+            "Fiber 0.6mm"
         ],
         "experimental": [
-            "Standard 0.8mm"
+            "Standard 0.4mm",
+            "Standard 0.8mm",
+            "Metal 0.4mm"
         ],
         "temp": 280
     },
