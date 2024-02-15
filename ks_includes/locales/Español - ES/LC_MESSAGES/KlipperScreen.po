@@ -1208,7 +1208,7 @@ msgid "Heater Bed"
 msgstr "Mesa"
 
 msgid "Chamber Fan"
-msgstr "Ventilador"
+msgstr "Cámara"
 
 msgid "Select Syncraft ProExtruder"
 msgstr "Seleccione Syncraft ProExtruder"

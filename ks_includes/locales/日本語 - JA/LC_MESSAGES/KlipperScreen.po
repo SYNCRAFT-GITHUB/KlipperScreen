@@ -973,10 +973,10 @@ msgid "Do not show this again."
 msgstr "これを今後表示しないでください。"
 
 msgid "Extruder"
-msgstr "エクストルーダー"
+msgstr "押出機"
 
 msgid "Extruders"
-msgstr "エクストルーダー"
+msgstr "押出機"
 
 msgid "Extruders and Feeders"
 msgstr "押出機とフィーダー"
@@ -1039,7 +1039,7 @@ msgid "Heater Bed"
 msgstr "テーブル"
 
 msgid "Chamber Fan"
-msgstr "ウィンドファン"
+msgstr "チャンバー"
 
 msgid "Select Syncraft ProExtruder"
 msgstr "Syncraft ProExtruderを選択"

@@ -1216,10 +1216,10 @@ msgid "Edit User"
 msgstr "Редактировать пользователя"
 
 msgid "Heater Bed"
-msgstr "Таблица печати"
+msgstr "Стол"
 
 msgid "Chamber Fan"
-msgstr "Веер ветра"
+msgstr "Камера"
 
 msgid "Select Syncraft ProExtruder"
 msgstr "Выберите Syncraft ProExtruder"

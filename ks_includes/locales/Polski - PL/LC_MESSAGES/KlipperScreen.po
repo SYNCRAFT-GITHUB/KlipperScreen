@@ -1156,10 +1156,10 @@ msgid "Edit User"
 msgstr "Edytuj użytkownika"
 
 msgid "Heater Bed"
-msgstr "Podgrzewany Stół"
+msgstr "Tabela"
 
 msgid "Chamber Fan"
-msgstr "Wachlarz wiatru"
+msgstr "Izba"
 
 msgid "Select Syncraft ProExtruder"
 msgstr "Wybierz Syncraft ProExtruder"

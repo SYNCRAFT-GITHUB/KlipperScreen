@@ -1106,7 +1106,7 @@ msgid "Heater Bed"
 msgstr "테이블"
 
 msgid "Chamber Fan"
-msgstr "바람 선풍기"
+msgstr "방"
 
 msgid "Select Syncraft ProExtruder"
 msgstr "Syncraft ProExtruder 선택"

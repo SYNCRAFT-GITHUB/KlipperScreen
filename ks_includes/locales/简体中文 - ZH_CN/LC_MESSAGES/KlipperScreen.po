@@ -1176,10 +1176,10 @@ msgid "Edit User"
 msgstr "编辑用户"
 
 msgid "Heater Bed"
-msgstr "加热桌"
+msgstr "桌子"
 
 msgid "Chamber Fan"
-msgstr "风风扇"
+msgstr "室"
 
 msgid "Select Syncraft ProExtruder"
 msgstr "选择 Syncraft ProExtruder"

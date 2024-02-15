@@ -1181,10 +1181,10 @@ msgid "Edit User"
 msgstr "Benutzer bearbeiten"
 
 msgid "Heater Bed"
-msgstr "Beheizter Tisch"
+msgstr "Tisch"
 
 msgid "Chamber Fan"
-msgstr "Windfächer"
+msgstr "Kammer"
 
 msgid "Select Syncraft ProExtruder"
 msgstr "Wählen Sie Syncraft ProExtruder"

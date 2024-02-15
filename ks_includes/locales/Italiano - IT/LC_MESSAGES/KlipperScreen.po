@@ -1167,7 +1167,7 @@ msgid "Heater Bed"
 msgstr "Tavolo"
 
 msgid "Chamber Fan"
-msgstr "Ventola"
+msgstr "Camera"
 
 msgid "Select Syncraft ProExtruder"
 msgstr "Seleziona Syncraft ProExtruder"
