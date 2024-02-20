@@ -1517,6 +1517,9 @@ msgstr "使用这种材料可能会影响预期的打印质量。"
 msgid "Using an untested material may lead to inaccurate print results."
 msgstr "使用未经测试的材料可能会影响最终打印结果的预期质量。"
 
+msgid "Select materials before printing"
+msgstr "打印前在耗材面板中选择材料"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

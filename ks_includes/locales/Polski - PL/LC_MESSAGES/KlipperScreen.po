@@ -1500,6 +1500,9 @@ msgstr "Używanie tego materiału może prowadzić do niepożądanych rezultató
 msgid "Using an untested material may lead to inaccurate print results."
 msgstr "Użycie nieprzetestowanego materiału może prowadzić do niepożądanych rezultatów."
 
+msgid "Select materials before printing"
+msgstr "Wybierz materiały przed drukowaniem"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"
 

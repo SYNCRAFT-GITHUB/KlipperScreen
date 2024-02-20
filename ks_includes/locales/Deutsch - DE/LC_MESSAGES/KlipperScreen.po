@@ -1516,6 +1516,9 @@ msgstr "Die Verwendung dieses Materials kann zu ungenauen Druckergebnissen führ
 msgid "Using an untested material may lead to inaccurate print results."
 msgstr "Die Verwendung eines ungetesteten Materials kann zu ungenauen Druckergebnissen führen."
 
+msgid "Select materials before printing"
+msgstr "Materialien vor dem Drucken auswählen"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 

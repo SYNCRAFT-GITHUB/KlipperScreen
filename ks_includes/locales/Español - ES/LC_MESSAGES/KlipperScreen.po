@@ -1540,6 +1540,9 @@ msgstr "El uso de este material puede dar lugar a resultados de impresión no de
 msgid "Using an untested material may lead to inaccurate print results."
 msgstr "El uso de un material no probado puede dar lugar a resultados no deseados."
 
+msgid "Select materials before printing"
+msgstr "Seleccione materiales antes de imprimir"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 
