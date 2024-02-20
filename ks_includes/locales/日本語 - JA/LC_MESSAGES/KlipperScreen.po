@@ -973,10 +973,10 @@ msgid "Do not show this again."
 msgstr "これを今後表示しないでください。"
 
 msgid "Extruder"
-msgstr "エクストルーダー"
+msgstr "押出機"
 
 msgid "Extruders"
-msgstr "エクストルーダー"
+msgstr "押出機"
 
 msgid "Extruders and Feeders"
 msgstr "押出機とフィーダー"
@@ -1039,7 +1039,7 @@ msgid "Heater Bed"
 msgstr "テーブル"
 
 msgid "Chamber Fan"
-msgstr "ウィンドファン"
+msgstr "チャンバー"
 
 msgid "Select Syncraft ProExtruder"
 msgstr "Syncraft ProExtruderを選択"
@@ -1376,6 +1376,9 @@ msgstr "この素材を使用すると、望ましくない印刷結果が生じ
 
 msgid "Using an untested material may lead to inaccurate print results."
 msgstr "テストされていない材料を使用すると、望ましくない結果が生じる可能性があります。"
+
+msgid "Select materials before printing"
+msgstr "印刷前に材料を選択してください"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"

@@ -140,7 +140,7 @@ class MaterialPopUp(ScreenPanel):
 
     def gridattach(self, gridvariable):
 
-        repeat_three: int = 0
+        repeat_three: int = 0 
         i: int = 1
 
         scroll = self._gtk.ScrolledWindow()

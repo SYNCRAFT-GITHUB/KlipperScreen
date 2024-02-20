@@ -1216,10 +1216,10 @@ msgid "Edit User"
 msgstr "Редактировать пользователя"
 
 msgid "Heater Bed"
-msgstr "Таблица печати"
+msgstr "Стол"
 
 msgid "Chamber Fan"
-msgstr "Веер ветра"
+msgstr "Камера"
 
 msgid "Select Syncraft ProExtruder"
 msgstr "Выберите Syncraft ProExtruder"
@@ -1556,6 +1556,9 @@ msgstr "Używanie tego materiału może prowadzić do złych lub niepożądanych
 
 msgid "Using an untested material may lead to inaccurate print results."
 msgstr "Использование непроверенного материала может привести к нежелательным результатам."
+
+msgid "Select materials before printing"
+msgstr "Выберите материалы перед печатью"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"

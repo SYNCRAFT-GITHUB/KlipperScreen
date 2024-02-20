@@ -1370,6 +1370,9 @@ msgstr ""
 msgid "Using an untested material may lead to inaccurate print results."
 msgstr ""
 
+msgid "Select materials before printing"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

@@ -1181,10 +1181,10 @@ msgid "Edit User"
 msgstr "Benutzer bearbeiten"
 
 msgid "Heater Bed"
-msgstr "Beheizter Tisch"
+msgstr "Tisch"
 
 msgid "Chamber Fan"
-msgstr "Windfächer"
+msgstr "Kammer"
 
 msgid "Select Syncraft ProExtruder"
 msgstr "Wählen Sie Syncraft ProExtruder"
@@ -1515,6 +1515,9 @@ msgstr "Die Verwendung dieses Materials kann zu ungenauen Druckergebnissen führ
 
 msgid "Using an untested material may lead to inaccurate print results."
 msgstr "Die Verwendung eines ungetesteten Materials kann zu ungenauen Druckergebnissen führen."
+
+msgid "Select materials before printing"
+msgstr "Materialien vor dem Drucken auswählen"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"

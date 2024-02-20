@@ -16,6 +16,11 @@ known_errors = [
         code=None
         ),
     KnownError(
+        error= '!SELECT_MATERIALS_BEFORE_PRINTING',
+        message= 'Select materials before printing',
+        code=None
+        ),
+    KnownError(
         error= '!MATERIAL_DOESNT_MATCH_GCODE',
         message= 'The material you\'re using is not compatible with this file',
         code=None

@@ -1226,7 +1226,7 @@ msgid "Heater Bed"
 msgstr "Tableau"
 
 msgid "Chamber Fan"
-msgstr "Ventilateur"
+msgstr "Chambre"
 
 msgid "Select Syncraft ProExtruder"
 msgstr "Sélectionner Syncraft ProExtruder"
@@ -1563,6 +1563,9 @@ msgstr "L'utilisation de ce matériau peut entraîner des résultats d'impressio
 
 msgid "Using an untested material may lead to inaccurate print results."
 msgstr "L'utilisation d'un matériau non testé peut entraîner des résultats d'impression indésirables."
+
+msgid "Select materials before printing"
+msgstr "Sélectionnez les matériaux avant l'impression"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonde a été déclenchée avant le mouvement"

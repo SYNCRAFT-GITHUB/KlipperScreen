@@ -1106,7 +1106,7 @@ msgid "Heater Bed"
 msgstr "테이블"
 
 msgid "Chamber Fan"
-msgstr "바람 선풍기"
+msgstr "방"
 
 msgid "Select Syncraft ProExtruder"
 msgstr "Syncraft ProExtruder 선택"
@@ -1443,6 +1443,9 @@ msgstr "이 재료를 사용하면 인쇄 결과가 좋지 않거나 원하지 �
 
 msgid "Using an untested material may lead to inaccurate print results."
 msgstr "테스트되지 않은 재료를 사용하면 원치 않는 결과가 발생할 수 있습니다."
+
+msgid "Select materials before printing"
+msgstr "인쇄 전에 재료를 선택하십시오"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
