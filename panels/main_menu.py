@@ -261,9 +261,9 @@ class MainPanel(MenuPanel):
                 if self._config.get_main_config().getboolean('auto_select_material', False):
                     self._screen.delete_temporary_panels()
                     self.start_time = time.time()
-                    self.menu_item_clicked(widget="material_popup", panel="material_popup", item={
-                                        "name": _("Select the Material"),
-                                        "panel": "material_popup"
+                    self.menu_item_clicked(widget="nozzle", panel="nozzle", item={
+                                        "name": _("Select Syncraft ProExtruder"),
+                                        "panel": "nozzle"
                                     })
             if x in data:
                 if 'enabled' in data[x]:
