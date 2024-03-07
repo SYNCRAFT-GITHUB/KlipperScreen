@@ -50,6 +50,7 @@ class NozzleSelectPanel(ScreenPanel):
 
     def on_image_clicked(self, widget, event, nozzle):
         self.nozzlegcodescript(widget, nozzle)
+        self._screen.delete_temporary_panels()
         self.menu_item_clicked(widget="material_popup", panel="material_popup", item={
                 "name": _("Select the Material"),
                 "panel": "material_popup"
