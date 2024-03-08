@@ -5,6 +5,7 @@ import json
 import logging
 import os
 import subprocess
+import platform
 import pathlib
 import traceback  # noqa
 import locale
@@ -105,9 +106,9 @@ class KlipperScreen(Gtk.Window):
             raise RuntimeError("Couldn't get default monitor")
         self.width = self._config.get_main_config().getint("width", monitor.get_geometry().width)
         self.height = self._config.get_main_config().getint("height", monitor.get_geometry().height)
-        if 'XDG_CURRENT_DESKTOP' in os.environ:
-            logging.warning("Running inside a desktop environment is not recommended")
-            logging.warning("Are you a developer?")
+        if 'XDG_CURRENT_DESKTOP' in os.environ \
+        or platform.system() in ["Darwin", "Windows"]:
+            logging.warning("Desktop environment detected")
             self.width = max(int(monitor.get_geometry().width * .5), 480)
             self.height = max(int(monitor.get_geometry().height * .5), 320)
             self.set_resizable(True)

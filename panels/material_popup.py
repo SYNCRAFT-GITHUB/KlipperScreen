@@ -135,7 +135,7 @@ class MaterialPopUp(ScreenPanel):
                     if self._printer.get_stat(x, "enabled"):
                         if not data[x]['filament_detected'] and x == self._config.get_spool_option():
                             self._config.replace_filament_activity(x, "empty")
-                            self._screen._menu_go_back()
+                            self.full_back()
         
 
     def gridattach(self, gridvariable):
@@ -235,15 +235,19 @@ class MaterialPopUp(ScreenPanel):
             return False
         return True
 
+    def full_back(self):
+        self._screen._menu_go_back()
+        self._screen._menu_go_back()
+
     def confirm_set_default(self, widget, code):
         self._screen._ws.klippy.gcode_script(Gcode.change_material(m=code, ext=self._config.get_extruder_option()))
         self._config.replace_filament_activity(self._config.get_spool_option(), "busy")
-        self._screen._menu_go_back()
+        self.full_back()
 
     def confirm_set_empty(self, widget):
         self._screen._ws.klippy.gcode_script(Gcode.change_material(m='empty', ext=self._config.get_extruder_option()))
         self._config.replace_filament_activity(self._config.get_spool_option(), "busy")
-        self._screen._menu_go_back()
+        self.full_back()
 
     def confirm_set_experimental(self, widget, code):
         script = Gcode.change_material(m=code, ext=self._config.get_extruder_option())
@@ -255,7 +259,7 @@ class MaterialPopUp(ScreenPanel):
             params
         )
         self._config.replace_filament_activity(self._config.get_spool_option(), "busy")
-        self._screen._menu_go_back()
+        self.full_back()
 
     def confirm_set_custom(self, widget):
         script = Gcode.change_material(m='GENERIC', ext=self._config.get_extruder_option())
@@ -267,7 +271,7 @@ class MaterialPopUp(ScreenPanel):
             params
         )
         self._config.replace_filament_activity(self._config.get_spool_option(), "busy")
-        self._screen._menu_go_back()
+        self.full_back()
 
     def set_invalid_material(self, widget=None):
         message: str = _("Incompatible Material")
@@ -275,8 +279,7 @@ class MaterialPopUp(ScreenPanel):
         return None
 
     def change_type(self, button):
-        message: str = _("Cannot change ProExtruder type during filament insertion")
-        self._screen.show_popup_message(message, level=2)
+        self._screen._menu_go_back()
 
     def unknown_nozzle(self, button):
         message: str = _("Select compatible Extruder")
