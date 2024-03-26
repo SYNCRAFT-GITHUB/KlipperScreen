@@ -1399,7 +1399,7 @@ msgid "Wired"
 msgstr "Cabeado"
 
 msgid "Wireless"
-msgstr "Wireless"
+msgstr "Wi-Fi"
 
 msgid "P2P"
 msgstr "P2P"

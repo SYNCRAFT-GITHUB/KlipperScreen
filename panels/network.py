@@ -97,7 +97,7 @@ class NetworkPanel(ScreenPanel):
         sbox.set_vexpand(False)
         sbox.add(self.labels['interface'])
         if ip is not None:
-            self.labels['ip'].set_text(f"IP: {ip}  ")
+            self.labels['ip'].set_text(f"\t{ip}")
             sbox.add(self.labels['ip'])
         sbox.add(connect_hidden)
         sbox.add(reload_networks)
@@ -406,13 +406,12 @@ class NetworkPanel(ScreenPanel):
         if "add_network" in self.labels:
             del self.labels['add_network']
 
-        # NUMBER 1 (SSID)
-
         label = self._gtk.Label(_("Connect to a hidden network") + f" (SSID)")
         label.set_hexpand(False)
         self.labels['network_ssid'] = Gtk.Entry()
         self.labels['network_ssid'].set_text('')
         self.labels['network_ssid'].set_hexpand(True)
+        self.labels['network_ssid'].connect("focus-in-event", self._screen.remove_keyboard)
         self.labels['network_ssid'].connect("focus-in-event", self._screen.show_keyboard)
 
         box = Gtk.Box()
@@ -427,10 +426,6 @@ class NetworkPanel(ScreenPanel):
 
         self.content.add(self.labels['add_network'])
         self.labels['network_ssid'].grab_focus_without_selecting()
-        self.content.show_all()
-        self.show_add = True
-
-        # NUMBER 2 (PASSWORD)
 
         ssid = self.labels['network_ssid'].get_text()
 
@@ -440,6 +435,7 @@ class NetworkPanel(ScreenPanel):
         self.labels['network_psk'].set_text('')
         self.labels['network_psk'].set_hexpand(True)
         self.labels['network_psk'].connect("activate", self.add_new_network, ssid, True)
+        self.labels['network_psk'].connect("focus-in-event", self._screen.remove_keyboard)
         self.labels['network_psk'].connect("focus-in-event", self._screen.show_keyboard)
 
         save = self._gtk.Button(None, " " +_("Connect") + " ", "color3")
@@ -458,7 +454,6 @@ class NetworkPanel(ScreenPanel):
         self.labels['add_network'].pack_start(box, True, True, 5)
 
         self.content.add(self.labels['add_network'])
-        self.labels['network_psk'].grab_focus_without_selecting()
         self.content.show_all()
         self.show_add = True
 
