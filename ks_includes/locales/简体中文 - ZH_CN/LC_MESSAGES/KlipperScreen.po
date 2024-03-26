@@ -1520,6 +1520,36 @@ msgstr "使用未经测试的材料可能会影响最终打印结果的预期质
 msgid "Select materials before printing"
 msgstr "打印前在耗材面板中选择材料"
 
+msgid "Connect to a hidden network"
+msgstr "连接到隐藏网络"
+
+msgid "Wired"
+msgstr "有线"
+
+msgid "Wireless"
+msgstr "无线"
+
+msgid "P2P"
+msgstr "点对点"
+
+msgid "Virtual Tunnel"
+msgstr "虚拟隧道"
+
+msgid "Bridge"
+msgstr "桥接"
+
+msgid "Loopback"
+msgstr "环回"
+
+msgid "Virtually Wired"
+msgstr "虚拟有线"
+
+msgid "Docker Bridge"
+msgstr "Docker桥"
+
+msgid "Connection is completed"
+msgstr "打印机现已连接"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

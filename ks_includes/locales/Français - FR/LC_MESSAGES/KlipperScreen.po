@@ -1567,6 +1567,36 @@ msgstr "L'utilisation d'un matériau non testé peut entraîner des résultats d
 msgid "Select materials before printing"
 msgstr "Sélectionnez les matériaux avant l'impression"
 
+msgid "Connect to a hidden network"
+msgstr "Connectez-vous au Wi-Fi caché"
+
+msgid "Wired"
+msgstr "Ethernet"
+
+msgid "Wireless"
+msgstr "Wi-Fi"
+
+msgid "P2P"
+msgstr "P2P"
+
+msgid "Virtual Tunnel"
+msgstr "Tunnel Virtuel"
+
+msgid "Bridge"
+msgstr "Pont"
+
+msgid "Loopback"
+msgstr "Bouclage"
+
+msgid "Virtually Wired"
+msgstr "Virtuellement Filaire"
+
+msgid "Docker Bridge"
+msgstr "Pont Docker"
+
+msgid "Connection is completed"
+msgstr "Connecté au réseau"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonde a été déclenchée avant le mouvement"
 

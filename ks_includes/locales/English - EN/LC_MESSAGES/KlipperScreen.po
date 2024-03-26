@@ -1373,6 +1373,36 @@ msgstr ""
 msgid "Select materials before printing"
 msgstr ""
 
+msgid "Connect to a hidden network"
+msgstr ""
+
+msgid "Wired"
+msgstr ""
+
+msgid "Wireless"
+msgstr ""
+
+msgid "P2P"
+msgstr ""
+
+msgid "Virtual Tunnel"
+msgstr ""
+
+msgid "Bridge"
+msgstr ""
+
+msgid "Loopback"
+msgstr ""
+
+msgid "Virtually Wired"
+msgstr ""
+
+msgid "Docker Bridge"
+msgstr ""
+
+msgid "Connection is completed"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

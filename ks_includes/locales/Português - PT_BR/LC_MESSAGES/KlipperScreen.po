@@ -1392,6 +1392,36 @@ msgstr "Usar um material não testado pode levar a resultados indesejados de imp
 msgid "Select materials before printing"
 msgstr "Selecione os materiais antes de imprimir"
 
+msgid "Connect to a hidden network"
+msgstr "Conectar em uma rede oculta"
+
+msgid "Wired"
+msgstr "Cabeado"
+
+msgid "Wireless"
+msgstr "Wi-Fi"
+
+msgid "P2P"
+msgstr "P2P"
+
+msgid "Virtual Tunnel"
+msgstr "Túnel Virtual"
+
+msgid "Bridge"
+msgstr "Bridge"
+
+msgid "Loopback"
+msgstr "Loopback"
+
+msgid "Virtually Wired"
+msgstr "Virtualmente Cabeado"
+
+msgid "Docker Bridge"
+msgstr "Bridge com Docker"
+
+msgid "Connection is completed"
+msgstr "A Conexão foi concluída"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "O ProExtruder foi indevidamente pressionado"
 

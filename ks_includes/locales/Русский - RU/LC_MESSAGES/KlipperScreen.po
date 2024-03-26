@@ -1560,6 +1560,36 @@ msgstr "Использование непроверенного материал
 msgid "Select materials before printing"
 msgstr "Выберите материалы перед печатью"
 
+msgid "Connect to a hidden network"
+msgstr "Подключиться к скрытой сети"
+
+msgid "Wired"
+msgstr "Проводное"
+
+msgid "Wireless"
+msgstr "Беспроводное"
+
+msgid "P2P"
+msgstr "Точка-точка"
+
+msgid "Virtual Tunnel"
+msgstr "Виртуальный туннель"
+
+msgid "Bridge"
+msgstr "Мост"
+
+msgid "Loopback"
+msgstr "Обратная петля"
+
+msgid "Virtually Wired"
+msgstr "Почти проводное"
+
+msgid "Docker Bridge"
+msgstr "Мост Docker"
+
+msgid "Connection is completed"
+msgstr "Подключено к сети"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

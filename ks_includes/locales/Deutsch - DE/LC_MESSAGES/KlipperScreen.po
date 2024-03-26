@@ -1519,6 +1519,36 @@ msgstr "Die Verwendung eines ungetesteten Materials kann zu ungenauen Druckergeb
 msgid "Select materials before printing"
 msgstr "Materialien vor dem Drucken auswählen"
 
+msgid "Connect to a hidden network"
+msgstr "Geben Sie die SSID manuell ein"
+
+msgid "Wired"
+msgstr "Verkabelt"
+
+msgid "Wireless"
+msgstr "Kabellos"
+
+msgid "P2P"
+msgstr "P2P"
+
+msgid "Virtual Tunnel"
+msgstr "Virtueller Tunnel"
+
+msgid "Bridge"
+msgstr "Brücke"
+
+msgid "Loopback"
+msgstr "Loopback"
+
+msgid "Virtually Wired"
+msgstr "Virtuell Verkabelt"
+
+msgid "Docker Bridge"
+msgstr "Docker-Brücke"
+
+msgid "Connection is completed"
+msgstr "Die Verbindung ist abgeschlossen"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 
