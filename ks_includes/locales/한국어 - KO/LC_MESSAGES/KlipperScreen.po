@@ -1447,6 +1447,33 @@ msgstr "테스트되지 않은 재료를 사용하면 원치 않는 결과가 �
 msgid "Select materials before printing"
 msgstr "인쇄 전에 재료를 선택하십시오"
 
+msgid "Connect to a hidden network"
+msgstr "숨겨진 네트워크에 연결"
+
+msgid "Wired"
+msgstr "유선"
+
+msgid "Wireless"
+msgstr "무선"
+
+msgid "P2P"
+msgstr "단대단"
+
+msgid "Virtual Tunnel"
+msgstr "가상 터널"
+
+msgid "Bridge"
+msgstr "다리"
+
+msgid "Loopback"
+msgstr "루프백"
+
+msgid "Virtually Wired"
+msgstr "가상으로 유선"
+
+msgid "Docker Bridge"
+msgstr "도커 브리지"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 

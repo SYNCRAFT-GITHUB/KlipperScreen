@@ -1543,6 +1543,33 @@ msgstr "El uso de un material no probado puede dar lugar a resultados no deseado
 msgid "Select materials before printing"
 msgstr "Seleccione materiales antes de imprimir"
 
+msgid "Connect to a hidden network"
+msgstr "Conéctate a Wi-Fi oculto"
+
+msgid "Wired"
+msgstr "Ethernet"
+
+msgid "Wireless"
+msgstr "Wi-Fi"
+
+msgid "P2P"
+msgstr "P2P"
+
+msgid "Virtual Tunnel"
+msgstr "Túnel Virtual"
+
+msgid "Bridge"
+msgstr "Puente"
+
+msgid "Loopback"
+msgstr "Loopback"
+
+msgid "Virtually Wired"
+msgstr "Cables Virtuales"
+
+msgid "Docker Bridge"
+msgstr "Puente Docker"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

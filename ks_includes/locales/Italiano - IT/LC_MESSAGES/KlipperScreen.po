@@ -1511,6 +1511,33 @@ msgstr "L'utilizzo di un materiale non testato può portare a risultati di stamp
 msgid "Select materials before printing"
 msgstr "Seleziona materiali prima della stampa"
 
+msgid "Connect to a hidden network"
+msgstr "Connettiti al Wi-Fi nascosto"
+
+msgid "Wired"
+msgstr "Ethernet"
+
+msgid "Wireless"
+msgstr "Wi-Fi"
+
+msgid "P2P"
+msgstr "P2P"
+
+msgid "Virtual Tunnel"
+msgstr "Tunnel virtuale"
+
+msgid "Bridge"
+msgstr "Ponte"
+
+msgid "Loopback"
+msgstr "Loopback"
+
+msgid "Virtually Wired"
+msgstr "Virtualmente cablato"
+
+msgid "Docker Bridge"
+msgstr "Ponte Docker"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 
