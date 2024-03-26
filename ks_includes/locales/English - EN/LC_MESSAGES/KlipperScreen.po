@@ -1400,6 +1400,9 @@ msgstr ""
 msgid "Docker Bridge"
 msgstr ""
 
+msgid "Connection is completed"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

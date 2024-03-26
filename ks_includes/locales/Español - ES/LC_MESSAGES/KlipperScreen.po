@@ -1570,6 +1570,9 @@ msgstr "Cables Virtuales"
 msgid "Docker Bridge"
 msgstr "Puente Docker"
 
+msgid "Connection is completed"
+msgstr "Conectado a la red"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

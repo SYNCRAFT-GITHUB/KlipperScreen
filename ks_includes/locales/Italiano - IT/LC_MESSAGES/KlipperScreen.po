@@ -1538,6 +1538,9 @@ msgstr "Virtualmente cablato"
 msgid "Docker Bridge"
 msgstr "Ponte Docker"
 
+msgid "Connection is completed"
+msgstr "Connesso alla rete"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 

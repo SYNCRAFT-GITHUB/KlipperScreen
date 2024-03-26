@@ -1547,6 +1547,9 @@ msgstr "虚拟有线"
 msgid "Docker Bridge"
 msgstr "Docker桥"
 
+msgid "Connection is completed"
+msgstr "打印机现已连接"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

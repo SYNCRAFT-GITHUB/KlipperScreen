@@ -299,7 +299,9 @@ class WpaSocket(Thread):
                 # TODO: Socket error
                 continue
             if msg.startswith("<"):
-                if "CTRL-EVENT-SCAN-RESULTS" in msg:
+                if "CTRL-EVENT-CONNECTED" in msg:
+                    self._screen.show_popup_message(_("Connection is completed"), level=1)
+                elif "CTRL-EVENT-SCAN-RESULTS" in msg:
                     GLib.idle_add(self.wm.scan_results)
                 elif "CTRL-EVENT-DISCONNECTED" in msg:
                     self.callback("connecting_status", msg)

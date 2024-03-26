@@ -1530,6 +1530,9 @@ msgstr "Wirtualnie przewodowy"
 msgid "Docker Bridge"
 msgstr "Mostek Docker"
 
+msgid "Connection is completed"
+msgstr "Podłączony do sieci"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"
 

@@ -1546,6 +1546,9 @@ msgstr "Virtuell Verkabelt"
 msgid "Docker Bridge"
 msgstr "Docker-Brücke"
 
+msgid "Connection is completed"
+msgstr "Die Verbindung ist abgeschlossen"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 

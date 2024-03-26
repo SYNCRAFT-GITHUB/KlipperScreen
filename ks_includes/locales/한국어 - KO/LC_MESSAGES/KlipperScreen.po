@@ -1474,6 +1474,9 @@ msgstr "가상으로 유선"
 msgid "Docker Bridge"
 msgstr "도커 브리지"
 
+msgid "Connection is completed"
+msgstr "네트워크에 연결됨"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 

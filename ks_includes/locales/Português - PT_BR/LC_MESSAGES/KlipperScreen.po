@@ -1419,6 +1419,9 @@ msgstr "Virtualmente Cabeado"
 msgid "Docker Bridge"
 msgstr "Bridge com Docker"
 
+msgid "Connection is completed"
+msgstr "A Conexão foi concluída"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "O ProExtruder foi indevidamente pressionado"
 

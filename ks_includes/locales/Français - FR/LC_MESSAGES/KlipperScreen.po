@@ -1594,6 +1594,9 @@ msgstr "Virtuellement Filaire"
 msgid "Docker Bridge"
 msgstr "Pont Docker"
 
+msgid "Connection is completed"
+msgstr "Connecté au réseau"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonde a été déclenchée avant le mouvement"
 

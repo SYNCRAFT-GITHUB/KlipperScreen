@@ -1587,6 +1587,9 @@ msgstr "Почти проводное"
 msgid "Docker Bridge"
 msgstr "Мост Docker"
 
+msgid "Connection is completed"
+msgstr "Подключено к сети"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

@@ -1407,6 +1407,9 @@ msgstr "仮想有線"
 msgid "Docker Bridge"
 msgstr "Dockerブリッジ"
 
+msgid "Connection is completed"
+msgstr "接続が完了しました"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 
