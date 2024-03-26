@@ -240,6 +240,11 @@ class NetworkPanel(ScreenPanel):
 
     def add_new_network(self, widget, ssid, connect=False):
         self._screen.remove_keyboard()
+        if not ssid:
+            try:
+                ssid = self.labels['network_ssid'].get_text()
+            except:
+                return
         psk = self.labels['network_psk'].get_text()
         result = self.wifi.add_network(ssid, psk)
 
@@ -249,7 +254,7 @@ class NetworkPanel(ScreenPanel):
             if result:
                 self.connect_network(widget, ssid, False)
             else:
-                self._screen.show_popup_message(f"Error adding network {ssid}")
+                self._screen.show_popup_message(f"{_('An error has occurred')}.\tSSID: {ssid}")
 
     def back(self):
         if self.show_add:
@@ -427,20 +432,18 @@ class NetworkPanel(ScreenPanel):
         self.content.add(self.labels['add_network'])
         self.labels['network_ssid'].grab_focus_without_selecting()
 
-        ssid = self.labels['network_ssid'].get_text()
-
         label = self._gtk.Label(_("Enter Password"))
         label.set_hexpand(False)
         self.labels['network_psk'] = Gtk.Entry()
         self.labels['network_psk'].set_text('')
         self.labels['network_psk'].set_hexpand(True)
-        self.labels['network_psk'].connect("activate", self.add_new_network, ssid, True)
+        self.labels['network_psk'].connect("activate", self.add_new_network, None, True)
         self.labels['network_psk'].connect("focus-in-event", self._screen.remove_keyboard)
         self.labels['network_psk'].connect("focus-in-event", self._screen.show_keyboard)
 
         save = self._gtk.Button(None, " " +_("Connect") + " ", "color3")
         save.set_hexpand(False)
-        save.connect("clicked", self.add_new_network, ssid, True)
+        save.connect("clicked", self.add_new_network, None, True)
 
         box = Gtk.Box()
         box.pack_start(self.labels['network_psk'], True, True, 5)
