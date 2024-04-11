@@ -1520,7 +1520,7 @@ msgid "Select materials before printing"
 msgstr "Materialien vor dem Drucken auswählen"
 
 msgid "Connect to a hidden network"
-msgstr "Geben Sie die SSID manuell ein"
+msgstr "Mit verstecktem WLAN verbinden"
 
 msgid "Wired"
 msgstr "Verkabelt"

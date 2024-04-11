@@ -37,6 +37,10 @@ class TimezoneSelect(ScreenPanel):
             Timezone(region='America', location='Mexico_City'),
             Timezone(region='America', location='New_York'),
             Timezone(region='America', location='Sao_Paulo'),
+            Timezone(region='America', location='Paramaribo'),
+            Timezone(region='America', location='Porto_Velho'),
+            Timezone(region='America', location='Rio_Branco'),
+            Timezone(region='America', location='Santarem'),
             Timezone(region='America', location='Buenos_Aires'),
             Timezone(region='America', location='Lima'),
             Timezone(region='America', location='Toronto'),
@@ -125,7 +129,7 @@ class TimezoneSelect(ScreenPanel):
         self.labels['timezone_name'].connect("activate", self.apply_timezone_by_text)
         self.labels['timezone_name'].connect("focus-in-event", self._screen.show_keyboard)
 
-        save = self._gtk.Button("complete", _("Save"), "color3")
+        save = self._gtk.Button(None, _("Save Config"), "color3")
         save.set_hexpand(False)
         save.connect("clicked", self.apply_timezone_by_text)
 
