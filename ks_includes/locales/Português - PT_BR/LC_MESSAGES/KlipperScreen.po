@@ -1012,7 +1012,7 @@ msgid "Screen Brightness"
 msgstr "Brilho da Tela"
 
 msgid "Change Screen Brightness"
-msgstr "Mudar o brilho na barra lateral"
+msgstr "Atalho para mudar o brilho da tela"
 
 msgid "Almost Off"
 msgstr "Quase Desligado"
