@@ -1597,6 +1597,30 @@ msgstr "Pont Docker"
 msgid "Connection is completed"
 msgstr "Connecté au réseau"
 
+msgid "Compatibility check"
+msgstr "Vérification de Compatibilité"
+
+msgid "The check is always done before printing."
+msgstr "La vérification est toujours effectuée avant l'impression."
+
+msgid "It ensures selected materials and nozzle type are compatible."
+msgstr "L'objectif est de s'assurer que les matériaux\nsélectionnés et le type de buse sont compatibles."
+
+msgid "You can temporarily disable this verification."
+msgstr "Vous pouvez désactiver temporairement cette vérification."
+
+msgid "Compatibility check has been re-enabled."
+msgstr "La vérification de compatibilité a été réactivée."
+
+msgid "Verification is enabled"
+msgstr "La vérification est activée"
+
+msgid "Verification is disabled"
+msgstr "La vérification est désactivée"
+
+msgid "ON/OFF"
+msgstr "ON/OFF"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonde a été déclenchée avant le mouvement"
 

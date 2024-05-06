@@ -40,6 +40,12 @@ class SettingsPanel(ScreenPanel):
             "script": "CLEANGCODEFILES",
             "icon": "custom-script"
         }})
+        options.append({"comp_check": {
+            "name": _("Compatibility check"),
+            "type": "panel",
+            "panel": "setup_verify",
+            "icon": "check-setup"
+        }})
         options.append({"add_material": {
             "name": _("Add Material"),
             "type": "panel",

@@ -1477,6 +1477,30 @@ msgstr "도커 브리지"
 msgid "Connection is completed"
 msgstr "네트워크에 연결됨"
 
+msgid "Compatibility check"
+msgstr "호환성 확인"
+
+msgid "The check is always done before printing."
+msgstr "인쇄하기 전에 항상 확인됩니다."
+
+msgid "It ensures selected materials and nozzle type are compatible."
+msgstr "목표는 선택한 재료와 노즐 유형이\n모두 호환되는지 확인하는 것입니다."
+
+msgid "You can temporarily disable this verification."
+msgstr "이 확인을 일시적으로 비활성화할 수 있습니다."
+
+msgid "Compatibility check has been re-enabled."
+msgstr "호환성 확인이 다시 활성화되었습니다."
+
+msgid "Verification is enabled"
+msgstr "확인이 활성화되었습니다"
+
+msgid "Verification is disabled"
+msgstr "확인이 비활성화되었습니다"
+
+msgid "ON/OFF"
+msgstr "켜짐/끄짐"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 

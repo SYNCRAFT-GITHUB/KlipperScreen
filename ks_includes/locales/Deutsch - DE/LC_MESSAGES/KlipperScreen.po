@@ -1549,6 +1549,31 @@ msgstr "Docker-Brücke"
 msgid "Connection is completed"
 msgstr "Die Verbindung ist abgeschlossen"
 
+msgid "Compatibility check"
+msgstr "Kompatibilitätsprüfung"
+
+msgid "The check is always done before printing."
+msgstr "Die Prüfung wird immer vor dem Drucken durchgeführt."
+
+msgid "It ensures selected materials and nozzle type are compatible."
+msgstr "Das Ziel ist es, sicherzustellen,\ndass sowohl die ausgewählten Materialien als auch der\nDüsentyp kompatibel sind."
+
+msgid "You can temporarily disable this verification."
+msgstr "Sie können diese Überprüfung vorübergehend deaktivieren."
+
+msgid "Compatibility check has been re-enabled."
+msgstr "Die Kompatibilitätsprüfung wurde erneut aktiviert."
+
+msgid "Verification is enabled"
+msgstr "Die Überprüfung ist aktiviert"
+
+msgid "Verification is disabled"
+msgstr "Die Überprüfung ist deaktiviert"
+
+msgid "ON/OFF"
+msgstr "AN/AUS"
+
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 

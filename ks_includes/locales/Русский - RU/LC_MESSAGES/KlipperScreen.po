@@ -1590,6 +1590,30 @@ msgstr "Мост Docker"
 msgid "Connection is completed"
 msgstr "Подключено к сети"
 
+msgid "Compatibility check"
+msgstr "Проверка совместимости"
+
+msgid "The check is always done before printing."
+msgstr "Проверка всегда выполняется перед печатью."
+
+msgid "It ensures selected materials and nozzle type are compatible."
+msgstr "Цель - обеспечить совместимость\nвыбранных материалов и типа сопла."
+
+msgid "You can temporarily disable this verification."
+msgstr "Вы можете временно отключить эту проверку."
+
+msgid "Compatibility check has been re-enabled."
+msgstr "Проверка совместимости была снова включена."
+
+msgid "Verification is enabled"
+msgstr "Проверка включена"
+
+msgid "Verification is disabled"
+msgstr "Проверка отключена"
+
+msgid "ON/OFF"
+msgstr "ВКЛ./ВЫКЛ."
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

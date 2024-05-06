@@ -1573,6 +1573,31 @@ msgstr "Puente Docker"
 msgid "Connection is completed"
 msgstr "Conectado a la red"
 
+msgid "Compatibility check"
+msgstr "Comprobación Segura"
+
+msgid "The check is always done before printing."
+msgstr "La comprobación siempre se realiza antes de imprimir."
+
+msgid "It ensures selected materials and nozzle type are compatible."
+msgstr "El objetivo es asegurar que tanto los materiales seleccionados\ncomo el tipo de boquilla sean compatibles."
+
+msgid "You can temporarily disable this verification."
+msgstr "Puede desactivar temporalmente esta verificación."
+
+msgid "Compatibility check has been re-enabled."
+msgstr "Comprobación Segura ha sido reactivado."
+
+msgid "Verification is enabled"
+msgstr "Activado"
+
+msgid "Verification is disabled"
+msgstr "Desactivado"
+
+msgid "ON/OFF"
+msgstr "ON/OFF"
+
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

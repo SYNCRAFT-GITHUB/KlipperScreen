@@ -1533,6 +1533,30 @@ msgstr "Mostek Docker"
 msgid "Connection is completed"
 msgstr "Podłączony do sieci"
 
+msgid "Compatibility check"
+msgstr "Sprawdzanie kompatybilności"
+
+msgid "The check is always done before printing."
+msgstr "Sprawdzanie jest zawsze wykonywane przed drukowaniem."
+
+msgid "It ensures selected materials and nozzle type are compatible."
+msgstr "Celem jest zapewnienie, że zarówno wybrane\nmateriały, jak i typ dyszy są kompatybilne."
+
+msgid "You can temporarily disable this verification."
+msgstr "Możesz tymczasowo wyłączyć tę weryfikację."
+
+msgid "Compatibility check has been re-enabled."
+msgstr "Sprawdzanie kompatybilności zostało ponownie włączone."
+
+msgid "Verification is enabled"
+msgstr "Weryfikacja jest włączona"
+
+msgid "Verification is disabled"
+msgstr "Weryfikacja jest wyłączona"
+
+msgid "ON/OFF"
+msgstr "WŁ./WYŁ."
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"
 
