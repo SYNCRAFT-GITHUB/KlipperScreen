@@ -1428,8 +1428,8 @@ msgstr "Verificação Segura"
 msgid "The check is always done before printing."
 msgstr "A verificação é sempre feita antes de imprimir."
 
-msgid "The objective is to ensure that both selected materials and nozzle type are compatible."
-msgstr "O objetivo é garantir que tanto os materiais selecionados quanto o ProExtruder sejam compatíveis."
+msgid "It ensures selected materials and nozzle type are compatible."
+msgstr "O objetivo é garantir que tanto os materiais selecionados\nquanto o ProExtruder sejam compatíveis."
 
 msgid "You can temporarily disable this verification."
 msgstr "Você pode desativar temporariamente a verificação."

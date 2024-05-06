@@ -1603,7 +1603,7 @@ msgstr "Vérification de Compatibilité"
 msgid "The check is always done before printing."
 msgstr "La vérification est toujours effectuée avant l'impression."
 
-msgid "The objective is to ensure that both selected materials and nozzle type are compatible."
+msgid "It ensures selected materials and nozzle type are compatible."
 msgstr "L'objectif est de s'assurer que les matériaux\nsélectionnés et le type de buse sont compatibles."
 
 msgid "You can temporarily disable this verification."

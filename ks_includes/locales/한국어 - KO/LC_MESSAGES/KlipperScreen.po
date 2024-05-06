@@ -1483,7 +1483,7 @@ msgstr "호환성 확인"
 msgid "The check is always done before printing."
 msgstr "인쇄하기 전에 항상 확인됩니다."
 
-msgid "The objective is to ensure that both selected materials and nozzle type are compatible."
+msgid "It ensures selected materials and nozzle type are compatible."
 msgstr "목표는 선택한 재료와 노즐 유형이\n모두 호환되는지 확인하는 것입니다."
 
 msgid "You can temporarily disable this verification."

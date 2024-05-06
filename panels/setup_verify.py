@@ -29,7 +29,7 @@ class SetupVerifyManagePanel(ScreenPanel):
         grid = self._gtk.HomogeneousGrid()
 
         self.labels["text_01"] = Gtk.Label(_("The check is always done before printing."))
-        self.labels["text_02"] = Gtk.Label(_("The objective is to ensure that both selected materials and nozzle type are compatible."))
+        self.labels["text_02"] = Gtk.Label(_("It ensures selected materials and nozzle type are compatible."))
         self.labels["text_03"] = Gtk.Label(_("You can temporarily disable this verification."))
 
         self.labels["info"] = Gtk.Label("...")

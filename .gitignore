@@ -4,6 +4,7 @@ dev-host.json
 KlipperScreen.conf
 custom.json
 __pycache__/
+panels/__pycache__/
 *.py[cod]
 *$py.class
 dist/

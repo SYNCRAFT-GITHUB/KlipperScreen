@@ -1596,7 +1596,7 @@ msgstr "Проверка совместимости"
 msgid "The check is always done before printing."
 msgstr "Проверка всегда выполняется перед печатью."
 
-msgid "The objective is to ensure that both selected materials and nozzle type are compatible."
+msgid "It ensures selected materials and nozzle type are compatible."
 msgstr "Цель - обеспечить совместимость\nвыбранных материалов и типа сопла."
 
 msgid "You can temporarily disable this verification."

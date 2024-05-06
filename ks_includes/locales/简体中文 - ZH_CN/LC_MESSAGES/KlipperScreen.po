@@ -1556,7 +1556,7 @@ msgstr "兼容性检查"
 msgid "The check is always done before printing."
 msgstr "打印前始终执行检查。"
 
-msgid "The objective is to ensure that both selected materials and nozzle type are compatible."
+msgid "It ensures selected materials and nozzle type are compatible."
 msgstr "目标是确保所选材料和喷嘴类型都是兼容的。"
 
 msgid "You can temporarily disable this verification."

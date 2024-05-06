@@ -1579,7 +1579,7 @@ msgstr "Comprobación Segura"
 msgid "The check is always done before printing."
 msgstr "La comprobación siempre se realiza antes de imprimir."
 
-msgid "The objective is to ensure that both selected materials and nozzle type are compatible."
+msgid "It ensures selected materials and nozzle type are compatible."
 msgstr "El objetivo es asegurar que tanto los materiales seleccionados\ncomo el tipo de boquilla sean compatibles."
 
 msgid "You can temporarily disable this verification."
