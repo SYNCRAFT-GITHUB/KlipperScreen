@@ -1541,6 +1541,30 @@ msgstr "Ponte Docker"
 msgid "Connection is completed"
 msgstr "Connesso alla rete"
 
+msgid "Compatibility check"
+msgstr "Controllo di Compatibilità"
+
+msgid "The check is always done before printing."
+msgstr "Il controllo viene sempre effettuato prima della stampa."
+
+msgid "The objective is to ensure that both selected materials and nozzle type are compatible."
+msgstr "L'obiettivo è garantire che i materiali\nselezionati e il tipo di ugello siano compatibili."
+
+msgid "You can temporarily disable this verification."
+msgstr "È possibile disattivare temporaneamente questa verifica."
+
+msgid "Compatibility check has been re-enabled."
+msgstr "Il controllo di compatibilità è stato riattivato."
+
+msgid "Verification is enabled"
+msgstr "La verifica è abilitata"
+
+msgid "Verification is disabled"
+msgstr "La verifica è disabilitata"
+
+msgid "ON/OFF"
+msgstr "ON/OFF"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 

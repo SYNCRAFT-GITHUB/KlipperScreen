@@ -1422,6 +1422,30 @@ msgstr "Bridge com Docker"
 msgid "Connection is completed"
 msgstr "A Conexão foi concluída"
 
+msgid "Compatibility check"
+msgstr "Verificação Segura"
+
+msgid "The check is always done before printing."
+msgstr "A verificação é sempre feita antes de imprimir."
+
+msgid "The objective is to ensure that both selected materials and nozzle type are compatible."
+msgstr "O objetivo é garantir que tanto os materiais selecionados quanto o ProExtruder sejam compatíveis."
+
+msgid "You can temporarily disable this verification."
+msgstr "Você pode desativar temporariamente a verificação."
+
+msgid "Compatibility check has been re-enabled."
+msgstr "A verificação Segura foi reativada."
+
+msgid "Verification is enabled"
+msgstr "Verificação Ativada"
+
+msgid "Verification is disabled"
+msgstr "Verificação Desativada"
+
+msgid "ON/OFF"
+msgstr "Ativar/Desativar"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "O ProExtruder foi indevidamente pressionado"
 

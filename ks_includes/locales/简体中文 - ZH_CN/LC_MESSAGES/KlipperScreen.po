@@ -1550,6 +1550,30 @@ msgstr "Docker桥"
 msgid "Connection is completed"
 msgstr "打印机现已连接"
 
+msgid "Compatibility check"
+msgstr "兼容性检查"
+
+msgid "The check is always done before printing."
+msgstr "打印前始终执行检查。"
+
+msgid "The objective is to ensure that both selected materials and nozzle type are compatible."
+msgstr "目标是确保所选材料和喷嘴类型都是兼容的。"
+
+msgid "You can temporarily disable this verification."
+msgstr "您可以暂时禁用此验证。"
+
+msgid "Compatibility check has been re-enabled."
+msgstr "兼容性检查已重新启用。"
+
+msgid "Verification is enabled"
+msgstr "验证已启用"
+
+msgid "Verification is disabled"
+msgstr "验证已禁用"
+
+msgid "ON/OFF"
+msgstr "开/关"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

@@ -1403,6 +1403,30 @@ msgstr ""
 msgid "Connection is completed"
 msgstr ""
 
+msgid "Compatibility check"
+msgstr ""
+
+msgid "The check is always done before printing."
+msgstr ""
+
+msgid "The objective is to ensure that both selected materials and nozzle type are compatible."
+msgstr ""
+
+msgid "You can temporarily disable this verification."
+msgstr ""
+
+msgid "Compatibility check has been re-enabled."
+msgstr ""
+
+msgid "Verification is enabled"
+msgstr ""
+
+msgid "Verification is disabled"
+msgstr ""
+
+msgid "ON/OFF"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

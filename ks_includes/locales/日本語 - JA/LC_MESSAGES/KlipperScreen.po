@@ -1410,6 +1410,30 @@ msgstr "Dockerブリッジ"
 msgid "Connection is completed"
 msgstr "接続が完了しました"
 
+msgid "Compatibility check"
+msgstr "互換性チェック"
+
+msgid "The check is always done before printing."
+msgstr "印刷前には常にチェックされます。"
+
+msgid "The objective is to ensure that both selected materials and nozzle type are compatible."
+msgstr "目的は、材料とノズルの種類の両方に互換性があることを確認することです。"
+
+msgid "You can temporarily disable this verification."
+msgstr "一時的にこの検証を無効にすることができます。"
+
+msgid "Compatibility check has been re-enabled."
+msgstr "互換性チェックが再度有効になりました。"
+
+msgid "Verification is enabled"
+msgstr "検証が有効です"
+
+msgid "Verification is disabled"
+msgstr "検証が無効です"
+
+msgid "ON/OFF"
+msgstr "オン/オフ"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 
