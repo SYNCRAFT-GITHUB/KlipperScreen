@@ -1446,6 +1446,15 @@ msgstr "Verificação Desativada"
 msgid "ON/OFF"
 msgstr "Ativar/Desativar"
 
+msgid "This procedure will re-flash the controller board."
+msgstr "Este procedimento irá regravar a placa controladora."
+
+msgid "After this quick procedure, the machine will restart."
+msgstr "Após este procedimento, a Syncraft irá reiniciar."
+
+msgid "Do not proceed if you are not sure what you are doing."
+msgstr "Não prossiga se não tiver certeza do que está fazendo."
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "O ProExtruder foi indevidamente pressionado"
 

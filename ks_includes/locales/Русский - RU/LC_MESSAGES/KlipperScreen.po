@@ -1614,6 +1614,15 @@ msgstr "Проверка отключена"
 msgid "ON/OFF"
 msgstr "ВКЛ./ВЫКЛ."
 
+msgid "This procedure will re-flash the controller board."
+msgstr "Эта процедура перепрограммирует плату контроллера."
+
+msgid "After this quick procedure, the machine will restart."
+msgstr "После этой быстрой процедуры машина перезагрузится."
+
+msgid "Do not proceed if you are not sure what you are doing."
+msgstr "Не продолжайте, если не уверены в том, что делаете."
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

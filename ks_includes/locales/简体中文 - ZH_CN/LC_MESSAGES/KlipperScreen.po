@@ -1574,6 +1574,15 @@ msgstr "验证已禁用"
 msgid "ON/OFF"
 msgstr "开/关"
 
+msgid "This procedure will re-flash the controller board."
+msgstr "此程序将重新刷新控制器板。"
+
+msgid "After this quick procedure, the machine will restart."
+msgstr "完成此快速程序后，机器将重新启动。"
+
+msgid "Do not proceed if you are not sure what you are doing."
+msgstr "如果不确定自己在做什么，请不要继续。"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

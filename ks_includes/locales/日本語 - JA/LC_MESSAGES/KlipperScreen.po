@@ -1434,6 +1434,15 @@ msgstr "検証が無効です"
 msgid "ON/OFF"
 msgstr "オン/オフ"
 
+msgid "This procedure will re-flash the controller board."
+msgstr "この手順ではコントローラーボードが再度フラッシュされます。"
+
+msgid "After this quick procedure, the machine will restart."
+msgstr "この迅速な手順の後、機械は再起動します。"
+
+msgid "Do not proceed if you are not sure what you are doing."
+msgstr "何をしているかわからない場合は進めないでください。"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 
