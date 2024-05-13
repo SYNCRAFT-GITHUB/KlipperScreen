@@ -310,6 +310,12 @@ msgstr "Filamento utilizzato:"
 msgid "Filament:"
 msgstr "Filamento:"
 
+msgid "Filament"
+msgstr "Filamento"
+
+msgid "Feeder"
+msgstr "Alimentatore"
+
 msgid "File"
 msgstr "File"
 
