@@ -1,5 +1,6 @@
 import logging
-
+import os
+import subprocess
 import gi
 
 gi.require_version("Gtk", "3.0")
@@ -41,7 +42,7 @@ class ReflashPanel(ScreenPanel):
         self.content.add(self.labels['text'])
 
         self.buttons = {
-            'OK': self._gtk.Button("wrench", _("Start"), "color1"),
+            'OK': self._gtk.Button(None, _("Start"), "color1"),
         }
         self.buttons['OK'].connect("clicked", self.confirm)
 
