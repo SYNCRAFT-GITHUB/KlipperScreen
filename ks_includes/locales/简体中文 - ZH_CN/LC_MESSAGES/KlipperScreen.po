@@ -1583,6 +1583,18 @@ msgstr "完成此快速程序后，机器将重新启动。"
 msgid "Do not proceed if you are not sure what you are doing."
 msgstr "如果不确定自己在做什么，请不要继续。"
 
+msgid "This procedure will flash the controller board."
+msgstr "此程序将刷新控制器板。"
+
+msgid "Flash Controller Board"
+msgstr "刷新控制器板"
+
+msgid "First Flash (Jumper required)"
+msgstr "首次刷新（需要跳线）"
+
+msgid "Re-flash (Jumper not required)"
+msgstr "重新刷新（不需要跳线）"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

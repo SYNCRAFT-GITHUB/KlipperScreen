@@ -1436,6 +1436,18 @@ msgstr ""
 msgid "Do not proceed if you are not sure what you are doing."
 msgstr ""
 
+msgid "This procedure will flash the controller board."
+msgstr ""
+
+msgid "Flash Controller Board"
+msgstr ""
+
+msgid "First Flash (Jumper required)"
+msgstr ""
+
+msgid "Re-flash (Jumper not required)"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

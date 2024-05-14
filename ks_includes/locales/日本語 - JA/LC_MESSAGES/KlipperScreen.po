@@ -1443,6 +1443,18 @@ msgstr "この迅速な手順の後、機械は再起動します。"
 msgid "Do not proceed if you are not sure what you are doing."
 msgstr "何をしているかわからない場合は進めないでください。"
 
+msgid "This procedure will flash the controller board."
+msgstr "この手順ではコントローラーボードがフラッシュされます。"
+
+msgid "Flash Controller Board"
+msgstr "コントローラーボードのフラッシュ"
+
+msgid "First Flash (Jumper required)"
+msgstr "初回フラッシュ (ジャンパー必要)"
+
+msgid "Re-flash (Jumper not required)"
+msgstr "再フラッシュ (ジャンパー不要)"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

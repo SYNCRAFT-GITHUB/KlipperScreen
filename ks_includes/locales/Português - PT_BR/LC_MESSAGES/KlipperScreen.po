@@ -1447,13 +1447,25 @@ msgid "ON/OFF"
 msgstr "Ativar/Desativar"
 
 msgid "This procedure will re-flash the controller board."
-msgstr "Este procedimento irá regravar a placa controladora."
+msgstr "Este procedimento irá dar Re-Flash na placa controladora."
 
 msgid "After this quick procedure, the machine will restart."
 msgstr "Após este procedimento, a Syncraft irá reiniciar."
 
 msgid "Do not proceed if you are not sure what you are doing."
 msgstr "Não prossiga se não tiver certeza do que está fazendo."
+
+msgid "This procedure will flash the controller board."
+msgstr "Este procedimento irá dar um Flash a placa controladora."
+
+msgid "Flash Controller Board"
+msgstr "Flash na Placa Controladora"
+
+msgid "First Flash (Jumper required)"
+msgstr "Primeiro Flash (Jumper obrigatório)"
+
+msgid "Re-flash (Jumper not required)"
+msgstr "Re-Flash (Sem Jumper)"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "O ProExtruder foi indevidamente pressionado"

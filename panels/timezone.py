@@ -164,7 +164,7 @@ class TimezoneSelect(ScreenPanel):
 
         code = self.labels['timezone_name'].get_text()
 
-        magic_words = ['welcome', 'help', 'kill', 'restart', 'reflash']
+        magic_words = ['welcome', 'help', 'kill', 'restart']
         if code in magic_words:
             self.magic(code=code)
             return
@@ -186,13 +186,6 @@ class TimezoneSelect(ScreenPanel):
             message: str = _("Let me guess... Someone stole your Sweetroll")
             self._screen.show_popup_message(message, level=1)
             self._screen.remove_keyboard()
-
-        if code == 'reflash':
-            self._screen.remove_keyboard()
-            self.menu_item_clicked(widget="reflash", panel="reflash", item={
-                "name": _("Settings"),
-                "panel": "reflash"
-            })
 
         if code == 'kill':
             kill_command = "sudo service KlipperScreen stop"
