@@ -20,6 +20,9 @@ class FixPanel(ScreenPanel):
         super().__init__(screen, title)
         self.menu = ['fix_panel']
 
+        scroll = self._gtk.ScrolledWindow()
+        scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+
         self.buttons = {
             'FIX_FILES': self._gtk.Button("file", f'{_("Essential Files")} (LEGACY)', self.color()),
             'FIX_FILES_BOWDEN': self._gtk.Button("file", f'{_("Essential Files")} (BOWDEN)', self.color()),
@@ -31,6 +34,7 @@ class FixPanel(ScreenPanel):
             'FIX_LED': self._gtk.Button("light", _("LED Light Driver"), self.color()),
             'FIX_MOONRAKER': self._gtk.Button("moonraker", _("Moonraker"), self.color()),
             'EXPORT_LOGS_USB': self._gtk.Button("usb-save", _("Export Logs to USB"), self.color()),
+            'FLASH': self._gtk.Button("board-circuit", _("Flash Controller Board"), self.color()),
         }
 
         self.buttons['CLEAN_GCODE'].connect("clicked", self.set_fix_option_to, "CLEANGCODEFILES")
@@ -91,23 +95,25 @@ class FixPanel(ScreenPanel):
             "panel": "script"
         })
 
-        grid = self._gtk.HomogeneousGrid()
+        self.buttons['FLASH'].connect("clicked", self.menu_item_clicked, "fix_steps", {
+            "name": _("Flash Controller Board"),
+            "panel": "flash"
+        })
 
-        # 0, 2, 2, 1
+        grid = self._gtk.HomogeneousGrid()
 
         grid.attach(self.buttons['FIX_FILES'], 0, 0, 2, 1)
         grid.attach(self.buttons['FIX_FILES_BOWDEN'], 2, 0, 2, 1)
         grid.attach(self.buttons['FIX_FILES_FEEDER'], 0, 2, 2, 1)
-        grid.attach(self.buttons['FIX_CAMERA'], 0, 3, 1, 1)
-        grid.attach(self.buttons['FIX_KLIPPERSCREEN'], 2, 3, 1, 1)
-        grid.attach(self.buttons['FIX_MAINSAIL'], 3, 3, 1, 1)
-        grid.attach(self.buttons['FIX_LED'], 1, 3, 1, 1)
+        grid.attach(self.buttons['FIX_CAMERA'], 0, 4, 1, 1)
+        grid.attach(self.buttons['FIX_KLIPPERSCREEN'], 2, 4, 1, 1)
+        grid.attach(self.buttons['FIX_MAINSAIL'], 3, 4, 1, 1)
+        grid.attach(self.buttons['FIX_LED'], 1, 4, 1, 1)
         grid.attach(self.buttons['FIX_MOONRAKER'], 2, 2, 2, 1)
+        grid.attach(self.buttons['FLASH'], 0, 3, 4, 1)
 
-        self.labels['fix_panel'] = self._gtk.HomogeneousGrid()
-        self.labels['fix_panel'].attach(grid, 0, 0, 2, 2)
-
-        self.content.add(self.labels['fix_panel'])
+        scroll.add(grid)
+        self.content.add(scroll)
 
     def set_fix_option_to(self, button, newfixoption):
         self._config.replace_fix_option(newvalue=newfixoption)

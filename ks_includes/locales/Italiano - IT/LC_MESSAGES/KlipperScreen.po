@@ -1571,6 +1571,27 @@ msgstr "La verifica è disabilitata"
 msgid "ON/OFF"
 msgstr "ON/OFF"
 
+msgid "This procedure will re-flash the controller board."
+msgstr "Questo procedimento aggiornerà la scheda del controller."
+
+msgid "After this quick procedure, the machine will restart."
+msgstr "Dopo questa procedura rapida, la macchina si riavvierà."
+
+msgid "Do not proceed if you are not sure what you are doing."
+msgstr "Non procedere se non sei sicuro di quello che stai facendo."
+
+msgid "This procedure will flash the controller board."
+msgstr "Questa procedura flasherà la scheda del controller."
+
+msgid "Flash Controller Board"
+msgstr "Flashare la scheda del controller"
+
+msgid "First Flash (Jumper required)"
+msgstr "Primo flash (jumper richiesto)"
+
+msgid "Re-flash (Jumper not required)"
+msgstr "Riflash (jumper non richiesto)"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 

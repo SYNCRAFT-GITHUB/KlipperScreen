@@ -1621,6 +1621,27 @@ msgstr "La vérification est désactivée"
 msgid "ON/OFF"
 msgstr "ON/OFF"
 
+msgid "This procedure will re-flash the controller board."
+msgstr "Cette procédure réinitialisera la carte du contrôleur."
+
+msgid "After this quick procedure, the machine will restart."
+msgstr "Après cette procédure rapide, la machine redémarrera."
+
+msgid "Do not proceed if you are not sure what you are doing."
+msgstr "Ne continuez pas si vous n'êtes pas sûr de ce que vous faites."
+
+msgid "This procedure will flash the controller board."
+msgstr "Cette procédure flashera la carte du contrôleur."
+
+msgid "Flash Controller Board"
+msgstr "Flasher la carte du contrôleur"
+
+msgid "First Flash (Jumper required)"
+msgstr "Premier flashage (jumper requis)"
+
+msgid "Re-flash (Jumper not required)"
+msgstr "Reflashage (jumper non requis)"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonde a été déclenchée avant le mouvement"
 

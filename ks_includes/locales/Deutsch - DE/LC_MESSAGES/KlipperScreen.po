@@ -1573,6 +1573,26 @@ msgstr "Die Überprüfung ist deaktiviert"
 msgid "ON/OFF"
 msgstr "AN/AUS"
 
+msgid "This procedure will re-flash the controller board."
+msgstr "Dieses Verfahren wird die Steuerplatine neu flashen."
+
+msgid "After this quick procedure, the machine will restart."
+msgstr "Nach diesem schnellen Verfahren wird die Maschine neu starten."
+
+msgid "Do not proceed if you are not sure what you are doing."
+msgstr "Fahren Sie nicht fort, wenn Sie sich nicht sicher sind, was Sie tun."
+
+msgid "This procedure will flash the controller board."
+msgstr "Dieses Verfahren wird die Steuerplatine flashen."
+
+msgid "Flash Controller Board"
+msgstr "Steuerplatine flashen"
+
+msgid "First Flash (Jumper required)"
+msgstr "Erstes Flashen (Jumper erforderlich)"
+
+msgid "Re-flash (Jumper not required)"
+msgstr "Erneutes Flashen (Jumper nicht erforderlich)"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"

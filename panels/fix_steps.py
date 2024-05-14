@@ -30,7 +30,7 @@ class FixSteps(ScreenPanel):
             _("At the end, Syncraft will restart.")
         ]
 
-        self.image = self._gtk.Image(f"warning", self._gtk.content_width * 4, self._gtk.content_height * .6)
+        self.image = self._gtk.Image("warning", self._gtk.content_width * 4, self._gtk.content_height * .6)
 
         self.info = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=0)
         self.info.pack_start(self.image, True, True, 8)

@@ -1557,6 +1557,27 @@ msgstr "Weryfikacja jest wyłączona"
 msgid "ON/OFF"
 msgstr "WŁ./WYŁ."
 
+msgid "This procedure will re-flash the controller board."
+msgstr "Ten procedura zaktualizuje płytę sterującą."
+
+msgid "After this quick procedure, the machine will restart."
+msgstr "Po tej szybkiej procedurze maszyna zostanie zrestartowana."
+
+msgid "Do not proceed if you are not sure what you are doing."
+msgstr "Nie kontynuuj, jeśli nie jesteś pewien, co robisz."
+
+msgid "This procedure will flash the controller board."
+msgstr "Ten procedura sflashuje płytę sterującą."
+
+msgid "Flash Controller Board"
+msgstr "Sflashować płytę sterującą"
+
+msgid "First Flash (Jumper required)"
+msgstr "Pierwsze flashowanie (wymagany zworka)"
+
+msgid "Re-flash (Jumper not required)"
+msgstr "Ponowne flashowanie (zworka niewymagana)"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"
 
