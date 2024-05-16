@@ -98,11 +98,14 @@ class FilamentPanel(ScreenPanel):
         self._config.replace_extruder_option(newvalue=newvalue)
 
     def load_unload(self, widget, direction):
+        ext = self._config.get_extruder_option()
         if direction == "-":
             if not self.unload_filament:
                 self._screen.show_popup_message("Macro UNLOAD_FILAMENT not found")
             else:
                 self._screen._ws.klippy.gcode_script(f"UNLOAD_FILAMENT SPEED={self.speed * 60}")
+                if ext != "NONE":
+                    self._screen._ws.klippy.gcode_script(Gcode.change_material(m='empty', ext=ext))
         if direction == "+":
             if not self.load_filament:
                 self._screen.show_popup_message("Macro LOAD_FILAMENT not found")
