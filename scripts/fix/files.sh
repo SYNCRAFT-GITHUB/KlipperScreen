@@ -216,6 +216,28 @@ echo "false" > legacy.txt
 sudo chmod 777 /home/pi/printerdataconfig/legacy.txt
 echo "[HELPER] DONE: $process."
 
+process='Ensures user permissions for essential folders'
+echo "[HELPER] START: $process."
+
+gcodes_dir="/home/pi/printer_data/gcodes"
+index_dir="$gcodes_dir/.JOB"
+if [ -d "$index_dir" ]; then
+    sudo chown -R pi:1000 "$index_dir"
+    echo "[HELPER] Permissions updated for $index_dir."
+fi
+index_dir="$gcodes_dir/USB_PRINTS"
+if [ -d "$index_dir" ]; then
+    sudo chown -R pi:1000 "$index_dir"
+    echo "[HELPER] Permissions updated for $index_dir."
+fi
+index_dir="$gcodes_dir/USB"
+if [ -d "$index_dir" ]; then
+    sudo chown -R pi:1000 "$index_dir"
+    echo "[HELPER] Permissions updated for $index_dir."
+fi
+
+echo "[HELPER] DONE: $process."
+
 echo -e "\n\n[HELPER] DONE."
 
 sudo reboot
