@@ -24,7 +24,7 @@ class SystemInfo(ScreenPanel):
         super().__init__(screen, title)
         self.menu = ['system_info']
 
-        self.image = self._gtk.Image(f"settings", self._gtk.content_width * 4, self._gtk.content_height * .6)
+        self.image = self._gtk.Image(f"settings", self._gtk.content_width * 4, self._gtk.content_height * .5)
         self.core_path = os.path.join('/home', 'pi', 'SyncraftCore')
         self.info = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=0)
         self.info.pack_start(self.image, True, True, 8)
@@ -33,7 +33,8 @@ class SystemInfo(ScreenPanel):
 
         self.text: str = f"""
         {_('Hostname')}: {socket.gethostname()}
-        {_('Platform')}: {platform.platform()}
+        {_('Platform')}: {self.get_platform(True)}
+        {_('Configuration')}: {self.get_git_branch()}
         {_('Version')}: {platform.release()}
         {_('System')}: {platform.system()}
         {_('Mac')}: {getmac.get_mac_address()}
@@ -42,8 +43,6 @@ class SystemInfo(ScreenPanel):
         """
 
         self.labels['text'] = Gtk.Label(f"{self.text}")
-        self.labels['text'].set_line_wrap(True)
-        self.labels['text'].set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
         self.labels['text'].set_halign(Gtk.Align.CENTER)
         self.labels['text'].set_valign(Gtk.Align.CENTER)
 
@@ -63,8 +62,35 @@ class SystemInfo(ScreenPanel):
         except:
             return 'Syncraft X1'
 
+    def get_platform(self, formatted):
+        text = platform.platform()
+        if (not formatted) or (len(text) < 22):
+            return text
+        else:
+            return f"{text[:13]} ... {text[-10:]}"
+
     def get_mac_address(self, ip_address):
         arp_command = ['arp', '-n', ip_address]
         output = subprocess.check_output(arp_command).decode()
         mac_address = output.split()[3]
         return mac_address
+
+    def get_git_branch(self):
+        repo_path = "/home/pi/printerdataconfig"
+        if not os.path.exists(repo_path):
+            repo_path = "/home/pi/printer_data/config"
+            if not os.path.exists(repo_path):
+                return "PDC FOLDER NOT FOUND"
+        try:
+            result = subprocess.run(
+                ["git", "-C", repo_path, "rev-parse", "--abbrev-ref", "HEAD"],
+                check=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True
+            )
+            branch_name = result.stdout.strip()
+            return branch_name
+        except subprocess.CalledProcessError as e:
+            print(f"An error occurred: {e.stderr}")
+            return "?"
