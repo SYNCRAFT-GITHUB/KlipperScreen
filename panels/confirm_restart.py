@@ -21,15 +21,15 @@ class ConfirmRestartPanel(ScreenPanel):
     def __init__(self, screen, title):
 
         super().__init__(screen, title)
-        self.menu = ['reflash_design']
+        self.menu = ['restart_confirm_menu']
 
         event_box = Gtk.EventBox()
-        image = self._gtk.Image("restart-warning", self._gtk.content_width * 3, self._gtk.content_height * .5, universal=True)
+        image = self._gtk.Image("thunder", self._gtk.content_width * 3, self._gtk.content_height * .5)
         event_box.add(image)
 
         self.content.add(event_box)
 
-        self.labels['text'] = Gtk.Label(f'\n{_("Are you sure you wish to reboot the system?")}\n')
+        self.labels['text'] = Gtk.Label('\n' + _("Are you sure you wish to reboot the system?") + '\n')
         self.labels['text'].set_line_wrap(True)
         self.labels['text'].set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
         self.labels['text'].set_halign(Gtk.Align.CENTER)
@@ -37,7 +37,7 @@ class ConfirmRestartPanel(ScreenPanel):
         
         self.content.add(self.labels['text'])
 
-        timer = threading.Timer(1.8, self.allow_restart)
+        timer = threading.Timer(1.5, self.allow_restart)
         timer.start()
 
         self.buttons = {
@@ -55,9 +55,9 @@ class ConfirmRestartPanel(ScreenPanel):
         grid.attach(self.buttons['GO_BACK'], 0, 0, 1, 1)
         grid.attach(self.buttons['RESTART'], 1, 0, 1, 1)
 
-        self.labels['reflash_design'] = self._gtk.HomogeneousGrid()
-        self.labels['reflash_design'].attach(grid, 0, 0, 2, 2)
-        self.content.add(self.labels['reflash_design'])
+        self.labels['restart_confirm_menu'] = self._gtk.HomogeneousGrid()
+        self.labels['restart_confirm_menu'].attach(grid, 0, 0, 2, 2)
+        self.content.add(self.labels['restart_confirm_menu'])
 
     def allow_restart(self):
         self.buttons['RESTART'].set_sensitive(True)
