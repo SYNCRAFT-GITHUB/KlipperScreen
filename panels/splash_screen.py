@@ -27,7 +27,10 @@ class SplashScreenPanel(ScreenPanel):
         self.labels['menu'] = self._gtk.Button("settings", _("Menu"), "color4")
         self.labels['menu'].connect("clicked", self._screen._go_to_submenu, "")
         self.labels['system_reboot'] = self._gtk.Button("print", _("System Restart"), "color2")
-        self.labels['system_reboot'].connect("clicked", self.system_reboot)
+        self.labels['system_reboot'].connect("clicked", self.menu_item_clicked, "restart", {
+                "name": _("Restart"),
+                "panel": "confirm_restart"
+            })
         self.labels['retry'] = self._gtk.Button("extrude", _('Retry'), "color3")
         self.labels['retry'].connect("clicked", self.firmware_restart)
 
