@@ -80,7 +80,7 @@ class SystemInfo(ScreenPanel):
         if not os.path.exists(repo_path):
             repo_path = "/home/pi/printer_data/config"
             if not os.path.exists(repo_path):
-                return "PDC FOLDER NOT FOUND"
+                return "NO DIRECTORY"
         try:
             result = subprocess.run(
                 ["git", "-C", repo_path, "rev-parse", "--abbrev-ref", "HEAD"],

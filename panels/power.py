@@ -23,7 +23,7 @@ class SystemPanel(ScreenPanel):
         self.labels['restart'].connect("clicked", self.restart)
         self.labels['firmware_restart'] = self._gtk.Button("console", _("Firmware Restart"), "color2")
         self.labels['firmware_restart'].connect("clicked", self.firmware_restart)
-        self.labels['restart_system'] = self._gtk.Button("print", _("System Restart"), "color1")
+        self.labels['restart_system'] = self._gtk.Button("thunder", _("System Restart"), "color1")
         self.labels['restart_system'].connect("clicked", self.restart_system)
 
         self.labels['actions'] = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
