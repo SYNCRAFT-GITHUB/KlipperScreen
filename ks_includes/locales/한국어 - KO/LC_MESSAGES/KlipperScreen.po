@@ -1105,6 +1105,9 @@ msgstr "사용자 편집"
 msgid "Heater Bed"
 msgstr "테이블"
 
+msgid "Bed"
+msgstr "테이블"
+
 msgid "Chamber Fan"
 msgstr "방"
 
@@ -1521,6 +1524,24 @@ msgstr "첫 번째 플래시 (점퍼 필요)"
 
 msgid "Re-flash (Jumper not required)"
 msgstr "재플래시 (점퍼 필요 없음)"
+
+msgid "Estimated:"
+msgstr "예상:"
+
+msgid "Rename/Move:"
+msgstr "이름 변경/이동:"
+
+msgid "Rename File"
+msgstr "파일 이름 변경"
+
+msgid "Please confirm before proceeding"
+msgstr "진행하기 전에 확인해주세요"
+
+msgid "Confirm"
+msgstr "확인하기"
+
+msgid "Confirmed"
+msgstr "확인됨"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."

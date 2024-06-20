@@ -1031,6 +1031,9 @@ msgstr ""
 msgid "Heater Bed"
 msgstr ""
 
+msgid "Bed"
+msgstr ""
+
 msgid "Chamber Fan"
 msgstr ""
 
@@ -1446,6 +1449,24 @@ msgid "First Flash (Jumper required)"
 msgstr ""
 
 msgid "Re-flash (Jumper not required)"
+msgstr ""
+
+msgid "Estimated:"
+msgstr ""
+
+msgid "Rename/Move:"
+msgstr ""
+
+msgid "Rename File"
+msgstr ""
+
+msgid "Please confirm before proceeding"
+msgstr ""
+
+msgid "Confirm"
+msgstr ""
+
+msgid "Confirmed"
 msgstr ""
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"

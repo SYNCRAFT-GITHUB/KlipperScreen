@@ -796,7 +796,7 @@ msgid "Updating"
 msgstr "Atualizando"
 
 msgid "Uploaded"
-msgstr "Carregado"
+msgstr "Enviado"
 
 msgid "XY Move Speed (mm/s)"
 msgstr "Velocidade de Movimento XY (mm/s)"
@@ -1048,6 +1048,9 @@ msgid "Edit User"
 msgstr "Editar usuário"
 
 msgid "Heater Bed"
+msgstr "Mesa"
+
+msgid "Bed"
 msgstr "Mesa"
 
 msgid "Chamber Fan"
@@ -1466,6 +1469,24 @@ msgstr "Primeiro Flash (Jumper obrigatório)"
 
 msgid "Re-flash (Jumper not required)"
 msgstr "Re-Flash (Sem Jumper)"
+
+msgid "Estimated:"
+msgstr "Estimado:"
+
+msgid "Rename/Move:"
+msgstr "Renomear/Mover:"
+
+msgid "Rename File"
+msgstr "Renomear Arquivo"
+
+msgid "Please confirm before proceeding"
+msgstr "Confirme antes de prosseguir"
+
+msgid "Confirm"
+msgstr "Confirmar"
+
+msgid "Confirmed"
+msgstr "Confirmado"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "O ProExtruder foi indevidamente pressionado"

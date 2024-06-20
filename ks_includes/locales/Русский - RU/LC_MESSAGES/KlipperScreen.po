@@ -639,9 +639,6 @@ msgstr "Ссылка"
 msgid "Refresh"
 msgstr "Обновить"
 
-msgid "Rename/Move:"
-msgstr ""
-
 msgid "Restart"
 msgstr "Перезагрузка"
 
@@ -1218,6 +1215,9 @@ msgstr "Редактировать пользователя"
 msgid "Heater Bed"
 msgstr "Стол"
 
+msgid "Bed"
+msgstr "Стол"
+
 msgid "Chamber Fan"
 msgstr "Камера"
 
@@ -1634,6 +1634,24 @@ msgstr "Первая прошивка (требуется джампер)"
 
 msgid "Re-flash (Jumper not required)"
 msgstr "Перепрошивка (джампер не требуется)"
+
+msgid "Estimated:"
+msgstr "Оценка:"
+
+msgid "Rename/Move:"
+msgstr "Переименовать/Переместить:"
+
+msgid "Rename File"
+msgstr "Переименовать файл"
+
+msgid "Please confirm before proceeding"
+msgstr "Пожалуйста, подтвердите перед продолжением"
+
+msgid "Confirm"
+msgstr "Подтвердить"
+
+msgid "Confirmed"
+msgstr "Подтверждено"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"

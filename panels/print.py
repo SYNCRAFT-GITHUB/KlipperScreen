@@ -195,7 +195,7 @@ class PrintPanel(ScreenPanel):
 
         delete = self._gtk.Button("delete", style="color1", scale=self.bts)
         delete.set_hexpand(False)
-        rename = self._gtk.Button("files", style="color2", scale=self.bts)
+        rename = self._gtk.Button("write", style="color2", scale=self.bts)
         rename.set_hexpand(False)
 
         if filename:
@@ -425,16 +425,26 @@ class PrintPanel(ScreenPanel):
         fileinfo = self._screen.files.get_file_info(filename)
         if fileinfo is None:
             return
-        info = _("Uploaded")
-        if self.time_24:
-            info += f':<b>  {datetime.fromtimestamp(fileinfo["modified"]):%Y-%m-%d %H:%M}</b>\n'
-        else:
-            info += f':<b>  {datetime.fromtimestamp(fileinfo["modified"]):%Y-%m-%d %I:%M %p}</b>\n'
+        info = ""
 
-        if "size" in fileinfo:
-            info += _("Size") + f':  <b>{self.format_size(fileinfo["size"])}</b>\n'
         if "estimated_time" in fileinfo:
-            info += _("Print Time") + f':  <b>{self.format_time(fileinfo["estimated_time"])}</b>'
+            info += _("Estimated:") + f'  <b>{self.format_time(fileinfo["estimated_time"])}</b>\n'
+
+        info += _("Uploaded")
+
+        timestamp = datetime.fromtimestamp(fileinfo["modified"])
+
+        if (datetime.now().year == timestamp.year):
+            if self.time_24:
+                info += f':<b>  {timestamp:%m-%d %H:%M}</b>\n'
+            else:
+                info += f':<b>  {timestamp:%m-%d %I:%M %p}</b>\n'
+        else:
+            if self.time_24:
+                info += f':<b>  {timestamp:%Y-%m-%d %H:%M}</b>\n'
+            else:
+                info += f':<b>  {timestamp:%Y-%m-%d %I:%M %p}</b>\n'
+
         return info
 
     def reload_files(self, widget=None):
@@ -488,7 +498,7 @@ class PrintPanel(ScreenPanel):
         self.showing_rename = True
 
     def _create_rename_box(self, fullpath):
-        lbl = self._gtk.Label(_("Rename/Move:"))
+        lbl = self._gtk.Label(_("Rename File"))
         lbl.set_halign(Gtk.Align.START)
         lbl.set_hexpand(False)
         self.labels['new_name'] = Gtk.Entry()

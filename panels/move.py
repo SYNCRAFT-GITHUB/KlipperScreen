@@ -30,15 +30,15 @@ class MovePanel(ScreenPanel):
         grid = self._gtk.HomogeneousGrid()
 
         self.buttons = {
-            "extruder": self._gtk.Button("extruder-square", None, None),
-            "bed": self._gtk.Button("bed-square", None, None),
+            "extruder": self._gtk.Button("extruder-square", _("Extruder"), None),
+            "bed": self._gtk.Button("bed-square", _("Bed"), None),
             "up": self._gtk.Button("key-up", None, "color3"),
             "down": self._gtk.Button("key-down", None, "color2"),
             "left": self._gtk.Button("key-left", None, "color1"),
             "right": self._gtk.Button("key-right", None, "color1"),
             "home": self._gtk.Button("home", _("Home All"), None),
             "off": self._gtk.Button("motor-off", _("Disable Motors"), None),
-            "gear": self._gtk.Button("settings", None, None)
+            "gear": self._gtk.Button("settings", _("Extras"), None)
         }
 
         grid.attach(self.buttons["extruder"], 0, 2, 1, 1)
