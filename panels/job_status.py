@@ -780,7 +780,7 @@ class JobStatusPanel(ScreenPanel):
         self.labels['thumbnail'].set_from_pixbuf(pixbuf)
 
     def beauty(self, text):
-        prefixes = ["SX1", "SX2"]
+        prefixes = ["SX1", "SX2", "SI"]
         for prefix in prefixes:
             if text.startswith(prefix):
                 text = text.replace(prefix, "", 1)

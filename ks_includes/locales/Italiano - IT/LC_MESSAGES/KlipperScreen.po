@@ -1172,6 +1172,9 @@ msgstr "Modifica utente"
 msgid "Heater Bed"
 msgstr "Tavolo"
 
+msgid "Bed"
+msgstr "Tavolo"
+
 msgid "Chamber Fan"
 msgstr "Camera"
 
@@ -1591,6 +1594,24 @@ msgstr "Primo flash (jumper richiesto)"
 
 msgid "Re-flash (Jumper not required)"
 msgstr "Riflash (jumper non richiesto)"
+
+msgid "Estimated:"
+msgstr "Stimato:"
+
+msgid "Rename/Move:"
+msgstr "Rinomina/Sposta:"
+
+msgid "Rename File"
+msgstr "Rinomina File"
+
+msgid "Please confirm before proceeding"
+msgstr "Si prega di confermare prima di procedere"
+
+msgid "Confirm"
+msgstr "Confermare"
+
+msgid "Confirmed"
+msgstr "Confermato"
 
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."

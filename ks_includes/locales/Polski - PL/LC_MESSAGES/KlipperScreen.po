@@ -1158,6 +1158,9 @@ msgstr "Edytuj użytkownika"
 msgid "Heater Bed"
 msgstr "Tabela"
 
+msgid "Bed"
+msgstr "Tabela"
+
 msgid "Chamber Fan"
 msgstr "Izba"
 
@@ -1577,6 +1580,24 @@ msgstr "Pierwsze flashowanie (wymagany zworka)"
 
 msgid "Re-flash (Jumper not required)"
 msgstr "Ponowne flashowanie (zworka niewymagana)"
+
+msgid "Estimated:"
+msgstr "Szacowany:"
+
+msgid "Rename/Move:"
+msgstr "Zmień nazwę/Przenieś:"
+
+msgid "Rename File"
+msgstr "Zmień nazwę pliku"
+
+msgid "Please confirm before proceeding"
+msgstr "Proszę potwierdzić przed kontynuowaniem"
+
+msgid "Confirm"
+msgstr "Potwierdzić"
+
+msgid "Confirmed"
+msgstr "Potwierdzone"
 
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"

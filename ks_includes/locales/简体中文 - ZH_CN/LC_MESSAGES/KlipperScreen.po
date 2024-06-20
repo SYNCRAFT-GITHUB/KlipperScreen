@@ -1178,6 +1178,9 @@ msgstr "编辑用户"
 msgid "Heater Bed"
 msgstr "桌子"
 
+msgid "Bed"
+msgstr "桌子"
+
 msgid "Chamber Fan"
 msgstr "室"
 
@@ -1594,6 +1597,24 @@ msgstr "首次刷新（需要跳线）"
 
 msgid "Re-flash (Jumper not required)"
 msgstr "重新刷新（不需要跳线）"
+
+msgid "Estimated:"
+msgstr "预计："
+
+msgid "Rename/Move:"
+msgstr "重命名/移动:"
+
+msgid "Rename File"
+msgstr "重命名文件"
+
+msgid "Please confirm before proceeding"
+msgstr "请在继续之前确认"
+
+msgid "Confirm"
+msgstr "确认"
+
+msgid "Confirmed"
+msgstr "已确认"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"

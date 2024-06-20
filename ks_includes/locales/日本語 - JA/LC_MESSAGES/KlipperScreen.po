@@ -1038,6 +1038,9 @@ msgstr "ユーザーの編集"
 msgid "Heater Bed"
 msgstr "テーブル"
 
+msgid "Bed"
+msgstr "テーブル"
+
 msgid "Chamber Fan"
 msgstr "チャンバー"
 
@@ -1454,6 +1457,24 @@ msgstr "初回フラッシュ (ジャンパー必要)"
 
 msgid "Re-flash (Jumper not required)"
 msgstr "再フラッシュ (ジャンパー不要)"
+
+msgid "Estimated:"
+msgstr "推定:"
+
+msgid "Rename/Move:"
+msgstr "名前変更/移動:"
+
+msgid "Rename File"
+msgstr "ファイルの名前を変更"
+
+msgid "Please confirm before proceeding"
+msgstr "続行する前に確認してください"
+
+msgid "Confirm"
+msgstr "確認する"
+
+msgid "Confirmed"
+msgstr "確認済み"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"

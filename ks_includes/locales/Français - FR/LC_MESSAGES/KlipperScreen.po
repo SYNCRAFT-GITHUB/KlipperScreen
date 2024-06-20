@@ -1225,6 +1225,9 @@ msgstr "Modifier l'utilisateur"
 msgid "Heater Bed"
 msgstr "Tableau"
 
+msgid "Bed"
+msgstr "Tableau"
+
 msgid "Chamber Fan"
 msgstr "Chambre"
 
@@ -1641,6 +1644,24 @@ msgstr "Premier flashage (jumper requis)"
 
 msgid "Re-flash (Jumper not required)"
 msgstr "Reflashage (jumper non requis)"
+
+msgid "Estimated:"
+msgstr "Estimé :"
+
+msgid "Rename/Move:"
+msgstr "Renommer/Déplacer :"
+
+msgid "Rename File"
+msgstr "Renommer le Fichier"
+
+msgid "Please confirm before proceeding"
+msgstr "Veuillez confirmer avant de continuer"
+
+msgid "Confirm"
+msgstr "Confirmer"
+
+msgid "Confirmed"
+msgstr "Confirmé"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonde a été déclenchée avant le mouvement"
