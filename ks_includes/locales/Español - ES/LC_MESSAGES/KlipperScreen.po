@@ -1639,6 +1639,24 @@ msgstr "Confirmar"
 msgid "Confirmed"
 msgstr "Confirmado"
 
+msgid "Metal"
+msgstr "Metal"
+
+msgid "Automatic Detection"
+msgstr "Detección Automática"
+
+msgid "Legacy"
+msgstr "Legado"
+
+msgid "Bowden"
+msgstr "Bowden"
+
+msgid "File branch detected:"
+msgstr "Rama de archivo detectada:"
+
+msgid "Unable to auto-detect"
+msgstr "No se puede detectar automáticamente"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

@@ -1,6 +1,7 @@
+import subprocess
 import logging
 import random
-
+import os
 import gi
 
 gi.require_version("Gtk", "3.0")
@@ -23,10 +24,14 @@ class FixPanel(ScreenPanel):
         scroll = self._gtk.ScrolledWindow()
         scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
 
+        txt = _("Essential Files")
+
         self.buttons = {
-            'FIX_FILES': self._gtk.Button("file", f'{_("Essential Files")} (LEGACY)', self.color()),
-            'FIX_FILES_BOWDEN': self._gtk.Button("file", f'{_("Essential Files")} (BOWDEN)', self.color()),
-            'FIX_FILES_FEEDER': self._gtk.Button("file", f'{_("Essential Files")} ({_("Feeder").upper()})', self.color()),
+            'FIX_FILES_AUTO': self._gtk.Button("file", f'{txt} ({_("Automatic Detection")})', self.color()),
+            'FIX_FILES': self._gtk.Button("file", _("Legacy"), self.color()),
+            'FIX_FILES_BOWDEN': self._gtk.Button("file", _("Bowden"), self.color()),
+            'FIX_FILES_FEEDER': self._gtk.Button("file", _("Feeder"), self.color()),
+            'FIX_FILES_METAL': self._gtk.Button("file", _("Metal"), self.color()),
             'CLEAN_GCODE': self._gtk.Button("clean", _("Clear GCodes Folder"), self.color()),
             'FIX_CAMERA': self._gtk.Button("camera", _("Camera Driver"), self.color()),
             'FIX_KLIPPERSCREEN': self._gtk.Button("screen", _("KlipperScreen"), self.color()),
@@ -43,6 +48,12 @@ class FixPanel(ScreenPanel):
             "panel": "script"
         })
 
+        self.buttons['FIX_FILES_AUTO'].connect("clicked", self.auto_detect_fix_option_and_set)
+        self.buttons['FIX_FILES_AUTO'].connect("clicked", self.menu_item_clicked, "fix_steps", {
+            "name": _("Fix"),
+            "panel": "fix_steps"
+        })
+
         self.buttons['FIX_FILES'].connect("clicked", self.set_fix_option_to, "FILES")
         self.buttons['FIX_FILES'].connect("clicked", self.menu_item_clicked, "fix_steps", {
             "name": _("Fix"),
@@ -57,6 +68,12 @@ class FixPanel(ScreenPanel):
 
         self.buttons['FIX_FILES_FEEDER'].connect("clicked", self.set_fix_option_to, "FILES_FEEDER")
         self.buttons['FIX_FILES_FEEDER'].connect("clicked", self.menu_item_clicked, "fix_steps", {
+            "name": _("Fix"),
+            "panel": "fix_steps"
+        })
+
+        self.buttons['FIX_FILES_METAL'].connect("clicked", self.set_fix_option_to, "FILES_METAL")
+        self.buttons['FIX_FILES_METAL'].connect("clicked", self.menu_item_clicked, "fix_steps", {
             "name": _("Fix"),
             "panel": "fix_steps"
         })
@@ -102,21 +119,57 @@ class FixPanel(ScreenPanel):
 
         grid = self._gtk.HomogeneousGrid()
 
-        grid.attach(self.buttons['FIX_FILES'], 0, 0, 2, 1)
-        grid.attach(self.buttons['FIX_FILES_BOWDEN'], 2, 0, 2, 1)
-        grid.attach(self.buttons['FIX_FILES_FEEDER'], 0, 2, 2, 1)
-        grid.attach(self.buttons['FIX_CAMERA'], 0, 4, 1, 1)
-        grid.attach(self.buttons['FIX_KLIPPERSCREEN'], 2, 4, 1, 1)
-        grid.attach(self.buttons['FIX_MAINSAIL'], 3, 4, 1, 1)
-        grid.attach(self.buttons['FIX_LED'], 1, 4, 1, 1)
-        grid.attach(self.buttons['FIX_MOONRAKER'], 2, 2, 2, 1)
-        grid.attach(self.buttons['FLASH'], 0, 3, 4, 1)
+        grid.attach(self.buttons['FIX_FILES_AUTO'], 0, 0, 4, 1)
+        grid.attach(self.buttons['FIX_FILES'], 0, 1, 1, 1)
+        grid.attach(self.buttons['FIX_FILES_BOWDEN'], 1, 1, 1, 1)
+        grid.attach(self.buttons['FIX_FILES_FEEDER'], 2, 1, 1, 1)
+        grid.attach(self.buttons['FIX_FILES_METAL'], 3, 1, 1, 1)
+        grid.attach(self.buttons['FIX_CAMERA'], 0, 5, 1, 1)
+        grid.attach(self.buttons['FIX_KLIPPERSCREEN'], 2, 5, 1, 1)
+        grid.attach(self.buttons['FIX_MAINSAIL'], 3, 5, 1, 1)
+        grid.attach(self.buttons['FIX_LED'], 1, 5, 1, 1)
+        grid.attach(self.buttons['FIX_MOONRAKER'], 0, 4, 2, 1)
+        grid.attach(self.buttons['FLASH'], 2, 4, 2, 1)
 
         scroll.add(grid)
         self.content.add(scroll)
 
     def set_fix_option_to(self, button, newfixoption):
         self._config.replace_fix_option(newvalue=newfixoption)
+
+    def auto_detect_fix_option_and_set(self, button):
+        repo_path = "/home/pi/printerdataconfig"
+        if not os.path.exists(repo_path):
+            repo_path = "/home/pi/printer_data/config"
+            if not os.path.exists(repo_path):
+                self._config.replace_fix_option(newvalue="DETECT_ERROR")
+        try:
+            result = subprocess.run(
+                ["git", "-C", repo_path, "rev-parse", "--abbrev-ref", "HEAD"],
+                check=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True
+            )
+            branch_name = result.stdout.strip()
+            equivalent = {
+                "syncraftx1": "FILES",
+                "syncraftx1-arc-stable": "FILES_BOWDEN",
+                "x1-feeder": "FILES_FEEDER",
+                "metal": "FILES_METAL"
+            }
+            try:
+                new_fix_option = equivalent[branch_name]
+            except:
+                new_fix_option = "DETECT_ERROR"
+            self._config.replace_fix_option(newvalue=new_fix_option)
+            msg = f"{_('File branch detected:')} {branch_name}"
+            return self._screen.show_popup_message(msg, level=2)
+        except subprocess.CalledProcessError as e:
+            print(f"An error occurred: {e.stderr}")
+            message: str = _("Unable to auto-detect")
+            self._screen.show_popup_message(message, level=3)
+            return
 
     def color(self) -> str:
         return f"color{random.randint(1, 4)}"

@@ -1599,6 +1599,24 @@ msgstr "Potwierdzić"
 msgid "Confirmed"
 msgstr "Potwierdzone"
 
+msgid "Metal"
+msgstr "Metal"
+
+msgid "Automatic Detection"
+msgstr "Automatyczne Wykrywanie"
+
+msgid "Legacy"
+msgstr "Dziedzictwo"
+
+msgid "Bowden"
+msgstr "Bowden"
+
+msgid "File branch detected:"
+msgstr "Wykryto gałąź pliku:"
+
+msgid "Unable to auto-detect"
+msgstr "Nie można wykryć automatycznie"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"
 

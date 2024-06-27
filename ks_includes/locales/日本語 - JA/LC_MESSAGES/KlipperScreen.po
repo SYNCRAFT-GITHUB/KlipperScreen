@@ -1476,6 +1476,24 @@ msgstr "確認する"
 msgid "Confirmed"
 msgstr "確認済み"
 
+msgid "Metal"
+msgstr "金属"
+
+msgid "Automatic Detection"
+msgstr "自動検出"
+
+msgid "Legacy"
+msgstr "レガシー"
+
+msgid "Bowden"
+msgstr "ボーデン"
+
+msgid "File branch detected:"
+msgstr "ファイルのブランチが検出されました:"
+
+msgid "Unable to auto-detect"
+msgstr "自動検出できません"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 
