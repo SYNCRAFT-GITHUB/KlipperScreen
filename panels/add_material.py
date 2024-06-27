@@ -126,12 +126,12 @@ class AddCustomMaterial(ScreenPanel):
         grid.attach(self.labels['minus_button'], 0, (i), 1, 1)
         i += 1
 
-        self.labels['finish'] = self._gtk.Button("complete", _('Add Custom Material'), f"color1")
+        self.labels['finish'] = self._gtk.Button("complete", _('Add Custom Material'), "color1")
         self.labels['finish'].connect("clicked", self.apply_custom_filament)
         grid.attach(self.labels['finish'], 0, (i), 3, 2)
         i += 2
 
-        self.labels['clear_all'] = self._gtk.Button("stock", _('Delete all custom Materials'), None)
+        self.labels['clear_all'] = self._gtk.Button("stock", _('Delete all custom Materials'), "color2")
         self.labels['clear_all'].connect("clicked", self.clear_all)
         grid.attach(self.labels['clear_all'], 0, (i), 3, 1)
         i += 1

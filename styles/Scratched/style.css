@@ -120,7 +120,6 @@ trough {
     color: @text;
     border: none;
     border-radius: 1em;
-    box-shadow: 0px 0px 42px -11px rgba(0,0,0,0.75);
 }
 
 trough highlight,
@@ -129,7 +128,6 @@ trough progress {
     border: none;
     border-top-left-radius: 1em;
     border-bottom-left-radius: 1em;
-    box-shadow: inset 0px 0px 32px -22px rgba(0,0,0,0.75);
 }
 trough progress.left {
     border: 2px;
@@ -163,7 +161,6 @@ scrollbar slider {
     background-color: rgba(2, 27, 56, 0.7);
     border-radius: 0.75em;
     margin-right: 5px;
-    box-shadow: inset 0px 0px 32px -22px rgba(0,0,0,0.75);
 }
 
 .horizontal_togglebuttons_active {
