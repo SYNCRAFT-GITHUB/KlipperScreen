@@ -235,7 +235,6 @@ class BasePanel(ScreenPanel):
             nozzle = self._config.variables_value_reveal('nozzle')
             current_ext = self._config.variables_value_reveal('currentextruder')
             material_ext0 = self._config.variables_value_reveal('material_ext0')
-            material_ext1 = self._config.variables_value_reveal('material_ext1')
             if 'none' in nozzle:
                 nozzle = f" { _('Extruder')} "
             if current_ext == False:
@@ -245,8 +244,7 @@ class BasePanel(ScreenPanel):
             else:
                 current_ext = f'{_("Feeder")[0]}1'
             material_ext0 = _("Empty") if 'empty' in str(material_ext0) else material_ext0
-            material_ext1 = _("Empty") if 'empty' in str(material_ext1) else material_ext1
-            self._screen.base_panel.set_title(f"{current_ext} {nozzle} - {material_ext0}, {material_ext1}")
+            self._screen.base_panel.set_title(f"{current_ext} {nozzle} - {material_ext0}")
 
         if action == "notify_update_response":
             if self.update_dialog is None:

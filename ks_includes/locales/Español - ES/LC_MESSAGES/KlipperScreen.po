@@ -1639,6 +1639,9 @@ msgstr "Confirmar"
 msgid "Confirmed"
 msgstr "Confirmado"
 
+msgid "Select Material"
+msgstr "Seleccionar Material"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

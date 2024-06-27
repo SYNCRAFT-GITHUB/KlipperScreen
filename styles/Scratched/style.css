@@ -1,0 +1,210 @@
+@define-color color1 #f9a825;
+@define-color color2 #d33682;
+@define-color color3 #2aa198;
+@define-color color4 #859900;
+@define-color bg #002b36;
+@define-color warning #f9a825;
+@define-color error #981E1F;
+@define-color text white;
+
+* {
+    background-color: transparent;
+
+}
+
+list row {
+    background-color: rgba(51, 51, 51, 0.926);
+    box-shadow: inset 0px 0px 32px -22px rgba(0,0,0,0.75);
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+treeview.view {
+    background-color: transparent;
+
+}
+
+window {
+    background-color: @bg;
+    background-image: url("./styles/Scratched/background.png");
+    background-size: cover;
+
+}
+
+button {
+    background-color: transparent;
+    border-radius: 0.5em;
+}
+
+button:active,
+.button_active,
+button.active {
+    background-color: rgba(51, 51, 51, 0.926);;
+    border-radius: 0.5em;
+    border-style: none;
+}
+
+button.color1, button.color2, button.color3, button.color4 {
+    background-color: #212121;
+    border-color: #1d1d1d;
+    border-radius: .25em;
+    box-shadow: inset 0px 0px 32px -22px rgba(0,0,0,0.75);
+}
+
+button.update {
+    background-color: rgba(39, 39, 39, 0.7);
+    border: 0;
+    border-bottom: .3em solid;
+    border-bottom-color: @color4;
+    border-radius: .75em;
+}
+
+button.invalid {
+    background-color: rgba(2, 27, 56, 0.7);
+    border: 0;
+    border-bottom: .3em solid;
+    border-bottom-color: @error;
+    border-radius: .75em;
+}
+
+combobox button,
+combobox box button {
+    background-color: rgba(27, 27, 27, 0.7);
+    border-color: transparent;
+    border: 0;
+    border-radius: 0.75em;
+}
+
+menu,
+popover,
+popover button,
+combobox arrow,
+menuitem,
+combobox menuitem {
+    background-color: transparent;
+}
+
+combobox window.popup {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+treeview.view check,
+switch {
+    background-color: rgba(27, 27, 27, 0.7);
+}
+
+treeview.view check:checked,
+switch:checked {
+    background-color: rgba(88, 102, 117, 0.7);
+}
+
+entry {
+    background-color: rgba(88, 102, 117, 0.7);
+}
+
+menu {
+    background-color: rgb(39, 39, 39); 
+}
+
+menuitem {
+    background-color: transparent;
+    border: none;
+    
+}
+
+trough {
+    background-color: rgba(39, 39, 39, 0.7);
+    color: @text;
+    border: none;
+    border-radius: 1em;
+    box-shadow: 0px 0px 42px -11px rgba(0,0,0,0.75);
+}
+
+trough highlight,
+trough progress {
+    background-color: rgba(88, 102, 117, 0.7);
+    border: none;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    box-shadow: inset 0px 0px 32px -22px rgba(0,0,0,0.75);
+}
+trough progress.left {
+    border: 2px;
+}
+
+scrollbar, scrollbar button, scrollbar trough {
+    background-color: transparent;
+}
+
+scrollbar slider {
+    background-color: rgba(217, 217, 217, 0.526);
+}
+
+.popup {
+    background-color: @color3;
+}
+
+.dialog {
+    border: @bg;
+    background-color: transparent;
+}
+
+.dialog button {
+    background-color: rgba(39, 39, 39, 0.7);
+    border-bottom-color: @color3;
+    border-radius: .75em;
+}
+
+.horizontal_togglebuttons {
+    border: none;
+    background-color: rgba(2, 27, 56, 0.7);
+    border-radius: 0.75em;
+    margin-right: 5px;
+    box-shadow: inset 0px 0px 32px -22px rgba(0,0,0,0.75);
+}
+
+.horizontal_togglebuttons_active {
+    background-color: rgba(88, 102, 117, 0.7);
+}
+
+.numpad_tleft,
+.numpad_top,
+.numpad_tright,
+.numpad_left,
+.numpad_button,
+.numpad_right,
+.numpad_bleft,
+.numpad_bottom,
+.numpad_bright {
+    border-color: transparent;
+    background-color: rgba(88, 102, 117, 0.7);
+    margin-right: 0.25em;
+    margin-left: 0.25em;
+    margin-bottom: 0.5em;
+}
+
+.message button {
+    color: @bg;
+}
+
+.warning {
+    background-color: #cc7529;
+}
+
+.error {
+    background-color: #bd1332;
+}
+
+.keyboard_pad {
+    border-radius: .15em;
+    background-color: rgba(88, 102, 117, 0.7);
+}
+.graph_label {
+    background-color: rgba(2, 27, 56, 0.7);
+    border-left-width: 4px; 
+    border-left-style: solid;
+    border-radius: 6px;
+}

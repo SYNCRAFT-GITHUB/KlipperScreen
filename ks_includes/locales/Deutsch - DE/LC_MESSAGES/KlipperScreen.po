@@ -1615,6 +1615,9 @@ msgstr "Bestätigen"
 msgid "Confirmed"
 msgstr "Bestätigt"
 
+msgid "Select Material"
+msgstr "Material auswählen"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 
