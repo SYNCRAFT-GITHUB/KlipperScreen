@@ -1639,6 +1639,18 @@ msgstr "Confirmar"
 msgid "Confirmed"
 msgstr "Confirmado"
 
+msgid "Metal"
+msgstr "Metal"
+
+msgid "Automatic Detection"
+msgstr "Detección Automática"
+
+msgid "Legacy"
+msgstr "Legado"
+
+msgid "Bowden"
+msgstr "Bowden"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

@@ -1616,6 +1616,18 @@ msgstr "确认"
 msgid "Confirmed"
 msgstr "已确认"
 
+msgid "Metal"
+msgstr "金属"
+
+msgid "Automatic Detection"
+msgstr "自动检测"
+
+msgid "Legacy"
+msgstr "遗产"
+
+msgid "Bowden"
+msgstr "鲍登"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

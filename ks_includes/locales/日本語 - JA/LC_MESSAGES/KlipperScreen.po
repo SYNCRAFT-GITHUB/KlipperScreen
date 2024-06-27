@@ -1476,6 +1476,18 @@ msgstr "確認する"
 msgid "Confirmed"
 msgstr "確認済み"
 
+msgid "Metal"
+msgstr "金属"
+
+msgid "Automatic Detection"
+msgstr "自動検出"
+
+msgid "Legacy"
+msgstr "レガシー"
+
+msgid "Bowden"
+msgstr "ボーデン"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

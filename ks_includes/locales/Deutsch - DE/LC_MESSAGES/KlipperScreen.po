@@ -1615,6 +1615,18 @@ msgstr "Bestätigen"
 msgid "Confirmed"
 msgstr "Bestätigt"
 
+msgid "Metal"
+msgstr "Metall"
+
+msgid "Automatic Detection"
+msgstr "Automatische Erkennung"
+
+msgid "Legacy"
+msgstr "Vermächtnis"
+
+msgid "Bowden"
+msgstr "Bowden"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 

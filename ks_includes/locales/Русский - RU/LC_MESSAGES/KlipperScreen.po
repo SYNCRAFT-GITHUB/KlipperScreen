@@ -1653,6 +1653,18 @@ msgstr "Подтвердить"
 msgid "Confirmed"
 msgstr "Подтверждено"
 
+msgid "Metal"
+msgstr "Металл"
+
+msgid "Automatic Detection"
+msgstr "Автоматическое Обнаружение"
+
+msgid "Legacy"
+msgstr "Наследие"
+
+msgid "Bowden"
+msgstr "Боуден"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

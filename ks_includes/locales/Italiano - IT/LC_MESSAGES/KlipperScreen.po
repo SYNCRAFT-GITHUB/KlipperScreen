@@ -1613,6 +1613,18 @@ msgstr "Confermare"
 msgid "Confirmed"
 msgstr "Confermato"
 
+msgid "Metal"
+msgstr "Metallo"
+
+msgid "Automatic Detection"
+msgstr "Rilevamento Automatico"
+
+msgid "Legacy"
+msgstr "Legacy"
+
+msgid "Bowden"
+msgstr "Bowden"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 
