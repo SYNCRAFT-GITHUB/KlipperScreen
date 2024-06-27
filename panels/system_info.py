@@ -60,7 +60,7 @@ class SystemInfo(ScreenPanel):
                 prop = yaml.safe_load(prop)
                 return prop.get('model')
         except:
-            return 'Syncraft X1'
+            return 'Syncraft Metal'
 
     def get_platform(self, formatted):
         text = platform.platform()

@@ -22,8 +22,14 @@ button {
     -gtk-icon-shadow: none;
 }
 
-button:active, .button_active {
-    background-color: #304C62;
+button:active {
+    background-color: #424242;
+}
+
+.button_active {
+    border-color: #424242;
+    border-style: solid;
+    background-color: #424242;
 }
 
 button:disabled,
@@ -205,11 +211,6 @@ trough {
 
 .popup {
     background-color: black;
-}
-
-.action_bar {
-    /* min-width: 4.5em; */
-    /* min-height: 4.5em; */
 }
 
 .title_bar {

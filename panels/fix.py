@@ -24,9 +24,7 @@ class FixPanel(ScreenPanel):
         scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
 
         self.buttons = {
-            'FIX_FILES': self._gtk.Button("file", f'{_("Essential Files")} (LEGACY)', self.color()),
-            'FIX_FILES_BOWDEN': self._gtk.Button("file", f'{_("Essential Files")} (BOWDEN)', self.color()),
-            'FIX_FILES_FEEDER': self._gtk.Button("file", f'{_("Essential Files")} ({_("Feeder").upper()})', self.color()),
+            'FIX_FILES': self._gtk.Button("file", _("Essential Files"), self.color()),
             'CLEAN_GCODE': self._gtk.Button("clean", _("Clear GCodes Folder"), self.color()),
             'FIX_CAMERA': self._gtk.Button("camera", _("Camera Driver"), self.color()),
             'FIX_KLIPPERSCREEN': self._gtk.Button("screen", _("KlipperScreen"), self.color()),
@@ -45,18 +43,6 @@ class FixPanel(ScreenPanel):
 
         self.buttons['FIX_FILES'].connect("clicked", self.set_fix_option_to, "FILES")
         self.buttons['FIX_FILES'].connect("clicked", self.menu_item_clicked, "fix_steps", {
-            "name": _("Fix"),
-            "panel": "fix_steps"
-        })
-
-        self.buttons['FIX_FILES_BOWDEN'].connect("clicked", self.set_fix_option_to, "FILES_BOWDEN")
-        self.buttons['FIX_FILES_BOWDEN'].connect("clicked", self.menu_item_clicked, "fix_steps", {
-            "name": _("Fix"),
-            "panel": "fix_steps"
-        })
-
-        self.buttons['FIX_FILES_FEEDER'].connect("clicked", self.set_fix_option_to, "FILES_FEEDER")
-        self.buttons['FIX_FILES_FEEDER'].connect("clicked", self.menu_item_clicked, "fix_steps", {
             "name": _("Fix"),
             "panel": "fix_steps"
         })
@@ -102,15 +88,13 @@ class FixPanel(ScreenPanel):
 
         grid = self._gtk.HomogeneousGrid()
 
-        grid.attach(self.buttons['FIX_FILES'], 0, 0, 2, 1)
-        grid.attach(self.buttons['FIX_FILES_BOWDEN'], 2, 0, 2, 1)
-        grid.attach(self.buttons['FIX_FILES_FEEDER'], 0, 2, 2, 1)
-        grid.attach(self.buttons['FIX_CAMERA'], 0, 4, 1, 1)
-        grid.attach(self.buttons['FIX_KLIPPERSCREEN'], 2, 4, 1, 1)
-        grid.attach(self.buttons['FIX_MAINSAIL'], 3, 4, 1, 1)
-        grid.attach(self.buttons['FIX_LED'], 1, 4, 1, 1)
-        grid.attach(self.buttons['FIX_MOONRAKER'], 2, 2, 2, 1)
-        grid.attach(self.buttons['FLASH'], 0, 3, 4, 1)
+        grid.attach(self.buttons['FIX_FILES'], 0, 1, 2, 1)
+        grid.attach(self.buttons['FIX_MOONRAKER'], 2, 1, 2, 1)
+        grid.attach(self.buttons['FLASH'], 0, 0, 4, 1)
+        grid.attach(self.buttons['FIX_CAMERA'], 0, 2, 1, 1)
+        grid.attach(self.buttons['FIX_KLIPPERSCREEN'], 2, 2, 1, 1)
+        grid.attach(self.buttons['FIX_MAINSAIL'], 3, 2, 1, 1)
+        grid.attach(self.buttons['FIX_LED'], 1, 2, 1, 1)
 
         scroll.add(grid)
         self.content.add(scroll)

@@ -86,10 +86,7 @@ class ChMaterialPanel(ScreenPanel):
         current_extruder = self._config.variables_value_reveal("currentextruder")
         material = None
 
-        if current_extruder == "extruder": # Equals the First Extruder
-            material = self._config.variables_value_reveal("material_ext0")
-        else:
-            material = self._config.variables_value_reveal("material_ext1")
+        material = self._config.variables_value_reveal("material_ext0")
 
         grid = self._gtk.HomogeneousGrid()
         self.gridattach(gridvariable=grid)

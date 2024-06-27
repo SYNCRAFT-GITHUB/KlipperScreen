@@ -92,10 +92,7 @@ class JobMaterialChange(ScreenPanel):
         self.nozzle = self.get_variable('nozzle')
 
         for extruder in self._printer.get_tools():
-            if '1' in extruder:
-                material = self.get_variable('material_ext1')
-            else:
-                material = self.get_variable('material_ext0')
+            material = self.get_variable('material_ext0')
             if 'empty' in material:
                 material = _("Empty")
             self.labels[extruder].set_label(material)

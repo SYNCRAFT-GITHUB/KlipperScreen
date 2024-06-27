@@ -39,35 +39,29 @@ class FilamentPanel(ScreenPanel):
         self.buttons = {
             'load': self._gtk.Button("arrow-up", _("Load"), "color3", Gtk.PositionType.BOTTOM, 3),
             'unload': self._gtk.Button("arrow-down", _("Unload"), "color2", Gtk.PositionType.BOTTOM, 3),
-            'material_ext0': self._gtk.Button("filament", None, "color1", .68),
-            'material_ext1': self._gtk.Button("filament", None, "color1", .68),
+            'material_ext0': self._gtk.Button("filament", "  " + _("Select Material"), "color1", 1, Gtk.PositionType.LEFT),
         }
 
         grid = self._gtk.HomogeneousGrid()
         grid.attach(self.buttons['load'], 0, 0, 3, 3)
         grid.attach(self.buttons['unload'], 3, 0, 3, 3)
-        grid.attach(self.buttons['material_ext0'], 0, 3, 1, 1)
-        grid.attach(self.buttons['material_ext1'], 5, 3, 1, 1)
+        grid.attach(self.buttons['material_ext0'], 0, 3, 3, 1)
 
         self.buttons['unload'].connect("clicked", self.load_unload, "-")
         self.buttons['load'].connect("clicked", self.load_material)
         self.buttons['material_ext0'].connect("clicked", self.select_material, 'extruder')
-        self.buttons['material_ext1'].connect("clicked", self.select_material, 'extruder1')
 
         self.ext_feeder = {
             'extruder_stepper extruder1': 'extruder1',
             'extruder': 'extruder'
         }
 
-        i = 1
-        for extruder in self._printer.get_tools():
-            self.labels[extruder] = self._gtk.Button(f"extruder-{i}", None, None, .68, Gtk.PositionType.LEFT, 1)
-            self.labels[extruder].connect("clicked", self.change_extruder, extruder)
-            self.labels[extruder].get_style_context().add_class("filament_sensor")
-            if self.ext_feeder[extruder] != self.current_extruder:
-                self.labels[extruder].set_property("opacity", 0.3)
-            grid.attach(self.labels[extruder], (i+(i/2)), 3, 2, 1)
-            i += 1
+        self.labels['extruder'] = self._gtk.Button(None, None, None, .68, Gtk.PositionType.LEFT, 1)
+        self.labels['extruder'].connect("clicked", self.select_material, 'extruder')
+        self.labels['extruder'].get_style_context().add_class("filament_sensor")
+        if self.ext_feeder['extruder'] != self.current_extruder:
+            self.labels['extruder'].set_property("opacity", 0.5)
+        grid.attach(self.labels['extruder'], 3, 3, 3, 1)
 
         self.proextruders = {
             'Standard 0.25mm': 'nozzle-ST025',
@@ -78,6 +72,7 @@ class FilamentPanel(ScreenPanel):
         }
 
         i: int = 0
+
         for key, value in self.proextruders.items():
             self.labels[key] = self._gtk.Button(value, None, None)
             self.labels[key].connect("clicked", self.nozzlegcodescript, key)
@@ -122,7 +117,7 @@ class FilamentPanel(ScreenPanel):
             for key, value in self.proextruders.items():
                 self.labels[key].set_sensitive((not busy))
             for extruder in self._printer.get_tools():
-                self.labels[extruder].set_sensitive((not busy))
+                self.labels['extruder'].set_sensitive((not busy))
         except:
             pass
 
@@ -136,19 +131,16 @@ class FilamentPanel(ScreenPanel):
         self.current_extruder = self.get_variable('currentextruder')
 
         for extruder in self._printer.get_tools():
-            if '1' in extruder:
-                material = self.get_variable('material_ext1')
-            else:
-                material = self.get_variable('material_ext0')
+            material = self.get_variable('material_ext0')
             if 'empty' in material:
                 material = _("Empty")
             if 'GENERIC' in material:
                 material = _("Generic")
-            self.labels[extruder].set_label(material)
+            self.labels['extruder'].set_label("  " + material)
             if self.ext_feeder[extruder] != self.current_extruder:
-                self.labels[extruder].set_property("opacity", 0.3)
+                self.labels['extruder'].set_property("opacity", 0.5)
             else:
-                self.labels[extruder].set_property("opacity", 1.0)
+                self.labels['extruder'].set_property("opacity", 1.0)
 
         if self.get_variable('nozzle') not in self.proextruders:
             for key, value in self.proextruders.items():
@@ -180,11 +172,11 @@ class FilamentPanel(ScreenPanel):
                     if self._printer.get_stat(x, "enabled"):
 
                         if data[x]['filament_detected']:
-                            self.labels[extruder].get_style_context().remove_class("filament_sensor_empty")
-                            self.labels[extruder].get_style_context().add_class("filament_sensor_detected")
+                            self.labels['extruder'].get_style_context().remove_class("filament_sensor_empty")
+                            self.labels['extruder'].get_style_context().add_class("filament_sensor_detected")
                         else:
-                            self.labels[extruder].get_style_context().remove_class("filament_sensor_detected")
-                            self.labels[extruder].get_style_context().add_class("filament_sensor_empty")
+                            self.labels['extruder'].get_style_context().remove_class("filament_sensor_detected")
+                            self.labels['extruder'].get_style_context().add_class("filament_sensor_empty")
                             self._config.replace_filament_activity(x, "empty")
 
                         if self._config.get_filament_activity(x) == "empty" and data[x]['filament_detected']:
@@ -235,10 +227,7 @@ class FilamentPanel(ScreenPanel):
         
         self._screen.delete_temporary_panels()
 
-        if self.get_variable('currentextruder') == "extruder":
-            material = self._config.variables_value_reveal("material_ext0")
-        else:
-            material = self._config.variables_value_reveal("material_ext1")
+        material = self._config.variables_value_reveal("material_ext0")
 
         if not material in ["empty", "GENERIC"]:
             try:

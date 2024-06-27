@@ -1599,6 +1599,9 @@ msgstr "Potwierdzić"
 msgid "Confirmed"
 msgstr "Potwierdzone"
 
+msgid "Select Material"
+msgstr "Wybierz materiał"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"
 

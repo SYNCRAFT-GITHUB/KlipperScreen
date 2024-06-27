@@ -1543,6 +1543,9 @@ msgstr "확인하기"
 msgid "Confirmed"
 msgstr "확인됨"
 
+msgid "Select Material"
+msgstr "재료 선택"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 

@@ -1469,6 +1469,9 @@ msgstr ""
 msgid "Confirmed"
 msgstr ""
 
+msgid "Select Material"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

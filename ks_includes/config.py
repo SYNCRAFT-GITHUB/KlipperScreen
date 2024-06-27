@@ -119,7 +119,7 @@ class KlipperScreenConfig:
         printers = sorted([i for i in self.config.sections() if i.startswith("printer ")])
 
         if len(printers) == 0:
-            printers.append("Printer Syncraft X1")
+            printers.append("Printer Syncraft Metal")
 
         host_json_path = os.path.join(os.getcwd(), "ks_includes", "dev-host.json")
         if os.path.exists(host_json_path):
@@ -310,8 +310,8 @@ class KlipperScreenConfig:
                     {"name": _("System") + " " + _("(default)"), "value": "system_lang"}]}},
             {"theme": {
                 "section": "main", "name": _("Icon Theme"), "type": "dropdown",
-                "value": "Industrial", "callback": screen.restart_ks, "options": [
-                    {"name": "Industrial" + " " + _("(default)"), "value": "Industrial"}]}},
+                "value": "Scratched", "callback": screen.restart_ks, "options": [
+                    {"name": "Scratched" + " " + _("(default)"), "value": "Scratched"}]}},
             {"print_estimate_method": {
                 "section": "main", "name": _("Estimated Time Method"), "type": "dropdown",
                 "value": "auto", "options": [
@@ -378,7 +378,7 @@ class KlipperScreenConfig:
             lang_opt.append({"name": lang, "value": lang})
 
         t_path = os.path.join(klipperscreendir, 'styles')
-        themes = [d for d in os.listdir(t_path) if (not os.path.isfile(os.path.join(t_path, d)) and d != "Industrial")]
+        themes = [d for d in os.listdir(t_path) if (not os.path.isfile(os.path.join(t_path, d)) and d != "Scratched")]
         themes.sort()
         theme_opt = self.configurable_options[1]['theme']['options']
 

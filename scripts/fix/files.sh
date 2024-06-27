@@ -14,7 +14,7 @@ cp config/KlipperScreen.conf $ks_backup_filename
 
 sudo rm -r config
 
-git clone -b syncraftx1 https://github.com/SYNCRAFT-GITHUB/printerdataconfig.git
+git clone -b metal https://github.com/SYNCRAFT-GITHUB/printerdataconfig.git
 
 mv printerdataconfig config
 
@@ -22,7 +22,7 @@ cd /home/pi
 
 sudo rm -r printerdataconfig
 
-git clone -b syncraftx1 https://github.com/SYNCRAFT-GITHUB/printerdataconfig.git
+git clone -b metal https://github.com/SYNCRAFT-GITHUB/printerdataconfig.git
 
 ############################
 #   VARIABLE DECLARATION   #
@@ -118,10 +118,10 @@ chown pi $ptrdc_dir/KlipperScreen.conf
 
 cd ~
 
-process='Apply Syncraft X1 KlipperScreen'
+process='Apply Syncraft Metal KlipperScreen'
 echo "[HELPER] START: $process."
 sudo rm -r KlipperScreen
-git clone --quiet -b syncraftx1 https://github.com/SYNCRAFT-GITHUB/KlipperScreen.git
+git clone --quiet -b metal https://github.com/SYNCRAFT-GITHUB/KlipperScreen.git
 echo "[HELPER] DONE: $process."
 
 process='Apply Syncraft Mainsail'

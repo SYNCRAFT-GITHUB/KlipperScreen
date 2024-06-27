@@ -120,11 +120,6 @@ class KlipperScreen(Gtk.Window):
         self.vertical_mode = self.aspect_ratio < 1.0
         logging.info(f"Screen resolution: {self.width}x{self.height}")
         self.theme = self._config.get_main_config().get('theme')
-        self.theme_converter = {
-            'material_darker': 'Industrial', 'material_dark': 'Neon', 'colorized': 'Colorful'
-        }
-        if self.theme in self.theme_converter:
-            self.theme = self.theme_converter[self.theme]
         self.show_cursor = self._config.get_main_config().getboolean("show_cursor", fallback=False)
         self.gtk = KlippyGtk(self)
         self.init_style()
