@@ -1,3 +1,4 @@
+import subprocess
 import logging
 import random
 import os
@@ -141,7 +142,7 @@ class FixPanel(ScreenPanel):
         if not os.path.exists(repo_path):
             repo_path = "/home/pi/printer_data/config"
             if not os.path.exists(repo_path):
-                self._config.replace_fix_option(newvalue="ERROR")
+                self._config.replace_fix_option(newvalue="DETECT_ERROR")
         try:
             result = subprocess.run(
                 ["git", "-C", repo_path, "rev-parse", "--abbrev-ref", "HEAD"],
@@ -160,13 +161,13 @@ class FixPanel(ScreenPanel):
             try:
                 new_fix_option = equivalent[branch_name]
             except:
-                new_fix_option = "ERROR"
+                new_fix_option = "DETECT_ERROR"
             self._config.replace_fix_option(newvalue=new_fix_option)
-            msg = f"{_('Essential Files')}: {branch_name}"
-            return self._screen.show_popup_message(message, level=2)
+            msg = f"{_('File branch detected:')} {branch_name}"
+            return self._screen.show_popup_message(msg, level=2)
         except subprocess.CalledProcessError as e:
             print(f"An error occurred: {e.stderr}")
-            message: str = _("An error has occurred")
+            message: str = _("Unable to auto-detect")
             self._screen.show_popup_message(message, level=3)
             return
 

@@ -1500,6 +1500,12 @@ msgstr "Legado"
 msgid "Bowden"
 msgstr "Bowden"
 
+msgid "File branch detected:"
+msgstr "Configuração detectada:"
+
+msgid "Unable to auto-detect"
+msgstr "Não foi possível detectar automaticamente"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "O ProExtruder foi indevidamente pressionado"
 

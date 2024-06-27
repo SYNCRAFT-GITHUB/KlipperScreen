@@ -1555,6 +1555,12 @@ msgstr "레거시"
 msgid "Bowden"
 msgstr "보우덴"
 
+msgid "File branch detected:"
+msgstr "파일 분기 감지됨:"
+
+msgid "Unable to auto-detect"
+msgstr "자동 감지할 수 없음"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 

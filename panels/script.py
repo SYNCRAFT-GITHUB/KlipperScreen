@@ -66,15 +66,15 @@ class ExecuteScript(ScreenPanel):
         self.buttons['EXECUTE'].set_label("...")
 
         fix_option = self._config.get_fix_option()
-        offline_scripts = ["ERROR", "UPDATEVIAUSB", "CLEANGCODEFILES", "EXPORTLOGSTOUSB"]
+        offline_scripts = ["DETECT_ERROR", "UPDATEVIAUSB", "CLEANGCODEFILES", "EXPORTLOGSTOUSB"]
 
         if not self._config.internet_connection() and fix_option not in offline_scripts:
             message: str = _("This procedure requires internet connection")
             self._screen.show_popup_message(message, level=2)
             return None
 
-        if (fix_option == "ERROR"):
-            message: str = _("An error has occurred")
+        if (fix_option == "DETECT_ERROR"):
+            message: str = _("Unable to auto-detect")
             self._screen.show_popup_message(message, level=2)
             return None
 

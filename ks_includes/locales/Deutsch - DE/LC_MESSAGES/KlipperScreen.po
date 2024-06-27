@@ -1627,6 +1627,12 @@ msgstr "Vermächtnis"
 msgid "Bowden"
 msgstr "Bowden"
 
+msgid "File branch detected:"
+msgstr "Dateizweig erkannt:"
+
+msgid "Unable to auto-detect"
+msgstr "Automatische Erkennung nicht möglich"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 

@@ -1481,6 +1481,12 @@ msgstr ""
 msgid "Bowden"
 msgstr ""
 
+msgid "File branch detected:"
+msgstr ""
+
+msgid "Unable to auto-detect"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

@@ -1625,6 +1625,12 @@ msgstr "Legacy"
 msgid "Bowden"
 msgstr "Bowden"
 
+msgid "File branch detected:"
+msgstr "Diramazione del file rilevata:"
+
+msgid "Unable to auto-detect"
+msgstr "Impossibile rilevare automaticamente"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 

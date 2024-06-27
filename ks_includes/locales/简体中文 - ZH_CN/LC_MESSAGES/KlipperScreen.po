@@ -1628,6 +1628,12 @@ msgstr "遗产"
 msgid "Bowden"
 msgstr "鲍登"
 
+msgid "File branch detected:"
+msgstr "检测到文件分支："
+
+msgid "Unable to auto-detect"
+msgstr "无法自动检测"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

@@ -1675,6 +1675,12 @@ msgstr "Hérité"
 msgid "Bowden"
 msgstr "Bowden"
 
+msgid "File branch detected:"
+msgstr "Branche de fichier détectée :"
+
+msgid "Unable to auto-detect"
+msgstr "Impossible de détecter automatiquement"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonde a été déclenchée avant le mouvement"
 

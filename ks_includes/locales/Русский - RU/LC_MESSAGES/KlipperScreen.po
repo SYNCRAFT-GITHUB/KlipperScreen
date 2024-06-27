@@ -1665,6 +1665,12 @@ msgstr "Наследие"
 msgid "Bowden"
 msgstr "Боуден"
 
+msgid "File branch detected:"
+msgstr "Обнаружена ветка файла:"
+
+msgid "Unable to auto-detect"
+msgstr "Не удалось обнаружить автоматически"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 
