@@ -1615,8 +1615,26 @@ msgstr "Bestätigen"
 msgid "Confirmed"
 msgstr "Bestätigt"
 
-msgid "Select Material"
-msgstr "Material auswählen"
+msgid "Metal"
+msgstr "Metall"
+
+msgid "Automatic Detection"
+msgstr "Automatische Erkennung"
+
+msgid "Legacy"
+msgstr "Vermächtnis"
+
+msgid "Bowden"
+msgstr "Bowden"
+
+msgid "File branch detected:"
+msgstr "Dateizweig erkannt:"
+
+msgid "Unable to auto-detect"
+msgstr "Automatische Erkennung nicht möglich"
+
+msgid "Unable to communicate with the extruder"
+msgstr "Keine Kommunikation mit dem Extruder möglich"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"

@@ -1469,7 +1469,25 @@ msgstr ""
 msgid "Confirmed"
 msgstr ""
 
-msgid "Select Material"
+msgid "Metal"
+msgstr ""
+
+msgid "Automatic Detection"
+msgstr ""
+
+msgid "Legacy"
+msgstr ""
+
+msgid "Bowden"
+msgstr ""
+
+msgid "File branch detected:"
+msgstr ""
+
+msgid "Unable to auto-detect"
+msgstr ""
+
+msgid "Unable to communicate with the extruder"
 msgstr ""
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"

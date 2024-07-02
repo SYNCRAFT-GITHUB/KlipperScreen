@@ -1488,8 +1488,26 @@ msgstr "Confirmar"
 msgid "Confirmed"
 msgstr "Confirmado"
 
-msgid "Select Material"
-msgstr "Selecionar Material"
+msgid "Metal"
+msgstr "Metal"
+
+msgid "Automatic Detection"
+msgstr "Detectado Automaticamente"
+
+msgid "Legacy"
+msgstr "Legado"
+
+msgid "Bowden"
+msgstr "Bowden"
+
+msgid "File branch detected:"
+msgstr "Configuração detectada:"
+
+msgid "Unable to auto-detect"
+msgstr "Não foi possível detectar automaticamente"
+
+msgid "Unable to communicate with the extruder"
+msgstr "Não é possível se comunicar com o extrusor"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "O ProExtruder foi indevidamente pressionado"

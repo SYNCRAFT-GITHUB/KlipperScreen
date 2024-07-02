@@ -1613,8 +1613,26 @@ msgstr "Confermare"
 msgid "Confirmed"
 msgstr "Confermato"
 
-msgid "Select Material"
-msgstr "Seleziona Materiale"
+msgid "Metal"
+msgstr "Metallo"
+
+msgid "Automatic Detection"
+msgstr "Rilevamento Automatico"
+
+msgid "Legacy"
+msgstr "Legacy"
+
+msgid "Bowden"
+msgstr "Bowden"
+
+msgid "File branch detected:"
+msgstr "Diramazione del file rilevata:"
+
+msgid "Unable to auto-detect"
+msgstr "Impossibile rilevare automaticamente"
+
+msgid "Unable to communicate with the extruder"
+msgstr "Impossibile comunicare con l'estrusore"
 
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
