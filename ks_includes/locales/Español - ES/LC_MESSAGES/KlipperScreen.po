@@ -1657,6 +1657,9 @@ msgstr "Rama de archivo detectada:"
 msgid "Unable to auto-detect"
 msgstr "No se puede detectar automáticamente"
 
+msgid "Unable to communicate with the extruder"
+msgstr "No se puede comunicar con el extrusor"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

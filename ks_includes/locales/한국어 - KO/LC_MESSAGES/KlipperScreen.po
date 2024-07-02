@@ -1561,6 +1561,9 @@ msgstr "파일 분기 감지됨:"
 msgid "Unable to auto-detect"
 msgstr "자동 감지할 수 없음"
 
+msgid "Unable to communicate with the extruder"
+msgstr "익스트루더와 통신할 수 없습니다"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 

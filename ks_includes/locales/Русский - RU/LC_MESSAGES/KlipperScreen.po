@@ -1671,6 +1671,9 @@ msgstr "Обнаружена ветка файла:"
 msgid "Unable to auto-detect"
 msgstr "Не удалось обнаружить автоматически"
 
+msgid "Unable to communicate with the extruder"
+msgstr "Не удается связаться с экструдером"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 
