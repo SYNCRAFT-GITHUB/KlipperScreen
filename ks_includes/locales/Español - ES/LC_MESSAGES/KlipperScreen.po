@@ -1468,8 +1468,8 @@ msgstr "Agregar Material Personalizado"
 msgid "Remove Material"
 msgstr "Eliminar Material"
 
-msgid "Delete all custom Materials"
-msgstr "Eliminar todos los materiales"
+msgid "Delete all custom Materials (click three times)"
+msgstr "Eliminar todos los materiales (haga clic tres veces)"
 
 msgid "The maximum limit has been reached"
 msgstr "Se ha alcanzado el límite máximo"
@@ -1639,8 +1639,26 @@ msgstr "Confirmar"
 msgid "Confirmed"
 msgstr "Confirmado"
 
-msgid "Select Material"
-msgstr "Seleccionar Material"
+msgid "Metal"
+msgstr "Metal"
+
+msgid "Automatic Detection"
+msgstr "Detección Automática"
+
+msgid "Legacy"
+msgstr "Legado"
+
+msgid "Bowden"
+msgstr "Bowden"
+
+msgid "File branch detected:"
+msgstr "Rama de archivo detectada:"
+
+msgid "Unable to auto-detect"
+msgstr "No se puede detectar automáticamente"
+
+msgid "Unable to communicate with the extruder"
+msgstr "No se puede comunicar con el extrusor"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"

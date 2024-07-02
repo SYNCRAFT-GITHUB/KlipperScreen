@@ -1299,7 +1299,7 @@ msgstr "カスタム材料を追加"
 msgid "Remove Material"
 msgstr "材料を削除"
 
-msgid "Delete all custom Materials"
+msgid "Delete all custom Materials (click three times)"
 msgstr "すべての素材を削除する"
 
 msgid "The maximum limit has been reached"
@@ -1476,8 +1476,26 @@ msgstr "確認する"
 msgid "Confirmed"
 msgstr "確認済み"
 
-msgid "Select Material"
-msgstr "素材を選択"
+msgid "Metal"
+msgstr "金属"
+
+msgid "Automatic Detection"
+msgstr "自動検出"
+
+msgid "Legacy"
+msgstr "レガシー"
+
+msgid "Bowden"
+msgstr "ボーデン"
+
+msgid "File branch detected:"
+msgstr "ファイルのブランチが検出されました:"
+
+msgid "Unable to auto-detect"
+msgstr "自動検出できません"
+
+msgid "Unable to communicate with the extruder"
+msgstr "押出機と通信できません"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"

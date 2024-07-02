@@ -44,6 +44,7 @@ class AddCustomMaterial(ScreenPanel):
         scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         scroll.add(grid)
         self.content.add(scroll)
+        self.clear_clicks: int = 0
 
         textfield_label = self._gtk.Label(f"{_('Insert Material Name')}")
         textfield_label.set_hexpand(False)
@@ -126,15 +127,17 @@ class AddCustomMaterial(ScreenPanel):
         grid.attach(self.labels['minus_button'], 0, (i), 1, 1)
         i += 1
 
-        self.labels['finish'] = self._gtk.Button("complete", _('Add Custom Material'), f"color1")
+        self.labels['finish'] = self._gtk.Button("complete", _('Add Custom Material'), "color1")
         self.labels['finish'].connect("clicked", self.apply_custom_filament)
         grid.attach(self.labels['finish'], 0, (i), 3, 2)
         i += 2
 
-        self.labels['clear_all'] = self._gtk.Button("stock", _('Delete all custom Materials'), None)
-        self.labels['clear_all'].connect("clicked", self.clear_all)
-        grid.attach(self.labels['clear_all'], 0, (i), 3, 1)
-        i += 1
+        self.labels['clear_all'] = self._gtk.Button("intimidating-trash", _('Delete all custom Materials (click three times)'), "color2")
+        self.labels['clear_all'].connect("clicked", self.clear_click)
+        grid.attach(self.labels['clear_all'], 0, (i), 3, 2)
+        i += 2
+
+        del i
 
 
     def set_fix_option_to(self, button, newfixoption):
@@ -223,7 +226,15 @@ class AddCustomMaterial(ScreenPanel):
         self._screen.reload_panels()
         return None
 
-    def clear_all(self, button):
+    def clear_click(self, button):
+        if self.clear_clicks >= 2:
+            self.labels['clear_all'].set_label("...")
+            self.clear_all()
+        else:
+            self.clear_clicks += 1
+            self.labels['clear_all'].set_label(str(self.clear_clicks))
+
+    def clear_all(self):
 
         if not os.path.isfile(self.custom_json_path):
             with open(self.custom_json_path, 'w') as json_file:

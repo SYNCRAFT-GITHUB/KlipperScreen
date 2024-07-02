@@ -1439,8 +1439,8 @@ msgstr "添加自定义材料"
 msgid "Remove Material"
 msgstr "删除材料"
 
-msgid "Delete all custom Materials"
-msgstr "删除所有材料"
+msgid "Delete all custom Materials (click three times)"
+msgstr "删除所有材质（点击三下）"
 
 msgid "The maximum limit has been reached"
 msgstr "已达到最大限制"
@@ -1616,8 +1616,26 @@ msgstr "确认"
 msgid "Confirmed"
 msgstr "已确认"
 
-msgid "Select Material"
-msgstr "选择材料"
+msgid "Metal"
+msgstr "金属"
+
+msgid "Automatic Detection"
+msgstr "自动检测"
+
+msgid "Legacy"
+msgstr "遗产"
+
+msgid "Bowden"
+msgstr "鲍登"
+
+msgid "File branch detected:"
+msgstr "检测到文件分支："
+
+msgid "Unable to auto-detect"
+msgstr "无法自动检测"
+
+msgid "Unable to communicate with the extruder"
+msgstr "无法与挤出机通信"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"

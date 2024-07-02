@@ -1419,8 +1419,8 @@ msgstr "Dodaj niestandardowy materiał"
 msgid "Remove Material"
 msgstr "Usuń materiał"
 
-msgid "Delete all custom Materials"
-msgstr "Usuń wszystkie materiały"
+msgid "Delete all custom Materials (click three times)"
+msgstr "Usuń wszystkie materiały (kliknij trzy razy)"
 
 msgid "The maximum limit has been reached"
 msgstr "Osiągnięto limit maksymalny"
@@ -1599,8 +1599,26 @@ msgstr "Potwierdzić"
 msgid "Confirmed"
 msgstr "Potwierdzone"
 
-msgid "Select Material"
-msgstr "Wybierz materiał"
+msgid "Metal"
+msgstr "Metal"
+
+msgid "Automatic Detection"
+msgstr "Automatyczne Wykrywanie"
+
+msgid "Legacy"
+msgstr "Dziedzictwo"
+
+msgid "Bowden"
+msgstr "Bowden"
+
+msgid "File branch detected:"
+msgstr "Wykryto gałąź pliku:"
+
+msgid "Unable to auto-detect"
+msgstr "Nie można wykryć automatycznie"
+
+msgid "Unable to communicate with the extruder"
+msgstr "Nie można komunikować się z ekstruderem"
 
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"

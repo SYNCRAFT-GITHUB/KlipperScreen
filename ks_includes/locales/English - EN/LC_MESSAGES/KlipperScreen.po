@@ -1292,7 +1292,7 @@ msgstr ""
 msgid "Remove Material"
 msgstr ""
 
-msgid "Delete all custom Materials"
+msgid "Delete all custom Materials (click three times)"
 msgstr ""
 
 msgid "The maximum limit has been reached"
@@ -1469,7 +1469,25 @@ msgstr ""
 msgid "Confirmed"
 msgstr ""
 
-msgid "Select Material"
+msgid "Metal"
+msgstr ""
+
+msgid "Automatic Detection"
+msgstr ""
+
+msgid "Legacy"
+msgstr ""
+
+msgid "Bowden"
+msgstr ""
+
+msgid "File branch detected:"
+msgstr ""
+
+msgid "Unable to auto-detect"
+msgstr ""
+
+msgid "Unable to communicate with the extruder"
 msgstr ""
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"

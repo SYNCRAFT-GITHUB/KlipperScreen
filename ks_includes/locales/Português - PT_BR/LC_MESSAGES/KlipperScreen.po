@@ -961,7 +961,7 @@ msgid "Remove Password Protection"
 msgstr "Remover proteção por senha"
 
 msgid "Welcome to Syncraft"
-msgstr "Dê um \"Oi\" para sua nova Syncraft!"
+msgstr "Setup inicial da Syncraft Metal"
 
 msgid "No, I don't agree."
 msgstr "Não, não concordo."
@@ -1311,8 +1311,8 @@ msgstr "Adicionar Material Customizado"
 msgid "Remove Material"
 msgstr "Remover Material"
 
-msgid "Delete all custom Materials"
-msgstr "Limpar lista de Materias Customizados"
+msgid "Delete all custom Materials (click three times)"
+msgstr "Limpar lista de Materias Customizados (clique três vezes)"
 
 msgid "The maximum limit has been reached"
 msgstr "O limite máximo foi atingido"
@@ -1342,7 +1342,7 @@ msgid "Restart the machine for the updates to take effect"
 msgstr "Reinicie a máquina para que as atualizações tenham efeito"
 
 msgid "One of the materials you're using is not compatible with this file"
-msgstr "Algum dos materiais carregados não é compatível com este arquivo"
+msgstr "O material carregado não é compatível com este arquivo"
 
 msgid "Internal Lights"
 msgstr "Luzes Internas"
@@ -1360,7 +1360,7 @@ msgid "Empty"
 msgstr "Vazio"
 
 msgid "Display materials in the top"
-msgstr "Exibir materiais no topo da tela"
+msgstr "Exibir material no topo da tela"
 
 msgid "This procedure will start printing a specific 3D model for calibration."
 msgstr "Este procedimento irá imprimir uma peça dedicada para calibração."
@@ -1369,7 +1369,7 @@ msgid "It is recommended to use materials of the same type with different colors
 msgstr "É recomedado utilizar materiais do mesmo tipo, entretanto com cores diferentes."
 
 msgid "Both feeders must have materials inserted"
-msgstr "Ambos alimentadores devem estar com materiais inseridos"
+msgstr "O Alimentador deve estar com material inseridos"
 
 msgid "Change material for non-active feeder"
 msgstr "Alterar material para o alimentador não ativo"
@@ -1381,7 +1381,7 @@ msgid "Show Scrollbars Buttons"
 msgstr "Exibir botões de rolagem"
 
 msgid "Select Material when inserting filament"
-msgstr "Selecionar Material ao inserir filamento"
+msgstr "Seleção de materiais ao inserir filamento"
 
 msgid "Cannot change ProExtruder type during filament insertion"
 msgstr "Não é possível trocar o tipo do ProExtruder durante inserção de filamento"
@@ -1432,7 +1432,7 @@ msgid "The check is always done before printing."
 msgstr "A verificação é sempre feita antes de imprimir."
 
 msgid "It ensures selected materials and nozzle type are compatible."
-msgstr "O objetivo é garantir que tanto os materiais selecionados\nquanto o ProExtruder sejam compatíveis."
+msgstr "O objetivo é garantir que tanto o material selecionado\nquanto o ProExtruder sejam compatíveis."
 
 msgid "You can temporarily disable this verification."
 msgstr "Você pode desativar temporariamente a verificação."
@@ -1488,8 +1488,26 @@ msgstr "Confirmar"
 msgid "Confirmed"
 msgstr "Confirmado"
 
-msgid "Select Material"
-msgstr "Selecionar Material"
+msgid "Metal"
+msgstr "Metal"
+
+msgid "Automatic Detection"
+msgstr "Detectado Automaticamente"
+
+msgid "Legacy"
+msgstr "Legado"
+
+msgid "Bowden"
+msgstr "Bowden"
+
+msgid "File branch detected:"
+msgstr "Configuração detectada:"
+
+msgid "Unable to auto-detect"
+msgstr "Não foi possível detectar automaticamente"
+
+msgid "Unable to communicate with the extruder"
+msgstr "Não é possível se comunicar com o extrusor"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "O ProExtruder foi indevidamente pressionado"

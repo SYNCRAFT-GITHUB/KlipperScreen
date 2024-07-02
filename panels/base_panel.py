@@ -244,7 +244,7 @@ class BasePanel(ScreenPanel):
             else:
                 current_ext = f'{_("Feeder")[0]}1'
             material_ext0 = _("Empty") if 'empty' in str(material_ext0) else material_ext0
-            self._screen.base_panel.set_title(f"{current_ext} {nozzle} - {material_ext0}")
+            self._screen.base_panel.set_title(f"{nozzle} - {material_ext0}")
 
         if action == "notify_update_response":
             if self.update_dialog is None:
