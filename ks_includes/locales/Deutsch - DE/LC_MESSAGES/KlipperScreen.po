@@ -1633,6 +1633,9 @@ msgstr "Dateizweig erkannt:"
 msgid "Unable to auto-detect"
 msgstr "Automatische Erkennung nicht möglich"
 
+msgid "Unable to communicate with the extruder"
+msgstr "Keine Kommunikation mit dem Extruder möglich"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 

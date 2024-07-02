@@ -60,6 +60,8 @@ class SplashScreenPanel(ScreenPanel):
 
     def update_text(self, text):
         self.labels['text'].set_label(f"{text}")
+        if "ADC out of range" in text:
+            self.labels['text'].set_label(_("Unable to communicate with the extruder"))
         self.show_restart_buttons()
 
     def clear_action_bar(self):
