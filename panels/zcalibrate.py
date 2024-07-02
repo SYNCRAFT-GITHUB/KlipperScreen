@@ -40,7 +40,7 @@ class ZCalibratePanel(ScreenPanel):
             'zpos': self._gtk.Button('z-farther', _("Raise Nozzle"), 'color4'),
             'zneg': self._gtk.Button('z-closer', _("Lower Nozzle"), 'color1'),
             'start': self._gtk.Button('resume', _("Start"), 'color3'),
-            'complete': self._gtk.Button('complete', _('Accept'), 'color3'),
+            'complete': self._gtk.Button('complete', _('Confirm'), 'color3'),
             'cancel': self._gtk.Button('cancel', _('Abort'), 'color2'),
         }
         self.buttons['zpos'].connect("clicked", self.move, "+")

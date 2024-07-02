@@ -1444,8 +1444,8 @@ msgstr "+ Maßgeschneidertes Material"
 msgid "Remove Material"
 msgstr "Material entfernen"
 
-msgid "Delete all custom Materials"
-msgstr "Löschen Sie alle Materialien"
+msgid "Delete all custom Materials (click three times)"
+msgstr "Löschen Sie alle Materialien (dreimal klicken)"
 
 msgid "The maximum limit has been reached"
 msgstr "Das Maximum wurde erreicht"

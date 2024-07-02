@@ -1299,7 +1299,7 @@ msgstr "カスタム材料を追加"
 msgid "Remove Material"
 msgstr "材料を削除"
 
-msgid "Delete all custom Materials"
+msgid "Delete all custom Materials (click three times)"
 msgstr "すべての素材を削除する"
 
 msgid "The maximum limit has been reached"

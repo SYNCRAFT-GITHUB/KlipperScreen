@@ -1476,7 +1476,7 @@ msgstr "+ индивидуальный материал"
 msgid "Remove Material"
 msgstr "Удалить материал"
 
-msgid "Delete all custom Materials"
+msgid "Delete all custom Materials (click three times)"
 msgstr "Удалить все материалы"
 
 msgid "The maximum limit has been reached"

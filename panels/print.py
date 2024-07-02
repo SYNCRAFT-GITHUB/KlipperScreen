@@ -507,7 +507,7 @@ class PrintPanel(ScreenPanel):
         self.labels['new_name'].connect("activate", self.rename)
         self.labels['new_name'].connect("focus-in-event", self._screen.show_keyboard)
 
-        save = self._gtk.Button("complete", _("Save"), "color3")
+        save = self._gtk.Button(None, _("Save"), "color3")
         save.set_hexpand(False)
         save.connect("clicked", self.rename)
 

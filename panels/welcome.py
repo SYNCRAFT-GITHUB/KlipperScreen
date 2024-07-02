@@ -46,9 +46,8 @@ class WelcomePanel(ScreenPanel):
 
         self.buttons = {
             'STEP_01': self._gtk.Button("network", _("Connect"), "color3"),
-            'STEP_02': self._gtk.Button ("update", _("Update"), "color1"),
-            'STEP_03': self._gtk.Button("bed-level", _("Calibrate"), "color2"),
-            'STEP_04': self._gtk.Button("settings", _("Customize"), "color4"),
+            'STEP_02': self._gtk.Button("bed-level", _("Calibrate"), "color2"),
+            'STEP_03': self._gtk.Button("settings", _("Customize"), "color4"),
             'FINISH': self._gtk.Button("complete", _("Finish"), None),
         }
         self.buttons['STEP_01'].connect("clicked", self.menu_item_clicked, "STEP_01", {
@@ -56,14 +55,10 @@ class WelcomePanel(ScreenPanel):
             "panel": "network"
         })
         self.buttons['STEP_02'].connect("clicked", self.menu_item_clicked, "STEP_02", {
-            "name":_("Update"),
-            "panel": "update"
-        })
-        self.buttons['STEP_03'].connect("clicked", self.menu_item_clicked, "STEP_03", {
             "name": _("Calibrate"),
             "panel": "zcalibrate"
         })
-        self.buttons['STEP_04'].connect("clicked", self.menu_item_clicked, "STEP_04", {
+        self.buttons['STEP_03'].connect("clicked", self.menu_item_clicked, "STEP_03", {
             "name": _("Customize"),
             "panel": "settings"
         })
@@ -72,7 +67,8 @@ class WelcomePanel(ScreenPanel):
         grid = self._gtk.HomogeneousGrid()
 
         for i, button in enumerate(self.buttons):
-            grid.attach((self._gtk.Button(f"extruder-{i+1}", None, None)), i, 0, 1, 1)
+            if not i >= len(self.buttons)-1:
+                grid.attach((self._gtk.Button(f"extruder-{i+1}", None, None)), i, 0, 1, 1)
             grid.attach(self.buttons[button], i, 1, 1, 2)
 
         self.labels['syncraft_panel'] = self._gtk.HomogeneousGrid()

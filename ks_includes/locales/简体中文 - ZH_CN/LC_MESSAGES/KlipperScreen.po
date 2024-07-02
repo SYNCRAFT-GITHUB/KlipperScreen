@@ -1439,8 +1439,8 @@ msgstr "添加自定义材料"
 msgid "Remove Material"
 msgstr "删除材料"
 
-msgid "Delete all custom Materials"
-msgstr "删除所有材料"
+msgid "Delete all custom Materials (click three times)"
+msgstr "删除所有材质（点击三下）"
 
 msgid "The maximum limit has been reached"
 msgstr "已达到最大限制"

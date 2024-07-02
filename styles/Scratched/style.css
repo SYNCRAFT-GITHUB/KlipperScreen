@@ -30,7 +30,6 @@ window {
     background-color: @bg;
     background-image: url("./styles/Scratched/background.png");
     background-size: cover;
-
 }
 
 button {
@@ -112,7 +111,6 @@ menu {
 menuitem {
     background-color: transparent;
     border: none;
-    
 }
 
 trough {
@@ -147,7 +145,7 @@ scrollbar slider {
 
 .dialog {
     border: @bg;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 1.0);
 }
 
 .dialog button {
@@ -161,6 +159,16 @@ scrollbar slider {
     background-color: rgba(2, 27, 56, 0.7);
     border-radius: 0.75em;
     margin-right: 5px;
+}
+
+.tempbutton_top, .tempbutton, .tempbutton_bottom, .distbutton_top, .distbutton, .distbutton_bottom  {
+    border-color: rgba(122, 122, 122, 0.7);
+    border-width: .15em;
+    background-color: rgb(14, 14, 14);
+}
+
+.distbutton_active {
+    background-color: rgb(41, 41, 41);
 }
 
 .horizontal_togglebuttons_active {
