@@ -32,8 +32,8 @@ class AddCustomMaterial(ScreenPanel):
             'Standard 0.25mm': False,
             'Standard 0.4mm': False,
             'Standard 0.8mm': False,
-            'Metal 0.4mm': False,
             'Fiber 0.6mm': False,
+            'Metal 0.4mm': False,
         }
 
         self.materials_json_path = self._config.materials_path(custom=False)
