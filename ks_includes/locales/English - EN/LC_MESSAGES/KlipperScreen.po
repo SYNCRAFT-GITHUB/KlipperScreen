@@ -1490,6 +1490,15 @@ msgstr ""
 msgid "Unable to communicate with the extruder"
 msgstr ""
 
+msgid "Calibrate Probe"
+msgstr ""
+
+msgid "Printer firmware was turned off by user command"
+msgstr ""
+
+msgid "Manual Leveling (Recommended before calibrating probe)"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

@@ -50,11 +50,8 @@ class ZCalibratePanel(ScreenPanel):
 
         functions = []
         pobox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-        space: str = '   '
-        self._add_button(f'1: {_("Screws Adjust")}{space}', "screws", pobox)
-        functions.append("screws")
         if self.probe:
-            self._add_button(f'{space}2: {_("Calibrate")} Probe', "probe", pobox)
+            self._add_button(_("Calibrate Probe"), "probe", pobox)
             functions.append("probe")
         if self._printer.config_section_exists("bed_mesh") and "probe" not in functions:
             # This is used to do a manual bed mesh if there is no probe

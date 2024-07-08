@@ -1634,6 +1634,15 @@ msgstr "Impossibile rilevare automaticamente"
 msgid "Unable to communicate with the extruder"
 msgstr "Impossibile comunicare con l'estrusore"
 
+msgid "Calibrate Probe"
+msgstr "Calibrare la Sonda"
+
+msgid "Printer firmware was turned off by user command"
+msgstr "Il firmware della stampante è stato spento dal comando dell'utente"
+
+msgid "Manual Leveling (Recommended before calibrating probe)"
+msgstr "Livellamento manuale (consigliato prima della calibrazione della sonda)"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 

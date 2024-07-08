@@ -1497,6 +1497,15 @@ msgstr "自動検出できません"
 msgid "Unable to communicate with the extruder"
 msgstr "押出機と通信できません"
 
+msgid "Calibrate Probe"
+msgstr "プローブの校正"
+
+msgid "Printer firmware was turned off by user command"
+msgstr "ユーザーコマンドによりプリンターファームウェアがオフになりました"
+
+msgid "Manual Leveling (Recommended before calibrating probe)"
+msgstr "手動レベリング（プローブのキャリブレーション前に推奨）"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

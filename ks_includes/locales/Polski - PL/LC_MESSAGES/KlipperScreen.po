@@ -1617,6 +1617,15 @@ msgstr "Wykryto gałąź pliku:"
 msgid "Unable to auto-detect"
 msgstr "Nie można wykryć automatycznie"
 
+msgid "Calibrate Probe"
+msgstr "Kalibruj sondę"
+
+msgid "Printer firmware was turned off by user command"
+msgstr "Oprogramowanie układowe drukarki zostało wyłączone na polecenie użytkownika"
+
+msgid "Manual Leveling (Recommended before calibrating probe)"
+msgstr "Ręczne poziomowanie (zalecane przed kalibracją sondy)"
+
 msgid "Unable to communicate with the extruder"
 msgstr "Nie można komunikować się z ekstruderem"
 

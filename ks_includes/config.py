@@ -119,7 +119,7 @@ class KlipperScreenConfig:
         printers = sorted([i for i in self.config.sections() if i.startswith("printer ")])
 
         if len(printers) == 0:
-            printers.append("Printer Syncraft Metal")
+            printers.append("Printer Syncraft")
 
         host_json_path = os.path.join(os.getcwd(), "ks_includes", "dev-host.json")
         if os.path.exists(host_json_path):

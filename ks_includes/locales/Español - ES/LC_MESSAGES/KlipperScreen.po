@@ -1660,6 +1660,15 @@ msgstr "No se puede detectar automáticamente"
 msgid "Unable to communicate with the extruder"
 msgstr "No se puede comunicar con el extrusor"
 
+msgid "Calibrate Probe"
+msgstr "Calibrar Sonda"
+
+msgid "Printer firmware was turned off by user command"
+msgstr "El firmware de la impresora fue apagado por comando del usuario"
+
+msgid "Manual Leveling (Recommended before calibrating probe)"
+msgstr "Nivelación manual (recomendado antes de calibrar la sonda)"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 
