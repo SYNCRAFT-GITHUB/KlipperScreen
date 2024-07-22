@@ -114,7 +114,7 @@ class TimezoneSelect(ScreenPanel):
             grid.attach(self.labels[name], col, row, 1, 1)
 
         name: str = timezone.name()
-        self.labels[name] = self._gtk.Button(None, _("My timezone is not on the list"), None)
+        self.labels[name] = self._gtk.Button("timezone-error", f'  {_("My timezone is not on the list")}', "color1", .94, Gtk.PositionType.LEFT, 1)
         self.labels[name].connect("clicked", self.show_insert_custom_timezone)
         if self._screen.vertical_mode:
             row = i % columns
@@ -164,7 +164,7 @@ class TimezoneSelect(ScreenPanel):
 
         code = self.labels['timezone_name'].get_text()
 
-        magic_words = ['welcome', 'help', 'kill', 'restart']
+        magic_words = ['welcome', 'newlogo', 'regress', 'help', 'kill', 'restart']
         if code in magic_words:
             self.magic(code=code)
             return
@@ -180,6 +180,14 @@ class TimezoneSelect(ScreenPanel):
 
         if code == 'welcome':
             self.set_bool_config_option(section="hidden", option="welcome", boolean=True)
+            self._screen.reload_panels()
+
+        if code == 'newlogo':
+            self.set_bool_config_option(section="hidden", option="new_logo", boolean=True)
+            self._screen.reload_panels()
+
+        if code == 'regress':
+            self.set_bool_config_option(section="hidden", option="new_logo", boolean=False)
             self._screen.reload_panels()
 
         if code == 'help':

@@ -178,7 +178,12 @@ class ConsolePanel(ScreenPanel):
         if space:
             self.add_gcode("command", time.time(), '')
         self.add_gcode("command", time.time(), command)
-        self._screen._ws.klippy.gcode_script(command)
+        if self._printer.get_stat("print_stats")['state'] == "printing":
+            message: str = _("You cannot perform this action while printing")
+            self._screen.show_popup_message(message, level=2)
+            return None
+        else:
+            self._screen._ws.klippy.gcode_script(command)
 
     def activate(self):
         self.clear()

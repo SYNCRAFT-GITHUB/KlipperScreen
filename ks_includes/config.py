@@ -243,6 +243,7 @@ class KlipperScreenConfig:
             elif section == 'hidden':
                 bools = (
                     'welcome',
+                    'new_logo',
                 )
                 strs = ()
                 numbers = ()
@@ -325,7 +326,8 @@ class KlipperScreenConfig:
                     {"name": _("Never"), "value": "off"}]
             }},
             {"24htime": {"section": "main", "name": _("24 Hour Time"), "type": "binary", "value": "True"}},
-            {"welcome": {"section": "hidden", "name": _("Welcome to Syncraft"), "type": "binary", "value": "False"}},
+            {"welcome": {"section": "hidden", "name": "WELCOME", "type": "binary", "value": "False"}},
+            {"new_logo": {"section": "hidden", "name": "NEW_LOGO", "type": "binary", "value": "False"}},
             {"show_saved_from_usb": {
                 "section": "main", "name": _("Show files saved from USB"), "type": "binary",
                 "value": "False", "callback": screen.reload_panels}},

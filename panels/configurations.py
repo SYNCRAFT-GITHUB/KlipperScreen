@@ -27,8 +27,10 @@ class Configurations(ScreenPanel):
                 self.title = title
                 self.show = show
 
+        logo = 'syncraft_new' if self._config.get_hidden_config().getboolean('new_logo', False) else 'syncraft'
+
         self.config_buttons = [
-            ConfigurationButton(panel="syncraft_panel", title=_("Syncraft"), icon='syncraft'),
+            ConfigurationButton(panel="syncraft_panel", title=_("Syncraft"), icon=logo),
             ConfigurationButton(panel='zcalibrate', title=_("Calibrate"), icon='bed-level'),
             ConfigurationButton(panel='settings', title=_("Settings"), icon='settings'),
             ConfigurationButton(panel='power', title=_("Power"), icon='shutdown')
