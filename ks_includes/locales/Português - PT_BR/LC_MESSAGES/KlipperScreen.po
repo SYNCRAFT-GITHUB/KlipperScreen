@@ -1111,7 +1111,7 @@ msgid "Change Timezone"
 msgstr "Alterar Fuso Horário"
 
 msgid "My timezone is not on the list"
-msgstr "Meu fuso horário não foi listado"
+msgstr "Meu fuso horário não está listado acima"
 
 msgid "Insert your timezone"
 msgstr "Insira seu fuso horário"
