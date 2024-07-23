@@ -1634,6 +1634,9 @@ msgstr "Impossibile rilevare automaticamente"
 msgid "Unable to communicate with the extruder"
 msgstr "Impossibile comunicare con l'estrusore"
 
+msgid "Manually select configuration files"
+msgstr "Seleziona manualmente i file di configurazione"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 

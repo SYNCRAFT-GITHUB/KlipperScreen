@@ -1674,6 +1674,9 @@ msgstr "Не удалось обнаружить автоматически"
 msgid "Unable to communicate with the extruder"
 msgstr "Не удается связаться с экструдером"
 
+msgid "Manually select configuration files"
+msgstr "Вручную выбрать файлы конфигурации"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

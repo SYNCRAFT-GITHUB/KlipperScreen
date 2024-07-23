@@ -1497,6 +1497,9 @@ msgstr "自動検出できません"
 msgid "Unable to communicate with the extruder"
 msgstr "押出機と通信できません"
 
+msgid "Manually select configuration files"
+msgstr "構成ファイルを手動で選択"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

@@ -78,8 +78,8 @@ class ExecuteScript(ScreenPanel):
             self._screen.show_popup_message(message, level=2)
             return None
 
-        if (fix_option == "FILES"):
-            script_path = '/home/pi/KlipperScreen/scripts/fix/files.sh'
+        if (fix_option == "FILES_V3"):
+            script_path = '/home/pi/KlipperScreen/scripts/fix/files_v3.sh'
             subprocess.call(['bash', script_path])
 
         if (fix_option == "FILES_BOWDEN"):
