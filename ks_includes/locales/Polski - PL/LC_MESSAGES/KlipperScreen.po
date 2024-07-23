@@ -1620,6 +1620,9 @@ msgstr "Nie można wykryć automatycznie"
 msgid "Unable to communicate with the extruder"
 msgstr "Nie można komunikować się z ekstruderem"
 
+msgid "Manually select configuration files"
+msgstr "Ręcznie wybierz pliki konfiguracyjne"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"
 

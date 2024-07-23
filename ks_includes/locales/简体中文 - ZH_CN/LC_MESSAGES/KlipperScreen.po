@@ -1637,6 +1637,9 @@ msgstr "无法自动检测"
 msgid "Unable to communicate with the extruder"
 msgstr "无法与挤出机通信"
 
+msgid "Manually select configuration files"
+msgstr "手动选择配置文件"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

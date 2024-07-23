@@ -1636,6 +1636,9 @@ msgstr "Automatische Erkennung nicht möglich"
 msgid "Unable to communicate with the extruder"
 msgstr "Keine Kommunikation mit dem Extruder möglich"
 
+msgid "Manually select configuration files"
+msgstr "Konfigurationsdateien manuell auswählen"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 

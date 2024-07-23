@@ -1564,6 +1564,9 @@ msgstr "자동 감지할 수 없음"
 msgid "Unable to communicate with the extruder"
 msgstr "익스트루더와 통신할 수 없습니다"
 
+msgid "Manually select configuration files"
+msgstr "구성 파일을 수동으로 선택"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 

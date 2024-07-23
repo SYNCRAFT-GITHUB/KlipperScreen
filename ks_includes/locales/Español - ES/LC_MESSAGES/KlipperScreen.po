@@ -1660,6 +1660,9 @@ msgstr "No se puede detectar automáticamente"
 msgid "Unable to communicate with the extruder"
 msgstr "No se puede comunicar con el extrusor"
 
+msgid "Manually select configuration files"
+msgstr "Seleccionar manualmente los archivos de configuración"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

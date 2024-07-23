@@ -24,14 +24,9 @@ class FixPanel(ScreenPanel):
         scroll = self._gtk.ScrolledWindow()
         scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
 
-        txt = _("Essential Files")
-
         self.buttons = {
-            'FIX_FILES_AUTO': self._gtk.Button("file", f'{txt} ({_("Automatic Detection")})', self.color()),
-            'FIX_FILES': self._gtk.Button("file", _("Legacy"), self.color()),
-            'FIX_FILES_BOWDEN': self._gtk.Button("file", _("Bowden"), self.color()),
-            'FIX_FILES_FEEDER': self._gtk.Button("file", _("Feeder"), self.color()),
-            'FIX_FILES_METAL': self._gtk.Button("file", _("Metal"), self.color()),
+            'FIX_FILES_AUTO': self._gtk.Button("file_branch", f'{_("Essential Files")} ({_("Automatic Detection")})', self.color()),
+            'FIX_FILES_MANUAL': self._gtk.Button("file_config", _("Manually select configuration files"), self.color()),
             'CLEAN_GCODE': self._gtk.Button("clean", _("Clear GCodes Folder"), self.color()),
             'FIX_CAMERA': self._gtk.Button("camera", _("Camera Driver"), self.color()),
             'FIX_KLIPPERSCREEN': self._gtk.Button("screen", _("KlipperScreen"), self.color()),
@@ -54,28 +49,9 @@ class FixPanel(ScreenPanel):
             "panel": "fix_steps"
         })
 
-        self.buttons['FIX_FILES'].connect("clicked", self.set_fix_option_to, "FILES")
-        self.buttons['FIX_FILES'].connect("clicked", self.menu_item_clicked, "fix_steps", {
+        self.buttons['FIX_FILES_MANUAL'].connect("clicked", self.menu_item_clicked, "branch_select", {
             "name": _("Fix"),
-            "panel": "fix_steps"
-        })
-
-        self.buttons['FIX_FILES_BOWDEN'].connect("clicked", self.set_fix_option_to, "FILES_BOWDEN")
-        self.buttons['FIX_FILES_BOWDEN'].connect("clicked", self.menu_item_clicked, "fix_steps", {
-            "name": _("Fix"),
-            "panel": "fix_steps"
-        })
-
-        self.buttons['FIX_FILES_FEEDER'].connect("clicked", self.set_fix_option_to, "FILES_FEEDER")
-        self.buttons['FIX_FILES_FEEDER'].connect("clicked", self.menu_item_clicked, "fix_steps", {
-            "name": _("Fix"),
-            "panel": "fix_steps"
-        })
-
-        self.buttons['FIX_FILES_METAL'].connect("clicked", self.set_fix_option_to, "FILES_METAL")
-        self.buttons['FIX_FILES_METAL'].connect("clicked", self.menu_item_clicked, "fix_steps", {
-            "name": _("Fix"),
-            "panel": "fix_steps"
+            "panel": "branch_select"
         })
 
         self.buttons['FIX_CAMERA'].connect("clicked", self.set_fix_option_to, "CAMERA")
@@ -120,10 +96,7 @@ class FixPanel(ScreenPanel):
         grid = self._gtk.HomogeneousGrid()
 
         grid.attach(self.buttons['FIX_FILES_AUTO'], 0, 0, 4, 1)
-        grid.attach(self.buttons['FIX_FILES'], 0, 1, 1, 1)
-        grid.attach(self.buttons['FIX_FILES_BOWDEN'], 1, 1, 1, 1)
-        grid.attach(self.buttons['FIX_FILES_FEEDER'], 2, 1, 1, 1)
-        grid.attach(self.buttons['FIX_FILES_METAL'], 3, 1, 1, 1)
+        grid.attach(self.buttons['FIX_FILES_MANUAL'], 0, 1, 4, 1)
         grid.attach(self.buttons['FIX_CAMERA'], 0, 5, 1, 1)
         grid.attach(self.buttons['FIX_KLIPPERSCREEN'], 2, 5, 1, 1)
         grid.attach(self.buttons['FIX_MAINSAIL'], 3, 5, 1, 1)
@@ -153,10 +126,10 @@ class FixPanel(ScreenPanel):
             )
             branch_name = result.stdout.strip()
             equivalent = {
-                "syncraftx1": "FILES",
                 "syncraftx1-arc-stable": "FILES_BOWDEN",
                 "x1-feeder": "FILES_FEEDER",
-                "metal": "FILES_METAL"
+                "metal": "FILES_METAL",
+                "v3": "FILES_V3"
             }
             try:
                 new_fix_option = equivalent[branch_name]

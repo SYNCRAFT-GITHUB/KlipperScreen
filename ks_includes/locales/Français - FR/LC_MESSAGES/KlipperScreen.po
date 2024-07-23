@@ -1684,6 +1684,9 @@ msgstr "Impossible de détecter automatiquement"
 msgid "Unable to communicate with the extruder"
 msgstr "Impossible de communiquer avec l'extrudeuse"
 
+msgid "Manually select configuration files"
+msgstr "Sélectionner manuellement les fichiers de configuration"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonde a été déclenchée avant le mouvement"
 
