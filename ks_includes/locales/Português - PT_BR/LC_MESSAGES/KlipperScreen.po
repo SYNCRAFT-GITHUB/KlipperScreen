@@ -1512,6 +1512,18 @@ msgstr "Não é possível se comunicar com o extrusor"
 msgid "Manually select configuration files"
 msgstr "Selecionar arquivos manualmente"
 
+msgid "Check LED"
+msgstr "Checar LED"
+
+msgid "Automatically save probe when finishing a print"
+msgstr "Salvar automaticamente probe ao terminar de imprimir"
+
+msgid "Return to main menu and save probe?"
+msgstr "Retornar ao menu principal e salvar probe?"
+
+msgid "Save probe and return to main menu"
+msgstr "Salvar probe e retornar ao menu principal"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "O ProExtruder foi indevidamente pressionado"
 

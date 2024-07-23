@@ -1637,6 +1637,18 @@ msgstr "Impossibile comunicare con l'estrusore"
 msgid "Manually select configuration files"
 msgstr "Seleziona manualmente i file di configurazione"
 
+msgid "Check LED"
+msgstr "Controlla LED"
+
+msgid "Automatically save probe when finishing a print"
+msgstr "Salva automaticamente la sonda al termine della stampa"
+
+msgid "Return to main menu and save probe?"
+msgstr "Tornare al menu principale e salvare la sonda?"
+
+msgid "Save probe and return to main menu"
+msgstr "Salva la sonda e torna al menu principale"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 

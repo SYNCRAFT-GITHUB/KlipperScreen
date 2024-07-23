@@ -1500,6 +1500,18 @@ msgstr "押出機と通信できません"
 msgid "Manually select configuration files"
 msgstr "構成ファイルを手動で選択"
 
+msgid "Check LED"
+msgstr "LEDを確認"
+
+msgid "Automatically save probe when finishing a print"
+msgstr "印刷完了時にプローブを自動的に保存"
+
+msgid "Return to main menu and save probe?"
+msgstr "メインメニューに戻ってプローブを保存しますか？"
+
+msgid "Save probe and return to main menu"
+msgstr "プローブを保存してメインメニューに戻る"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

@@ -1640,6 +1640,18 @@ msgstr "无法与挤出机通信"
 msgid "Manually select configuration files"
 msgstr "手动选择配置文件"
 
+msgid "Check LED"
+msgstr "检查LED"
+
+msgid "Automatically save probe when finishing a print"
+msgstr "打印完成时自动保存探针"
+
+msgid "Return to main menu and save probe?"
+msgstr "返回主菜单并保存探针？"
+
+msgid "Save probe and return to main menu"
+msgstr "保存探针并返回主菜单"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

@@ -1493,6 +1493,18 @@ msgstr ""
 msgid "Manually select configuration files"
 msgstr ""
 
+msgid "Check LED"
+msgstr ""
+
+msgid "Automatically save probe when finishing a print"
+msgstr ""
+
+msgid "Return to main menu and save probe?"
+msgstr ""
+
+msgid "Save probe and return to main menu"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

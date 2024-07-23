@@ -1567,6 +1567,18 @@ msgstr "익스트루더와 통신할 수 없습니다"
 msgid "Manually select configuration files"
 msgstr "구성 파일을 수동으로 선택"
 
+msgid "Check LED"
+msgstr "LED 확인"
+
+msgid "Automatically save probe when finishing a print"
+msgstr "인쇄가 끝나면 프로브를 자동으로 저장"
+
+msgid "Return to main menu and save probe?"
+msgstr "메인 메뉴로 돌아가서 프로브를 저장하시겠습니까?"
+
+msgid "Save probe and return to main menu"
+msgstr "프로브를 저장하고 메인 메뉴로 돌아가기"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 

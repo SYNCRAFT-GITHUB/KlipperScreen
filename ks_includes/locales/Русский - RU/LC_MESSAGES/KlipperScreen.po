@@ -1677,6 +1677,18 @@ msgstr "Не удается связаться с экструдером"
 msgid "Manually select configuration files"
 msgstr "Вручную выбрать файлы конфигурации"
 
+msgid "Check LED"
+msgstr "Проверить светодиод"
+
+msgid "Automatically save probe when finishing a print"
+msgstr "Автоматически сохранять зонд после завершения печати"
+
+msgid "Return to main menu and save probe?"
+msgstr "Вернуться в главное меню и сохранить зонд?"
+
+msgid "Save probe and return to main menu"
+msgstr "Сохранить зонд и вернуться в главное меню"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

@@ -1687,6 +1687,18 @@ msgstr "Impossible de communiquer avec l'extrudeuse"
 msgid "Manually select configuration files"
 msgstr "Sélectionner manuellement les fichiers de configuration"
 
+msgid "Check LED"
+msgstr "Vérifier LED"
+
+msgid "Automatically save probe when finishing a print"
+msgstr "Enregistrer automatiquement la sonde à la fin de l'impression"
+
+msgid "Return to main menu and save probe?"
+msgstr "Retourner au menu principal et enregistrer la sonde ?"
+
+msgid "Save probe and return to main menu"
+msgstr "Enregistrer la sonde et retourner au menu principal"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonde a été déclenchée avant le mouvement"
 
