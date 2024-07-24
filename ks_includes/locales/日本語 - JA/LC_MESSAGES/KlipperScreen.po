@@ -1512,6 +1512,9 @@ msgstr "メインメニューに戻ってプローブを保存しますか？"
 msgid "Save probe and return to main menu"
 msgstr "プローブを保存してメインメニューに戻る"
 
+msgid "Returning to the main menu always ask if you want to save the probe after printing"
+msgstr "印刷後にプローブを保存するかどうかを常に尋ねるメインメニューに戻ります"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

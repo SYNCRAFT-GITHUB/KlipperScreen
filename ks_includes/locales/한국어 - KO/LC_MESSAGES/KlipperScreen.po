@@ -1579,6 +1579,9 @@ msgstr "메인 메뉴로 돌아가서 프로브를 저장하시겠습니까?"
 msgid "Save probe and return to main menu"
 msgstr "프로브를 저장하고 메인 메뉴로 돌아가기"
 
+msgid "Returning to the main menu always ask if you want to save the probe after printing"
+msgstr "메인 메뉴로 돌아갈 때마다 인쇄 후 프로브를 저장할지 묻습니다"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 

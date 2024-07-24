@@ -1505,6 +1505,9 @@ msgstr ""
 msgid "Save probe and return to main menu"
 msgstr ""
 
+msgid "Returning to the main menu always ask if you want to save the probe after printing"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

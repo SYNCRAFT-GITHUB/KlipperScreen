@@ -1675,6 +1675,9 @@ msgstr "¿Volver al menú principal y guardar la sonda?"
 msgid "Save probe and return to main menu"
 msgstr "Guardar la sonda y volver al menú principal"
 
+msgid "Returning to the main menu always ask if you want to save the probe after printing"
+msgstr "Al volver al menú principal, siempre se pregunta si desea guardar la sonda después de imprimir"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

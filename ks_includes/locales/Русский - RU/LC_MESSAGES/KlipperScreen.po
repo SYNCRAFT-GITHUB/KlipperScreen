@@ -1689,6 +1689,9 @@ msgstr "Вернуться в главное меню и сохранить зо
 msgid "Save probe and return to main menu"
 msgstr "Сохранить зонд и вернуться в главное меню"
 
+msgid "Returning to the main menu always ask if you want to save the probe after printing"
+msgstr "При возврате в главное меню всегда спрашивать, хотите ли вы сохранить зонд после печати"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

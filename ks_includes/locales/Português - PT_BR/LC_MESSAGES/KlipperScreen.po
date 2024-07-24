@@ -1527,6 +1527,9 @@ msgstr "Salvar probe e retornar ao menu principal"
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "O ProExtruder foi indevidamente pressionado"
 
+msgid "Returning to the main menu always ask if you want to save the probe after printing"
+msgstr "Após imprimir, retornar ao menu principal sempre pergunta se você deseja salvar o probe"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Já se encontra em Sonda Manual (Eixo Z)."
 

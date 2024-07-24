@@ -474,7 +474,10 @@ class JobStatusPanel(ScreenPanel):
         if func == "enable_button":
             self.enable_button(*args)
 
-    def close_panel(self, widget=None):
+    def close_panel(self, widget=None): # HERE
+        if self._config.get_main_config().getboolean('always_ask_probe', True) and \
+            self._printer.get_probe():
+            self.save_offset(None, "probe")
         if self.can_close:
             logging.debug("Closing job_status panel")
             self._screen.printer_ready()

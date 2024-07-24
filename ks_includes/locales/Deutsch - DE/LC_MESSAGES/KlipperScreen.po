@@ -1651,6 +1651,9 @@ msgstr "Zum Hauptmenü zurückkehren und die Sonde speichern?"
 msgid "Save probe and return to main menu"
 msgstr "Sonde speichern und zum Hauptmenü zurückkehren"
 
+msgid "Returning to the main menu always ask if you want to save the probe after printing"
+msgstr "Bei der Rückkehr zum Hauptmenü wird immer gefragt, ob Sie die Sonde nach dem Drucken speichern möchten"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 

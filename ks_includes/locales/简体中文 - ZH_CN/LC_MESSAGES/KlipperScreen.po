@@ -1652,6 +1652,9 @@ msgstr "返回主菜单并保存探针？"
 msgid "Save probe and return to main menu"
 msgstr "保存探针并返回主菜单"
 
+msgid "Returning to the main menu always ask if you want to save the probe after printing"
+msgstr "返回主菜单时，总是会询问是否要在打印后保存探针"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

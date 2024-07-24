@@ -1649,6 +1649,9 @@ msgstr "Tornare al menu principale e salvare la sonda?"
 msgid "Save probe and return to main menu"
 msgstr "Salva la sonda e torna al menu principale"
 
+msgid "Returning to the main menu always ask if you want to save the probe after printing"
+msgstr "Tornando al menu principale, viene sempre chiesto se si desidera salvare la sonda dopo la stampa"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 
