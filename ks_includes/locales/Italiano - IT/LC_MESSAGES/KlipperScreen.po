@@ -1652,6 +1652,12 @@ msgstr "Salva manualmente la sonda dopo la stampa"
 msgid "Save changes?"
 msgstr "Salvare le modifiche?"
 
+msgid "Fix System Files (Specifically for Syncraft Metal)"
+msgstr "Riparare i file di sistema (specificamente per Syncraft Metal)"
+
+msgid "Network Settings"
+msgstr "Impostazioni di rete"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 

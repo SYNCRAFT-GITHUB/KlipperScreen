@@ -1515,6 +1515,12 @@ msgstr "印刷後にプローブを手動で保存"
 msgid "Save changes?"
 msgstr "変更を保存しますか？"
 
+msgid "Fix System Files (Specifically for Syncraft Metal)"
+msgstr "システムファイルを修正 (Syncraft Metal 専用)"
+
+msgid "Network Settings"
+msgstr "ネットワーク設定"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

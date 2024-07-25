@@ -1508,6 +1508,12 @@ msgstr ""
 msgid "Save changes?"
 msgstr ""
 
+msgid "Fix System Files (Specifically for Syncraft Metal)"
+msgstr ""
+
+msgid "Network Settings"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

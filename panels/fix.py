@@ -24,7 +24,7 @@ class FixPanel(ScreenPanel):
         scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
 
         self.buttons = {
-            'FIX_FILES': self._gtk.Button("file", _("Essential Files"), self.color()),
+            'FIX_FILES': self._gtk.Button("file", _("Fix System Files (Specifically for Syncraft Metal)"), self.color()),
             'CLEAN_GCODE': self._gtk.Button("clean", _("Clear GCodes Folder"), self.color()),
             'FIX_CAMERA': self._gtk.Button("camera", _("Camera Driver"), self.color()),
             'FIX_KLIPPERSCREEN': self._gtk.Button("screen", _("KlipperScreen"), self.color()),
@@ -88,9 +88,9 @@ class FixPanel(ScreenPanel):
 
         grid = self._gtk.HomogeneousGrid()
 
-        grid.attach(self.buttons['FIX_FILES'], 0, 1, 2, 1)
+        grid.attach(self.buttons['FIX_FILES'], 0, 0, 4, 1)
         grid.attach(self.buttons['FIX_MOONRAKER'], 2, 1, 2, 1)
-        grid.attach(self.buttons['FLASH'], 0, 0, 4, 1)
+        grid.attach(self.buttons['FLASH'], 0, 1, 2, 1)
         grid.attach(self.buttons['FIX_CAMERA'], 0, 2, 1, 1)
         grid.attach(self.buttons['FIX_KLIPPERSCREEN'], 2, 2, 1, 1)
         grid.attach(self.buttons['FIX_MAINSAIL'], 3, 2, 1, 1)

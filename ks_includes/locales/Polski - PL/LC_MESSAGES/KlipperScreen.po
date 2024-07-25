@@ -1635,6 +1635,12 @@ msgstr "Ręcznie zapisz sondę po drukowaniu"
 msgid "Save changes?"
 msgstr "Zapisać zmiany?"
 
+msgid "Fix System Files (Specifically for Syncraft Metal)"
+msgstr "Napraw pliki systemowe (specjalnie dla Syncraft Metal)"
+
+msgid "Network Settings"
+msgstr "Ustawienia sieci"
+
 msgid "Unable to communicate with the extruder"
 msgstr "Nie można komunikować się z ekstruderem"
 

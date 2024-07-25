@@ -1678,6 +1678,12 @@ msgstr "Guardar manualmente la sonda después de imprimir"
 msgid "Save changes?"
 msgstr "¿Guardar cambios?"
 
+msgid "Fix System Files (Specifically for Syncraft Metal)"
+msgstr "Reparar archivos del sistema (específicamente para Syncraft Metal)"
+
+msgid "Network Settings"
+msgstr "Configuración de red"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

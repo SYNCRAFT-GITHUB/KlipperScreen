@@ -114,7 +114,7 @@ class TimezoneSelect(ScreenPanel):
             grid.attach(self.labels[name], col, row, 1, 1)
 
         name: str = timezone.name()
-        self.labels[name] = self._gtk.Button(None, _("My timezone is not on the list"), "color2")
+        self.labels[name] = self._gtk.Button("timezone-error",  f'  {_("My timezone is not on the list")}', "color1", .94, Gtk.PositionType.LEFT, 1)
         self.labels[name].connect("clicked", self.show_insert_custom_timezone)
         if self._screen.vertical_mode:
             row = i % columns

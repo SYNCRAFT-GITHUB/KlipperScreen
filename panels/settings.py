@@ -29,7 +29,7 @@ class SettingsPanel(ScreenPanel):
             "icon": "info"
         }})
         options.append({"network": {
-            "name": _("Connect to WiFi"),
+            "name": _("Network Settings"),
             "type": "panel",
             "panel": "network",
             "icon": "network"
