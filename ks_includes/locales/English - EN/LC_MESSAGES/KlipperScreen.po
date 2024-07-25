@@ -1499,6 +1499,15 @@ msgstr ""
 msgid "Manual Leveling (Recommended before calibrating probe)"
 msgstr ""
 
+msgid "Check LED"
+msgstr ""
+
+msgid "Manually save probe after printing"
+msgstr ""
+
+msgid "Save changes?"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

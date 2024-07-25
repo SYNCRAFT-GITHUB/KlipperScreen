@@ -1643,6 +1643,15 @@ msgstr "Il firmware della stampante è stato spento dal comando dell'utente"
 msgid "Manual Leveling (Recommended before calibrating probe)"
 msgstr "Livellamento manuale (consigliato prima della calibrazione della sonda)"
 
+msgid "Check LED"
+msgstr "Controlla LED"
+
+msgid "Manually save probe after printing"
+msgstr "Salva manualmente la sonda dopo la stampa"
+
+msgid "Save changes?"
+msgstr "Salvare le modifiche?"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 

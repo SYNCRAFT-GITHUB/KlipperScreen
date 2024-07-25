@@ -1626,6 +1626,15 @@ msgstr "Oprogramowanie układowe drukarki zostało wyłączone na polecenie uży
 msgid "Manual Leveling (Recommended before calibrating probe)"
 msgstr "Ręczne poziomowanie (zalecane przed kalibracją sondy)"
 
+msgid "Check LED"
+msgstr "Sprawdź LED"
+
+msgid "Manually save probe after printing"
+msgstr "Ręcznie zapisz sondę po drukowaniu"
+
+msgid "Save changes?"
+msgstr "Zapisać zmiany?"
+
 msgid "Unable to communicate with the extruder"
 msgstr "Nie można komunikować się z ekstruderem"
 

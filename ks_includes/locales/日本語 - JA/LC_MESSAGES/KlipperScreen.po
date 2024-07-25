@@ -1506,6 +1506,15 @@ msgstr "ユーザーコマンドによりプリンターファームウェアが
 msgid "Manual Leveling (Recommended before calibrating probe)"
 msgstr "手動レベリング（プローブのキャリブレーション前に推奨）"
 
+msgid "Check LED"
+msgstr "LEDを確認"
+
+msgid "Manually save probe after printing"
+msgstr "印刷後にプローブを手動で保存"
+
+msgid "Save changes?"
+msgstr "変更を保存しますか？"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

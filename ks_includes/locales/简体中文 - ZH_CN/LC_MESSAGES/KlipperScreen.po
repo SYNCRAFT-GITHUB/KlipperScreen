@@ -1646,6 +1646,15 @@ msgstr "打印机固件已由用户命令关闭"
 msgid "Manual Leveling (Recommended before calibrating probe)"
 msgstr "手动调平（建议在校准探头前进行）"
 
+msgid "Check LED"
+msgstr "测试灯"
+
+msgid "Manually save probe after printing"
+msgstr "打印后手动保存探针"
+
+msgid "Save changes?"
+msgstr "保存更改？"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 
