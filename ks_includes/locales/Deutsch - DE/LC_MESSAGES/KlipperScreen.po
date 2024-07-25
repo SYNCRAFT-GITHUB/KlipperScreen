@@ -1663,6 +1663,9 @@ msgstr "Möchten Sie anwenden? Die Firmware wird schnell neu geladen."
 msgid "Manually save probe after printing"
 msgstr "Sonde manuell nach dem Drucken speichern"
 
+msgid "Save changes?"
+msgstr "Änderungen speichern?"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 

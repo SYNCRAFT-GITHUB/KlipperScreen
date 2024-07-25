@@ -1687,6 +1687,9 @@ msgstr "¿Quieres aplicar? El firmware se recargará rápidamente."
 msgid "Manually save probe after printing"
 msgstr "Guardar manualmente la sonda después de imprimir"
 
+msgid "Save changes?"
+msgstr "¿Guardar cambios?"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

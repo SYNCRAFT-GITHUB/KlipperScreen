@@ -1664,6 +1664,9 @@ msgstr "是否要应用？ 固件将迅速重新加载。"
 msgid "Manually save probe after printing"
 msgstr "打印后手动保存探针"
 
+msgid "Save changes?"
+msgstr "保存更改？"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

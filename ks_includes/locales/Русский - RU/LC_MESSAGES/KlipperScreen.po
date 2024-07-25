@@ -1701,6 +1701,9 @@ msgstr "Хотите применить? Прошивка быстро пере�
 msgid "Manually save probe after printing"
 msgstr "Ручное сохранение зонда после печати"
 
+msgid "Save changes?"
+msgstr "Сохранить изменения?"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

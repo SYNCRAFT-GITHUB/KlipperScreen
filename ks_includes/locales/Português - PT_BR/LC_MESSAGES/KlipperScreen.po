@@ -1536,6 +1536,9 @@ msgstr "Deseja aplicar?"
 msgid "Manually save probe after printing"
 msgstr "Salvar probe manualmente após imprimir"
 
+msgid "Save changes?"
+msgstr "Salvar modificações?"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "O ProExtruder foi indevidamente pressionado"
 

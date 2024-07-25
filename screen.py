@@ -774,7 +774,7 @@ class KlipperScreen(Gtk.Window):
                     script = {"script": "SAVE_CONFIG"}
                     self._confirm_send_action(
                         None,
-                        _("Some parameters have been modified.") + "\n\n" + _("Do you want to apply? The firmware will quickly reload."),
+                        _("Save changes?"),
                         "printer.gcode.script",
                         script
                     )

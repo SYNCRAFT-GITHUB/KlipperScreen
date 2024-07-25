@@ -1661,6 +1661,9 @@ msgstr "Vuoi applicare? Il firmware si ricaricherà rapidamente."
 msgid "Manually save probe after printing"
 msgstr "Salva manualmente la sonda dopo la stampa"
 
+msgid "Save changes?"
+msgstr "Salvare le modifiche?"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Già in modalità sonda Z manuale."
 

@@ -1524,6 +1524,9 @@ msgstr "適用しますか？ ファームウェアがすぐにリロードさ�
 msgid "Manually save probe after printing"
 msgstr "印刷後にプローブを手動で保存"
 
+msgid "Save changes?"
+msgstr "変更を保存しますか？"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

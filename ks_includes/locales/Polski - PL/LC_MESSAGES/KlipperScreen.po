@@ -1647,6 +1647,9 @@ msgstr "Czy chcesz zastosować? Oprogramowanie sprzętowe szybko się przeładuj
 msgid "Manually save probe after printing"
 msgstr "Ręcznie zapisz sondę po drukowaniu"
 
+msgid "Save changes?"
+msgstr "Zapisać zmiany?"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"
 
