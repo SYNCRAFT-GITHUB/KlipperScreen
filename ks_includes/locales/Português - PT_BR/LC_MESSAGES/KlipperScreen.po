@@ -961,7 +961,7 @@ msgid "Remove Password Protection"
 msgstr "Remover proteção por senha"
 
 msgid "Welcome to Syncraft"
-msgstr "Dê um \"Oi\" para sua nova Syncraft!"
+msgstr "Setup Inicial da Syncraft"
 
 msgid "No, I don't agree."
 msgstr "Não, não concordo."
