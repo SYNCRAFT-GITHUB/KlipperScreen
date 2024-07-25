@@ -1654,6 +1654,15 @@ msgstr "Sonde speichern und zum Hauptmenü zurückkehren"
 msgid "Returning to the main menu always ask if you want to save the probe after printing"
 msgstr "Bei der Rückkehr zum Hauptmenü wird immer gefragt, ob Sie die Sonde nach dem Drucken speichern möchten"
 
+msgid "Some parameters have been modified."
+msgstr "Einige Parameter wurden geändert."
+
+msgid "Do you want to apply? The firmware will quickly reload."
+msgstr "Möchten Sie anwenden? Die Firmware wird schnell neu geladen."
+
+msgid "Manually save probe after printing"
+msgstr "Sonde manuell nach dem Drucken speichern"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 

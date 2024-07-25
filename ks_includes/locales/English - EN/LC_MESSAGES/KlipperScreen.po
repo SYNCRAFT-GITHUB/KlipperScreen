@@ -1508,6 +1508,15 @@ msgstr ""
 msgid "Returning to the main menu always ask if you want to save the probe after printing"
 msgstr ""
 
+msgid "Some parameters have been modified."
+msgstr ""
+
+msgid "Do you want to apply? The firmware will quickly reload."
+msgstr ""
+
+msgid "Manually save probe after printing"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

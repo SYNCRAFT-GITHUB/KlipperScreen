@@ -1515,6 +1515,15 @@ msgstr "プローブを保存してメインメニューに戻る"
 msgid "Returning to the main menu always ask if you want to save the probe after printing"
 msgstr "印刷後にプローブを保存するかどうかを常に尋ねるメインメニューに戻ります"
 
+msgid "Some parameters have been modified."
+msgstr "いくつかのパラメータが変更されました。"
+
+msgid "Do you want to apply? The firmware will quickly reload."
+msgstr "適用しますか？ ファームウェアがすぐにリロードされます。"
+
+msgid "Manually save probe after printing"
+msgstr "印刷後にプローブを手動で保存"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

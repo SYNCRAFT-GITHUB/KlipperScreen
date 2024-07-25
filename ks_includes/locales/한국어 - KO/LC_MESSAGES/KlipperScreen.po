@@ -1582,6 +1582,15 @@ msgstr "프로브를 저장하고 메인 메뉴로 돌아가기"
 msgid "Returning to the main menu always ask if you want to save the probe after printing"
 msgstr "메인 메뉴로 돌아갈 때마다 인쇄 후 프로브를 저장할지 묻습니다"
 
+msgid "Some parameters have been modified."
+msgstr "일부 매개변수가 수정되었습니다."
+
+msgid "Do you want to apply? The firmware will quickly reload."
+msgstr "적용하시겠습니까? 펌웨어가 빠르게 다시 로드됩니다."
+
+msgid "Manually save probe after printing"
+msgstr "인쇄 후 프로브를 수동으로 저장"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "이동 전에 프로브가 작동되었습니다."
 

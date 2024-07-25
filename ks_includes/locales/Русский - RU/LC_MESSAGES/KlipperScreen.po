@@ -1692,6 +1692,15 @@ msgstr "Сохранить зонд и вернуться в главное ме
 msgid "Returning to the main menu always ask if you want to save the probe after printing"
 msgstr "При возврате в главное меню всегда спрашивать, хотите ли вы сохранить зонд после печати"
 
+msgid "Some parameters have been modified."
+msgstr "Некоторые параметры были изменены."
+
+msgid "Do you want to apply? The firmware will quickly reload."
+msgstr "Хотите применить? Прошивка быстро перезагрузится."
+
+msgid "Manually save probe after printing"
+msgstr "Ручное сохранение зонда после печати"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Сработала зонд до движения"
 

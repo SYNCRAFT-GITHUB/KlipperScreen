@@ -229,7 +229,7 @@ class KlipperScreenConfig:
             if section == 'main':
                 bools = (
                     'invert_x', 'invert_y', 'invert_z', '24htime', 'only_heaters', 'show_cursor', 'confirm_estop', 'auto_select_material',
-                    'autoclose_popups', 'use_dpms', 'use_default_menu', 'show_saved_from_usb', 'side_brightness_shortcut', 'force_save_probe',
+                    'autoclose_popups', 'use_dpms', 'use_default_menu', 'show_saved_from_usb', 'side_brightness_shortcut', 'manual_probe_save',
                     'use-matchbox-keyboard', 'show_heater_power', 'show_experimental_material', 'materials_on_top',
                 )
                 strs = (
@@ -326,7 +326,7 @@ class KlipperScreenConfig:
                     {"name": _("Never"), "value": "off"}]
             }},
             {"24htime": {"section": "main", "name": _("24 Hour Time"), "type": "binary", "value": "True"}},
-            {"force_save_probe": {"section": "main", "name": _("Automatically save probe when finishing a print"), "type": "binary", "value": "True"}},
+            {"manual_probe_save": {"section": "main", "name": _("Manually save probe after printing"), "type": "binary", "value": "False"}},
             {"welcome": {"section": "hidden", "name": "WELCOME", "type": "binary", "value": "False"}},
             {"new_logo": {"section": "hidden", "name": "NEW_LOGO", "type": "binary", "value": "False"}},
             {"show_saved_from_usb": {

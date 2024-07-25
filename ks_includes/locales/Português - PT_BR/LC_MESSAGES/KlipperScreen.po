@@ -1527,6 +1527,15 @@ msgstr "Salvar probe e retornar ao menu principal"
 msgid "Returning to the main menu always ask if you want to save the probe after printing"
 msgstr "Após imprimir, retornar ao menu principal sempre pergunta se você deseja salvar o probe"
 
+msgid "Some parameters have been modified."
+msgstr "Alguns parâmetros foram modificados."
+
+msgid "Do you want to apply? The firmware will quickly reload."
+msgstr "Deseja aplicar?"
+
+msgid "Manually save probe after printing"
+msgstr "Salvar probe manualmente após imprimir"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "O ProExtruder foi indevidamente pressionado"
 
