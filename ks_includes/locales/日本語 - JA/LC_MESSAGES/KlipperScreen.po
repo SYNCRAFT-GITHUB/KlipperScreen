@@ -1500,6 +1500,33 @@ msgstr "押出機と通信できません"
 msgid "Manually select configuration files"
 msgstr "構成ファイルを手動で選択"
 
+msgid "Check LED"
+msgstr "LEDを確認"
+
+msgid "Automatically save probe when finishing a print"
+msgstr "印刷完了時にプローブを自動的に保存"
+
+msgid "Return to main menu and save probe?"
+msgstr "メインメニューに戻ってプローブを保存しますか？"
+
+msgid "Save probe and return to main menu"
+msgstr "プローブを保存してメインメニューに戻る"
+
+msgid "Returning to the main menu always ask if you want to save the probe after printing"
+msgstr "印刷後にプローブを保存するかどうかを常に尋ねるメインメニューに戻ります"
+
+msgid "Some parameters have been modified."
+msgstr "いくつかのパラメータが変更されました。"
+
+msgid "Do you want to apply? The firmware will quickly reload."
+msgstr "適用しますか？ ファームウェアがすぐにリロードされます。"
+
+msgid "Manually save probe after printing"
+msgstr "印刷後にプローブを手動で保存"
+
+msgid "Save changes?"
+msgstr "変更を保存しますか？"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

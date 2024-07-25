@@ -43,6 +43,7 @@ class JobStatusPanel(ScreenPanel):
         self.mms2 = _("mm/s²")
         self.mms3 = _("mm³/s")
         self.status_grid = self.move_grid = self.time_grid = self.extrusion_grid = None
+        self.manual_probe_save = self._config.get_main_config().getboolean('manual_probe_save', True)
 
         data = ['pos_x', 'pos_y', 'pos_z', 'time_left', 'duration', 'slicer_time', 'file_time',
                 'filament_time', 'est_time', 'speed_factor', 'req_speed', 'max_accel', 'extrude_factor', 'zoffset',
@@ -378,7 +379,7 @@ class JobStatusPanel(ScreenPanel):
             'pause': self._gtk.Button("pause", _("Pause"), "color1"),
             'restart': self._gtk.Button("refresh", _("Restart"), "color3"),
             'resume': self._gtk.Button("unpause", _("Resume"), "color1"),
-            'save_offset_probe': self._gtk.Button("letter-z", _("Save") + " Probe", None),
+            'save_offset_probe': self._gtk.Button("letter-z", _("Save") + " Probe", "color2"),
         }
         self.buttons['cancel'].connect("clicked", self.cancel)
         self.buttons['control'].connect("clicked", self._screen._go_to_submenu, "")
@@ -475,11 +476,14 @@ class JobStatusPanel(ScreenPanel):
             self.enable_button(*args)
 
     def close_panel(self, widget=None):
+
         if self.can_close:
             logging.debug("Closing job_status panel")
             self._screen.printer_ready()
             self._printer.change_state("ready")
             self._screen._ws.klippy.gcode_script("progress_bar_idle")
+            if self._printer.get_probe() and not self.manual_probe_save:
+                self._screen._ws.klippy.gcode_script("Z_OFFSET_APPLY_PROBE")
 
     def enable_button(self, *args):
         for arg in args:
@@ -750,7 +754,7 @@ class JobStatusPanel(ScreenPanel):
             self.zoffset = float(offset[2]) if offset else 0
             if self.zoffset != 0:
                 self.buttons['button_grid'].attach(Gtk.Label(""), 0, 0, 1, 1)
-                if self._printer.get_probe():
+                if self._printer.get_probe() and self.manual_probe_save:
                     self.buttons['button_grid'].attach(self.buttons["save_offset_probe"], 1, 0, 1, 1)
                 else:
                     self.buttons['button_grid'].attach(Gtk.Label(""), 1, 0, 1, 1)
@@ -759,7 +763,8 @@ class JobStatusPanel(ScreenPanel):
                 self.buttons['button_grid'].attach(Gtk.Label(""), 1, 0, 1, 1)
 
             if self.state != "cancelling":
-                self.buttons['button_grid'].attach(self.buttons["save_offset_probe"], 1, 0, 1, 1)
+                if self.manual_probe_save:
+                    self.buttons['button_grid'].attach(self.buttons["save_offset_probe"], 1, 0, 1, 1)
                 self.buttons['button_grid'].attach(self.buttons['restart'], 2, 0, 1, 1)
                 self.buttons['button_grid'].attach(self.buttons['menu'], 3, 0, 1, 1)
                 self.can_close = True

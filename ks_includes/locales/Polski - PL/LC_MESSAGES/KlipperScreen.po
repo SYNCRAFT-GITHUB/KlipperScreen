@@ -1623,6 +1623,33 @@ msgstr "Nie można komunikować się z ekstruderem"
 msgid "Manually select configuration files"
 msgstr "Ręcznie wybierz pliki konfiguracyjne"
 
+msgid "Check LED"
+msgstr "Sprawdź LED"
+
+msgid "Automatically save probe when finishing a print"
+msgstr "Automatycznie zapisz sondę po zakończeniu drukowania"
+
+msgid "Return to main menu and save probe?"
+msgstr "Wrócić do menu głównego i zapisać sondę?"
+
+msgid "Save probe and return to main menu"
+msgstr "Zapisz sondę i wróć do menu głównego"
+
+msgid "Returning to the main menu always ask if you want to save the probe after printing"
+msgstr "Powrót do menu głównego zawsze pyta, czy chcesz zapisać sondę po drukowaniu"
+
+msgid "Some parameters have been modified."
+msgstr "Niektóre parametry zostały zmodyfikowane."
+
+msgid "Do you want to apply? The firmware will quickly reload."
+msgstr "Czy chcesz zastosować? Oprogramowanie sprzętowe szybko się przeładuje."
+
+msgid "Manually save probe after printing"
+msgstr "Ręcznie zapisz sondę po drukowaniu"
+
+msgid "Save changes?"
+msgstr "Zapisać zmiany?"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Jesteś już w trybie ręcznej sondy Z"
 

@@ -1663,6 +1663,33 @@ msgstr "No se puede comunicar con el extrusor"
 msgid "Manually select configuration files"
 msgstr "Seleccionar manualmente los archivos de configuración"
 
+msgid "Check LED"
+msgstr "Revisar LED"
+
+msgid "Automatically save probe when finishing a print"
+msgstr "Guardar automáticamente la sonda al terminar una impresión"
+
+msgid "Return to main menu and save probe?"
+msgstr "¿Volver al menú principal y guardar la sonda?"
+
+msgid "Save probe and return to main menu"
+msgstr "Guardar la sonda y volver al menú principal"
+
+msgid "Returning to the main menu always ask if you want to save the probe after printing"
+msgstr "Al volver al menú principal, siempre se pregunta si desea guardar la sonda después de imprimir"
+
+msgid "Some parameters have been modified."
+msgstr "Se han modificado algunos parámetros."
+
+msgid "Do you want to apply? The firmware will quickly reload."
+msgstr "¿Quieres aplicar? El firmware se recargará rápidamente."
+
+msgid "Manually save probe after printing"
+msgstr "Guardar manualmente la sonda después de imprimir"
+
+msgid "Save changes?"
+msgstr "¿Guardar cambios?"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 
