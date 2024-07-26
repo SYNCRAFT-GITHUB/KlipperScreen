@@ -29,7 +29,7 @@ class SettingsPanel(ScreenPanel):
             "icon": "info"
         }})
         options.append({"network": {
-            "name": _("Connect to WiFi"),
+            "name": _("Network Settings"),
             "type": "panel",
             "panel": "network",
             "icon": "network"
@@ -51,6 +51,12 @@ class SettingsPanel(ScreenPanel):
             "type": "panel",
             "panel": "add_material",
             "icon": "filament_plus"
+        }})
+        options.append({"check_led": {
+            "name": _("Check LED"),
+            "type": "panel",
+            "panel": "led_check",
+            "icon": "light"
         }})
         options.append({"console": {
             "name": _("Console"),

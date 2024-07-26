@@ -1637,6 +1637,30 @@ msgstr "无法自动检测"
 msgid "Unable to communicate with the extruder"
 msgstr "无法与挤出机通信"
 
+msgid "Calibrate Probe"
+msgstr "校准探头"
+
+msgid "Printer firmware was turned off by user command"
+msgstr "打印机固件已由用户命令关闭"
+
+msgid "Manual Leveling (Recommended before calibrating probe)"
+msgstr "手动调平（建议在校准探头前进行）"
+
+msgid "Check LED"
+msgstr "测试灯"
+
+msgid "Manually save probe after printing"
+msgstr "打印后手动保存探针"
+
+msgid "Save changes?"
+msgstr "保存更改？"
+
+msgid "Fix System Files (Specifically for Syncraft Metal)"
+msgstr "修复系统文件（专为Syncraft Metal）"
+
+msgid "Network Settings"
+msgstr "网络设置"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

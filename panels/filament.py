@@ -67,20 +67,20 @@ class FilamentPanel(ScreenPanel):
             'Standard 0.25mm': 'nozzle-ST025',
             'Standard 0.4mm': 'nozzle-ST04',
             'Standard 0.8mm': 'nozzle-ST08',
-            'Metal 0.4mm': 'nozzle-METAL04',
             'Fiber 0.6mm': 'nozzle-FIBER06',
+            'Metal 0.4mm': 'nozzle-METAL04',
         }
 
-        i: int = 0
+        i: int = 1
+
+        self.labels['settings'] = self._gtk.Button("settings", None, None, .92)
+        grid.attach(self.labels['settings'], 0, 4, 1, 1)
 
         for key, value in self.proextruders.items():
             self.labels[key] = self._gtk.Button(value, None, None)
             self.labels[key].connect("clicked", self.nozzlegcodescript, key)
             grid.attach(self.labels[key], i, 4, 1, 1)
             i += 1
-
-        self.labels['settings'] = self._gtk.Button("settings", None, None)
-        grid.attach(self.labels['settings'], i, 4, 1, 1)
 
         self.labels['settings'].connect("clicked", self.menu_item_clicked, "filament_gear", {
             "name": _("Filament"),

@@ -31,7 +31,7 @@ class SplashScreenPanel(ScreenPanel):
                 "name": _("Restart"),
                 "panel": "confirm_restart"
             })
-        self.labels['retry'] = self._gtk.Button("extrude", _('Retry'), "color3")
+        self.labels['retry'] = self._gtk.Button("refresh", _('Retry'), "color3")
         self.labels['retry'].connect("clicked", self.firmware_restart)
 
         self.labels['actions'] = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
@@ -62,6 +62,8 @@ class SplashScreenPanel(ScreenPanel):
         self.labels['text'].set_label(f"{text}")
         if "ADC out of range" in text:
             self.labels['text'].set_label(_("Unable to communicate with the extruder"))
+        if "Shutdown due to webhooks request" in text:
+            self.labels['text'].set_label(_("Printer firmware was turned off by user command"))
         self.show_restart_buttons()
 
     def clear_action_bar(self):

@@ -1490,6 +1490,30 @@ msgstr ""
 msgid "Unable to communicate with the extruder"
 msgstr ""
 
+msgid "Calibrate Probe"
+msgstr ""
+
+msgid "Printer firmware was turned off by user command"
+msgstr ""
+
+msgid "Manual Leveling (Recommended before calibrating probe)"
+msgstr ""
+
+msgid "Check LED"
+msgstr ""
+
+msgid "Manually save probe after printing"
+msgstr ""
+
+msgid "Save changes?"
+msgstr ""
+
+msgid "Fix System Files (Specifically for Syncraft Metal)"
+msgstr ""
+
+msgid "Network Settings"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

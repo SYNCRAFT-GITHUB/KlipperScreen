@@ -1639,6 +1639,30 @@ msgstr "Keine Kommunikation mit dem Extruder möglich"
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "Sonde wurde vor der Bewegung ausgelöst"
 
+msgid "Calibrate Probe"
+msgstr "Sonde kalibrieren"
+
+msgid "Printer firmware was turned off by user command"
+msgstr "Die Firmware des Druckers wurde durch einen Benutzerbefehl ausgeschaltet"
+
+msgid "Manual Leveling (Recommended before calibrating probe)"
+msgstr "Manuelles Nivellieren (empfohlen vor der Kalibrierung der Sonde)"
+
+msgid "Check LED"
+msgstr "LED überprüfen"
+
+msgid "Manually save probe after printing"
+msgstr "Sonde manuell nach dem Drucken speichern"
+
+msgid "Save changes?"
+msgstr "Änderungen speichern?"
+
+msgid "Fix System Files (Specifically for Syncraft Metal)"
+msgstr "Systemdateien reparieren (speziell für Syncraft Metal)"
+
+msgid "Network Settings"
+msgstr "Netzwerkeinstellungen"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Bereits in einer manuellen Z-Sonde."
 

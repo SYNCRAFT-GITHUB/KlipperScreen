@@ -1617,6 +1617,30 @@ msgstr "Wykryto gałąź pliku:"
 msgid "Unable to auto-detect"
 msgstr "Nie można wykryć automatycznie"
 
+msgid "Calibrate Probe"
+msgstr "Kalibruj sondę"
+
+msgid "Printer firmware was turned off by user command"
+msgstr "Oprogramowanie układowe drukarki zostało wyłączone na polecenie użytkownika"
+
+msgid "Manual Leveling (Recommended before calibrating probe)"
+msgstr "Ręczne poziomowanie (zalecane przed kalibracją sondy)"
+
+msgid "Check LED"
+msgstr "Sprawdź LED"
+
+msgid "Manually save probe after printing"
+msgstr "Ręcznie zapisz sondę po drukowaniu"
+
+msgid "Save changes?"
+msgstr "Zapisać zmiany?"
+
+msgid "Fix System Files (Specifically for Syncraft Metal)"
+msgstr "Napraw pliki systemowe (specjalnie dla Syncraft Metal)"
+
+msgid "Network Settings"
+msgstr "Ustawienia sieci"
+
 msgid "Unable to communicate with the extruder"
 msgstr "Nie można komunikować się z ekstruderem"
 

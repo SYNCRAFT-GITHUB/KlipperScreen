@@ -1497,6 +1497,30 @@ msgstr "自動検出できません"
 msgid "Unable to communicate with the extruder"
 msgstr "押出機と通信できません"
 
+msgid "Calibrate Probe"
+msgstr "プローブの校正"
+
+msgid "Printer firmware was turned off by user command"
+msgstr "ユーザーコマンドによりプリンターファームウェアがオフになりました"
+
+msgid "Manual Leveling (Recommended before calibrating probe)"
+msgstr "手動レベリング（プローブのキャリブレーション前に推奨）"
+
+msgid "Check LED"
+msgstr "LEDを確認"
+
+msgid "Manually save probe after printing"
+msgstr "印刷後にプローブを手動で保存"
+
+msgid "Save changes?"
+msgstr "変更を保存しますか？"
+
+msgid "Fix System Files (Specifically for Syncraft Metal)"
+msgstr "システムファイルを修正 (Syncraft Metal 専用)"
+
+msgid "Network Settings"
+msgstr "ネットワーク設定"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

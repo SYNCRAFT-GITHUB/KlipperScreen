@@ -11,16 +11,16 @@ from ks_includes.screen_panel import ScreenPanel
 
 
 def create_panel(*args):
-    return Configurations(*args)
+    return CalibratePanel(*args)
 
-class Configurations(ScreenPanel):
+class CalibratePanel(ScreenPanel):
 
     def __init__(self, screen, title):
 
         super().__init__(screen, title)
-        self.menu = ['configurations']
+        self.menu = ['calibrate_panel']
 
-        class ConfigurationButton:
+        class CalibratePanelBtn:
             def __init__(self, panel: str, title: str, icon: str, show: bool = True):
                 self.icon = icon
                 self.panel = panel
@@ -28,10 +28,8 @@ class Configurations(ScreenPanel):
                 self.show = show
 
         self.config_buttons = [
-            ConfigurationButton(panel="syncraft_panel", title=_("Syncraft"), icon='syncraft'),
-            ConfigurationButton(panel='calibrate', title=_("Calibrate"), icon='bed-level'),
-            ConfigurationButton(panel='settings', title=_("Settings"), icon='settings'),
-            ConfigurationButton(panel='power', title=_("Power"), icon='shutdown')
+            CalibratePanelBtn(panel="screws_adjust", title=_("Screws Adjust"), icon='screw-adjust'),
+            CalibratePanelBtn(panel='zcalibrate', title=_("Calibrate Probe"), icon='bed-level')
         ]
 
         grid = self._gtk.HomogeneousGrid()
@@ -59,7 +57,7 @@ class Configurations(ScreenPanel):
                 row = int(i / columns)
             grid.attach(self.button, col, row, 1, 1)
 
-        self.labels['configurations'] = self._gtk.HomogeneousGrid()
-        self.labels['configurations'].attach(grid, 0, 0, 1, 2)
+        self.labels['calibrate_panel'] = self._gtk.HomogeneousGrid()
+        self.labels['calibrate_panel'].attach(grid, 0, 0, 1, 2)
 
-        self.content.add(self.labels['configurations'])
+        self.content.add(self.labels['calibrate_panel'])

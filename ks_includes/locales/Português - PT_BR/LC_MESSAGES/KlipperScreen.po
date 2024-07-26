@@ -684,7 +684,7 @@ msgid "Screen Power Off Time"
 msgstr "Descanso de Tela"
 
 msgid "Screws Adjust"
-msgstr "Niv. Manual"
+msgstr "Nivelamento Manual"
 
 msgid "Select"
 msgstr "Selecionar"
@@ -961,7 +961,7 @@ msgid "Remove Password Protection"
 msgstr "Remover proteção por senha"
 
 msgid "Welcome to Syncraft"
-msgstr "Setup inicial da Syncraft Metal"
+msgstr "Setup inicial da Syncraft"
 
 msgid "No, I don't agree."
 msgstr "Não, não concordo."
@@ -1508,6 +1508,30 @@ msgstr "Não foi possível detectar automaticamente"
 
 msgid "Unable to communicate with the extruder"
 msgstr "Não é possível se comunicar com o extrusor"
+
+msgid "Calibrate Probe"
+msgstr "Calibrar Probe"
+
+msgid "Printer firmware was turned off by user command"
+msgstr "O firmware foi desligado pelo próprio usuário"
+
+msgid "Manual Leveling (Recommended before calibrating probe)"
+msgstr "Nivelamento manual\n(recomendado fazer antes de calibrar o probe)"
+
+msgid "Check LED"
+msgstr "Checar LED"
+
+msgid "Manually save probe after printing"
+msgstr "Salvar probe manualmente após imprimir"
+
+msgid "Save changes?"
+msgstr "Salvar modificações?"
+
+msgid "Fix System Files (Specifically for Syncraft Metal)"
+msgstr "Corrigir Arquivos (Específico para Syncraft Metal)"
+
+msgid "Network Settings"
+msgstr "Rede e Internet"
 
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "O ProExtruder foi indevidamente pressionado"
