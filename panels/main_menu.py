@@ -112,6 +112,16 @@ class MainPanel(MenuPanel):
             devname = f' {_("Heater Bed")}'
             class_name = "graph_label_heater_bed"
             dev_type = "bed"
+        elif device == "heater_generic filament_heater":
+            image = "heater"
+            devname = f' {_("Filament Heater")}'
+            class_name = f"graph_label_{device}"
+            dev_type = "heater"
+        elif device == "temperature_sensor chamber_fan":
+            image = "fan"
+            devname = f' {_("Chamber Fan")}'
+            class_name = f"graph_label_{device}"
+            dev_type = "fan"
         elif device.startswith("heater_generic"):
             self.h = sum("heater_generic" in d for d in self.devices)
             image = "heater"
