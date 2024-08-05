@@ -1684,6 +1684,9 @@ msgstr "Reparar archivos del sistema (específicamente para Syncraft Metal)"
 msgid "Network Settings"
 msgstr "Configuración de red"
 
+msgid "Filament Heater"
+msgstr "Calentador de Fil."
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "La sonda se activó antes del movimiento"
 

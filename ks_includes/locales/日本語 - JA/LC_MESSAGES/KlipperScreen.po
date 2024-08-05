@@ -1521,6 +1521,9 @@ msgstr "システムファイルを修正 (Syncraft Metal 専用)"
 msgid "Network Settings"
 msgstr "ネットワーク設定"
 
+msgid "Filament Heater"
+msgstr "フィラメントヒーター"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "動きの前にプローブがトリガーされました"
 

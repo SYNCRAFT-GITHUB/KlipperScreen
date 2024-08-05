@@ -1514,6 +1514,9 @@ msgstr ""
 msgid "Network Settings"
 msgstr ""
 
+msgid "Filament Heater"
+msgstr ""
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "The ProExtruder must not be pressed"
 

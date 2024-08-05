@@ -1661,6 +1661,9 @@ msgstr "修复系统文件（专为Syncraft Metal）"
 msgid "Network Settings"
 msgstr "网络设置"
 
+msgid "Filament Heater"
+msgstr "丝材加热器"
+
 msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
 msgstr "在移动前探针已被触发"
 

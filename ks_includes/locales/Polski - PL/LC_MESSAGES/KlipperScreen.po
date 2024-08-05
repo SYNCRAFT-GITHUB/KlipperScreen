@@ -1641,6 +1641,9 @@ msgstr "Napraw pliki systemowe (specjalnie dla Syncraft Metal)"
 msgid "Network Settings"
 msgstr "Ustawienia sieci"
 
+msgid "Filament Heater"
+msgstr "Grzałka filamentu"
+
 msgid "Unable to communicate with the extruder"
 msgstr "Nie można komunikować się z ekstruderem"
 

@@ -1663,6 +1663,9 @@ msgstr "Systemdateien reparieren (speziell für Syncraft Metal)"
 msgid "Network Settings"
 msgstr "Netzwerkeinstellungen"
 
+msgid "Filament Heater"
+msgstr "Filamentheizer"
+
 msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
 msgstr "Bereits in einer manuellen Z-Sonde."
 
