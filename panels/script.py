@@ -12,6 +12,18 @@ from gi.repository import Gtk, Pango
 from ks_includes.KlippyGcodes import KlippyGcodes
 from ks_includes.screen_panel import ScreenPanel
 
+FILE_FIX_SCRIPT_PATHS = {
+    "FILES_V3": "/home/pi/KlipperScreen/scripts/fix/files_v3.sh",
+    "FILES_BOWDEN": "/home/pi/KlipperScreen/scripts/fix/files_bowden.sh",
+    "FILES_FEEDER": "/home/pi/KlipperScreen/scripts/fix/files_feeder.sh",
+    "FILES_METAL": "/home/pi/KlipperScreen/scripts/fix/files_metal.sh",
+    "KLIPPERSCREEN": "/home/pi/KlipperScreen/scripts/fix/klipperscreen.sh",
+    "MAINSAIL": "/home/pi/KlipperScreen/scripts/fix/mainsail.sh",
+    "CAMERA": "/home/pi/KlipperScreen/scripts/fix/camera.sh",
+    "LIGHT": "/home/pi/KlipperScreen/scripts/fix/light.sh",
+    "CLEANGCODEFILES": "/home/pi/KlipperScreen/scripts/fix/cleangcodefiles.sh",
+    "MOONRAKER": "/home/pi/KlipperScreen/scripts/fix/moonraker.sh"
+}
 
 def create_panel(*args):
     return ExecuteScript(*args)
@@ -78,45 +90,15 @@ class ExecuteScript(ScreenPanel):
             self._screen.show_popup_message(message, level=2)
             return None
 
-        if (fix_option == "FILES_V3"):
-            script_path = '/home/pi/KlipperScreen/scripts/fix/files_v3.sh'
-            subprocess.call(['bash', script_path])
-
-        if (fix_option == "FILES_BOWDEN"):
-            script_path = '/home/pi/KlipperScreen/scripts/fix/files_bowden.sh'
-            subprocess.call(['bash', script_path])
-
-        if (fix_option == "FILES_FEEDER"):
-            script_path = '/home/pi/KlipperScreen/scripts/fix/files_feeder.sh'
-            subprocess.call(['bash', script_path])
-
-        if (fix_option == "FILES_METAL"):
-            script_path = '/home/pi/KlipperScreen/scripts/fix/files_metal.sh'
-            subprocess.call(['bash', script_path])
-
-        if (fix_option == "KLIPPERSCREEN"):
-            script_path = '/home/pi/KlipperScreen/scripts/fix/klipperscreen.sh'
-            subprocess.call(['bash', script_path])
-
-        if (fix_option == "MAINSAIL"):
-            script_path = '/home/pi/KlipperScreen/scripts/fix/mainsail.sh'
-            subprocess.call(['bash', script_path])
-
-        if (fix_option == "CAMERA"):
-            script_path = '/home/pi/KlipperScreen/scripts/fix/camera.sh'
-            subprocess.call(['bash', script_path])
-
-        if (fix_option == "LIGHT"):
-            script_path = '/home/pi/KlipperScreen/scripts/fix/light.sh'
-            subprocess.call(['bash', script_path])
-
-        if (fix_option == "CLEANGCODEFILES"):
-            script_path = '/home/pi/KlipperScreen/scripts/fix/cleangcodefiles.sh'
-            subprocess.call(['bash', script_path])
-
-        if (fix_option == "MOONRAKER"):
-            script_path = '/home/pi/KlipperScreen/scripts/fix/moonraker.sh'
-            subprocess.call(['bash', script_path])
+        if (fix_option in FILE_FIX_SCRIPT_PATHS):
+            script_path = FILE_FIX_SCRIPT_PATHS.get(fix_option)
+            script_exit_code = subprocess.call(["bash", script_path])
+            if (script_exit_code == 0):
+                # FIXME: String literal porque editar a tradução .po não funciona 
+                self._screen.show_popup_message(
+                    "A correção de arquivos falhou, verifique sua conexão com a internet",
+                    level=3 # message_popup_error
+                )
 
         if (fix_option == "EXPORTLOGSTOUSB"):
 
