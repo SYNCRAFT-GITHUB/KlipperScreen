@@ -1,10 +1,31 @@
 #!/bin/bash
 
+script_dir=$(dirname "$(realpath "$0")")
+. "$script_dir/safe_network.sh"
+
 random_number=$((RANDOM % 100 + 800))
 
-#################
-#   CLONE PDC   #
-#################
+DIRECTORY_CLONES_PATH="$HOME/fixclones"
+PDC_BRANCH="v3"
+KS_BRANCH="syncraftx1"
+
+delete_clones_directory() {
+    echo "Deleting $DIRECTORY_CLONES_PATH"
+    rm -rf $DIRECTORY_CLONES_PATH
+}
+
+# Delete directory if found
+if [ -d "$DIRECTORY_CLONES_PATH" ]; then
+    delete_clones_directory
+fi
+
+mkdir "$DIRECTORY_CLONES_PATH"
+cd "$DIRECTORY_CLONES_PATH"
+
+safe_git_clone https://github.com/SYNCRAFT-GITHUB/printerdataconfig.git $PDC_BRANCH printerdataconfig
+safe_git_clone https://github.com/SYNCRAFT-GITHUB/KlipperScreen.git $KS_BRANCH KlipperScreen
+safe_wget https://github.com/SYNCRAFT-GITHUB/mainsail/releases/latest/download/mainsail.zip mainsail
+
 
 ks_backup_filename="/home/pi/ks-backup-$random_number.conf"
 
@@ -12,17 +33,15 @@ cd "/home/pi/printer_data"
 
 cp config/KlipperScreen.conf $ks_backup_filename
 
-sudo rm -r config
+sudo rm -rf config
 
-git clone -b v3 https://github.com/SYNCRAFT-GITHUB/printerdataconfig.git
-
-mv printerdataconfig config
+cp -r "$DIRECTORY_CLONES_PATH/printerdataconfig" config
 
 cd /home/pi
 
-sudo rm -r printerdataconfig
+sudo rm -rf printerdataconfig
 
-git clone -b v3 https://github.com/SYNCRAFT-GITHUB/printerdataconfig.git
+cp -r "$DIRECTORY_CLONES_PATH/printerdataconfig" .
 
 ############################
 #   VARIABLE DECLARATION   #
@@ -121,7 +140,7 @@ cd ~
 process='Apply Syncraft X1 KlipperScreen'
 echo "[HELPER] START: $process."
 sudo rm -r KlipperScreen
-git clone --quiet -b syncraftx1 https://github.com/SYNCRAFT-GITHUB/KlipperScreen.git
+cp -r "$DIRECTORY_CLONES_PATH/KlipperScreen" .
 echo "[HELPER] DONE: $process."
 
 process='Apply Syncraft Mainsail'
@@ -129,8 +148,9 @@ echo "[HELPER] START: $process."
 sudo rm -r /home/pi/mainsail
 mkdir mainsail
 cd /home/pi/mainsail
-wget -q https://github.com/SYNCRAFT-GITHUB/mainsail/releases/latest/download/mainsail.zip
+cp -r "$DIRECTORY_CLONES_PATH/mainsail.zip" .
 unzip -q mainsail.zip
+rm mainsail.zip
 echo "[HELPER] DONE: $process."
 cd ~
 
@@ -239,5 +259,7 @@ fi
 echo "[HELPER] DONE: $process."
 
 echo -e "\n\n[HELPER] DONE."
+
+delete_clones_directory
 
 sudo reboot

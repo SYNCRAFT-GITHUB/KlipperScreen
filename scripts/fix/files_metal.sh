@@ -1,22 +1,47 @@
 #!/bin/bash
 
-#################
-#   CLONE PDC   #
-#################
+script_dir=$(dirname "$(realpath "$0")")
+. "$script_dir/safe_network.sh"
+
+random_number=$((RANDOM % 100 + 800))
+
+DIRECTORY_CLONES_PATH="$HOME/fixclones"
+PDC_BRANCH="metal"
+KS_BRANCH="metal"
+
+delete_clones_directory() {
+    echo "Deleting $DIRECTORY_CLONES_PATH"
+    rm -rf $DIRECTORY_CLONES_PATH
+}
+
+# Delete directory if found
+if [ -d "$DIRECTORY_CLONES_PATH" ]; then
+    delete_clones_directory
+fi
+
+mkdir "$DIRECTORY_CLONES_PATH"
+cd "$DIRECTORY_CLONES_PATH"
+
+safe_git_clone https://github.com/SYNCRAFT-GITHUB/printerdataconfig.git $PDC_BRANCH printerdataconfig
+safe_git_clone https://github.com/SYNCRAFT-GITHUB/KlipperScreen.git $KS_BRANCH KlipperScreen
+safe_wget https://github.com/SYNCRAFT-GITHUB/mainsail/releases/latest/download/mainsail.zip mainsail
+
+
+ks_backup_filename="/home/pi/ks-backup-$random_number.conf"
 
 cd "/home/pi/printer_data"
 
-sudo rm -r config
+cp config/KlipperScreen.conf $ks_backup_filename
 
-git clone -b metal https://github.com/SYNCRAFT-GITHUB/printerdataconfig.git
+sudo rm -rf config
 
-mv printerdataconfig config
+cp -r "$DIRECTORY_CLONES_PATH/printerdataconfig" config
 
 cd /home/pi
 
-sudo rm -r printerdataconfig
+sudo rm -rf printerdataconfig
 
-git clone -b metal https://github.com/SYNCRAFT-GITHUB/printerdataconfig.git
+cp -r "$DIRECTORY_CLONES_PATH/printerdataconfig" .
 
 ############################
 #   VARIABLE DECLARATION   #
@@ -101,8 +126,10 @@ ptrdc_dir_bckp="$ptrdc_dir/backups"
 
 cp $ptrdc_dir_bckp/backup-printer.cfg $ptrdc_dir/printer.cfg
 cp $ptrdc_dir_bckp/backup-variables.cfg $ptrdc_dir/variables.cfg
+sudo cp $ks_backup_filename $ptrdc_dir/KlipperScreen.conf
 chown pi $ptrdc_dir/printer.cfg
 chown pi $ptrdc_dir/variables.cfg
+chown pi $ptrdc_dir/KlipperScreen.conf
 
 #############################
 #       INSTALL STUFF       #
@@ -110,10 +137,10 @@ chown pi $ptrdc_dir/variables.cfg
 
 cd ~
 
-process='Apply Syncraft Metal KlipperScreen'
+process='Apply Syncraft X1 KlipperScreen'
 echo "[HELPER] START: $process."
 sudo rm -r KlipperScreen
-git clone --quiet -b metal https://github.com/SYNCRAFT-GITHUB/KlipperScreen.git
+cp -r "$DIRECTORY_CLONES_PATH/KlipperScreen" .
 echo "[HELPER] DONE: $process."
 
 process='Apply Syncraft Mainsail'
@@ -121,8 +148,9 @@ echo "[HELPER] START: $process."
 sudo rm -r /home/pi/mainsail
 mkdir mainsail
 cd /home/pi/mainsail
-wget -q https://github.com/SYNCRAFT-GITHUB/mainsail/releases/latest/download/mainsail.zip
+cp -r "$DIRECTORY_CLONES_PATH/mainsail.zip" .
 unzip -q mainsail.zip
+rm mainsail.zip
 echo "[HELPER] DONE: $process."
 cd ~
 
@@ -231,5 +259,7 @@ fi
 echo "[HELPER] DONE: $process."
 
 echo -e "\n\n[HELPER] DONE."
+
+delete_clones_directory
 
 sudo reboot
