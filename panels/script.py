@@ -93,7 +93,7 @@ class ExecuteScript(ScreenPanel):
         if (fix_option in FILE_FIX_SCRIPT_PATHS):
             script_path = FILE_FIX_SCRIPT_PATHS.get(fix_option)
             script_exit_code = subprocess.call(["bash", script_path])
-            if (script_exit_code == 0):
+            if (script_exit_code != 0):
                 # FIXME: String literal porque editar a tradução .po não funciona 
                 self._screen.show_popup_message(
                     "A correção de arquivos falhou, verifique sua conexão com a internet",
