@@ -3,11 +3,16 @@ safe_git_clone() {
     local repo_branch="$2"
     local repo_name="$3"
 
-    git clone --quiet -b $repo_branch $repo_url
-    if [ $? -eq 0 ]; then
-        echo "Sucessfuly cloned $3"
+    if [ -z "$repo_branch" ]; then
+        git clone --quiet "$repo_url" "$repo_name"
     else
-        echo "Unable to clone $3"
+	    git clone --quiet -b "$repo_branch" "$repo_url" "$repo_name"
+    fi
+
+    if [ $? -eq 0 ]; then
+        echo "Sucessfuly cloned $repo_name"
+    else
+        echo "Unable to clone $repo_name"
         delete_clones_directory
         exit 1
     fi
