@@ -31,10 +31,10 @@ class BranchSelectPanel(ScreenPanel):
             'FIX_FILES_METAL': self._gtk.Button("file", _("Metal"), self.color()),
         }
 
-        self.buttons['FIX_FILES_V3'].connect("clicked", self.set_fix_option_to, "FILES_V3")
-        self.buttons['FIX_FILES_V3'].connect("clicked", self.menu_item_clicked, "fix_steps", {
-            "name": _("Fix"),
-            "panel": "fix_steps"
+        self.buttons['FIX_FILES_V3'].connect("clicked", self.menu_item_clicked, "v3_password_panel", {
+            # FIXME: Not using _() translation strings
+            "name": "Painel de senha da V3",
+            "panel": "v3_password_panel"
         })
 
         self.buttons['FIX_FILES_BOWDEN'].connect("clicked", self.set_fix_option_to, "FILES_BOWDEN")
