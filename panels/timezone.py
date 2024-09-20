@@ -115,7 +115,7 @@ class TimezoneSelect(ScreenPanel):
 
         name: str = timezone.name()
         self.labels[name] = self._gtk.Button("timezone-error", f'  {_("My timezone is not on the list")}', "color1", .94, Gtk.PositionType.LEFT, 1)
-        self.labels[name].connect("clicked", self.menu_item_clicked, "v3_password_panel", {
+        self.labels[name].connect("clicked", self.menu_item_clicked, "custom_timezone", {
             # FIXME: Not using _() translation strings
             "name": "Custom timezone",
             "panel": "custom_timezone"
