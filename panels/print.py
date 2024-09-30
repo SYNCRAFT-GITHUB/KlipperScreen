@@ -4,6 +4,7 @@ import os
 import shutil
 import re
 import zipfile as zip
+import subprocess
 
 import gi
 
@@ -329,7 +330,44 @@ class PrintPanel(ScreenPanel):
         self._config.save_user_config_options()
 
     def confirm_print(self, widget, filename):
+        x_compensation = self._config.variables_value_reveal("x_compensation")
+        y_compensation = self._config.variables_value_reveal("y_compensation")
+        logging.info(x_compensation)
+        logging.info(y_compensation)
 
+        if x_compensation == 'none':
+            x_compensation = 0
+        
+        if y_compensation == 'none':
+            y_compensation = 0
+        
+        try:
+            x_compensation = float(x_compensation)
+            y_compensation = float(y_compensation)
+        except ValueError:
+            # TODO: Handle variable not float error
+            return
+        
+        if x_compensation < 0 or x_compensation > 2:
+            # TODO: Handle out of range variables
+            return
+    
+        if y_compensation < 0 or y_compensation > 2:
+            # TODO: Handle out of range variables
+            return
+        
+        if not (x_compensation == 0 and y_compensation == 0):
+            logging.info("Running Antibacklash since compensation is not zero in both axis")
+            abl_path = f"{home}/KlipperScreen/scripts/Antibacklash_args"
+            gcode_path = f"{home}/printer_data/gcodes/{filename}"
+            gcode_path = re.sub('\.gcode$', '', gcode_path) # Remove .gcode suffix
+            ret = subprocess.call([abl_path, gcode_path, f"{x_compensation}", f"{y_compensation}"])
+            # Treat outputted gcode as printable gcode
+            filename = f"{gcode_path}__ABL.gcode"
+            if ret != 0:
+                # TODO: Handle Antibacklash fail
+                return
+        
         buttons = [
             {"name": _("Print"), "response": Gtk.ResponseType.OK},
             {"name": _("Cancel"), "response": Gtk.ResponseType.CANCEL}
