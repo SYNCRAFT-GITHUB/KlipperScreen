@@ -1,6 +1,7 @@
 import logging
 import datetime
 import gi
+from . import config
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -17,10 +18,10 @@ class ScreenPanel:
     def __init__(self, screen, title):
         self.menu = None
         ScreenPanel._screen = screen
-        ScreenPanel._config = screen._config
+        ScreenPanel._config: config.KlipperScreenConfig = screen._config
         ScreenPanel._files = screen.files
         ScreenPanel._printer = screen.printer
-        ScreenPanel._gtk = screen.gtk
+        ScreenPanel._gtk: Gtk = screen.gtk
         self.labels = {}
         self.control = {}
         self.title = title

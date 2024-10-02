@@ -288,12 +288,16 @@ class TemperaturePanel(ScreenPanel):
     def add_device(self, device):
 
         logging.info(f"Adding device: {device}")
+        print(device)
 
         temperature = self._printer.get_dev_stat(device, "temperature")
         if temperature is None:
             return False
 
         devname = device.split()[1] if len(device.split()) > 1 else device
+
+        print(device)
+        print(devname)
         # Support for hiding devices by name
         if devname.startswith("_"):
             return False
