@@ -1,0 +1,1611 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-02 16:52-0300\n"
+"PO-Revision-Date: 2022-11-30 18:14-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ptbr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.2.1\n"
+
+#, python-format
+msgid "%s will be updated to version"
+msgstr "%s será atualizado para a versão"
+
+msgid "(default)"
+msgstr "(padrão)"
+
+msgid "24 Hour Time"
+msgstr "Relógio de 24 Horas"
+
+msgid "?"
+msgstr ""
+
+msgid "A FIRMWARE_RESTART may fix the issue."
+msgstr "Reiniciar pode corrigir o Problema."
+
+msgid "ADXL Not Configured"
+msgstr "ADXL não configurado"
+
+msgid "Abort"
+msgstr "Cancelar"
+
+msgid "Acceleration:"
+msgstr "Aceleração:"
+
+msgid "Accept"
+msgstr "Aceitar"
+
+msgid "Actions"
+msgstr "Ações"
+
+msgid "Add Custom Material"
+msgstr "Adicionar Material Customizado"
+
+msgid "Add Material"
+msgstr "Adicionar Material"
+
+msgid "Add profile"
+msgstr "Adicionar perfil"
+
+msgid "An error has occurred"
+msgstr "Ocorreu um erro"
+
+msgid "Apply"
+msgstr "Aplicar"
+
+#, python-format
+msgid "Apply %s%.2f offset to Probe?"
+msgstr "Aplicar deslocamento de %s%.2f para a Sonda?"
+
+msgid "Are you sure do you want to exclude the object?"
+msgstr "Tem certeza de que deseja excluir o objeto?"
+
+msgid "Are you sure you want to run Emergency Stop?"
+msgstr "Executar Parada de Emergência na Syncraft?"
+
+msgid "Are you sure you wish to cancel this print?"
+msgstr "Cancelar a impressão ?"
+
+msgid "Are you sure you wish to disable motors?"
+msgstr "Desativar os motores ?"
+
+msgid "Are you sure you wish to reboot the system?"
+msgstr "Reiniciar o sistema ?"
+
+msgid "Are you sure you wish to shutdown the system?"
+msgstr "Desligar o sistema ?"
+
+msgid "At the end, Syncraft will restart."
+msgstr "No final do procedimento, a Syncraft será reiniciada."
+
+msgid "Auto"
+msgstr "Automatico"
+
+msgid "Auto-calibrate"
+msgstr "Calibrar automaticamente"
+
+msgid "Auto-close notifications"
+msgstr "Fechar notificações automaticamente"
+
+msgid "Auto-scroll"
+msgstr "Auto-scroll"
+
+msgid "Bed"
+msgstr "Mesa"
+
+msgid "Bed screw configuration:"
+msgstr "Configuração da Porca de Mesa:"
+
+msgid "Bowden"
+msgstr "Bowden"
+
+msgid "Bridge"
+msgstr "Bridge"
+
+msgid "Calibrate"
+msgstr "Calibrar"
+
+msgid "Calibrated"
+msgstr "Calibrado"
+
+msgid "Calibrating"
+msgstr "Calibrando"
+
+msgid "Camera"
+msgstr ""
+
+msgid "Camera Driver"
+msgstr "Driver da câmera"
+
+msgid "Can't set above the maximum:"
+msgstr "Não é possível definir o Máximo:"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Cancel Print"
+msgstr "Cancelar Impressão"
+
+msgid "Cancelled"
+msgstr "Cancelado"
+
+msgid "Cancelling"
+msgstr "Cancelando"
+
+msgid "Cannot connect to Moonraker"
+msgstr "Não foi possível se conectar com o Sistema"
+
+msgid "Change Screen Brightness"
+msgstr "Atalho para mudar o brilho da tela"
+
+msgid "Change Timezone"
+msgstr "Alterar Fuso Horário"
+
+msgid "Change material for non-active feeder"
+msgstr "Alterar material para o alimentador não ativo"
+
+msgid "Channel"
+msgstr "Canal"
+
+msgid "Check ADXL Wiring"
+msgstr "Verifique a fiação ADXL"
+
+msgid "Check LED"
+msgstr "Checar LED"
+
+msgid "Checking for updates, please wait..."
+msgstr "Verificando atualizações, aguarde..."
+
+msgid "Clear"
+msgstr "Limpar"
+
+msgid "Clear GCodes Folder"
+msgstr "Limpar pasta de GCodes"
+
+msgid "Close"
+msgstr "Fechar"
+
+msgid "Compatibility check"
+msgstr "Verificação Segura"
+
+msgid "Complete"
+msgstr "Completado"
+
+msgid "Configuration"
+msgstr "Configuração"
+
+msgid "Confirm"
+msgstr "Confirmar"
+
+msgid "Confirm Emergency Stop"
+msgstr "Etapa extra ao Parar com Emergência"
+
+msgid "Confirmed"
+msgstr "Confirmado"
+
+msgid "Connect"
+msgstr "Conectar"
+
+msgid "Connect to WiFi"
+msgstr "Conectar ao Wi-Fi"
+
+msgid "Connect to a hidden network"
+msgstr "Conectar em uma rede oculta"
+
+msgid "Connected"
+msgstr "Conectado"
+
+msgid "Console"
+msgstr "Terminal"
+
+msgid "Continue"
+msgstr "Continuar"
+
+msgid "Cooldown"
+msgstr "Resfriar"
+
+msgid "Customize"
+msgstr "Customizar"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Delete Directory?"
+msgstr ""
+
+msgid "Delete File?"
+msgstr "Excluir Arquivo?"
+
+msgid "Delete all custom Materials"
+msgstr "Limpar lista de Materias Customizados"
+
+msgid "Deselect"
+msgstr "Deselecionar"
+
+msgid "Disable Motors"
+msgstr "Desab. Motores"
+
+msgid "Disable XY"
+msgstr "Desab. YX"
+
+msgid "Display materials in the top"
+msgstr "Exibir materiais no topo da tela"
+
+msgid "Distance (mm)"
+msgstr "Distancia (mm)"
+
+msgid ""
+"Do not turn off Syncraft during the procedure, and keep a stable internet "
+"connection."
+msgstr "Não desligue a Syncraft, e mantenha uma conexão de internet estável."
+
+#, python-format
+msgid "Do you want to recover %s?"
+msgstr "Deseja recuperar %s?"
+
+msgid "Docker Bridge"
+msgstr "Bridge com Docker"
+
+msgid "Elapsed:"
+msgstr "Corrido:"
+
+msgid "Empty"
+msgstr "Vazio"
+
+msgid "Enter Password"
+msgstr "Digite a senha"
+
+msgid "Error"
+msgstr "Erro"
+
+msgid "Estimated Time Method"
+msgstr "Método de Tempo Estimado"
+
+msgid "Estimated:"
+msgstr "Estimado:"
+
+msgid "Exclude Object"
+msgstr "Excluir Objeto"
+
+msgid "Export Logs"
+msgstr "Exportar Logs"
+
+msgid "Export Logs to USB"
+msgstr "Exportar Logs para USB"
+
+msgid "Export Syncraft Packs"
+msgstr "Exportar Pacotes Syncraft"
+
+msgid "Extra Large"
+msgstr "Extra Grande"
+
+msgid "Extras"
+msgstr "Extras"
+
+msgid "Extrude"
+msgstr "Extrusão"
+
+msgid "Extruder"
+msgstr "Extrusor"
+
+msgid "Extrusion +"
+msgstr "+ Extrusão"
+
+msgid "Extrusion -"
+msgstr "- Extrusão"
+
+msgid "Extrusion Temperature for the Material"
+msgstr "Temperatura de Extrusão"
+
+msgid "Failed, adjust position first"
+msgstr "Ocorreu um problema. Tente ajustar a posição da mesa."
+
+msgid "Fan"
+msgstr "Ventoinha"
+
+msgid "Feeder"
+msgstr "Alimentador"
+
+msgid "Filament"
+msgstr "Filamento"
+
+msgid "Filament Used"
+msgstr "Filamento Usado"
+
+msgid "Filament total:"
+msgstr "Filamento total:"
+
+msgid "Filament used:"
+msgstr "Filamento usado:"
+
+msgid "Filament:"
+msgstr "Filamento:"
+
+msgid "File"
+msgstr "Arquivo"
+
+msgid "File:"
+msgstr "Arquivo:"
+
+msgid "Finding ADXL"
+msgstr "Encontrar ADXL"
+
+msgid "Fine Tuning"
+msgstr "Ajuste Fino"
+
+msgid "Finish"
+msgstr "Finalizar"
+
+msgid "Firmware Restart"
+msgstr "Reiniciar Firmware"
+
+msgid "First Flash (Jumper required)"
+msgstr "Primeiro Flash (Jumper obrigatório)"
+
+msgid "Fix"
+msgstr "Corrigir"
+
+msgid "Flash Controller Board"
+msgstr "Flash na Placa Controladora"
+
+msgid "Flow:"
+msgstr "Fluxo:"
+
+msgid "Flowrate:"
+msgstr "Flow:"
+
+msgid "Font Size"
+msgstr "Tamanho da fonte"
+
+msgid "Generic"
+msgstr "Genérico"
+
+msgid "Go Back"
+msgstr "Voltar"
+
+msgid "Height:"
+msgstr "Altura:"
+
+msgid "Hidden"
+msgstr "Oculto"
+
+msgid "Hide"
+msgstr "Ocultar"
+
+msgid "Hide sensors in Temp."
+msgstr "Ocultar sensores na Temp."
+
+msgid "Hide temp."
+msgstr "Ocultar Temp."
+
+msgid "Home All"
+msgstr "Zerar XYZ"
+
+msgid "Home XY"
+msgstr "Zerar XY"
+
+msgid "Host"
+msgstr "Host"
+
+msgid "Hostname"
+msgstr "Nome do Host"
+
+msgid "I agree, continue"
+msgstr "Concordo, continue"
+
+msgid "Icon Theme"
+msgstr "Tema"
+
+msgid "Incompatible Material"
+msgstr "Material Incompatível"
+
+msgid "Information"
+msgstr "Informações"
+
+msgid "Initializing printer..."
+msgstr "Inicializando Impressora..."
+
+msgid "Internal Lights"
+msgstr "Luzes Internas"
+
+msgid ""
+"Interrupting this procedure can result in problems for the internal system."
+msgstr "Interromper este procedimento pode resultar em problemas no sistema."
+
+msgid "Invalid"
+msgstr "Inválido"
+
+msgid "Invalid password"
+msgstr "Senha Inválida"
+
+msgid "Invert X"
+msgstr "Inverter X"
+
+msgid "Invert Y"
+msgstr "Inverter Y"
+
+msgid "Invert Z"
+msgstr "Inverter Z"
+
+msgid "It ensures selected materials and nozzle type are compatible."
+msgstr ""
+"O objetivo é garantir que tanto os materiais selecionados\n"
+"quanto o ProExtruder sejam compatíveis."
+
+msgid "Klipper Restart"
+msgstr "Reiniciar Firmware"
+
+msgid "Klipper has disconnected"
+msgstr "O Firmware foi desconectado"
+
+msgid "Klipper has encountered an error."
+msgstr "O Firmware encontrou um erro."
+
+msgid "Klipper has shutdown"
+msgstr "O Firmware foi desligado"
+
+msgid "Klipper is attempting to start"
+msgstr "O Firmware está iniciando"
+
+msgid "Klipper will reboot"
+msgstr "O Firmware será reiniciado"
+
+msgid "KlipperScreen"
+msgstr ""
+
+msgid "KlipperScreen will reboot"
+msgstr "KlipperScreen será reiniciado"
+
+msgid "LED Light Driver"
+msgstr "Driver do LED"
+
+msgid "Language"
+msgstr "Idioma"
+
+msgid "Large"
+msgstr "Grande"
+
+msgid "Layer:"
+msgstr "Camada:"
+
+msgid "Left:"
+msgstr "Restante:"
+
+msgid "Let me guess... Someone stole your Sweetroll"
+msgstr "Deixa eu adivinhar... Alguém roubou seu Pãozinho de Açúcar?"
+
+msgid "Load"
+msgstr "Carregar"
+
+msgid "Loopback"
+msgstr "Loopback"
+
+msgid "Lower Nozzle"
+msgstr "Aproximar"
+
+msgid "Main Menu"
+msgstr "Menu principal"
+
+msgid "Mainsail"
+msgstr "Mainsail"
+
+msgid "Manually save probe after printing"
+msgstr "Salvar probe manualmente após imprimir"
+
+msgid "Manually select configuration files"
+msgstr "Selecionar arquivos manualmente"
+
+msgid "Max"
+msgstr "Max"
+
+msgid "Measure Both"
+msgstr "Medir ambos"
+
+msgid "Measure X"
+msgstr "Medida X"
+
+msgid "Measure Y"
+msgstr "Medida Y"
+
+msgid "Medium"
+msgstr "Médio"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Mesh calibrate"
+msgstr "Calibrar Malha"
+
+msgid "Metal"
+msgstr "Metal"
+
+msgid "Modified"
+msgstr "Modificado"
+
+msgid "Moonraker"
+msgstr "Moonraker"
+
+msgid "Moonraker: connected"
+msgstr "Sistema Interno: Conectado"
+
+msgid "Move"
+msgstr "Mover"
+
+msgid "Move Distance (mm)"
+msgstr "Distancia do movimento (mm)"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Network"
+msgstr "Rede"
+
+msgid "Never"
+msgstr "Nunca"
+
+msgid "New"
+msgstr "Novo"
+
+msgid ""
+"Not supported for auto-detection, it needs to be configured in klipperscreen."
+"conf"
+msgstr ""
+"Não é compatível com detecção automática, precisa ser configurado no "
+"klipperscreen.conf"
+
+msgid "Nothing selected"
+msgstr "Nada selecionado"
+
+msgid "ON/OFF"
+msgstr "Ativar/Desativar"
+
+msgid "One"
+msgstr "Um"
+
+msgid "Out of Date"
+msgstr "Desatualizado"
+
+#, python-format
+msgid "Outdated by %d"
+msgstr "Desatualizado por %d"
+
+msgid "P2P"
+msgstr "P2P"
+
+msgid "Package will be updated"
+msgid_plural "Packages will be updated"
+msgstr[0] "O pacote será atualizado"
+msgstr[1] "Os pacotes serão atualizados"
+
+msgid "Part Fan"
+msgstr "Controle da Ventoinha"
+
+msgid "Password saved"
+msgstr "Senha Salva"
+
+msgid "Pause"
+msgstr "Pausar"
+
+msgid "Paused"
+msgstr "Pausado"
+
+msgid "Perform a full upgrade?"
+msgstr "Realizar uma Atualização Completa?"
+
+msgid "Please follow the tutorial to ensure everything performs correctly."
+msgstr ""
+"Por favor, siga o tutorial para garantir que tudo funcione corretamente."
+
+msgid "Please recompile and flash the micro-controller."
+msgstr "Por favor, recompile e atualize o microcontrolador."
+
+msgid "Please wait"
+msgstr "Por favor, aguarde"
+
+msgid "Power"
+msgstr "Energia"
+
+msgid "Power On Printer"
+msgstr "Ligar a impressora"
+
+msgid "Pressure Advance:"
+msgstr "Avanço de Pressão:"
+
+msgid "Print"
+msgstr "Imprimir"
+
+msgid "Print Control"
+msgstr "Controle de Impressão"
+
+msgid "Printer"
+msgstr "Impressora"
+
+msgid "Printer Select"
+msgstr "Selecione a impressora"
+
+msgid "Printing"
+msgstr "Imprimindo"
+
+msgid "Probe Offset"
+msgstr "Desloc. da Sonda"
+
+msgid "Profile Name:"
+msgstr "Nome do Perfil:"
+
+msgid "Provide KlipperScreen.log when asking for help.\n"
+msgstr "Forneça um Log do KlipperScreen ao pedir ajuda.\n"
+
+msgid "Quad Gantry Level"
+msgstr "Nível do pórtico quádruplo"
+
+msgid "Quick System Fixes"
+msgstr "Corrigir Sistema"
+
+msgid "Raise Nozzle"
+msgstr "Afastar"
+
+msgid "Re-flash (Jumper not required)"
+msgstr "Re-Flash (Sem Jumper)"
+
+msgid "Recover"
+msgstr "Recuperar"
+
+msgid "Recover Hard"
+msgstr "Recuperar na Raiz"
+
+msgid "Recover Soft"
+msgstr "Recuperar via Software"
+
+msgid "Reference"
+msgstr "Referência"
+
+msgid "Refresh"
+msgstr "Recarregar"
+
+msgid "Rename File"
+msgstr "Renomear Arquivo"
+
+msgid "Restart"
+msgstr "Reiniciar"
+
+msgid "Restart the machine for the updates to take effect"
+msgstr "Reinicie a máquina para que as atualizações tenham efeito"
+
+msgid "Resume"
+msgstr "Resumir"
+
+msgid "Retract"
+msgstr "Retrair"
+
+msgid "Retraction"
+msgstr "Retratação"
+
+msgid "Retraction Length"
+msgstr "Comprimento de Retração"
+
+msgid "Retraction Speed"
+msgstr "Velocidade de Retração"
+
+msgid "Retry"
+msgstr "Tentar Novamente"
+
+msgid "Retrying"
+msgstr "Tentando Novamente"
+
+msgid "Save"
+msgstr "Salvar"
+
+msgid "Save Config"
+msgstr "Salvar Configuração"
+
+msgid "Save Z"
+msgstr "Salvar Eixo Z"
+
+msgid "Save changes?"
+msgstr "Salvar modificações?"
+
+msgid "Save configuration?"
+msgstr "Salvar configuração?"
+
+msgid "Saved"
+msgstr "Salvo"
+
+#, python-format
+msgid "Saved offset: %s"
+msgstr "Deslocamento salvo: %s"
+
+msgid "Screen Power Off Time"
+msgstr "Descanso de Tela"
+
+msgid "Screws Adjust"
+msgstr "Niv. Manual"
+
+msgid "Select"
+msgstr "Selecionar"
+
+msgid "Select Material when inserting filament"
+msgstr "Selecionar Material ao inserir filamento"
+
+msgid "Select Syncraft ProExtruder"
+msgstr "Selecione o ProExtruder"
+
+msgid "Select at least one Extruder"
+msgstr "Selecione pelo menos um ProExtruder"
+
+msgid "Select compatible Extruder"
+msgstr "Selecione um extrusor compatível"
+
+msgid "Select the Material"
+msgstr "Selecione o Material"
+
+msgid "Select which extruders are compatible"
+msgstr "Selecione quais ProExtruder são compatíveis"
+
+msgid "Send"
+msgstr "Enviar"
+
+msgid "Sensors"
+msgstr "Sensores"
+
+msgid "Set Temp"
+msgstr "Definir Temperatura"
+
+msgid "Settings"
+msgstr "Definições"
+
+msgid "Show"
+msgstr "Mostrar"
+
+msgid "Show Heater Power"
+msgstr "Mostrar Potência do Aquecedor"
+
+msgid "Show experimental Materials"
+msgstr "Mostrar materiais experimentais"
+
+msgid "Show files saved from USB"
+msgstr "Mostrar arquivos salvos do USB"
+
+msgid "Shutdown"
+msgstr "Desligar"
+
+msgid "Size"
+msgstr "Tamanho"
+
+msgid "Slicer"
+msgstr "Fatiador"
+
+msgid "Slicer Time correction (%)"
+msgstr "Correção do tempo do fatiador (%)"
+
+msgid "Slicer:"
+msgstr "Fatiador:"
+
+msgid "Small"
+msgstr "Pequeno"
+
+msgid "Speed (mm/s)"
+msgstr "Velocidade (mm/s)"
+
+msgid "Speed +"
+msgstr "+ Velocidade"
+
+msgid "Speed -"
+msgstr "- Velocidade"
+
+msgid "Speed:"
+msgstr "Velocidade:"
+
+msgid "Spool"
+msgstr "Carretel"
+
+msgid "Start"
+msgstr "Iniciar"
+
+#, python-format
+msgid "Starting %s"
+msgstr "Iniciando %s"
+
+msgid "Starting WiFi Association"
+msgstr "Iniciando a associação WiFi"
+
+msgid "Starting recovery for"
+msgstr "Iniciando a recuperação para"
+
+msgid "Starting update for"
+msgstr "Iniciando atualização para"
+
+msgid "Syncraft"
+msgstr ""
+
+msgid ""
+"Syncraft Team is not responsible for the misuse of the machine, please "
+"follow the procedures correctly."
+msgstr ""
+"A Equipe da Syncraft não se responsabiliza pelo uso indevido da máquina."
+
+msgid "System"
+msgstr "Sistema"
+
+msgid "System Information"
+msgstr "Informações do Sistema"
+
+msgid "System Restart"
+msgstr "Reiniciar Sistema"
+
+msgid "Temp (°C)"
+msgstr "Temp (°C)"
+
+msgid "Temperature"
+msgstr "Temperatura"
+
+msgid "The check is always done before printing."
+msgstr "A verificação é sempre feita antes de imprimir."
+
+msgid "The maximum limit has been reached"
+msgstr "O limite máximo foi atingido"
+
+msgid "This material is considered experimental for the selected Extruder."
+msgstr "Este material é considerado experimental para o extrusor selecionado."
+
+msgid "This may have been caused by a recent update"
+msgstr "Isso pode ter sido causado por uma atualização recente"
+
+msgid "This name cannot be used"
+msgstr "Este nome não pode ser usado"
+
+msgid "This procedure requires internet connection"
+msgstr "Este procedimento exige conexão com a internet"
+
+msgid "This screw is already Adjusted"
+msgstr "Este parafuso já está Ajustado"
+
+msgid "This screw is now Adjusted"
+msgstr "O Parafuso foi Ajustado"
+
+msgid "Total:"
+msgstr "Total:"
+
+msgid "Two"
+msgstr "Dois"
+
+msgid "USB not inserted into Printer"
+msgstr "Dispositivo USB não inserido"
+
+msgid "Unable to auto-detect"
+msgstr "Não foi possível detectar automaticamente"
+
+msgid "Unable to communicate with the extruder"
+msgstr "Não é possível se comunicar com o extrusor"
+
+msgid "Unknown Heater"
+msgstr "Aquecedor Desconhecido"
+
+msgid "Unknown screw position"
+msgstr "Posição desconhecida do parafuso"
+
+msgid "Unload"
+msgstr "Descarregar"
+
+msgid "Unretract Extra Length"
+msgstr "Retrair Comprimento Extra"
+
+msgid "Unretract Speed"
+msgstr "Velocidade Inversa de Retração"
+
+msgid "Up To Date"
+msgstr "Atualizado"
+
+msgid "Update"
+msgstr "Atualizar"
+
+msgid "Update File not found"
+msgstr "Arquivo de Atualização não Encontrado"
+
+msgid "Update via Internet"
+msgstr "Atualizar pela Internet"
+
+msgid "Update via USB"
+msgstr "Atualizar via USB"
+
+msgid "Updating"
+msgstr "Atualizando"
+
+msgid "Uploaded"
+msgstr "Enviado"
+
+msgid "Using an untested material may lead to inaccurate print results."
+msgstr ""
+"Usar um material não testado pode levar a resultados indesejados de "
+"impressão."
+
+msgid "Using this material may lead to inaccurate printing results."
+msgstr "Usar este material pode levar a resultados indesejados de impressão."
+
+msgid "Verification is disabled"
+msgstr "Verificação Desativada"
+
+msgid "Verification is enabled"
+msgstr "Verificação Ativada"
+
+msgid "Virtual Tunnel"
+msgstr "Túnel Virtual"
+
+msgid "Virtually Wired"
+msgstr "Virtualmente Cabeado"
+
+msgid "Wired"
+msgstr "Cabeado"
+
+msgid "Wireless"
+msgstr "Wi-Fi"
+
+msgid "XY Move Speed (mm/s)"
+msgstr "Velocidade de Movimento XY (mm/s)"
+
+msgid "XY Speed (mm/s)"
+msgstr "Velocidade XY (mm/s)"
+
+msgid ""
+"You are loading untested material, this may result in unexpected results."
+msgstr ""
+"Você está carregando um material não testado, e isso pode ter resultados "
+"inesperados."
+
+msgid "You can temporarily disable this verification."
+msgstr "Você pode desativar temporariamente a verificação."
+
+msgid "You cannot perform this action while printing"
+msgstr "Você não pode realizar esta ação enquanto estiver imprimindo"
+
+msgid "Z Move Speed (mm/s)"
+msgstr "Velocidade de Movimento Z (mm/s)"
+
+msgid "Z Speed (mm/s)"
+msgstr "Velocidade Z (mm/s)"
+
+msgid "Z Tilt"
+msgstr "Inclinação Z"
+
+msgid "Z offset:"
+msgstr "Desloc. Z:"
+
+msgid "commit"
+msgid_plural "commits"
+msgstr[0] "commit"
+msgstr[1] "commits"
+
+msgid "dBm"
+msgstr "dBm"
+
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] "hora"
+msgstr[1] "horas"
+
+msgid "minutes"
+msgstr "minutos"
+
+msgid "mm"
+msgstr "mm"
+
+msgid "mm/s"
+msgstr "mm/s"
+
+msgid "mm/s²"
+msgstr "mm/s²"
+
+msgid "mm³/s"
+msgstr "mm³/s"
+
+#, python-format
+#~ msgid "Apply %.2f offset to Endstop?"
+#~ msgstr "Aplicar deslocamento de %.2f para Endstop?"
+
+#~ msgid "Update or fix system via USB"
+#~ msgstr "Atualize ou corrigir o sistema via USB"
+
+#~ msgid "Repair"
+#~ msgstr "Reparar"
+
+#~ msgid "Agree"
+#~ msgstr "Concordo"
+
+#~ msgid "Fix Software Problems"
+#~ msgstr "Corrigir problemas de Software"
+
+#~ msgid "Essential Files"
+#~ msgstr "Arquivos"
+
+#~ msgid "Web Interface"
+#~ msgstr "Interface Web"
+
+#~ msgid "System Firmware"
+#~ msgstr "Firmware do Sistema"
+
+#~ msgid ""
+#~ "Plug a USB into your computer, and make sure to format it in a universal "
+#~ "file system, such as exFAT. Avoid Microsoft's NTFS, or Apple's APFS."
+#~ msgstr ""
+#~ "Conecte um USB ao seu computador e certifique-se de formatá-lo em um "
+#~ "sistema de arquivos universal, como exFAT. Evite o NTFS da Microsoft ou o "
+#~ "APFS da Apple."
+
+#~ msgid ""
+#~ "Make sure the directory is in the root of the USB, with the name SYNCRAFT."
+#~ msgstr ""
+#~ "Verifique se o diretório está na raiz do USB, com o nome de SYNCRAFT."
+
+#~ msgid ""
+#~ "Do not turn off Syncraft during the procedure, and beware of power "
+#~ "outages."
+#~ msgstr "Não desligue a Syncraft, e tome cuidado com quedas de energia."
+
+#~ msgid "Bed Level"
+#~ msgstr "Nível da Mesa"
+
+#~ msgid "Bed Mesh"
+#~ msgstr "Malha da Mesa"
+
+#~ msgid "Calibrated, save configuration to make it permanent"
+#~ msgstr "Calibrado, use o comando para salvar"
+
+#, python-format
+#~ msgid "Connecting to %s"
+#~ msgstr "Conectando %s"
+
+#~ msgid "Decrease"
+#~ msgstr "Diminuir"
+
+#~ msgid "Full Update"
+#~ msgstr "Atualizar Tudo"
+
+#~ msgid "Home X"
+#~ msgstr "Zerar X"
+
+#~ msgid "Home Y"
+#~ msgstr "Zerar Y"
+
+#~ msgid "Home Z"
+#~ msgstr "Zerar Z"
+
+#~ msgid "Homing"
+#~ msgstr "Zerar"
+
+#~ msgid "Increase"
+#~ msgstr "Aumentar"
+
+#~ msgid "Input Shaper"
+#~ msgstr "Modelador de Entrada"
+
+#~ msgid "Interface"
+#~ msgstr "Interface"
+
+#~ msgid "Limits"
+#~ msgstr "Limites"
+
+#~ msgid "Macro shortcut on sidebar"
+#~ msgstr "Macro na barra lateral"
+
+#~ msgid "Macros"
+#~ msgstr "Macros"
+
+#~ msgid "Max Acceleration"
+#~ msgstr "Aceleração Máxima"
+
+#~ msgid "Max Acceleration to Deceleration"
+#~ msgstr "Max. aceleração de desaceleração"
+
+#~ msgid "Max Velocity"
+#~ msgstr "Velocidade máxima"
+
+#~ msgid "Maximum"
+#~ msgstr "Máximo"
+
+#~ msgid "PSK for"
+#~ msgstr "PSK por"
+
+#~ msgid "Pins"
+#~ msgstr "Pinos"
+
+#~ msgid "Print Time"
+#~ msgstr "Tempo de impressão"
+
+#~ msgid "Printer Connections"
+#~ msgstr "Conexões"
+
+#~ msgid "Screen DPMS"
+#~ msgstr "Tela DPMS"
+
+#, python-format
+#~ msgid "Sending Power ON signal to: %s"
+#~ msgstr "Enviando sinal de energia para: %s"
+
+#~ msgid "Square Corner Velocity"
+#~ msgstr "Velocidade do Canto Reto"
+
+#~ msgid "System Shutdown"
+#~ msgstr "Desligar Sistema"
+
+#~ msgid "Z Calibrate"
+#~ msgstr "Calibração Z"
+
+#~ msgid "Start Screw Adjust"
+#~ msgstr "Iniciar Nivelamento Manual"
+
+#~ msgid "Abort Screw Adjust"
+#~ msgstr "Cancelar Nivelamento Manual"
+
+#~ msgid "Other"
+#~ msgstr "Outro"
+
+#~ msgid "minute"
+#~ msgid_plural "minutes"
+#~ msgstr[0] "minuto"
+#~ msgstr[1] "minutos"
+
+#~ msgid "Sort:"
+#~ msgstr "Ordenar:"
+
+#~ msgid "Calibrating..."
+#~ msgstr "Calibrando..."
+
+#~ msgid "Switch Pages"
+#~ msgstr "Mudar de Página"
+
+#~ msgid "Inserted Material"
+#~ msgstr "Material Inserido"
+
+#~ msgid "Selected Material"
+#~ msgstr "Material Selecionado"
+
+#~ msgid "Material set as Generic"
+#~ msgstr "Material definido como Genérico"
+
+#~ msgid "Impossible to proceed"
+#~ msgstr "Impossível prosseguir"
+
+#~ msgid "Change the material to print this file"
+#~ msgstr "Mude o material para imprimir este arquivo"
+
+#~ msgid "Factory Reset"
+#~ msgstr "Reset de Fábrica"
+
+#~ msgid "Software Reset"
+#~ msgstr "Reset de Software"
+
+#~ msgid "This procedure can take a while"
+#~ msgstr "Este procedimento pode demorar um tempo"
+
+#~ msgid "Turning off the printer during the procedure will cause problems"
+#~ msgstr "Desligar a impressora durante o procedimento causará problemas"
+
+#~ msgid "Regular Update"
+#~ msgstr "Atualização Padrão"
+
+#~ msgid "Recover Backup"
+#~ msgstr "Recuperar Backup"
+
+#~ msgid "Backup File not found"
+#~ msgstr "Arquivo de Backup não Encontrado"
+
+#~ msgid "Unsupported Update File"
+#~ msgstr "Arquivo de Atualização não Suportado"
+
+#~ msgid "Unsupported Backup File"
+#~ msgstr "Arquivo de Backup não Suportado"
+
+#~ msgid "Access Files on USB"
+#~ msgstr "Acessar Arquivos no USB"
+
+#~ msgid "Files saved from USB"
+#~ msgstr "Arquivos Salvos do USB"
+
+#~ msgid ""
+#~ "Want to enter a four-digit password to prevent unauthorized or unwanted "
+#~ "people?"
+#~ msgstr ""
+#~ "Deseja inserir uma senha de quatro dígitos para evitar o uso de pessoas "
+#~ "não autorizadas?"
+
+#~ msgid "Change Password"
+#~ msgstr "Mudar senha"
+
+#~ msgid "Remove Password Protection"
+#~ msgstr "Remover proteção por senha"
+
+#~ msgid "Welcome to Syncraft"
+#~ msgstr "Setup Inicial da Syncraft"
+
+#~ msgid "No, I don't agree."
+#~ msgstr "Não, não concordo."
+
+#~ msgid "Password"
+#~ msgstr "Senha"
+
+#~ msgid "Terms and Conditions"
+#~ msgstr "Termos e condições"
+
+#~ msgid "Download App"
+#~ msgstr "Baixar aplicativo"
+
+#~ msgid "Download for iPhone"
+#~ msgstr "Baixar para iPhone"
+
+#~ msgid "Download for Android"
+#~ msgstr "Baixar para Android"
+
+#~ msgid "Do not show this again."
+#~ msgstr "Não mostrar novamente."
+
+#~ msgid "Extruders"
+#~ msgstr "Extrusores"
+
+#~ msgid "Extruders and Feeders"
+#~ msgstr "Extrusores e Alimentadores"
+
+#~ msgid "Primary Extruder"
+#~ msgstr "Extrusor Primário"
+
+#~ msgid "Main Extruder"
+#~ msgstr "Extrusor Principal"
+
+#~ msgid "Default Extruder"
+#~ msgstr "Extrusor Padrão"
+
+#~ msgid "Secondary Extruder"
+#~ msgstr "Extrusor Secundário"
+
+#~ msgid "Default"
+#~ msgstr "Padrão"
+
+#~ msgid "Screen Brightness"
+#~ msgstr "Brilho da Tela"
+
+#~ msgid "Almost Off"
+#~ msgstr "Quase Desligado"
+
+#~ msgid "Low"
+#~ msgstr "Baixo"
+
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgid "High"
+#~ msgstr "Alto"
+
+#~ msgid "User"
+#~ msgstr "Usuário"
+
+#~ msgid "Users"
+#~ msgstr "Usuários"
+
+#~ msgid "Switch User"
+#~ msgstr "Mudar de usuário"
+
+#~ msgid "Choose User"
+#~ msgstr "Escolher usuário"
+
+#~ msgid "Create User"
+#~ msgstr "Criar usuário"
+
+#~ msgid "Delete User"
+#~ msgstr "Excluir usuário"
+
+#~ msgid "Edit User"
+#~ msgstr "Editar usuário"
+
+#~ msgid "Heater Bed"
+#~ msgstr "Mesa"
+
+#~ msgid "Chamber Fan"
+#~ msgstr "Ventoinha"
+
+#~ msgid "Select Extruder"
+#~ msgstr "Selecione o Extrusor"
+
+#~ msgid "Incompatible Extruder"
+#~ msgstr "Extrusor Incompatível"
+
+#~ msgid "Current Extruder"
+#~ msgstr "Extrusor Atual"
+
+#~ msgid "Change your Extruder"
+#~ msgstr "Mude seu Extrusor"
+
+#~ msgid "The inserted Extruder is incompatible with this Material"
+#~ msgstr "O extrusor inserido é incompatível com este material"
+
+#~ msgid "Material"
+#~ msgstr "Material"
+
+#~ msgid "The inserted Extruder is incompatible with this File"
+#~ msgstr "O extrusor inserido é incompatível com este arquivo"
+
+#~ msgid "You cannot print this file using the current Extruder"
+#~ msgstr "Você não pode imprimir este arquivo usando o Extrusor atual"
+
+#~ msgid "Extruder modification detected"
+#~ msgstr "Modificação de Extrusor detectado"
+
+#~ msgid "This action may result in unexpected results."
+#~ msgstr "Esta ação pode levar a resultados inesperados."
+
+#~ msgid "Material incompatibility Alert"
+#~ msgstr "Alerta de incompatibilidade de material"
+
+#~ msgid "My timezone is not on the list"
+#~ msgstr "Meu fuso horário não está listado acima"
+
+#~ msgid "Insert your timezone"
+#~ msgstr "Insira seu fuso horário"
+
+#~ msgid "The material you're using is not compatible with this file"
+#~ msgstr "O material que você está usando não é compatível com este arquivo"
+
+#~ msgid "The file you are trying to print is for a different printer model"
+#~ msgstr ""
+#~ "O arquivo que você está tentando imprimir é de um modelo de impressora "
+#~ "diferente"
+
+#~ msgid "Example"
+#~ msgstr "Exemplo"
+
+#~ msgid "Insert Custom"
+#~ msgstr "Inserir customizado"
+
+#~ msgid "Tap the screen to confirm"
+#~ msgstr "Toque na tela para confirmar"
+
+#~ msgid "Are you sure?"
+#~ msgstr "Tem certeza?"
+
+#~ msgid "Revert"
+#~ msgstr "Reverter"
+
+#~ msgid "Restore"
+#~ msgstr "Restaurar"
+
+#~ msgid "Restore to Factory Default"
+#~ msgstr "Restaurar para padrão de fábrica"
+
+#~ msgid "Restore All"
+#~ msgstr "Restaurar Tudo"
+
+#~ msgid "Are you sure you want to reset to factory default?"
+#~ msgstr ""
+#~ "Tem certeza de que deseja redefinir para as configurações de fábrica?"
+
+#~ msgid "Are you sure you want to Update?"
+#~ msgstr "Tem certeza de que deseja atualizar?"
+
+#~ msgid "Export Syncraft Installers to USB"
+#~ msgstr "Exportar Pacotes Syncraft"
+
+#~ msgid "Your system version does not support this feature"
+#~ msgstr "A versão do seu sistema não suporta esta funcionalidade"
+
+#~ msgid "Update required"
+#~ msgstr "Atualização necessária"
+
+#~ msgid "This software is already updated"
+#~ msgstr "Este software já está atualizado"
+
+#~ msgid "Restart to apply"
+#~ msgstr "Reinicie a Syncraft para aplicar"
+
+#~ msgid "Calibration"
+#~ msgstr "Calibração"
+
+#~ msgid "Mesh"
+#~ msgstr "Malha"
+
+#~ msgid "There is a new update available"
+#~ msgstr "Há uma nova atualização disponível"
+
+#~ msgid "There is a new update available, update using the Syncraft menu"
+#~ msgstr "Há uma nova atualização disponível, atualize usando o menu Syncraft"
+
+#~ msgid "New update available"
+#~ msgstr "Nova atualização disponível"
+
+#~ msgid "No updates available"
+#~ msgstr "Não há atualizações disponíveis"
+
+#~ msgid "Download Update"
+#~ msgstr "Baixar Atualização"
+
+#~ msgid "Click to download the new update"
+#~ msgstr "Clique para baixar a nova atualização"
+
+#~ msgid "Your machine is out of date"
+#~ msgstr "Sua máquina está desatualizada"
+
+#~ msgid "Everything is properly updated"
+#~ msgstr "Tudo está devidamente atualizado"
+
+#~ msgid "In progress, please wait"
+#~ msgstr "Em progresso, por favor, aguarde"
+
+#~ msgid "Platform"
+#~ msgstr "Plataforma"
+
+#~ msgid "Version"
+#~ msgstr "Versão"
+
+#~ msgid "Model"
+#~ msgstr "Modelo"
+
+#~ msgid "USB Device"
+#~ msgstr "Dispositivo USB"
+
+#~ msgid "Three"
+#~ msgstr "Três"
+
+#~ msgid "Four"
+#~ msgstr "Quatro"
+
+#~ msgid "Five"
+#~ msgstr "Cinco"
+
+#~ msgid "Six"
+#~ msgstr "Seis"
+
+#~ msgid "Seven"
+#~ msgstr "Sete"
+
+#~ msgid "Eight"
+#~ msgstr "Oito"
+
+#~ msgid "Here are some recommended steps to get started"
+#~ msgstr "Aqui estão alguns passos recomendados para começar"
+
+#~ msgid "If you want, you can adjust all of this later"
+#~ msgstr "Se você quiser, pode ajustar tudo isso mais tarde"
+
+#~ msgid "You can access through the browser with %s"
+#~ msgstr "Você pode acessar pelo navegador usando %s"
+
+#~ msgid "Syncraft Address: %s"
+#~ msgstr "Endereço do Syncraft: %s"
+
+#~ msgid "Insert Material Name"
+#~ msgstr "Insira o nome do material"
+
+#~ msgid "Must contain between %s and %s characters."
+#~ msgstr "Deve conter entre %s e %s caracteres."
+
+#~ msgid "The name should contain only letters and numbers"
+#~ msgstr "O nome deve conter apenas letras e números"
+
+#~ msgid "Remove Material"
+#~ msgstr "Remover Material"
+
+#~ msgid "Export custom materials to USB"
+#~ msgstr "Exportar materiais para USB"
+
+#~ msgid "Import custom materials from USB"
+#~ msgstr "Importar materiais de um USB"
+
+#~ msgid "Chamber"
+#~ msgstr "Câmara"
+
+#~ msgid "The average update rate is 1 second"
+#~ msgstr "A taxa média de atualização é de 1 segundo"
+
+#~ msgid "One of the materials you're using is not compatible with this file"
+#~ msgstr "Algum dos materiais carregados não é compatível com este arquivo"
+
+#~ msgid "Hot Unload"
+#~ msgstr "Aquecer e Descarregar"
+
+#~ msgid "Calibrate IDEX"
+#~ msgstr "Calibrar IDEX"
+
+#~ msgid ""
+#~ "This procedure will start printing a specific 3D model for calibration."
+#~ msgstr "Este procedimento irá imprimir uma peça dedicada para calibração."
+
+#~ msgid ""
+#~ "It is recommended to use materials of the same type with different colors."
+#~ msgstr ""
+#~ "É recomedado utilizar materiais do mesmo tipo, entretanto com cores "
+#~ "diferentes."
+
+#~ msgid "Both feeders must have materials inserted"
+#~ msgstr "Ambos alimentadores devem estar com materiais inseridos"
+
+#~ msgid "Auto-open Extrude On Pause"
+#~ msgstr "Abrir a extrusão ao pausar"
+
+#~ msgid "Show Scrollbars Buttons"
+#~ msgstr "Exibir botões de rolagem"
+
+#~ msgid "Cannot change ProExtruder type during filament insertion"
+#~ msgstr ""
+#~ "Não é possível trocar o tipo do ProExtruder durante inserção de filamento"
+
+#~ msgid "Select materials before printing"
+#~ msgstr "Selecione os materiais antes de imprimir"
+
+#~ msgid "Connection is completed"
+#~ msgstr "A Conexão foi concluída"
+
+#~ msgid "Compatibility check has been re-enabled."
+#~ msgstr "A verificação Segura foi reativada."
+
+#~ msgid "This procedure will re-flash the controller board."
+#~ msgstr "Este procedimento irá dar Re-Flash na placa controladora."
+
+#~ msgid "After this quick procedure, the machine will restart."
+#~ msgstr "Após este procedimento, a Syncraft irá reiniciar."
+
+#~ msgid "Do not proceed if you are not sure what you are doing."
+#~ msgstr "Não prossiga se não tiver certeza do que está fazendo."
+
+#~ msgid "This procedure will flash the controller board."
+#~ msgstr "Este procedimento irá dar um Flash a placa controladora."
+
+#~ msgid "Rename/Move:"
+#~ msgstr "Renomear/Mover:"
+
+#~ msgid "Please confirm before proceeding"
+#~ msgstr "Confirme antes de prosseguir"
+
+#~ msgid "Automatic Detection"
+#~ msgstr "Detectado Automaticamente"
+
+#~ msgid "Legacy"
+#~ msgstr "Legado"
+
+#~ msgid "File branch detected:"
+#~ msgstr "Configuração detectada:"
+
+#~ msgid "Automatically save probe when finishing a print"
+#~ msgstr "Salvar automaticamente probe ao terminar de imprimir"
+
+#~ msgid "Return to main menu and save probe?"
+#~ msgstr "Retornar ao menu principal e salvar probe?"
+
+#~ msgid "Save probe and return to main menu"
+#~ msgstr "Salvar probe e retornar ao menu principal"
+
+#~ msgid ""
+#~ "Returning to the main menu always ask if you want to save the probe after "
+#~ "printing"
+#~ msgstr ""
+#~ "Após imprimir, retornar ao menu principal sempre pergunta se você deseja "
+#~ "salvar o probe"
+
+#~ msgid "Some parameters have been modified."
+#~ msgstr "Alguns parâmetros foram modificados."
+
+#~ msgid "Do you want to apply? The firmware will quickly reload."
+#~ msgstr "Deseja aplicar?"
+
+#~ msgid "PROBE TRIGGERED PRIOR TO MOVEMENT"
+#~ msgstr "O ProExtruder foi indevidamente pressionado"
+
+#~ msgid "ALREADY IN A MANUAL Z PROBE. USE ABORT TO ABORT IT"
+#~ msgstr "Já se encontra em Sonda Manual (Eixo Z)."
+
+#~ msgid "ENDSTOP X STILL TRIGGERED AFTER RETRACT"
+#~ msgstr "Endstop (Eixo X) continua acionado após retrair"
+
+#~ msgid "NO TRIGGER ON PROBE AFTER FULL MOVEMENT"
+#~ msgstr ""
+#~ "O ProExtruder deve ser pressionado contra a mesa, dentro dos padrões do "
+#~ "tolerância"
+
+#~ msgid "PROBE SAMPLES EXCEED SAMPLES_TOLERANCE"
+#~ msgstr "Mesa incorretamente calibrada ou suja; Ajuste ou Limpe a mesa."
