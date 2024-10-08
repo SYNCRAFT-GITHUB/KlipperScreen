@@ -88,7 +88,7 @@ class MainPanel(MenuPanel):
         if self.active_heater is not None:
             self.hide_numpad()
 
-    def add_device(self, device):
+    def add_device(self, device: str):
 
         logging.info(f"Adding device: {device}")
 
@@ -123,6 +123,14 @@ class MainPanel(MenuPanel):
             image = "fan"
             class_name = f"graph_label_fan_{f}"
             dev_type = "fan"
+        elif device == "temperature_sensor chamber_fan":
+            # NOTE: This is hardcoded to this specific sensor and I
+            # think it could be a 'temperature_fan' on printer.cfg instead
+            self.h += sum("sensor" in d for d in self.devices)
+            devname = f' {_("Chamber")}'
+            image = "heat-up"
+            class_name = f"graph_label_sensor_{self.h}"
+            dev_type = "sensor"
         elif self._config.get_main_config().getboolean("only_heaters", False):
             return False
         else:

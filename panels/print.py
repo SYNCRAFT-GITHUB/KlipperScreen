@@ -328,7 +328,7 @@ class PrintPanel(ScreenPanel):
         self._config.set("main", "print_sort_dir", f'{key}_{"asc" if self.sort_current[1] == 0 else "desc"}')
         self._config.save_user_config_options()
 
-    def confirm_print(self, widget, filename):
+    def confirm_print(self, widget, filename: str):
 
         buttons = [
             {"name": _("Print"), "response": Gtk.ResponseType.OK},
@@ -343,6 +343,19 @@ class PrintPanel(ScreenPanel):
 
         usb_prints: str = f"{home}/printer_data/gcodes/USB_PRINTS"
         job_path: str = f"{home}/printer_data/gcodes/.JOB"
+
+        # Copy thumb to .JOB/.thumbs
+        # TODO: Deal with other extensions other than .gcode/.png
+        # TODO: Deal with other places where thumb could be
+        thumb_filename = filename.replace(".gcode", ".png")
+        filetocopy = os.path.join(f"{home}/printer_data/gcodes/.thumbs", thumb_filename)
+        destination = os.path.join(f"{job_path}/.thumbs", thumb_filename)
+        try:
+            shutil.copy2(filetocopy, destination)
+        except FileNotFoundError:
+            # Thumb does not exists
+            pass
+
         if not os.path.exists(job_path):
             os.makedirs(job_path)
         destination = os.path.join(job_path, os.path.basename(filename))
