@@ -55,6 +55,7 @@ class JobMaterialChange(ScreenPanel):
             'Standard 0.4mm': 'nozzle-ST04',
             'Standard 0.8mm': 'nozzle-ST08',
             'Metal 0.4mm': 'nozzle-METAL04',
+            'Metal 0.6mm': 'nozzle-METAL06',
             'Fiber 0.6mm': 'nozzle-FIBER06',
         }
 

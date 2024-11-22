@@ -34,6 +34,7 @@ class AddCustomMaterial(ScreenPanel):
             'Standard 0.8mm': False,
             'Fiber 0.6mm': False,
             'Metal 0.4mm': False,
+            'Metal 0.6mm': False,
         }
 
         self.materials_json_path = self._config.materials_path(custom=False)
@@ -91,6 +92,8 @@ class AddCustomMaterial(ScreenPanel):
                 key_title = f'Fiber 0.6{_("mm")}'
             elif 'Metal 0.4mm' in key:
                 key_title = f'Metal 0.4{_("mm")}'
+            elif 'Metal 0.6mm' in key:
+                key_title = f'Metal 0.6{_("mm")}'
 
             name = Gtk.Label()
             name.set_markup(f"<big><b>{key_title}</b></big>")

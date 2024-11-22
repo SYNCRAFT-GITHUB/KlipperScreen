@@ -3,7 +3,8 @@
         "name": "17-4PH",
         "code": "17-4PH",
         "compatible": [
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "experimental": [],
         "temp": 260
@@ -12,7 +13,8 @@
         "name": "316 L",
         "code": "316L",
         "compatible": [
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "experimental": [],
         "temp": 260
@@ -27,7 +29,8 @@
         ],
         "experimental": [
             "Fiber 0.6mm",
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "temp": 245
     },
@@ -50,7 +53,8 @@
         "experimental": [
             "Standard 0.25mm",
             "Fiber 0.6mm",
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "temp": 255
     },
@@ -64,7 +68,8 @@
             "Standard 0.25mm",
             "Standard 0.8mm",
             "Fiber 0.6mm",
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "temp": 275
     },
@@ -76,7 +81,8 @@
         ],
         "experimental": [
             "Fiber 0.6mm",
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "temp": 250
     },
@@ -84,7 +90,8 @@
         "name": "I 151",
         "code": "I151",
         "compatible": [
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "experimental": [],
         "temp": 245
@@ -94,7 +101,8 @@
         "code": "I180",
         "compatible": [
             "Fiber 0.6mm",
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "experimental": [],
         "temp": 255
@@ -109,7 +117,8 @@
         "experimental": [
             "Standard 0.25mm",
             "Fiber 0.6mm",
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "temp": 250
     },
@@ -150,7 +159,8 @@
             "Standard 0.25mm",
             "Standard 0.8mm",
             "Fiber 0.6mm",
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "temp": 285
     },
@@ -163,7 +173,8 @@
         "experimental": [
             "Standard 0.4mm",
             "Standard 0.8mm",
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "temp": 280
     },
@@ -176,7 +187,8 @@
             "Standard 0.4mm",
             "Standard 0.8mm",
             "Fiber 0.6mm",
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "temp": 250
     },
@@ -199,7 +211,8 @@
         "experimental": [
             "Standard 0.25mm",
             "Fiber 0.6mm",
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "temp": 250
     },
@@ -213,7 +226,8 @@
         ],
         "experimental": [
             "Fiber 0.6mm",
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "temp": 225
     },
@@ -227,7 +241,8 @@
             "Standard 0.25mm",
             "Standard 0.8mm",
             "Fiber 0.6mm",
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "temp": 225
     },
@@ -250,7 +265,8 @@
         ],
         "experimental": [
             "Fiber 0.6mm",
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "temp": 225
     },
@@ -264,7 +280,8 @@
         "experimental": [
             "Standard 0.25mm",
             "Fiber 0.6mm",
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "temp": 235
     },
@@ -278,7 +295,8 @@
         "experimental": [
             "Standard 0.25mm",
             "Fiber 0.6mm",
-            "Metal 0.4mm"
+            "Metal 0.4mm",
+            "Metal 0.6mm"
         ],
         "temp": 235
     }
