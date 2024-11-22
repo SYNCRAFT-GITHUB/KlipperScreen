@@ -36,6 +36,7 @@ class NozzleSelectPanel(ScreenPanel):
         self.create_image_button("nozzle-ST04", self.above, "Standard 0.4mm")
         self.create_image_button("nozzle-ST08", self.above, "Standard 0.8mm")
         self.create_image_button("nozzle-METAL04", self.below, "Metal 0.4mm")
+        self.create_image_button("nozzle-METAL06", self.below, "Metal 0.6mm")
         self.create_image_button("nozzle-FIBER06", self.below, "Fiber 0.6mm")
 
         self.content.add(self.above)
