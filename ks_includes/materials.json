@@ -299,5 +299,15 @@
             "Metal 0.6mm"
         ],
         "temp": 235
+    },
+    {
+        "name": "VFM Copper",
+        "code": "VFM Copper",
+        "compatible": [
+            "Metal 0.4mm",
+            "Metal 0.6mm"
+        ],
+        "experimental": [],
+        "temp": 235
     }
 ]
